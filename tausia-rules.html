@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>window.__SJAHM_REL_PREFIX__ = ".";</script>
+  <script src="./javascript/live-remote-tunnel.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/logo-square.png">
+    <title>Tausia Rules || Subai Jamiat Ahle Hadees Mumbai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/tausia-rules.css">
+
+  <link rel="canonical" href="http://127.0.0.1:5000/tausia-rules">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="image">
+            <a href="../images/tausia-rule.jpg" target="_blank">
+                <img src="../images/tausia-rule.jpg" alt="">
+            </a>
+            <button type="button" class="next">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- <form>
+            <h1 class="heading">Support us</h1>
+            <div>
+                <label for="name">Enter your name</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div>
+                <label for="email">Enter your email</label>
+                <input type="text" id="email" placeholder="Enter your email">
+            </div>
+
+
+            <div>
+                <label for="number">Enter your number</label>
+                <input type="number" id="number" placeholder="Enter phone number">
+            </div>
+            <div>
+                <label for="amount">Enter your amount</label>
+                <input type="number" id="amount" placeholder="Enter donation amount" min="1">
+            </div>
+
+            <div>
+                <select id="donation-type">
+                    <option value="" disabled selected>Donate to</option>
+
+                    <option value=" Ulama or Mudarriseen ki kifalat ke liye">
+                        Ulama ki kifalat ke liye
+                    </option>
+                    <option value="Talba ki kifalat ke liye">
+                        Talba ki kifalat ke liye
+                    </option>
+                    <option value="Kitabon ki ishat ke liye
+                        ">
+                        Kitabon ki ishat ke liye
+                    </option>
+                    <option value="Tamir E Masjid ke liye
+                    ">
+                        Tamir E Masjid ke liye
+                    </option>
+                    <option value="Dawati programmon ke liye">
+                        Dawati Programmon ke liye
+                    </option>
+                    <option value="Contribution to Relief Fund
+                        ">
+                        Relief Fund ke liye
+                    </option>
+                    <option value="Social Cause ke liye">
+                        Social Cause ke liye
+                    </option>
+                </select>
+            </div>
+            <span class="error"></span>
+            <div class='submit-container'>
+                <button type="submit">
+                    Donate now
+                </button>
+            </div>
+
+        </form> -->
+
+    </div>
+
+    <script>
+        const nextBtn = document.querySelector( '.next' )
+        const img = document.querySelector( '.image img' )
+        const link = document.querySelector( '.image a' )
+        nextBtn.onclick = () => {
+            if ( nextBtn.querySelector( 'i' ).classList.contains( 'fa-arrow-right' ) ) {
+                img.src = './images/tausia-rule-1.jpg'
+                link.href = './images/tausia-rule-1.jpg'
+                nextBtn.querySelector( 'i' ).classList.replace( 'fa-arrow-right', 'fa-arrow-left' )
+            } else {
+                img.src = './images/tausia-rule.jpg'
+                link.href = './images/tausia-rule.jpg'
+                nextBtn.querySelector( 'i' ).classList.replace( 'fa-arrow-left', 'fa-arrow-right' )
+            }
+        }
+    </script>
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+    <!-- <script src="./javascript/donate.js"></script> -->
+
+</body>
+
+</html>

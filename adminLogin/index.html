@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
+  <script src="../javascript/live-remote-tunnel.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ایڈمن لاگ ان — صوبائی جمعیت اہل حدیث ممبئی</title>
+  <link rel="icon" type="image/x-icon" href="../images/logo-square.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/dashboard/admin-design-system.css">
+  <style>
+    body {
+      background: radial-gradient(circle at 10% 20%, rgba(8, 122, 98, 0.05) 0%, rgba(15, 118, 110, 0.08) 90%), #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 24px 16px;
+      font-family: 'Noto Nastaliq Urdu', 'Urdu Typesetting', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .login-container {
+      max-width: 480px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(16px);
+      border-radius: 26px;
+      padding: 36px 32px;
+      border: 1.5px solid var(--adm-sky-border, #bae6fd);
+      box-shadow: 0 20px 45px -10px rgba(14, 165, 233, 0.2), 0 0 0 1px rgba(8, 122, 98, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .login-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #087a62, #0ea5e9, #0f766e);
+    }
+    .header-logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .header-logo img {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(8, 122, 98, 0.15);
+      border: 2px solid #ffffff;
+    }
+    .login-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #065f46;
+      text-align: center;
+      margin: 10px 0 4px;
+    }
+    .login-subtitle {
+      font-size: 13px;
+      color: #64748b;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .role-quick-pick {
+      background: #f0fdfa;
+      border: 1px solid #ccfbf1;
+      border-radius: 14px;
+      padding: 12px;
+      margin-bottom: 22px;
+    }
+    .role-quick-pick-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0f766e;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .role-badges {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+    .role-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 6px 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .role-btn i {
+      font-size: 13px;
+    }
+    .role-btn:hover {
+      border-color: #087a62;
+      background: #e8f5f1;
+      color: #087a62;
+      transform: translateY(-1px);
+    }
+    .form-group {
+      margin-bottom: 18px;
+      text-align: right;
+    }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-wrapper i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .form-control {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 14px 12px 38px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 12px;
+      font-size: 13.5px;
+      color: #0f172a;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      direction: ltr;
+      text-align: left;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #087a62;
+      box-shadow: 0 0 0 3px rgba(8, 122, 98, 0.12);
+    }
+    .form-control::placeholder {
+      color: #94a3b8;
+    }
+    .alert-box {
+      display: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      margin-bottom: 18px;
+      text-align: right;
+    }
+    .alert-error {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+    .alert-success {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #047857;
+    }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #087a62, #0f766e);
+      color: #ffffff;
+      border: none;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 15px rgba(8, 122, 98, 0.25);
+      transition: all 0.2s ease;
+    }
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #065e4b, #0d9488);
+      transform: translateY(-1.5px);
+      box-shadow: 0 6px 20px rgba(8, 122, 98, 0.35);
+    }
+    .btn-submit:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .footer-links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12.5px;
+      color: #64748b;
+    }
+    .footer-links a {
+      color: #087a62;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="header-logo">
+      <img src="../images/logo-square.png" alt="SJ Logo">
+      <h1 class="login-title">مرکزی ایڈمن پورٹل</h1>
+      <p class="login-subtitle">صوبائی جمعیت اہل حدیث ممبئی — Role-Based Admin CMS</p>
+    </div>
+
+    <!-- Quick Role Picker for Testing / Easy Login -->
+    <div class="role-quick-pick">
+      <div class="role-quick-pick-title">
+        <i class="fa-solid fa-users-gear"></i>
+        <span>فوری اکاؤنٹ منتخب کریں:</span>
+      </div>
+      <div class="role-badges" style="grid-template-columns: 1.4fr 1fr 1fr 1fr;">
+        <button type="button" class="role-btn" onclick="fillCredentials('ammar', 'ammar@123', '#087a62')" style="background: #ecfdf5; border-color: #059669; color: #065f46; font-weight: 800;">
+          <i class="fa-solid fa-crown" style="color: #059669;"></i>
+          <span>مرکزی ایڈمن (ammar)</span>
+        </button>
+        <button type="button" class="role-btn" onclick="fillCredentials('nazim', 'nazim123', '#0284c7')">
+          <i class="fa-solid fa-sitemap" style="color: #0284c7;"></i>
+          <span>ناظم</span>
+        </button>
+        <button type="button" class="role-btn" onclick="fillCredentials('mufti', 'mufti123', '#7c3aed')">
+          <i class="fa-solid fa-book-quran" style="color: #7c3aed;"></i>
+          <span>مفتی</span>
+        </button>
+        <button type="button" class="role-btn" onclick="fillCredentials('media', 'media123', '#d97706')">
+          <i class="fa-solid fa-photo-film" style="color: #d97706;"></i>
+          <span>میڈیا</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="errorAlert" class="alert-box alert-error"></div>
+    <div id="successAlert" class="alert-box alert-success"></div>
+
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label class="form-label" for="username">صارف کا نام یا ای میل (Username / Email):</label>
+        <div class="input-wrapper">
+          <input type="text" id="username" name="name" class="form-control" value="ammar" placeholder="ammar" required autocomplete="username">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">پاس ورڈ (Password):</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" name="password" class="form-control" value="ammar@123" placeholder="••••••••" required autocomplete="current-password">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+      </div>
+
+      <button type="submit" id="submitBtn" class="btn-submit">
+        <i class="fa-solid fa-right-to-bracket"></i>
+        <span>لاگ ان کریں</span>
+      </button>
+    </form>
+
+    <div class="footer-links">
+      <a href="../index.html" target="_blank">
+        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+        عوامی ویب سائٹ پر جائیں
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function fillCredentials(user, pass, color) {
+      document.getElementById('username').value = user;
+      document.getElementById('password').value = pass;
+      const btn = document.getElementById('submitBtn');
+      btn.style.boxShadow = '0 0 0 3px ' + color;
+      setTimeout(() => { btn.style.boxShadow = ''; }, 600);
+    }
+
+    const form = document.getElementById('adminLoginForm');
+    const errorAlert = document.getElementById('errorAlert');
+    const successAlert = document.getElementById('successAlert');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.onsubmit = async (e) => {
+      e.preventDefault();
+      errorAlert.style.display = 'none';
+      successAlert.style.display = 'none';
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        errorAlert.textContent = 'براہ کرم یوزر نیم اور پاس ورڈ دونوں درج کریں۔';
+        errorAlert.style.display = 'block';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> <span>تصدیق کی جا رہی ہے...</span>';
+
+      try {
+        const response = await fetch('/adminLogin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: username, password: password })
+        });
+        const data = await response.json();
+
+        if (data.status === 'valid') {
+          successAlert.innerHTML = `<i class="fa-solid fa-check"></i> خوش آمدید! آپ بطور <strong>${data.roleNameUrdu || data.role}</strong> لاگ ان ہو چکے ہیں۔ منتقل کیا جا رہا ہے...`;
+          successAlert.style.display = 'block';
+          setTimeout(() => {
+            window.location.href = data.redirectUrl || '/admin';
+          }, 600);
+        } else {
+          errorAlert.textContent = data.message || 'یوزر نیم یا پاس ورڈ درست نہیں ہے۔';
+          errorAlert.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> <span>لاگ ان کریں</span>';
+        }
+      } catch (err) {
+        errorAlert.textContent = 'سرور سے رابطہ نہ ہو سکا۔ برائے کرم دوبارہ کوشش فرمائیں۔';
+        errorAlert.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i> <span>لاگ ان کریں</span>';
+      }
+    };
+  </script>
+</body>
+</html>

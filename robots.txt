@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /adminLogin
+Disallow: /api/admin
+
+Sitemap: http://127.0.0.1:5000/sitemap.xml

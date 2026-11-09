@@ -10,13 +10,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>صوبائی جمعیت اہل حدیث ممبئی — آفیشل یوٹیوب و ویڈیو پورٹل</title>
 
-  <link rel="icon" href="../images/logo.jpg" type="image/jpeg">
+  <link rel="icon" href="../images/logo-square.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/common.css" />
-  <link rel="stylesheet" href="../style/home.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/bootstrap-grid.css" />
+  <link rel="stylesheet" href="../css/content.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+  <script defer src="../javascript/script.js"></script>
 
   <style>
     :root {
@@ -2022,7 +2026,7 @@
 
     <div class="head">
         <div class="logo">
-            <img src="./images/favicon.png" alt="">
+            <img src="../images/favicon.png" alt="">
             <p>
 
                 صوبائی جمعیت اہل حدیث ممبئی</p>
@@ -2051,7 +2055,7 @@
                     </div>
                     <span class="time">8:27PM</span>
 </div>
-<img src="./images/bot.png" alt="">
+<img src="../images/bot.png" alt="">
 </div>
 
 <div class="chat-btn">
@@ -2084,7 +2088,7 @@
 <!-- <a class="chat-icon" href="javascript:void(Tawk_API.toggle())">
 
      <i class="fa-brands fa-rocketchat"></i>
-    <img src="images/chaticon.png" width="100%" />
+    <img src="../images/chaticon.png" width="100%" />
 
 </a> -->
 
@@ -2230,13 +2234,13 @@
 
             <a href="../index.html" class="image logo-1" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
 
-                <img src="./images/favicon.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
+                <img src="../images/favicon.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
 
             </a>
 
             <a href="../index.html" class="image logo-3" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
 
-                <img src="./images/logo-text.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
+                <img src="../images/logo-text.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
 
             </a>
         </div>
@@ -3868,10 +3872,20 @@ body *::-webkit-scrollbar-thumb:hover {
       // 2) 3D Audio Icon + Sheikh's Name
       // 3) YouTube Views + Publish Date
       // =====================================================
+      const DEFAULT_CHANNEL_LOGO = (window.__SJAHM_REL_PREFIX__ ? window.__SJAHM_REL_PREFIX__ + '/images/youtube-channel-logo.jpg' : '/images/youtube-channel-logo.jpg');
+
+      function resolveAssetUrl(u) {
+        if (!u) return DEFAULT_CHANNEL_LOGO;
+        if (u.startsWith('/') && !u.startsWith('//') && window.__SJAHM_REL_PREFIX__) {
+          return window.__SJAHM_REL_PREFIX__ + u;
+        }
+        return u;
+      }
+
       function buildStandardVideoCardHtml(v) {
         const isSaved = savedIds.includes(v.id);
         const isLiked = likedIds.includes(v.id);
-        const thumb = v.thumbnailUrl || v.thumbnail || (v.youtubeId ? `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg` : '/images/youtube-channel-logo.jpg');
+        const thumb = resolveAssetUrl(v.thumbnailUrl || v.thumbnail || (v.youtubeId ? `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
         const dur = toUrduDigits(v.duration || '42:15');
         const urduViewsTxt = v.urduViews || `${formatViews(v.viewsCount || v.views || 3450)} مشاہدات`;
         const urduDateTxt = formatUrduDateClient(v.publishedAt || v.recordingDate || v.date, v.urduDate);
@@ -3885,7 +3899,7 @@ body *::-webkit-scrollbar-thumb:hover {
         return `
           <article class="yt-card" onclick="playYtItem('${escapeHtml(v.id)}')">
             <div class="yt-thumb-wrap">
-              <img src="${escapeHtml(thumb)}" alt="${escapeHtml(v.title)}" loading="lazy" onerror="this.src='../images/youtube-channel-logo.jpg'" />
+              <img src="${escapeHtml(thumb)}" alt="${escapeHtml(v.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
               <span class="yt-cat-pill">${escapeHtml(v.category || 'عقیدہ و منہجِ سلف')}</span>
               ${seriesBadgeHtml}
               <span class="yt-duration-badge">${escapeHtml(dur)}</span>
@@ -3934,7 +3948,7 @@ body *::-webkit-scrollbar-thumb:hover {
       }
 
       function buildReelCardHtml(r, idxInReels) {
-        const thumb = r.thumbnailUrl || r.thumbnail || (r.youtubeId ? `https://img.youtube.com/vi/${r.youtubeId}/hqdefault.jpg` : '/images/youtube-channel-logo.jpg');
+        const thumb = resolveAssetUrl(r.thumbnailUrl || r.thumbnail || (r.youtubeId ? `https://img.youtube.com/vi/${r.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
         const urduViewsTxt = r.urduViews || `${formatViews(r.viewsCount || r.views || 4800)} مشاہدات`;
         const urduDateTxt = formatUrduDateClient(r.publishedAt || r.recordingDate || r.date, r.urduDate);
         const speakerName = r.speaker || 'فضیلۃ الشیخ عبد السلام سلفی حفظہ اللہ';
@@ -3943,7 +3957,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
         return `
           <article class="yt-reel-card" onclick="openReelViewerById('${escapeHtml(r.id)}')">
-            <img src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.src='../images/youtube-channel-logo.jpg'" />
+            <img src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
             <span class="yt-reel-badge-top"><i class="fas fa-bolt"></i> ${escapeHtml(epLabel)}</span>
             <span class="yt-reel-duration">${escapeHtml(toUrduDigits(r.duration || '0:56'))}</span>
             <div class="yt-reel-grad">
@@ -3995,7 +4009,7 @@ body *::-webkit-scrollbar-thumb:hover {
       }
 
       function buildPlaylistCardHtml(p) {
-        const thumb = p.thumbnailUrl || p.thumbnail || (p.youtubeId ? `https://img.youtube.com/vi/${p.youtubeId}/hqdefault.jpg` : '/images/youtube-channel-logo.jpg');
+        const thumb = resolveAssetUrl(p.thumbnailUrl || p.thumbnail || (p.youtubeId ? `https://img.youtube.com/vi/${p.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
         const linkedEpisodes = getSeriesEpisodesForPlaylist(p);
         const count = Math.max(Number(p.videosInPlaylist) || 12, linkedEpisodes.length);
         const urduViewsTxt = p.urduViews || `${formatViews(p.viewsCount || p.views || 2450)} مشاہدات`;
@@ -4007,7 +4021,7 @@ body *::-webkit-scrollbar-thumb:hover {
         return `
           <article class="yt-card" onclick="playYtItem('${escapeHtml(p.id)}')">
             <div class="yt-thumb-wrap">
-              <img src="${escapeHtml(thumb)}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.src='../images/youtube-channel-logo.jpg'" />
+              <img src="${escapeHtml(thumb)}" alt="${escapeHtml(p.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
               <span class="yt-cat-pill">${escapeHtml(p.category || 'عقیدہ و منہجِ سلف')}</span>
               <div class="yt-playlist-stack">
                 <span>${toUrduDigits(count)}</span>
@@ -4618,12 +4632,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
         qContainer.innerHTML = currentQueueList.map(v => {
           const isCurrent = currentPlayingItem && currentPlayingItem.id === v.id;
-          const thumb = v.thumbnailUrl || (v.youtubeId ? `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg` : '/images/youtube-channel-logo.jpg');
+          const thumb = resolveAssetUrl(v.thumbnailUrl || (v.youtubeId ? `https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
           const epTag = v.episodeLabel || `قسط نمبر ${toUrduDigits(v.episodeNumber || 1)}`;
           return `
             <div class="yt-queue-item ${isCurrent ? 'playing' : ''}" onclick="playYtItem('${escapeHtml(v.id)}')">
               <div class="yt-queue-thumb">
-                <img src="${escapeHtml(thumb)}" alt="${escapeHtml(v.title)}" loading="lazy" onerror="this.src='../images/youtube-channel-logo.jpg'" />
+                <img src="${escapeHtml(thumb)}" alt="${escapeHtml(v.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
               </div>
               <div class="yt-queue-meta">
                 <h4 class="yt-queue-title">${isCurrent ? '▶ ' : ''}${escapeHtml(v.title)}</h4>

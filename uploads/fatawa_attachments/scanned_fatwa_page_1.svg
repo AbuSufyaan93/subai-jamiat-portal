@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f0fdf4" stroke="#059669" stroke-width="8"/>
+  <rect x="20" y="20" width="760" height="560" fill="#ffffff" stroke="#a7f3d0" stroke-width="2"/>
+  <text x="400" y="80" font-size="28" font-weight="bold" fill="#065f46" text-anchor="middle" font-family="sans-serif">صوبائی جمعیت اہل حدیث ممبئی — دار الافتاء</text>
+  <text x="400" y="130" font-size="20" fill="#047857" text-anchor="middle" font-family="sans-serif">فتویٰ کی باضابطہ تصدیق شدہ اسکین کاپی (صفحہ نمبر ۱)</text>
+  <line x1="100" y1="150" x2="700" y2="150" stroke="#059669" stroke-width="2"/>
+  <text x="700" y="220" font-size="18" fill="#1e293b" text-anchor="end" font-family="sans-serif">سوال: میں سفر میں تھا اور جمعہ کا دن تھا، کیا مجھ پر جمعہ فرض تھا یا ظہر؟</text>
+  <text x="700" y="280" font-size="18" fill="#0f766e" text-anchor="end" font-family="sans-serif">الجواب وباللہ التوفیق: مسافر پر جمعہ کی نماز فرض نہیں، بلکہ وہ ظہر کی دو رکعتیں قصر کرے گا۔</text>
+  <circle cx="200" cy="460" r="60" fill="none" stroke="#dc2626" stroke-width="4"/>
+  <text x="200" y="465" font-size="14" font-weight="bold" fill="#dc2626" text-anchor="middle" font-family="sans-serif">مہر دار الافتاء</text>
+  <text x="600" y="470" font-size="16" font-weight="bold" fill="#166534" text-anchor="middle" font-family="sans-serif">دستخط: مفتی دار الافتاء</text>
+</svg>
