@@ -1,9 +1,9 @@
 
-const CACHE_NAME = 'sjahm-static-v5';
+const CACHE_NAME = 'sjahm-static-v8';
 const PRECACHE_URLS = [
-  '/css/style.css',
-  '/css/content.css',
-  '/css/footer.css',
+  '/css/style.css?v=clean2026',
+  '/css/content.css?v=clean2026',
+  '/css/footer.css?v=clean2026',
   '/css/view-counter.css',
   '/images/logo-square.png'
 ];

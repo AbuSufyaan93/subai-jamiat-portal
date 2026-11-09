@@ -14,16 +14,8 @@
   var isLowEndDevice = false;
   var isCoarsePointer = false;
   try {
-    var cores = navigator.hardwareConcurrency || 8;
-    var mem = navigator.deviceMemory || 8;
-    var saveData = Boolean(navigator.connection && navigator.connection.saveData);
-    var reducedMotion = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     isCoarsePointer = Boolean(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
-    if (cores <= 4 || mem <= 4 || saveData || reducedMotion) {
-      isLowEndDevice = true;
-      document.documentElement.classList.add('sj-low-end');
-    }
-    window.__SJ_LOW_END_DEVICE__ = isLowEndDevice;
+    window.__SJ_LOW_END_DEVICE__ = false;
     window.__SJ_COARSE_POINTER__ = isCoarsePointer;
   } catch (_) {}
 

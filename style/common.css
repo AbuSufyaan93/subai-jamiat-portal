@@ -47,7 +47,7 @@ a {
 body {
   overflow-y: auto;
   overflow-x: hidden;
-  background: #f4f6f5 url("../images/main-bg.jpg") repeat top center;
+  background: #f4f6f5 url("../images/main-bg.jpg?v=clean2026") repeat top center;
   background-size: 420px auto;
   min-width: 250px;
 }
