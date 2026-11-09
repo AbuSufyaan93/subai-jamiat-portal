@@ -1382,15 +1382,16 @@ body *::-webkit-scrollbar-thumb:hover {
 
                             <!-- ─── ACADEMIC RECURSIVE CATEGORY TREE DIRECTORY (Screenshots 1 & 2) ─── -->
                             <div class="cat-tree-card" id="categoryDirectoryCard">
-                                <div class="cat-tree-header">
+                                <div class="cat-tree-header" onclick="toggleTreeCollapse()" style="cursor: pointer;" title="کٹیگری فہرست کھولیں یا چھپائیں">
                                     <div class="cat-tree-title">
                                         <i class="fa-solid fa-folder-tree" style="color: #0f766e;"></i>
                                         <span>فہرستِ موضوعات و کٹیگریز (دار الافتاء)</span>
                                     </div>
                                     <div style="display: flex; align-items: center; gap: 8px;">
                                         <span class="cat-tree-badge">113 شعبہ جات</span>
-                                        <button type="button" class="btn-tree-tool" id="btnToggleTreeBox" onclick="toggleTreeCollapse()" title="فہرست چھپائیں / کھولیں">
-                                            <i class="fa-solid fa-chevron-up" id="treeToggleIcon"></i>
+                                        <button type="button" class="btn-tree-tool" id="btnToggleTreeBox" onclick="event.stopPropagation(); toggleTreeCollapse()" title="کٹیگریز کھولیں / چھپائیں" style="background: #f0fdfa; border-color: #99f6e4; color: #0f766e; font-weight: 700;">
+                                            <i class="fa-solid fa-chevron-down" id="treeToggleIcon"></i>
+                                            <span id="treeToggleText">کٹیگریز دکھائیں</span>
                                         </button>
                                     </div>
                                 </div>
@@ -1403,12 +1404,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <input 
                                                 type="text" 
                                                 id="catTreeSearchInput" 
-                                                placeholder="🔎 کٹیگری یا موضوع تلاش کریں..." 
+                                                placeholder="🔎 کٹیگری یا موضوع تلاش کریں (کلک کریں)..." 
                                                 autocomplete="off" 
+                                                onfocus="setCatListVisibility(true)"
                                                 oninput="filterCategoryTreeNodes(this.value)"
                                             />
                                         </div>
                                         <div class="tree-tools-btns">
+                                            <button type="button" class="btn-tree-tool" id="btnToolbarToggleCats" onclick="toggleTreeCollapse()" style="background: #f0fdfa; border-color: #99f6e4; color: #0f766e; font-weight: 700;">
+                                                <i class="fa-solid fa-layer-group" id="toolbarToggleCatIcon"></i>
+                                                <span id="toolbarToggleCatText">کٹیگریز کھولیں</span>
+                                            </button>
                                             <button type="button" class="btn-tree-tool" onclick="expandAllTreeNodes()">
                                                 <i class="fa-solid fa-folder-open"></i> سب کھولیں
                                             </button>
@@ -1421,8 +1427,8 @@ body *::-webkit-scrollbar-thumb:hover {
                                         </div>
                                     </div>
 
-                                    <!-- Scrollable Recursive Tree -->
-                                    <div class="cat-tree-scrollbox" id="catTreeScrollbox">
+                                    <!-- Scrollable Recursive Tree (Hideable underneath the search bar) -->
+                                    <div class="cat-tree-scrollbox" id="catTreeScrollbox" style="display: none;">
                                         
                                             
                                                 
@@ -4118,20 +4124,38 @@ body *::-webkit-scrollbar-thumb:hover {
             window.location.href = '/fikh-w-fatawa?category=' + encodeURIComponent(slug);
         }
 
-        function toggleTreeCollapse() {
-            var body = document.getElementById('catTreeCollapsibleBody');
+        function setCatListVisibility(show) {
+            var scrollbox = document.getElementById('catTreeScrollbox');
             var icon = document.getElementById('treeToggleIcon');
-            if (!body) return;
-            if (body.style.display === 'none') {
-                body.style.display = 'block';
+            var txt = document.getElementById('treeToggleText');
+            var tbIcon = document.getElementById('toolbarToggleCatIcon');
+            var tbTxt = document.getElementById('toolbarToggleCatText');
+            if (!scrollbox) return;
+
+            if (show) {
+                scrollbox.style.display = 'block';
                 if (icon) { icon.classList.remove('fa-chevron-down'); icon.classList.add('fa-chevron-up'); }
+                if (txt) txt.textContent = 'کٹیگریز چھپائیں';
+                if (tbIcon) { tbIcon.className = 'fa-solid fa-eye-slash'; }
+                if (tbTxt) tbTxt.textContent = 'کٹیگریز چھپائیں';
             } else {
-                body.style.display = 'none';
+                scrollbox.style.display = 'none';
                 if (icon) { icon.classList.remove('fa-chevron-up'); icon.classList.add('fa-chevron-down'); }
+                if (txt) txt.textContent = 'کٹیگریز دکھائیں';
+                if (tbIcon) { tbIcon.className = 'fa-solid fa-layer-group'; }
+                if (tbTxt) tbTxt.textContent = 'کٹیگریز کھولیں';
             }
         }
 
+        function toggleTreeCollapse() {
+            var scrollbox = document.getElementById('catTreeScrollbox');
+            if (!scrollbox) return;
+            var isHidden = (scrollbox.style.display === 'none' || window.getComputedStyle(scrollbox).display === 'none');
+            setCatListVisibility(isHidden);
+        }
+
         function expandAllTreeNodes() {
+            setCatListVisibility(true);
             var allChildren = document.querySelectorAll('.tree-children');
             allChildren.forEach(function(el) { el.classList.add('show'); });
             var allArrows = document.querySelectorAll('.tree-arrow-btn');
@@ -4143,9 +4167,11 @@ body *::-webkit-scrollbar-thumb:hover {
             allChildren.forEach(function(el) { el.classList.remove('show'); });
             var allArrows = document.querySelectorAll('.tree-arrow-btn');
             allArrows.forEach(function(btn) { btn.classList.remove('expanded'); });
+            setCatListVisibility(false);
         }
 
         function filterCategoryTreeNodes(query) {
+            setCatListVisibility(true);
             var q = (query || '').trim().toLowerCase();
             var groups = document.querySelectorAll('.tree-item-group');
 
