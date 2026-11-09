@@ -1,0 +1,55 @@
+.question-container {
+    background: #f0f0f0;
+    padding: 5px 20px;
+}
+
+.question-container h3 {
+    font-size: 1.6rem;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.red {
+    color: crimson;
+}
+
+.question-container .question-no {
+    font-size: 2rem;
+}
+
+.fatawa-icon {
+    color: var(--blue);
+    font-size: 1.7rem;
+    margin-inline: 5px;
+}
+
+.fatawa-heading {
+    text-align: right;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.division {
+    margin-bottom: 20px;
+}
+
+.fatawa-download-btn {
+    background: var(--blue);
+    padding: 5px 15px;
+    font-family: sans-serif;
+    font-size: 2rem;
+    color: white !important;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.fatawa-download-btn:hover {
+    background: var(--darkgreen);
+}
+
+span {
+    background: transparent !important;
+}

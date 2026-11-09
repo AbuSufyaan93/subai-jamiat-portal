@@ -1,0 +1,155 @@
+/* nastalique fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Noto Nastaliq Urdu", serif;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+body {
+    color: #282828;
+}
+
+
+.container {
+    margin: unset;
+    max-width: unset;
+    padding: 0;
+    background: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+/* hero section design */
+.container .hero {
+    background: url("https://dorar.net/contest_assets/img/_bg.png");
+    background-size: cover;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-inline: 50px;
+    position: relative;
+}
+
+.container .hero .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    display: none;
+}
+
+.container .hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.container .hero h3 {
+    margin-bottom: 30px;
+}
+
+.container .hero p {
+    line-height: 2.2;
+    margin-bottom:15px;
+}
+
+.container button , .container .start-btn {
+    height: 60px;
+    padding:5px 40px;
+    width: fit-content;
+    border-radius: 30px;
+    background: transparent;
+    border: 2px solid #136C00;
+    color: #136C00;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container .hero .start-btn .btn-icon {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* rules design */
+.rules-container {
+    margin-top: 80px;
+}
+
+.rules-container .rules-heading {
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.rule-box-container {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 80px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.rules-container .rule-box {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 300px;
+}
+
+.rules-container .rule-box .rule-icon img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.rules-container .rule-box .rule-icon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rules-container .rule-box .rule {
+    margin-top: 20px;
+    text-align: center;
+    line-height: 2.4;
+}
+
+.rules-container .quiz-start-row {
+    padding: 10px 20px;
+    background: url("https://www.ahlehadeesmumbai.com/images/green-bg.jpg");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 30px;
+}
+
+.rules-container .quiz-start-row .start-btn {
+    border-color: white;
+    color: white;
+}
+
+.rules-container .quiz-start-row .text-right {
+    font-size: 25px;
+}
+
+
+@media screen and (max-width:768px) {
+    .container .hero{
+        background-size:100%;
+        background-position:top left;
+    }
+}

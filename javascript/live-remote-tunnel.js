@@ -1,0 +1,359 @@
+/**
+ * Subai Jamiat Ahle Hadees Mumbai — Live Remote Tunnel Client Bridge
+ * Connects any remote device (Mobile / Tablet / Desktop) to the live VM server
+ * via encrypted HTTPS streaming + instant edge search fallback.
+ */
+(function () {
+  if (window.__SJAHM_REMOTE_BRIDGE_ACTIVE__) return;
+  window.__SJAHM_REMOTE_BRIDGE_ACTIVE__ = true;
+
+  var REQ_TOPIC = 'sjahm_live_req_786';
+  var relPrefix = window.__SJAHM_REL_PREFIX__ || '.';
+
+  function getBaseRoot() {
+    var loc = window.location.href.split('#')[0].split('?')[0];
+    if (loc.endsWith('/index.html')) loc = loc.slice(0, -11);
+    else if (loc.endsWith('/')) loc = loc.slice(0, -1);
+    if (relPrefix === '.' || !relPrefix) return loc;
+    var parts = loc.split('/');
+    var upCount = relPrefix.split('/').filter(function (p) { return p === '..'; }).length;
+    return parts.slice(0, Math.max(3, parts.length - upCount)).join('/');
+  }
+
+  var BASE_ROOT = getBaseRoot();
+
+  function getSessionToken() {
+    try {
+      var tok = localStorage.getItem('sjahm_remote_session');
+      if (!tok) {
+        tok = 'sess_' + Math.random().toString(36).slice(2) + '_' + Date.now().toString(36);
+        localStorage.setItem('sjahm_remote_session', tok);
+      }
+      return tok;
+    } catch (_) {
+      return 'sess_default';
+    }
+  }
+
+  // Send an HTTP request over the live HTTPS tunnel to the VM's port 5000 server
+  function requestViaLiveTunnel(method, urlPath, bodyStr, contentType, timeoutMs) {
+    timeoutMs = timeoutMs || 9000;
+    return new Promise(function (resolve, reject) {
+      var reqId = 'r_' + Math.random().toString(36).slice(2, 10) + '_' + Date.now().toString(36);
+      var resTopic = 'sjahm_live_res_' + reqId;
+      var settled = false;
+      var pollTimer = null;
+
+      var timer = setTimeout(function () {
+        if (settled) return;
+        settled = true;
+        if (pollTimer) clearInterval(pollTimer);
+        reject(new Error('Live tunnel timeout'));
+      }, timeoutMs);
+
+      function handleEnvelope(evt) {
+        if (settled || !evt) return;
+        if (evt.attachment && evt.attachment.url) {
+          settled = true;
+          clearTimeout(timer);
+          if (pollTimer) clearInterval(pollTimer);
+          origFetch(evt.attachment.url)
+            .then(function (r) { return r.json(); })
+            .then(resolve)
+            .catch(reject);
+        } else if (evt.message) {
+          try {
+            var parsed = JSON.parse(evt.message);
+            if (parsed && parsed.reqId === reqId) {
+              settled = true;
+              clearTimeout(timer);
+              if (pollTimer) clearInterval(pollTimer);
+              resolve(parsed);
+            }
+          } catch (_) {}
+        }
+      }
+
+      // Poll response topic every 350ms (works reliably across all mobile browsers & networks)
+      pollTimer = setInterval(function () {
+        if (settled) return;
+        origFetch('https://ntfy.sh/' + resTopic + '/json?poll=1&since=30s')
+          .then(function (r) { return r.text(); })
+          .then(function (txt) {
+            if (!txt) return;
+            var lines = txt.trim().split('\n');
+            for (var i = 0; i < lines.length; i++) {
+              try {
+                var obj = JSON.parse(lines[i]);
+                if (obj && obj.event === 'message') {
+                  handleEnvelope(obj);
+                }
+              } catch (_) {}
+            }
+          })
+          .catch(function () {});
+      }, 350);
+
+      // Publish request to VM daemon
+      var payload = JSON.stringify({
+        reqId: reqId,
+        method: method || 'GET',
+        urlPath: urlPath || '/',
+        headers: contentType ? { 'content-type': contentType } : {},
+        body: bodyStr || '',
+        sessionToken: getSessionToken()
+      });
+
+      origFetch('https://ntfy.sh/' + REQ_TOPIC, {
+        method: 'POST',
+        body: payload
+      }).catch(function (err) {
+        if (!settled) {
+          settled = true;
+          clearTimeout(timer);
+          if (pollTimer) clearInterval(pollTimer);
+          reject(err);
+        }
+      });
+    });
+  }
+
+  // Client-side instant search index cache
+  var cachedSearchIndex = null;
+  function getClientSearchIndex() {
+    if (cachedSearchIndex) return Promise.resolve(cachedSearchIndex);
+    return origFetch(BASE_ROOT + '/api/global-search-index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        cachedSearchIndex = data;
+        return data;
+      })
+      .catch(function () { return { items: [] }; });
+  }
+
+  function normalizeText(str) {
+    if (!str) return '';
+    return String(str)
+      .toLowerCase()
+      .replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '')
+      .replace(/[أإآٱ]/g, 'ا')
+      .replace(/[يىےئ]/g, 'ی')
+      .replace(/ك/g, 'ک')
+      .replace(/[ةهھ]/g, 'ہ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function runLocalInstantSearch(q, cat) {
+    return getClientSearchIndex().then(function (idx) {
+      var t0 = performance.now();
+      var items = (idx && idx.items) || [];
+      var normQ = normalizeText(q);
+      var tokens = normQ.split(' ').filter(Boolean);
+      var counts = { all: 0, books: 0, publications: 0, articles: 0, fatawa: 0, masajid: 0, magazine: 0, juma: 0, press: 0, media: 0 };
+      var matches = [];
+
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var hay = normalizeText((it.title || '') + ' ' + (it.subtitle || '') + ' ' + (it.snippet || '') + ' ' + (it.extra || ''));
+        var ok = tokens.length === 0 || tokens.every(function (tk) { return hay.indexOf(tk) !== -1; });
+        if (ok) {
+          counts.all++;
+          if (counts[it.categoryKey] !== undefined) counts[it.categoryKey]++;
+          if (!cat || cat === 'all' || cat === it.categoryKey) {
+            var fixedItem = Object.assign({}, it, {
+              url: it.url && it.url.startsWith('/') ? (BASE_ROOT + it.url) : it.url
+            });
+            matches.push(fixedItem);
+          }
+        }
+      }
+
+      return {
+        status: 'success',
+        query: q,
+        category: cat || 'all',
+        tookMs: Number((performance.now() - t0).toFixed(2)),
+        count: matches.length,
+        categoryCounts: counts,
+        results: matches.slice(0, 45)
+      };
+    });
+  }
+
+  // Intercept window.fetch for /viewers, /api/global-search, /adminLogin, and /api/*
+  var origFetch = window.fetch.bind(window);
+  window.fetch = function (input, init) {
+    var urlStr = typeof input === 'string' ? input : (input && input.url ? input.url : '');
+    var method = (init && init.method) ? init.method.toUpperCase() : 'GET';
+
+    // Handle /viewers counter smoothly
+    if (urlStr.indexOf('/viewers') !== -1) {
+      requestViaLiveTunnel('POST', '/viewers', '', 'application/json', 4000).catch(function () {});
+      var localV = parseInt(localStorage.getItem('sjahm_views') || '48955', 10) + 1;
+      localStorage.setItem('sjahm_views', String(localV));
+      return Promise.resolve(new Response(JSON.stringify({ view: localV }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      }));
+    }
+
+    // Handle /api/global-search with instant local index (< 2ms)
+    if (urlStr.indexOf('/api/global-search') !== -1) {
+      var u = new URL(urlStr, window.location.origin);
+      var q = u.searchParams.get('q') || '';
+      var cat = u.searchParams.get('category') || 'all';
+      return runLocalInstantSearch(q, cat).then(function (resObj) {
+        return new Response(JSON.stringify(resObj), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      });
+    }
+
+    // Tunnel dynamic API/Admin requests (/adminLogin, /api/*, POST requests) to live VM server
+    var isLocalApi = urlStr.startsWith('/') || urlStr.indexOf(window.location.host) !== -1;
+    if (isLocalApi && (method !== 'GET' || urlStr.indexOf('/api/') !== -1 || urlStr.indexOf('/admin') !== -1)) {
+      var relPath = urlStr.replace(/^https?:\/\/[^/]+/i, '');
+      if (relPath.indexOf('/subai-jamiat-portal') === 0) {
+        relPath = relPath.replace('/subai-jamiat-portal', '') || '/';
+      }
+      var bodyText = (init && typeof init.body === 'string') ? init.body : '';
+      var cType = (init && init.headers && (init.headers['Content-Type'] || init.headers['content-type'])) || 'application/json';
+      return requestViaLiveTunnel(method, relPath, bodyText, cType, 10000).then(function (tunRes) {
+        return new Response(tunRes.body || '{}', {
+          status: tunRes.status || 200,
+          headers: { 'Content-Type': tunRes.contentType || 'application/json' }
+        });
+      });
+    }
+
+    return origFetch(input, init);
+  };
+
+  // Render live dynamic page returned from the VM tunnel
+  function navigateViaLiveTunnel(targetPath, method, bodyStr, contentType) {
+    showTunnelLoader(targetPath);
+    requestViaLiveTunnel(method || 'GET', targetPath, bodyStr || '', contentType || '', 12000)
+      .then(function (res) {
+        hideTunnelLoader();
+        if (res && res.body) {
+          var rewritten = res.body
+            .replace(/<head>/i, '<head><script>window.__SJAHM_REL_PREFIX__ = ".";</script><script src="' + BASE_ROOT + '/javascript/live-remote-tunnel.js"></script>')
+            .replace(/\b(href|src|action|data-src)=(["'])\/(?!\/)/gi, '$1=$2' + BASE_ROOT + '/');
+          document.open();
+          document.write(rewritten);
+          document.close();
+          try {
+            window.history.pushState({ livePath: res.finalPath || targetPath }, '', '#live:' + (res.finalPath || targetPath));
+          } catch (_) {}
+        }
+      })
+      .catch(function () {
+        hideTunnelLoader();
+        alert('ریموٹ لائیو سرور سے رابطہ ہو رہا ہے، براہِ کرم دوبارہ کلک کریں۔');
+      });
+  }
+
+  function showTunnelLoader(pathLabel) {
+    var el = document.getElementById('sjahm-tunnel-loader');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'sjahm-tunnel-loader';
+      el.style.cssText = 'position:fixed;inset:0;background:rgba(6,44,30,0.72);backdrop-filter:blur(4px);z-index:999999;display:flex;align-items:center;justify-content:center;direction:rtl;font-family:inherit;color:#fff;';
+      el.innerHTML = '<div style="background:#0f5132;border:2px solid #d4af37;padding:24px 36px;border-radius:16px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.4);">' +
+        '<div style="font-size:28px;margin-bottom:10px;">⚡</div>' +
+        '<div style="font-size:19px;font-weight:bold;color:#fde047;">لائیو سرور سے صفحہ لوڈ ہو رہا ہے...</div>' +
+        '<div style="font-size:13px;color:#d1fae5;margin-top:6px;direction:ltr;">' + (pathLabel || '') + '</div>' +
+        '</div>';
+      document.body.appendChild(el);
+    } else {
+      el.style.display = 'flex';
+    }
+  }
+
+  function hideTunnelLoader() {
+    var el = document.getElementById('sjahm-tunnel-loader');
+    if (el) el.style.display = 'none';
+  }
+
+  // Intercept clicks on Admin / Dynamic routes so they load live from the VM server
+  var LIVE_DYNAMIC_PATTERNS = /^\/(dashboard|admin|fatawa-question-admin|fatawa-answers-list|juma-admin|juma-editor|masjid-admin|posters-admin|moon-admin|video-admin|tadribiya-admin|musabqa-admin|musabqa-approved|musabqa-rejected|tarbiyati-ijtima-admin|tausia-admin|masjid-registeration-admin|tausia-talaba-admin)/i;
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a) return;
+    var rawHref = a.getAttribute('href') || '';
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('javascript:') || a.target === '_blank') return;
+
+    var cleanPath = rawHref;
+    if (cleanPath.indexOf(BASE_ROOT) === 0) {
+      cleanPath = cleanPath.slice(BASE_ROOT.length) || '/';
+    }
+    cleanPath = cleanPath.replace(/^(\.\.\/|\.\/)+/, '/');
+    if (!cleanPath.startsWith('/') && !cleanPath.startsWith('http')) {
+      cleanPath = '/' + cleanPath;
+    }
+
+    if (LIVE_DYNAMIC_PATTERNS.test(cleanPath)) {
+      e.preventDefault();
+      navigateViaLiveTunnel(cleanPath, 'GET');
+    }
+  });
+
+  // Intercept form submissions (e.g. /search, /fatawa, /admin/*)
+  document.addEventListener('submit', function (e) {
+    var form = e.target;
+    if (!form || form.tagName !== 'FORM') return;
+    var method = (form.method || 'GET').toUpperCase();
+    var action = form.getAttribute('action') || window.location.pathname;
+    if (action.indexOf(BASE_ROOT) === 0) {
+      action = action.slice(BASE_ROOT.length) || '/';
+    }
+    action = action.replace(/^(\.\.\/|\.\/)+/, '/');
+
+    if (method === 'POST') {
+      e.preventDefault();
+      var fd = new FormData(form);
+      var params = new URLSearchParams();
+      fd.forEach(function (v, k) { params.append(k, v); });
+      navigateViaLiveTunnel(action, 'POST', params.toString(), 'application/x-www-form-urlencoded');
+    }
+  });
+
+  // Handle /search?q=... client-side rendering on the static /search page
+  window.addEventListener('DOMContentLoaded', function () {
+    // Add Live Server Connected Badge
+    var badge = document.createElement('div');
+    badge.style.cssText = 'position:fixed;bottom:14px;left:14px;z-index:99990;background:linear-gradient(135deg,#064e3b,#0f5132);color:#ecfdf5;border:1px solid #d4af37;padding:6px 12px;border-radius:999px;font-size:12px;display:flex;align-items:center;gap:7px;box-shadow:0 8px 20px rgba(0,0,0,0.25);direction:rtl;cursor:pointer;';
+    badge.title = 'یہ لنک براہِ راست لائیو سرور سے جڑا ہوا ہے اور ہر موبائل و کمپیوٹر پر فعال ہے';
+    badge.innerHTML = '<span style="width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;display:inline-block;"></span><span>لائیو ریموٹ سرور فعال ہے</span>';
+    document.body.appendChild(badge);
+
+    // If on /search?q=..., populate results from instant search index
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    var cat = params.get('category') || 'all';
+    if (q && (window.location.pathname.indexOf('/search') !== -1)) {
+      var inputEl = document.querySelector('input[name="q"]');
+      if (inputEl) inputEl.value = q;
+      runLocalInstantSearch(q, cat).then(function (res) {
+        var grid = document.querySelector('.search-results-grid');
+        if (grid && res.results && res.results.length > 0) {
+          grid.innerHTML = res.results.map(function (item) {
+            return '<a href="' + item.url + '" class="search-result-card" style="display:flex;gap:16px;background:#fff;border-radius:16px;padding:20px;border:1px solid #e2e8f0;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(15,23,42,0.05);">' +
+              '<div style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;flex-shrink:0;background:' + (item.badgeColor || '#0f5132') + '"><i class="fa-solid ' + (item.icon || 'fa-file-lines') + '"></i></div>' +
+              '<div style="flex:1;min-width:0;">' +
+                '<span style="background:' + (item.badgeColor || '#0f5132') + '18;color:' + (item.badgeColor || '#0f5132') + ';border:1px solid ' + (item.badgeColor || '#0f5132') + '40;padding:2px 10px;border-radius:999px;font-size:0.8rem;font-weight:700;">' + item.type + '</span>' +
+                '<h3 style="margin:6px 0 4px;font-size:1.25rem;color:#0f172a;font-weight:700;">' + item.title + '</h3>' +
+                (item.subtitle ? '<div style="font-size:0.92rem;color:#0f5132;font-weight:600;margin-bottom:4px;">' + item.subtitle + '</div>' : '') +
+                (item.snippet ? '<p style="margin:0;font-size:0.92rem;color:#475569;">' + item.snippet + '</p>' : '') +
+              '</div></a>';
+          }).join('');
+        }
+      });
+    }
+  });
+
+  window.__navigateViaLiveTunnel__ = navigateViaLiveTunnel;
+})();

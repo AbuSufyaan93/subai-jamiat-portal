@@ -1,0 +1,37 @@
+/* .header,
+#home,
+.logo-1,
+.logo-2,
+.logo-3,
+.navbar, */
+.column-left,
+/* .column-center, */
+.column-right,
+footer,
+/* .footer-1,
+.footer-2,
+.footer-3,
+.footer-4, */
+.copyright {
+
+    opacity: 0;
+    transition: all 0.3s ease;
+
+}
+
+.animate__animated {
+
+    opacity: 1;
+
+}
+
+.welcome-container {
+    transition: all 0.3s ease;
+    transition-delay: 0.5s;
+}
+
+.welcome-container.animate__animated {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+}

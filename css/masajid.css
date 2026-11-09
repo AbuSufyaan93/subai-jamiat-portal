@@ -1,0 +1,144 @@
+#content .main-container .card .content {
+    text-align: right;
+    /* it will be left in english */
+}
+
+#content .main-container .card .content .head-container .head-wrapper {
+    margin: 10px 0;
+}
+
+#content .main-container .card .content .head-container .head-wrapper .head-btn .angle {
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+#content .main-container .card .content .head-container .head-wrapper.active .head-btn .angle {
+    transform: rotate(180deg);
+}
+
+#content .main-container .card .content .head-container .head-btn {
+    width: 300px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-inline: auto;
+    /* background: var(--blue); */
+    background: #0000001a;
+    /* background-color: #ccc; */
+    /* color: white; */
+    color: black;
+    font-size: 1.8rem;
+    padding-inline: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#content .main-container .card.district-jamiat .content .head-container .head-btn {
+    width: 380px;
+}
+
+#content .main-container .card .content .head-container .head-btn i {
+    color: var(--darkgreen);
+}
+
+#content .main-container .card .content .head-container .head-btn .circle {
+    height: 18px;
+    width: 18px;
+    flex-shrink: 0;
+    border: 1px solid var(--darkgreen);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 10px;
+    align-items: center;
+}
+
+#content .main-container .card .content .head-container .head-btn .place-title {
+    margin-left: auto;
+}
+
+#content .main-container .card .content .head-container .head-btn .icon-location {
+    margin-left: auto;
+}
+
+/* #content .main-container .card .content .head-container .head-btn:hover {
+    background: var(--maingreen);
+} */
+
+#content .main-container .card .content .head-container .head-content p {
+    padding: 6px 8px;
+    line-height: 2.4;
+    font-size: 1.85rem;
+    text-align: justify;
+    text-justify: inter-word;
+    color: #222222;
+}
+
+#content .main-container .card .content .head-container .head-content p.text-center {
+    text-align: center !important;
+    font-weight: 700;
+    font-size: 2.0rem;
+    color: var(--darkgreen);
+    line-height: 2.3;
+    margin-bottom: 14px;
+}
+
+#content .main-container .card .content .head-container .head-content {
+    width: 370px;
+    max-width: 100%;
+    margin-right: auto;
+    display: none;
+    transition: all 0.5s ease;
+}
+
+#content .main-container .card.district-jamiat .content .head-container .head-content {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+#content .main-container .card.moon .content .head-container .head-content {
+    width: 100%;
+    margin: 0;
+}
+
+#content .main-container .card .content .head-container .head-wrapper.active .head-content {
+    display: block;
+}
+
+#content .main-container .card.district-jamiat .content .head-wrapper .head-content a {
+    display: inline;
+    color: var(--blue);
+}
+
+#content .main-container .card .content .head-wrapper .head-content .division {
+    margin: 10px 0;
+    padding: 5px 10px;
+}
+
+#content .main-container .card .content .head-wrapper .head-content .phone {
+    text-align: left !important;
+}
+
+@media screen and (max-width:576px) {
+    #content .main-container .card .content .head-container .head-wrapper .head-btn {
+        margin-left: auto;
+        margin-right: unset;
+    }
+}
+
+.map-link {
+    color: var(--darkgreen) !important;
+    transition: all 0.3s ease;
+    width: fit-content;
+    padding-inline: 10px;
+    margin-left: auto;
+}
+
+.map-link:hover {
+    background: #f0f0f0;
+}

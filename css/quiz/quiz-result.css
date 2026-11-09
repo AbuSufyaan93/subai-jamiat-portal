@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Nastaliq Urdu", serif;
+    direction: rtl;
+    box-sizing: border-box;
+}
+
+body{
+    background:#f0f0f0;
+}
+
+.table-container{
+    width:800px;
+    max-width:98%;
+    margin-inline:auto;
+    margin-top:50px;
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5);
+    background:#f0f0f0;
+    border-radius:5px;
+    overflow: hidden;
+}
+
+.table-container .table-heading{
+    padding:10px 20px;
+    text-align:center;
+}
+
+.table-container .table-wrapper{
+    padding-inline: 15px;
+    display: flex;
+    min-width: 100%;
+    width: fit-content;
+    background: white;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.table-container table tr th{
+    white-space:nowrap;
+}
+
+.table-container table{
+    border-collapse:collapse;
+    width:100%;
+}
+
+.table-container table tr{
+    border-top:1px solid #ccc;
+}
+
+.table-container table tr:first-child{
+    border-top:none;
+}
+
+.table-container table tr :where(td , th){
+    padding:10px;
+    text-align: center;
+}

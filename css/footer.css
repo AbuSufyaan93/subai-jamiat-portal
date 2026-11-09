@@ -1,0 +1,346 @@
+footer {
+
+    background: var(--darkblue),
+        url("../images/bg-gif.gif");
+    padding: 30px 0;
+    background-blend-mode: multiply;
+    position: relative;
+
+}
+
+footer .up {
+
+    --size: 60px;
+    position: absolute;
+    left: 50%;
+    top: calc(var(--size) / -2);
+    transform: translate(-50%);
+    width: var(--size);
+    height: var(--size);
+    color: white;
+    background: var(--blue);
+    font-size: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer .up:hover {
+    box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+footer .content .heading {
+
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+
+}
+
+footer .content .card {
+
+    background: #f0f0f0 url('../images/main-bg2.jpg');
+    background-blend-mode: multiply;
+    border: 4px double #282828;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: right;
+    /* it will left in english */
+
+}
+
+.en-page .content .card {
+    text-align: left;
+}
+
+footer .content {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+}
+
+footer .content .card {
+
+    flex: 1 0 0;
+
+}
+
+footer .content .card>a,
+footer .content .card p {
+
+    display: block;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    color: black;
+    border-bottom: 1px solid #282828;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+
+}
+
+footer .content .card p a {
+
+    color: black;
+    text-transform: lowercase;
+    transition: all 0.3s ease;
+
+}
+
+footer .content .card p a:hover {
+
+    color: var(--blue);
+
+}
+
+footer .content>a:before {
+
+    content: '>';
+    font-size: 1.6rem;
+    padding-right: 10px;
+
+}
+
+footer .content .card>a:hover,
+footer .content .card a.active {
+
+    color: var(--blue);
+
+}
+
+footer .content .card a:last-child {
+
+    border: none;
+
+}
+
+footer .content .card .map iframe {
+
+    max-width: 100%;
+    width: 100%;
+
+}
+
+footer .content .card .map {
+
+    margin-bottom: 10px;
+
+}
+
+
+footer .content .card .map.facebook-iframe {
+    width: 100%;
+    max-width: 500px !important;
+    margin-inline: auto;
+}
+
+footer .content .card .map.facebook-iframe iframe {
+    width: 100%;
+    margin-inline: auto;
+    height: 420px;
+    overflow: auto;
+}
+
+footer .content .card .map.twitter-iframe::-webkit-scrollbar {
+    display: none;
+}
+
+footer .content .card .map .map-iframe {
+
+    max-height: 200px;
+
+}
+
+footer .content .card .social-media {
+
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 5px;
+    column-gap: 2px;
+
+}
+
+footer .content .card .social-media a {
+
+    height: 40px;
+    width: 40px;
+    border: 2px solid;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 1px;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+
+}
+
+footer .content .card .social-media a.telegram {
+
+    justify-content: center;
+    padding-right: 3px;
+
+}
+
+
+footer .content .card .social-media a.facebook {
+
+    background: var(--facebook);
+    border-color: var(--facebook);
+
+}
+
+footer .content .card .social-media a.twitter {
+
+    border-color: var(--twitter);
+    background: var(--twitter);
+
+}
+
+footer .content .card .social-media a.telegram {
+
+    border-color: var(--telegram);
+    background: var(--telegram);
+
+}
+
+footer .content .card .social-media a.youtube {
+
+    border-color: var(--youtube);
+    background: var(--youtube);
+
+}
+
+footer .content .card .social-media a.instagram {
+
+    border-color: var(--instagram);
+    background: var(--instagram);
+
+}
+
+footer .content .card .social-media a.whatsapp {
+
+    border-color: var(--whatsapp);
+    background: var(--whatsapp);
+
+}
+
+footer .content .card .social-media a.facebook {
+
+    border-color: var(--facebook);
+    background: var(--facebook);
+
+}
+
+footer .content .card .social-media a.facebook:hover {
+
+    background: transparent;
+    color: var(--facebook);
+
+}
+
+footer .content .card .social-media a.twitter:hover {
+
+    background: transparent;
+    color: var(--twitter);
+
+}
+
+footer .content .card .social-media a.telegram:hover {
+
+    background: transparent;
+    color: var(--telegram);
+
+}
+
+footer .content .card .social-media a.youtube:hover {
+
+    background: transparent;
+    color: var(--youtube);
+
+}
+
+footer .content .card .social-media a.instagram:hover {
+
+    background: transparent;
+    color: var(--instagram);
+
+}
+
+footer .content .card .social-media a.whatsapp:hover {
+
+    background: transparent;
+    color: var(--whatsapp);
+
+}
+
+
+.copyright {
+
+    background: #d8d8d8;
+    padding: 20px;
+    color: black;
+    border-top: 1px solid white;
+    font-size: 1.6rem;
+    text-align: center;
+
+}
+
+.copyright a {
+
+    display: inline-block;
+    margin-inline: 5px;
+    color: inherit;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+
+}
+
+.copyright a:hover {
+
+    text-decoration: underline;
+
+}
+
+.alert {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 8px 15px;
+    z-index: 98;
+    text-align: center;
+    background: crimson;
+    color: white;
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: 2.0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alert a {
+    color: #ffffff;
+    background: #087a62;
+    padding: 2px 12px;
+    border-radius: 4px;
+    margin-right: 6px;
+    display: inline-block;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.alert a:hover {
+    background: #055443;
+}

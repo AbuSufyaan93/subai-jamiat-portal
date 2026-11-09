@@ -1,0 +1,554 @@
+/* ══════════════════════════════════════════════════════════════════════════════
+   UNIFIED INTERACTION SUITE (SHARE, COPY, REPORT ERROR)
+   Design Language Grounded in User Reference Images 3 & 4
+   Subai Jamiat Ahle Hadees Mumbai
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. Action Buttons Group (Reference Image 3) ─── */
+.sj-actions-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  direction: rtl;
+  user-select: none;
+}
+
+.sj-action-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1.2px solid #e2e8f0;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.03);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+}
+
+.sj-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px -2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sj-action-btn:active {
+  transform: scale(0.93);
+}
+
+.sj-action-btn:focus-visible {
+  outline: 2px solid var(--q-primary, #087a62);
+  outline-offset: 2px;
+}
+
+/* Specific Button Styles */
+/* 1. Copy Button */
+.sj-btn-copy:hover {
+  color: #087a62;
+  border-color: #a7f3d0;
+  background: #f0fdf4;
+}
+
+/* 2. Report Error Button (Image 3 highlighted center) */
+.sj-btn-report {
+  color: #475569;
+}
+.sj-btn-report:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+/* 3. Share Button */
+.sj-btn-share:hover {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+/* Subtle Accessible Tooltip on Hover */
+.sj-action-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #1e293b;
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  font-family: 'Jameel Noori Nastaleeq', system-ui, sans-serif;
+}
+
+.sj-action-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Copy Success State Micro-Animation */
+.sj-action-btn.copied {
+  background: #ecfdf5 !important;
+  border-color: #10b981 !important;
+  color: #059669 !important;
+  transform: scale(1.05);
+}
+
+/* Extended Bar Mode (when accompanied with text label) */
+.sj-action-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  background: #ffffff;
+  border: 1.2px solid #e2e8f0;
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.05);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+.sj-action-pill:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 5px 12px -2px rgba(0, 0, 0, 0.08);
+}
+.sj-action-pill.sj-pill-copy:hover {
+  color: #087a62;
+  border-color: #a7f3d0;
+  background: #f0fdf4;
+}
+.sj-action-pill.sj-pill-share:hover {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+.sj-action-pill.sj-pill-report:hover {
+  color: #dc2626;
+  border-color: #fecaca;
+  background: #fef2f2;
+}
+
+/* ─── 2. Share Modal (Reference Image 4 Benchmark) ─── */
+.sj-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 100000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  direction: rtl;
+  animation: sjFadeIn 0.18s ease-out;
+}
+
+.sj-modal-dialog {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+  text-align: right;
+  direction: rtl;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  animation: sjSlideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sj-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px 24px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sj-modal-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  font-family: 'Jameel Noori Nastaleeq', 'Urdu Nastaleeq', 'Noto Naskh Arabic', sans-serif;
+}
+
+.sj-modal-close {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+.sj-modal-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.sj-modal-body {
+  padding: 22px 24px 26px 24px;
+}
+
+/* 4 Circular Social Sharing Buttons (Image 4) */
+.sj-social-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sj-social-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.sj-social-circle:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sj-social-circle:active {
+  transform: scale(0.94);
+}
+
+/* Individual Social Brands (Image 4 exact shades) */
+.sj-social-telegram {
+  background: #0088cc;
+  box-shadow: 0 4px 14px rgba(0, 136, 204, 0.35);
+}
+.sj-social-whatsapp {
+  background: #25d366;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+.sj-social-x {
+  background: #000000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+.sj-social-facebook {
+  background: #1877f2;
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.35);
+}
+
+/* Short URL Text Input (Image 4) */
+.sj-share-input-wrap {
+  margin-bottom: 20px;
+}
+
+.sj-share-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: #334155;
+  direction: ltr;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sj-share-input:focus {
+  background: #ffffff;
+  border-color: #087a62;
+  box-shadow: 0 0 0 3px rgba(8, 122, 98, 0.15);
+}
+
+/* Bottom Copy Short Link Pill Button (Image 4) */
+.sj-share-pill-wrap {
+  text-align: center;
+}
+
+.sj-btn-copy-short {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 2px solid #087a62;
+  color: #087a62;
+  border-radius: 9999px;
+  padding: 10px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Jameel Noori Nastaleeq', 'Urdu Nastaleeq', system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(8, 122, 98, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.sj-btn-copy-short:hover {
+  background: #087a62;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(8, 122, 98, 0.28);
+  transform: translateY(-1.5px);
+}
+
+.sj-btn-copy-short:active {
+  transform: scale(0.96);
+}
+
+.sj-btn-copy-short.copied {
+  background: #087a62 !important;
+  color: #ffffff !important;
+  border-color: #087a62 !important;
+}
+
+/* ─── 3. Report Error Dialog ─── */
+.sj-report-dialog {
+  max-width: 520px;
+}
+
+.sj-report-context {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  font-size: 12.5px;
+  color: #475569;
+}
+.sj-report-context b {
+  color: #0f172a;
+}
+
+.sj-form-group {
+  margin-bottom: 16px;
+}
+
+.sj-form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* Error Type Segmented Radio Chips */
+.sj-error-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.sj-error-chip-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: #334155;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.sj-error-chip-label:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.sj-error-chip-label input[type="radio"] {
+  accent-color: #dc2626;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+}
+
+.sj-error-chip-label.active {
+  background: #fef2f2;
+  border-color: #f87171;
+  color: #991b1b;
+  font-weight: 700;
+}
+
+.sj-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: #0f172a;
+  outline: none;
+  min-height: 85px;
+  resize: vertical;
+  line-height: 1.7;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.sj-textarea:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.sj-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.15s ease;
+}
+.sj-input:focus {
+  border-color: #087a62;
+  box-shadow: 0 0 0 3px rgba(8, 122, 98, 0.12);
+}
+
+.sj-btn-submit-report {
+  width: 100%;
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 20px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+.sj-btn-submit-report:hover {
+  background: #b91c1c;
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.35);
+  transform: translateY(-1px);
+}
+.sj-btn-submit-report:active {
+  transform: scale(0.98);
+}
+
+/* ─── 4. Floating Toast Notification ─── */
+.sj-toast-feedback {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  z-index: 1000000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  direction: rtl;
+  user-select: none;
+  pointer-events: none;
+}
+
+.sj-toast-feedback.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.sj-toast-feedback i {
+  color: #10b981;
+  font-size: 15px;
+}
+
+/* ─── 5. Animations ─── */
+@keyframes sjFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sjSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─── 6. Mobile Responsiveness ─── */
+@media (max-width: 480px) {
+  .sj-modal-dialog {
+    max-width: 92vw;
+    border-radius: 16px;
+  }
+  .sj-modal-body {
+    padding: 18px 18px 22px 18px;
+  }
+  .sj-social-row {
+    gap: 12px;
+  }
+  .sj-social-circle {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+  .sj-btn-copy-short {
+    padding: 9px 24px;
+    font-size: 14px;
+  }
+  .sj-error-chips-grid {
+    grid-template-columns: 1fr;
+  }
+}

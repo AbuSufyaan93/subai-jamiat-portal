@@ -1,0 +1,188 @@
+.form-container form label {
+
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: right;
+    /* it will be left in english */
+    color: black;
+    margin-bottom: 5px;
+
+}
+
+.form-container form {
+
+    text-align: right;
+    /* it will be left in english */
+
+}
+
+.form-container form :where(input, textarea, button) {
+
+    width: 100%;
+    outline: none;
+    text-align: right;
+    /* it will be left in english */
+    border: 2px solid var(--blue);
+    font-size: 1.6rem;
+    padding-inline: 10px;
+    /* font-family:sans-serif; there is one problem padding is not working to align cursor vertically center */
+    margin-bottom: 15px;
+    color: var(--blue);
+    transition: all 0.3s ease;
+
+}
+
+.form-container form textarea {
+    resize: none;
+    overflow: none;
+}
+
+.form-container form .two-input {
+
+    display: flex;
+    flex-direction: row-reverse;
+    /* it will row in english */
+    gap: 5px;
+
+}
+
+.form-container form .two-block-input {
+    border: 2px solid var(--blue);
+    padding: 5px;
+    background: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-container form .two-block-input textarea {
+    height: 70px;
+    margin: 0;
+}
+
+.form-container form .two-block-input input {
+    margin: 0;
+}
+
+.form-container form .two-input select {
+
+    flex-grow: 1;
+    height: 40px;
+    outline: none;
+    text-align: right;
+    /* it will be left in english */
+    border: 2px solid var(--blue);
+    font-size: 1.6rem;
+    padding-inline: 10px;
+    margin-bottom: 15px;
+    color: var(--blue);
+
+}
+
+
+.form-container form textarea {
+
+    height: 150px;
+
+}
+
+.form-container form .submit-container {
+
+    text-align: center;
+
+}
+
+.form-container form input[type=submit],
+.form-container form button[type=submit] {
+
+    width: 150px;
+    background: var(--blue);
+    border: 1px solid var(--blue);
+    color: white;
+    font-weight: 400;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+
+}
+
+.form-container form input[type=submit]:hover,
+.form-container form button[type=submit]:hover {
+
+    background: transparent;
+    color: var(--blue);
+
+}
+
+/* hiding input type number arrows */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: none;
+}
+
+/* loading animation when form submitted */
+
+.data-loading {
+
+    height: 30px;
+    width: 30px;
+    margin-left: auto;
+    /*  it will be right in english */
+    border: 3px solid transparent;
+    border-top-color: var(--blue);
+    border-right-color: var(--blue);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    animation: animate_loading 1s linear infinite;
+    display: none;
+
+}
+
+@keyframes animate_loading {
+
+    0% {
+
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+.note {
+    color: crimson;
+    text-align: center;
+}
+
+.note a {
+    color: #00d999 !important;
+}
+
+.two-block-input input,
+.two-block-input textarea {
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea.small-textarea {
+    height: 70px !important;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}

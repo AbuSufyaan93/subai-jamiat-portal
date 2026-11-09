@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Nastaliq Urdu", serif;
+    direction: rtl;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #f0f0f0;
+    min-height: 100vh;
+}
+
+body h1 {
+    text-align: center;
+}
+
+form div{
+    /* becuase set 10px in donate.css */
+    margin:0;
+}
+
+form {
+    background: white;
+    width: 550px;
+}
+
+form .two-input {
+    display: flex;
+    gap: 10px;
+}
+
+form .two-input .input-parent {
+    width: 50%;
+}
+
+form .input-parent{
+    margin:10px 0;
+}
+
+.submit-btn-container {
+    text-align: center;
+}
+
+.submit-btn-container .submit-btn {
+    padding-block: 0;
+}
+
+@media screen and (max-width:600px) {
+
+    form .two-input .input-parent {
+        width: 100%;
+    }
+
+    form .two-input {
+        flex-wrap: wrap;
+    }
+
+}
+
+.message{
+    font-size:16px;
+}
+.message.success{
+    color:seagreen;
+}
+.message.failure{
+    color:crimson;
+}

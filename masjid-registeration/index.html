@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
+  <script src="../javascript/live-remote-tunnel.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/logo-square.png">
+    <link rel="stylesheet" href="./css/donate.css">
+    <title>Masjid Registeration || Subai Jamiat Ahle Hadees Mumbai</title>
+
+    <style>
+        /* nastalique fonts  */
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+        * {
+            font-family: "Noto Nastaliq Urdu", serif;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .heading {
+            text-decoration: none;
+        }
+
+        form {
+            background: #f0f0f0;
+        }
+
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* background: #f0f0f0; */
+            background: transparent;
+            display: none;
+            scale: 0;
+            transition: scale 0.3s ease;
+        }
+
+        .popup-container.active {
+            display: flex;
+            scale: 1;
+        }
+
+        .popup-container .popup {
+            width: 400px;
+            text-align: center;
+            max-width: 100%;
+            padding: 20px;
+            border-radius: 5px;
+            background: #f0f0f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            animation: animate 0.3s linear;
+        }
+
+        @keyframes animate {
+            0% {
+                scale: 0;
+            }
+
+            100% {
+                scale: 1;
+            }
+        }
+
+        .popup-container p {
+            font-size: 18px;
+            text-align: center;
+            margin: 10px 0;
+            line-height: 3;
+        }
+
+        .popup-container p.success {
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .popup-container .popup a {
+
+            color: var(--main);
+            text-decoration: none;
+
+        }
+
+        form.hidden {
+            display: none;
+        }
+
+        .submit-container button {
+            padding-block: 0;
+        }
+
+        ul {
+            list-style-position: inside;
+        }
+
+        .note {
+            color: crimson;
+        }
+
+        .note a {
+            color: white;
+            background: rgba(220, 20, 60, 0.7);
+            /* border: 2px solid crimson; */
+            padding: 0 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .note a:hover {
+            background: #00d999;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+  <link rel="canonical" href="http://127.0.0.1:5000/masjid-registeration">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="popup-container">
+            <div class="popup">
+                <p class="success">
+
+                    آپکی مسجد کا رجسٹریشن ہو گیا ہے
+
+                </p>
+                <p>
+
+                    عنقریب آئی ڈی اور پاسورڈ آپ کو واٹس ایپ پر فراہم کیا جائیگا۔
+
+                </p>
+                <a href="../">
+                    ویب سائٹ پر جانے کے لئے
+                </a>
+            </div>
+        </div>
+        <form>
+            <h1 class="heading">
+
+                اپنی مسجد رجسٹر کریں
+
+            </h1>
+            <div>
+                <label for="MasjidName">
+                    مسجد کا نام اور مکمل پتہ
+                    <span>
+                        :
+                    </span>
+                </label>
+                <input type="text" id="MasjidName" name="MasjidName" required placeholder="مسجد کا نام">
+            </div>
+
+            <div>
+                <input type="text" id="MasjidAddress" name="MasjidAddress" required placeholder="مسجد کا مکمل پتہ">
+            </div>
+            <div>
+                <input type="text" name="MasjidLocationLink" required placeholder="مسجد کے لوکیشن کا لنک">
+            </div>
+
+            <div>
+                <label for="MasjidPresidentName">
+                    مسجد کے صدر کا نام اور واٹس ایپ نمبر
+                    <span>
+                        :
+                    </span>
+                </label>
+                <input type="text" id="MasjidPresidentName" name="MasjidPresidentName" required
+                    placeholder="صدر کا نام">
+                <div>
+                    <input type="text" id="MasjidPresidentNumber" name="MasjidPresidentNumber" required
+                        placeholder="صدر کا واٹس ایپ نمبر " pattern="[0-9]{10}">
+                </div>
+            </div>
+
+
+            <div>
+                <label for="MasjidSecretarieName">
+                    مسجد کے سیکریٹری کا نام اور واٹس ایپ نمبر
+                    <span>
+                        :
+                    </span>
+                </label>
+                <input type="text" id="MasjidSecretarieName" name="MasjidSecretarieName" placeholder=" سیکریٹری کا نام"
+                    required>
+
+            </div>
+
+            <div>
+                <input type="text" id="MasjidSecretarieNumber" name="MasjidSecretarieNumber" required
+                    placeholder=" سیکریٹری کا واٹس ایپ نمبر" pattern="[0-9]{10}">
+            </div>
+
+            <!-- <div>
+                <label for="image">
+                    صدر / سیکریٹری کی تصویر اپلوڈ کریں
+                    <span>
+                        :
+                    </span>
+                    <input type="file" id="image" name="image" required>
+                </label>
+            </div> -->
+
+            <div>
+                <label for="document">
+                    مطلوبہ دستاویز اپلوڈ کریں
+                    <span>
+                        :
+                    </span>
+                </label>
+                <input type="file" id="document" name="document" required>
+            </div>
+
+            <div class="note">
+                <ul>
+                    <li>
+                        <span>
+                            <span> نوٹ </span>
+                            <span>:</span>
+                        </span>
+
+                        مطلوبہ دستاویز میں لائٹ بل، مسجد یا مدرسہ کا لیٹر ہیڈ، اور صدر و سیکریٹری کی تصویر کو ایک
+                        ساتھ پی ڈی ایف(PDF) فائل میں اپلوڈ کریں۔
+
+                    </li>
+
+                </ul>
+            </div>
+
+            <span class="error"></span>
+            <span class="success"></span>
+            <div class="data-loading"></div>
+            <div class='submit-container'>
+                <button type="submit">
+                    رجسٹر کریں
+                </button>
+            </div>
+        </form>
+        <script>
+
+            const form = document.querySelector( 'form' )
+            const error = document.querySelector( '.error' )
+            const message = document.querySelector( ".success" )
+            // const image = document.querySelector( 'input[name=image]' )
+            const file = document.querySelector( 'input[name=document]' )
+            const loading = document.querySelector( 'form .data-loading' )
+            const popupContainer = document.querySelector( '.popup-container' )
+            const submit = document.querySelector( 'form .submit-container button' )
+
+            form.onsubmit = async ( e ) => {
+                e.preventDefault()
+
+                // if ( image.files[ 0 ].type != 'image/png' && image.files[ 0 ].type != 'image/jpeg' && image.files[ 0 ].type != 'image/jpg' ) {
+
+                //     error.innerText = 'Please Upload jpeg or jpg or png image'
+                //     return
+
+                // } else if ( image.files[ 0 ].type == 'image/png' || image.files[ 0 ].type == 'image/jpeg' || image.files[ 0 ].type == 'image/jpg' ) {
+
+                //     let imageSizeInKb = image.files[ 0 ].size
+                //     let imageSizeInMb = Math.floor( imageSizeInKb / 1024 )
+
+                //     if ( imageSizeInMb > 300 ) {
+
+                //         error.innerHTML = 'Image Size will be less than 300kb'
+                //         return
+
+                //     }
+
+                // }
+
+                if ( file.files[ 0 ].type != 'application/pdf' ) {
+
+                    error.innerText = 'Please Upload pdf document'
+                    return
+
+                } else if ( file.files[ 0 ].type == 'application/pdf' ) {
+
+                    let documentSizeInKb = file.files[ 0 ].size
+
+                    let documentSizeInMb = Math.floor( documentSizeInKb / 1024 )
+
+                    if ( documentSizeInMb > 1024 ) {
+                        error.innerText = 'Pdf Size will be less than 1MB'
+                        return
+                    } else {
+                        error.innerText = ''
+                        submit.style.display = 'none'
+                        loading.style.display = 'block'
+                    }
+
+                }
+
+                let formData = new FormData( form )
+                // let formObj = {}
+                // for ( [ key, value ] of formData.entries() ) {
+                //     formObj[ key ] = value
+                // }
+
+
+
+                let request = await fetch( '/masjid-registeration', {
+                    method: 'post',
+                    body: formData
+                    // body: JSON.stringify( formObj ),
+                    // headers: {
+                    //     'Content-Type': 'application/json'
+                    // }
+                } )
+
+                let response = await request.json()
+
+                // if ( response.status == 'invalid' ) {
+                //     error.innerHTML = 'Please Enter Valid Credentials'
+                // } else if ( response.status == 'valid' ) {
+                //     location.href = '/admin'
+                // } else {
+                //     location.href = '/error'
+                // }
+
+                if ( response.status == 'success' ) {
+
+                    // message.innerText = 'آپکی مسجد کا رجسٹریشن ہو گیا ہے ، عنقریب آئی ڈی اور پاسورڈ آپ کو واٹس ایپ پر فراہم کیا جائیگا۔'
+                    // setTimeout( () => {
+                    //     message.innerText = ''
+                    //     form.reset()
+                    // }, 5000 )
+
+                    error.innerHTML = ''
+                    loading.style.display = 'none'
+                    form.classList.add( 'hidden' )
+                    popupContainer.classList.add( 'active' )
+
+                } else {
+
+                    location.href = '/error'
+
+                }
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

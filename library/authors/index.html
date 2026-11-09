@@ -1,0 +1,3597 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+  <script>window.__SJAHM_REL_PREFIX__ = "../..";</script>
+  <script src="../../javascript/live-remote-tunnel.js"></script>
+
+    <meta charset="UTF-8">
+    <base href="../../">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصنّفین و مؤلفین کی ڈائرکٹری — جمعیت لائبریری</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" />
+
+    <style>
+        :root {
+            --lib-emerald: #059669;
+            --lib-emerald-dark: #065f46;
+            --lib-gold: #d97706;
+            --lib-slate: #0f172a;
+            --lib-card-bg: #ffffff;
+            --lib-border: #e2e8f0;
+        }
+
+        .authors-hero {
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+            color: #ffffff;
+            padding: 48px 0 40px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid rgba(217, 119, 6, 0.4);
+        }
+
+        .authors-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .authors-title {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .authors-lead {
+            font-size: 1.05rem;
+            color: #d1fae5;
+            max-width: 720px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+
+        .author-card {
+            background: #ffffff;
+            border: 1px solid var(--lib-border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .author-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(5, 150, 105, 0.12);
+            border-color: #a7f3d0;
+        }
+
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            color: var(--lib-emerald);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 16px;
+            border: 2px solid #a7f3d0;
+        }
+
+        .author-name {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 12px;
+            line-height: 1.8;
+        }
+
+        .author-stats-badge {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .stat-pill {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #475569;
+            font-weight: 600;
+        }
+
+        .stat-pill strong {
+            color: var(--lib-emerald);
+        }
+
+        .author-btn {
+            background: linear-gradient(135deg, var(--lib-emerald) 0%, var(--lib-emerald-dark) 100%);
+            color: #ffffff !important;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s;
+            text-decoration: none !important;
+            margin-top: auto;
+        }
+
+        .author-btn:hover {
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+            transform: scale(1.02);
+        }
+
+        .search-container {
+            max-width: 580px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            border-radius: 30px;
+            padding: 14px 48px 14px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            font-size: 1rem;
+            backdrop-filter: blur(8px);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-input:focus {
+            background: #ffffff;
+            color: #0f172a;
+            border-color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .search-icon-btn {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .search-input:focus ~ .search-icon-btn {
+            color: var(--lib-emerald);
+        }
+    </style>
+  <link rel="canonical" href="http://127.0.0.1:5000/library/authors">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+</head>
+
+<body>
+    <!-- <div class="chat-container">
+
+    <div class="head">
+        <div class="logo">
+            <img src="./images/favicon.png" alt="">
+            <p>
+
+                صوبائی جمعیت اہل حدیث ممبئی</p>
+        </div>
+        <div class="close">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+
+    </div>
+    <div class="chat-body">
+
+        <div class="chat-wrapper">
+
+            <div class="chat bot">
+                <div class="message-container">
+
+                    <div class="message">
+                        <p>
+                            أهلا وسهلا ومرحبا
+                        </p>
+                        <p>
+
+                            السلام عليكم ورحمة الله وبركاته
+
+                        </p>
+                    </div>
+                    <span class="time">8:27PM</span>
+</div>
+<img src="./images/bot.png" alt="">
+</div>
+
+<div class="chat-btn">
+    آگے بڑھنے کے لیے یہاں کلک کریں۔
+</div>
+
+<div class="chat user">
+                <div class="message-container">
+
+                    <div class="message">
+                        <p>
+                            وعلیکم اسلام ورحمت اللہ و برکا تہ اور خیریت ہے
+                        </p>
+                    </div>
+                    <span class="time">8:27PM</span>
+                </div>
+            </div>
+
+</div>
+
+<div class="chat-input">
+
+    <input type="text" placeholder="چیٹ بوٹ">
+
+</div>
+
+</div>
+</div>
+-->
+<!-- <a class="chat-icon" href="javascript:void(Tawk_API.toggle())">
+
+     <i class="fa-brands fa-rocketchat"></i>
+    <img src="images/chaticon.png" width="100%" />
+
+</a> -->
+
+<!-- social icons design starts here  -->
+
+<div class="social-icon-arrow">
+
+    <div class="arrow active">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+    <div class="donate">
+
+        <a href="../../donate" target="_blank"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+
+    </div>
+
+</div>
+
+<div class="social-icon">
+
+
+    <a target="_blank" class="icon facebook" href="https://www.facebook.com/subaijamiatahlehadeesmumbai1/">
+
+        <i class="fa-brands fa-facebook-f"></i>
+
+    </a>
+    <a target="_blank" class="icon twitter" href="https://twitter.com/JamiatSubai">
+
+        <i class="fa-brands fa-twitter"></i>
+
+    </a>
+
+    <a target="_blank" class="icon telegram" href="https://t.me/SubaiJamiatAhleHadeesMumbai1">
+
+        <i class="fa-brands fa-telegram"></i>
+
+    </a>
+
+    <!-- <a target="_blank" class="icon google-plus" href="https://plus.google.com/+SubaiJamiatAhleHadeesMumbai">
+
+            <i class="fa-brands fa-google-plus-g"></i>
+
+        </a> -->
+
+    <a target="_blank" class="icon youtube" href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai">
+
+        <i class="fa-brands fa-youtube"></i>
+
+    </a>
+    <a target="_blank" class="icon instagram" href="https://www.instagram.com/subaijamiatahlehadeesmum/">
+
+        <i class="fa-brands fa-instagram"></i>
+
+    </a>
+
+    <a target="_blank" href="https://wa.me/+919892555244" class="icon whatsapp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+    <div class="icon arrow-close">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+
+
+</div>
+
+<!-- first header starts here  -->
+
+<div class="header">
+
+    <div class="main-container">
+
+        <div class="custom-container">
+
+            <div class="left">
+
+                <a class="donate" target="_blank" href="../../donate">
+                    تعاون کریں
+                </a>
+
+                <div class="menu language-container">
+
+                    <i class="fa-solid fa-globe"></i></span>
+
+                    <div class="language">
+
+                        <a href="../../" class="lang active">اردو زبان</a>
+                        <a href="../../ar" class="lang">عربی زبان</a>
+                        <a href="../../pending" class="lang">English</a>
+
+                    </div>
+
+                </div>
+
+                <div class="calender">
+
+                    <!-- <i class="fa-solid fa-calendar-days"></i> -->
+                    <i data-DateForMoon="15" class="MoonAccordingDate"></i>
+
+                    <div class="date">
+
+
+                        <span dir="rtl" class="arabic-date">
+                            15 شوال 1447ھ
+                        </span>
+                        <span class="english-date"></span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="flow">
+                <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4">
+                    <p class="upcoming-event">صوبائی جمعیت اہل حدیث ممبئی کے زیر اہتمام مختلف اضلاع میں دعوتی و تعلیمی پروگرامز کا انعقاد جاری ہے۔ تفصیلات کے لیے دفتر سے رابطہ کریں۔</p>
+                </marquee>
+            </div>
+
+            <a href="../../imp-notice" target="_blank" class="headline" title="تازہ ترین اہم اطلاع ملاحظہ کریں">
+                <i class="fa-solid fa-bullhorn" style="font-size: 11px; margin-left: 4px;"></i>
+                اہم اطلاع
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- second header starts here  -->
+
+<div class="header2-container">
+
+    <div class="main-container">
+
+        <div class="header2">
+
+            <a href="../../introduction" class="image logo-1">
+
+                <img src="./images/favicon.png" alt="image not found">
+
+            </a>
+
+            <a href="../../introduction" class="image logo-3">
+
+                <img src="./images/logo-text.png" alt="image not found">
+
+            </a>
+            <!-- <a href="" class="image logo-3">
+
+                <img src="./images/logo-text-2.png" alt="image not found">
+
+            </a> -->
+        </div>
+
+    </div>
+</div>
+
+<!-- navbar design starts here  -->
+
+<style id="gdocs-scrollbar-override">
+/*-----------------------------------------------------
+   Google Docs / Google Workspace Ultra-Thin Light Scrollbar
+------------------------------------------------------*/
+
+::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+  background-image: none !important;
+  border-radius: 999px !important;
+  border: 1px solid transparent !important;
+  background-clip: padding-box !important;
+  box-shadow: none !important;
+  min-height: 36px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.32) !important;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+
+body *::-webkit-scrollbar {
+  width: 5px !important;
+  height: 5px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body *::-webkit-scrollbar-track {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body *::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  background-image: none !important;
+  border-radius: 999px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body *:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.22) !important;
+}
+
+body *::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.36) !important;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+}
+</style>
+<script>
+  (function(){
+    if ('caches' in window) {
+      caches.keys().then(function(keys){
+        keys.forEach(function(k){
+          if (k.indexOf('sjahm-static-v4') === -1) caches.delete(k);
+        });
+      }).catch(function(){});
+    }
+  })();
+</script>
+    <!-- DEDICATED LIBRARY PORTAL HEADER & NAVIGATION -->
+<!-- Subai Jamiat Ahle Hadees Mumbai -->
+
+<style>
+  .library-portal-nav-bar {
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+  }
+
+  .library-portal-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    gap: 16px;
+  }
+
+  .library-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #0369a1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .library-nav-brand:hover {
+    transform: translateY(-1px);
+    color: #0284c7;
+  }
+
+  .library-brand-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.28);
+    transition: transform 0.2s ease;
+  }
+
+  .library-nav-brand:hover .library-brand-icon {
+    transform: scale(1.05);
+  }
+
+  .library-brand-text h1 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.2;
+    color: #0369a1;
+  }
+
+  .library-brand-text span {
+    font-size: 11.5px;
+    color: #64748b;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+  }
+
+  .library-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .library-nav-item {
+    margin: 0;
+  }
+
+  .library-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .library-nav-link i {
+    font-size: 14px;
+    color: #0284c7;
+    transition: transform 0.2s;
+  }
+
+  .library-nav-link:hover {
+    background: #f0f9ff;
+    color: #0284c7;
+  }
+
+  .library-nav-link:hover i {
+    transform: scale(1.15);
+  }
+
+  .library-nav-link.active {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  }
+
+  .library-nav-link.active i {
+    color: #fef08a;
+  }
+
+  .library-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-lib-search-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-lib-search-trigger:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    border-color: #94a3b8;
+  }
+
+  .btn-lib-history {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    background: #f0f9ff;
+    color: #0284c7;
+    border: 1px solid #bae6fd;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+  }
+
+  .btn-lib-history:hover {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #7dd3fc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(2, 132, 199, 0.15);
+  }
+
+  /* موضوعاتی فہرست بٹن (اسکرین شاٹ 1 کے عین مطابق) */
+  .btn-topics-drawer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #0284c7;
+    color: #ffffff !important;
+    border: 1px solid #0284c7;
+    border-radius: 9px;
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .btn-topics-drawer-btn:hover {
+    background: #0369a1;
+    border-color: #0369a1;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  }
+
+  .btn-topics-drawer-btn i {
+    font-size: 13px;
+    color: #ffffff;
+  }
+
+  .library-mobile-toggle {
+    display: none;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .library-mobile-toggle:hover {
+    background: #e2e8f0;
+  }
+
+  @media (max-width: 991px) {
+    .library-mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .library-portal-container {
+      flex-wrap: wrap;
+      padding: 10px 16px;
+      min-height: 58px;
+    }
+
+    .library-nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 4px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 8px;
+    }
+
+    .library-nav-links.open {
+      display: flex;
+    }
+
+    .library-nav-link {
+      padding: 10px 14px;
+      width: 100%;
+    }
+
+    .library-nav-actions {
+      display: none;
+      width: 100%;
+      padding-top: 8px;
+      gap: 8px;
+    }
+
+    .library-nav-actions.open {
+      display: flex;
+    }
+
+    .btn-lib-search-trigger, .btn-lib-history {
+      flex: 1;
+      justify-content: center;
+    }
+  }
+</style>
+
+<header class="library-portal-nav-bar" id="libraryPortalNavBar">
+  <div class="library-portal-container">
+    <!-- BRAND / IDENTITY -->
+    <a href="../../library" class="library-nav-brand">
+      <div class="library-brand-icon">
+        <i class="fa-solid fa-book-bookmark"></i>
+      </div>
+      <div class="library-brand-text">
+        <h1>جمعیت لائبریری</h1>
+        <span>صوبائی جمعیت اہل حدیث ممبئی</span>
+      </div>
+    </a>
+
+    <!-- MOBILE HAMBURGER -->
+    <button type="button" class="library-mobile-toggle" id="libMobileToggle" onclick="toggleLibraryMobileNav()" aria-label="لائبریری مینو">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- DEDICATED LIBRARY NAVIGATION ITEMS -->
+    <nav class="library-nav-links" id="libMobileDrawer" aria-label="لائبریری نیویگیشن">
+      <a href="../../library" class="library-nav-link ">
+        <i class="fa-solid fa-house"></i>
+        <span>سرورق</span>
+      </a>
+
+      <a href="../../library#booksShowroom" class="library-nav-link ">
+        <i class="fa-solid fa-book-open"></i>
+        <span>کتب</span>
+      </a>
+
+      <a href="../../library/categories" class="library-nav-link ">
+        <i class="fa-solid fa-layer-group"></i>
+        <span>موضوعات</span>
+      </a>
+
+      <a href="../../library/authors" class="library-nav-link active">
+        <i class="fa-solid fa-feather-pointed"></i>
+        <span>مصنفین</span>
+      </a>
+
+      <a href="../../library/publications" class="library-nav-link " title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعات">
+        <i class="fa-solid fa-stamp"></i>
+        <span>مطبوعات</span>
+      </a>
+
+      <a href="../../library/publishers" class="library-nav-link ">
+        <i class="fa-solid fa-building-columns"></i>
+        <span>ناشرین</span>
+      </a>
+
+      <a href="../../library/history" class="library-nav-link ">
+        <i class="fa-solid fa-bookmark"></i>
+        <span>محفوظ کتب</span>
+      </a>
+
+      <!-- SHIFTED HERE FROM HERO AS MARKED BY USER -->
+      <a href="../../library/order-status" class="library-nav-link ">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>آرڈر ٹریکنگ</span>
+      </a>
+
+      <a href="javascript:void(0)" onclick="toggleLibrarySearch(event)" class="library-nav-link " id="libNavSearchTrigger" title="کتابوں کی تلاش اور فلٹرز کھولیں">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>تلاش</span>
+      </a>
+    </nav>
+
+    <!-- ACTION BUTTONS -->
+    <div class="library-nav-actions" id="libNavActionsWrap">
+      <!-- موضوعاتی فہرست بٹن (اسکرین شاٹ 1 کے عین مطابق) -->
+      <button type="button" id="headerTopicsDrawerBtn" class="btn-topics-drawer-btn" onclick="openTopicsDrawer()" title="مکمل موضوعاتی فہرست اور تمام ۳۸۲ عناوین کھولیں">
+        <i class="fa-solid fa-bars"></i>
+        <span>موضوعاتی فہرست</span>
+      </button>
+
+      <a href="../../library/history" class="btn-lib-history" title="زیر مطالعہ کتب اور بُک مارکس">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+        <span>زیر مطالعہ</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- TOPICS DIRECTORY SLIDING DRAWER (موضوعاتی فہرست سلائیڈنگ ڈراور) -->
+<!-- Subai Jamiat Ahle Hadees Mumbai -->
+
+<style>
+  /* DRAWER BACKDROP */
+  .topics-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 10040;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .topics-drawer-backdrop.open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* DRAWER ASIDE */
+  .topics-offcanvas-drawer {
+    position: fixed;
+    top: 0;
+    right: -460px;
+    width: 420px;
+    max-width: 92vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 10050;
+    box-shadow: -8px 0 35px rgba(0, 0, 0, 0.18);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .topics-offcanvas-drawer.open {
+    right: 0 !important;
+  }
+
+  /* DRAWER HEADER (اسکرین شاٹ 2 کے عین مطابق نیلے رنگ کا ہیڈر) */
+  .topics-drawer-header {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+    flex-shrink: 0;
+  }
+
+  .topics-drawer-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .topics-drawer-title {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .topics-drawer-close {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 22px;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .topics-drawer-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  /* SEARCH STRIP IN DRAWER */
+  .topics-drawer-search-bar {
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    flex-shrink: 0;
+  }
+
+  .topics-search-box {
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .topics-search-input {
+    width: 100%;
+    height: 42px;
+    padding: 8px 38px 8px 36px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-family: inherit;
+    color: #0f172a;
+    background: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .topics-search-input:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+  }
+
+  .topics-search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0284c7;
+    font-size: 14px;
+    pointer-events: none;
+  }
+
+  .topics-search-clear {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: none;
+  }
+
+  .topics-search-clear:hover {
+    color: #0f172a;
+  }
+
+  .topics-stats-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #64748b;
+  }
+
+  .topics-count-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+  }
+
+  .topics-full-link {
+    color: #0284c7;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .topics-full-link:hover {
+    text-decoration: underline;
+  }
+
+  /* DRAWER TABS */
+  .topics-drawer-tabs {
+    display: flex;
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    flex-shrink: 0;
+  }
+
+  .topics-tab-btn {
+    flex: 1;
+    padding: 10px 8px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .topics-tab-btn:hover {
+    color: #0284c7;
+    background: #f0f9ff;
+  }
+
+  .topics-tab-btn.active {
+    color: #0284c7;
+    border-bottom-color: #0284c7;
+    background: #f0f9ff;
+  }
+
+  /* SCROLLABLE LIST BODY */
+  .topics-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .topics-drawer-body::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+  }
+
+  .topics-drawer-body::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 4px 0;
+  }
+
+  .topics-drawer-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.16);
+    border-radius: 999px;
+  }
+
+  .topics-drawer-body:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.24);
+  }
+
+  .topics-drawer-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.36);
+  }
+
+  /* CATEGORY ROW (اسکرین شاٹ 1 اور 2 کے عین مطابق پیٹرن اور آئیکونز) */
+  .topic-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #e5e5e5;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    margin: 5px 12px;
+    padding: 7px 14px;
+    min-height: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .topic-row:hover {
+    background: #dedede;
+    border-color: #c8c8c8;
+  }
+
+  .topic-row.active {
+    background: #e0e0e0;
+    border-color: #087a62;
+    box-shadow: 0 2px 6px rgba(8, 122, 98, 0.15);
+  }
+
+  .topic-row-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .topic-circle-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #087a62;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .topic-circle-toggle svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .topic-circle-toggle .svg-plus-vert {
+    transform-origin: center;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .topic-row.active .topic-circle-toggle .svg-plus-vert {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  .topic-expand-btn {
+    display: none;
+  }
+
+  .topic-title-text {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    line-height: 1.6;
+    flex: 0 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.15s;
+    letter-spacing: -0.2px;
+  }
+
+  .topic-row:hover .topic-title-text {
+    color: #087a62;
+  }
+
+  .topic-chevron-indicator {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #087a62;
+    margin-right: 2px;
+    flex-shrink: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .topic-chevron-indicator svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .topic-row.active .topic-chevron-indicator {
+    transform: rotate(180deg);
+  }
+
+  .topic-count-pill {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #087a62;
+    flex-shrink: 0;
+    margin-right: 8px;
+    font-family: inherit;
+    direction: ltr;
+  }
+
+  /* SUBTREE COLLAPSIBLE CONTAINER */
+  .topic-sub-tree {
+    display: none;
+    margin: 4px 12px 10px 12px;
+    padding: 6px 12px;
+    background: #f8fafc;
+    border-right: 3px solid #087a62;
+    border-radius: 0 0 8px 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
+  }
+
+  .topic-sub-tree.expanded {
+    display: block;
+    animation: slideSubDown 0.22s ease-out;
+  }
+
+  @keyframes slideSubDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .topic-sub-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px 8px 18px;
+    border-bottom: 1px dashed #e2e8f0;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .topic-sub-row:last-child {
+    border-bottom: none;
+  }
+
+  .topic-sub-row:hover {
+    background: #e0f2fe;
+  }
+
+  .topic-sub-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .topic-sub-bullet {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #0284c7;
+    flex-shrink: 0;
+  }
+
+  .topic-sub-title {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .topic-sub-row:hover .topic-sub-title {
+    color: #0284c7;
+  }
+
+  .topic-sub-count {
+    font-size: 11px;
+    color: #0369a1;
+    font-weight: 600;
+    direction: ltr;
+  }
+
+  /* LEVEL 3 NESTED SUBTREE */
+  .topic-sub3-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 36px 5px 18px;
+    font-size: 11.5px;
+    border-bottom: 1px dotted #e2e8f0;
+    cursor: pointer;
+    background: #f1f5f9;
+  }
+
+  .topic-sub3-row:hover {
+    background: #e0f2fe;
+  }
+
+  .topic-sub3-title {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 11.5px;
+    color: #475569;
+    text-decoration: none;
+    line-height: 1.6;
+  }
+
+  .topic-sub3-row:hover .topic-sub3-title {
+    color: #0284c7;
+  }
+
+  /* DRAWER FOOTER */
+  .topics-drawer-footer {
+    padding: 12px 18px;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-drawer-all-topics {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.25);
+  }
+
+  .btn-drawer-all-topics:hover {
+    background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+  }
+
+  .btn-drawer-expand-all {
+    padding: 8px 12px;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-drawer-expand-all:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+  }
+
+  .topic-highlight-match {
+    background: #fef08a;
+    color: #0f172a;
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-weight: 800;
+  }
+</style>
+
+<!-- BACKDROP -->
+<div class="topics-drawer-backdrop" id="topicsDrawerBackdrop" onclick="closeTopicsDrawer()" aria-hidden="true"></div>
+
+<!-- ASIDE DRAWER -->
+<aside class="topics-offcanvas-drawer" id="topicsDrawer" role="dialog" aria-modal="true" aria-label="موضوعاتی فہرست">
+  <!-- HEADER -->
+  <div class="topics-drawer-header">
+    <div class="topics-drawer-title-wrap">
+      <i class="fa-solid fa-layer-group" style="font-size: 18px;"></i>
+      <h3 class="topics-drawer-title">موضوعاتی فہرست</h3>
+    </div>
+    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں (Esc)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- SEARCH STRIP -->
+  <div class="topics-drawer-search-bar">
+    <div class="topics-search-box">
+      <input type="text" id="topicsDrawerSearchInput" class="topics-search-input" placeholder="موضوع تلاش کریں..." oninput="onTopicsDrawerSearch(this.value)" autocomplete="off" />
+      <i class="fa-solid fa-magnifying-glass topics-search-icon"></i>
+      <button type="button" id="topicsDrawerSearchClear" class="topics-search-clear" onclick="clearTopicsDrawerSearch()" aria-label="تلاش صاف کریں">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </button>
+    </div>
+    <div class="topics-stats-row">
+      <span class="topics-count-badge" id="topicsDrawerStatsBadge">۳۸۲ موضوعات · ۱۸ مرکزی شعبے</span>
+      <a href="../../library/categories" class="topics-full-link" title="تمام شعبہ جات پورٹل کھولیں">
+        <span>مکمل صفحہ</span> <i class="fa-solid fa-arrow-left"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="topics-drawer-tabs">
+    <button type="button" class="topics-tab-btn active" id="tabBtnPrimary" onclick="switchTopicsDrawerTab('primary')">
+      <i class="fa-solid fa-list-ul"></i>
+      <span>بنیادی فہرست</span>
+    </button>
+    <button type="button" class="topics-tab-btn" id="tabBtnMajor" onclick="switchTopicsDrawerTab('major')">
+      <i class="fa-solid fa-sitemap"></i>
+      <span>۱۸ شعبہ جات</span>
+    </button>
+  </div>
+
+  <!-- BODY CONTENT -->
+  <div class="topics-drawer-body" id="topicsDrawerBody">
+    <!-- VIEW 1: PRIMARY CATEGORIES (اسکرین شاٹ 2 کے عین مطابق لسٹ) -->
+    <div id="topicsViewPrimary" class="topics-tab-content">
+      <div id="primaryTopicsListContainer">
+        <!-- Rendered dynamically via JavaScript from topics_directory.json -->
+      </div>
+    </div>
+
+    <!-- VIEW 2: 18 MAJOR DISCIPLINES -->
+    <div id="topicsViewMajor" class="topics-tab-content" style="display: none;">
+      <div id="majorTopicsListContainer">
+        <!-- Rendered dynamically via JavaScript from topics_directory.json -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="topics-drawer-footer">
+    <button type="button" class="btn-drawer-expand-all" id="btnToggleAllNodes" onclick="toggleAllDrawerNodes()">
+      <i class="fa-solid fa-angles-down ms-1"></i> سب کھولیں
+    </button>
+    <a href="../../library/categories" class="btn-drawer-all-topics">
+      <i class="fa-solid fa-table-cells-large"></i>
+      <span>تمام موضوعات کا تفصیلی پورٹل</span>
+    </a>
+  </div>
+</aside>
+
+<script>
+  // Global Topics Data Storage
+  let TOPICS_DIRECTORY_DATA = null;
+  let isAllNodesExpanded = false;
+  let currentTopicsDrawerTab = 'primary';
+
+  // Open Drawer
+  function openTopicsDrawer() {
+    const drawer = document.getElementById('topicsDrawer');
+    const backdrop = document.getElementById('topicsDrawerBackdrop');
+    if (!drawer || !backdrop) return;
+
+    drawer.style.right = '0px';
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Ensure data is loaded and rendered
+    if (!TOPICS_DIRECTORY_DATA) {
+      loadTopicsDirectoryData();
+    }
+
+    setTimeout(() => {
+      const input = document.getElementById('topicsDrawerSearchInput');
+      if (input) input.focus();
+    }, 200);
+  }
+
+  // Close Drawer
+  function closeTopicsDrawer() {
+    const drawer = document.getElementById('topicsDrawer');
+    const backdrop = document.getElementById('topicsDrawerBackdrop');
+    if (!drawer || !backdrop) return;
+
+    drawer.style.right = '-460px';
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Escape key handler
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const drawer = document.getElementById('topicsDrawer');
+      if (drawer && drawer.classList.contains('open')) {
+        closeTopicsDrawer();
+      }
+    }
+  });
+
+  // Load topics data
+  async function loadTopicsDirectoryData() {
+    try {
+      const res = await fetch('/api/library/topics');
+        const rawJson = await res.json();
+        TOPICS_DIRECTORY_DATA = (rawJson && rawJson.topicsData) ? rawJson.topicsData : rawJson;
+    } catch (e) {
+      console.warn('Could not fetch from /api/library/topics, using fallback embedded tree');
+    }
+
+    if (!TOPICS_DIRECTORY_DATA) {
+      // Fallback data structure if fetch fails
+      TOPICS_DIRECTORY_DATA = window.FALLBACK_TOPICS_DATA || null;
+    }
+
+    if (TOPICS_DIRECTORY_DATA) {
+      renderPrimaryTopicsView(TOPICS_DIRECTORY_DATA.primary_categories || []);
+      renderMajorTopicsView(TOPICS_DIRECTORY_DATA.major_categories || []);
+    }
+  }
+
+  // Switch between Tab 1 (Primary flat list matching Image 2) and Tab 2 (18 Major Categories)
+  function switchTopicsDrawerTab(tabName) {
+    currentTopicsDrawerTab = tabName;
+    const viewPrimary = document.getElementById('topicsViewPrimary');
+    const viewMajor = document.getElementById('topicsViewMajor');
+    const btnPrimary = document.getElementById('tabBtnPrimary');
+    const btnMajor = document.getElementById('tabBtnMajor');
+
+    if (tabName === 'primary') {
+      if (viewPrimary) viewPrimary.style.display = 'block';
+      if (viewMajor) viewMajor.style.display = 'none';
+      if (btnPrimary) btnPrimary.classList.add('active');
+      if (btnMajor) btnMajor.classList.remove('active');
+    } else {
+      if (viewPrimary) viewPrimary.style.display = 'none';
+      if (viewMajor) viewMajor.style.display = 'block';
+      if (btnPrimary) btnPrimary.classList.remove('active');
+      if (btnMajor) btnMajor.classList.add('active');
+    }
+
+    const input = document.getElementById('topicsDrawerSearchInput');
+    const val = input ? input.value.trim() : '';
+    if (TOPICS_DIRECTORY_DATA) {
+      if (tabName === 'primary') {
+        renderPrimaryTopicsView(TOPICS_DIRECTORY_DATA.primary_categories || [], val);
+      } else {
+        renderMajorTopicsView(TOPICS_DIRECTORY_DATA.major_categories || [], val);
+      }
+    }
+  }
+
+  // Render Primary Topics View (تصویر نمبر 2 کے عین مطابق فہرست)
+  function renderPrimaryTopicsView(categories, filterKeyword = '') {
+    const container = document.getElementById('primaryTopicsListContainer');
+    if (!container) return;
+
+    let html = '';
+    const kw = (filterKeyword || '').trim().toLowerCase();
+
+    categories.forEach((cat, idx) => {
+      const hasSubs = cat.children && cat.children.length > 0;
+      const titleMatches = kw && cat.title.toLowerCase().includes(kw);
+      const subMatches = kw && hasSubs && cat.children.some(c => c.title.toLowerCase().includes(kw));
+      const isVisible = !kw || titleMatches || subMatches;
+
+      if (!isVisible) return;
+
+      const shouldAutoExpand = Boolean(kw && subMatches);
+      const rowId = `priRow_${idx}`;
+      const subTreeId = `priSub_${idx}`;
+
+      html += `
+        <div class="topic-row-group" id="${rowId}_group">
+          <div class="topic-row ${shouldAutoExpand ? 'active' : ''}" onclick="togglePrimaryNode('${subTreeId}', this, event)">
+            <div class="topic-row-right">
+              <span class="topic-circle-toggle" aria-label="کھولیں">
+                <svg viewBox="0 0 24 24" width="19" height="19" stroke="#087a62" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <line x1="12" y1="7.5" x2="12" y2="16.5" class="svg-plus-vert"></line>
+                  <line x1="7.5" y1="12" x2="16.5" y2="12"></line>
+                </svg>
+              </span>
+              <a href="../../library?category=${encodeURIComponent(cat.title)}" class="topic-title-text" onclick="event.stopPropagation()" title="${cat.title} کتب دیکھیں">
+                ${highlightKeyword(cat.title, kw)}
+              </a>
+              ${hasSubs ? `
+                <span class="topic-chevron-indicator">
+                  <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#087a62" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 8 12 13 18 8"></polyline>
+                    <polyline points="6 13 12 18 18 13"></polyline>
+                  </svg>
+                </span>
+              ` : ''}
+            </div>
+            <span class="topic-count-pill">${(cat.count && cat.count > 0) ? `(${cat.count})` : ''}</span>
+          </div>
+
+          ${hasSubs ? `
+            <div class="topic-sub-tree ${shouldAutoExpand ? 'expanded' : ''}" id="${subTreeId}">
+              ${cat.children.map((sub, sIdx) => {
+                const subHasChildren = sub.children && sub.children.length > 0;
+                const subKwMatches = kw && sub.title.toLowerCase().includes(kw);
+                const subChildMatches = kw && subHasChildren && sub.children.some(cc => cc.title.toLowerCase().includes(kw));
+                if (kw && !subKwMatches && !subChildMatches && !titleMatches) return '';
+
+                return `
+                  <div class="topic-sub-row" onclick="navigateToTopic('${sub.title}')">
+                    <div class="topic-sub-right">
+                      <span class="topic-sub-bullet" style="background: #087a62;"></span>
+                      <a href="../../library?category=${encodeURIComponent(sub.title)}" class="topic-sub-title" onclick="event.stopPropagation()">
+                        ${highlightKeyword(sub.title, kw)}
+                      </a>
+                    </div>
+                    <span class="topic-sub-count">${(sub.count && sub.count > 0) ? `(${sub.count})` : ''}</span>
+                  </div>
+                  ${subHasChildren ? `
+                    <div class="topic-sub3-container">
+                      ${sub.children.map(c3 => `
+                        <div class="topic-sub3-row" onclick="navigateToTopic('${c3.title}')">
+                          <span style="font-size: 8px; color: #087a62; margin-left: 6px;">▫</span>
+                          <a href="../../library?category=${encodeURIComponent(c3.title)}" class="topic-sub3-title" onclick="event.stopPropagation()">
+                            ${highlightKeyword(c3.title, kw)}
+                          </a>
+                          <span class="topic-sub-count">${(c3.count && c3.count > 0) ? `(${c3.count})` : ''}</span>
+                        </div>
+                      `).join('')}
+                    </div>
+                  ` : ''}
+                `;
+              }).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `;
+    });
+
+    container.innerHTML = html || '<div class="p-4 text-center text-muted">کوئی موضوع نہیں ملا</div>';
+  }
+
+  // Render 18 Major Categories View
+  function renderMajorTopicsView(majors, filterKeyword = '') {
+    const container = document.getElementById('majorTopicsListContainer');
+    if (!container) return;
+
+    let html = '';
+    const kw = (filterKeyword || '').trim().toLowerCase();
+
+    majors.forEach((major, idx) => {
+      const majorId = `major_${idx}`;
+      const subTreeId = `majorSub_${idx}`;
+      const hasChildren = major.children && major.children.length > 0;
+
+      const majorTitleMatches = kw && major.title.toLowerCase().includes(kw);
+      const majorSubMatches = kw && hasChildren && major.children.some(c => 
+        c.title.toLowerCase().includes(kw) || (c.children && c.children.some(cc => cc.title.toLowerCase().includes(kw)))
+      );
+
+      if (kw && !majorTitleMatches && !majorSubMatches) return;
+
+      const shouldExpand = Boolean(kw && majorSubMatches);
+
+      html += `
+        <div class="topic-row-group">
+          <div class="topic-row ${shouldExpand ? 'active' : ''}" onclick="toggleMajorNode('${subTreeId}', this, event)">
+            <div class="topic-row-right">
+              <span class="topic-circle-toggle">
+                <svg viewBox="0 0 24 24" width="19" height="19" stroke="#087a62" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <line x1="12" y1="7.5" x2="12" y2="16.5" class="svg-plus-vert"></line>
+                  <line x1="7.5" y1="12" x2="16.5" y2="12"></line>
+                </svg>
+              </span>
+              <span class="topic-title-text">
+                ${highlightKeyword(major.title.replace(/^(\d+[\s\-_۔.:\)]+)/, ''), kw)}
+              </span>
+              <span class="topic-chevron-indicator">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#087a62" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 8 12 13 18 8"></polyline>
+                  <polyline points="6 13 12 18 18 13"></polyline>
+                </svg>
+              </span>
+            </div>
+            ${(major.books_count && major.books_count > 0) 
+              ? `<span class="badge" style="background: #e0f2fe; color: #087a62; border: 1px solid #bae6fd; font-size: 11px;">${major.books_count} کتب</span>` 
+              : `<span class="badge" style="background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; font-size: 11px;">${major.topics_count} موضوعات</span>`}
+          </div>
+
+          <div class="topic-sub-tree ${shouldExpand ? 'expanded' : ''}" id="${subTreeId}">
+            ${(major.children || []).map(ch => `
+              <div class="topic-sub-row" onclick="navigateToTopic('${ch.title}')">
+                <div class="topic-sub-right">
+                  <span class="topic-sub-bullet" style="background: #087a62;"></span>
+                  <a href="../../library?category=${encodeURIComponent(ch.title)}" class="topic-sub-title" onclick="event.stopPropagation()">
+                    ${highlightKeyword(ch.title, kw)}
+                  </a>
+                </div>
+                <span class="topic-sub-count">${(ch.count && ch.count > 0) ? `(${ch.count})` : ''}</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html || '<div class="p-4 text-center text-muted">کوئی شعبہ نہیں ملا</div>';
+  }
+
+  // Toggle single node in Primary list
+  function togglePrimaryNode(subTreeId, rowEl, e) {
+    if (e && e.target && e.target.tagName.toLowerCase() === 'a') return;
+    const subTree = document.getElementById(subTreeId);
+    if (!subTree) return;
+
+    const isExpanded = subTree.classList.contains('expanded');
+
+    if (isExpanded) {
+      subTree.classList.remove('expanded');
+      rowEl.classList.remove('active');
+    } else {
+      subTree.classList.add('expanded');
+      rowEl.classList.add('active');
+    }
+  }
+
+  // Toggle Major node in 18 categories view
+  function toggleMajorNode(subTreeId, rowEl, e) {
+    if (e && e.target && e.target.tagName.toLowerCase() === 'a') return;
+    const subTree = document.getElementById(subTreeId);
+    if (!subTree) return;
+
+    const isExpanded = subTree.classList.contains('expanded');
+
+    if (isExpanded) {
+      subTree.classList.remove('expanded');
+      rowEl.classList.remove('active');
+    } else {
+      subTree.classList.add('expanded');
+      rowEl.classList.add('active');
+    }
+  }
+
+  // Toggle all nodes expand/collapse
+  function toggleAllDrawerNodes() {
+    isAllNodesExpanded = !isAllNodesExpanded;
+    const subTrees = document.querySelectorAll('.topic-sub-tree');
+    const rows = document.querySelectorAll('.topic-row');
+    const toggleBtn = document.getElementById('btnToggleAllNodes');
+
+    subTrees.forEach(st => {
+      if (isAllNodesExpanded) st.classList.add('expanded');
+      else st.classList.remove('expanded');
+    });
+
+    rows.forEach(r => {
+      if (isAllNodesExpanded) r.classList.add('active');
+      else r.classList.remove('active');
+    });
+
+    if (toggleBtn) {
+      toggleBtn.innerHTML = isAllNodesExpanded 
+        ? '<i class="fa-solid fa-angles-up ms-1"></i> سب بند کریں' 
+        : '<i class="fa-solid fa-angles-down ms-1"></i> سب کھولیں';
+    }
+  }
+
+  // Live search in drawer
+  let drawerSearchTimeout = null;
+  function onTopicsDrawerSearch(val) {
+    const clearBtn = document.getElementById('topicsDrawerSearchClear');
+    if (clearBtn) clearBtn.style.display = val ? 'block' : 'none';
+
+    if (drawerSearchTimeout) clearTimeout(drawerSearchTimeout);
+    drawerSearchTimeout = setTimeout(() => {
+      if (!TOPICS_DIRECTORY_DATA) return;
+      renderPrimaryTopicsView(TOPICS_DIRECTORY_DATA.primary_categories || [], val);
+      renderMajorTopicsView(TOPICS_DIRECTORY_DATA.major_categories || [], val);
+    }, 150);
+  }
+
+  // Clear drawer search
+  function clearTopicsDrawerSearch() {
+    const input = document.getElementById('topicsDrawerSearchInput');
+    if (input) {
+      input.value = '';
+      if (drawerSearchTimeout) clearTimeout(drawerSearchTimeout);
+      const clearBtn = document.getElementById('topicsDrawerSearchClear');
+      if (clearBtn) clearBtn.style.display = 'none';
+      if (TOPICS_DIRECTORY_DATA) {
+        renderPrimaryTopicsView(TOPICS_DIRECTORY_DATA.primary_categories || [], '');
+        renderMajorTopicsView(TOPICS_DIRECTORY_DATA.major_categories || [], '');
+      }
+      const stats = document.getElementById('topicsDrawerStatsBadge');
+      if (stats) stats.innerText = '۳۸۲ موضوعات · ۱۸ مرکزی شعبے';
+      input.focus();
+    }
+  }
+
+  // Highlight keyword helper
+  function highlightKeyword(text, keyword) {
+    if (!keyword || !text) return text;
+    const regex = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(regex, '<mark class="topic-highlight-match">$1</mark>');
+  }
+
+  // Navigate to topic
+  function navigateToTopic(topicName) {
+    closeTopicsDrawer();
+    window.location.href = `/library?category=${encodeURIComponent(topicName)}`;
+  }
+
+  // Auto-init on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Preload topics data immediately
+    setTimeout(loadTopicsDirectoryData, 50);
+  });
+</script>
+
+
+<script>
+  function toggleLibraryMobileNav() {
+    var links = document.getElementById('libMobileDrawer') || document.getElementById('libNavLinksWrap');
+    var actions = document.getElementById('libNavActionsWrap');
+    var btn = document.getElementById('libMobileToggle') || document.getElementById('libMobileNavToggleBtn');
+    if (links) links.classList.toggle('open');
+    if (actions) actions.classList.toggle('open');
+    if (btn) {
+      var icon = btn.querySelector('i');
+      if (icon) {
+        if (links && links.classList.contains('open')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
+      }
+    }
+  }
+
+  function toggleLibrarySearch(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var card = document.getElementById('libSearchCard');
+    if (!card) {
+      window.location.href = '/library?openSearch=1#libSearchCard';
+      return;
+    }
+
+    var isVisible = (card.style.display !== 'none' && card.classList.contains('open'));
+    if (isVisible) {
+      closeLibrarySearch();
+    } else {
+      openLibrarySearch();
+    }
+
+    // Close mobile drawer if open
+    var links = document.getElementById('libMobileDrawer');
+    if (links && links.classList.contains('open')) {
+      toggleLibraryMobileNav();
+    }
+  }
+
+  function openLibrarySearch() {
+    var card = document.getElementById('libSearchCard');
+    var trigger = document.getElementById('libNavSearchTrigger');
+    var input = document.getElementById('libSearchInput');
+    if (!card) {
+      window.location.href = '/library?openSearch=1#libSearchCard';
+      return;
+    }
+
+    card.style.display = 'block';
+    card.classList.add('open');
+
+    if (trigger) trigger.classList.add('active');
+
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (input && document.activeElement !== input) {
+      input.focus();
+    }
+  }
+
+  function closeLibrarySearch() {
+    var card = document.getElementById('libSearchCard');
+    var trigger = document.getElementById('libNavSearchTrigger');
+    if (!card) return;
+
+    card.classList.remove('open');
+    card.style.display = 'none';
+
+    if (trigger) trigger.classList.remove('active');
+  }
+
+  function focusLibrarySearch(e) {
+    toggleLibrarySearch(e);
+  }
+
+  // Keyboard shortcut: Escape to close search card
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      var card = document.getElementById('libSearchCard');
+      if (card && card.classList.contains('open')) {
+        closeLibrarySearch();
+      }
+    }
+  });
+</script>
+
+
+    <!-- HERO SECTION -->
+    <section class="authors-hero text-center">
+        <div class="container position-relative" style="z-index: 1;">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white text-success fw-bold" style="font-size: 0.85rem; background: rgba(255, 255, 255, 0.15) !important; color: #a7f3d0 !important;">
+                <i class="fa-solid fa-feather-pointed"></i> مصنفین و محققین کتب خانہ
+            </div>
+            <h1 class="authors-title">فہرستِ مصنّفین و مؤلفینِ کرام</h1>
+            <p class="authors-lead">
+                مرکزی اسلامی لائبریری کے ذخیرہ کتب میں شامل ائمہ اسلاف، مفسرین، محدثین، فقہاء اور معاصر علمائے کرام و محققین کی تصنیفات کی مکمل الف بائی فہرست۔
+            </p>
+
+            <form action="../../library/authors" method="GET" class="search-container">
+                <input type="text" name="search" value="" class="search-input" placeholder="مصنف کے نام سے تلاش کریں..." />
+                <i class="fa-solid fa-magnifying-glass search-icon-btn"></i>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section class="py-5 bg-light" style="min-height: 50vh;">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+                <div class="fw-bold text-dark" style="font-size: 1.1rem;">
+                    کل دستیاب مصنفین: <span class="badge bg-success rounded-pill px-3 py-2">41</span>
+                </div>
+                <div>
+                    <a href="../../library" class="btn btn-outline-success btn-sm rounded-pill px-3 fw-bold">
+                        <i class="fa-solid fa-arrow-right ms-1"></i> واپسی لائبریری
+                    </a>
+                </div>
+            </div>
+
+            
+                <div class="row g-4">
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شعبۂ تصنیف و تحقیق، صوبائی جمعیت اہل حدیث ممبئی">
+                                        شعبۂ تصنیف و تحقیق، صوبائی جمعیت اہل حدیث ممبئی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>7</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>28</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                سیرت و تاریخ، ردِ باطل و ادیان
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%D8%B9%D8%A8%DB%81%D9%94%20%D8%AA%D8%B5%D9%86%DB%8C%D9%81%20%D9%88%20%D8%AA%D8%AD%D9%82%DB%8C%D9%82%D8%8C%20%D8%B5%D9%88%D8%A8%D8%A7%D8%A6%DB%8C%20%D8%AC%D9%85%D8%B9%DB%8C%D8%AA%20%D8%A7%DB%81%D9%84%20%D8%AD%D8%AF%DB%8C%D8%AB%20%D9%85%D9%85%D8%A8%D8%A6%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عنایت اللہ مدنیؔ">
+                                        شیخ عنایت اللہ مدنیؔ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>4</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>20</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D9%86%D8%A7%DB%8C%D8%AA%20%D8%A7%D9%84%D9%84%DB%81%20%D9%85%D8%AF%D9%86%DB%8C%D8%94" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ محمد مقیم فیضی رحمہ اللہ">
+                                        شیخ محمد مقیم فیضی رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>2</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>10</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                حدیث و علوم الحدیث، فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%85%D9%82%DB%8C%D9%85%20%D9%81%DB%8C%D8%B6%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ صفی الرحمن مبارکپوری رحمہ اللہ">
+                                        شیخ صفی الرحمن مبارکپوری رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>2</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>10</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B5%D9%81%DB%8C%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86%20%D9%85%D8%A8%D8%A7%D8%B1%DA%A9%D9%BE%D9%88%D8%B1%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عبدالسلام سلفی حفظہ اللہ">
+                                        شیخ عبدالسلام سلفی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>2</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>10</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B3%D9%84%D9%81%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر سعید بن علی قحطانی">
+                                        ڈاکٹر سعید بن علی قحطانی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>2</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>10</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید، تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D8%B3%D8%B9%DB%8C%D8%AF%20%D8%A8%D9%86%20%D8%B9%D9%84%DB%8C%20%D9%82%D8%AD%D8%B7%D8%A7%D9%86%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="فضیلۃ الشیخ ڈاکٹر سعید بن علی بن وہف القحطانی رحمہ اللہ">
+                                        فضیلۃ الشیخ ڈاکٹر سعید بن علی بن وہف القحطانی رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D9%81%D8%B6%DB%8C%D9%84%DB%83%20%D8%A7%D9%84%D8%B4%DB%8C%D8%AE%20%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D8%B3%D8%B9%DB%8C%D8%AF%20%D8%A8%D9%86%20%D8%B9%D9%84%DB%8C%20%D8%A8%D9%86%20%D9%88%DB%81%D9%81%20%D8%A7%D9%84%D9%82%D8%AD%D8%B7%D8%A7%D9%86%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="امام صالح بن محمد بن نوح العمری الفلانی رحمہ اللہ (۱۱۲۶-۱۲۱۸ھ)">
+                                        امام صالح بن محمد بن نوح العمری الفلانی رحمہ اللہ (۱۱۲۶-۱۲۱۸ھ)
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>6</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%A7%D9%85%D8%A7%D9%85%20%D8%B5%D8%A7%D9%84%D8%AD%20%D8%A8%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D9%86%D9%88%D8%AD%20%D8%A7%D9%84%D8%B9%D9%85%D8%B1%DB%8C%20%D8%A7%D9%84%D9%81%D9%84%D8%A7%D9%86%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81%20(%DB%B1%DB%B1%DB%B2%DB%B6-%DB%B1%DB%B2%DB%B1%DB%B8%DA%BE)" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عنایت اللہ مدنیؔ حفظہ اللہ">
+                                        شیخ عنایت اللہ مدنیؔ حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>4</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                مقالات، خطبات و رسائل
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D9%86%D8%A7%DB%8C%D8%AA%20%D8%A7%D9%84%D9%84%DB%81%20%D9%85%D8%AF%D9%86%DB%8C%D8%94%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ صالح بن فوزان الفوزان حفظہ اللہ">
+                                        شیخ صالح بن فوزان الفوزان حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>4</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                مقالات، خطبات و رسائل
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B5%D8%A7%D9%84%D8%AD%20%D8%A8%D9%86%20%D9%81%D9%88%D8%B2%D8%A7%D9%86%20%D8%A7%D9%84%D9%81%D9%88%D8%B2%D8%A7%D9%86%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="علامہ بکر بن عبد اللہ ابو زید">
+                                        علامہ بکر بن عبد اللہ ابو زید
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>4</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                مقالات، خطبات و رسائل
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B9%D9%84%D8%A7%D9%85%DB%81%20%D8%A8%DA%A9%D8%B1%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%84%DB%81%20%D8%A7%D8%A8%D9%88%20%D8%B2%DB%8C%D8%AF" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="العلامۃ المحدث الشیخ عبد الرحمن السہارنفوری رحمہ اللہ">
+                                        العلامۃ المحدث الشیخ عبد الرحمن السہارنفوری رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>1</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                مخطوطات و کتب نادرہ
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%85%DB%83%20%D8%A7%D9%84%D9%85%D8%AD%D8%AF%D8%AB%20%D8%A7%D9%84%D8%B4%DB%8C%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86%20%D8%A7%D9%84%D8%B3%DB%81%D8%A7%D8%B1%D9%86%D9%81%D9%88%D8%B1%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="استاز ڈاکٹر محمد بن حسین بن حسین جیزانی">
+                                        استاز ڈاکٹر محمد بن حسین بن حسین جیزانی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%A7%D8%B3%D8%AA%D8%A7%D8%B2%20%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%A8%D9%86%20%D8%AD%D8%B3%DB%8C%D9%86%20%D8%AC%DB%8C%D8%B2%D8%A7%D9%86%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر ہشام بن عبد الملک">
+                                        ڈاکٹر ہشام بن عبد الملک
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%DB%81%D8%B4%D8%A7%D9%85%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%85%D9%84%DA%A9" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ ربیع بن ہادی المدخلی">
+                                        شیخ ربیع بن ہادی المدخلی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B1%D8%A8%DB%8C%D8%B9%20%D8%A8%D9%86%20%DB%81%D8%A7%D8%AF%DB%8C%20%D8%A7%D9%84%D9%85%D8%AF%D8%AE%D9%84%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ المعید مدنی">
+                                        شیخ المعید مدنی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                قرآن و علوم القرآن
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%A7%D9%84%D9%85%D8%B9%DB%8C%D8%AF%20%D9%85%D8%AF%D9%86%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="علامہ ناصر الدین البانی رحمہ اللہ">
+                                        علامہ ناصر الدین البانی رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B9%D9%84%D8%A7%D9%85%DB%81%20%D9%86%D8%A7%D8%B5%D8%B1%20%D8%A7%D9%84%D8%AF%DB%8C%D9%86%20%D8%A7%D9%84%D8%A8%D8%A7%D9%86%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر محمد ابراہیم الحمد">
+                                        ڈاکٹر محمد ابراہیم الحمد
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D8%A8%D8%B1%D8%A7%DB%81%DB%8C%D9%85%20%D8%A7%D9%84%D8%AD%D9%85%D8%AF" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ مختار احمد محمدی مدنیؔ">
+                                        شیخ مختار احمد محمدی مدنیؔ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D9%85%D8%AE%D8%AA%D8%A7%D8%B1%20%D8%A7%D8%AD%D9%85%D8%AF%20%D9%85%D8%AD%D9%85%D8%AF%DB%8C%20%D9%85%D8%AF%D9%86%DB%8C%D8%94" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="محمد ناظم بن عبد المجید">
+                                        محمد ناظم بن عبد المجید
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                سیرت و تاریخ
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D9%85%D8%AD%D9%85%D8%AF%20%D9%86%D8%A7%D8%B8%D9%85%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%85%D8%AC%DB%8C%D8%AF" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ ظفرالحسن مدنی">
+                                        شیخ ظفرالحسن مدنی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B8%D9%81%D8%B1%D8%A7%D9%84%D8%AD%D8%B3%D9%86%20%D9%85%D8%AF%D9%86%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ یوسف بن حسن الحمادی">
+                                        شیخ یوسف بن حسن الحمادی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%A8%D9%86%20%D8%AD%D8%B3%D9%86%20%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D8%AF%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ محمد مقیم فیضیؔ رحمہ اللہ">
+                                        شیخ محمد مقیم فیضیؔ رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                سیرت و تاریخ
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D9%85%D8%AD%D9%85%D8%AF%20%D9%85%D9%82%DB%8C%D9%85%20%D9%81%DB%8C%D8%B6%DB%8C%D8%94%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عبدالسلام سلفی">
+                                        شیخ عبدالسلام سلفی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B3%D9%84%D9%81%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="فضیلۃ الشیخ یوسف بن حسن الحمادی حفظہ اللہ">
+                                        فضیلۃ الشیخ یوسف بن حسن الحمادی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D9%81%D8%B6%DB%8C%D9%84%DB%83%20%D8%A7%D9%84%D8%B4%DB%8C%D8%AE%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%A8%D9%86%20%D8%AD%D8%B3%D9%86%20%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D8%AF%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ صالح المنجد حفظہ اللہ">
+                                        شیخ صالح المنجد حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B5%D8%A7%D9%84%D8%AD%20%D8%A7%D9%84%D9%85%D9%86%D8%AC%D8%AF%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عنات اللہ مدنی حفظہ اللہ">
+                                        شیخ عنات اللہ مدنی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D9%84%DB%81%20%D9%85%D8%AF%D9%86%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ ابو القاسم سیف بنارسی رحمہ اللہ">
+                                        شیخ ابو القاسم سیف بنارسی رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%A7%D8%A8%D9%88%20%D8%A7%D9%84%D9%82%D8%A7%D8%B3%D9%85%20%D8%B3%DB%8C%D9%81%20%D8%A8%D9%86%D8%A7%D8%B1%D8%B3%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر عبد القیوم بن محمد شفیع بستوی مدنیؔ">
+                                        ڈاکٹر عبد القیوم بن محمد شفیع بستوی مدنیؔ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                سیرت و تاریخ
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%82%DB%8C%D9%88%D9%85%20%D8%A8%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%B4%D9%81%DB%8C%D8%B9%20%D8%A8%D8%B3%D8%AA%D9%88%DB%8C%20%D9%85%D8%AF%D9%86%DB%8C%D8%94" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="فضیلۃ الشیخ یوسف بن الحمادی حفظہ اللہ">
+                                        فضیلۃ الشیخ یوسف بن الحمادی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D9%81%D8%B6%DB%8C%D9%84%DB%83%20%D8%A7%D9%84%D8%B4%DB%8C%D8%AE%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%A8%D9%86%20%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D8%AF%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ عبد السلام بن برجس آل عبد الکریم">
+                                        شیخ عبد السلام بن برجس آل عبد الکریم
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%A8%D9%86%20%D8%A8%D8%B1%D8%AC%D8%B3%20%D8%A7%D9%93%D9%84%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%DA%A9%D8%B1%DB%8C%D9%85" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ یوسف بن عبد اللہ بن یوسف الوابل">
+                                        شیخ یوسف بن عبد اللہ بن یوسف الوابل
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%20%D8%A7%D9%84%D9%84%DB%81%20%D8%A8%D9%86%20%DB%8C%D9%88%D8%B3%D9%81%20%D8%A7%D9%84%D9%88%D8%A7%D8%A8%D9%84" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="شیخ الاسلام محمد بن عبدالوھاب رحمہ اللہ">
+                                        شیخ الاسلام محمد بن عبدالوھاب رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                فتاویٰ و عبادات
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B4%DB%8C%D8%AE%20%D8%A7%D9%84%D8%A7%D8%B3%D9%84%D8%A7%D9%85%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%88%DA%BE%D8%A7%D8%A8%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="علامہ احمد بن محمد دہلوی مدنی رحمہ اللٰہ">
+                                        علامہ احمد بن محمد دہلوی مدنی رحمہ اللٰہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                حدیث و علوم الحدیث
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B9%D9%84%D8%A7%D9%85%DB%81%20%D8%A7%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%AF%DB%81%D9%84%D9%88%DB%8C%20%D9%85%D8%AF%D9%86%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%D9%B0%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر محمد غیث غیث">
+                                        ڈاکٹر محمد غیث غیث
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%BA%DB%8C%D8%AB%20%D8%BA%DB%8C%D8%AB" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="علامہ احمد بن محمد الدہلوی">
+                                        علامہ احمد بن محمد الدہلوی
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                حدیث و علوم الحدیث
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B9%D9%84%D8%A7%D9%85%DB%81%20%D8%A7%D8%AD%D9%85%D8%AF%20%D8%A8%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A7%D9%84%D8%AF%DB%81%D9%84%D9%88%DB%8C" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="امام بر بہاری رحمہ اللہ">
+                                        امام بر بہاری رحمہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%A7%D9%85%D8%A7%D9%85%20%D8%A8%D8%B1%20%D8%A8%DB%81%D8%A7%D8%B1%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="ڈاکٹر محمد ضیاء الرحمن اعظمی حفظہ اللہ">
+                                        ڈاکٹر محمد ضیاء الرحمن اعظمی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                قرآن و علوم القرآن
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%B6%DB%8C%D8%A7%D8%A1%20%D8%A7%D9%84%D8%B1%D8%AD%D9%85%D9%86%20%D8%A7%D8%B9%D8%B8%D9%85%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="عبدالمعید مدنی مدنی حفظہ اللہ">
+                                        عبدالمعید مدنی مدنی حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                حدیث و علوم الحدیث
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D9%85%D8%B9%DB%8C%D8%AF%20%D9%85%D8%AF%D9%86%DB%8C%20%D9%85%D8%AF%D9%86%DB%8C%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="امام حرم ڈاکٹر سعودبن ابراہیم الشریم حفظہ اللہ">
+                                        امام حرم ڈاکٹر سعودبن ابراہیم الشریم حفظہ اللہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                تربیت، اخلاق و دعوت
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B1%D9%85%20%DA%88%D8%A7%DA%A9%D9%B9%D8%B1%20%D8%B3%D8%B9%D9%88%D8%AF%D8%A8%D9%86%20%D8%A7%D8%A8%D8%B1%D8%A7%DB%81%DB%8C%D9%85%20%D8%A7%D9%84%D8%B4%D8%B1%DB%8C%D9%85%20%D8%AD%D9%81%D8%B8%DB%81%20%D8%A7%D9%84%D9%84%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <div class="author-card">
+                                <div>
+                                    <div class="author-avatar">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                    </div>
+                                    <h3 class="author-name" title="مولانا حافظ حکیم ابو یحيیٰ محمد شاہجہاں پوری رحمہ">
+                                        مولانا حافظ حکیم ابو یحيیٰ محمد شاہجہاں پوری رحمہ
+                                    </h3>
+                                    <div class="author-stats-badge">
+                                        <span class="stat-pill" title="کل کتب">
+                                            <i class="fa-solid fa-book me-1"></i> کتب: <strong>1</strong>
+                                        </span>
+                                        <span class="stat-pill" title="کل دستیاب نسخے">
+                                            <i class="fa-solid fa-layer-group me-1"></i> نسخے: <strong>5</strong>
+                                        </span>
+                                    </div>
+                                    
+                                        <div class="text-center mb-3">
+                                            <span class="badge bg-white text-secondary border px-2 py-1" style="font-size: 0.75rem;">
+                                                عقائد و توحید
+                                            </span>
+                                        </div>
+                                    
+                                </div>
+                                <a href="../../library?search=%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7%20%D8%AD%D8%A7%D9%81%D8%B8%20%D8%AD%DA%A9%DB%8C%D9%85%20%D8%A7%D8%A8%D9%88%20%DB%8C%D8%AD%D9%8A%DB%8C%D9%B0%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%B4%D8%A7%DB%81%D8%AC%DB%81%D8%A7%DA%BA%20%D9%BE%D9%88%D8%B1%DB%8C%20%D8%B1%D8%AD%D9%85%DB%81" class="author-btn">
+                                    <span>کتب ملاحظہ کریں</span>
+                                    <i class="fa-solid fa-arrow-left"></i>
+                                </a>
+                            </div>
+                        </div>
+                    
+                </div>
+            
+        </div>
+    </section>
+
+    <footer>
+  <div class="up">
+    <i class="fa-solid fa-angles-up"></i>
+  </div>
+  <div class="main-container">
+    <div class="container2">
+      <div class="row justify-content-center">
+        <div
+          class="footer-1 order-lg-1 order-xl-1 order-md-3 order-sm-4 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          <h1 class="heading">میڈیا اپڈیٹ</h1>
+
+          <div class="card">
+            <div class="map facebook-iframe">
+              <iframe
+                loading="lazy"
+                title="Subai Jamiat Ahle Hadees Mumbai Facebook"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsubaijamiatahlehadeesmumbai1&tabs=timeline&width=300&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+
+            <div class="social-media">
+              <a target="_blank" rel="noopener noreferrer" class="facebook" href="https://www.facebook.com/subaijamiatahlehadeesmumbai1/">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a target="_blank" rel="noopener noreferrer" class="twitter" href="https://twitter.com/JamiatSubai">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+
+              <a target="_blank" rel="noopener noreferrer" class="telegram" href="https://t.me/SubaiJamiatAhleHadeesMumbai1">
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+
+              <a target="_blank" rel="noopener noreferrer" class="youtube" href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+
+              <a target="_blank" rel="noopener noreferrer" class="instagram" href="https://www.instagram.com/subaijamiatahlehadeesmum/">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a target="_blank" rel="noopener noreferrer" class="whatsapp" href="https://wa.me/+919892555244">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          <h1 class="heading">برائے رابطہ</h1>
+
+          <div class="card">
+            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+
+            <p>
+              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+            </p>
+
+            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+
+            <p>
+              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
+              : ای میل
+            </p>
+
+            <div class="map">
+              <iframe class="map-iframe"
+                title="Subai Jamiat Ahle Hadees Mumbai Office Map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15082.976817056155!2d72.876789!3d19.074981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c88d36afb7f1%3A0xf8ec2199824eb5a7!2sSubai%20Jamiat%20Ahle%20Hadees%20Mumbai%20(Office)!5e0!3m2!1sen!2sin!4v1687245054497!5m2!1sen!2sin"
+                width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          <h1 class="heading">تازہ ترین</h1>
+
+          <div class="card">
+            <a href="../../library/publications"> کتاب التوحید </a>
+
+            <a href="../../library/publications">علمی و دعوتی خیانت</a>
+
+            <a href="../../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+
+            <a href="../../library/publications"> طالب علم کا زیور </a>
+
+            <a href="../../library/publications"> جدید مناہج کی حقیقت </a>
+
+            <a href="../../aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+
+            <a href="../../aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+
+            <a href="../../aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+
+            <a href="../../aljama">
+              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          <h1 class="heading">اقسام</h1>
+
+          <div class="card">
+            <a href="../../"> سرورق </a>
+
+            <a href="../../introduction"> تعارف </a>
+
+            <a href="../../aljama"> مجلہ الجماعہ </a>
+
+            <a href="../../library"> لائبریری </a>
+
+            <a href="../../library/publications"> مطبوعات </a>
+
+            <a href="../../press-release"> پریس ریلیز </a>
+
+            <a href="../../fatawa"> فتاویٰ </a>
+
+            <a href="../../tausia"> توصیہ </a>
+
+            <a href="../../contact"> رابطہ کریں </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="copyright">
+  <span>
+    2026
+      &nbsp;&nbsp; &copy; &nbsp;&nbsp;
+      جملہ حقوق برائے صوبائی جمعیت اہل حدیث
+      ممبئی محفوظ ہیں
+  </span>
+</div>
+
+<!-- talimi inami musabqa -->
+<div class="alert" id="footerAlertBar" dir="rtl">
+  <button type="button" onclick="this.parentElement.style.display='none'" style="background:transparent;border:none;color:#fff;font-size:1.6rem;cursor:pointer;float:left;line-height:1;padding:0 8px;" title="بند کریں">&times;</button>
+  تعلیمی انعامی مقابلہ ٢٠٢٦ میں رجسٹریشن کے لیے یہاں کلک کریں:
+  <a target="_blank" href="../../talimi-inami-musabqa-registeration">رجسٹریشن فارم</a>
+</div>
+
+
+
+  <!-- tadribiya -->
+
+
+
+
+
+<!-- Unified Share, Copy, and Report Interaction Suite -->
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     UNIFIED INTERACTION SYSTEM (SHARE MODAL, REPORT DIALOG, TOAST FEEDBACK)
+     Visual Benchmark: Reference Images 3 & 4
+     Subai Jamiat Ahle Hadees Mumbai
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<link rel="stylesheet" href="../../css/share-interaction.css" />
+
+<!-- 1. SHARE MODAL (Reference Image 4 Benchmark) -->
+<div id="sjShareModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjShareModalTitle">
+  <div class="sj-modal-dialog" onclick="event.stopPropagation()">
+    <!-- Modal Header -->
+    <div class="sj-modal-header">
+      <h3 id="sjShareModalTitle" class="sj-modal-title">
+        <i class="fa-solid fa-share-nodes" style="color: #2563eb; font-size: 17px; margin-left: 6px;"></i>
+        شیئر کریں (انشر المادة)
+      </h3>
+      <button type="button" class="sj-modal-close" onclick="SJInteraction.closeAllModals()" aria-label="بند کریں">&times;</button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="sj-modal-body">
+      <!-- 4 Circular Social Sharing Buttons (Image 4) -->
+      <div class="sj-social-row">
+        <!-- 1. Telegram -->
+        <a id="sjShareTelegram" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-telegram" title="ٹیلیگرام پر شیئر کریں">
+          <i class="fa-brands fa-telegram"></i>
+        </a>
+
+        <!-- 2. WhatsApp -->
+        <a id="sjShareWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-whatsapp" title="واٹس ایپ پر شیئر کریں">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- 3. X (Twitter) -->
+        <a id="sjShareX" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-x" title="ایکس پر شیئر کریں">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <!-- 4. Facebook -->
+        <a id="sjShareFacebook" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-facebook" title="فیس بک پر شیئر کریں">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <!-- Short URL Input Field (Image 4) -->
+      <div class="sj-share-input-wrap">
+        <input type="text" id="sjShareShortUrlInput" class="sj-share-input" readonly value="https://ahlehadeesmumbai.com/f/share" title="مختصر لنک (کلک کر کے کاپی کریں)" />
+      </div>
+
+      <!-- Bottom Pill Copy Short Link Action (Image 4) -->
+      <div class="sj-share-pill-wrap">
+        <button type="button" id="sjBtnCopyShortPill" class="sj-btn-copy-short">
+          <i class="fa-regular fa-copy"></i>
+          <span>مختصر لنک کاپی کریں</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. REPORT ERROR DIALOG (غلطی کی نشاندہی) -->
+<div id="sjReportModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjReportModalTitle">
+  <div class="sj-modal-dialog sj-report-dialog" onclick="event.stopPropagation()">
+    <!-- Modal Header -->
+    <div class="sj-modal-header" style="background: linear-gradient(135deg, #fff7ed 0%, #fef2f2 100%); border-bottom: 1px solid #fee2e2;">
+      <h3 id="sjReportModalTitle" class="sj-modal-title" style="color: #991b1b;">
+        <i class="fa-solid fa-triangle-exclamation" style="color: #dc2626; font-size: 17px; margin-left: 6px;"></i>
+        غلطی کی نشاندہی (Report Error)
+      </h3>
+      <button type="button" class="sj-modal-close" onclick="SJInteraction.closeAllModals()" aria-label="بند کریں">&times;</button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="sj-modal-body">
+      <!-- Target Content Context -->
+      <div class="sj-report-context">
+        <div><b>عنوان:</b> <span id="sjReportContextTitle">صفحہ / مواد</span></div>
+        <div style="font-size: 11.5px; color: #64748b; margin-top: 2px; direction: ltr; text-align: right;" id="sjReportContextUrl">URL</div>
+      </div>
+
+      <form id="sjReportForm">
+        <!-- Error Type Selection Chips -->
+        <div class="sj-form-group">
+          <label class="sj-form-label">غلطی کی نوعیت منتخب فرمائیں:</label>
+          <div class="sj-error-chips-grid">
+            <label class="sj-error-chip-label active">
+              <input type="radio" name="sj_error_type" value="text" checked />
+              <span>📝 متن / املا کی غلطی</span>
+            </label>
+            <label class="sj-error-chip-label">
+              <input type="radio" name="sj_error_type" value="citation" />
+              <span>📖 حوالہ / حدیث کی غلطی</span>
+            </label>
+            <label class="sj-error-chip-label">
+              <input type="radio" name="sj_error_type" value="information" />
+              <span>⚖️ معلوماتی یا شرعی وضاحت</span>
+            </label>
+            <label class="sj-error-chip-label">
+              <input type="radio" name="sj_error_type" value="other" />
+              <span>❓ دیگر متعلقہ خرابی</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Description Textarea -->
+        <div class="sj-form-group">
+          <label for="sjReportDescription" class="sj-form-label">مسئلے کی وضاحت (لازمی):</label>
+          <textarea id="sjReportDescription" class="sj-textarea" placeholder="براہ کرم غلطی کی تفصیل یا صحیح حوالہ تحریر فرمائیں تاکہ تصحیح کی جا سکے..." required minlength="5"></textarea>
+        </div>
+
+        <!-- Optional Contact Information -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+          <div>
+            <label for="sjReportUserName" class="sj-form-label" style="font-size: 12px;">آپ کا نام (اختیاری):</label>
+            <input type="text" id="sjReportUserName" class="sj-input" placeholder="نام" />
+          </div>
+          <div>
+            <label for="sjReportUserContact" class="sj-form-label" style="font-size: 12px;">فون / ای میل (اختیاری):</label>
+            <input type="text" id="sjReportUserContact" class="sj-input" placeholder="رابطہ نمبر یا ای میل" />
+          </div>
+        </div>
+
+        <!-- Status Message Box -->
+        <div id="sjReportStatusMsg" style="display: none; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 14px;"></div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="sjBtnSubmitReport" class="sj-btn-submit-report">
+          <span>ارسال کریں (Submit Report)</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- 3. FLOATING TOAST FEEDBACK NOTIFICATION -->
+<div id="sjToastFeedback" class="sj-toast-feedback">
+  <i class="fa-solid fa-circle-check"></i>
+  <span>✓ لنک کلپ بورڈ پر کاپی ہو گیا</span>
+</div>
+
+<script src="../../js/share-interaction.js"></script>
+
+
+</body>
+</html>

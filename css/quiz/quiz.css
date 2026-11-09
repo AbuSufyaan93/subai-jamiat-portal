@@ -1,0 +1,495 @@
+/* nastalique fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Noto Nastaliq Urdu", serif;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #282828;
+}
+
+.container {
+    margin: unset;
+    max-width: unset;
+    padding: 0;
+    background: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container .start-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../../images/bg-gif.gif") rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+}
+
+.container .start-container button {
+    border-color: white;
+    color: white;
+}
+
+.container button {
+    height: 60px;
+    padding-inline: 40px;
+    width: fit-content;
+    border-radius: 30px;
+    background: transparent;
+    border: 2px solid #136C00;
+    color: #136C00;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container .hero button .btn-icon {
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.heading {
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+    line-height: 3;
+}
+
+.container {
+    min-height: 100vh;
+}
+
+.container form {
+    max-height: 95%;
+    overflow-y: auto;
+    border-radius: 0;
+    background: white;
+}
+
+
+.container form::-webkit-scrollbar {
+    display: none;
+}
+
+ul {
+    list-style-position: inside;
+    padding: 0;
+}
+
+.note {
+    padding: 0;
+    color: crimson;
+    border: none;
+}
+
+.note a {
+    color: white;
+    background: rgba(220, 20, 60, 0.7);
+    /* border: 2px solid crimson; */
+    padding: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.note a:hover {
+    background: #00d999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.note ul li {
+    margin: 10px 0;
+}
+
+/* -------------------------- simple quiz application without colorful ---------------------- */
+
+.container {
+    background: #f0f0f0;
+}
+
+.questionContainer {
+    width: 500px;
+    max-width: 95%;
+    padding: 0;
+}
+
+.questionContainer.active {
+    display: block;
+}
+
+
+.questionContainer .options {
+    list-style: none;
+    padding-inline: 20px;
+}
+
+
+.questionContainer input {
+    padding: 0;
+}
+
+.questionContainer span {
+    margin-left: 10px;
+}
+
+.questionContainer .options li {
+    margin: 20px 0;
+    display: flex;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.questionContainer .options li label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.question-wrapper .quiz-header {
+    border-bottom: 1px solid #a8a8a8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 15px 20px;
+    margin-bottom: 10px;
+    column-gap: 15px;
+}
+
+
+.question-wrapper .quiz-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: white;
+}
+
+.question-wrapper .quiz-body .question {
+    background: white;
+    padding-bottom: 5px;
+    padding-inline: 20px;
+    font-size: 18px;
+}
+
+
+/* ---------------------------- color ful quiz design ---------------------------------------  */
+/* 
+
+.questionContainer span,
+label {
+    display: inline-block !important;
+    margin-right: 10px;
+}
+
+
+.questionContainer {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    background: #f0f0f0;
+    background: white;
+    padding: 0;
+}
+
+.questionContainer .options {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    grid-template-rows: repeat(2, auto);
+    margin-top: auto;
+    padding-inline: 20px;
+}
+
+.questionContainer input {
+    padding: 0;
+}
+
+
+
+.questionContainer .question {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #282828;
+    line-height: 2.6;
+}
+
+
+.questionContainer .options li {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+
+.questionContainer .options li span.form-check {
+    display: none;
+}
+
+.questionContainer .options li label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.questionContainer .options li:nth-child(2) {
+    background: #005AC5;
+    border: 5px outset #02418f;
+}
+
+.questionContainer .options li:nth-child(3) {
+    background: #136C00;
+    border: 5px outset #0f4e01;
+
+}
+
+.questionContainer .options li:nth-child(4) {
+    background: #D28D01;
+    border: 5px outset #744d01;
+
+}
+
+.questionContainer .options li:last-child {
+    background: #CD1C24;
+    border: 5px outset #8f1319;
+
+}
+
+
+.questionContainer .options li:nth-child(2):focus,
+.questionContainer .options li:nth-child(2):hover,
+.questionContainer .options li.active:nth-child(2) {
+    background: #02418f !important;
+}
+
+.questionContainer .options li:nth-child(3):focus,
+.questionContainer .options li:nth-child(3):hover,
+.questionContainer .options li.active:nth-child(3) {
+    background: #0f4e01 !important;
+}
+
+.questionContainer .options li:nth-child(4):focus,
+.questionContainer .options li:nth-child(4):hover,
+.questionContainer .options li.active:nth-child(4) {
+    background: #744d01 !important;
+}
+
+.questionContainer .options li:last-child:focus,
+.questionContainer .options li:last-child:hover,
+.questionContainer .options li.active:last-child {
+    background: #8f1319 !important;
+}
+
+
+.question-wrapper .quiz-header {
+    border-bottom: 1px solid #a8a8a8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 15px 20px;
+    margin-bottom: 10px;
+    column-gap: 15px;
+}
+
+.question-wrapper .quiz-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+
+.question-wrapper .quiz-body .question {
+    background: white;
+    padding-bottom: 5px;
+    padding-inline: 20px;
+} */
+
+
+/* quiz color ful design ends here */
+
+
+li {
+    line-height: 2.5;
+}
+
+.question-wrapper {
+    height: 100%;
+    display: none;
+    flex-direction: column;
+}
+
+.question-wrapper.active {
+    display: flex;
+}
+
+.question-wrapper .next-btn-container,
+.submit-btn-container {
+    /* width: fit-content; */
+    /* margin-right: auto; */
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* with submit btn visible */
+/* .question-wrapper .next-btn-container{
+    {
+    display: none;
+} */
+
+/* with submit btn hided */
+/*
+.question-wrapper .next-btn-container
+
+, .question-wrapper .submit-btn-container{
+    display: none;
+} */
+
+
+
+
+
+/* quiz time design with minute */
+
+/*
+.question-wrapper .quiz-header .quiz-time {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    background: #f0f0f0;
+    padding-right: 8px;
+    overflow: hidden;
+    border-radius: 5px;
+    line-height: 1.4;
+} */
+
+
+/* quiz time design without minute */
+
+.question-wrapper .quiz-header .quiz-time {
+    display: flex;
+    background: #f0f0f0;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+
+.question-wrapper .quiz-header .quiz-time div.time-label {
+    padding-right: 8px;
+    background: #f0f0f0;
+    border: 4px outset #f0f0f0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.question-wrapper .quiz-header .quiz-time div.time {
+    background: #282828;
+    padding-bottom: 8px;
+    padding-inline: 5px;
+    color: white;
+    border: 4px inset black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.question-wrapper .quiz-header .quiz-time .time span {
+    margin-inline: 3px;
+}
+
+.question-wrapper .quiz-header .quiz-time .time :where(.minute, .second) {
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.question-wrapper .quiz-header .quiz-time .time span.text {
+    margin-left: 0;
+    margin-right: 3px;
+}
+
+
+form div {
+    margin: 0;
+}
+
+.question-wrapper .quiz-header .quiz-title {
+    font-size: 25px;
+}
+
+/* form wrapper design here */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background:url('../images/bg-gif.gif') rgba(0, 0, 0, 0.5);
+    background-size:cover;
+    background-blend-mode: multiply; */
+    background: #f0f0f0;
+}
+
+.form-wrapper .form {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    max-width: 100%;
+    margin-inline: 15px;
+}
+
+.form-wrapper .form label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.form-wrapper .form input {
+    height: 40px;
+    margin-bottom: 15px;
+    padding-inline: 10px;
+}
+
+
+@media screen and (max-width:768px) {
+
+    .options {
+        margin-top: 50px;
+    }
+
+    .questionContainer .options {
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(4, auto);
+    }
+
+}
+
+/* when quiz is not available box design*/
+.box{
+    padding:20px;
+    background:white;
+    box-shadow:0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius:5px;
+    font-size:25px;
+    width:300px;
+    max-width:100%;
+    text-align:center;
+}

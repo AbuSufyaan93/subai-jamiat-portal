@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Montserrat", "Noto Nastaliq Urdu", sans-serif;
+}
+
+.container {
+    margin: 0;
+    max-width: unset;
+    padding: 20px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container table {
+    width: fit-content;
+    text-align: center;
+    line-height: 2;
+    flex-shrink: 0 !important;
+}
+
+.container table tr {
+    padding: 15px 0;
+}
+
+.container .table-container {
+    overflow-x: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+iframe {
+    width: 200px;
+    height: 200px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.nav-item .nav-link {
+    color: white;
+}
+
+.pagination {
+    padding: 10px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 15px;
+}
+
+.pagination a {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 35px;
+    padding-inline: 20px;
+    background: #0004AC;
+    transition: all 0.3s ease;
+
+}
+
+.pagination a:hover {
+    background: #01037c;
+}
+
+.pagination a.inactive {
+
+    background: grey;
+    pointer-events: none;
+
+}
+
+.no-break {
+    white-space: nowrap;
+}
