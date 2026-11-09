@@ -12,17 +12,25 @@
 
   <link rel="icon" href="./images/logo-square.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="./css/bootstrap-grid.css" />
-  <link rel="stylesheet" href="./css/content.css" />
-  <link rel="stylesheet" href="./css/footer.css" />
-  <script defer src="./javascript/script.js"></script>
 
   <style>
+    @font-face {
+      font-family: "Mehr";
+      src: url("./fonts/mehr.ttf");
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      scroll-behavior: smooth;
+    }
+
     :root {
       --yt-bg: #f8fafc;
       --yt-surface: #ffffff;
@@ -66,9 +74,191 @@
       transition: background 0.25s ease, color 0.25s ease;
     }
 
-    /* Hide global main website navbar on standalone YouTube portal */
-    body > header .nav-container {
-      display: none !important;
+    /* =====================================================
+       0. ORGANIZED INSTITUTIONAL TOP HEADER (.yt-inst-topbar)
+       ===================================================== */
+    .yt-inst-topbar {
+      background: linear-gradient(135deg, #042214 0%, #0a5c36 55%, #063720 100%);
+      border-bottom: 2px solid rgba(201, 168, 76, 0.55);
+      color: #ffffff;
+      position: relative;
+      z-index: 1120;
+      box-shadow: 0 4px 18px rgba(4, 34, 20, 0.18);
+    }
+
+    .yt-inst-topbar-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .yt-inst-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .yt-inst-logo-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(135deg, #f3d27a, #c9a84c);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0;
+    }
+
+    .yt-inst-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #fff;
+      display: block;
+    }
+
+    .yt-inst-title-group {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.35;
+    }
+
+    .yt-inst-main-name {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .yt-inst-sub-dept {
+      font-size: 0.76rem;
+      color: #fde68a;
+      font-weight: 600;
+    }
+
+    .yt-inst-nav-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .yt-inst-nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 50px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .yt-inst-nav-link i {
+      color: #fde68a;
+      font-size: 0.8rem;
+    }
+
+    .yt-inst-nav-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      border-color: rgba(243, 210, 122, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .yt-inst-nav-link.active {
+      background: linear-gradient(135deg, #c9a84c, #f3d27a);
+      color: #042214 !important;
+      border-color: #fde68a;
+      box-shadow: 0 4px 12px rgba(201, 168, 76, 0.35);
+    }
+
+    .yt-inst-nav-link.active i {
+      color: #042214 !important;
+    }
+
+    .yt-inst-utility {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+
+    .yt-inst-date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(243, 210, 122, 0.35);
+      color: #fde68a;
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .yt-inst-lang-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50px;
+      padding: 2px;
+    }
+
+    .yt-inst-lang-btn {
+      padding: 2px 9px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      transition: all 0.18s;
+    }
+
+    .yt-inst-lang-btn.active,
+    .yt-inst-lang-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .yt-inst-donate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid #fde68a;
+      box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .yt-inst-donate-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(245, 158, 11, 0.45);
     }
 
     /* =====================================================
@@ -1862,11 +2052,11 @@
 
     /* YouTube 15-by-15 Auto-Refresher Sentinel & Skeleton Shimmer */
     .yt-infinite-sentinel {
-      margin: 28px 0 18px;
-      padding: 18px 22px;
-      background: var(--yt-surface);
-      border: 1px dashed var(--yt-border);
-      border-radius: 18px;
+      margin: 32px 0 28px;
+      padding: 20px 26px;
+      background: linear-gradient(135deg, var(--yt-surface) 0%, var(--yt-surface-2) 100%);
+      border: 1.5px solid rgba(201, 168, 76, 0.42);
+      border-radius: 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -1875,11 +2065,27 @@
       box-shadow: var(--yt-card-shadow);
     }
 
+    .yt-sentinel-done-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .yt-sentinel-quick-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .yt-refresher-status {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.96rem;
+      font-size: 0.98rem;
       font-weight: 700;
       color: var(--yt-text);
     }
@@ -1900,7 +2106,7 @@
 
     .yt-progress-track {
       width: 100%;
-      max-width: 380px;
+      max-width: 420px;
       height: 7px;
       background: var(--yt-surface-2);
       border-radius: 50px;
@@ -1909,7 +2115,7 @@
 
     .yt-progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--yt-emerald), var(--yt-red));
+      background: linear-gradient(90deg, var(--yt-emerald), var(--yt-gold), var(--yt-red));
       border-radius: 50px;
       transition: width 0.35s ease;
     }
@@ -1945,11 +2151,294 @@
       100% { background-position: -200% 0; }
     }
 
+    /* =====================================================
+       10. ORGANIZED 4-COLUMN INSTITUTIONAL FOOTER (.yt-inst-footer)
+       ===================================================== */
+    .yt-inst-footer {
+      margin-top: 38px;
+      background: linear-gradient(165deg, #042214 0%, #063720 48%, #04190e 100%);
+      color: #f8fafc;
+      border-top: 3px solid var(--yt-gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .yt-inst-footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(243, 210, 122, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+      background-size: 28px 28px, 56px 56px;
+      pointer-events: none;
+    }
+
+    .yt-footer-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .yt-footer-cta-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 22px 26px;
+      margin-top: 26px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(243, 210, 122, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .yt-footer-cta-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .yt-footer-cta-brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fde68a;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    .yt-footer-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .yt-footer-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .yt-footer-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #fde68a;
+    }
+
+    .yt-footer-btn.yt-sub {
+      background: linear-gradient(135deg, #ff0033, #cc0029);
+      border-color: #ff4d6d;
+      box-shadow: 0 6px 18px rgba(255, 0, 51, 0.32);
+    }
+
+    .yt-footer-btn.yt-gold {
+      background: linear-gradient(135deg, #c9a84c, #f3d27a);
+      color: #042214;
+      border-color: #fde68a;
+    }
+
+    .yt-footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      padding: 30px 0 26px;
+    }
+
+    .yt-footer-col {
+      background: rgba(15, 23, 42, 0.34);
+      border: 1px solid rgba(201, 168, 76, 0.26);
+      border-radius: 18px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .yt-footer-col-title {
+      margin: 0 0 14px 0;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid rgba(201, 168, 76, 0.35);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fde68a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .yt-footer-desc {
+      margin: 0 0 14px 0;
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .yt-footer-social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .yt-footer-social-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .yt-footer-social-item:hover {
+      background: rgba(243, 210, 122, 0.18);
+      border-color: #fde68a;
+      transform: translateY(-2px);
+    }
+
+    .yt-footer-social-item i {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .yt-footer-links-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .yt-footer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 9px;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 0.88rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid transparent;
+      transition: all 0.18s ease;
+      cursor: pointer;
+    }
+
+    .yt-footer-link:hover {
+      background: rgba(201, 168, 76, 0.16);
+      border-color: rgba(243, 210, 122, 0.35);
+      color: #fde68a;
+      transform: translateX(-3px);
+    }
+
+    .yt-footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .yt-footer-contact-item i {
+      color: #fde68a;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .yt-footer-contact-item a {
+      color: #fde68a;
+      text-decoration: none;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    .yt-footer-map-box {
+      margin-top: auto;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1.5px solid rgba(243, 210, 122, 0.4);
+      height: 135px;
+      background: #0f172a;
+    }
+
+    .yt-footer-map-box iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .yt-footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 14px 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .yt-footer-notice-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      background: rgba(245, 158, 11, 0.16);
+      border: 1px solid rgba(253, 230, 138, 0.45);
+      color: #fde68a;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .yt-footer-notice-pill:hover {
+      background: rgba(245, 158, 11, 0.28);
+      color: #fff;
+    }
+
     /* Floating Scroll-to-Top & Feed Status Button */
     .yt-scroll-top-fab {
       position: fixed;
-      bottom: 80px;
-      right: 24px;
+      bottom: 24px;
+      left: 24px;
       background: linear-gradient(135deg, #0a5c36, #063720);
       color: #fff;
       border: 1.5px solid var(--yt-gold);
@@ -1977,6 +2466,12 @@
       border-color: var(--yt-red);
     }
 
+    @media (max-width: 1100px) {
+      .yt-footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 992px) {
       .yt-watch-grid {
         grid-template-columns: 1fr;
@@ -1991,6 +2486,9 @@
     }
 
     @media (max-width: 640px) {
+      .yt-inst-topbar-inner {
+        justify-content: center;
+      }
       .yt-topbar-inner {
         gap: 10px;
       }
@@ -2013,890 +2511,84 @@
       .yt-reel-side-controls {
         flex-direction: row;
       }
+      .yt-footer-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
-  <link rel="canonical" href="http://127.0.0.1:5000/video-gallery">
+  <link rel="canonical" href="http://localhost:5000/video-gallery">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://localhost:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://localhost:5000","logo":"http://localhost:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://localhost:5000/#website","url":"http://localhost:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://localhost:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://localhost:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
 </head>
 
 <body>
-  <!-- Standard Top Header Banner (Logo clicks return to /) -->
-  <!-- <div class="chat-container">
-
-    <div class="head">
-        <div class="logo">
-            <img src="./images/favicon.png" alt="">
-            <p>
-
-                صوبائی جمعیت اہل حدیث ممبئی</p>
+  <!-- =====================================================
+       0. ORGANIZED INSTITUTIONAL TOP BAR (صوبائی جمعیت اہل حدیث ممبئی — شعبہ میڈیا و نشریات)
+       ===================================================== -->
+  <header class="yt-inst-topbar" aria-label="صوبائی جمعیت اہل حدیث ممبئی ہیڈر">
+    <div class="yt-inst-topbar-inner">
+      <!-- Right: Official Emblem & Institutional Identity (Clicks return to /) -->
+      <a href="./index.html" class="yt-inst-identity" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
+        <div class="yt-inst-logo-wrap">
+          <img
+            src="./images/youtube-channel-logo.jpg"
+            alt="صوبائی جمعیت اہل حدیث ممبئی"
+            onerror="this.onerror=null; this.src='./images/logo-square.png';"
+          />
         </div>
-        <div class="close">
-            <i class="fa-solid fa-angle-down"></i>
+        <div class="yt-inst-title-group">
+          <span class="yt-inst-main-name">
+            صوبائی جمعیت اہل حدیث ممبئی
+            <i class="fas fa-check-circle" style="color:#34d399; font-size:0.82rem;" title="آفیشل پورٹل"></i>
+          </span>
+          <span class="yt-inst-sub-dept">شعبۂ میڈیا و نشریات — آفیشل یوٹیوب و ڈیجیٹل پورٹل</span>
         </div>
-
-    </div>
-    <div class="chat-body">
-
-        <div class="chat-wrapper">
-
-            <div class="chat bot">
-                <div class="message-container">
-
-                    <div class="message">
-                        <p>
-                            أهلا وسهلا ومرحبا
-                        </p>
-                        <p>
-
-                            السلام عليكم ورحمة الله وبركاته
-
-                        </p>
-                    </div>
-                    <span class="time">8:27PM</span>
-</div>
-<img src="./images/bot.png" alt="">
-</div>
-
-<div class="chat-btn">
-    آگے بڑھنے کے لیے یہاں کلک کریں۔
-</div>
-
-<div class="chat user">
-                <div class="message-container">
-
-                    <div class="message">
-                        <p>
-                            وعلیکم اسلام ورحمت اللہ و برکا تہ اور خیریت ہے
-                        </p>
-                    </div>
-                    <span class="time">8:27PM</span>
-                </div>
-            </div>
-
-</div>
-
-<div class="chat-input">
-
-    <input type="text" placeholder="چیٹ بوٹ">
-
-</div>
-
-</div>
-</div>
--->
-<!-- <a class="chat-icon" href="javascript:void(Tawk_API.toggle())">
-
-     <i class="fa-brands fa-rocketchat"></i>
-    <img src="./images/chaticon.png" width="100%" />
-
-</a> -->
-
-<!-- social icons design starts here  -->
-
-<div class="social-icon-arrow">
-
-    <div class="arrow active">
-        <i class="fa-solid fa-angle-left"></i>
-    </div>
-    <div class="donate">
-
-        <a href="./donate" target="_blank"><i class="fa-solid fa-hand-holding-dollar"></i></a>
-
-    </div>
-
-</div>
-
-<div class="social-icon">
-
-
-    <a target="_blank" class="icon facebook" href="https://www.facebook.com/subaijamiatahlehadeesmumbai1/">
-
-        <i class="fa-brands fa-facebook-f"></i>
-
-    </a>
-    <a target="_blank" class="icon twitter" href="https://twitter.com/JamiatSubai">
-
-        <i class="fa-brands fa-twitter"></i>
-
-    </a>
-
-    <a target="_blank" class="icon telegram" href="https://t.me/SubaiJamiatAhleHadeesMumbai1">
-
-        <i class="fa-brands fa-telegram"></i>
-
-    </a>
-
-    <!-- <a target="_blank" class="icon google-plus" href="https://plus.google.com/+SubaiJamiatAhleHadeesMumbai">
-
-            <i class="fa-brands fa-google-plus-g"></i>
-
-        </a> -->
-
-    <a target="_blank" class="icon youtube" href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai">
-
-        <i class="fa-brands fa-youtube"></i>
-
-    </a>
-    <a target="_blank" class="icon instagram" href="https://www.instagram.com/subaijamiatahlehadeesmum/">
-
-        <i class="fa-brands fa-instagram"></i>
-
-    </a>
-
-    <a target="_blank" href="https://wa.me/+919892555244" class="icon whatsapp">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-    </a>
-    <div class="icon arrow-close">
-        <i class="fa-solid fa-angle-left"></i>
-    </div>
-
-
-</div>
-
-<!-- first header starts here  -->
-
-<div class="header">
-
-    <div class="main-container">
-
-        <div class="custom-container">
-
-            <div class="left">
-
-                <a class="donate" target="_blank" href="./donate">
-                    تعاون کریں
-                </a>
-
-                <div class="menu language-container">
-
-                    <i class="fa-solid fa-globe"></i></span>
-
-                    <div class="language">
-
-                        <a href="./index.html" class="lang active">اردو زبان</a>
-                        <a href="./ar" class="lang">عربی زبان</a>
-                        <a href="./pending" class="lang">English</a>
-
-                    </div>
-
-                </div>
-
-                <div class="calender">
-
-                    <!-- <i class="fa-solid fa-calendar-days"></i> -->
-                    <i data-DateForMoon="15" class="MoonAccordingDate"></i>
-
-                    <div class="date">
-
-
-                        <span dir="rtl" class="arabic-date">
-                            15 شوال 1447ھ
-                        </span>
-                        <span class="english-date"></span>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-            <div class="flow">
-                <marquee direction="right" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="4">
-                    <p class="upcoming-event">صوبائی جمعیت اہل حدیث ممبئی کے زیر اہتمام مختلف اضلاع میں دعوتی و تعلیمی پروگرامز کا انعقاد جاری ہے۔ تفصیلات کے لیے دفتر سے رابطہ کریں۔</p>
-                </marquee>
-            </div>
-
-            <a href="./imp-notice" target="_blank" class="headline" title="تازہ ترین اہم اطلاع ملاحظہ کریں">
-                <i class="fa-solid fa-bullhorn" style="font-size: 11px; margin-left: 4px;"></i>
-                اہم اطلاع
-            </a>
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-<!-- second header starts here  -->
-
-
-<div class="header2-container">
-
-    <div class="main-container">
-
-        <div class="header2">
-
-            <a href="./index.html" class="image logo-1" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
-
-                <img src="./images/favicon.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
-
-            </a>
-
-            <a href="./index.html" class="image logo-3" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
-
-                <img src="./images/logo-text.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
-
-            </a>
-        </div>
-
-    </div>
-</div>
-
-<!-- navbar design starts here  -->
-
-<!-- UNIVERSAL STANDALONE DEPARTMENT PORTAL HEADER, SEARCH ENGINE & SHARE SYSTEM -->
-<!-- Subai Jamiat Ahle Hadees Mumbai — ہر شعبہ کا مستقل اور معیاری پورٹل -->
-
-
-
-<style>
-  /* ─── STANDALONE DEPARTMENT PORTAL LAYOUT OVERRIDES ─── */
-  /* Hide old homepage left/right sidebars and make center column full-width portal */
-  section#content .column-left,
-  section#content .column-right {
-    display: none !important;
-  }
-  section#content .column-center {
-    flex: 0 0 100% !important;
-    max-width: 1260px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-  section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
-    padding-top: 4px !important;
-    min-height: 82vh;
-  }
-
-  /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
-  .sj-dept-portal-nav {
-    background: #ffffff;
-    border-bottom: 2px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
-    direction: rtl;
-    text-align: right;
-  }
-  .sj-dept-nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 64px;
-    gap: 12px;
-  }
-  .sj-dept-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #065f46;
-    flex-shrink: 0;
-  }
-  .sj-dept-brand-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-    color: #0f766e;
-    border: 1px solid #5eead4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
-  }
-  .sj-dept-brand-text h1 {
-    font-size: 18px;
-    font-weight: 800;
-    margin: 0;
-    line-height: 1.25;
-    color: #065f46;
-  }
-  .sj-dept-brand-text span {
-    font-size: 11px;
-    color: #64748b;
-    font-weight: 600;
-    display: block;
-    margin-top: 2px;
-  }
-  .sj-dept-links {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-  }
-  .sj-dept-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 13px;
-    border-radius: 8px;
-    color: #334155;
-    text-decoration: none;
-    font-size: 13.5px;
-    font-weight: 700;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
-  .sj-dept-link i {
-    color: #0f766e;
-    font-size: 13.5px;
-  }
-  .sj-dept-link:hover {
-    background: #f0fdfa;
-    color: #0f766e;
-  }
-  .sj-dept-link.active {
-    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-    color: #065f46 !important;
-    border: 1px solid #5eead4;
-    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
-  }
-  .sj-dept-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .btn-dept-share {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 13px;
-    background: #fffbeb;
-    color: #b45309 !important;
-    border: 1px solid #fde68a;
-    border-radius: 9px;
-    font-size: 12.5px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-  .btn-dept-share:hover {
-    background: #fef3c7;
-    border-color: #fcd34d;
-  }
-  .btn-dept-mainhome {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
-    color: #ffffff !important;
-    border-radius: 9px;
-    font-size: 12.5px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.2);
-    white-space: nowrap;
-  }
-  .sj-dept-mobile-btn {
-    display: none;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
-    padding: 7px 12px;
-    border-radius: 8px;
-    font-size: 17px;
-    cursor: pointer;
-  }
-
-  /* ─── BREADCRUMB, COMPACT SEARCH ENGINE & SUB-PORTAL SWITCHER HUB ─── */
-  .sj-dept-hub-wrap {
-    max-width: 1260px;
-    margin: 14px auto 10px;
-    padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
-    direction: rtl;
-    text-align: right;
-  }
-  .sj-dept-top-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    background: #ffffff;
-    border: 1.5px solid #99f6e4;
-    border-top: 3.5px solid #0f766e;
-    border-radius: 14px;
-    padding: 10px 16px;
-    box-shadow: 0 4px 16px rgba(15, 118, 110, 0.05);
-    margin-bottom: 12px;
-  }
-  .sj-dept-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-  .sj-dept-breadcrumb a {
-    color: #475569;
-    text-decoration: none;
-    font-weight: 700;
-  }
-  .sj-dept-breadcrumb a:hover {
-    color: #0f766e;
-  }
-
-  /* Compact, Appropriately-Sized Search Engine inside Department Portal */
-  .sj-dept-search-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex: 1 1 360px;
-    max-width: 540px;
-  }
-  .sj-dept-search-input-wrap {
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  .sj-dept-search-input {
-    width: 100%;
-    height: 36px;
-    border: 1px solid #cbd5e1;
-    border-radius: 9px;
-    background: #f8fafc;
-    color: #0f172a;
-    font-family: inherit;
-    font-size: 13px;
-    padding: 5px 32px 5px 26px;
-    outline: none;
-    transition: all 0.2s;
-  }
-  .sj-dept-search-input:focus {
-    border-color: #0f766e;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
-  }
-  .sj-dept-search-icon {
-    position: absolute;
-    right: 10px;
-    color: #0f766e;
-    font-size: 13px;
-    pointer-events: none;
-  }
-  .sj-dept-voice-btn {
-    height: 36px;
-    padding: 0 11px;
-    background: #fffbeb;
-    color: #b45309;
-    border: 1px solid #fcd34d;
-    border-radius: 9px;
-    font-family: inherit;
-    font-size: 11.5px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-  }
-
-  /* Sub-Portal Quick Cards Strip */
-  .sj-dept-subcards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .sj-dept-subcard {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-right: 3.5px solid #cbd5e1;
-    border-radius: 12px;
-    padding: 10px 14px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-  }
-  .sj-dept-subcard:hover {
-    border-color: #99f6e4;
-    border-right-color: #0f766e;
-    background: #f0fdfa;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(15, 118, 110, 0.08);
-  }
-  .sj-dept-subcard.active {
-    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
-    border-color: #5eead4;
-    border-right: 4px solid #0f766e;
-    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
-  }
-  .sj-dept-subcard-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #0f172a;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .sj-dept-subcard.active .sj-dept-subcard-title {
-    color: #065f46;
-  }
-  .sj-dept-subcard-desc {
-    font-size: 11px;
-    color: #64748b;
-    margin-top: 2px;
-    line-height: 1.5;
-  }
-
-  /* Share Modal */
-  .sj-dept-share-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.72);
-    z-index: 99999;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    backdrop-filter: blur(4px);
-    direction: rtl;
-    text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
-  }
-  .sj-dept-share-modal.open {
-    display: flex;
-  }
-  .sj-dept-share-box {
-    background: #ffffff;
-    border-radius: 18px;
-    max-width: 520px;
-    width: 100%;
-    border: 1.5px solid #99f6e4;
-    box-shadow: 0 24px 55px rgba(0,0,0,0.3);
-    overflow: hidden;
-  }
-
-  @media (max-width: 1024px) {
-    .sj-dept-mobile-btn {
-      display: inline-flex;
-      align-items: center;
-    }
-    .sj-dept-nav-container {
-      flex-wrap: wrap;
-      padding: 10px 16px;
-    }
-    .sj-dept-links {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      align-items: stretch;
-      padding-top: 10px;
-      border-top: 1px solid #e2e8f0;
-      margin-top: 8px;
-    }
-    .sj-dept-links.open {
-      display: flex;
-    }
-    .sj-dept-actions {
-      width: 100%;
-      justify-content: flex-end;
-      padding-top: 6px;
-    }
-  }
-</style>
-
-<!-- 1. STICKY STANDALONE DEPARTMENT PORTAL NAVIGATION BAR -->
-<header class="sj-dept-portal-nav" id="sjDeptPortalNav">
-  <div class="sj-dept-nav-container">
-    <!-- RIGHT: DEPARTMENT BRAND & IDENTITY -->
-    <a href="./press-release" class="sj-dept-brand">
-      <div class="sj-dept-brand-icon">
-        <i class="fa-solid fa-photo-film"></i>
-      </div>
-      <div class="sj-dept-brand-text">
-        <h1>شعبۂ میڈیا و نشریات پورٹل</h1>
-        <span>صوبائی جمعیت اہل حدیث ممبئی — پریس ریلیز، ویڈیو گیلری، پوسٹرز اور اعلانات</span>
-      </div>
-    </a>
-
-    <!-- MOBILE TOGGLE -->
-    <button type="button" class="sj-dept-mobile-btn" onclick="document.getElementById('sjDeptLinks').classList.toggle('open')">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <!-- CENTER: DEPARTMENT SUB-PAGES & TOOLS -->
-    <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ میڈیا و نشریات پورٹل">
-      <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
-        <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
-        <span>مرکزی سرورق</span>
       </a>
-      
-        
-        <a href="./press-release" class="sj-dept-link ">
-          <i class="fa-solid fa-file-signature"></i>
-          <span>پریس ریلیز و اعلامیے</span>
+
+      <!-- Center: Organized Department & Portal Switcher Pills -->
+      <nav class="yt-inst-nav-pills" aria-label="شعبہ جات نیویگیشن">
+        <a href="./index.html" class="yt-inst-nav-link" title="مرکزی سرورق">
+          <i class="fas fa-home"></i> مرکزی سرورق
         </a>
-      
-        
-        <a href="./video-gallery" class="sj-dept-link active">
-          <i class="fa-solid fa-circle-play"></i>
-          <span>ویڈیو گیلری و بیانات</span>
+        <a href="./press-release" class="yt-inst-nav-link" title="پریس ریلیز و اعلامیے">
+          <i class="fas fa-file-signature"></i> پریس ریلیز
         </a>
-      
-        
-        <a href="./posters" class="sj-dept-link ">
-          <i class="fa-solid fa-image"></i>
-          <span>پوسٹرز و دعوتی اشتہارات</span>
+        <a href="./video-gallery" class="yt-inst-nav-link active" title="ویڈیو گیلری و بیانات">
+          <i class="fas fa-play-circle"></i> ویڈیو گیلری
         </a>
-      
-        
-        <a href="./imp-notice" class="sj-dept-link ">
-          <i class="fa-solid fa-bell"></i>
-          <span>اہم اعلانات</span>
+        <a href="./posters" class="yt-inst-nav-link" title="پوسٹرز و دعوتی اشتہارات">
+          <i class="fas fa-images"></i> دعوتی پوسٹرز
         </a>
-      
-    </nav>
-
-    <!-- LEFT: SHARE PORTAL LINK & BACK TO MAIN WEBSITE -->
-    <div class="sj-dept-actions">
-      <button type="button" class="btn-dept-share" onclick="openDeptShareModal()" title="اس شعبہ یا صفحہ کا پروفیشنل لنک شیئر کریں">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>لنک شیئر کریں</span>
-      </button>
-
-      <a href="./index.html" class="btn-dept-mainhome" title="مرکزی ویب سائٹ کے سرورق پر واپس جائیں">
-        <i class="fa-solid fa-house"></i>
-        <span>مرکزی ویب سائٹ</span>
-      </a>
-    </div>
-  </div>
-</header>
-
-
-
-
-<!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
-<div class="sj-dept-share-modal" id="sjDeptShareModal" onclick="if(event.target===this) closeDeptShareModal()">
-  <div class="sj-dept-share-box">
-    <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
-      <h3 style="margin: 0; font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-share-nodes"></i> شعبۂ میڈیا و نشریات پورٹل — لنک شیئر کریں
-      </h3>
-      <button type="button" onclick="closeDeptShareModal()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">&times;</button>
-    </div>
-    <div style="padding: 20px;">
-      <p style="margin: 0 0 10px 0; font-size: 13.5px; color: #475569;">
-        اس مستقل شعبہ / پورٹل کا براہِ راست لنک کاپی کریں یا واٹس ایپ اور سوشل میڈیا پر شیئر کریں:
-      </p>
-      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-        <input
-          type="text"
-          id="sjDeptShareUrlInput"
-          readonly
-          style="flex: 1; height: 40px; padding: 6px 12px; border: 1.5px solid #cbd5e1; border-radius: 9px; font-family: monospace; font-size: 13px; direction: ltr; text-align: left; background: #f8fafc; color: #0f172a;"
-        />
-        <button type="button" onclick="copyDeptPortalUrl()" id="sjDeptCopyBtn" style="background: #0f766e; color: #fff; border: none; border-radius: 9px; padding: 0 16px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer;">
-          <i class="fa-regular fa-copy"></i> کاپی کریں
-        </button>
-      </div>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <a id="sjShareWaLink" href="#" target="_blank" style="flex: 1; background: #16a34a; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-          <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر شیئر کریں
+        <a href="./fikh-w-fatawa" class="yt-inst-nav-link" title="فقہ و فتاویٰ پورٹل">
+          <i class="fas fa-scale-balanced"></i> فقہ و فتاویٰ
         </a>
-        <a id="sjShareTgLink" href="#" target="_blank" style="flex: 1; background: #0284c7; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-          <i class="fa-brands fa-telegram"></i> ٹیلیگرام پر شیئر کریں
+        <a href="./aljama" class="yt-inst-nav-link" title="ماہنامہ مجلہ الجماعۃ">
+          <i class="fas fa-book-open"></i> مجلہ الجماعۃ
+        </a>
+        <a href="./library" class="yt-inst-nav-link" title="مرکزی اسلامی لائبریری">
+          <i class="fas fa-book-quran"></i> لائبریری
+        </a>
+        <a href="./imp-notice" class="yt-inst-nav-link" title="اہم اعلانات">
+          <i class="fas fa-bullhorn"></i> اہم اطلاع
+        </a>
+      </nav>
+
+      <!-- Left: Hijri Date, Language Switcher & Donate CTA -->
+      <div class="yt-inst-utility">
+        <span class="yt-inst-date-pill" title="ہجری تاریخ">
+          <i class="fas fa-moon"></i>
+          <span>15 شوال 1447ھ</span>
+        </span>
+        <div class="yt-inst-lang-group" aria-label="زبان کا انتخاب">
+          <a href="./index.html" class="yt-inst-lang-btn active">اردو</a>
+          <a href="./ar" class="yt-inst-lang-btn">عربي</a>
+        </div>
+        <a href="./donate" class="yt-inst-donate-btn" title="دعوتی و تعلیمی مدات میں مالی تعاون کریں">
+          <i class="fas fa-hand-holding-heart"></i> تعاون کریں
         </a>
       </div>
     </div>
-  </div>
-</div>
-
-<script>
-  function openDeptShareModal() {
-    var modal = document.getElementById('sjDeptShareModal');
-    var inp = document.getElementById('sjDeptShareUrlInput');
-    var wa = document.getElementById('sjShareWaLink');
-    var tg = document.getElementById('sjShareTgLink');
-    var url = window.location.href;
-    var title = document.title || 'شعبۂ میڈیا و نشریات پورٹل';
-    if (inp) inp.value = url;
-    if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + '\n' + url);
-    if (tg) tg.href = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
-    if (modal) modal.classList.add('open');
-  }
-
-  function closeDeptShareModal() {
-    var modal = document.getElementById('sjDeptShareModal');
-    if (modal) modal.classList.remove('open');
-  }
-
-  function copyDeptPortalUrl() {
-    var inp = document.getElementById('sjDeptShareUrlInput');
-    var btn = document.getElementById('sjDeptCopyBtn');
-    if (!inp) return;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(inp.value).then(function() {
-        if (btn) {
-          btn.innerHTML = '<i class="fa-solid fa-check"></i> کاپی ہو گیا!';
-          setTimeout(function() { btn.innerHTML = '<i class="fa-regular fa-copy"></i> کاپی کریں'; }, 2000);
-        }
-      });
-    }
-  }
-
-  function filterDeptPageContent(query) {
-    var q = (query || '').trim().toLowerCase();
-    // If page has its own dedicated search input (e.g., masajid or aina-e-jamiat), sync with it as well
-    var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
-    pageInputs.forEach(function(inp) {
-      if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
-        inp.value = query;
-        inp.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-    });
-
-    // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
-    if (items.length > 0) {
-      items.forEach(function(el) {
-        var txt = (el.textContent || '').toLowerCase();
-        el.style.display = (!q || txt.includes(q)) ? '' : 'none';
-      });
-    }
-  }
-
-  var deptVoiceRec = null;
-  function startDeptVoiceSearch() {
-    var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var inp = document.getElementById('sjDeptLiveSearchInput');
-    var txt = document.getElementById('sjDeptVoiceTxt');
-    if (!SpeechRec) {
-      if (inp) inp.focus();
-      return;
-    }
-    deptVoiceRec = new SpeechRec();
-    deptVoiceRec.lang = 'ur-PK';
-    deptVoiceRec.onstart = function() { if (txt) txt.textContent = 'بولیں...'; };
-    deptVoiceRec.onresult = function(e) {
-      var tr = e.results[0][0].transcript;
-      if (inp && tr) {
-        inp.value = tr.trim();
-        filterDeptPageContent(inp.value);
-      }
-    };
-    deptVoiceRec.onend = function() { if (txt) txt.textContent = 'آواز سے سرچ'; };
-    deptVoiceRec.start();
-  }
-</script>
-
-
-<style id="gdocs-scrollbar-override">
-/*-----------------------------------------------------
-   Google Docs / Google Workspace Ultra-Thin Light Scrollbar
-------------------------------------------------------*/
-
-::-webkit-scrollbar {
-  width: 7px !important;
-  height: 7px !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.18) !important;
-  background-image: none !important;
-  border-radius: 999px !important;
-  border: 1px solid transparent !important;
-  background-clip: padding-box !important;
-  box-shadow: none !important;
-  min-height: 36px !important;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.32) !important;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background-color: rgba(0, 0, 0, 0.45) !important;
-}
-
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-corner {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: transparent !important;
-}
-
-body *::-webkit-scrollbar {
-  width: 5px !important;
-  height: 5px !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-body *::-webkit-scrollbar-track {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-body *::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.15) !important;
-  background-image: none !important;
-  border-radius: 999px !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-body *:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.22) !important;
-}
-
-body *::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.36) !important;
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
-  }
-}
-</style>
-<script>
-  (function(){
-    if ('caches' in window) {
-      caches.keys().then(function(keys){
-        keys.forEach(function(k){
-          if (k.indexOf('sjahm-static-v4') === -1) caches.delete(k);
-        });
-      }).catch(function(){});
-    }
-  })();
-</script>
+  </header>
 
   
 
@@ -3908,309 +3600,254 @@ body *::-webkit-scrollbar-thumb:hover {
     }, { passive: true });
   </script>
 
-  <!-- Footer -->
-  <footer>
-  <div class="up">
-    <i class="fa-solid fa-angles-up"></i>
-  </div>
-  <div class="main-container">
-    <div class="container2">
-      <div class="row justify-content-center">
-        <div
-          class="footer-1 order-lg-1 order-xl-1 order-md-3 order-sm-4 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">میڈیا اپڈیٹ</h1>
-
-          <div class="card">
-            <div class="map facebook-iframe">
-              <iframe
-                loading="lazy"
-                title="Subai Jamiat Ahle Hadees Mumbai Facebook"
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fsubaijamiatahlehadeesmumbai1&tabs=timeline&width=300&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-                style="border: none; overflow: hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-
-            <div class="social-media">
-              <a target="_blank" rel="noopener noreferrer" class="facebook" href="https://www.facebook.com/subaijamiatahlehadeesmumbai1/">
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" class="twitter" href="https://twitter.com/JamiatSubai">
-                <i class="fa-brands fa-twitter"></i>
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" class="telegram" href="https://t.me/SubaiJamiatAhleHadeesMumbai1">
-                <i class="fa-solid fa-paper-plane"></i>
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" class="youtube" href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai">
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" class="instagram" href="https://www.instagram.com/subaijamiatahlehadeesmum/">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-
-              <a target="_blank" rel="noopener noreferrer" class="whatsapp" href="https://wa.me/+919892555244">
-                <i class="fa-brands fa-whatsapp"></i>
-              </a>
-            </div>
+  <!-- =====================================================
+       ORGANIZED INSTITUTIONAL FOOTER (نیچے کا منظم و مرتب حصہ)
+       ===================================================== -->
+  <footer class="yt-inst-footer">
+    <div class="yt-inst-footer-inner">
+      <!-- Top Action & Subscription Strip -->
+      <div class="yt-footer-cta-strip">
+        <div class="yt-footer-cta-brand">
+          <img
+            src="./images/youtube-channel-logo.jpg"
+            alt="صوبائی جمعیت اہل حدیث ممبئی"
+            onerror="this.onerror=null; this.src='./images/logo-square.png';"
+          />
+          <div class="yt-footer-cta-titles">
+            <h3>صوبائی جمعیت اہل حدیث ممبئی — آفیشل یوٹیوب و ڈیجیٹل میڈیا سینٹر</h3>
+            <p>کتاب و سنت کی خالص دعوت، مستند علمائے کرام کے دروس، فتاویٰ، شارٹس اور علمی سیریز کا مرکزی پلیٹ فارم</p>
           </div>
         </div>
-
-        <div
-          class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
-
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
-
-            <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
-            </p>
-
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
-
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
-            </p>
-
-            <div class="map">
-              <iframe class="map-iframe"
-                title="Subai Jamiat Ahle Hadees Mumbai Office Map"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15082.976817056155!2d72.876789!3d19.074981!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c88d36afb7f1%3A0xf8ec2199824eb5a7!2sSubai%20Jamiat%20Ahle%20Hadees%20Mumbai%20(Office)!5e0!3m2!1sen!2sin!4v1687245054497!5m2!1sen!2sin"
-                width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
+        <div class="yt-footer-cta-actions">
+          <a
+            href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai?sub_confirmation=1"
+            target="_blank"
+            rel="noopener"
+            class="yt-footer-cta-btn yt"
+          >
+            <i class="fab fa-youtube"></i> یوٹیوب چینل سبسکرائب کریں
+          </a>
+          <button type="button" class="yt-footer-cta-btn studio" onclick="openUploadStudioModal('video')">
+            <i class="fas fa-cloud-upload-alt"></i> + ریل / ویڈیو اپلوڈ اسٹوڈیو
+          </button>
+          <a
+            href="https://wa.me/919892255244"
+            target="_blank"
+            rel="noopener"
+            class="yt-footer-cta-btn wa"
+          >
+            <i class="fab fa-whatsapp"></i> واٹس ایپ رابطہ
+          </a>
+          <a href="./donate" class="yt-footer-cta-btn gold">
+            <i class="fas fa-hand-holding-heart"></i> مالی تعاون کریں
+          </a>
         </div>
+      </div>
 
-        <div
-          class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
-
-          <div class="card">
-            <a href="./library/publications"> کتاب التوحید </a>
-
-            <a href="./library/publications">علمی و دعوتی خیانت</a>
-
-            <a href="./library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
-
-            <a href="./library/publications"> طالب علم کا زیور </a>
-
-            <a href="./library/publications"> جدید مناہج کی حقیقت </a>
-
-            <a href="./aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
-
-            <a href="./aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
-
-            <a href="./aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
-
-            <a href="./aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+      <!-- 4-Column Organized Grid -->
+      <div class="yt-footer-grid">
+        <!-- Column 1: About & Social Media Channels -->
+        <div class="yt-footer-col">
+          <div class="yt-footer-col-head">
+            <span class="yt-footer-col-icon"><i class="fas fa-broadcast-tower"></i></span>
+            <h4>میڈیا اپڈیٹ و سوشل میڈیا</h4>
+          </div>
+          <p class="yt-footer-about-text">
+            صوبائی جمعیت اہل حدیث ممبئی کے آفیشل سوشل میڈیا چینلز سے جڑیں تاکہ ہر نیا خطبۂ جمعہ، علمی درس، دعوتی ریل اور اہم اعلامیہ بروقت آپ تک پہنچ سکے۔
+          </p>
+          <div class="yt-footer-social-grid">
+            <a href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic yt"><i class="fab fa-youtube"></i></span>
+              <span>یوٹیوب چینل</span>
+            </a>
+            <a href="https://www.facebook.com/subaijamiatahlehadeesmumbai1/" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic fb"><i class="fab fa-facebook-f"></i></span>
+              <span>فیس بک پیج</span>
+            </a>
+            <a href="https://wa.me/919892255244" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic wa"><i class="fab fa-whatsapp"></i></span>
+              <span>واٹس ایپ چینل</span>
+            </a>
+            <a href="https://t.me/ahlehadeesmumbai" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic tg"><i class="fab fa-telegram-plane"></i></span>
+              <span>ٹیلی گرام چینل</span>
+            </a>
+            <a href="https://x.com/ahlehadees_mum" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic tw"><i class="fab fa-twitter"></i></span>
+              <span>ایکس (ٹویٹر)</span>
+            </a>
+            <a href="https://www.instagram.com/ahlehadeesmumbai/" target="_blank" rel="noopener" class="yt-footer-social-card">
+              <span class="soc-ic ig"><i class="fab fa-instagram"></i></span>
+              <span>انسٹاگرام</span>
             </a>
           </div>
         </div>
 
-        <div
-          class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+        <!-- Column 2: Video Gallery Sections & Playlists -->
+        <div class="yt-footer-col">
+          <div class="yt-footer-col-head">
+            <span class="yt-footer-col-icon"><i class="fas fa-photo-video"></i></span>
+            <h4>ویڈیو پورٹل و علمی سیریز</h4>
+          </div>
+          <ul class="yt-footer-links-list">
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('home'); window.scrollTo({top:0,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> چینل ہوم (مرکزی ڈیش بورڈ)</span>
+                <span class="yt-footer-badge">ہوم</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('videos'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> تمام ویڈیوز (مکمل دروس و بیانات)</span>
+                <span class="yt-footer-badge">۶۶</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('reels'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> ریلز اور شارٹس (مختصر کلپس)</span>
+                <span class="yt-footer-badge">۱۲</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('playlists'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> موضوعاتی پلے لسٹس اور علمی سیریز</span>
+                <span class="yt-footer-badge">۷۷</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('speakers'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> علمائے کرام، خطباء اور مقررین</span>
+                <span class="yt-footer-badge">۲۱ شیوخ</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('videos'); filterVideosChip('عقیدہ و منہجِ سلف'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> عقیدہ و منہجِ سلف سیریز</span>
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" onclick="switchYtTab('videos'); filterVideosChip('تفسیر و علومِ قرآن'); window.scrollTo({top:420,behavior:'smooth'});">
+                <span><i class="fas fa-angle-left"></i> تفسیر و علومِ قرآن</span>
+              </a>
+            </li>
+            <li>
+              <a href="./posters">
+                <span><i class="fas fa-angle-left"></i> دعوتی پوسٹرز گیلری</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-          <div class="card">
-            <a href="./index.html"> سرورق </a>
+        <!-- Column 3: Quick Portal Departments -->
+        <div class="yt-footer-col">
+          <div class="yt-footer-col-head">
+            <span class="yt-footer-col-icon"><i class="fas fa-sitemap"></i></span>
+            <h4>مرکزی ویب سائٹ کے شعبہ جات</h4>
+          </div>
+          <ul class="yt-footer-links-list">
+            <li>
+              <a href="./index.html">
+                <span><i class="fas fa-angle-left"></i> مرکزی سرورق (ہوم پیج)</span>
+              </a>
+            </li>
+            <li>
+              <a href="./introduction">
+                <span><i class="fas fa-angle-left"></i> تعارفِ جمعیت، اغراض و مقاصد</span>
+              </a>
+            </li>
+            <li>
+              <a href="./fikh-w-fatawa">
+                <span><i class="fas fa-angle-left"></i> فقہ و فتاویٰ پورٹل (سوال و جواب)</span>
+                <span class="yt-footer-badge">فتاویٰ</span>
+              </a>
+            </li>
+            <li>
+              <a href="./islamic-library">
+                <span><i class="fas fa-angle-left"></i> مرکزی اسلامی لائبریری (مفت کتب)</span>
+              </a>
+            </li>
+            <li>
+              <a href="./publications">
+                <span><i class="fas fa-angle-left"></i> مطبوعاتِ جمعیت</span>
+              </a>
+            </li>
+            <li>
+              <a href="./al-jamaah-magazine">
+                <span><i class="fas fa-angle-left"></i> ماہنامہ مجلہ الجماعۃ</span>
+              </a>
+            </li>
+            <li>
+              <a href="./press-release">
+                <span><i class="fas fa-angle-left"></i> پریس ریلیز و سرکاری اعلامیے</span>
+              </a>
+            </li>
+            <li>
+              <a href="./mosques">
+                <span><i class="fas fa-angle-left"></i> مساجد و مدارس ڈائریکٹری</span>
+              </a>
+            </li>
+          </ul>
+        </div>
 
-            <a href="./introduction"> تعارف </a>
-
-            <a href="./aljama"> مجلہ الجماعہ </a>
-
-            <a href="./library"> لائبریری </a>
-
-            <a href="./library/publications"> مطبوعات </a>
-
-            <a href="./press-release"> پریس ریلیز </a>
-
-            <a href="./fatawa"> فتاویٰ </a>
-
-            <a href="./tausia"> توصیہ </a>
-
-            <a href="./contact"> رابطہ کریں </a>
+        <!-- Column 4: Official Address, Contact & Map -->
+        <div class="yt-footer-col">
+          <div class="yt-footer-col-head">
+            <span class="yt-footer-col-icon"><i class="fas fa-map-marked-alt"></i></span>
+            <h4>برائے رابطہ و مرکزی دفتر</h4>
+          </div>
+          <div class="yt-footer-contact-item">
+            <span class="c-ic"><i class="fas fa-map-marker-alt"></i></span>
+            <div>
+              <strong>مرکزی دفتر کا پتہ</strong>
+              <span>۱۴/۱۵، چونا والا کمپاؤنڈ، مقابل بیسٹ بس ڈپو، ایل بی ایس مارگ، کرلا ویسٹ، ممبئی - 400070</span>
+            </div>
+          </div>
+          <div class="yt-footer-contact-item">
+            <span class="c-ic"><i class="fas fa-phone-alt"></i></span>
+            <div>
+              <strong>فون و واٹس ایپ رابطہ</strong>
+              <a href="tel:+919892255244" dir="ltr">+91 98922 55244</a>
+            </div>
+          </div>
+          <div class="yt-footer-contact-item">
+            <span class="c-ic"><i class="fas fa-envelope"></i></span>
+            <div>
+              <strong>برقی خط (ای میل)</strong>
+              <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr">ahlehadeesmumbai@gmail.com</a>
+            </div>
+          </div>
+          <div class="yt-footer-map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15082.893884967477!2d72.8780912!3d19.0758927!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c88d82d3850f%3A0x4a2f4fb6b9f179c9!2sSubai%20Jamiat%20Ahle%20Hadees%20Mumbai!5e0!3m2!1sen!2sin!4v1676044225484!5m2!1sen!2sin"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="مرکزی دفتر صوبائی جمعیت اہل حدیث ممبئی"
+            ></iframe>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
 
-<div class="copyright">
-  <span>
-    2026
-      &nbsp;&nbsp; &copy; &nbsp;&nbsp;
-      جملہ حقوق برائے صوبائی جمعیت اہل حدیث
-      ممبئی محفوظ ہیں
-  </span>
-</div>
-
-<!-- talimi inami musabqa -->
-<div class="alert" id="footerAlertBar" dir="rtl">
-  <button type="button" onclick="this.parentElement.style.display='none'" style="background:transparent;border:none;color:#fff;font-size:1.6rem;cursor:pointer;float:left;line-height:1;padding:0 8px;" title="بند کریں">&times;</button>
-  تعلیمی انعامی مقابلہ ٢٠٢٦ میں رجسٹریشن کے لیے یہاں کلک کریں:
-  <a target="_blank" href="./talimi-inami-musabqa-registeration">رجسٹریشن فارم</a>
-</div>
-
-
-
-  <!-- tadribiya -->
-
-
-
-
-
-<!-- Unified Share, Copy, and Report Interaction Suite -->
-<!-- ═══════════════════════════════════════════════════════════════════════════
-     UNIFIED INTERACTION SYSTEM (SHARE MODAL, REPORT DIALOG, TOAST FEEDBACK)
-     Visual Benchmark: Reference Images 3 & 4
-     Subai Jamiat Ahle Hadees Mumbai
-     ═══════════════════════════════════════════════════════════════════════════ -->
-<link rel="stylesheet" href="./css/share-interaction.css" />
-
-<!-- 1. SHARE MODAL (Reference Image 4 Benchmark) -->
-<div id="sjShareModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjShareModalTitle">
-  <div class="sj-modal-dialog" onclick="event.stopPropagation()">
-    <!-- Modal Header -->
-    <div class="sj-modal-header">
-      <h3 id="sjShareModalTitle" class="sj-modal-title">
-        <i class="fa-solid fa-share-nodes" style="color: #2563eb; font-size: 17px; margin-left: 6px;"></i>
-        شیئر کریں (انشر المادة)
-      </h3>
-      <button type="button" class="sj-modal-close" onclick="SJInteraction.closeAllModals()" aria-label="بند کریں">&times;</button>
-    </div>
-
-    <!-- Modal Body -->
-    <div class="sj-modal-body">
-      <!-- 4 Circular Social Sharing Buttons (Image 4) -->
-      <div class="sj-social-row">
-        <!-- 1. Telegram -->
-        <a id="sjShareTelegram" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-telegram" title="ٹیلیگرام پر شیئر کریں">
-          <i class="fa-brands fa-telegram"></i>
-        </a>
-
-        <!-- 2. WhatsApp -->
-        <a id="sjShareWhatsapp" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-whatsapp" title="واٹس ایپ پر شیئر کریں">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <!-- 3. X (Twitter) -->
-        <a id="sjShareX" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-x" title="ایکس پر شیئر کریں">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-
-        <!-- 4. Facebook -->
-        <a id="sjShareFacebook" href="#" target="_blank" rel="noopener noreferrer" class="sj-social-circle sj-social-facebook" title="فیس بک پر شیئر کریں">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-      </div>
-
-      <!-- Short URL Input Field (Image 4) -->
-      <div class="sj-share-input-wrap">
-        <input type="text" id="sjShareShortUrlInput" class="sj-share-input" readonly value="https://ahlehadeesmumbai.com/f/share" title="مختصر لنک (کلک کر کے کاپی کریں)" />
-      </div>
-
-      <!-- Bottom Pill Copy Short Link Action (Image 4) -->
-      <div class="sj-share-pill-wrap">
-        <button type="button" id="sjBtnCopyShortPill" class="sj-btn-copy-short">
-          <i class="fa-regular fa-copy"></i>
-          <span>مختصر لنک کاپی کریں</span>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 2. REPORT ERROR DIALOG (غلطی کی نشاندہی) -->
-<div id="sjReportModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjReportModalTitle">
-  <div class="sj-modal-dialog sj-report-dialog" onclick="event.stopPropagation()">
-    <!-- Modal Header -->
-    <div class="sj-modal-header" style="background: linear-gradient(135deg, #fff7ed 0%, #fef2f2 100%); border-bottom: 1px solid #fee2e2;">
-      <h3 id="sjReportModalTitle" class="sj-modal-title" style="color: #991b1b;">
-        <i class="fa-solid fa-triangle-exclamation" style="color: #dc2626; font-size: 17px; margin-left: 6px;"></i>
-        غلطی کی نشاندہی (Report Error)
-      </h3>
-      <button type="button" class="sj-modal-close" onclick="SJInteraction.closeAllModals()" aria-label="بند کریں">&times;</button>
-    </div>
-
-    <!-- Modal Body -->
-    <div class="sj-modal-body">
-      <!-- Target Content Context -->
-      <div class="sj-report-context">
-        <div><b>عنوان:</b> <span id="sjReportContextTitle">صفحہ / مواد</span></div>
-        <div style="font-size: 11.5px; color: #64748b; margin-top: 2px; direction: ltr; text-align: right;" id="sjReportContextUrl">URL</div>
-      </div>
-
-      <form id="sjReportForm">
-        <!-- Error Type Selection Chips -->
-        <div class="sj-form-group">
-          <label class="sj-form-label">غلطی کی نوعیت منتخب فرمائیں:</label>
-          <div class="sj-error-chips-grid">
-            <label class="sj-error-chip-label active">
-              <input type="radio" name="sj_error_type" value="text" checked />
-              <span>📝 متن / املا کی غلطی</span>
-            </label>
-            <label class="sj-error-chip-label">
-              <input type="radio" name="sj_error_type" value="citation" />
-              <span>📖 حوالہ / حدیث کی غلطی</span>
-            </label>
-            <label class="sj-error-chip-label">
-              <input type="radio" name="sj_error_type" value="information" />
-              <span>⚖️ معلوماتی یا شرعی وضاحت</span>
-            </label>
-            <label class="sj-error-chip-label">
-              <input type="radio" name="sj_error_type" value="other" />
-              <span>❓ دیگر متعلقہ خرابی</span>
-            </label>
-          </div>
+      <!-- Bottom Copyright & Quick Action Bar -->
+      <div class="yt-footer-bottom-bar">
+        <div class="yt-footer-copyright">
+          <i class="far fa-copyright"></i>
+          <span>جملہ حقوق بحق <strong>صوبائی جمعیت اہل حدیث ممبئی</strong> محفوظ ہیں — شعبۂ نشر و اشاعت و آئی ٹی سیل (۲۰۲۶ء)</span>
         </div>
-
-        <!-- Description Textarea -->
-        <div class="sj-form-group">
-          <label for="sjReportDescription" class="sj-form-label">مسئلے کی وضاحت (لازمی):</label>
-          <textarea id="sjReportDescription" class="sj-textarea" placeholder="براہ کرم غلطی کی تفصیل یا صحیح حوالہ تحریر فرمائیں تاکہ تصحیح کی جا سکے..." required minlength="5"></textarea>
+        <div class="yt-footer-bottom-links">
+          <a href="./quiz-register" class="yt-footer-quiz-pill">
+            <i class="fas fa-award"></i> تعلیمی انعامی مقابلہ ۲۰۲۶ — رجسٹریشن فارم
+          </a>
+          <button
+            type="button"
+            class="yt-footer-top-btn"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          >
+            <i class="fas fa-arrow-up"></i> اوپر جائیں
+          </button>
         </div>
-
-        <!-- Optional Contact Information -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
-          <div>
-            <label for="sjReportUserName" class="sj-form-label" style="font-size: 12px;">آپ کا نام (اختیاری):</label>
-            <input type="text" id="sjReportUserName" class="sj-input" placeholder="نام" />
-          </div>
-          <div>
-            <label for="sjReportUserContact" class="sj-form-label" style="font-size: 12px;">فون / ای میل (اختیاری):</label>
-            <input type="text" id="sjReportUserContact" class="sj-input" placeholder="رابطہ نمبر یا ای میل" />
-          </div>
-        </div>
-
-        <!-- Status Message Box -->
-        <div id="sjReportStatusMsg" style="display: none; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 14px;"></div>
-
-        <!-- Submit Button -->
-        <button type="submit" id="sjBtnSubmitReport" class="sj-btn-submit-report">
-          <span>ارسال کریں (Submit Report)</span>
-        </button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-
-<!-- 3. FLOATING TOAST FEEDBACK NOTIFICATION -->
-<div id="sjToastFeedback" class="sj-toast-feedback">
-  <i class="fa-solid fa-circle-check"></i>
-  <span>✓ لنک کلپ بورڈ پر کاپی ہو گیا</span>
-</div>
-
-<script src="./js/share-interaction.js"></script>
-
-
+  </footer>
 
   <!-- =====================================================
        INITIAL SERVER DATA & YOUTUBE SPA ENGINE
@@ -4674,11 +4311,27 @@ body *::-webkit-scrollbar-thumb:hover {
 
         if (shown >= total) {
           sentinel.innerHTML = `
-            <div class="yt-refresher-status" style="color:var(--yt-emerald);">
-              <i class="fas fa-check-circle"></i> الحمد للہ! تمام ${toUrduDigits(total)} ویڈیوز اور سیریز مکمل طور پر لوڈ ہو چکی ہیں
-            </div>
-            <div class="yt-progress-track">
-              <div class="yt-progress-fill" style="width:100%;"></div>
+            <div class="yt-sentinel-done-row">
+              <div class="yt-refresher-status" style="color:var(--yt-emerald);">
+                <i class="fas fa-check-circle"></i> الحمد للہ! اس سیکشن کی تمام ${toUrduDigits(total)} ویڈیوز اور سیریز مکمل طور پر لوڈ ہو چکی ہیں
+              </div>
+              <div class="yt-progress-track">
+                <div class="yt-progress-fill" style="width:100%;"></div>
+              </div>
+              <div class="yt-sentinel-quick-links">
+                <button type="button" class="yt-mini-btn" onclick="switchYtTab('videos'); window.scrollTo({top:380,behavior:'smooth'});" style="background:rgba(13,92,62,0.08); color:var(--yt-emerald); border:1px solid rgba(13,92,62,0.22); padding:5px 12px; border-radius:50px; font-weight:700;">
+                  <i class="fas fa-video"></i> تمام ویڈیوز
+                </button>
+                <button type="button" class="yt-mini-btn" onclick="switchYtTab('reels'); window.scrollTo({top:380,behavior:'smooth'});" style="background:rgba(255,0,51,0.08); color:var(--yt-red); border:1px solid rgba(255,0,51,0.22); padding:5px 12px; border-radius:50px; font-weight:700;">
+                  <i class="fas fa-bolt"></i> ریلز (Shorts)
+                </button>
+                <button type="button" class="yt-mini-btn" onclick="switchYtTab('speakers'); window.scrollTo({top:380,behavior:'smooth'});" style="background:rgba(197,155,39,0.12); color:#92400e; border:1px solid rgba(197,155,39,0.3); padding:5px 12px; border-radius:50px; font-weight:700;">
+                  <i class="fas fa-user-tie"></i> علمائے کرام
+                </button>
+                <button type="button" class="yt-mini-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});" style="background:var(--yt-emerald); color:#fff; padding:5px 14px; border-radius:50px; font-weight:700;">
+                  <i class="fas fa-arrow-up"></i> اوپر جائیں
+                </button>
+              </div>
             </div>
           `;
         } else {
