@@ -689,6 +689,160 @@
         .uf-topic-pane.active {
             display: block;
         }
+
+        /* ─── Compact, Properly-Sized Fatawa Search Engine Card (مناسب جگہ اور مناسب سائز) ─── */
+        .uf-breadcrumb-ribbon {
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 8px 0;
+            margin-bottom: 18px;
+            font-size: 12.5px;
+        }
+        .uf-search-engine-card {
+            background: #ffffff;
+            border: 1.5px solid #99f6e4;
+            border-top: 3.5px solid #0f766e;
+            border-radius: 14px;
+            padding: 12px 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 16px rgba(15, 118, 110, 0.06);
+        }
+        .uf-se-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .uf-se-select {
+            height: 38px;
+            width: 145px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            background: #f8fafc;
+            color: #065f46;
+            font-family: inherit;
+            font-size: 12.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            outline: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .uf-se-select:focus {
+            border-color: #0f766e;
+            background: #f0fdfa;
+        }
+        .uf-se-input-wrap {
+            flex: 1;
+            min-width: 190px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .uf-se-input {
+            width: 100%;
+            height: 38px;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: inherit;
+            font-size: 13.5px;
+            padding: 6px 34px 6px 30px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .uf-se-input:focus {
+            border-color: #0f766e;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+        }
+        .uf-se-icon {
+            position: absolute;
+            right: 11px;
+            color: #0f766e;
+            font-size: 13.5px;
+            pointer-events: none;
+        }
+        .uf-se-clear {
+            position: absolute;
+            left: 8px;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 16px;
+            cursor: pointer;
+            display: none;
+        }
+        .uf-se-btn-submit {
+            height: 38px;
+            padding: 0 14px;
+            background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
+            color: #ffffff;
+            border: none;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        .uf-se-btn-voice {
+            height: 38px;
+            padding: 0 12px;
+            background: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fcd34d;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .uf-se-btn-voice.listening {
+            background: #fee2e2;
+            color: #dc2626;
+            border-color: #f87171;
+        }
+        .uf-se-btn-adv {
+            height: 38px;
+            padding: 0 10px;
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+        .uf-se-adv-drawer {
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 12px;
+            color: #334155;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .uf-se-adv-drawer.open {
+            display: flex;
+        }
     </style>
   <link rel="canonical" href="http://127.0.0.1:5000/fikh-w-fatawa">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -934,185 +1088,6 @@
 
 <!-- navbar design starts here  -->
 
-<div class="navbar">
-
-    <div class="main-container">
-
-        <div class="custom-container">
-
-            <div class="search">
-                <span>
-                    <i class="fa-solid fa-magnifying-glass icon"></i>
-                    <input type="text" placeholder="تلاش کریں..." aria-label="تلاش کریں">
-                </span>
-            </div>
-
-            <div class="menubar">
-
-                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <span class="menu-icon"> مینو </span>
-                <span class="bar-icon"> <i class="fa-solid fa-bars"></i> </span>
-
-            </div>
-
-            <div class="nav">
-
-                <a href="../contact" data-active="contact" class="nav-link">
-                    رابطہ کریں<i class="fa-solid fa-envelope nav-icon"></i>
-                </a>
-
-                <div class="dropdown">
-                    <a class="nav-link">
-                        <i class="fa-solid icon fa-angle-down"></i>
-
-                        <span>
-                            توصیہ <i class="fa-solid fa-clipboard nav-icon"></i>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a target="_blank" href="../tausia-rules" class="nav-link">
-                            اصول وضوابط
-                        </a>
-                        <a href="../tausia" data-active="tausia" class="nav-link">
-                            توصیہ کے لئے اپلائی کریں
-                        </a>
-                        <!-- <a href="../tausia-update-registeration-login" data-active="update-tausia" class="nav-link">
-                            اپڈیٹ توصیہ
-                        </a> -->
-                        <a href="../check-tausia-status" data-active="tausia-status" class="nav-link">
-                            اسٹیٹس چیک کریں
-                        </a>
-                        <a href="../masjid-registeration" data-active="masjid-registeration">
-                            مسجد کو رجسٹر کریں
-                        </a>
-                        <a href="../tausia-authentication">
-                            توصیہ کی تصدیق کریں
-                        </a>
-                        <a href="../tausia-talaba" data-active="tausia-talaba" class="nav-link">
-                            برائے طلبہ
-                        </a>
-                        <a href="../check-talaba-status" data-active="talaba-status" class="nav-link">
-                            اسٹیٹس برائے طلبہ
-                        </a>
-                    </div>
-                </div>
-
-                <a href="../fikh-w-fatawa" class="nav-link" data-active="fikh-w-fatawa">
-                    فتاویٰ <i class="fa-solid fa-pen nav-icon"></i>
-                </a>
-                <div class="dropdown">
-
-                    <a class="nav-link">
-
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span>میڈیا <i class="fa-solid fa-video nav-icon"></i></span>
-
-                    </a>
-
-                    <div class="dropdown-menu">
-
-                        <!-- <a href="cards.html" data-active="cards"> بطاقات </a> -->
-                        <a href="../press-release" data-active="press-release">
-                            پریس ریلیز
-                        </a>
-                        <a href="../video-gallery" data-active="video-gallery">ویڈیوز </a>
-                        <a href="../posters" data-active="posters">
-                            پوسٹرس
-                        </a>
-
-
-
-                        <!-- <a href="../photo-gallery" data-active="photo-gallery">انفوگرافکس</a> -->
-
-                    </div>
-                </div>
-
-                <a href="../articles" class="nav-link" data-active="articles">
-                    مضامین <i class="fa-solid fa-feather-pointed nav-icon"></i>
-                </a>
-
-                <a href="../library" class="nav-link" data-active="library">
-                    لائبریری <i class="fa-solid fa-book-bookmark nav-icon"></i>
-                </a>
-
-                <a href="../aljama" class="nav-link" data-active="mujallah">
-                    میگزین <i class="fa-solid fa-book nav-icon"></i>
-                </a>
-
-                <div class="dropdown">
-
-                    <a class="nav-link">
-
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span> ذیلی اکائیاں <i class="fa-solid fa-list nav-icon"></i></span>
-
-                    </a>
-
-                    <div class="dropdown-menu">
-
-                        <a href="../district-jamiat" data-active="district-jamiat">
-                            ضلعی جمعیات
-                        </a>
-                        <a href="../masajid" data-active="masajid">
-                            مساجد
-                        </a>
-
-                    </div>
-                </div>
-
-
-
-                <div class="dropdown">
-
-                    <a class="nav-link">
-
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span> سرگرمیاں<i class="fa-solid fa-person-running nav-icon"></i> </span>
-
-
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="../jamati-activities" data-active="jamati-activities">
-                            جماعتی سرگرمیاں
-                        </a>
-                        <a href="../upcoming-programs" data-active="upcoming-programs">
-                            آئندہ پروگرامز و سیمینارز
-                        </a>
-                        <a href="../aina-e-jamiat" data-active="aina-e-jamiat">
-                            آئینۂ جمیعت
-                        </a>
-                        <a href="../moon" data-active="moon">
-                            رؤیت ہلال
-                        </a>
-                        <a href="../juma-list" data-active="juma-list">
-                            خطبات جمعہ
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <a href="../introduction" data-active="about" class="nav-link">
-                    تعارف <i class="fa-solid fa-circle-question nav-icon"></i>
-                </a>
-
-                <a href="../" data-active="home" class="nav-link">
-                    سرورق <i class="fa-solid fa-house nav-icon"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</div>
-
 <style id="gdocs-scrollbar-override">
 /*-----------------------------------------------------
    Google Docs / Google Workspace Ultra-Thin Light Scrollbar
@@ -1203,311 +1178,85 @@ body *::-webkit-scrollbar-thumb:hover {
     }
   })();
 </script>
-    <!-- DEDICATED FIQH-W-FATAWA PORTAL HEADER & NAVIGATION (urdufatwa.com & image_2.png inspired) -->
+    <!-- DEDICATED FIQH-W-FATAWA PORTAL HEADER & NAVIGATION -->
 <!-- Subai Jamiat Ahle Hadees Mumbai — دار الافتاء و فقہ و فتاویٰ پورٹل -->
 
 <style>
-  .fatawa-portal-top-hero {
-    background: linear-gradient(135deg, #042f2e 0%, #064e3b 45%, #0f766e 85%, #115e59 100%);
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 3px solid #f59e0b;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
-    direction: rtl;
-    text-align: right;
-  }
-
-  .fatawa-portal-top-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 85% 20%, rgba(245, 158, 11, 0.18), transparent 45%),
-      radial-gradient(circle at 15% 80%, rgba(45, 212, 191, 0.16), transparent 50%);
-    pointer-events: none;
-  }
-
-  .fatawa-hero-inner {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 22px 20px 20px;
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  /* Right Side: Dar-ul-Ifta Identity Emblem */
-  .fatawa-brand-col {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex: 0 1 auto;
-    text-decoration: none;
-    color: #ffffff !important;
-  }
-
-  .fatawa-emblem-box {
-    width: 66px;
-    height: 66px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(245,158,11,0.22) 100%);
-    border: 1.5px solid rgba(251, 191, 36, 0.65);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: #fde68a;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(251, 191, 36, 0.2);
-    flex-shrink: 0;
-  }
-
-  .fatawa-brand-titles h1 {
-    font-size: 25px;
-    font-weight: 800;
-    margin: 0 0 4px 0;
-    color: #ffffff;
-    line-height: 1.5;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .fatawa-brand-badge {
-    font-size: 11.5px;
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-    color: #ffffff;
-    padding: 2px 12px;
-    border-radius: 999px;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
-  }
-
-  .fatawa-brand-titles p {
-    margin: 0;
-    font-size: 13px;
-    color: #ccfbf1;
-    line-height: 1.7;
-  }
-
-  /* Left/Center Side: UrduFatwa-Style Search & Voice Bar */
-  .fatawa-search-col {
-    flex: 1 1 560px;
-    max-width: 760px;
-  }
-
-  .uf-search-bar-shell {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24), 0 0 0 3px rgba(255, 255, 255, 0.15);
-    border: 1.5px solid #99f6e4;
-  }
-
-  .uf-mode-select {
-    border: none;
-    border-left: 1.5px solid #e2e8f0;
-    background: #f8fafc;
-    color: #0f766e;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 8px 12px;
-    border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    max-width: 215px;
-    height: 42px;
-  }
-
-  .uf-mode-select:focus {
-    background: #f0fdfa;
-    color: #065f46;
-  }
-
-  .uf-search-input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    padding: 8px 12px;
-    font-size: 15px;
-    font-family: inherit;
-    color: #0f172a;
-    outline: none;
-    min-width: 140px;
-    height: 42px;
-  }
-
-  .uf-search-clear {
-    background: none;
-    border: none;
-    color: #94a3b8;
-    font-size: 18px;
-    cursor: pointer;
-    padding: 0 6px;
-    display: none;
-  }
-
-  .uf-search-submit-btn {
-    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    width: 44px;
-    height: 42px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s;
-    flex-shrink: 0;
-  }
-
-  .uf-search-submit-btn:hover {
-    background: linear-gradient(135deg, #0d9488 0%, #047857 100%);
-    transform: scale(1.03);
-  }
-
-  .uf-voice-btn {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-    color: #b45309;
-    border: 1.5px solid #fcd34d;
-    border-radius: 10px;
-    height: 42px;
-    padding: 0 14px;
-    font-family: inherit;
-    font-size: 13px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .uf-voice-btn:hover {
-    background: #fde68a;
-    color: #92400e;
-    transform: translateY(-1px);
-  }
-
-  .uf-voice-btn.listening {
-    background: #fee2e2;
-    color: #dc2626;
-    border-color: #f87171;
-    animation: ufVoicePulse 1.2s infinite;
-  }
-
-  @keyframes ufVoicePulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
-    50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
-  }
-
-  /* Sub-row under hero search for Advanced Filters & Quick Stats */
-  .uf-search-subbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 8px;
-    padding: 0 4px;
-    font-size: 12px;
-    color: #ccfbf1;
-  }
-
-  .uf-adv-toggle-btn {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: #fde68a;
-    border-radius: 20px;
-    padding: 3px 12px;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s;
-  }
-
-  .uf-adv-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.22);
-    color: #ffffff;
-  }
-
-  .uf-adv-drawer {
-    display: none;
-    margin-top: 10px;
-    background: rgba(6, 78, 59, 0.92);
-    border: 1px solid rgba(153, 246, 228, 0.35);
-    border-radius: 12px;
-    padding: 10px 14px;
-    color: #ecfdf5;
-    font-size: 12.5px;
-    backdrop-filter: blur(8px);
-  }
-
-  .uf-adv-drawer.open {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .uf-adv-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .uf-adv-group label {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    margin: 0;
-    font-weight: 600;
-  }
-
-  /* ─── SECONDARY STICKY PORTAL NAVBAR (image_2.png White Bar) ─── */
-  .fatawa-portal-subnav {
+  .fatawa-portal-nav-bar {
     background: #ffffff;
     border-bottom: 2px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
     position: sticky;
     top: 0;
     z-index: 1020;
     font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
     direction: rtl;
+    text-align: right;
   }
 
-  .fatawa-subnav-container {
+  .fatawa-portal-nav-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 58px;
-    gap: 10px;
+    min-height: 64px;
+    gap: 12px;
   }
 
+  /* RIGHT: BRAND / IDENTITY (matching magazine-header & library-header) */
+  .fatawa-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #065f46;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .fatawa-nav-brand:hover {
+    transform: translateY(-1px);
+    color: #0f766e;
+  }
+
+  .fatawa-brand-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
+    color: #0f766e;
+    border: 1px solid #5eead4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
+    transition: transform 0.2s ease;
+  }
+
+  .fatawa-nav-brand:hover .fatawa-brand-icon {
+    transform: scale(1.05);
+  }
+
+  .fatawa-brand-text h1 {
+    font-size: 18.5px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.25;
+    color: #065f46;
+  }
+
+  .fatawa-brand-text span {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* CENTER: DEDICATED FATAWA NAVIGATION LINKS */
   .fatawa-subnav-links {
     display: flex;
     align-items: center;
@@ -1521,12 +1270,12 @@ body *::-webkit-scrollbar-thumb:hover {
   .fatawa-subnav-link {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 7px 13px;
+    gap: 6px;
+    padding: 7px 12px;
     border-radius: 8px;
-    color: #1e293b;
+    color: #334155;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -1537,7 +1286,7 @@ body *::-webkit-scrollbar-thumb:hover {
   }
 
   .fatawa-subnav-link i {
-    font-size: 14px;
+    font-size: 13.5px;
     color: #0f766e;
     transition: transform 0.2s;
   }
@@ -1553,11 +1302,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
   .fatawa-subnav-link.active {
     background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-    color: #0f766e !important;
-    border: 1px solid #99f6e4;
+    color: #065f46 !important;
+    border: 1px solid #5eead4;
     box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
   }
 
+  /* LEFT: ACTION BUTTONS */
   .fatawa-subnav-actions {
     display: flex;
     align-items: center;
@@ -1569,21 +1319,21 @@ body *::-webkit-scrollbar-thumb:hover {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 7px 16px;
+    padding: 7px 15px;
     background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
     color: #ffffff !important;
     border-radius: 9px;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.25);
+    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.22);
     transition: all 0.2s ease;
     white-space: nowrap;
   }
 
   .btn-portal-ask:hover {
     transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(15, 118, 110, 0.35);
+    box-shadow: 0 5px 14px rgba(15, 118, 110, 0.32);
     background: linear-gradient(135deg, #0d9488 0%, #047857 100%);
   }
 
@@ -1697,33 +1447,16 @@ body *::-webkit-scrollbar-thumb:hover {
     font-size: 14.5px;
   }
 
-  @media (max-width: 992px) {
-    .fatawa-hero-inner {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 16px;
-    }
-    .fatawa-search-col {
-      max-width: 100%;
-      flex: 1 1 auto;
-    }
-    .uf-search-bar-shell {
-      flex-wrap: wrap;
-    }
-    .uf-mode-select {
-      width: 100%;
-      max-width: 100%;
-      border-left: none;
-      border-bottom: 1px solid #e2e8f0;
-    }
+  @media (max-width: 1024px) {
     .fatawa-mobile-menu-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
-    .fatawa-subnav-container {
+    .fatawa-portal-nav-container {
       flex-wrap: wrap;
       padding: 10px 16px;
+      min-height: 58px;
     }
     .fatawa-subnav-links {
       display: none;
@@ -1737,113 +1470,38 @@ body *::-webkit-scrollbar-thumb:hover {
     .fatawa-subnav-links.open {
       display: flex;
     }
+    .fatawa-subnav-actions {
+      width: 100%;
+      justify-content: flex-end;
+      padding-top: 6px;
+    }
   }
 </style>
 
 
 
-<!-- 1. TOP DAR-UL-IFTA HERO & SMART/VOICE SEARCH BANNER (image_2.png style) -->
-<div class="fatawa-portal-top-hero">
-  <div class="fatawa-hero-inner">
-    <!-- Right: Portal Emblem & Identity -->
-    <a href="../fikh-w-fatawa" class="fatawa-brand-col">
-      <div class="fatawa-emblem-box">
+<!-- DEDICATED FIQH-W-FATAWA PORTAL STICKY NAVIGATION BAR (No Main Website Navbar Above It) -->
+<header class="fatawa-portal-nav-bar" id="fatawaPortalSubnav">
+  <div class="fatawa-portal-nav-container">
+    <!-- RIGHT: PORTAL BRAND & IDENTITY -->
+    <a href="../fikh-w-fatawa" class="fatawa-nav-brand">
+      <div class="fatawa-brand-icon">
         <i class="fa-solid fa-scale-balanced"></i>
       </div>
-      <div class="fatawa-brand-titles">
-        <h1>
-          <span>دار الافتاء — فقہ و فتاویٰ پورٹل</span>
-          <span class="fatawa-brand-badge">منہجِ سلف صالحین</span>
-        </h1>
-        <p>صوبائی جمعیت اہل حدیث ممبئی | کتاب و سنت کی روشنی میں مستند شرعی رہنمائی اور فتاویٰ کا جامع انسائیکلوپیڈیا</p>
+      <div class="fatawa-brand-text">
+        <h1>فقہ و فتاویٰ پورٹل</h1>
+        <span>دار الافتاء — صوبائی جمعیت اہل حدیث ممبئی</span>
       </div>
     </a>
 
-    <!-- Left: UrduFatwa-style Multi-Mode Search + Voice Search -->
-    <div class="fatawa-search-col">
-      <form id="fatawaHeroSearchForm" onsubmit="return submitFatawaPortalSearch(event)">
-        <div class="uf-search-bar-shell">
-          <select id="fatawaSearchModeSelect" class="uf-mode-select" onchange="triggerFatawaPortalFilter()" aria-label="تلاش کی قسم">
-            <option value="smart">✨ مصنوعی ذہانت / سمارٹ تلاش</option>
-            <option value="general">🔎 عمومی تلاش (مکمل ذخیرہ)</option>
-            <option value="title">📌 صرف عنوانِ فتویٰ میں تلاش</option>
-            <option value="question">❓ سوال کے الفاظ میں تلاش</option>
-            <option value="answer">📖 جواب اور دلائل میں تلاش</option>
-            <option value="number">🔢 فتویٰ / استفتاء نمبر سے تلاش</option>
-            <option value="mufti">✍️ مفتی / کاتب کے نام سے تلاش</option>
-          </select>
-
-          <input
-            type="text"
-            id="fatawaHeroSearchInput"
-            class="uf-search-input"
-            value=""
-            placeholder="مسئلہ، عنوان، فتویٰ نمبر (مثلاً F-000001) یا کلیدی لفظ لکھیں..."
-            autocomplete="off"
-            oninput="onHeroSearchInput(this.value)"
-          />
-
-          <button type="button" id="fatawaHeroClearBtn" class="uf-search-clear" onclick="clearHeroSearchInput()" title="صاف کریں">&times;</button>
-
-          <button type="submit" class="uf-search-submit-btn" title="تلاش کریں">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-
-          <button type="button" id="fatawaVoiceSearchBtn" class="uf-voice-btn" onclick="startFatawaVoiceSearch()" title="اپنی آواز سے اردو میں مسئلہ بول کر تلاش کریں">
-            <i class="fa-solid fa-microphone" id="fatawaVoiceIcon"></i>
-            <span id="fatawaVoiceText">آواز سے سرچ کریں</span>
-          </button>
-        </div>
-
-        <!-- Sub-row: Advanced Search Toggle & Quick Shortcuts -->
-        <div class="uf-search-subbar">
-          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-            <button type="button" class="uf-adv-toggle-btn" onclick="toggleFatawaAdvDrawer()">
-              <i class="fa-solid fa-sliders"></i> ایڈوانس سرچ فلٹرز
-            </button>
-            <span><i class="fa-solid fa-bolt" style="color: #fde68a;"></i> تیز رفتار راکٹ سرچ: 113 فقہی ابواب</span>
-          </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <a href="javascript:void(0)" onclick="openPortalModal('ufTrackModal')" style="color: #fde68a; text-decoration: none; font-weight: 700;">
-              <i class="fa-solid fa-magnifying-glass-location"></i> اپنا سوال ٹریک کریں
-            </a>
-            <span>|</span>
-            <a href="../fatawa" style="color: #ffffff; text-decoration: none; font-weight: 700;">
-              <i class="fa-solid fa-pen-to-square"></i> نیا سوال پوچھیں
-            </a>
-          </div>
-        </div>
-
-        <!-- Collapsible Advanced Search Options (matching urdufatwa.com) -->
-        <div class="uf-adv-drawer" id="fatawaAdvDrawer">
-          <div class="uf-adv-group">
-            <strong style="color: #fde68a;"><i class="fa-solid fa-filter"></i> تلاش کی نوعیت:</strong>
-            <label><input type="radio" name="ufMatchType" value="any" checked onchange="triggerFatawaPortalFilter()"> کوئی بھی لفظ</label>
-            <label><input type="radio" name="ufMatchType" value="all" onchange="triggerFatawaPortalFilter()"> تمام الفاظ</label>
-            <label><input type="radio" name="ufMatchType" value="exact" onchange="triggerFatawaPortalFilter()"> بعینہٖ ترتیب</label>
-          </div>
-          <div class="uf-adv-group">
-            <strong style="color: #fde68a;"><i class="fa-solid fa-bullseye"></i> تلاش کی جگہ:</strong>
-            <label><input type="checkbox" class="uf-scope-chk" value="title" checked onchange="triggerFatawaPortalFilter()"> عنوان</label>
-            <label><input type="checkbox" class="uf-scope-chk" value="question" checked onchange="triggerFatawaPortalFilter()"> سوال</label>
-            <label><input type="checkbox" class="uf-scope-chk" value="answer" checked onchange="triggerFatawaPortalFilter()"> جواب</label>
-            <label><input type="checkbox" class="uf-scope-chk" value="reference" checked onchange="triggerFatawaPortalFilter()"> حوالہ جات</label>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- 2. SECONDARY STICKY NAVIGATION BAR (image_2.png White Horizontal Bar) -->
-<header class="fatawa-portal-subnav" id="fatawaPortalSubnav">
-  <div class="fatawa-subnav-container">
+    <!-- MOBILE HAMBURGER -->
     <button type="button" class="fatawa-mobile-menu-btn" onclick="toggleFatawaMobileNav()">
-      <i class="fa-solid fa-bars"></i> <span>فتاویٰ مینو</span>
+      <i class="fa-solid fa-bars"></i>
     </button>
 
+    <!-- CENTER: DEDICATED FATAWA PORTAL LINKS -->
     <nav class="fatawa-subnav-links" id="fatawaSubnavLinks" aria-label="فقہ و فتاویٰ پورٹل نیویگیشن">
-      <a href="../fikh-w-fatawa" class="fatawa-subnav-link active" title="فتاویٰ پورٹل سرورق">
+      <a href="../fikh-w-fatawa" class="fatawa-subnav-link active">
         <i class="fa-solid fa-house"></i>
         <span>سرورقِ فتاویٰ</span>
       </a>
@@ -1882,8 +1540,14 @@ body *::-webkit-scrollbar-thumb:hover {
         <i class="fa-solid fa-book-open-reader"></i>
         <span>رہنمائے صارف</span>
       </button>
+
+      <a href="javascript:void(0)" onclick="focusFatawaSearchEngine(event)" class="fatawa-subnav-link" title="فتاویٰ سرچ انجن">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <span>تلاش</span>
+      </a>
     </nav>
 
+    <!-- LEFT: ACTION BUTTONS -->
     <div class="fatawa-subnav-actions">
       <button type="button" class="btn-portal-track" onclick="openPortalModal('ufTrackModal')" title="استفتاء نمبر یا واٹس ایپ کے ذریعے اپنے سوال کا اسٹیٹس دیکھیں">
         <i class="fa-solid fa-magnifying-glass-location"></i>
@@ -1962,10 +1626,10 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
     <div class="uf-modal-body">
       <h4 style="color: #0f766e; margin-top: 0;"><i class="fa-solid fa-magnifying-glass"></i> 1۔ فتاویٰ تلاش کرنے کا طریقہ:</h4>
-      <p>آپ اوپر دیے گئے سرچ بار میں مسئلہ لکھ کر، یا <b>«آواز سے سرچ کریں»</b> بٹن دبا کر اپنی آواز میں اردو بول کر فوری فتویٰ تلاش کر سکتے ہیں۔ نیز دائیں جانب موجود <b>113 فقہی ابواب</b> کی فہرست سے کسی بھی موضوع پر کلک کر کے متعلقہ تمام فتاویٰ پڑھ سکتے ہیں۔</p>
+      <p>آپ سرچ انجن میں مسئلہ لکھ کر، یا <b>«آواز سے سرچ»</b> بٹن دبا کر اپنی آواز میں اردو بول کر فوری فتویٰ تلاش کر سکتے ہیں۔ نیز دائیں جانب موجود <b>113 فقہی ابواب</b> کی فہرست سے کسی بھی موضوع پر کلک کر کے متعلقہ تمام فتاویٰ پڑھ سکتے ہیں۔</p>
 
       <h4 style="color: #0f766e;"><i class="fa-solid fa-pen-to-square"></i> 2۔ نیا سوال پوچھنے کے آداب:</h4>
-      <p>نیا سوال بھیجنے سے قبل پہلے سرچ بار میں اپنا مسئلہ تلاش فرمائیں۔ اگر آپ کا مطلوبہ مسئلہ موجود نہ ہو تو <b>«سوال پوچھیں»</b> پر کلک کر کے تحریری یا آڈیو ریکارڈنگ کی صورت میں اپنا سوال ارسال کریں۔</p>
+      <p>نیا سوال بھیجنے سے قبل پہلے سرچ انجن میں اپنا مسئلہ تلاش فرمائیں۔ اگر آپ کا مطلوبہ مسئلہ موجود نہ ہو تو <b>«سوال پوچھیں»</b> پر کلک کر کے تحریری یا آڈیو ریکارڈنگ کی صورت میں اپنا سوال ارسال کریں۔</p>
 
       <h4 style="color: #0f766e;"><i class="fa-solid fa-magnifying-glass-location"></i> 3۔ سوال کا اسٹیٹس ٹریک کرنا:</h4>
       <p>سوال جمع ہونے کے بعد آپ کو ایک <b>استفتاء نمبر (`Q-XXXXXX`)</b> دیا جاتا ہے جس کے ذریعے آپ کسی بھی وقت <b>«سوال ٹریک کریں»</b> میں جا کر جواب کی پیشرفت دیکھ سکتے ہیں۔</p>
@@ -1979,11 +1643,6 @@ body *::-webkit-scrollbar-thumb:hover {
     if (nav) nav.classList.toggle('open');
   }
 
-  function toggleFatawaAdvDrawer() {
-    var d = document.getElementById('fatawaAdvDrawer');
-    if (d) d.classList.toggle('open');
-  }
-
   function openPortalModal(id) {
     var m = document.getElementById(id);
     if (m) m.classList.add('open');
@@ -1994,99 +1653,15 @@ body *::-webkit-scrollbar-thumb:hover {
     if (m) m.classList.remove('open');
   }
 
-  function onHeroSearchInput(val) {
-    var clearBtn = document.getElementById('fatawaHeroClearBtn');
-    if (clearBtn) clearBtn.style.display = val ? 'inline-block' : 'none';
-    if (typeof window.handleFatawaPortalLiveSearch === 'function') {
-      window.handleFatawaPortalLiveSearch(val);
-    }
-  }
-
-  function clearHeroSearchInput() {
-    var inp = document.getElementById('fatawaHeroSearchInput');
-    if (inp) {
-      inp.value = '';
-      onHeroSearchInput('');
-      inp.focus();
-    }
-  }
-
-  function triggerFatawaPortalFilter() {
-    var inp = document.getElementById('fatawaHeroSearchInput');
-    if (inp && typeof window.handleFatawaPortalLiveSearch === 'function') {
-      window.handleFatawaPortalLiveSearch(inp.value);
-    }
-  }
-
-  function submitFatawaPortalSearch(e) {
+  function focusFatawaSearchEngine(e) {
     if (e && e.preventDefault) e.preventDefault();
     var inp = document.getElementById('fatawaHeroSearchInput');
-    var q = inp ? inp.value.trim() : '';
-    var modeSel = document.getElementById('fatawaSearchModeSelect');
-    var mode = modeSel ? modeSel.value : 'smart';
-
-    if (typeof window.handleFatawaPortalLiveSearch === 'function') {
-      window.handleFatawaPortalLiveSearch(q);
-      var sec = document.getElementById('latestFatawaSection');
-      if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return false;
+    if (inp) {
+      inp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function() { inp.focus(); }, 220);
+    } else {
+      window.location.href = '/fikh-w-fatawa#fatawaSearchEngineCard';
     }
-
-    window.location.href = '/fikh-w-fatawa?q=' + encodeURIComponent(q) + '&mode=' + encodeURIComponent(mode);
-    return false;
-  }
-
-  // Voice Search in Urdu (Web Speech API)
-  var ufRecognition = null;
-  function startFatawaVoiceSearch() {
-    var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var btn = document.getElementById('fatawaVoiceSearchBtn');
-    var txt = document.getElementById('fatawaVoiceText');
-    var inp = document.getElementById('fatawaHeroSearchInput');
-
-    if (!SpeechRec) {
-      if (inp) inp.focus();
-      alert('آپ کے براؤزر میں وائس سرچ کی سہولت دستیاب نہیں ہے۔ براہِ کرم کروم یا ایج براؤزر استعمال کریں یا ٹائپ کر کے تلاش کریں۔');
-      return;
-    }
-
-    if (ufRecognition && btn && btn.classList.contains('listening')) {
-      ufRecognition.stop();
-      return;
-    }
-
-    ufRecognition = new SpeechRec();
-    ufRecognition.lang = 'ur-PK';
-    ufRecognition.interimResults = true;
-    ufRecognition.maxAlternatives = 1;
-
-    ufRecognition.onstart = function() {
-      if (btn) btn.classList.add('listening');
-      if (txt) txt.textContent = 'بولیں... سن رہا ہے';
-    };
-
-    ufRecognition.onresult = function(event) {
-      var transcript = '';
-      for (var i = event.resultIndex; i < event.results.length; ++i) {
-        transcript += event.results[i][0].transcript;
-      }
-      if (inp && transcript) {
-        inp.value = transcript.trim();
-        onHeroSearchInput(inp.value);
-      }
-    };
-
-    ufRecognition.onerror = function() {
-      if (btn) btn.classList.remove('listening');
-      if (txt) txt.textContent = 'آواز سے سرچ کریں';
-    };
-
-    ufRecognition.onend = function() {
-      if (btn) btn.classList.remove('listening');
-      if (txt) txt.textContent = 'آواز سے سرچ کریں';
-    };
-
-    ufRecognition.start();
   }
 
   function runModalQuestionTrack() {
@@ -2127,7 +1702,25 @@ body *::-webkit-scrollbar-thumb:hover {
 </script>
 
 
-    <main class="fatawa-standalone-portal">
+    <!-- Top Breadcrumb & Quick Info Strip -->
+    <div class="uf-breadcrumb-ribbon">
+        <div class="fatawa-portal-container-wide" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <a href="../" style="color: #475569; text-decoration: none; font-weight: 700;"><i class="fa-solid fa-house" style="color: #0f766e;"></i> مرکزی ویب سائٹ (ہوم)</a>
+                <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+                <a href="../fikh-w-fatawa" style="color: #0f766e; text-decoration: none; font-weight: 800;">فقہ و فتاویٰ پورٹل</a>
+                <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+                <span style="color: #64748b;">کتاب و سنت کی روشنی میں مستند شرعی فتاویٰ</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 12px; color: #065f46; font-weight: 700;">
+                <span><i class="fa-solid fa-check-circle" style="color: #0d9488;"></i> مستند فتاویٰ: 4</span>
+                <span>•</span>
+                <span><i class="fa-solid fa-folder-tree" style="color: #d97706;"></i> فقہی ابواب: 113</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="fatawa-standalone-portal" style="padding-top: 4px;">
         <div class="fatawa-portal-container-wide">
             <div class="uf-portal-grid">
 
@@ -3938,6 +3531,69 @@ body *::-webkit-scrollbar-thumb:hover {
                      ═════════════════════════════════════════════════════════════════ -->
                 <div class="uf-portal-main">
 
+                    <!-- ─── COMPACT, APPROPRIATELY-SIZED FATAWA SEARCH ENGINE (مناسب جگہ اور مناسب سائز) ─── -->
+                    <div class="uf-search-engine-card" id="fatawaSearchEngineCard">
+                        <form id="fatawaHeroSearchForm" onsubmit="return submitFatawaPortalSearch(event)">
+                            <div class="uf-se-row">
+                                <select id="fatawaSearchModeSelect" class="uf-se-select" onchange="triggerFatawaPortalFilter()" aria-label="تلاش کی قسم">
+                                    <option value="smart">✨ سمارٹ تلاش</option>
+                                    <option value="general">🔎 عمومی تلاش</option>
+                                    <option value="title">📌 عنوانِ فتویٰ</option>
+                                    <option value="question">❓ سوال کے الفاظ</option>
+                                    <option value="answer">📖 جواب و دلائل</option>
+                                    <option value="number">🔢 فتویٰ نمبر</option>
+                                    <option value="mufti">✍️ مفتی کا نام</option>
+                                </select>
+
+                                <div class="uf-se-input-wrap">
+                                    <i class="fa-solid fa-magnifying-glass uf-se-icon"></i>
+                                    <input
+                                        type="text"
+                                        id="fatawaHeroSearchInput"
+                                        class="uf-se-input"
+                                        value=""
+                                        placeholder="مسئلہ، عنوان، فتویٰ نمبر (مثلاً F-000001) یا کلیدی لفظ تلاش کریں..."
+                                        autocomplete="off"
+                                        oninput="onHeroSearchInput(this.value)"
+                                    />
+                                    <button type="button" id="fatawaHeroClearBtn" class="uf-se-clear" onclick="clearHeroSearchInput()" title="صاف کریں">&times;</button>
+                                </div>
+
+                                <button type="submit" class="uf-se-btn-submit" title="تلاش کریں">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <span>تلاش</span>
+                                </button>
+
+                                <button type="button" id="fatawaVoiceSearchBtn" class="uf-se-btn-voice" onclick="startFatawaVoiceSearch()" title="آواز سے اردو میں مسئلہ بول کر تلاش کریں">
+                                    <i class="fa-solid fa-microphone"></i>
+                                    <span id="fatawaVoiceText">آواز سے سرچ</span>
+                                </button>
+
+                                <button type="button" class="uf-se-btn-adv" onclick="toggleFatawaAdvDrawer()" title="ایڈوانس سرچ فلٹرز">
+                                    <i class="fa-solid fa-sliders"></i>
+                                    <span>فلٹرز</span>
+                                </button>
+                            </div>
+
+                            <!-- Collapsible Advanced Search Filters -->
+                            <div class="uf-se-adv-drawer" id="fatawaAdvDrawer">
+                                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                    <strong style="color: #065f46;"><i class="fa-solid fa-filter"></i> تلاش کی نوعیت:</strong>
+                                    <label style="cursor:pointer;"><input type="radio" name="ufMatchType" value="any" checked onchange="triggerFatawaPortalFilter()"> کوئی بھی لفظ</label>
+                                    <label style="cursor:pointer;"><input type="radio" name="ufMatchType" value="all" onchange="triggerFatawaPortalFilter()"> تمام الفاظ</label>
+                                    <label style="cursor:pointer;"><input type="radio" name="ufMatchType" value="exact" onchange="triggerFatawaPortalFilter()"> بعینہٖ ترتیب</label>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                                    <strong style="color: #065f46;"><i class="fa-solid fa-bullseye"></i> تلاش کی جگہ:</strong>
+                                    <label style="cursor:pointer;"><input type="checkbox" class="uf-scope-chk" value="title" checked onchange="triggerFatawaPortalFilter()"> عنوان</label>
+                                    <label style="cursor:pointer;"><input type="checkbox" class="uf-scope-chk" value="question" checked onchange="triggerFatawaPortalFilter()"> سوال</label>
+                                    <label style="cursor:pointer;"><input type="checkbox" class="uf-scope-chk" value="answer" checked onchange="triggerFatawaPortalFilter()"> جواب</label>
+                                    <label style="cursor:pointer;"><input type="checkbox" class="uf-scope-chk" value="reference" checked onchange="triggerFatawaPortalFilter()"> حوالہ جات</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                     <!-- Active Category Breadcrumb & Filter Banner (When Filtering by Category) -->
                     
 
@@ -5245,7 +4901,91 @@ body *::-webkit-scrollbar-thumb:hover {
                 });
         }
 
-        // ─── Live Search Connected to Top Hero Search Bar & Search Modes ───
+        // ─── Live Search Connected to Fatawa Search Engine Card ───
+        function toggleFatawaAdvDrawer() {
+            var d = document.getElementById('fatawaAdvDrawer');
+            if (d) d.classList.toggle('open');
+        }
+
+        function onHeroSearchInput(val) {
+            var clearBtn = document.getElementById('fatawaHeroClearBtn');
+            if (clearBtn) clearBtn.style.display = val ? 'inline-block' : 'none';
+            window.handleFatawaPortalLiveSearch(val);
+        }
+
+        function clearHeroSearchInput() {
+            var inp = document.getElementById('fatawaHeroSearchInput');
+            if (inp) {
+                inp.value = '';
+                onHeroSearchInput('');
+                inp.focus();
+            }
+        }
+
+        function triggerFatawaPortalFilter() {
+            var inp = document.getElementById('fatawaHeroSearchInput');
+            if (inp) window.handleFatawaPortalLiveSearch(inp.value);
+        }
+
+        function submitFatawaPortalSearch(e) {
+            if (e && e.preventDefault) e.preventDefault();
+            var inp = document.getElementById('fatawaHeroSearchInput');
+            window.handleFatawaPortalLiveSearch(inp ? inp.value.trim() : '');
+            return false;
+        }
+
+        var ufRecognition = null;
+        function startFatawaVoiceSearch() {
+            var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+            var btn = document.getElementById('fatawaVoiceSearchBtn');
+            var txt = document.getElementById('fatawaVoiceText');
+            var inp = document.getElementById('fatawaHeroSearchInput');
+
+            if (!SpeechRec) {
+                if (inp) inp.focus();
+                alert('آپ کے براؤزر میں وائس سرچ کی سہولت دستیاب نہیں ہے۔ براہِ کرم کروم یا ایج براؤزر استعمال کریں یا ٹائپ کر کے تلاش کریں۔');
+                return;
+            }
+
+            if (ufRecognition && btn && btn.classList.contains('listening')) {
+                ufRecognition.stop();
+                return;
+            }
+
+            ufRecognition = new SpeechRec();
+            ufRecognition.lang = 'ur-PK';
+            ufRecognition.interimResults = true;
+            ufRecognition.maxAlternatives = 1;
+
+            ufRecognition.onstart = function() {
+                if (btn) btn.classList.add('listening');
+                if (txt) txt.textContent = 'بولیں...';
+            };
+
+            ufRecognition.onresult = function(event) {
+                var transcript = '';
+                for (var i = event.resultIndex; i < event.results.length; ++i) {
+                    transcript += event.results[i][0].transcript;
+                }
+                if (inp && transcript) {
+                    inp.value = transcript.trim();
+                    onHeroSearchInput(inp.value);
+                }
+            };
+
+            ufRecognition.onerror = function() {
+                if (btn) btn.classList.remove('listening');
+                if (txt) txt.textContent = 'آواز سے سرچ';
+            };
+
+            ufRecognition.onend = function() {
+                if (btn) btn.classList.remove('listening');
+                if (txt) txt.textContent = 'آواز سے سرچ';
+            };
+
+            ufRecognition.start();
+        }
+
         window.handleFatawaPortalLiveSearch = function(val) {
             clearTimeout(searchDebounceTimer);
             searchDebounceTimer = setTimeout(function() {
