@@ -382,7 +382,7 @@
 
                     <div class="language">
 
-                        <a href="./" class="lang active">اردو زبان</a>
+                        <a href="./index.html" class="lang active">اردو زبان</a>
                         <a href="./ar" class="lang">عربی زبان</a>
                         <a href="./pending" class="lang">English</a>
 
@@ -431,35 +431,31 @@
 
 <!-- second header starts here  -->
 
+
 <div class="header2-container">
 
     <div class="main-container">
 
-        <div class="header2">
+        <div class="header2" style="position: relative;">
 
-            <a href="./introduction" class="image logo-1">
+            <a href="./index.html" class="image logo-1" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
 
-                <img src="./images/favicon.png" alt="image not found">
-
-            </a>
-
-            <a href="./introduction" class="image logo-3">
-
-                <img src="./images/logo-text.png" alt="image not found">
+                <img src="./images/favicon.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
 
             </a>
-            <!-- <a href="" class="image logo-3">
 
-                <img src="./images/logo-text-2.png" alt="image not found">
+            <a href="./index.html" class="image logo-3" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
 
-            </a> -->
+                <img src="./images/logo-text.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
+
+            </a>
+            
         </div>
 
     </div>
 </div>
 
 <!-- navbar design starts here  -->
-
 
 <div class="navbar">
 
@@ -524,7 +520,7 @@
                     تعارف <i class="fa-solid fa-circle-question nav-icon"></i>
                 </a>
 
-                <a href="./" data-active="home" class="nav-link">
+                <a href="./index.html" data-active="home" class="nav-link">
                     سرورق <i class="fa-solid fa-house nav-icon"></i>
                 </a>
 
@@ -720,50 +716,166 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
     </section>
 
-    <!-- 3D Interactive Quick Portal Hub -->
+    <!-- 3D Interactive Master Department Portals Directory on سرورق -->
     
-    <section class="sj-portal-hub-sec">
-        <div class="sj-portal-grid">
-            <a href="./library" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#059669,#047857);"><i class="fa-solid fa-book-bookmark"></i></div>
-                <div class="sj-3d-title">اسلامی لائبریری</div>
-                <span class="sj-3d-count">54+ کتب</span>
-            </a>
-            <a href="./library/publications" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0284c7,#0369a1);"><i class="fa-solid fa-stamp"></i></div>
-                <div class="sj-3d-title">مطبوعاتِ جمعیت</div>
-                <span class="sj-3d-count">54+ مطبوعات</span>
-            </a>
-            <a href="./fikh-w-fatawa" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);"><i class="fa-solid fa-scale-balanced"></i></div>
-                <div class="sj-3d-title">دار الافتاء و فتاویٰ</div>
-                <span class="sj-3d-count">4+ فتاویٰ</span>
-            </a>
-            <a href="./aljama" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#d97706,#b45309);"><i class="fa-solid fa-book-open-reader"></i></div>
-                <div class="sj-3d-title">مجلہ الجماعۃ</div>
-                <span class="sj-3d-count">62+ شمارے</span>
-            </a>
-            <a href="./masajid" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e);"><i class="fa-solid fa-mosque"></i></div>
-                <div class="sj-3d-title">مساجد ڈائریکٹری</div>
-                <span class="sj-3d-count">219+ مساجد</span>
-            </a>
-            <a href="./juma-list" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#15803d,#166534);"><i class="fa-solid fa-calendar-week"></i></div>
-                <div class="sj-3d-title">خطباتِ جمعہ</div>
-                <span class="sj-3d-count">ہفتہ وار شیڈول</span>
-            </a>
-            <a href="./articles" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490);"><i class="fa-solid fa-feather-pointed"></i></div>
-                <div class="sj-3d-title">علمی مضامین</div>
-                <span class="sj-3d-count">1+ مقالات</span>
-            </a>
-            <a href="./search" class="sj-3d-card">
-                <div class="sj-3d-icon" style="background:linear-gradient(135deg,#be123c,#9f1239);"><i class="fa-solid fa-bolt"></i></div>
-                <div class="sj-3d-title">برق رفتار تلاش</div>
-                <span class="sj-3d-count">Ctrl + K</span>
-            </a>
+    <section class="sj-portal-hub-sec" id="allDepartmentsHub">
+        <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); border-radius: 18px; padding: 16px 22px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: #fff; border: 1.5px solid #d4af37; box-shadow: 0 10px 28px rgba(6, 78, 59, 0.16);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(253, 224, 71, 0.18); border: 1px solid #fde047; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #fde047;">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <div>
+                    <h2 style="margin: 0; font-family: 'Noto Nastaliq Urdu', serif; font-size: 19px; font-weight: 800; color: #ffffff;">صوبائی جمعیت کے مستقل شعبہ جات اور پورٹلز</h2>
+                    <span style="font-size: 12px; color: #ccfbf1; display: block; margin-top: 2px;">ہر شعبہ کا مستقل، مکمل اور شیئر ایبل پورٹل — کسی بھی شعبہ پر کلک کریں یا لنک کاپی کریں</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="./search" style="background: #fde047; color: #064e3b; text-decoration: none; padding: 7px 14px; border-radius: 10px; font-family: 'Noto Nastaliq Urdu', serif; font-size: 13px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-magnifying-glass"></i> برق رفتار تلاش (Ctrl+K)
+                </a>
+            </div>
+        </div>
+
+        <div class="sj-portal-grid" style="grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 12px;">
+            <!-- 1. تعارف و تاریخ پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0f766e,#047857); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-landmark"></i></div>
+                    <span class="sj-3d-count">مستقل پورٹل</span>
+                </div>
+                <a href="./introduction" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">تعارف و تاریخِ جمعیت پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">قیام، اغراض و مقاصد، منہجِ سلف اور تنظیمی ڈھانچہ</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./introduction" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/introduction'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 2. سرگرمیاں و دعوت پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#15803d,#166534); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-person-running"></i></div>
+                    <span class="sj-3d-count">5 ذیلی شعبے</span>
+                </div>
+                <a href="./jamati-activities" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">شعبۂ دعوت و سرگرمیاں پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">جماعتی سرگرمیاں، آئندہ پروگرامز، آئینۂ جمعیت، خطباتِ جمعہ، رؤیتِ ہلال</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./jamati-activities" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/jamati-activities'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 3. ذیلی اکائیاں و مساجد پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-mosque"></i></div>
+                    <span class="sj-3d-count">219+ مساجد</span>
+                </div>
+                <a href="./masajid" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">مساجد و ذیلی اکائیاں پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">مساجد ڈائریکٹری و نقشہ، ضلعی جمعیات، مسجد رجسٹریشن</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./masajid" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/masajid'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 4. مجلہ الجماعۃ پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#d97706,#b45309); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-book-open-reader"></i></div>
+                    <span class="sj-3d-count">62+ شمارے</span>
+                </div>
+                <a href="./aljama" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">مجلہ الجماعۃ پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">شمارہ جات، مضامینِ مجلہ، موضوعات، مقالہ نگار، خصوصی شمارے</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./aljama" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/aljama'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 5. لائبریری و مطبوعات پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#059669,#047857); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-book-bookmark"></i></div>
+                    <span class="sj-3d-count">54+ کتب</span>
+                </div>
+                <a href="./library" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">اسلامی لائبریری و مطبوعات پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">کتب شو روم، مطبوعاتِ جمعیت، موضوعات، مصنفین، آن لائن مطالعہ</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./library" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/library'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 6. مضامین و مقالات پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0891b2,#0e7490); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-feather-pointed"></i></div>
+                    <span class="sj-3d-count">1+ مقالات</span>
+                </div>
+                <a href="./articles" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">مضامین و مقالات پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">علمی و تحقیقی مضامین، موضوعات، قلم کار ڈائریکٹری و رجسٹریشن</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./articles" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/articles'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 7. میڈیا و نشریات پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0284c7,#0369a1); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-photo-film"></i></div>
+                    <span class="sj-3d-count">میڈیا سینٹر</span>
+                </div>
+                <a href="./press-release" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">شعبۂ میڈیا و نشریات پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">پریس ریلیز و اعلامیے، ویڈیو گیلری و بیانات، دعوتی پوسٹرز</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./press-release" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/press-release'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 8. دار الافتاء و فتاویٰ پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <span class="sj-3d-count">4+ فتاویٰ</span>
+                </div>
+                <a href="./fikh-w-fatawa" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">دار الافتاء — فقہ و فتاویٰ پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">فتاویٰ سرچ انجن، کتب و ابوابِ فقہ، سوال پوچھیں، سوال ٹریک کریں</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./fikh-w-fatawa" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/fikh-w-fatawa'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 9. شعبۂ توصیہ و تصدیق پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#be123c,#9f1239); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <span class="sj-3d-count">آن لائن تصدیق</span>
+                </div>
+                <a href="./tausia" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">شعبۂ توصیہ و تصدیق پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">توصیہ برائے مساجد و طلبہ، اسٹیٹس چیک، آن لائن سرٹیفکیٹ تصدیق</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./tausia" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/tausia'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+
+            <!-- 10. شعبۂ رابطہ و تعاون پورٹل -->
+            <div class="sj-3d-card" style="align-items: stretch; text-align: right; padding: 14px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <div class="sj-3d-icon" style="background:linear-gradient(135deg,#0f766e,#115e59); margin-bottom:0; width:40px; height:40px; font-size:17px;"><i class="fa-solid fa-headset"></i></div>
+                    <span class="sj-3d-count">خدمات و رابطہ</span>
+                </div>
+                <a href="./contact" style="text-decoration:none;"><div class="sj-3d-title" style="font-size:15px;">شعبۂ رابطہ و تعاون پورٹل</div></a>
+                <div style="font-size:11.5px; color:#64748b; margin:4px 0 10px; line-height:1.6;">مرکزی دفتر سے رابطہ، مالی تعاون و عطیات، اردو یونیکوڈ کنورٹر</div>
+                <div style="display:flex; gap:6px; margin-top:auto;">
+                    <a href="./contact" style="flex:1; background:#0f766e; color:#fff; text-decoration:none; text-align:center; padding:5px 10px; border-radius:8px; font-size:12px; font-weight:700;">پورٹل کھولیں</a>
+                    <button type="button" onclick="navigator.clipboard.writeText(window.location.origin + '/contact'); this.innerHTML='<i class=\'fa-solid fa-check\'></i>';" style="background:#f1f5f9; border:1px solid #cbd5e1; color:#0f766e; border-radius:8px; padding:5px 10px; cursor:pointer; font-size:12px;" title="پورٹل لنک کاپی کریں"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1293,7 +1405,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <h1 class="heading">اقسام</h1>
 
           <div class="card">
-            <a href="./"> سرورق </a>
+            <a href="./index.html"> سرورق </a>
 
             <a href="./introduction"> تعارف </a>
 
