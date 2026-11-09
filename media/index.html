@@ -1588,6 +1588,130 @@
       animation: ytFadeIn 0.2s ease;
     }
 
+    /* Zero-Lag Offscreen Rendering Optimization */
+    .yt-card,
+    .yt-reel-card {
+      content-visibility: auto;
+      contain-intrinsic-size: 330px;
+    }
+
+    /* YouTube 15-by-15 Auto-Refresher Sentinel & Skeleton Shimmer */
+    .yt-infinite-sentinel {
+      margin: 28px 0 18px;
+      padding: 18px 22px;
+      background: var(--yt-surface);
+      border: 1px dashed var(--yt-border);
+      border-radius: 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--yt-card-shadow);
+    }
+
+    .yt-refresher-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--yt-text);
+    }
+
+    .yt-spinner-ring {
+      width: 22px;
+      height: 22px;
+      border: 3px solid var(--yt-surface-hover);
+      border-top-color: var(--yt-red);
+      border-radius: 50%;
+      animation: ytSpin 0.75s linear infinite;
+      display: inline-block;
+    }
+
+    @keyframes ytSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    .yt-progress-track {
+      width: 100%;
+      max-width: 380px;
+      height: 7px;
+      background: var(--yt-surface-2);
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .yt-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--yt-emerald), var(--yt-red));
+      border-radius: 50px;
+      transition: width 0.35s ease;
+    }
+
+    .yt-skeleton-grid {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 22px;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .yt-skeleton-grid.loading {
+      display: grid;
+    }
+
+    .yt-skeleton-card {
+      background: var(--yt-surface);
+      border: 1px solid var(--yt-border);
+      border-radius: 16px;
+      overflow: hidden;
+      padding-bottom: 14px;
+    }
+
+    .yt-shimmer-box {
+      background: linear-gradient(90deg, var(--yt-surface-2) 25%, var(--yt-surface-hover) 50%, var(--yt-surface-2) 75%);
+      background-size: 200% 100%;
+      animation: ytShimmer 1.2s infinite;
+    }
+
+    @keyframes ytShimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Floating Scroll-to-Top & Feed Status Button */
+    .yt-scroll-top-fab {
+      position: fixed;
+      bottom: 80px;
+      right: 24px;
+      background: linear-gradient(135deg, #0a5c36, #063720);
+      color: #fff;
+      border: 1.5px solid var(--yt-gold);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+      z-index: 2400;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .yt-scroll-top-fab.visible {
+      display: inline-flex;
+    }
+
+    .yt-scroll-top-fab:hover {
+      transform: translateY(-3px);
+      background: var(--yt-red);
+      border-color: var(--yt-red);
+    }
+
     @media (max-width: 992px) {
       .yt-watch-grid {
         grid-template-columns: 1fr;
@@ -2255,25 +2379,27 @@ body *::-webkit-scrollbar-thumb:hover {
       </div>
       <div id="homeReelsShelf" class="yt-reels-grid"></div>
 
-      <!-- Shelf C: Featured Playlists Shelf -->
+      <!-- Shelf C: Featured Playlists & Infinite Channel Stream (15-by-15 Auto-Refresher) -->
       <div class="yt-section-head" style="margin-top:38px;">
         <h2 class="yt-section-title">
-          <i class="fas fa-layer-group" style="color:var(--yt-emerald);"></i> علمی و دعوتی پلے لسٹس اور کانفرنس سیریز
+          <i class="fas fa-layer-group" style="color:var(--yt-emerald);"></i> علمی و دعوتی پلے لسٹس اور مکمل چینل اسٹریم (خودکار ۱۵-۱۵ اسکرول فیڈ)
         </h2>
         <div style="display:flex; gap:8px;">
           <button type="button" class="yt-icon-pill" onclick="openStudioUploadModal('playlist')">
             <i class="fas fa-folder-plus"></i> + پلے لسٹ شامل کریں
           </button>
           <button type="button" class="yt-icon-pill" onclick="switchYtTab('playlists')">
-            تمام 77 پلے لسٹس دیکھیں <i class="fas fa-arrow-left"></i>
+            صرف پلے لسٹس ٹیب (77) <i class="fas fa-arrow-left"></i>
           </button>
         </div>
       </div>
       <div id="homePlaylistsGrid" class="yt-video-grid"></div>
+      <div id="homeSkeletonGrid" class="yt-skeleton-grid"></div>
+      <div id="homeInfiniteSentinel" class="yt-infinite-sentinel"></div>
     </div>
 
     <!-- =====================================================
-         TAB 2: 🎬 STANDARD VIDEOS (DEDICATED 16:9 VIDEOS SECTION)
+         TAB 2: 🎬 STANDARD VIDEOS (DEDICATED 16:9 VIDEOS SECTION — 15-BY-15 AUTO-REFRESHER)
          ===================================================== -->
     <div id="ytPanel-videos" class="yt-tab-panel">
       <div class="yt-chips-row">
@@ -2289,7 +2415,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <button type="button" class="yt-chip" onclick="filterStandardVideos('سوال و جواب', this)">سوال و جواب</button>
         </div>
         <div style="display:flex; gap:8px; align-items:center;">
-          <select id="videosSortSelect" class="yt-sort-select" onchange="renderStandardVideosTab()">
+          <select id="videosSortSelect" class="yt-sort-select" onchange="renderStandardVideosTab(true)">
             <option value="newest">تازہ ترین پہلے</option>
             <option value="popular">مقبول ترین (Views)</option>
             <option value="oldest">قدیم ترین پہلے</option>
@@ -2301,6 +2427,8 @@ body *::-webkit-scrollbar-thumb:hover {
       </div>
 
       <div id="allStandardVideosGrid" class="yt-video-grid"></div>
+      <div id="videosSkeletonGrid" class="yt-skeleton-grid"></div>
+      <div id="videosInfiniteSentinel" class="yt-infinite-sentinel"></div>
     </div>
 
     <!-- =====================================================
@@ -2329,7 +2457,7 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <!-- =====================================================
-         TAB 4: 📚 PLAYLISTS (DEDICATED 77+ PLAYLISTS SECTION)
+         TAB 4: 📚 PLAYLISTS (DEDICATED 77+ PLAYLISTS SECTION — 15-BY-15 AUTO-REFRESHER)
          ===================================================== -->
     <div id="ytPanel-playlists" class="yt-tab-panel">
       <div class="yt-chips-row">
@@ -2341,7 +2469,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <button type="button" class="yt-chip" onclick="filterPlaylistsTab('دروس و خطبات', this)">علمی دروس سیریز</button>
         </div>
         <div style="display:flex; gap:8px; align-items:center;">
-          <select id="playlistsSortSelect" class="yt-sort-select" onchange="renderPlaylistsTab()">
+          <select id="playlistsSortSelect" class="yt-sort-select" onchange="renderPlaylistsTab(true)">
             <option value="newest">تازہ ترین سیریز</option>
             <option value="popular">مقبول ترین پلے لسٹس</option>
             <option value="title">الفبائی ترتیب (A-Z)</option>
@@ -2353,6 +2481,8 @@ body *::-webkit-scrollbar-thumb:hover {
       </div>
 
       <div id="allPlaylistsGrid" class="yt-video-grid"></div>
+      <div id="playlistsSkeletonGrid" class="yt-skeleton-grid"></div>
+      <div id="playlistsInfiniteSentinel" class="yt-infinite-sentinel"></div>
     </div>
 
     <!-- =====================================================
@@ -2590,11 +2720,22 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
   </div>
 
+  <!-- Floating Scroll-to-Top Button -->
+  <button type="button" id="ytScrollTopFab" class="yt-scroll-top-fab" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    <i class="fas fa-arrow-up"></i> اوپر چینل ہیڈر پر جائیں
+  </button>
+
   <!-- Toast Notification -->
   <div id="ytToast" class="yt-toast">
     <i class="fas fa-check-circle" style="color:#fde68a;"></i>
     <span id="ytToastText"></span>
   </div>
+  <script>
+    window.addEventListener('scroll', function () {
+      const fab = document.getElementById('ytScrollTopFab');
+      if (fab) fab.classList.toggle('visible', window.scrollY > 550);
+    }, { passive: true });
+  </script>
 
   <!-- Footer -->
   <footer>
@@ -3184,7 +3325,136 @@ body *::-webkit-scrollbar-thumb:hover {
       }
 
       // =====================================================
-      // RENDER TABS
+      // 15-BY-15 SMART AUTO-REFRESHER INFINITE SCROLL ENGINE
+      // =====================================================
+      const BATCH_SIZE = 15;
+      const feedState = {
+        home: { items: [], renderedCount: 0, loading: false },
+        videos: { items: [], renderedCount: 0, loading: false },
+        playlists: { items: [], renderedCount: 0, loading: false }
+      };
+
+      function buildSkeletonHtml(count = 3) {
+        let html = '';
+        for (let i = 0; i < count; i++) {
+          html += `
+            <div class="yt-skeleton-card">
+              <div class="yt-shimmer-box" style="width:100%; aspect-ratio:16/9;"></div>
+              <div style="padding:14px 16px; display:flex; gap:12px;">
+                <div class="yt-shimmer-box" style="width:38px; height:38px; border-radius:50%; flex-shrink:0;"></div>
+                <div style="flex:1;">
+                  <div class="yt-shimmer-box" style="height:16px; width:90%; border-radius:6px; margin-bottom:8px;"></div>
+                  <div class="yt-shimmer-box" style="height:13px; width:65%; border-radius:6px;"></div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+        return html;
+      }
+
+      function updateSentinelUi(feedKey, sentinelId, skeletonId) {
+        const st = feedState[feedKey];
+        const sentinel = document.getElementById(sentinelId);
+        const skeleton = document.getElementById(skeletonId);
+        if (!sentinel) return;
+
+        if (skeleton && !skeleton.innerHTML) {
+          skeleton.innerHTML = buildSkeletonHtml(3);
+        }
+
+        const total = st.items.length;
+        const shown = st.renderedCount;
+
+        if (total === 0) {
+          sentinel.style.display = 'none';
+          return;
+        }
+
+        sentinel.style.display = 'flex';
+        const pct = Math.min(100, Math.round((shown / total) * 100));
+
+        if (shown >= total) {
+          sentinel.innerHTML = `
+            <div class="yt-refresher-status" style="color:var(--yt-emerald);">
+              <i class="fas fa-check-circle"></i> الحمد للہ! تمام ${total} ویڈیوز اور سیریز مکمل طور پر لوڈ ہو چکی ہیں
+            </div>
+            <div class="yt-progress-track">
+              <div class="yt-progress-fill" style="width:100%;"></div>
+            </div>
+          `;
+        } else {
+          const remaining = Math.min(BATCH_SIZE, total - shown);
+          sentinel.innerHTML = `
+            <div class="yt-refresher-status">
+              <span class="yt-spinner-ring"></span>
+              <span>پندرہ بہ پندرہ خودکار ریفریشر فعال ہے — نیچے اسکرول کرنے پر اگلی ${remaining} ویڈیوز خودکار کھلیں گی (${shown} / ${total})</span>
+            </div>
+            <div class="yt-progress-track">
+              <div class="yt-progress-fill" style="width:${pct}%;"></div>
+            </div>
+            <button type="button" class="yt-mini-btn" onclick="loadNextFeedBatch('${feedKey}')" style="background:var(--yt-emerald); color:#fff; padding:6px 18px; border-radius:50px; font-weight:700;">
+              <i class="fas fa-bolt"></i> اگلی ${remaining} ویڈیوز ابھی لوڈ کریں
+            </button>
+          `;
+        }
+      }
+
+      window.loadNextFeedBatch = function (feedKey) {
+        const st = feedState[feedKey];
+        if (!st || st.loading || st.renderedCount >= st.items.length) return;
+
+        const mapConfig = {
+          home: { gridId: 'homePlaylistsGrid', sentinelId: 'homeInfiniteSentinel', skeletonId: 'homeSkeletonGrid' },
+          videos: { gridId: 'allStandardVideosGrid', sentinelId: 'videosInfiniteSentinel', skeletonId: 'videosSkeletonGrid' },
+          playlists: { gridId: 'allPlaylistsGrid', sentinelId: 'playlistsInfiniteSentinel', skeletonId: 'playlistsSkeletonGrid' }
+        };
+        const cfg = mapConfig[feedKey];
+        if (!cfg) return;
+
+        const grid = document.getElementById(cfg.gridId);
+        const skeleton = document.getElementById(cfg.skeletonId);
+        if (!grid) return;
+
+        st.loading = true;
+        if (skeleton) skeleton.classList.add('loading');
+
+        setTimeout(() => {
+          const nextSlice = st.items.slice(st.renderedCount, st.renderedCount + BATCH_SIZE);
+          const htmlChunk = nextSlice.map(item => isPlaylistItem(item) ? buildPlaylistCardHtml(item) : buildStandardVideoCardHtml(item)).join('');
+          grid.insertAdjacentHTML('beforeend', htmlChunk);
+          st.renderedCount += nextSlice.length;
+          st.loading = false;
+          if (skeleton) skeleton.classList.remove('loading');
+          updateSentinelUi(feedKey, cfg.sentinelId, cfg.skeletonId);
+        }, 240);
+      };
+
+      // IntersectionObserver for automatic 15-by-15 loading on scroll
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            if (entry.target.id === 'homeInfiniteSentinel' && currentTab === 'home') {
+              loadNextFeedBatch('home');
+            } else if (entry.target.id === 'videosInfiniteSentinel' && currentTab === 'videos') {
+              loadNextFeedBatch('videos');
+            } else if (entry.target.id === 'playlistsInfiniteSentinel' && currentTab === 'playlists') {
+              loadNextFeedBatch('playlists');
+            }
+          });
+        }, { rootMargin: '280px 0px' });
+
+        setTimeout(() => {
+          ['homeInfiniteSentinel', 'videosInfiniteSentinel', 'playlistsInfiniteSentinel'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+          });
+        }, 120);
+      }
+
+      // =====================================================
+      // RENDER TABS (15 ITEMS INITIAL BATCH + AUTO-SCROLL)
       // =====================================================
       function filterListByQuery(list, q) {
         if (!q || !q.trim()) return list;
@@ -3216,14 +3486,23 @@ body *::-webkit-scrollbar-thumb:hover {
         }
         if (homeReelEl) {
           homeReelEl.innerHTML = rls.length
-            ? rls.slice(0, 6).map((r, i) => buildReelCardHtml(r, i)).join('')
+            ? rls.slice(0, 8).map((r, i) => buildReelCardHtml(r, i)).join('')
             : `<div style="grid-column:1/-1; padding:24px; text-align:center; color:var(--yt-text-muted);">کوئی ریل نہیں ملی۔</div>`;
         }
+
+        // Combined stream for Home infinite scroll (remaining standard videos + all playlists, 15 per batch)
+        const combinedHomeStream = [...std.slice(6), ...pls];
+        feedState.home.items = combinedHomeStream;
+        const firstBatch = combinedHomeStream.slice(0, BATCH_SIZE);
+        feedState.home.renderedCount = firstBatch.length;
+        feedState.home.loading = false;
+
         if (homePlEl) {
-          homePlEl.innerHTML = pls.length
-            ? pls.slice(0, 6).map(buildPlaylistCardHtml).join('')
+          homePlEl.innerHTML = firstBatch.length
+            ? firstBatch.map(item => isPlaylistItem(item) ? buildPlaylistCardHtml(item) : buildStandardVideoCardHtml(item)).join('')
             : `<div style="grid-column:1/-1; padding:24px; text-align:center; color:var(--yt-text-muted);">کوئی پلے لسٹ نہیں ملی۔</div>`;
         }
+        updateSentinelUi('home', 'homeInfiniteSentinel', 'homeSkeletonGrid');
       };
 
       window.renderStandardVideosTab = function () {
@@ -3240,12 +3519,18 @@ body *::-webkit-scrollbar-thumb:hover {
           std.sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0));
         }
 
+        feedState.videos.items = std;
+        const firstBatch = std.slice(0, BATCH_SIZE);
+        feedState.videos.renderedCount = firstBatch.length;
+        feedState.videos.loading = false;
+
         const grid = document.getElementById('allStandardVideosGrid');
         if (grid) {
-          grid.innerHTML = std.length
-            ? std.map(buildStandardVideoCardHtml).join('')
+          grid.innerHTML = firstBatch.length
+            ? firstBatch.map(buildStandardVideoCardHtml).join('')
             : `<div style="grid-column:1/-1; padding:40px; text-align:center; color:var(--yt-text-muted);">اس کیٹیگری میں کوئی ویڈیو موجود نہیں۔ "+ عام ویڈیو اپلوڈ کریں" بٹن سے نئی ویڈیو شامل کریں۔</div>`;
         }
+        updateSentinelUi('videos', 'videosInfiniteSentinel', 'videosSkeletonGrid');
       };
 
       window.renderReelsTab = function () {
@@ -3270,12 +3555,18 @@ body *::-webkit-scrollbar-thumb:hover {
           pls.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
         }
 
+        feedState.playlists.items = pls;
+        const firstBatch = pls.slice(0, BATCH_SIZE);
+        feedState.playlists.renderedCount = firstBatch.length;
+        feedState.playlists.loading = false;
+
         const grid = document.getElementById('allPlaylistsGrid');
         if (grid) {
-          grid.innerHTML = pls.length
-            ? pls.map(buildPlaylistCardHtml).join('')
+          grid.innerHTML = firstBatch.length
+            ? firstBatch.map(buildPlaylistCardHtml).join('')
             : `<div style="grid-column:1/-1; padding:40px; text-align:center; color:var(--yt-text-muted);">اس فلٹر میں کوئی پلے لسٹ نہیں ملی۔</div>`;
         }
+        updateSentinelUi('playlists', 'playlistsInfiniteSentinel', 'playlistsSkeletonGrid');
       };
 
       window.renderSpeakersTab = function () {
