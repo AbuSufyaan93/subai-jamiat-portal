@@ -14,7 +14,7 @@ body {
 body {
     height: 100vh;
     /* background: url('../images/bg-gif.gif'); */
-    background: #f0f0f0 url('../images/main-bg.jpg');
+    background: #f0f0f0 url('../images/bg-clean-v10.png');
     background-blend-mode: multiply;
 }
 

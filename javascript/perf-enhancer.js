@@ -610,17 +610,28 @@
     });
   }
 
-  // 7. Register PWA Service Worker (Works at both root '/' and '/subai-jamiat-portal/')
-  function registerServiceWorker() {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        var swUrl = resolvePortalUrl('/sw.js');
-        navigator.serviceWorker.register(swUrl).catch(function () {});
-      });
-    }
+  // 7. Purge any stale Service Worker caches so updated CSS & images always load fresh
+  function purgeStaleServiceWorkerCaches() {
+    try {
+      if ('caches' in window) {
+        caches.keys().then(function (keys) {
+          keys.forEach(function (k) {
+            if (k !== 'sjahm-static-v10') caches.delete(k);
+          });
+        }).catch(function () {});
+      }
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function (regs) {
+          regs.forEach(function (reg) {
+            reg.update().catch(function () {});
+          });
+        }).catch(function () {});
+      }
+    } catch (_) {}
   }
 
   function bootAll() {
+    purgeStaleServiceWorkerCaches();
     optimizeImages();
     injectSpeculationRules();
     initInstantPrefetch();
@@ -633,5 +644,4 @@
   } else {
     bootAll();
   }
-  registerServiceWorker();
 })();

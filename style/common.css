@@ -1,17 +1,9 @@
 /* Google Fonts loaded non-blocking via <link> in css&js.ejs */
 
-@font-face {
-  font-family: 'MehrNastaliq';
-  src: url('../fonts/mehr_nastalique.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   margin: 0;
   padding: 0;
-  font-family: "MehrNastaliq", "Noto Nastaliq Urdu", serif;
+  font-family: "Noto Nastaliq Urdu", serif;
   box-sizing: border-box;
 }
 
@@ -47,7 +39,7 @@ a {
 body {
   overflow-y: auto;
   overflow-x: hidden;
-  background: #f4f6f5 url("../images/main-bg.jpg?v=clean2026") repeat top center;
+  background: #f4f6f5 url("../images/bg-clean-v10.png") repeat top center;
   background-size: 420px auto;
   min-width: 250px;
 }
