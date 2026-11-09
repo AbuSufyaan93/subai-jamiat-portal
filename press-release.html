@@ -687,7 +687,7 @@
 
     <div class="main-container">
 
-        <div class="header2" style="position: relative;">
+        <div class="header2">
 
             <a href="./index.html" class="image logo-1" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
 
@@ -700,12 +700,6 @@
                 <img src="./images/logo-text.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
 
             </a>
-            
-            <a href="./index.html" style="position: absolute; left: 16px; bottom: 12px; background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%); color: #064e3b; padding: 6px 14px; border-radius: 999px; font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif; font-size: 13px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(0,0,0,0.28); border: 1.5px solid #ffffff; z-index: 20;" title="مرکزی ویب سائٹ کے سرورق (ہوم پیج) پر واپس جائیں">
-                <i class="fa-solid fa-house-chimney"></i>
-                <span>مرکزی سرورق</span>
-            </a>
-            
         </div>
 
     </div>
@@ -1137,7 +1131,7 @@
       
     </nav>
 
-    <!-- LEFT: SHARE PORTAL LINK & ALL PORTALS SWITCHER -->
+    <!-- LEFT: SHARE PORTAL LINK & BACK TO MAIN WEBSITE -->
     <div class="sj-dept-actions">
       <button type="button" class="btn-dept-share" onclick="openDeptShareModal()" title="اس شعبہ یا صفحہ کا پروفیشنل لنک شیئر کریں">
         <i class="fa-solid fa-share-nodes"></i>
@@ -1145,100 +1139,15 @@
       </button>
 
       <a href="./index.html" class="btn-dept-mainhome" title="مرکزی ویب سائٹ کے سرورق پر واپس جائیں">
-        <i class="fa-solid fa-table-cells-large"></i>
-        <span>تمام شعبہ جات</span>
+        <i class="fa-solid fa-house"></i>
+        <span>مرکزی ویب سائٹ</span>
       </a>
     </div>
   </div>
 </header>
 
-<!-- 2. COMPACT DEPARTMENT SEARCH BAR & SUB-MODULES HUB -->
-<div class="sj-dept-hub-wrap">
-  <div class="sj-dept-top-row">
-    <!-- Right: Breadcrumb -->
-    <div class="sj-dept-breadcrumb">
-      <a href="./index.html"><i class="fa-solid fa-house" style="color: #0f766e;"></i> سرورق</a>
-      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-      <a href="./press-release" style="color: #0f766e;">شعبۂ میڈیا و نشریات پورٹل</a>
-      
-        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-        <span style="color: #065f46; font-weight: 800;">پریس ریلیز و اعلامیے</span>
-      
-    </div>
 
-    <!-- Left: Appropriately-Sized Department Search Bar (مناسب جگہ اور مناسب سائز) -->
-    <div class="sj-dept-search-bar">
-      <div class="sj-dept-search-input-wrap">
-        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
-        <input
-          type="text"
-          id="sjDeptLiveSearchInput"
-          class="sj-dept-search-input"
-          placeholder="پریس ریلیز، بیان، ویڈیو، پوسٹر یا موضوع تلاش کریں..."
-          autocomplete="off"
-          oninput="filterDeptPageContent(this.value)"
-        />
-      </div>
-      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
-        <i class="fa-solid fa-microphone"></i>
-        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
-      </button>
-    </div>
-  </div>
 
-  <!-- Sub-Department Quick Switcher Cards -->
-  <div class="sj-dept-subcards-grid">
-    
-      
-      <a href="./press-release" class="sj-dept-subcard active">
-        <div>
-          <div class="sj-dept-subcard-title">
-            <i class="fa-solid fa-file-signature" style="color: #0f766e;"></i>
-            <span>پریس ریلیز و اعلامیے</span>
-          </div>
-          <div class="sj-dept-subcard-desc">مرکزی دفتر سے جاری کردہ سرکاری اعلامیے اور بیانات</div>
-        </div>
-        <i class="fa-solid fa-arrow-left" style="color: #0f766e; font-size: 13px;"></i>
-      </a>
-    
-      
-      <a href="./video-gallery" class="sj-dept-subcard ">
-        <div>
-          <div class="sj-dept-subcard-title">
-            <i class="fa-solid fa-circle-play" style="color: #0f766e;"></i>
-            <span>ویڈیو گیلری و بیانات</span>
-          </div>
-          <div class="sj-dept-subcard-desc">علمائے کرام کے دروس، خطبات اور کانفرنس ویڈیوز</div>
-        </div>
-        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
-      </a>
-    
-      
-      <a href="./posters" class="sj-dept-subcard ">
-        <div>
-          <div class="sj-dept-subcard-title">
-            <i class="fa-solid fa-image" style="color: #0f766e;"></i>
-            <span>پوسٹرز و دعوتی اشتہارات</span>
-          </div>
-          <div class="sj-dept-subcard-desc">دعوتی، اصلاحی اور معلوماتی گرافکس و پوسٹرز</div>
-        </div>
-        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
-      </a>
-    
-      
-      <a href="./imp-notice" class="sj-dept-subcard ">
-        <div>
-          <div class="sj-dept-subcard-title">
-            <i class="fa-solid fa-bell" style="color: #0f766e;"></i>
-            <span>اہم اعلانات</span>
-          </div>
-          <div class="sj-dept-subcard-desc">صوبائی جمعیت کی جانب سے خصوصی اعلانات</div>
-        </div>
-        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
-      </a>
-    
-  </div>
-</div>
 
 <!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
 <div class="sj-dept-share-modal" id="sjDeptShareModal" onclick="if(event.target===this) closeDeptShareModal()">
