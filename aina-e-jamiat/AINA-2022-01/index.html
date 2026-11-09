@@ -708,184 +708,662 @@
 
 <!-- navbar design starts here  -->
 
-<div class="navbar">
 
-    <div class="main-container">
-
-        <div class="custom-container">
-
-            <div class="search">
-                <span>
-                    <i class="fa-solid fa-magnifying-glass icon"></i>
-                    <input type="text" placeholder="تلاش کریں..." aria-label="تلاش کریں">
-                </span>
-            </div>
-
-            <div class="menubar">
-
-                <span class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <span class="menu-icon"> مینو </span>
-                <span class="bar-icon"> <i class="fa-solid fa-bars"></i> </span>
-
-            </div>
-
-            <div class="nav">
-
-                <a href="../../contact" data-active="contact" class="nav-link">
-                    رابطہ کریں<i class="fa-solid fa-envelope nav-icon"></i>
-                </a>
-
-                <div class="dropdown">
-                    <a class="nav-link">
-                        <i class="fa-solid icon fa-angle-down"></i>
-
-                        <span>
-                            توصیہ <i class="fa-solid fa-clipboard nav-icon"></i>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a target="_blank" href="../../tausia-rules" class="nav-link">
-                            اصول وضوابط
-                        </a>
-                        <a href="../../tausia" data-active="tausia" class="nav-link">
-                            توصیہ کے لئے اپلائی کریں
-                        </a>
-                        <!-- <a href="../../tausia-update-registeration-login" data-active="update-tausia" class="nav-link">
-                            اپڈیٹ توصیہ
-                        </a> -->
-                        <a href="../../check-tausia-status" data-active="tausia-status" class="nav-link">
-                            اسٹیٹس چیک کریں
-                        </a>
-                        <a href="../../masjid-registeration" data-active="masjid-registeration">
-                            مسجد کو رجسٹر کریں
-                        </a>
-                        <a href="../../tausia-authentication">
-                            توصیہ کی تصدیق کریں
-                        </a>
-                        <a href="../../tausia-talaba" data-active="tausia-talaba" class="nav-link">
-                            برائے طلبہ
-                        </a>
-                        <a href="../../check-talaba-status" data-active="talaba-status" class="nav-link">
-                            اسٹیٹس برائے طلبہ
-                        </a>
-                    </div>
-                </div>
-
-                <a href="../../fikh-w-fatawa" class="nav-link" data-active="fikh-w-fatawa">
-                    فتاویٰ <i class="fa-solid fa-pen nav-icon"></i>
-                </a>
-                <div class="dropdown">
-
-                    <a class="nav-link">
-
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span>میڈیا <i class="fa-solid fa-video nav-icon"></i></span>
-
-                    </a>
-
-                    <div class="dropdown-menu">
-
-                        <!-- <a href="cards.html" data-active="cards"> بطاقات </a> -->
-                        <a href="../../press-release" data-active="press-release">
-                            پریس ریلیز
-                        </a>
-                        <a href="../../video-gallery" data-active="video-gallery">ویڈیوز </a>
-                        <a href="../../posters" data-active="posters">
-                            پوسٹرس
-                        </a>
+<!-- UNIVERSAL STANDALONE DEPARTMENT PORTAL HEADER, SEARCH ENGINE & SHARE SYSTEM -->
+<!-- Subai Jamiat Ahle Hadees Mumbai — ہر شعبہ کا مستقل اور معیاری پورٹل -->
 
 
 
-                        <!-- <a href="../../photo-gallery" data-active="photo-gallery">انفوگرافکس</a> -->
+<style>
+  /* ─── STANDALONE DEPARTMENT PORTAL LAYOUT OVERRIDES ─── */
+  /* Hide old homepage left/right sidebars and make center column full-width portal */
+  section#content .column-left,
+  section#content .column-right {
+    display: none !important;
+  }
+  section#content .column-center {
+    flex: 0 0 100% !important;
+    max-width: 1260px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+  section#content {
+    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    padding-top: 4px !important;
+    min-height: 82vh;
+  }
 
-                    </div>
-                </div>
+  /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
+  .sj-dept-portal-nav {
+    background: #ffffff;
+    border-bottom: 2px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .sj-dept-nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    gap: 12px;
+  }
+  .sj-dept-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #065f46;
+    flex-shrink: 0;
+  }
+  .sj-dept-brand-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
+    color: #0f766e;
+    border: 1px solid #5eead4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
+  }
+  .sj-dept-brand-text h1 {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.25;
+    color: #065f46;
+  }
+  .sj-dept-brand-text span {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    display: block;
+    margin-top: 2px;
+  }
+  .sj-dept-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .sj-dept-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 8px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+  .sj-dept-link i {
+    color: #0f766e;
+    font-size: 13.5px;
+  }
+  .sj-dept-link:hover {
+    background: #f0fdfa;
+    color: #0f766e;
+  }
+  .sj-dept-link.active {
+    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
+    color: #065f46 !important;
+    border: 1px solid #5eead4;
+    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
+  }
+  .sj-dept-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .btn-dept-share {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    background: #fffbeb;
+    color: #b45309 !important;
+    border: 1px solid #fde68a;
+    border-radius: 9px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .btn-dept-share:hover {
+    background: #fef3c7;
+    border-color: #fcd34d;
+  }
+  .btn-dept-mainhome {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
+    color: #ffffff !important;
+    border-radius: 9px;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.2);
+    white-space: nowrap;
+  }
+  .sj-dept-mobile-btn {
+    display: none;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    padding: 7px 12px;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+  }
 
-                <a href="../../articles" class="nav-link" data-active="articles">
-                    مضامین <i class="fa-solid fa-feather-pointed nav-icon"></i>
-                </a>
+  /* ─── BREADCRUMB, COMPACT SEARCH ENGINE & SUB-PORTAL SWITCHER HUB ─── */
+  .sj-dept-hub-wrap {
+    max-width: 1260px;
+    margin: 14px auto 10px;
+    padding: 0 16px;
+    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  .sj-dept-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: #ffffff;
+    border: 1.5px solid #99f6e4;
+    border-top: 3.5px solid #0f766e;
+    border-radius: 14px;
+    padding: 10px 16px;
+    box-shadow: 0 4px 16px rgba(15, 118, 110, 0.05);
+    margin-bottom: 12px;
+  }
+  .sj-dept-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+  .sj-dept-breadcrumb a {
+    color: #475569;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  .sj-dept-breadcrumb a:hover {
+    color: #0f766e;
+  }
 
-                <a href="../../library" class="nav-link" data-active="library">
-                    لائبریری <i class="fa-solid fa-book-bookmark nav-icon"></i>
-                </a>
+  /* Compact, Appropriately-Sized Search Engine inside Department Portal */
+  .sj-dept-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1 1 360px;
+    max-width: 540px;
+  }
+  .sj-dept-search-input-wrap {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .sj-dept-search-input {
+    width: 100%;
+    height: 36px;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    background: #f8fafc;
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 13px;
+    padding: 5px 32px 5px 26px;
+    outline: none;
+    transition: all 0.2s;
+  }
+  .sj-dept-search-input:focus {
+    border-color: #0f766e;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+  }
+  .sj-dept-search-icon {
+    position: absolute;
+    right: 10px;
+    color: #0f766e;
+    font-size: 13px;
+    pointer-events: none;
+  }
+  .sj-dept-voice-btn {
+    height: 36px;
+    padding: 0 11px;
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fcd34d;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
 
-                <a href="../../aljama" class="nav-link" data-active="mujallah">
-                    میگزین <i class="fa-solid fa-book nav-icon"></i>
-                </a>
+  /* Sub-Portal Quick Cards Strip */
+  .sj-dept-subcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .sj-dept-subcard {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-right: 3.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+  }
+  .sj-dept-subcard:hover {
+    border-color: #99f6e4;
+    border-right-color: #0f766e;
+    background: #f0fdfa;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(15, 118, 110, 0.08);
+  }
+  .sj-dept-subcard.active {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+    border-color: #5eead4;
+    border-right: 4px solid #0f766e;
+    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
+  }
+  .sj-dept-subcard-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .sj-dept-subcard.active .sj-dept-subcard-title {
+    color: #065f46;
+  }
+  .sj-dept-subcard-desc {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 2px;
+    line-height: 1.5;
+  }
 
-                <div class="dropdown">
+  /* Share Modal */
+  .sj-dept-share-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.72);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+    direction: rtl;
+    text-align: right;
+    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+  }
+  .sj-dept-share-modal.open {
+    display: flex;
+  }
+  .sj-dept-share-box {
+    background: #ffffff;
+    border-radius: 18px;
+    max-width: 520px;
+    width: 100%;
+    border: 1.5px solid #99f6e4;
+    box-shadow: 0 24px 55px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
 
-                    <a class="nav-link">
+  @media (max-width: 1024px) {
+    .sj-dept-mobile-btn {
+      display: inline-flex;
+      align-items: center;
+    }
+    .sj-dept-nav-container {
+      flex-wrap: wrap;
+      padding: 10px 16px;
+    }
+    .sj-dept-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      padding-top: 10px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 8px;
+    }
+    .sj-dept-links.open {
+      display: flex;
+    }
+    .sj-dept-actions {
+      width: 100%;
+      justify-content: flex-end;
+      padding-top: 6px;
+    }
+  }
+</style>
 
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span> ذیلی اکائیاں <i class="fa-solid fa-list nav-icon"></i></span>
+<!-- 1. STICKY STANDALONE DEPARTMENT PORTAL NAVIGATION BAR -->
+<header class="sj-dept-portal-nav" id="sjDeptPortalNav">
+  <div class="sj-dept-nav-container">
+    <!-- RIGHT: DEPARTMENT BRAND & IDENTITY -->
+    <a href="../../jamati-activities" class="sj-dept-brand">
+      <div class="sj-dept-brand-icon">
+        <i class="fa-solid fa-person-running"></i>
+      </div>
+      <div class="sj-dept-brand-text">
+        <h1>شعبۂ دعوت و سرگرمیاں پورٹل</h1>
+        <span>صوبائی جمعیت اہل حدیث ممبئی — دعوتی، تبلیغی، تعلیمی و اصلاحی سرگرمیاں</span>
+      </div>
+    </a>
 
-                    </a>
+    <!-- MOBILE TOGGLE -->
+    <button type="button" class="sj-dept-mobile-btn" onclick="document.getElementById('sjDeptLinks').classList.toggle('open')">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-                    <div class="dropdown-menu">
+    <!-- CENTER: DEPARTMENT SUB-PAGES & TOOLS -->
+    <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ دعوت و سرگرمیاں پورٹل">
+      
+        
+        <a href="../../jamati-activities" class="sj-dept-link ">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>جماعتی سرگرمیاں</span>
+        </a>
+      
+        
+        <a href="../../upcoming-programs" class="sj-dept-link ">
+          <i class="fa-solid fa-bullhorn"></i>
+          <span>آئندہ پروگرامز و سیمینارز</span>
+        </a>
+      
+        
+        <a href="../../aina-e-jamiat" class="sj-dept-link active">
+          <i class="fa-solid fa-newspaper"></i>
+          <span>آئینۂ جمعیت</span>
+        </a>
+      
+        
+        <a href="../../juma-list" class="sj-dept-link ">
+          <i class="fa-solid fa-mosque"></i>
+          <span>خطباتِ جمعہ لسٹ</span>
+        </a>
+      
+        
+        <a href="../../moon" class="sj-dept-link ">
+          <i class="fa-solid fa-moon"></i>
+          <span>رویتِ ہلال پورٹل</span>
+        </a>
+      
+    </nav>
 
-                        <a href="../../district-jamiat" data-active="district-jamiat">
-                            ضلعی جمعیات
-                        </a>
-                        <a href="../../masajid" data-active="masajid">
-                            مساجد
-                        </a>
+    <!-- LEFT: SHARE PORTAL LINK & BACK TO MAIN WEBSITE -->
+    <div class="sj-dept-actions">
+      <button type="button" class="btn-dept-share" onclick="openDeptShareModal()" title="اس شعبہ یا صفحہ کا پروفیشنل لنک شیئر کریں">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>لنک شیئر کریں</span>
+      </button>
 
-                    </div>
-                </div>
+      <a href="../../" class="btn-dept-mainhome" title="مرکزی ویب سائٹ کے سرورق پر واپس جائیں">
+        <i class="fa-solid fa-house"></i>
+        <span>مرکزی ویب سائٹ</span>
+      </a>
+    </div>
+  </div>
+</header>
 
-
-
-                <div class="dropdown">
-
-                    <a class="nav-link">
-
-                        <i class="fa-solid icon fa-angle-down"></i>
-                        <span> سرگرمیاں<i class="fa-solid fa-person-running nav-icon"></i> </span>
-
-
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="../../jamati-activities" data-active="jamati-activities">
-                            جماعتی سرگرمیاں
-                        </a>
-                        <a href="../../upcoming-programs" data-active="upcoming-programs">
-                            آئندہ پروگرامز و سیمینارز
-                        </a>
-                        <a href="../../aina-e-jamiat" data-active="aina-e-jamiat">
-                            آئینۂ جمیعت
-                        </a>
-                        <a href="../../moon" data-active="moon">
-                            رؤیت ہلال
-                        </a>
-                        <a href="../../juma-list" data-active="juma-list">
-                            خطبات جمعہ
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <a href="../../introduction" data-active="about" class="nav-link">
-                    تعارف <i class="fa-solid fa-circle-question nav-icon"></i>
-                </a>
-
-                <a href="../../" data-active="home" class="nav-link">
-                    سرورق <i class="fa-solid fa-house nav-icon"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
+<!-- 2. COMPACT DEPARTMENT SEARCH BAR & SUB-MODULES HUB -->
+<div class="sj-dept-hub-wrap">
+  <div class="sj-dept-top-row">
+    <!-- Right: Breadcrumb -->
+    <div class="sj-dept-breadcrumb">
+      <a href="../../"><i class="fa-solid fa-house" style="color: #0f766e;"></i> سرورق</a>
+      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+      <a href="../../jamati-activities" style="color: #0f766e;">شعبۂ دعوت و سرگرمیاں پورٹل</a>
+      
+        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+        <span style="color: #065f46; font-weight: 800;">آئینۂ جمعیت</span>
+      
     </div>
 
+    <!-- Left: Appropriately-Sized Department Search Bar (مناسب جگہ اور مناسب سائز) -->
+    <div class="sj-dept-search-bar">
+      <div class="sj-dept-search-input-wrap">
+        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
+        <input
+          type="text"
+          id="sjDeptLiveSearchInput"
+          class="sj-dept-search-input"
+          placeholder="سرگرمی، پروگرام، خطبہ جمعہ، آئینۂ جمعیت یا تاریخ تلاش کریں..."
+          autocomplete="off"
+          oninput="filterDeptPageContent(this.value)"
+        />
+      </div>
+      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
+        <i class="fa-solid fa-microphone"></i>
+        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Sub-Department Quick Switcher Cards -->
+  <div class="sj-dept-subcards-grid">
+    
+      
+      <a href="../../jamati-activities" class="sj-dept-subcard ">
+        <div>
+          <div class="sj-dept-subcard-title">
+            <i class="fa-solid fa-calendar-check" style="color: #0f766e;"></i>
+            <span>جماعتی سرگرمیاں</span>
+          </div>
+          <div class="sj-dept-subcard-desc">تنظیمی، دعوتی و اصلاحی رپورٹیں</div>
+        </div>
+        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
+      </a>
+    
+      
+      <a href="../../upcoming-programs" class="sj-dept-subcard ">
+        <div>
+          <div class="sj-dept-subcard-title">
+            <i class="fa-solid fa-bullhorn" style="color: #0f766e;"></i>
+            <span>آئندہ پروگرامز و سیمینارز</span>
+          </div>
+          <div class="sj-dept-subcard-desc">آنے والے جلسے، دروس اور سیمینارز</div>
+        </div>
+        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
+      </a>
+    
+      
+      <a href="../../aina-e-jamiat" class="sj-dept-subcard active">
+        <div>
+          <div class="sj-dept-subcard-title">
+            <i class="fa-solid fa-newspaper" style="color: #0f766e;"></i>
+            <span>آئینۂ جمعیت</span>
+          </div>
+          <div class="sj-dept-subcard-desc">صوبائی جمعیت کا ترجمان و خبرنامہ</div>
+        </div>
+        <i class="fa-solid fa-arrow-left" style="color: #0f766e; font-size: 13px;"></i>
+      </a>
+    
+      
+      <a href="../../juma-list" class="sj-dept-subcard ">
+        <div>
+          <div class="sj-dept-subcard-title">
+            <i class="fa-solid fa-mosque" style="color: #0f766e;"></i>
+            <span>خطباتِ جمعہ لسٹ</span>
+          </div>
+          <div class="sj-dept-subcard-desc">ہفتہ وار خطباتِ جمعہ اور خطباء کا شیڈول</div>
+        </div>
+        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
+      </a>
+    
+      
+      <a href="../../moon" class="sj-dept-subcard ">
+        <div>
+          <div class="sj-dept-subcard-title">
+            <i class="fa-solid fa-moon" style="color: #0f766e;"></i>
+            <span>رویتِ ہلال پورٹل</span>
+          </div>
+          <div class="sj-dept-subcard-desc">چاند کی تصدیق اور اسلامی مہینوں کے اعلانات</div>
+        </div>
+        <i class="fa-solid fa-arrow-left" style="color: #cbd5e1; font-size: 13px;"></i>
+      </a>
+    
+  </div>
 </div>
+
+<!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
+<div class="sj-dept-share-modal" id="sjDeptShareModal" onclick="if(event.target===this) closeDeptShareModal()">
+  <div class="sj-dept-share-box">
+    <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
+      <h3 style="margin: 0; font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-share-nodes"></i> شعبۂ دعوت و سرگرمیاں پورٹل — لنک شیئر کریں
+      </h3>
+      <button type="button" onclick="closeDeptShareModal()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">&times;</button>
+    </div>
+    <div style="padding: 20px;">
+      <p style="margin: 0 0 10px 0; font-size: 13.5px; color: #475569;">
+        اس مستقل شعبہ / پورٹل کا براہِ راست لنک کاپی کریں یا واٹس ایپ اور سوشل میڈیا پر شیئر کریں:
+      </p>
+      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+        <input
+          type="text"
+          id="sjDeptShareUrlInput"
+          readonly
+          style="flex: 1; height: 40px; padding: 6px 12px; border: 1.5px solid #cbd5e1; border-radius: 9px; font-family: monospace; font-size: 13px; direction: ltr; text-align: left; background: #f8fafc; color: #0f172a;"
+        />
+        <button type="button" onclick="copyDeptPortalUrl()" id="sjDeptCopyBtn" style="background: #0f766e; color: #fff; border: none; border-radius: 9px; padding: 0 16px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer;">
+          <i class="fa-regular fa-copy"></i> کاپی کریں
+        </button>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a id="sjShareWaLink" href="#" target="_blank" style="flex: 1; background: #16a34a; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+          <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر شیئر کریں
+        </a>
+        <a id="sjShareTgLink" href="#" target="_blank" style="flex: 1; background: #0284c7; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+          <i class="fa-brands fa-telegram"></i> ٹیلیگرام پر شیئر کریں
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openDeptShareModal() {
+    var modal = document.getElementById('sjDeptShareModal');
+    var inp = document.getElementById('sjDeptShareUrlInput');
+    var wa = document.getElementById('sjShareWaLink');
+    var tg = document.getElementById('sjShareTgLink');
+    var url = window.location.href;
+    var title = document.title || 'شعبۂ دعوت و سرگرمیاں پورٹل';
+    if (inp) inp.value = url;
+    if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + '\n' + url);
+    if (tg) tg.href = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
+    if (modal) modal.classList.add('open');
+  }
+
+  function closeDeptShareModal() {
+    var modal = document.getElementById('sjDeptShareModal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  function copyDeptPortalUrl() {
+    var inp = document.getElementById('sjDeptShareUrlInput');
+    var btn = document.getElementById('sjDeptCopyBtn');
+    if (!inp) return;
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(inp.value).then(function() {
+        if (btn) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> کاپی ہو گیا!';
+          setTimeout(function() { btn.innerHTML = '<i class="fa-regular fa-copy"></i> کاپی کریں'; }, 2000);
+        }
+      });
+    }
+  }
+
+  function filterDeptPageContent(query) {
+    var q = (query || '').trim().toLowerCase();
+    // If page has its own dedicated search input (e.g., masajid or aina-e-jamiat), sync with it as well
+    var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
+    pageInputs.forEach(function(inp) {
+      if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
+        inp.value = query;
+        inp.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
+
+    // Also filter cards/blocks inside section#content
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    if (items.length > 0) {
+      items.forEach(function(el) {
+        var txt = (el.textContent || '').toLowerCase();
+        el.style.display = (!q || txt.includes(q)) ? '' : 'none';
+      });
+    }
+  }
+
+  var deptVoiceRec = null;
+  function startDeptVoiceSearch() {
+    var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+    var inp = document.getElementById('sjDeptLiveSearchInput');
+    var txt = document.getElementById('sjDeptVoiceTxt');
+    if (!SpeechRec) {
+      if (inp) inp.focus();
+      return;
+    }
+    deptVoiceRec = new SpeechRec();
+    deptVoiceRec.lang = 'ur-PK';
+    deptVoiceRec.onstart = function() { if (txt) txt.textContent = 'بولیں...'; };
+    deptVoiceRec.onresult = function(e) {
+      var tr = e.results[0][0].transcript;
+      if (inp && tr) {
+        inp.value = tr.trim();
+        filterDeptPageContent(inp.value);
+      }
+    };
+    deptVoiceRec.onend = function() { if (txt) txt.textContent = 'آواز سے سرچ'; };
+    deptVoiceRec.start();
+  }
+</script>
+
 
 <style id="gdocs-scrollbar-override">
 /*-----------------------------------------------------
