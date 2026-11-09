@@ -1288,12 +1288,14 @@
       border-radius: 20px;
       overflow: hidden;
       box-shadow: var(--yt-card-shadow);
-      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.25s ease;
+      transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.26s ease, border-color 0.22s ease;
       display: flex;
       flex-direction: column;
       cursor: pointer;
       position: relative;
-      transform-style: preserve-3d;
+      content-visibility: auto;
+      contain-intrinsic-size: 320px 360px;
+      contain: layout style paint;
     }
 
     .yt-card::after {
@@ -1545,12 +1547,6 @@
       font-size: 0.74rem;
       flex-shrink: 0;
       box-shadow: 0 3px 8px rgba(10, 92, 54, 0.28);
-      animation: ytAudioPulse 2.4s ease-in-out infinite;
-    }
-
-    @keyframes ytAudioPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(10, 92, 54, 0.35); }
-      50% { box-shadow: 0 0 0 5px rgba(201, 168, 76, 0.18); }
     }
 
     .yt-sheikh-name {
@@ -1629,9 +1625,11 @@
       background: #090d16;
       cursor: pointer;
       box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease, border-color 0.25s ease;
+      transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.26s ease, border-color 0.22s ease;
       border: 1.5px solid var(--yt-border);
-      transform-style: preserve-3d;
+      content-visibility: auto;
+      contain-intrinsic-size: 220px 390px;
+      contain: layout style paint;
     }
 
     .yt-reel-card:hover {
@@ -2519,6 +2517,8 @@
   <link rel="canonical" href="http://127.0.0.1:5000/media">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <style id="sj-butter-scroll-css">html{-webkit-text-size-adjust:100%;text-rendering:optimizeSpeed;scroll-behavior:smooth}.yt-card,.yt-reel-card,.yt-speaker-card,.masjid-card,.fatwa-card,.book-card,.poster-card,.article-card,.issue-card,.pr-card,.search-result-card,#content .column .card{content-visibility:auto;contain-intrinsic-size:320px 350px;contain:layout style paint}html.sj-low-end *,html.sj-low-end *::before,html.sj-low-end *::after{backdrop-filter:none !important;-webkit-backdrop-filter:none !important;animation-duration:0.001ms !important;animation-iteration-count:1 !important}html.sj-low-end .yt-card,html.sj-low-end .yt-reel-card,html.sj-low-end #content .column .card{box-shadow:0 2px 6px rgba(15,23,42,.06) !important;transition:none !important;transform:none !important}</style>
+  <script defer src="./javascript/perf-enhancer.js"></script>
 </head>
 
 <body>
@@ -4586,14 +4586,26 @@
         }
       };
 
+      let _idleRenderTimer = null;
       function renderAllSections() {
         refreshChannelCounters();
-        renderHomeTab();
-        renderStandardVideosTab();
-        renderReelsTab();
-        renderPlaylistsTab();
-        renderSpeakersTab();
-        renderLibraryTab();
+        if (currentTab === 'videos') renderStandardVideosTab();
+        else if (currentTab === 'reels') renderReelsTab();
+        else if (currentTab === 'playlists') renderPlaylistsTab();
+        else if (currentTab === 'speakers') renderSpeakersTab();
+        else if (currentTab === 'library') renderLibraryTab();
+        else renderHomeTab();
+
+        if (_idleRenderTimer) clearTimeout(_idleRenderTimer);
+        const runIdle = window.requestIdleCallback || function (cb) { return setTimeout(cb, 180); };
+        _idleRenderTimer = runIdle(function () {
+          if (currentTab !== 'home') renderHomeTab();
+          if (currentTab !== 'videos') renderStandardVideosTab();
+          if (currentTab !== 'reels') renderReelsTab();
+          if (currentTab !== 'playlists') renderPlaylistsTab();
+          if (currentTab !== 'speakers') renderSpeakersTab();
+          if (currentTab !== 'library') renderLibraryTab();
+        });
       }
 
       // =====================================================
@@ -4610,7 +4622,7 @@
         document.querySelectorAll('.yt-tab-panel').forEach(panel => {
           panel.classList.toggle('active', panel.id === `ytPanel-${tabName}`);
         });
-        if (tabName === 'library') renderLibraryTab();
+        renderActiveTabForSearch();
       };
 
       window.filterHomeByChip = function (cat, btnEl) {
@@ -5469,6 +5481,8 @@
               }
             }
 
+            prepareVideoSearchHay(approvedVid);
+            invalidatePartitionCache();
             renderAllSections();
           }
 
@@ -5480,11 +5494,21 @@
       };
 
       // =====================================================
-      // INSTANT SEARCH + AUTOCOMPLETE + VOICE SEARCH
+      // INSTANT SEARCH + AUTOCOMPLETE + VOICE SEARCH (RAF-ACCELERATED)
       // =====================================================
       const searchInput = document.getElementById('ytSearchInput');
       const searchDropdown = document.getElementById('ytSearchDropdown');
       const searchClear = document.getElementById('ytSearchClear');
+      let searchRafId = null;
+
+      function renderActiveTabForSearch() {
+        if (currentTab === 'videos') renderStandardVideosTab();
+        else if (currentTab === 'reels') renderReelsTab();
+        else if (currentTab === 'playlists') renderPlaylistsTab();
+        else if (currentTab === 'speakers') renderSpeakersTab();
+        else if (currentTab === 'library') renderLibraryTab();
+        else renderHomeTab();
+      }
 
       if (searchInput) {
         searchInput.value = activeSearchQuery;
@@ -5494,8 +5518,11 @@
           const val = this.value;
           activeSearchQuery = val;
           if (searchClear) searchClear.style.display = val ? 'block' : 'none';
-          renderAllSections();
-          renderSearchSuggestions(val);
+          if (searchRafId) cancelAnimationFrame(searchRafId);
+          searchRafId = requestAnimationFrame(() => {
+            renderActiveTabForSearch();
+            renderSearchSuggestions(val);
+          });
         });
 
         searchInput.addEventListener('focus', function () {
@@ -5585,23 +5612,51 @@
       };
 
       // =====================================================
-      // INTERACTIVE 3D PERSPECTIVE TILT ENGINE (CARDS & HERO)
+      // INTERACTIVE 3D PERSPECTIVE TILT ENGINE (RAF-THROTTLED, SKIPPED ON LOW-END/TOUCH)
       // =====================================================
       function initYt3DPerspectiveEngine() {
-        document.addEventListener('mousemove', function (e) {
+        if (window.__SJ_LOW_END_DEVICE__ || window.__SJ_COARSE_POINTER__) return;
+        if (window.matchMedia && window.matchMedia('(pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
+
+        let activeTiltCard = null;
+        let activeTiltRect = null;
+        let tiltRafId = null;
+
+        document.addEventListener('mouseover', function (e) {
           const card = e.target.closest('.yt-card, .yt-reel-card');
-          if (!card) return;
-          const rect = card.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5;
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-          card.style.transform = `perspective(1100px) translateY(-9px) rotateX(${(-y * 4.5).toFixed(2)}deg) rotateY(${(x * 4.5).toFixed(2)}deg) scale(1.015)`;
+          if (card && card !== activeTiltCard) {
+            activeTiltCard = card;
+            activeTiltRect = card.getBoundingClientRect();
+          }
+        }, { passive: true });
+
+        document.addEventListener('mousemove', function (e) {
+          if (!activeTiltCard || !activeTiltRect || tiltRafId) return;
+          const cx = e.clientX;
+          const cy = e.clientY;
+          tiltRafId = requestAnimationFrame(function () {
+            tiltRafId = null;
+            if (!activeTiltCard || !activeTiltRect || !activeTiltRect.width || !activeTiltRect.height) return;
+            const x = (cx - activeTiltRect.left) / activeTiltRect.width - 0.5;
+            const y = (cy - activeTiltRect.top) / activeTiltRect.height - 0.5;
+            activeTiltCard.style.transform = `perspective(1100px) translateY(-7px) rotateX(${(-y * 3.8).toFixed(2)}deg) rotateY(${(x * 3.8).toFixed(2)}deg)`;
+          });
         }, { passive: true });
 
         document.addEventListener('mouseout', function (e) {
-          const card = e.target.closest('.yt-card, .yt-reel-card');
-          if (!card) return;
-          if (!card.contains(e.relatedTarget)) {
-            card.style.transform = '';
+          if (!activeTiltCard) return;
+          if (!activeTiltCard.contains(e.relatedTarget)) {
+            activeTiltCard.style.transform = '';
+            activeTiltCard = null;
+            activeTiltRect = null;
+          }
+        }, { passive: true });
+
+        window.addEventListener('scroll', function () {
+          if (activeTiltCard) {
+            activeTiltCard.style.transform = '';
+            activeTiltCard = null;
+            activeTiltRect = null;
           }
         }, { passive: true });
       }
