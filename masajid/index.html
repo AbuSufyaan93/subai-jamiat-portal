@@ -156,15 +156,15 @@
     .finder-hero {
       background: linear-gradient(135deg, rgba(224, 242, 254, 0.82) 0%, rgba(255, 255, 255, 0.99) 48%, rgba(204, 251, 241, 0.85) 100%);
       color: #0f172a;
-      padding: 24px 26px 22px 26px;
-      border-radius: 22px;
-      margin-bottom: 20px;
+      padding: 18px 22px 16px 22px;
+      border-radius: 20px;
+      margin-bottom: 18px;
       border: 1.5px solid rgba(56, 189, 248, 0.75);
       box-shadow:
         0 0 0 2px rgba(186, 230, 253, 0.72),
-        0 12px 32px -4px rgba(14, 165, 233, 0.18),
-        0 -4px 16px -2px rgba(56, 189, 248, 0.1),
-        0 6px 20px -6px rgba(15, 118, 110, 0.12);
+        0 10px 28px -4px rgba(14, 165, 233, 0.16),
+        0 -4px 14px -2px rgba(56, 189, 248, 0.08),
+        0 6px 18px -6px rgba(15, 118, 110, 0.1);
       position: relative;
       overflow: visible;
       z-index: 100;
@@ -175,9 +175,9 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 5px;
+      height: 4.5px;
       background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%);
-      border-radius: 22px 22px 0 0;
+      border-radius: 20px 20px 0 0;
       pointer-events: none;
     }
     .finder-hero::after {
@@ -185,25 +185,33 @@
       position: absolute;
       top: -20px;
       left: 20px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%;
       pointer-events: none;
     }
 
+    .finder-hero-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
     .masjid-hero-orb {
-      width: 66px;
-      height: 66px;
-      border-radius: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
       background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%);
       border: 1.5px solid rgba(56, 189, 248, 0.65);
-      box-shadow: 0 6px 16px -2px rgba(14, 165, 233, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+      box-shadow: 0 5px 14px -2px rgba(14, 165, 233, 0.22), inset 0 2px 4px rgba(255, 255, 255, 0.9);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #0f766e;
-      font-size: 28px;
+      font-size: 24px;
       flex-shrink: 0;
       transition: transform 0.3s ease;
     }
@@ -218,57 +226,68 @@
       background: #e0f2fe;
       border: 1px solid #7dd3fc;
       color: #0369a1;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 800;
-      padding: 2px 11px;
+      padding: 2px 10px;
       border-radius: 999px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .masjid-badge-dot-live {
-      width: 7px;
-      height: 7px;
+      width: 6.5px;
+      height: 6.5px;
       border-radius: 50%;
       background: #0284c7;
       box-shadow: 0 0 6px #38bdf8;
     }
 
     .finder-title {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 800;
-      margin: 0 0 6px 0;
+      margin: 0 0 3px 0;
       color: #064e3b;
       line-height: 1.4;
       text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
     }
     .finder-subtitle {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: #334155;
-      margin-bottom: 16px;
-      line-height: 1.85;
+      color: #475569;
+      margin: 0;
+      line-height: 1.75;
     }
 
-    /* Central Search & Actions Bar (Matching Fatawa & Library Search Engine) */
+    /* Compact, Appropriately-Sized Search Bar Positioned in Hero Left */
     .finder-search-wrap {
+      flex: 0 1 460px;
+      width: 100%;
+      max-width: 460px;
+      height: 44px;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
       background: #ffffff;
-      padding: 6px;
-      border-radius: 14px;
-      border: 2px solid #7dd3fc;
-      box-shadow: 0 6px 20px rgba(14, 165, 233, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      padding: 4px 6px 4px 5px;
+      border-radius: 999px;
+      border: 1.5px solid #38bdf8;
+      box-shadow: 0 4px 16px rgba(14, 165, 233, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.95);
       position: relative;
       transition: all 0.22s ease;
     }
     .finder-search-wrap:focus-within {
       border-color: #0f766e;
-      box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.16), 0 8px 24px rgba(15, 118, 110, 0.12);
+      box-shadow: 0 0 0 3.5px rgba(14, 165, 233, 0.18), 0 6px 20px rgba(15, 118, 110, 0.14);
+    }
+    .finder-input-icon {
+      color: #0f766e;
+      font-size: 13.5px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      pointer-events: none;
     }
     .search-input-group {
-      position: relative;
+      position: static;
       flex: 1;
-      min-width: 220px;
+      min-width: 0;
       display: flex;
       align-items: center;
     }
@@ -276,55 +295,71 @@
       width: 100%;
       border: none;
       outline: none;
-      padding: 10px 36px 10px 14px;
-      font-size: 14px;
+      padding: 4px 6px 4px 24px;
+      font-size: 13px;
       font-weight: 600;
-      border-radius: 10px;
+      border-radius: 999px;
       color: #0f172a;
       background: transparent;
       direction: rtl;
+      height: 34px;
+    }
+    .finder-input::placeholder {
+      color: #64748b;
+      font-weight: 500;
+      font-size: 12.5px;
     }
     .finder-btn-search {
       background: linear-gradient(135deg, #0f766e 0%, #0284c7 100%);
       color: #ffffff;
       border: none;
-      border-radius: 10px;
-      padding: 10px 22px;
+      border-radius: 999px;
+      height: 34px;
+      padding: 0 16px;
       font-weight: 800;
-      font-size: 13.5px;
+      font-size: 12.5px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      box-shadow: 0 4px 12px rgba(15, 118, 110, 0.24);
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(15, 118, 110, 0.22);
       transition: all 0.2s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .finder-btn-search:hover {
       background: linear-gradient(135deg, #065f46 0%, #0369a1 100%);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.3);
+      box-shadow: 0 5px 14px rgba(2, 132, 199, 0.28);
     }
     .btn-public-submit {
       background: linear-gradient(135deg, #0f766e 0%, #059669 100%);
       color: #ffffff;
       border: 1.5px solid #5eead4;
-      border-radius: 11px;
-      padding: 8px 16px;
+      border-radius: 999px;
+      padding: 6px 14px;
       font-weight: 800;
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      box-shadow: 0 4px 14px rgba(15, 118, 110, 0.22);
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(15, 118, 110, 0.2);
       transition: all 0.2s ease;
       text-decoration: none;
+      white-space: nowrap;
     }
     .btn-public-submit:hover {
       background: linear-gradient(135deg, #065f46 0%, #047857 100%);
       color: #ffffff;
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(15, 118, 110, 0.3);
+      box-shadow: 0 5px 14px rgba(15, 118, 110, 0.28);
+    }
+    @media (max-width: 991px) {
+      .finder-search-wrap {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
 
     /* Autocomplete Suggestions Box */
@@ -922,10 +957,25 @@
     /* Quick Action Chips (Matching Library, Mujallah & Fatawa Pills) */
     .quick-actions-bar {
       display: flex;
-      gap: 8px;
+      justify-content: space-between;
+      gap: 10px;
       flex-wrap: wrap;
       align-items: center;
-      margin-top: 14px;
+      margin-top: 12px;
+      padding-top: 11px;
+      border-top: 1px dashed rgba(56, 189, 248, 0.45);
+    }
+    .quick-actions-chips-group {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    @media (max-width: 960px) {
+      .finder-search-wrap {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
     .quick-chip {
       background: #ffffff;
@@ -4626,7 +4676,7 @@ body *::-webkit-scrollbar-thumb:hover {
         <div class="masajid-bc-stats">
           <span class="masajid-stat-pill">
             <i class="fa-solid fa-mosque" style="color: #0f766e;"></i>
-            <span>کل مساجد: <strong>219</strong></span>
+            <span>کل مساجد: <strong id="totalCountBadge">219</strong></span>
           </span>
           <span class="masajid-stat-pill" style="background: #f0f9ff; border-color: #7dd3fc; color: #0369a1;">
             <i class="fa-solid fa-map-location-dot" style="color: #0284c7;"></i>
@@ -4641,8 +4691,8 @@ body *::-webkit-scrollbar-thumb:hover {
 
       <!-- 2. LUMINOUS HERO & SMART SEARCH SHOWCASE CARD (Matching Library, Fatawa & Ask Question) -->
       <div class="finder-hero">
-        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 14px;">
-          <div style="display: flex; align-items: center; gap: 16px; flex: 1; min-width: 260px;">
+        <div class="finder-hero-top-row">
+          <div style="display: flex; align-items: center; gap: 14px; flex: 1; min-width: 280px;">
             <div class="masjid-hero-orb" aria-hidden="true">
               <i class="fa-solid fa-mosque"></i>
             </div>
@@ -4654,60 +4704,58 @@ body *::-webkit-scrollbar-thumb:hover {
               <h1 class="finder-title">
                 مساجد اہل حدیث ڈائریکٹری و عالمی نقشہ
               </h1>
-              <p class="finder-subtitle" style="margin-bottom: 0;">
+              <p class="finder-subtitle">
                 اپنے موجودہ مقام، شہر، علاقے یا دنیا کے کسی بھی مقام سے اہل حدیث مساجد تلاش کریں، مقام جانچیں اور باآسانی راستہ معلوم کریں۔
               </p>
             </div>
           </div>
-          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <div style="background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%); color: #065f46; border: 1.5px solid #5eead4; border-radius: 12px; padding: 8px 15px; font-size: 13px; font-weight: 800; box-shadow: 0 3px 10px rgba(15, 118, 110, 0.08);">
-              <i class="fa-solid fa-database" style="color: #0284c7;"></i> کل رجسٹرڈ مساجد: <span id="totalCountBadge">219</span>
-            </div>
-            <button type="button" class="btn-public-submit" onclick="openPublicMosqueSubmissionModal()">
-              <i class="fa-solid fa-circle-plus"></i> نئی مسجد شامل کریں
-            </button>
-          </div>
-        </div>
 
-        <!-- SEARCH INPUT WITH AUTOCOMPLETE & ENTER TRIGGER -->
-        <div class="finder-search-wrap">
-          <div class="search-input-group">
-            <input type="text" id="mainSearchInput" class="finder-input" placeholder="مسجد کا نام، علاقہ، پتہ، محلہ، پن کوڈ یا سہولت تلاش کریں (اردو، English، Roman Urdu، हिंदी)..." onkeyup="handleSearchKeyUp(event)" onfocus="handleSearchFocus()" autocomplete="off" />
-            <button type="button" id="clearSearchBtn" onclick="clearMosqueSearch()" style="display: none; position: absolute; left: 10px; background: none; border: none; color: #94a3b8; font-size: 14px; cursor: pointer;">
-              <i class="fa-solid fa-xmark"></i>
+          <!-- COMPACT SEARCH INPUT IN HERO LEFT -->
+          <div class="finder-search-wrap">
+            <i class="fa-solid fa-magnifying-glass finder-input-icon" aria-hidden="true"></i>
+            <div class="search-input-group">
+              <input type="text" id="mainSearchInput" class="finder-input" placeholder="مسجد کا نام، علاقہ، محلہ، پن کوڈ یا سہولت تلاش کریں..." onkeyup="handleSearchKeyUp(event)" onfocus="handleSearchFocus()" autocomplete="off" />
+              <button type="button" id="clearSearchBtn" onclick="clearMosqueSearch()" style="display: none; position: absolute; left: 82px; background: none; border: none; color: #94a3b8; font-size: 13px; cursor: pointer;" title="صاف کریں">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+              <div id="mosqueSuggestionsDropdown" class="mosque-suggestions-box"></div>
+            </div>
+            <button type="button" class="finder-btn-search" onclick="commitMosqueSearch()">
+              <i class="fa-solid fa-magnifying-glass"></i> تلاش
             </button>
-            <div id="mosqueSuggestionsDropdown" class="mosque-suggestions-box"></div>
           </div>
-          <button type="button" class="finder-btn-search" onclick="commitMosqueSearch()">
-            <i class="fa-solid fa-magnifying-glass"></i> تلاش کریں
-          </button>
         </div>
 
         <!-- QUICK ACTIONS & MAP HIERARCHY BAR -->
         <div class="quick-actions-bar">
-          <button type="button" class="quick-chip" id="btnNearMe" onclick="triggerNearMeLocation()">
-            <i class="fa-solid fa-location-crosshairs"></i> میرے قریب مساجد
-          </button>
-          <button type="button" class="quick-chip" id="btnShareLocationTop" onclick="handleShareMyLocation()">
-            <i class="fa-solid fa-share-nodes"></i> لوکیشن شیئر کریں
-          </button>
-          <button type="button" class="quick-chip active" id="chipMumbai" onclick="zoomToHierarchy('mumbai')">
-            <i class="fa-solid fa-city"></i> ممبئی زون (Mumbai)
-          </button>
-          <button type="button" class="quick-chip" id="chipMaharashtra" onclick="zoomToHierarchy('maharashtra')">
-            <i class="fa-solid fa-landmark"></i> مہاراشٹر (Maharashtra)
-          </button>
-          <button type="button" class="quick-chip" id="chipIndia" onclick="zoomToHierarchy('india')">
-            <i class="fa-solid fa-map"></i> ہندوستان (India)
-          </button>
-          <button type="button" class="quick-chip" id="chipWorld" onclick="zoomToHierarchy('world')">
-            <i class="fa-solid fa-globe"></i> عالمی نقشہ (World)
-          </button>
-          <button type="button" class="quick-chip" id="btnFavoritesFilter" onclick="toggleFavoritesFilter()">
-            <i class="fa-solid fa-star"></i> پسندیدہ مساجد (<span id="favCount">0</span>)
-          </button>
-          <button type="button" class="quick-chip" onclick="resetAllFilters()">
-            <i class="fa-solid fa-rotate-left"></i> ری سیٹ فلٹرز
+          <div class="quick-actions-chips-group">
+            <button type="button" class="quick-chip" id="btnNearMe" onclick="triggerNearMeLocation()">
+              <i class="fa-solid fa-location-crosshairs"></i> میرے قریب مساجد
+            </button>
+            <button type="button" class="quick-chip" id="btnShareLocationTop" onclick="handleShareMyLocation()">
+              <i class="fa-solid fa-share-nodes"></i> لوکیشن شیئر کریں
+            </button>
+            <button type="button" class="quick-chip active" id="chipMumbai" onclick="zoomToHierarchy('mumbai')">
+              <i class="fa-solid fa-city"></i> ممبئی زون (Mumbai)
+            </button>
+            <button type="button" class="quick-chip" id="chipMaharashtra" onclick="zoomToHierarchy('maharashtra')">
+              <i class="fa-solid fa-landmark"></i> مہاراشٹر (Maharashtra)
+            </button>
+            <button type="button" class="quick-chip" id="chipIndia" onclick="zoomToHierarchy('india')">
+              <i class="fa-solid fa-map"></i> ہندوستان (India)
+            </button>
+            <button type="button" class="quick-chip" id="chipWorld" onclick="zoomToHierarchy('world')">
+              <i class="fa-solid fa-globe"></i> عالمی نقشہ (World)
+            </button>
+            <button type="button" class="quick-chip" id="btnFavoritesFilter" onclick="toggleFavoritesFilter()">
+              <i class="fa-solid fa-star"></i> پسندیدہ مساجد (<span id="favCount">0</span>)
+            </button>
+            <button type="button" class="quick-chip" onclick="resetAllFilters()">
+              <i class="fa-solid fa-rotate-left"></i> ری سیٹ فلٹرز
+            </button>
+          </div>
+          <button type="button" class="btn-public-submit" onclick="openPublicMosqueSubmissionModal()">
+            <i class="fa-solid fa-circle-plus"></i> نئی مسجد شامل کریں
           </button>
         </div>
       </div>
