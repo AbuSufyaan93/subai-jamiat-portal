@@ -858,8 +858,9 @@
       </button>
     </div>
 
-    <!-- LEFT: SHARE PORTAL LINK (مرکزی ویب سائٹ کا زائد بٹن ہٹا دیا گیا ہے) -->
+    <!-- LEFT: PRIMARY PORTAL CTA + SHARE PORTAL LINK -->
     <div class="sj-dept-actions">
+      
       <button type="button" class="btn-dept-share" onclick="openDeptShareModal()" title="اس شعبہ یا صفحہ کا پروفیشنل لنک شیئر کریں">
         <i class="fa-solid fa-share-nodes"></i>
         <span>لنک شیئر کریں</span>
@@ -1043,7 +1044,16 @@
 
   function filterDeptPageContent(query) {
     var q = (query || '').trim().toLowerCase();
-    // If page has its own dedicated search input (e.g., masajid or aina-e-jamiat), sync with it as well
+    // If on Masajid page with #mainSearchInput, sync directly with its live search engine
+    var mainMasjidInp = document.getElementById('mainSearchInput');
+    if (mainMasjidInp) {
+      mainMasjidInp.value = query;
+      if (typeof commitMosqueSearch === 'function') {
+        commitMosqueSearch();
+      }
+      return;
+    }
+    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1053,7 +1063,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
