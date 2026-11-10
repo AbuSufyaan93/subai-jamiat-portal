@@ -2,7 +2,7 @@
 <html lang="ur" dir="rtl">
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = "../..";</script>
-  <script src="../../javascript/live-remote-tunnel.js?v=v10"></script>
+  <script src="../../javascript/live-remote-tunnel.js?v=v11"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,43 +36,43 @@
 <link rel="apple-touch-icon" href="../../images/logo-square.png">
 
 <!-- own css file link  -->
-<link rel="stylesheet" href="../../css/style.css?v=v10">
+<link rel="stylesheet" href="../../css/style.css?v=v11">
 <!-- fontawesome cdn link  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v10" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v11" />
 <!-- swiper  css link  -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <!-- customize swiper css link  -->
-<link rel="stylesheet" href="../../css/swiper.css?v=v10">
+<link rel="stylesheet" href="../../css/swiper.css?v=v11">
 <!-- bootstrap grid css file link  -->
-<link rel="stylesheet" href="../../css/bootstrap-grid.css?v=v10">
+<link rel="stylesheet" href="../../css/bootstrap-grid.css?v=v11">
 <!-- own content css file link  -->
-<link rel="stylesheet" href="../../css/content.css?v=v10">
+<link rel="stylesheet" href="../../css/content.css?v=v11">
 <!-- own footer css file link  -->
-<link rel="stylesheet" href="../../css/footer.css?v=v10">
+<link rel="stylesheet" href="../../css/footer.css?v=v11">
 <!-- view counter css -->
-<link rel="stylesheet" href="../../css/view-counter.css?v=v10">
+<link rel="stylesheet" href="../../css/view-counter.css?v=v11">
 <!-- animate.css cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- own css animation link  -->
-<link rel="stylesheet" href="../../css/animate.css?v=v10">
+<link rel="stylesheet" href="../../css/animate.css?v=v11">
 
 <!-- all scripts are here  -->
 <!-- own  js file cdn link  -->
-<script defer src="../../javascript/script.js?v=v10"></script>
+<script defer src="../../javascript/script.js?v=v11"></script>
 <!-- view tracker script -->
-<script defer src="../../javascript/view-tracker.js?v=v10"></script>
+<script defer src="../../javascript/view-tracker.js?v=v11"></script>
 <!-- performance & instant prefetch enhancer -->
-<script defer src="../../javascript/perf-enhancer.js?v=v10"></script>
+<script defer src="../../javascript/perf-enhancer.js?v=v11"></script>
 <!-- swiper js cdn link  -->
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!-- swiper customize js link  -->
-<script defer src="../../javascript/swiper.js?v=v10"></script>
+<script defer src="../../javascript/swiper.js?v=v11"></script>
 <!-- jquery cdn link  -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <!-- waypoints cdn link for animation  -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 <!-- own animation js file  -->
-<script defer src="../../javascript/animate.js?v=v10"></script>
+<script defer src="../../javascript/animate.js?v=v11"></script>
 <!-- all page title is same -->
 <title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
 
@@ -83,7 +83,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
-    <link rel="stylesheet" href="../../css/fatawaList.css?v=v10">
+    <link rel="stylesheet" href="../../css/fatawaList.css?v=v11">
     <style>
         .fatwa-single-container {
             font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
@@ -826,14 +826,14 @@ body *::-webkit-scrollbar-thumb:hover {
     }
   })();
 </script>
-    <!-- DEDICATED FIQH-W-FATAWA PORTAL HEADER & NAVIGATION -->
+    <!-- DEDICATED FIQH-W-FATAWA PORTAL HEADER & NAVIGATION (سنگل لائن ہیڈر + سرچ باکس + خوبصورت سائڈ بار) -->
 <!-- Subai Jamiat Ahle Hadees Mumbai — دار الافتاء و فقہ و فتاویٰ پورٹل -->
 
 <style>
   .fatawa-portal-nav-bar {
     background: #ffffff;
     border-bottom: 2px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -843,21 +843,53 @@ body *::-webkit-scrollbar-thumb:hover {
   }
 
   .fatawa-portal-nav-container {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 8px 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 64px;
-    gap: 12px;
+    min-height: 66px;
+    gap: 10px;
+    flex-wrap: nowrap;
   }
 
-  /* RIGHT: BRAND / IDENTITY (matching magazine-header & library-header) */
+  /* RIGHT GROUP: SIDEBAR BUTTON + BRAND IDENTITY */
+  .fatawa-brand-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .fatawa-sidebar-trigger {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+    color: #0f766e;
+    border: 1.5px solid #5eead4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.12);
+    flex-shrink: 0;
+  }
+
+  .fatawa-sidebar-trigger:hover {
+    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
+    color: #ffffff;
+    border-color: #0f766e;
+    transform: translateY(-1px);
+  }
+
   .fatawa-nav-brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
     color: #065f46;
     flex-shrink: 0;
@@ -870,18 +902,19 @@ body *::-webkit-scrollbar-thumb:hover {
   }
 
   .fatawa-brand-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
     background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
     color: #0f766e;
     border: 1px solid #5eead4;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 19px;
     box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
     transition: transform 0.2s ease;
+    flex-shrink: 0;
   }
 
   .fatawa-nav-brand:hover .fatawa-brand-icon {
@@ -889,22 +922,24 @@ body *::-webkit-scrollbar-thumb:hover {
   }
 
   .fatawa-brand-text h1 {
-    font-size: 18.5px;
+    font-size: 17.5px;
     font-weight: 800;
     margin: 0;
-    line-height: 1.25;
+    line-height: 1.3;
     color: #065f46;
+    white-space: nowrap;
   }
 
   .fatawa-brand-text span {
-    font-size: 11px;
+    font-size: 10.5px;
     color: #64748b;
     font-weight: 600;
     display: block;
-    margin-top: 2px;
+    margin-top: 1px;
+    white-space: nowrap;
   }
 
-  /* CENTER: DEDICATED FATAWA NAVIGATION LINKS */
+  /* CENTER: ESSENTIAL SINGLE-LINE FATAWA NAVIGATION LINKS */
   .fatawa-subnav-links {
     display: flex;
     align-items: center;
@@ -912,29 +947,30 @@ body *::-webkit-scrollbar-thumb:hover {
     list-style: none;
     margin: 0;
     padding: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
   }
 
   .fatawa-subnav-link {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 7px 12px;
-    border-radius: 8px;
+    padding: 6px 11px;
+    border-radius: 9px;
     color: #334155;
     text-decoration: none;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 700;
     transition: all 0.2s ease;
     cursor: pointer;
-    border: none;
+    border: 1px solid transparent;
     background: transparent;
     font-family: inherit;
     white-space: nowrap;
   }
 
   .fatawa-subnav-link i {
-    font-size: 13.5px;
+    font-size: 13px;
     color: #0f766e;
     transition: transform 0.2s;
   }
@@ -942,10 +978,11 @@ body *::-webkit-scrollbar-thumb:hover {
   .fatawa-subnav-link:hover {
     background: #f0fdfa;
     color: #0f766e;
+    border-color: #99f6e4;
   }
 
   .fatawa-subnav-link:hover i {
-    transform: scale(1.12);
+    transform: scale(1.1);
   }
 
   .fatawa-subnav-link.active {
@@ -953,6 +990,66 @@ body *::-webkit-scrollbar-thumb:hover {
     color: #065f46 !important;
     border: 1px solid #5eead4;
     box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
+  }
+
+  /* INLINE SEARCH BOX IN FATAWA HEADLINE */
+  .fatawa-header-search-wrap {
+    flex: 1 1 210px;
+    max-width: 300px;
+    min-width: 165px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .fatawa-header-search-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 999px;
+    padding: 2px 4px 2px 10px;
+    transition: all 0.22s ease;
+    height: 40px;
+  }
+
+  .fatawa-header-search-form:focus-within {
+    background: #ffffff;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+  }
+
+  .fatawa-header-search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 4px 10px;
+    font-size: 12.5px;
+    font-family: inherit;
+    color: #0f172a;
+    outline: none;
+    min-width: 0;
+  }
+
+  .fatawa-header-search-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .fatawa-header-search-btn:hover {
+    transform: scale(1.05);
   }
 
   /* LEFT: ACTION BUTTONS */
@@ -966,12 +1063,12 @@ body *::-webkit-scrollbar-thumb:hover {
   .btn-portal-ask {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 7px 15px;
+    gap: 6px;
+    padding: 7px 13px;
     background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
     color: #ffffff !important;
     border-radius: 9px;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     text-decoration: none;
     box-shadow: 0 3px 10px rgba(15, 118, 110, 0.22);
@@ -989,12 +1086,12 @@ body *::-webkit-scrollbar-thumb:hover {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 7px 13px;
+    padding: 7px 12px;
     background: #fffbeb;
     color: #b45309 !important;
     border: 1px solid #fde68a;
     border-radius: 9px;
-    font-size: 13px;
+    font-size: 12.5px;
     font-weight: 700;
     cursor: pointer;
     font-family: inherit;
@@ -1007,15 +1104,108 @@ body *::-webkit-scrollbar-thumb:hover {
     border-color: #fcd34d;
   }
 
-  .fatawa-mobile-menu-btn {
-    display: none;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
+  /* FATAWA SLIDING SIDEBAR DRAWER */
+  .fatawa-sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 10040;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .fatawa-sidebar-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .fatawa-sidebar-drawer {
+    position: fixed;
+    top: 0;
+    right: -440px;
+    width: 400px;
+    max-width: 92vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 10050;
+    box-shadow: -8px 0 35px rgba(0, 0, 0, 0.18);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+
+  .fatawa-sidebar-drawer.open {
+    right: 0;
+  }
+
+  .fatawa-sidebar-head {
+    background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+    color: #ffffff;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #f59e0b;
+  }
+
+  .fatawa-sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 16px 24px;
+  }
+
+  .fatawa-sidebar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .fatawa-sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 11px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-decoration: none;
     color: #1e293b;
-    padding: 7px 12px;
-    border-radius: 8px;
-    font-size: 17px;
+    font-size: 12.5px;
+    font-weight: 700;
+    transition: all 0.2s ease;
     cursor: pointer;
+    font-family: inherit;
+    text-align: right;
+  }
+
+  .fatawa-sidebar-item i {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #f0fdfa;
+    color: #0f766e;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .fatawa-sidebar-item:hover {
+    border-color: #5eead4;
+    background: #f0fdfa;
+    color: #065f46;
+    transform: translateY(-1px);
+  }
+
+  .fatawa-sidebar-item.full-row {
+    grid-column: span 2;
   }
 
   /* ─── PORTAL MODALS (Track Question, Fatawa Committee, User Guide) ─── */
@@ -1095,59 +1285,100 @@ body *::-webkit-scrollbar-thumb:hover {
     font-size: 14.5px;
   }
 
-  @media (max-width: 1024px) {
-    .fatawa-mobile-menu-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+  @media (max-width: 1340px) {
+    .fatawa-subnav-link.hide-on-laptop {
+      display: none;
     }
+    .fatawa-subnav-link {
+      padding: 6px 9px;
+      font-size: 12.5px;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    .btn-portal-track span {
+      display: none;
+    }
+    .fatawa-brand-text span {
+      display: none;
+    }
+  }
+
+  @media (max-width: 960px) {
     .fatawa-portal-nav-container {
       flex-wrap: wrap;
-      padding: 10px 16px;
-      min-height: 58px;
+      padding: 8px 12px;
+      gap: 8px;
+    }
+    .fatawa-brand-group {
+      flex: 1 1 auto;
     }
     .fatawa-subnav-links {
-      display: none;
-      width: 100%;
-      flex-direction: column;
-      align-items: stretch;
-      padding-top: 10px;
-      border-top: 1px solid #e2e8f0;
-      margin-top: 8px;
-    }
-    .fatawa-subnav-links.open {
       display: flex;
+      order: 3;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      gap: 6px;
+      scrollbar-width: none;
+    }
+    .fatawa-subnav-links::-webkit-scrollbar {
+      display: none;
+    }
+    .fatawa-header-search-wrap {
+      order: 2;
+      flex: 1 1 100%;
+      max-width: 100%;
+      min-width: 100%;
     }
     .fatawa-subnav-actions {
-      width: 100%;
-      justify-content: flex-end;
-      padding-top: 6px;
+      order: 1;
+      gap: 6px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .fatawa-brand-text h1 {
+      font-size: 15.5px;
+    }
+    .fatawa-sidebar-trigger,
+    .fatawa-brand-icon {
+      width: 38px;
+      height: 38px;
+      font-size: 16px;
+    }
+    .fatawa-sidebar-grid {
+      grid-template-columns: 1fr;
+    }
+    .fatawa-sidebar-item.full-row {
+      grid-column: span 1;
     }
   }
 </style>
 
 
 
-<!-- DEDICATED FIQH-W-FATAWA PORTAL STICKY NAVIGATION BAR (No Main Website Navbar Above It) -->
+<!-- DEDICATED FIQH-W-FATAWA PORTAL STICKY NAVIGATION BAR -->
 <header class="fatawa-portal-nav-bar" id="fatawaPortalSubnav">
   <div class="fatawa-portal-nav-container">
-    <!-- RIGHT: PORTAL BRAND & IDENTITY -->
-    <a href="../../fikh-w-fatawa" class="fatawa-nav-brand">
-      <div class="fatawa-brand-icon">
-        <i class="fa-solid fa-scale-balanced"></i>
-      </div>
-      <div class="fatawa-brand-text">
-        <h1>فقہ و فتاویٰ پورٹل</h1>
-        <span>دار الافتاء — صوبائی جمعیت اہل حدیث ممبئی</span>
-      </div>
-    </a>
+    <!-- RIGHT: SIDEBAR MENU BUTTON + PORTAL BRAND & IDENTITY -->
+    <div class="fatawa-brand-group">
+      <button type="button" class="fatawa-sidebar-trigger" onclick="openFatawaSidebarDrawer()" title="فقہ و فتاویٰ سائڈ بار مینو اور تمام ابواب کھولیں" aria-label="سائڈ بار مینو">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
 
-    <!-- MOBILE HAMBURGER -->
-    <button type="button" class="fatawa-mobile-menu-btn" onclick="toggleFatawaMobileNav()">
-      <i class="fa-solid fa-bars"></i>
-    </button>
+      <a href="../../fikh-w-fatawa" class="fatawa-nav-brand">
+        <div class="fatawa-brand-icon">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+        <div class="fatawa-brand-text">
+          <h1>فقہ و فتاویٰ پورٹل</h1>
+          <span>دار الافتاء — صوبائی جمعیت اہل حدیث ممبئی</span>
+        </div>
+      </a>
+    </div>
 
-    <!-- CENTER: DEDICATED FATAWA PORTAL LINKS -->
+    <!-- CENTER: ESSENTIAL SINGLE-LINE FATAWA PORTAL LINKS -->
     <nav class="fatawa-subnav-links" id="fatawaSubnavLinks" aria-label="فقہ و فتاویٰ پورٹل نیویگیشن">
       <a href="../../index.html" class="fatawa-subnav-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -1169,38 +1400,31 @@ body *::-webkit-scrollbar-thumb:hover {
         <span>سوال پوچھیں</span>
       </a>
 
-      <a href="../../fikh-w-fatawa#latestFatawaSection" class="fatawa-subnav-link">
+      <a href="../../fikh-w-fatawa#latestFatawaSection" class="fatawa-subnav-link hide-on-laptop">
         <i class="fa-solid fa-pen-to-square"></i>
         <span>تازہ ترین جوابات</span>
       </a>
-
-      <a href="../../fikh-w-fatawa#importantFatawaSection" class="fatawa-subnav-link">
-        <i class="fa-solid fa-star"></i>
-        <span>اہم فتاویٰ</span>
-      </a>
-
-      <a href="../../fikh-w-fatawa#thematicFatawaSection" class="fatawa-subnav-link">
-        <i class="fa-solid fa-layer-group"></i>
-        <span>موضوعاتی انتخاب</span>
-      </a>
-
-      <button type="button" class="fatawa-subnav-link" onclick="openPortalModal('ufCommitteeModal')">
-        <i class="fa-solid fa-users-rectangle"></i>
-        <span>جمعیت فتویٰ کمیٹی</span>
-      </button>
-
-      <button type="button" class="fatawa-subnav-link" onclick="openPortalModal('ufGuideModal')">
-        <i class="fa-solid fa-book-open-reader"></i>
-        <span>رہنمائے صارف</span>
-      </button>
-
-      <a href="javascript:void(0)" onclick="focusFatawaSearchEngine(event)" class="fatawa-subnav-link" title="فتاویٰ سرچ انجن">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <span>تلاش</span>
-      </a>
     </nav>
 
-    <!-- LEFT: ACTION BUTTONS -->
+    <!-- INLINE SEARCH BOX IN FATAWA HEADLINE -->
+    <div class="fatawa-header-search-wrap">
+      <form class="fatawa-header-search-form" onsubmit="executeFatawaHeaderSearch(event)" role="search">
+        <input
+          type="text"
+          id="fatawaHeaderSearchInput"
+          class="fatawa-header-search-input"
+          placeholder="مسئلہ، فتویٰ نمبر یا عنوان تلاش کریں..."
+          aria-label="فتاویٰ میں تلاش کریں"
+          autocomplete="off"
+          oninput="syncFatawaHeaderSearch(this.value)"
+        />
+        <button type="submit" class="fatawa-header-search-btn" title="تلاش کریں">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+
+    <!-- LEFT: ACTION BUTTONS (مرکزی ویب سائٹ کا زائد بٹن ہٹا دیا گیا ہے) -->
     <div class="fatawa-subnav-actions">
       <button type="button" class="btn-portal-track" onclick="openPortalModal('ufTrackModal')" title="استفتاء نمبر یا واٹس ایپ کے ذریعے اپنے سوال کا اسٹیٹس دیکھیں">
         <i class="fa-solid fa-magnifying-glass-location"></i>
@@ -1211,14 +1435,97 @@ body *::-webkit-scrollbar-thumb:hover {
         <i class="fa-solid fa-pen-nib"></i>
         <span>فتویٰ طلب کریں</span>
       </a>
-
-      <a href="../../index.html" class="btn-portal-track" style="background: #f8fafc; color: #0f766e !important; border-color: #cbd5e1; text-decoration: none;" title="صوبائی جمعیت اہل حدیث ممبئی کی مرکزی ویب سائٹ پر واپس جائیں">
-        <i class="fa-solid fa-house-chimney"></i>
-        <span>مرکزی ویب سائٹ</span>
-      </a>
     </div>
   </div>
 </header>
+
+<!-- FATAWA SLIDING SIDEBAR DRAWER (مکمل مینو اور تمام اضافی بٹن) -->
+<div class="fatawa-sidebar-backdrop" id="fatawaSidebarBackdrop" onclick="closeFatawaSidebarDrawer()"></div>
+<aside class="fatawa-sidebar-drawer" id="fatawaSidebarDrawer" aria-label="فقہ و فتاویٰ سائڈ بار مینو">
+  <div class="fatawa-sidebar-head">
+    <div>
+      <h3 style="margin: 0; font-size: 18px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+        <i class="fa-solid fa-scale-balanced" style="color: #fde68a;"></i>
+        <span>فقہ و فتاویٰ — سائڈ بار مینو</span>
+      </h3>
+      <div style="font-size: 11px; color: #ccfbf1; margin-top: 2px;">دار الافتاء صوبائی جمعیت اہل حدیث ممبئی</div>
+    </div>
+    <button type="button" class="uf-modal-close" onclick="closeFatawaSidebarDrawer()" aria-label="بند کریں">&times;</button>
+  </div>
+  <div class="fatawa-sidebar-body">
+    <div style="background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 14px; padding: 12px; margin-bottom: 14px;">
+      <div style="font-size: 12px; font-weight: 800; color: #065f46; margin-bottom: 10px;">
+        <i class="fa-solid fa-compass"></i> دار الافتاء کے تمام شعبے اور سہولیات
+      </div>
+      <div class="fatawa-sidebar-grid">
+        <a href="../../index.html" class="fatawa-sidebar-item full-row" style="background: #fffbeb; border-color: #fcd34d; color: #92400e;">
+          <i class="fa-solid fa-house-chimney" style="background: #fde68a; color: #b45309;"></i>
+          <span>مرکزی سرورق (صوبائی جمعیت ہوم پیج)</span>
+        </a>
+        <a href="../../fikh-w-fatawa" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>سرورقِ فتاویٰ</span>
+        </a>
+        <a href="../../fikh-w-fatawa#categoryDirectoryCard" onclick="closeFatawaSidebarDrawer(); if(window.focusFatawaCategories){ focusFatawaCategories(event); }" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-folder-tree"></i>
+          <span>کتب و ابوابِ فتاویٰ</span>
+        </a>
+        <a href="../../fatawa" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-circle-question"></i>
+          <span>نیا سوال پوچھیں</span>
+        </a>
+        <a href="../../fikh-w-fatawa#latestFatawaSection" onclick="closeFatawaSidebarDrawer()" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>تازہ ترین جوابات</span>
+        </a>
+        <a href="../../fikh-w-fatawa#importantFatawaSection" onclick="closeFatawaSidebarDrawer()" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-star" style="color: #d97706; background: #fffbeb;"></i>
+          <span>اہم فتاویٰ</span>
+        </a>
+        <a href="../../fikh-w-fatawa#thematicFatawaSection" onclick="closeFatawaSidebarDrawer()" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>موضوعاتی انتخاب</span>
+        </a>
+        <button type="button" class="fatawa-sidebar-item" onclick="closeFatawaSidebarDrawer(); openPortalModal('ufTrackModal');">
+          <i class="fa-solid fa-magnifying-glass-location"></i>
+          <span>سوال ٹریک کریں</span>
+        </button>
+        <button type="button" class="fatawa-sidebar-item" onclick="closeFatawaSidebarDrawer(); openPortalModal('ufCommitteeModal');">
+          <i class="fa-solid fa-users-rectangle"></i>
+          <span>جمعیت فتویٰ کمیٹی</span>
+        </button>
+        <button type="button" class="fatawa-sidebar-item full-row" onclick="closeFatawaSidebarDrawer(); openPortalModal('ufGuideModal');">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <span>رہنمائے صارف (طریقۂ استفادہ و آدابِ استفتاء)</span>
+        </button>
+      </div>
+    </div>
+
+    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px;">
+      <div style="font-size: 12px; font-weight: 800; color: #334155; margin-bottom: 10px;">
+        <i class="fa-solid fa-sitemap" style="color: #0f766e;"></i> دیگر علمی شعبہ جات
+      </div>
+      <div class="fatawa-sidebar-grid">
+        <a href="../../aljama" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <span>مجلہ الجماعۃ</span>
+        </a>
+        <a href="../../library" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-book"></i>
+          <span>جمعیت لائبریری</span>
+        </a>
+        <a href="../../articles" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-feather-pointed"></i>
+          <span>مضامین و مقالات</span>
+        </a>
+        <a href="../../video-gallery" class="fatawa-sidebar-item">
+          <i class="fa-solid fa-circle-play"></i>
+          <span>ویڈیو و ریلز پورٹل</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>
 
 <!-- ─── MODAL 1: QUESTION TRACKER (سوال ٹریک کریں) ─── -->
 <div class="uf-modal-backdrop" id="ufTrackModal" onclick="if(event.target===this) closePortalModal('ufTrackModal')">
@@ -1296,9 +1603,47 @@ body *::-webkit-scrollbar-thumb:hover {
 </div>
 
 <script>
+  function openFatawaSidebarDrawer() {
+    var d = document.getElementById('fatawaSidebarDrawer');
+    var b = document.getElementById('fatawaSidebarBackdrop');
+    if (d) d.classList.add('open');
+    if (b) b.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeFatawaSidebarDrawer() {
+    var d = document.getElementById('fatawaSidebarDrawer');
+    var b = document.getElementById('fatawaSidebarBackdrop');
+    if (d) d.classList.remove('open');
+    if (b) b.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function syncFatawaHeaderSearch(val) {
+    var inp = document.getElementById('fatawaHeroSearchInput');
+    if (inp) {
+      inp.value = val;
+      inp.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+  }
+
+  function executeFatawaHeaderSearch(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    var hInp = document.getElementById('fatawaHeaderSearchInput');
+    var q = hInp ? hInp.value.trim() : '';
+    var inp = document.getElementById('fatawaHeroSearchInput');
+    if (inp) {
+      inp.value = q;
+      inp.dispatchEvent(new Event('input', { bubbles: true }));
+      var card = document.getElementById('fatawaSearchEngineCard') || inp;
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.location.href = '/fikh-w-fatawa?q=' + encodeURIComponent(q) + '#fatawaSearchEngineCard';
+    }
+  }
+
   function toggleFatawaMobileNav() {
-    var nav = document.getElementById('fatawaSubnavLinks');
-    if (nav) nav.classList.toggle('open');
+    openFatawaSidebarDrawer();
   }
 
   function openPortalModal(id) {
@@ -1313,12 +1658,10 @@ body *::-webkit-scrollbar-thumb:hover {
 
   function focusFatawaSearchEngine(e) {
     if (e && e.preventDefault) e.preventDefault();
-    var inp = document.getElementById('fatawaHeroSearchInput');
-    if (inp) {
-      inp.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(function() { inp.focus(); }, 220);
-    } else {
-      window.location.href = '/fikh-w-fatawa#fatawaSearchEngineCard';
+    var hInp = document.getElementById('fatawaHeaderSearchInput');
+    if (hInp) {
+      hInp.focus();
+      hInp.select();
     }
   }
 
@@ -2108,7 +2451,7 @@ body *::-webkit-scrollbar-thumb:hover {
      Visual Benchmark: Reference Images 3 & 4
      Subai Jamiat Ahle Hadees Mumbai
      ═══════════════════════════════════════════════════════════════════════════ -->
-<link rel="stylesheet" href="../../css/share-interaction.css?v=v10" />
+<link rel="stylesheet" href="../../css/share-interaction.css?v=v11" />
 
 <!-- 1. SHARE MODAL (Reference Image 4 Benchmark) -->
 <div id="sjShareModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjShareModalTitle">
@@ -2243,7 +2586,7 @@ body *::-webkit-scrollbar-thumb:hover {
   <span>✓ لنک کلپ بورڈ پر کاپی ہو گیا</span>
 </div>
 
-<script src="../../js/share-interaction.js?v=v10"></script>
+<script src="../../js/share-interaction.js?v=v11"></script>
 
 
 
