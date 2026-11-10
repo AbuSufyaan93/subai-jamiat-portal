@@ -462,6 +462,7 @@
 
                 </div>
 
+                
                 <div class="calender">
 
                     <!-- <i class="fa-solid fa-calendar-days"></i> -->
@@ -1642,10 +1643,6 @@ body *::-webkit-scrollbar-thumb:hover {
         <span style="font-size: 11px; color: #64748b;">فوری رسائی</span>
       </div>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px;">
-        <a href="../../index.html" style="grid-column: span 2; display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #fffbeb; border: 1px solid #fcd34d; border-radius: 9px; color: #92400e; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-house-chimney" style="color: #d97706;"></i>
-          <span>مرکزی سرورق (ہوم پیج)</span>
-        </a>
         <a href="../../library" style="display: flex; align-items: center; gap: 7px; padding: 8px 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 9px; color: #1e293b; text-decoration: none; font-size: 12px; font-weight: 700;">
           <i class="fa-solid fa-book-bookmark" style="color: #0284c7;"></i>
           <span>سرورقِ لائبریری</span>
@@ -2066,7 +2063,8 @@ body *::-webkit-scrollbar-thumb:hover {
   // Navigate to topic
   function navigateToTopic(topicName) {
     closeTopicsDrawer();
-    window.location.href = `/library?category=${encodeURIComponent(topicName)}`;
+    var baseLibUrl = window.__SJAHM_BASE_ROOT__ ? (window.__SJAHM_BASE_ROOT__ + '/library/index.html') : '/library';
+    window.location.href = `${baseLibUrl}?category=${encodeURIComponent(topicName)}`;
   }
 
   // Auto-init on DOMContentLoaded

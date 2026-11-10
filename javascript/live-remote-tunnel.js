@@ -261,6 +261,11 @@
       });
     }
 
+    // 5b. Handle /api/library/topics from pre-built static JSON
+    if (urlStr.indexOf('/api/library/topics') !== -1 && urlStr.indexOf('topics.json') === -1) {
+      return origFetch(BASE_ROOT + '/api/library/topics.json');
+    }
+
     // 6. Hybrid Live + Local Engine for Video Studio Upload & Admin Moderation
     if (urlStr.indexOf('/api/public/media/videos/studio-upload') !== -1 && method === 'POST') {
       var relUploadPath = '/api/public/media/videos/studio-upload';
