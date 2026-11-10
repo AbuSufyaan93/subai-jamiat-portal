@@ -11,12 +11,12 @@
   <title>صوبائی جمعیت اہل حدیث ممبئی — آفیشل یوٹیوب و ویڈیو پورٹل</title>
 
   <link rel="icon" href="./images/logo-square.png" type="image/png">
-  <link rel="stylesheet" href="./css/typography-system.css?v=v14">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v14" />
+  <link rel="stylesheet" href="./css/typography-system.css?v=v15">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v15" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script defer src="./javascript/typography-enhancer.js?v=v14"></script>
+  <script defer src="./javascript/typography-enhancer.js?v=v15"></script>
 
   <style>
     @font-face {
@@ -1643,69 +1643,106 @@
     }
 
     /* =====================================================
-       7. YOUTUBE SHORTS / REELS VERTICAL 9:16 CARDS (3D)
+       7. ISLAMIC TUBE SHORTS / REELS VERTICAL 9:16 CARDS (CLEAN NO-OVERLAP)
        ===================================================== */
     .yt-reels-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
       gap: 20px;
-      perspective: 1200px;
     }
 
     .yt-reel-card {
-      aspect-ratio: 9 / 16;
       border-radius: 20px;
       overflow: hidden;
       position: relative;
-      background: #090d16;
+      background: var(--yt-surface);
       cursor: pointer;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
-      transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.34s ease, border-color 0.25s ease;
+      box-shadow: var(--yt-card-shadow);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, border-color 0.25s ease;
       border: 1.5px solid var(--yt-border);
-      transform-style: preserve-3d;
+      display: flex;
+      flex-direction: column;
     }
 
     .yt-reel-card:hover {
-      transform: perspective(1000px) translateY(-8px) rotateX(3deg) scale(1.015);
-      box-shadow: 0 20px 42px rgba(255, 0, 51, 0.26);
-      border-color: var(--yt-gold);
+      transform: translateY(-6px);
+      box-shadow: var(--yt-card-hover-shadow);
+      border-color: var(--yt-emerald);
     }
 
-    .yt-reel-card img {
+    .yt-reel-thumb-box {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      position: relative;
+      overflow: hidden;
+      background: #06140d;
+    }
+
+    .yt-reel-thumb-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.45s ease;
     }
 
-    .yt-reel-card:hover img {
-      transform: scale(1.08);
+    .yt-reel-card:hover .yt-reel-thumb-box img {
+      transform: scale(1.05);
+    }
+
+    .yt-reel-play-hover {
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 24, 14, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      z-index: 2;
+    }
+
+    .yt-reel-card:hover .yt-reel-play-hover {
+      opacity: 1;
+    }
+
+    .yt-reel-play-circle {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: rgba(10, 92, 54, 0.92);
+      border: 2px solid #fde68a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
     }
 
     .yt-reel-badge-top {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      background: linear-gradient(135deg, #ff0033, #cc0029);
-      color: #fff;
+      top: 10px;
+      right: 10px;
+      background: linear-gradient(135deg, #0a5c36, #063720);
+      border: 1px solid rgba(201, 168, 76, 0.65);
+      color: #fde68a;
       font-size: 0.74rem;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 2px 10px;
       border-radius: 50px;
       display: inline-flex;
       align-items: center;
       gap: 5px;
       z-index: 3;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
     }
 
     .yt-reel-duration {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(0, 0, 0, 0.72);
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
-      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.74rem;
       font-weight: 700;
       padding: 2px 8px;
@@ -1713,24 +1750,23 @@
       z-index: 3;
     }
 
-    .yt-reel-grad {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.35) 45%, transparent 100%);
+    /* Clean Caption Footer BELOW the 9:16 Thumbnail (Zero collision with video image text) */
+    .yt-reel-card-info {
+      padding: 12px 14px 14px;
+      background: var(--yt-surface);
+      border-top: 1px solid var(--yt-border);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 16px;
-      color: #fff;
-      z-index: 2;
+      gap: 7px;
+      flex: 1;
     }
 
     .yt-reel-title {
-      margin: 0 0 6px 0;
+      margin: 0;
       font-size: 0.98rem;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.45;
+      color: var(--yt-text);
+      line-height: 1.55;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -1738,36 +1774,51 @@
     }
 
     .yt-reel-speaker {
-      font-size: 0.8rem;
-      color: #fde68a;
-      margin-bottom: 6px;
+      font-size: 0.82rem;
+      color: var(--yt-emerald);
+      background: rgba(10, 92, 54, 0.08);
+      border: 1px solid rgba(10, 92, 54, 0.22);
+      padding: 3px 10px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+      max-width: 100%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    body.yt-dark-mode .yt-reel-speaker {
+      color: #6ee7b7;
+      background: rgba(16, 185, 129, 0.14);
     }
 
     .yt-reel-meta {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 0.76rem;
-      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.78rem;
+      color: var(--yt-text-muted);
+      margin-top: auto;
+      padding-top: 4px;
+      border-top: 1px dashed var(--yt-border);
     }
 
     /* =====================================================
-       8. FULL-SCREEN VERTICAL REELS / SHORTS VIEWER MODAL
+       8. FULL-SCREEN VERTICAL SCROLL-SNAP ISLAMIC TUBE SHORTS VIEWER
        ===================================================== */
     .yt-reels-modal {
       position: fixed;
       inset: 0;
-      background: rgba(5, 8, 15, 0.96);
-      backdrop-filter: blur(16px);
+      background: radial-gradient(circle at center, rgba(6, 38, 23, 0.96) 0%, rgba(3, 8, 14, 0.98) 100%);
+      backdrop-filter: blur(18px);
       z-index: 3000;
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 0;
     }
 
     .yt-reels-modal.open {
@@ -1775,80 +1826,216 @@
     }
 
     .yt-reel-stage-wrap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
       display: flex;
       align-items: center;
-      gap: 18px;
-      max-height: 92vh;
+      justify-content: center;
+    }
+
+    /* Continuous Vertical Scroll-Snap Container */
+    .yt-reels-scroll-feed {
+      width: 100%;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .yt-reels-scroll-feed::-webkit-scrollbar {
+      display: none;
+    }
+
+    .yt-reel-feed-slide {
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: center;
+      scroll-snap-stop: always;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 16px;
     }
 
     .yt-reel-phone-frame {
-      width: 380px;
-      max-width: 86vw;
-      height: 84vh;
-      max-height: 740px;
-      background: #000;
+      width: 370px;
+      max-width: 88vw;
+      height: 92vh;
+      max-height: 790px;
+      background: #04120b;
       border-radius: 26px;
       overflow: hidden;
       position: relative;
-      border: 2px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      border: 1.5px solid rgba(201, 168, 76, 0.42);
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.85), 0 0 30px rgba(10, 92, 54, 0.35);
       display: flex;
       flex-direction: column;
     }
 
-    .yt-reel-phone-frame iframe,
-    .yt-reel-phone-frame video {
-      width: 100%;
-      height: 100%;
-      border: none;
-      flex: 1;
+    /* Top Islamic Tube Header Strip inside Phone Frame (Outside video canvas) */
+    .itube-reel-top-strip {
+      height: 40px;
+      padding: 0 14px;
+      background: linear-gradient(90deg, #042214, #0a5c36);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      z-index: 5;
     }
 
-    .yt-reel-bottom-info {
+    .itube-reel-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: #fde68a;
+    }
+
+    /* Pure 9:16 Video Viewport — ZERO Overlapping Text & Cropped YouTube Chrome */
+    .yt-reel-video-viewport {
+      flex: 1;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .yt-reel-video-viewport iframe {
       position: absolute;
-      bottom: 0;
-      right: 0;
+      top: -64px;
       left: 0;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.94), transparent);
-      padding: 28px 18px 16px;
-      color: #fff;
+      width: 100%;
+      height: calc(100% + 128px);
+      border: none;
       pointer-events: none;
     }
 
-    .yt-reel-side-controls {
+    .yt-reel-video-viewport video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+    }
+
+    .itube-reel-touch-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Dedicated Caption & Scholar Footer BELOW the 9:16 Video (Never overlaps video subtitles!) */
+    .yt-reel-caption-bar {
+      background: linear-gradient(180deg, #062315 0%, #03130b 100%);
+      border-top: 1.5px solid rgba(201, 168, 76, 0.35);
+      padding: 10px 14px 12px;
+      color: #fff;
+      flex-shrink: 0;
+      z-index: 5;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 5px;
+    }
+
+    .yt-reel-caption-title {
+      margin: 0;
+      font-size: 0.96rem;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #ffffff;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .yt-reel-caption-meta {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: #fde68a;
+    }
+
+    /* Refined, Courteous Frosted-Glass Side Action Dock ("تہذیب") */
+    .yt-reel-side-controls {
+      position: fixed;
+      left: calc(50% - 255px);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3010;
+      background: rgba(6, 28, 17, 0.82);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(201, 168, 76, 0.38);
+      border-radius: 999px;
+      padding: 12px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      align-items: center;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .yt-reel-action-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
     }
 
     .yt-reel-circle-btn {
-      width: 50px;
-      height: 50px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       color: #fff;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 1.1rem;
-      transition: all 0.2s;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
     }
 
     .yt-reel-circle-btn:hover {
-      background: var(--yt-red);
-      border-color: var(--yt-red);
-      transform: scale(1.08);
+      background: var(--yt-emerald);
+      border-color: #fde68a;
+      color: #fde68a;
+      transform: scale(1.06);
     }
 
     .yt-reel-circle-lbl {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: #e2e8f0;
-      margin-top: 3px;
       text-align: center;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 640px) {
+      .yt-reel-side-controls {
+        left: 10px;
+        padding: 8px 6px;
+        gap: 6px;
+      }
+      .yt-reel-circle-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.82rem;
+      }
     }
 
     /* =====================================================
@@ -2573,7 +2760,7 @@
   <link rel="canonical" href="http://127.0.0.1:5000/video-gallery">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
-  <script defer src="./javascript/perf-enhancer.js?v=v14"></script>
+  <script defer src="./javascript/perf-enhancer.js?v=v15"></script>
 </head>
 
 <body>
@@ -2651,7 +2838,7 @@
             type="text"
             id="ytSearchInput"
             class="yt-search-input"
-            placeholder="یوٹیوب چینل میں تلاش کریں: بیان، قسط نمبر، شیخ کا نام، خطبہ جمعہ، ریلز، پلے لسٹ..."
+            placeholder="اسلامک ٹیوب میں تلاش کریں: بیان، قسط نمبر، شیخ کا نام، خطبہ جمعہ، ریلز، علمی سلسلے..."
             autocomplete="off"
           />
           <button type="button" id="ytSearchClear" class="yt-search-clear" onclick="clearYtSearch()" title="صاف کریں">
@@ -2689,32 +2876,32 @@
       <div class="yt-channel-banner">
         <!-- Right Side: Avatar + Channel Identity + Description -->
         <div class="yt-banner-right">
-          <div class="yt-avatar-ring" onclick="switchYtTab('home')" style="cursor:pointer;" title="صوبائی جمعیت اہل حدیث ممبئی — یوٹیوب چینل لوگو">
+          <div class="yt-avatar-ring" onclick="switchYtTab('home')" style="cursor:pointer;" title="اسلامک ٹیوب — صوبائی جمعیت اہل حدیث ممبئی">
             <img
               src="./images/youtube-channel-logo.jpg"
               alt="صوبائی جمعیت اہل حدیث ممبئی"
               onerror="this.onerror=null; this.src='https://yt3.googleusercontent.com/ytc/AIdro_mdBiOmsL4mx_BA1lOz_cgkackfwhrjZjQ5INozbUbmEkI=s900-c-k-c0x00ffffff-no-rj';"
             />
-            <span class="yt-avatar-live-dot" title="مرکزی یوٹیوب چینل"><i class="fab fa-youtube"></i></span>
+            <span class="yt-avatar-live-dot" title="اسلامک ٹیوب — صوبائی جمعیت میڈیا"><i class="fas fa-play"></i></span>
           </div>
 
           <div class="yt-banner-content">
             <span class="yt-banner-tag">
-              <i class="fab fa-youtube" style="color:#ff0033; font-size:0.95rem;"></i>
-              <span>مرکزی یوٹیوب چینل — صوبائی جمعیت اہل حدیث ممبئی</span>
+              <i class="fas fa-play-circle" style="color:#0a5c36; font-size:0.95rem;"></i>
+              <span>اسلامک ٹیوب — مرکزی دعوتی میڈیا چینل (صوبائی جمعیت اہل حدیث ممبئی)</span>
             </span>
 
             <div class="yt-banner-identity-row">
               <h1>
                 <span>صوبائی جمعیت اہل حدیث ممبئی</span>
-                <span class="yt-verified-tick" title="مستند و تصدیق شدہ یوٹیوب چینل"><i class="fas fa-check"></i></span>
+                <span class="yt-verified-tick" title="مستند و تصدیق شدہ اسلامی میڈیا پلیٹ فارم"><i class="fas fa-check"></i></span>
               </h1>
-              <a href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai" target="_blank" rel="noopener" class="yt-handle-en" style="text-decoration:none;" title="یوٹیوب چینل کھولیں">
-                <i class="fab fa-youtube" style="color:#ff0033; margin-right:4px;"></i>@SubaiJamiatAhleHadeesMumbai
-              </a>
-              <span class="yt-meta-pill" style="background:rgba(220,38,38,0.08); color:#b91c1c; border-color:rgba(220,38,38,0.24); font-weight:700;">
+              <span class="yt-handle-en" title="اسلامک ٹیوب آفیشل پورٹل">
+                <i class="fas fa-shield-alt" style="color:#0a5c36; margin-right:4px;"></i>IslamicTube • SJAHM
+              </span>
+              <span class="yt-meta-pill" style="background:rgba(10,92,54,0.08); color:#064e2c; border-color:rgba(10,92,54,0.24); font-weight:700;">
                 <i class="fas fa-users"></i>
-                <span>۳۶.۷ ہزار سبسکرائبرز</span>
+                <span>۳۶.۷ ہزار مستقل ناظرین</span>
               </span>
               <span id="webDirectUploadsPill" class="yt-meta-pill" style="display:none; background:rgba(10,92,54,0.12); color:var(--yt-emerald); border-color:rgba(10,92,54,0.3); font-weight:700;">
                 <i class="fas fa-cloud-upload-alt"></i>
@@ -2729,9 +2916,9 @@
         <!-- Left Side: 5 Horizontal Stat Boxes + Action Buttons -->
         <div class="yt-banner-left">
           <div class="yt-banner-badges">
-            <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="یوٹیوب چینل کی مجموعی ویڈیوز اور شارٹس دیکھیں">
+            <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="مجموعی ویڈیوز اور شارٹس دیکھیں">
               <span class="yt-banner-stat-num" id="statTotalChannelVideosCount">۳٬۹۰۷</span>
-              <span class="yt-banner-stat-lbl"><i class="fab fa-youtube" style="color:#dc2626; margin-left:4px;"></i> کل ویڈیوز و شارٹس</span>
+              <span class="yt-banner-stat-lbl"><i class="fas fa-film" style="color:#0a5c36; margin-left:4px;"></i> کل ویڈیوز و شارٹس</span>
             </div>
             <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="تمام تفصیلی ویڈیوز اور دروس دیکھیں">
               <span class="yt-banner-stat-num" id="statStandardCount">۳٬۳۵۷</span>
@@ -2741,11 +2928,11 @@
               <span class="yt-banner-stat-num" id="statReelsCount">۵۵۰</span>
               <span class="yt-banner-stat-lbl"><i class="fas fa-bolt" style="color:#e11d48; margin-left:4px;"></i> ریلز و شارٹس</span>
             </div>
-            <div class="yt-banner-stat-box" onclick="switchYtTab('playlists')" title="مکمل سیریز اور پلے لسٹس دیکھیں">
+            <div class="yt-banner-stat-box" onclick="switchYtTab('playlists')" title="مکمل سیریز اور علمی سلسلے دیکھیں">
               <span class="yt-banner-stat-num" id="statPlaylistsCount">۱۰۷</span>
               <span class="yt-banner-stat-lbl"><i class="fas fa-list-ul" style="color:#059669; margin-left:4px;"></i> علمی سلسلے</span>
             </div>
-            <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="یوٹیوب چینل اور ویب پورٹل کے مجموعی مشاہدات">
+            <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="مجموعی مشاہدات">
               <span class="yt-banner-stat-num" id="statTotalViewsCount">۳٬۵۷۳٬۵۲۵</span>
               <span class="yt-banner-stat-lbl"><i class="fas fa-eye" style="color:#d97706; margin-left:4px;"></i> مجموعی مشاہدات</span>
             </div>
@@ -2759,9 +2946,9 @@
               <i class="fas fa-user-shield" style="color:var(--yt-emerald);"></i> انتظامی جانچ پینل
               <span id="ytPendingAdminBadge" class="yt-badge-count" style="background:#0a5c36; color:#fff;">۰</span>
             </button>
-            <a href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai?sub_confirmation=1" target="_blank" rel="noopener" class="yt-sub-btn">
-              <i class="fab fa-youtube" style="color:#ff0033; font-size:1.1rem;"></i> یوٹیوب چینل میں شامل ہوں
-            </a>
+            <button type="button" class="yt-sub-btn" onclick="openReelViewerByIndex(0)" title="مسلسل اسکرول ریلز فیڈ چلائیں">
+              <i class="fas fa-bolt" style="color:#e11d48; font-size:1.05rem;"></i> اسلامک ٹیوب ریلز فیڈ
+            </button>
           </div>
         </div>
       </div>
@@ -3162,52 +3349,61 @@
   </div>
 
   <!-- =====================================================
-       FULL-SCREEN VERTICAL REELS / SHORTS SWIPE PLAYER MODAL
+       FULL-SCREEN VERTICAL SCROLL-SNAP REELS / SHORTS FEED MODAL (ISLAMIC TUBE)
        ===================================================== -->
-  <div id="ytReelsModal" class="yt-reels-modal" role="dialog" aria-modal="true">
-    <div class="yt-reel-stage-wrap">
-      <div class="yt-reel-phone-frame">
-        <div id="ytReelPlayerContainer" style="width:100%; height:100%; background:#000;"></div>
-        <div class="yt-reel-bottom-info">
-          <span style="background:var(--yt-red); color:#fff; font-size:0.72rem; padding:2px 9px; border-radius:50px; font-weight:700;">
-            <i class="fas fa-bolt"></i> صوبائی جمعیت ریلز
-          </span>
-          <h3 id="reelModalTitle" style="margin:6px 0 4px; font-size:1.05rem; line-height:1.45;"></h3>
-          <div id="reelModalSpeaker" style="font-size:0.84rem; color:#fde68a;"></div>
-        </div>
-      </div>
+  <div id="ytReelsModal" class="yt-reels-modal" role="dialog" aria-modal="true" aria-label="اسلامک ٹیوب ریلز فیڈ">
+    <!-- Continuous Vertical Scroll-Snap Shorts Feed -->
+    <div id="ytReelsScrollFeed" class="yt-reels-scroll-feed"></div>
 
-      <!-- Vertical Action Buttons Bar  -->
-      <div class="yt-reel-side-controls">
-        <button type="button" class="yt-reel-circle-btn" onclick="closeReelViewer()" title="بند کریں" style="background:rgba(239,68,68,0.85);">
+    <!-- Refined, Courteous Frosted-Glass Pill Action Dock (Left Side in RTL) -->
+    <div class="yt-reel-side-controls">
+      <div class="yt-reel-action-item">
+        <button type="button" class="yt-reel-circle-btn close-btn" onclick="closeReelViewer()" title="ریلز پلیئر بند کریں (Esc)">
           <i class="fas fa-times"></i>
         </button>
         <div class="yt-reel-circle-lbl">بند کریں</div>
+      </div>
 
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" title="پچھلی ریل ">
+      <div class="yt-reel-action-item">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" title="پچھلی ریل (اوپر اسکرول کریں)">
           <i class="fas fa-chevron-up"></i>
         </button>
-        <div class="yt-reel-circle-lbl">پچھلی ریل</div>
+        <div class="yt-reel-circle-lbl">پچھلی</div>
+      </div>
 
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" title="اگلی ریل ">
+      <div class="yt-reel-action-item">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" title="اگلی ریل (نیچے اسکرول کریں)">
           <i class="fas fa-chevron-down"></i>
         </button>
-        <div class="yt-reel-circle-lbl">اگلی ریل</div>
+        <div class="yt-reel-circle-lbl">اگلی</div>
+      </div>
 
-        <button type="button" id="reelModalLikeBtn" class="yt-reel-circle-btn" onclick="likeActiveReel()">
+      <div class="yt-reel-action-item">
+        <button type="button" id="reelModalMuteBtn" class="yt-reel-circle-btn" onclick="toggleReelFeedMute()" title="آواز آن / آف کریں">
+          <i id="reelModalMuteIcon" class="fas fa-volume-up"></i>
+        </button>
+        <div id="reelModalMuteLbl" class="yt-reel-circle-lbl">آواز آن</div>
+      </div>
+
+      <div class="yt-reel-action-item">
+        <button type="button" id="reelModalLikeBtn" class="yt-reel-circle-btn" onclick="likeActiveReel()" title="ریل پسند کریں">
           <i class="fas fa-thumbs-up"></i>
         </button>
         <div id="reelModalLikeCount" class="yt-reel-circle-lbl">پسند</div>
+      </div>
 
-        <button type="button" class="yt-reel-circle-btn" onclick="shareActiveReelWhatsApp()" style="background:rgba(37,211,102,0.25);">
+      <div class="yt-reel-action-item">
+        <button type="button" id="reelModalSaveBtn" class="yt-reel-circle-btn" onclick="saveActiveReel()" title="بعد میں دیکھنے کے لیے محفوظ کریں">
+          <i class="fas fa-bookmark"></i>
+        </button>
+        <div id="reelModalSaveLbl" class="yt-reel-circle-lbl">محفوظ</div>
+      </div>
+
+      <div class="yt-reel-action-item">
+        <button type="button" class="yt-reel-circle-btn whatsapp-btn" onclick="shareActiveReelWhatsApp()" title="واٹس ایپ پر شیئر کریں">
           <i class="fab fa-whatsapp"></i>
         </button>
         <div class="yt-reel-circle-lbl">شیئر</div>
-
-        <button type="button" class="yt-reel-circle-btn" onclick="closeReelViewer(); openStudioUploadModal('reel');" style="background:linear-gradient(135deg,#0a5c36,#c9a84c);">
-          <i class="fas fa-plus"></i>
-        </button>
-        <div class="yt-reel-circle-lbl">+ ریل اپلوڈ</div>
       </div>
     </div>
   </div>
@@ -4292,7 +4488,7 @@
             </div>
             <div class="yt-card-body">
               <div class="yt-card-meta">
-                <!-- Line 1: Pure Urdu Title + Episode Number (only if present on YouTube) -->
+                <!-- Line 1: Pure Urdu Title + Episode Number -->
                 <div class="yt-title-ep-row">
                   <h3 class="yt-card-title" title="${escapeHtml(v.title)}">${escapeHtml(v.title)}</h3>
                   ${epBadgeHtml}
@@ -4302,9 +4498,9 @@
                   <span class="yt-audio-icon-3d"><i class="fas fa-volume-up"></i></span>
                   <span class="yt-sheikh-name">${escapeHtml(speakerName)}</span>
                 </div>
-                <!-- Line 3: Exact YouTube Views + Publish Date -->
+                <!-- Line 3: Total Views + Publish Date -->
                 <div class="yt-card-stats">
-                  <span><i class="fab fa-youtube" style="color:var(--yt-red);"></i> ${escapeHtml(urduViewsTxt)}</span>
+                  <span><i class="fas fa-eye" style="color:var(--yt-emerald);"></i> ${escapeHtml(urduViewsTxt)}</span>
                   <span>•</span>
                   <span><i class="far fa-calendar-alt" style="color:var(--yt-gold);"></i> ${escapeHtml(urduDateTxt)}</span>
                 </div>
@@ -4312,7 +4508,7 @@
             </div>
             <div class="yt-card-footer" onclick="event.stopPropagation()">
               <button type="button" class="yt-mini-btn" onclick="playYtItem('${escapeHtml(v.id)}')">
-                <i class="fas fa-play" style="color:var(--yt-red);"></i> بیان سنیں
+                <i class="fas fa-play" style="color:var(--yt-emerald);"></i> بیان سنیں
               </button>
               <div style="display:flex; gap:6px;">
                 <button type="button" class="yt-mini-btn" onclick="quickToggleLike('${escapeHtml(v.id)}')" style="${isLiked ? 'color:var(--yt-red);font-weight:700;' : ''}">
@@ -4336,27 +4532,30 @@
         const urduDateTxt = formatUrduDateClient(r.publishedAt || r.recordingDate || r.date, r.urduDate);
         const speakerName = r.speaker || 'فضیلۃ الشیخ عبد السلام سلفی حفظہ اللہ';
         const epLabel = r.episodeLabel || (r.episodeNumber ? `قسط نمبر ${toUrduDigits(r.episodeNumber)}` : '');
-        const topBadgeText = epLabel || 'شارٹس';
+        const topBadgeText = epLabel || 'اسلامک ٹیوب ریل';
         const isScholar = window.isOfficialScholarName && window.isOfficialScholarName(speakerName);
 
         return `
           <article class="yt-reel-card" onclick="openReelViewerById('${escapeHtml(r.id)}')">
-            <img src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
-            <span class="yt-reel-badge-top"><i class="fas fa-bolt"></i> ${escapeHtml(topBadgeText)}</span>
-            <span class="yt-reel-duration">${escapeHtml(toUrduDigits(r.duration || '0:56'))}</span>
-            <div class="yt-reel-grad">
-              <!-- Line 1: Pure Urdu Title -->
-              <h3 class="yt-reel-title" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</h3>
-              <!-- Line 2: Audio Icon + Sheikh's Name -->
-              <div class="yt-reel-speaker" onclick="event.stopPropagation(); if (${isScholar ? 'true' : 'false'}) { filterBySpeakerName('${escapeHtml(speakerName)}'); }" style="background:rgba(0,0,0,0.62); border:1px solid rgba(243,210,122,0.55); padding:3px 10px; border-radius:50px; display:inline-flex; align-items:center; gap:6px; margin-bottom:6px; cursor:pointer; max-width:100%;">
-                <i class="fas fa-volume-up" style="color:#fde68a; font-size:0.78rem; flex-shrink:0;"></i>
-                <span style="color:#fff; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(speakerName)}</span>
+            <!-- Clean 9:16 Video Thumbnail Box (No Text Overlapping Video!) -->
+            <div class="yt-reel-thumb-box">
+              <img src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
+              <span class="yt-reel-badge-top"><i class="fas fa-bolt"></i> ${escapeHtml(topBadgeText)}</span>
+              <span class="yt-reel-duration">${escapeHtml(toUrduDigits(r.duration || '0:56'))}</span>
+              <div class="yt-reel-play-hover">
+                <div class="yt-reel-play-circle"><i class="fas fa-play"></i></div>
               </div>
-              <!-- Line 3: Exact YouTube Views + Publish Date -->
-              <div class="yt-reel-meta" style="flex-wrap:wrap; gap:6px;">
-                <span><i class="fab fa-youtube" style="color:#ff4d6d;"></i> ${escapeHtml(urduViewsTxt)}</span>
-                <span>•</span>
-                <span><i class="far fa-calendar-alt" style="color:#fde68a;"></i> ${escapeHtml(urduDateTxt)}</span>
+            </div>
+            <!-- Dedicated Info Bar Below 9:16 Thumbnail -->
+            <div class="yt-reel-card-info">
+              <h3 class="yt-reel-title" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</h3>
+              <div class="yt-reel-speaker" onclick="event.stopPropagation(); if (${isScholar ? 'true' : 'false'}) { filterBySpeakerName('${escapeHtml(speakerName)}'); }" title="${escapeHtml(speakerName)}">
+                <i class="fas fa-volume-up" style="color:var(--yt-emerald); font-size:0.74rem; flex-shrink:0;"></i>
+                <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(speakerName)}</span>
+              </div>
+              <div class="yt-reel-meta">
+                <span><i class="fas fa-eye" style="color:var(--yt-emerald);"></i> ${escapeHtml(urduViewsTxt)}</span>
+                <span><i class="far fa-calendar-alt" style="color:var(--yt-gold);"></i> ${escapeHtml(urduDateTxt)}</span>
               </div>
             </div>
           </article>
@@ -4409,8 +4608,8 @@
                 <small style="font-size:0.75rem;">مکمل سیریز</small>
               </div>
               <div class="yt-thumb-overlay">
-                <div style="background:rgba(255,0,51,0.94); color:#fff; padding:6px 16px; border-radius:50px; font-weight:700; font-size:0.9rem; display:flex; align-items:center; gap:7px;">
-                  <i class="fas fa-play"></i> پلے لسٹ چلائیں
+                <div style="background:rgba(10,92,54,0.94); color:#fff; padding:6px 16px; border-radius:50px; font-weight:700; font-size:0.9rem; display:flex; align-items:center; gap:7px; border:1px solid rgba(201,168,76,0.5);">
+                  <i class="fas fa-play"></i> سلسلہ چلائیں
                 </div>
               </div>
             </div>
@@ -4426,9 +4625,9 @@
                   <span class="yt-audio-icon-3d"><i class="fas fa-volume-up"></i></span>
                   <span class="yt-sheikh-name">${escapeHtml(speakerName)}</span>
                 </div>
-                <!-- Line 3: YouTube Views + Publish Date -->
+                <!-- Line 3: Views + Publish Date -->
                 <div class="yt-card-stats">
-                  <span><i class="fab fa-youtube" style="color:var(--yt-red);"></i> ${escapeHtml(urduViewsTxt)}</span>
+                  <span><i class="fas fa-eye" style="color:var(--yt-emerald);"></i> ${escapeHtml(urduViewsTxt)}</span>
                   <span>•</span>
                   <span><i class="far fa-calendar-alt" style="color:var(--yt-gold);"></i> ${escapeHtml(urduDateTxt)}</span>
                 </div>
@@ -4442,9 +4641,9 @@
                 <button type="button" class="yt-mini-btn" onclick="quickToggleSave('${escapeHtml(p.id)}')">
                   <i class="fas fa-bookmark"></i> محفوظ
                 </button>
-                <a href="${escapeHtml(p.videoUrl || 'https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai/playlists')}" target="_blank" rel="noopener" class="yt-mini-btn" style="text-decoration:none;">
-                  <i class="fab fa-youtube" style="color:var(--yt-red);"></i> یوٹیوب چینل
-                </a>
+                <button type="button" class="yt-mini-btn" onclick="quickShareItem('${escapeHtml(p.id)}')" title="واٹس ایپ شیئر">
+                  <i class="fab fa-whatsapp" style="color:#16a34a;"></i> شیئر
+                </button>
               </div>
             </div>
           </article>
@@ -5019,33 +5218,278 @@
       };
 
       // =====================================================
-      // YOUTUBE THEATER WATCH PLAYER & QUEUE ENGINE
+      // NATIVE ISLAMIC TUBE 16:9 PLAYER & CUSTOM CONTROLS ENGINE
       // =====================================================
-      function buildPlayerEmbedHtml(item) {
-        if (item.type === 'direct_upload' || (item.localVideoPath && item.localVideoPath.endsWith('.mp4')) || (item.videoUrl && (item.videoUrl.startsWith('blob:') || item.videoUrl.startsWith('data:video')))) {
-          const src = item.localVideoPath || item.videoUrl;
-          return `<video src="${escapeHtml(src)}" controls autoplay playsinline style="width:100%;height:100%;background:#000;"></video>`;
+      let _itubeMainPlaying = true;
+      let _itubeMainMuted = false;
+      let _itubeMainSpeed = 1;
+      let _itubeMainCurTime = 0;
+      let _itubeMainDuration = 0;
+
+      function formatSecToUrduTime(sec) {
+        const s = Math.max(0, Math.floor(Number(sec) || 0));
+        const hrs = Math.floor(s / 3600);
+        const mins = Math.floor((s % 3600) / 60);
+        const rem = s % 60;
+        const pad = n => (n < 10 ? '0' + n : String(n));
+        const raw = hrs > 0 ? `${hrs}:${pad(mins)}:${pad(rem)}` : `${pad(mins)}:${pad(rem)}`;
+        return toUrduDigits(raw);
+      }
+
+      function sendYtCommand(iframeEl, funcName, args) {
+        if (!iframeEl || !iframeEl.contentWindow) return;
+        try {
+          iframeEl.contentWindow.postMessage(
+            JSON.stringify({ event: 'command', func: funcName, args: args || [] }),
+            '*'
+          );
+        } catch (err) {}
+      }
+
+      function registerYtListening(iframeEl, channelId) {
+        if (!iframeEl || !iframeEl.contentWindow) return;
+        const sendListen = () => {
+          try {
+            if (iframeEl.contentWindow) {
+              iframeEl.contentWindow.postMessage(
+                JSON.stringify({ event: 'listening', id: channelId || 'itubePlayer' }),
+                '*'
+              );
+            }
+          } catch (e) {}
+        };
+        sendListen();
+        setTimeout(sendListen, 450);
+        setTimeout(sendListen, 1200);
+      }
+
+      // Listen for YouTube IFrame API infoDelivery messages (time, duration, state)
+      window.addEventListener('message', function (ev) {
+        if (!ev.data || typeof ev.data !== 'string') return;
+        let data;
+        try {
+          data = JSON.parse(ev.data);
+        } catch (e) {
+          return;
         }
+        if (!data || data.event !== 'infoDelivery' || !data.info) return;
+        const info = data.info;
+
+        // Update 16:9 Watch Theater Scrubber & Time if active
+        const mainStage = document.getElementById('ytMainPlayerStage');
+        const reelsModal = document.getElementById('ytReelsModal');
+        const isReelsOpen = reelsModal && reelsModal.classList.contains('open');
+
+        if (!isReelsOpen && mainStage) {
+          if (typeof info.currentTime === 'number') _itubeMainCurTime = info.currentTime;
+          if (typeof info.duration === 'number' && info.duration > 0) _itubeMainDuration = info.duration;
+          if (_itubeMainDuration > 0) {
+            const pct = Math.min(100, Math.max(0, (_itubeMainCurTime / _itubeMainDuration) * 100));
+            const fillEl = document.getElementById('itubeMainScrubberFill');
+            if (fillEl) fillEl.style.width = pct.toFixed(2) + '%';
+            const timeEl = document.getElementById('itubeMainTimeLabel');
+            if (timeEl) {
+              timeEl.textContent = `${formatSecToUrduTime(_itubeMainCurTime)} / ${formatSecToUrduTime(_itubeMainDuration)}`;
+            }
+          }
+          if (typeof info.playerState === 'number') {
+            if (info.playerState === 1) {
+              _itubeMainPlaying = true;
+              const btnIcon = document.getElementById('itubeMainPlayIcon');
+              if (btnIcon) btnIcon.className = 'fas fa-pause';
+            } else if (info.playerState === 2) {
+              _itubeMainPlaying = false;
+              const btnIcon = document.getElementById('itubeMainPlayIcon');
+              if (btnIcon) btnIcon.className = 'fas fa-play';
+            } else if (info.playerState === 0) {
+              const autoToggle = document.getElementById('ytAutoPlayToggle');
+              if (!autoToggle || autoToggle.checked) {
+                playNextInQueue();
+              }
+            }
+          }
+        } else if (isReelsOpen) {
+          if (typeof info.currentTime === 'number' && typeof info.duration === 'number' && info.duration > 0) {
+            const pct = Math.min(100, Math.max(0, (info.currentTime / info.duration) * 100));
+            const reelProg = document.getElementById(`itubeReelProg-${activeReelIndex}`);
+            if (reelProg) reelProg.style.width = pct.toFixed(1) + '%';
+          }
+        }
+      });
+
+      function buildCleanYtEmbedUrl(item, isMuted) {
+        const baseParams = `autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1&enablejsapi=1&disablekb=1&fs=0`;
         const hasRealYtPlaylist = item.playlistId && String(item.playlistId).startsWith('PL');
         if (!isReelItem(item) && hasRealYtPlaylist && item.youtubeId) {
-          const embed = `https://www.youtube.com/embed/${encodeURIComponent(item.youtubeId)}?list=${encodeURIComponent(item.playlistId)}&autoplay=1&rel=0`;
-          return `<iframe src="${embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+          return `https://www.youtube.com/embed/${encodeURIComponent(item.youtubeId)}?list=${encodeURIComponent(item.playlistId)}&${baseParams}`;
         }
         if (hasRealYtPlaylist && !item.youtubeId && item.playlistIndex !== undefined) {
-          const embed = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(item.playlistId)}&index=${Number(item.playlistIndex)}&autoplay=1&rel=0`;
-          return `<iframe src="${embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+          return `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(item.playlistId)}&index=${Number(item.playlistIndex)}&${baseParams}`;
         }
         if (hasRealYtPlaylist && !item.youtubeId) {
-          const embed = `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(item.playlistId)}&autoplay=1&rel=0`;
-          return `<iframe src="${embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+          return `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(item.playlistId)}&${baseParams}`;
         }
         if (item.youtubeId) {
-          const embed = `https://www.youtube.com/embed/${encodeURIComponent(item.youtubeId)}?autoplay=1&rel=0`;
-          return `<iframe src="${embed}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+          const loopParams = isReelItem(item) ? `&loop=1&playlist=${encodeURIComponent(item.youtubeId)}` : '';
+          return `https://www.youtube.com/embed/${encodeURIComponent(item.youtubeId)}?${baseParams}${loopParams}`;
         }
-        const fallbackEmbed = item.embedUrl || item.videoUrl || '';
-        return `<iframe src="${escapeHtml(fallbackEmbed)}" allowfullscreen></iframe>`;
+        const fallback = item.embedUrl || item.videoUrl || '';
+        return fallback.includes('?') ? `${fallback}&${baseParams}` : `${fallback}?${baseParams}`;
       }
+
+      function buildPlayerEmbedHtml(item, isMini) {
+        _itubeMainPlaying = true;
+        _itubeMainMuted = false;
+        _itubeMainSpeed = 1;
+        _itubeMainCurTime = 0;
+        _itubeMainDuration = 0;
+
+        if (item.type === 'direct_upload' || (item.localVideoPath && item.localVideoPath.endsWith('.mp4')) || (item.videoUrl && (item.videoUrl.startsWith('blob:') || item.videoUrl.startsWith('data:video')))) {
+          const src = item.localVideoPath || item.videoUrl;
+          return `<video id="itubeDirectVideo" src="${escapeHtml(src)}" controls autoplay playsinline style="width:100%;height:100%;background:#000;"></video>`;
+        }
+
+        const embedUrl = buildCleanYtEmbedUrl(item, false);
+        if (isMini) {
+          return `<iframe src="${escapeHtml(embedUrl)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        }
+
+        const durLabel = toUrduDigits(item.duration || '42:15');
+        return `
+          <iframe
+            id="itubeMainIframe"
+            src="${escapeHtml(embedUrl)}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            onload="window.__onItubeMainIframeLoad && window.__onItubeMainIframeLoad(this)"
+          ></iframe>
+          <div class="itube-Watermark-pill">
+            <span class="itube-live-dot"></span>
+            <span>اسلامک ٹیوب • صوبائی جمعیت میڈیا</span>
+          </div>
+          <div class="itube-stage-touch" onclick="toggleItubeMainPlayPause()" ondblclick="toggleItubeMainFullscreen()" title="چلانے یا روکنے کے لیے کلک کریں">
+            <div id="itubeMainCenterIcon" class="itube-center-state-icon">
+              <i class="fas fa-pause"></i>
+            </div>
+          </div>
+          <div class="itube-control-bar" onclick="event.stopPropagation()">
+            <button type="button" class="itube-ctrl-btn" onclick="toggleItubeMainPlayPause()" title="چلائیں / روکیں">
+              <i id="itubeMainPlayIcon" class="fas fa-pause"></i>
+            </button>
+            <button type="button" class="itube-ctrl-btn" onclick="seekItubeMain(-10)" title="۱۰ سیکنڈ پیچھے">
+              <i class="fas fa-undo-alt"></i>
+            </button>
+            <button type="button" class="itube-ctrl-btn" onclick="seekItubeMain(10)" title="۱۰ سیکنڈ آگے">
+              <i class="fas fa-redo-alt"></i>
+            </button>
+            <div class="itube-scrubber-wrap" onclick="scrubItubeMain(event)" title="ویڈیو میں مطلوبہ مقام پر جائیں">
+              <div class="itube-scrubber-track">
+                <div id="itubeMainScrubberFill" class="itube-scrubber-fill" style="width:0%;"></div>
+              </div>
+            </div>
+            <span id="itubeMainTimeLabel" class="itube-time-label">۰۰:۰۰ / ${escapeHtml(durLabel)}</span>
+            <button type="button" class="itube-ctrl-btn" onclick="toggleItubeMainMute()" title="آواز آن / آف">
+              <i id="itubeMainMuteIcon" class="fas fa-volume-up"></i>
+            </button>
+            <button type="button" id="itubeMainSpeedBtn" class="itube-speed-pill" onclick="cycleItubeMainSpeed()" title="رفتار تبدیل کریں">
+              ۱x رفتار
+            </button>
+            <button type="button" class="itube-ctrl-btn" onclick="toggleItubeMainFullscreen()" title="فل اسکرین">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+        `;
+      }
+
+      window.__onItubeMainIframeLoad = function (iframeEl) {
+        registerYtListening(iframeEl, 'itubeMain');
+      };
+
+      function pulseCenterIcon(elId, iconClass) {
+        const el = document.getElementById(elId);
+        if (!el) return;
+        el.innerHTML = `<i class="${iconClass}"></i>`;
+        el.classList.remove('pulse');
+        void el.offsetWidth;
+        el.classList.add('pulse');
+      }
+
+      window.toggleItubeMainPlayPause = function () {
+        const iframe = document.getElementById('itubeMainIframe');
+        const btnIcon = document.getElementById('itubeMainPlayIcon');
+        if (!iframe) return;
+        if (_itubeMainPlaying) {
+          sendYtCommand(iframe, 'pauseVideo', []);
+          _itubeMainPlaying = false;
+          if (btnIcon) btnIcon.className = 'fas fa-play';
+          pulseCenterIcon('itubeMainCenterIcon', 'fas fa-pause');
+        } else {
+          sendYtCommand(iframe, 'playVideo', []);
+          _itubeMainPlaying = true;
+          if (btnIcon) btnIcon.className = 'fas fa-pause';
+          pulseCenterIcon('itubeMainCenterIcon', 'fas fa-play');
+        }
+      };
+
+      window.seekItubeMain = function (deltaSec) {
+        const iframe = document.getElementById('itubeMainIframe');
+        if (!iframe) return;
+        const nextTime = Math.max(0, (_itubeMainCurTime || 0) + deltaSec);
+        _itubeMainCurTime = nextTime;
+        sendYtCommand(iframe, 'seekTo', [nextTime, true]);
+        pulseCenterIcon('itubeMainCenterIcon', deltaSec > 0 ? 'fas fa-forward' : 'fas fa-backward');
+      };
+
+      window.scrubItubeMain = function (ev) {
+        const iframe = document.getElementById('itubeMainIframe');
+        const wrap = ev.currentTarget;
+        if (!iframe || !wrap) return;
+        const rect = wrap.getBoundingClientRect();
+        // Note: scrubber is inside LTR control bar
+        const clickX = Math.max(0, Math.min(rect.width, ev.clientX - rect.left));
+        const ratio = rect.width > 0 ? (clickX / rect.width) : 0;
+        const dur = _itubeMainDuration > 0 ? _itubeMainDuration : 1200;
+        const targetSec = Math.floor(ratio * dur);
+        _itubeMainCurTime = targetSec;
+        const fillEl = document.getElementById('itubeMainScrubberFill');
+        if (fillEl) fillEl.style.width = (ratio * 100).toFixed(2) + '%';
+        sendYtCommand(iframe, 'seekTo', [targetSec, true]);
+      };
+
+      window.toggleItubeMainMute = function () {
+        const iframe = document.getElementById('itubeMainIframe');
+        const icon = document.getElementById('itubeMainMuteIcon');
+        if (!iframe) return;
+        if (_itubeMainMuted) {
+          sendYtCommand(iframe, 'unMute', []);
+          _itubeMainMuted = false;
+          if (icon) icon.className = 'fas fa-volume-up';
+        } else {
+          sendYtCommand(iframe, 'mute', []);
+          _itubeMainMuted = true;
+          if (icon) icon.className = 'fas fa-volume-mute';
+        }
+      };
+
+      window.cycleItubeMainSpeed = function () {
+        const iframe = document.getElementById('itubeMainIframe');
+        const btn = document.getElementById('itubeMainSpeedBtn');
+        const speeds = [1, 1.25, 1.5, 2];
+        const nextIdx = (speeds.indexOf(_itubeMainSpeed) + 1) % speeds.length;
+        _itubeMainSpeed = speeds[nextIdx];
+        if (iframe) sendYtCommand(iframe, 'setPlaybackRate', [_itubeMainSpeed]);
+        if (btn) btn.textContent = `${toUrduDigits(_itubeMainSpeed)}x رفتار`;
+      };
+
+      window.toggleItubeMainFullscreen = function () {
+        const stage = document.getElementById('ytMainPlayerStage');
+        if (!stage) return;
+        if (!document.fullscreenElement) {
+          if (stage.requestFullscreen) stage.requestFullscreen().catch(() => {});
+        } else {
+          if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+        }
+      };
 
       function incrementItemWebViews(item) {
         if (!item || !item.id || isPlaylistItem(item)) return;
@@ -5078,7 +5522,7 @@
         const stage = document.getElementById('ytMainPlayerStage');
         if (theater && stage) {
           theater.classList.add('active');
-          stage.innerHTML = buildPlayerEmbedHtml(item);
+          stage.innerHTML = buildPlayerEmbedHtml(item, false);
         }
 
         const epLabel = item.episodeLabel || (item.episodeNumber ? `قسط نمبر ${toUrduDigits(item.episodeNumber)}` : '');
@@ -5205,7 +5649,7 @@
         const miniStage = document.getElementById('ytMiniStage');
         const miniTitle = document.getElementById('ytMiniTitle');
         if (mini && miniStage && miniTitle) {
-          miniStage.innerHTML = buildPlayerEmbedHtml(currentPlayingItem);
+          miniStage.innerHTML = buildPlayerEmbedHtml(currentPlayingItem, true);
           miniTitle.textContent = currentPlayingItem.title;
           mini.classList.add('active');
           showYtToast('🖼️ منی پلیئر فعال ہو گیا — اب آپ چینل کے دیگر حصے دیکھ سکتے ہیں');
@@ -5319,14 +5763,14 @@
       window.quickShareItem = function (id) {
         const item = allItems.find(v => v.id === id);
         if (!item) return;
-        const shareUrl = item.videoUrl || window.location.href;
-        const text = `*${item.title}*\n🎙️ ${item.speaker || 'صوبائی جمعیت اہل حدیث ممبئی'}\n🔗 دیکھیں: ${shareUrl}`;
+        const shareUrl = window.location.href;
+        const text = `*${item.title}*\n🎙️ ${item.speaker || 'صوبائی جمعیت اہل حدیث ممبئی'}\n🔗 اسلامک ٹیوب پر دیکھیں: ${shareUrl}`;
         window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
       };
 
       window.copyCurrentVideoLink = function () {
         if (!currentPlayingItem) return;
-        const link = currentPlayingItem.videoUrl || window.location.href;
+        const link = window.location.href;
         navigator.clipboard.writeText(link).then(() => {
           showYtToast('🔗 ویڈیو کا لنک کاپی ہو گیا!');
         });
@@ -5340,8 +5784,176 @@
       };
 
       // =====================================================
-      // FULL-SCREEN VERTICAL REELS / SHORTS VIEWER
+      // CONTINUOUS VERTICAL SCROLL-SNAP REELS / SHORTS FEED (ISLAMIC TUBE)
       // =====================================================
+      let _reelScrollObserver = null;
+      let _reelFeedMountedIdx = -1;
+      let _reelFeedPlayingState = true;
+      let _reelFeedMutedState = false;
+
+      function buildSingleReelSlideShellHtml(r, idx, totalCount) {
+        const thumb = resolveAssetUrl(r.thumbnailUrl || r.thumbnail || (r.youtubeId ? `https://img.youtube.com/vi/${r.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
+        const urduViewsTxt = r.urduViews || formatExactYoutubeViews(r.viewsCount || r.youtubeViews || 0, r.webViews || 0);
+        const urduDateTxt = formatUrduDateClient(r.publishedAt || r.recordingDate || r.date, r.urduDate);
+        const speakerName = r.speaker || 'فضیلۃ الشیخ عبد السلام سلفی حفظہ اللہ';
+        const epLabel = r.episodeLabel || (r.episodeNumber ? `قسط نمبر ${toUrduDigits(r.episodeNumber)}` : '');
+        const badgeTxt = epLabel || r.category || 'مختصر دعوتی کلپ';
+
+        return `
+          <div class="yt-reel-feed-slide" id="itubeReelSlide-${idx}" data-reel-idx="${idx}">
+            <div class="yt-reel-phone-frame">
+              <!-- 1. Sleek Top Identity Strip (Outside Video Viewport) -->
+              <div class="itube-reel-top-strip">
+                <span class="itube-brand-tag">
+                  <span class="dot"></span>
+                  <span>اسلامک ٹیوب ریلز</span>
+                </span>
+                <span class="itube-seq-badge">ریل ${toUrduDigits(idx + 1)} از ${toUrduDigits(totalCount)}</span>
+              </div>
+
+              <!-- 2. Pure 9:16 Video Viewport (Zero Text Overlapping Video!) -->
+              <div class="yt-reel-video-viewport" id="itubeReelViewport-${idx}">
+                <img class="yt-reel-thumb-preview" src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />
+              </div>
+
+              <!-- 3. Dedicated Caption Footer Bar Docked BELOW the 9:16 Video -->
+              <div class="yt-reel-caption-bar">
+                <div class="yt-reel-caption-top">
+                  <span class="yt-reel-ep-pill"><i class="fas fa-bolt"></i> ${escapeHtml(badgeTxt)}</span>
+                  <span style="font-size:0.74rem; color:rgba(255,255,255,0.68); display:inline-flex; align-items:center; gap:5px;">
+                    <i class="fas fa-arrows-alt-v" style="color:#fde68a;"></i> اگلی ریل کے لیے نیچے اسکرول کریں
+                  </span>
+                </div>
+                <h3 class="yt-reel-caption-title" title="${escapeHtml(r.title)}">${escapeHtml(r.title)}</h3>
+                <div class="yt-reel-caption-meta">
+                  <span class="yt-reel-speaker-pill" onclick="closeReelViewer(); filterBySpeakerName('${escapeHtml(speakerName)}');" title="اس شیخ کے تمام بیانات دیکھیں">
+                    <i class="fas fa-volume-up"></i>
+                    <span>${escapeHtml(speakerName)}</span>
+                  </span>
+                  <span><i class="fas fa-eye" style="color:#34d399;"></i> ${escapeHtml(urduViewsTxt)}</span>
+                  <span>•</span>
+                  <span><i class="far fa-calendar-alt" style="color:#fde68a;"></i> ${escapeHtml(urduDateTxt)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      function unmountReelSlidePlayer(idx) {
+        if (idx < 0) return;
+        const rls = getReels();
+        const r = rls[idx];
+        const vp = document.getElementById(`itubeReelViewport-${idx}`);
+        if (!vp || !r) return;
+        const thumb = resolveAssetUrl(r.thumbnailUrl || r.thumbnail || (r.youtubeId ? `https://img.youtube.com/vi/${r.youtubeId}/hqdefault.jpg` : DEFAULT_CHANNEL_LOGO));
+        vp.innerHTML = `<img class="yt-reel-thumb-preview" src="${escapeHtml(thumb)}" alt="${escapeHtml(r.title)}" loading="lazy" onerror="this.onerror=null; this.src='${escapeHtml(DEFAULT_CHANNEL_LOGO)}'" />`;
+      }
+
+      function mountAndPlayReelSlide(idx) {
+        const rls = getReels();
+        if (!rls.length || idx < 0 || idx >= rls.length) return;
+
+        if (_reelFeedMountedIdx !== -1 && _reelFeedMountedIdx !== idx) {
+          unmountReelSlidePlayer(_reelFeedMountedIdx);
+        }
+
+        activeReelIndex = idx;
+        _reelFeedMountedIdx = idx;
+        _reelFeedPlayingState = true;
+        const reel = rls[idx];
+
+        incrementItemWebViews(reel);
+
+        // Record in Watch History
+        historyIds = [reel.id, ...historyIds.filter(x => x !== reel.id)].slice(0, 40);
+        writeJsonStorage(STORAGE_KEYS.HISTORY, historyIds);
+
+        const vp = document.getElementById(`itubeReelViewport-${idx}`);
+        if (vp) {
+          if (reel.type === 'direct_upload' || (reel.localVideoPath && reel.localVideoPath.endsWith('.mp4')) || (reel.videoUrl && (reel.videoUrl.startsWith('blob:') || reel.videoUrl.startsWith('data:video')))) {
+            const src = reel.localVideoPath || reel.videoUrl;
+            vp.innerHTML = `<video src="${escapeHtml(src)}" autoplay loop playsinline ${_reelFeedMutedState ? 'muted' : ''} style="width:100%;height:100%;object-fit:cover;background:#000;"></video>`;
+          } else {
+            const embedUrl = buildCleanYtEmbedUrl(reel, _reelFeedMutedState);
+            vp.innerHTML = `
+              <iframe
+                id="itubeReelIframe-${idx}"
+                src="${escapeHtml(embedUrl)}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                onload="window.__onItubeReelIframeLoad && window.__onItubeReelIframeLoad(this, ${idx})"
+              ></iframe>
+              <div class="itube-reel-touch-layer" onclick="toggleActiveReelPlayPause(${idx})" title="روکنے یا چلانے کے لیے کلک کریں">
+                <div id="itubeReelCenterIcon-${idx}" class="itube-center-state-icon">
+                  <i class="fas fa-pause"></i>
+                </div>
+                <div class="itube-reel-progress-strip">
+                  <div id="itubeReelProg-${idx}" class="itube-reel-progress-fill" style="width:0%;"></div>
+                </div>
+              </div>
+            `;
+          }
+        }
+
+        updateReelSideDockButtons(reel);
+      }
+
+      window.__onItubeReelIframeLoad = function (iframeEl, idx) {
+        registerYtListening(iframeEl, `itubeReel_${idx}`);
+        if (!_reelFeedMutedState) {
+          sendYtCommand(iframeEl, 'unMute', []);
+          sendYtCommand(iframeEl, 'setVolume', [100]);
+        }
+        sendYtCommand(iframeEl, 'playVideo', []);
+      };
+
+      window.toggleActiveReelPlayPause = function (idx) {
+        const iframe = document.getElementById(`itubeReelIframe-${idx}`);
+        if (!iframe) return;
+        if (_reelFeedPlayingState) {
+          sendYtCommand(iframe, 'pauseVideo', []);
+          _reelFeedPlayingState = false;
+          pulseCenterIcon(`itubeReelCenterIcon-${idx}`, 'fas fa-pause');
+        } else {
+          sendYtCommand(iframe, 'playVideo', []);
+          _reelFeedPlayingState = true;
+          pulseCenterIcon(`itubeReelCenterIcon-${idx}`, 'fas fa-play');
+        }
+      };
+
+      window.toggleReelFeedMute = function () {
+        _reelFeedMutedState = !_reelFeedMutedState;
+        const iframe = document.getElementById(`itubeReelIframe-${activeReelIndex}`);
+        if (iframe) {
+          sendYtCommand(iframe, _reelFeedMutedState ? 'mute' : 'unMute', []);
+          if (!_reelFeedMutedState) sendYtCommand(iframe, 'setVolume', [100]);
+        }
+        const muteIcon = document.getElementById('reelModalMuteIcon');
+        const muteLbl = document.getElementById('reelModalMuteLbl');
+        const muteBtn = document.getElementById('reelModalMuteBtn');
+        if (muteIcon) muteIcon.className = _reelFeedMutedState ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        if (muteLbl) muteLbl.textContent = _reelFeedMutedState ? 'خاموش' : 'آواز آن';
+        if (muteBtn) muteBtn.classList.toggle('active-state', _reelFeedMutedState);
+      };
+
+      function updateReelSideDockButtons(reel) {
+        if (!reel) return;
+        const isLiked = likedIds.includes(reel.id);
+        const isSaved = savedIds.includes(reel.id);
+        const likeCount = Number(reel.likesCount || 750) + (isLiked ? 1 : 0);
+
+        const likeBtn = document.getElementById('reelModalLikeBtn');
+        const likeCnt = document.getElementById('reelModalLikeCount');
+        const saveBtn = document.getElementById('reelModalSaveBtn');
+        const saveLbl = document.getElementById('reelModalSaveLbl');
+
+        if (likeBtn) likeBtn.classList.toggle('active-state', isLiked);
+        if (likeCnt) likeCnt.textContent = toUrduDigits(likeCount);
+        if (saveBtn) saveBtn.classList.toggle('active-state', isSaved);
+        if (saveLbl) saveLbl.textContent = isSaved ? 'محفوظ ✓' : 'محفوظ';
+      }
+
       window.openReelViewerById = function (reelId) {
         const rls = getReels();
         const idx = rls.findIndex(r => r.id === reelId);
@@ -5351,39 +5963,82 @@
       window.openReelViewerByIndex = function (idx) {
         const rls = getReels();
         if (!rls.length) return;
-        activeReelIndex = (idx + rls.length) % rls.length;
-        const reel = rls[activeReelIndex];
 
-        incrementItemWebViews(reel);
+        // Pause 16:9 theater if open so two videos never play together
+        closeWatchTheater();
+        closeMiniPlayer();
 
+        const targetIdx = ((idx % rls.length) + rls.length) % rls.length;
         const modal = document.getElementById('ytReelsModal');
-        const container = document.getElementById('ytReelPlayerContainer');
-        if (!modal || !container) return;
+        const feedEl = document.getElementById('ytReelsScrollFeed');
+        if (!modal || !feedEl) return;
 
+        if (_reelScrollObserver) {
+          _reelScrollObserver.disconnect();
+          _reelScrollObserver = null;
+        }
+        _reelFeedMountedIdx = -1;
+
+        // Render all vertical scroll-snap slides inside #ytReelsScrollFeed
+        feedEl.innerHTML = rls.map((r, i) => buildSingleReelSlideShellHtml(r, i, rls.length)).join('');
         modal.classList.add('open');
-        container.innerHTML = buildPlayerEmbedHtml(reel);
-        const reelEpLabel = reel.episodeLabel || (reel.episodeNumber ? `قسط نمبر ${toUrduDigits(reel.episodeNumber)}` : '');
-        document.getElementById('reelModalTitle').textContent = reelEpLabel ? `${reel.title || ''} (${reelEpLabel})` : (reel.title || '');
-        document.getElementById('reelModalSpeaker').textContent = `🔊 ${reel.speaker || 'فضیلۃ الشیخ عبد السلام سلفی حفظہ اللہ'} • ${reel.urduViews || ''} • ${reel.urduDate || ''}`;
+        document.body.style.overflow = 'hidden';
 
-        const isLiked = likedIds.includes(reel.id);
-        const likeCount = Number(reel.likesCount || 750) + (isLiked ? 1 : 0);
-        document.getElementById('reelModalLikeCount').textContent = toUrduDigits(likeCount);
+        // Jump immediately to the requested slide
+        const targetSlide = document.getElementById(`itubeReelSlide-${targetIdx}`);
+        if (targetSlide) {
+          targetSlide.scrollIntoView({ behavior: 'auto', block: 'center' });
+        }
+        mountAndPlayReelSlide(targetIdx);
 
-        // Record in Watch History
-        historyIds = [reel.id, ...historyIds.filter(x => x !== reel.id)].slice(0, 40);
-        writeJsonStorage(STORAGE_KEYS.HISTORY, historyIds);
+        // Attach IntersectionObserver so scrolling down/up automatically plays each snapped Short!
+        if ('IntersectionObserver' in window) {
+          _reelScrollObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                  const slideIdx = Number(entry.target.getAttribute('data-reel-idx'));
+                  if (!isNaN(slideIdx) && slideIdx !== _reelFeedMountedIdx) {
+                    mountAndPlayReelSlide(slideIdx);
+                  }
+                }
+              });
+            },
+            { root: feedEl, threshold: [0.62] }
+          );
+          feedEl.querySelectorAll('.yt-reel-feed-slide').forEach(function (sl) {
+            _reelScrollObserver.observe(sl);
+          });
+        }
       };
 
       window.stepReelViewer = function (delta) {
-        openReelViewerByIndex(activeReelIndex + delta);
+        const rls = getReels();
+        if (!rls.length) return;
+        const nextIdx = Math.max(0, Math.min(rls.length - 1, activeReelIndex + delta));
+        const targetSlide = document.getElementById(`itubeReelSlide-${nextIdx}`);
+        if (targetSlide) {
+          targetSlide.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // If IntersectionObserver doesn't trigger (e.g. same index), ensure mounted
+          if (nextIdx !== _reelFeedMountedIdx) {
+            setTimeout(function () {
+              if (_reelFeedMountedIdx !== nextIdx) mountAndPlayReelSlide(nextIdx);
+            }, 320);
+          }
+        }
       };
 
       window.closeReelViewer = function () {
+        if (_reelScrollObserver) {
+          _reelScrollObserver.disconnect();
+          _reelScrollObserver = null;
+        }
+        _reelFeedMountedIdx = -1;
         const modal = document.getElementById('ytReelsModal');
-        const container = document.getElementById('ytReelPlayerContainer');
-        if (container) container.innerHTML = '';
+        const feedEl = document.getElementById('ytReelsScrollFeed');
+        if (feedEl) feedEl.innerHTML = '';
         if (modal) modal.classList.remove('open');
+        document.body.style.overflow = '';
       };
 
       window.likeActiveReel = function () {
@@ -5391,9 +6046,15 @@
         const reel = rls[activeReelIndex];
         if (!reel) return;
         quickToggleLike(reel.id);
-        const isLiked = likedIds.includes(reel.id);
-        const likeCount = Number(reel.likesCount || 750) + (isLiked ? 1 : 0);
-        document.getElementById('reelModalLikeCount').textContent = toUrduDigits(likeCount);
+        updateReelSideDockButtons(reel);
+      };
+
+      window.saveActiveReel = function () {
+        const rls = getReels();
+        const reel = rls[activeReelIndex];
+        if (!reel) return;
+        quickToggleSave(reel.id);
+        updateReelSideDockButtons(reel);
       };
 
       window.shareActiveReelWhatsApp = function () {
@@ -5403,16 +6064,22 @@
         quickShareItem(reel.id);
       };
 
-      // Keyboard navigation for Reels Modal
+      // Keyboard navigation for Reels Modal (ArrowDown / ArrowUp / Space / M / Escape)
       document.addEventListener('keydown', function (e) {
         const modal = document.getElementById('ytReelsModal');
         if (!modal || !modal.classList.contains('open')) return;
-        if (e.key === 'ArrowDown') {
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
           e.preventDefault();
           stepReelViewer(1);
-        } else if (e.key === 'ArrowUp') {
+        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
           e.preventDefault();
           stepReelViewer(-1);
+        } else if (e.key === ' ') {
+          e.preventDefault();
+          toggleActiveReelPlayPause(activeReelIndex);
+        } else if (e.key === 'm' || e.key === 'M') {
+          e.preventDefault();
+          toggleReelFeedMute();
         } else if (e.key === 'Escape') {
           closeReelViewer();
         }
