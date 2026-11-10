@@ -605,5 +605,25 @@
     }
   });
 
+  // Ensure fresh typography-system.css?v=v16 and prevent Sakkal Majalla on non-prose UI elements
+  window.addEventListener('DOMContentLoaded', function () {
+    var links = document.querySelectorAll('link[href*="typography-system.css"]');
+    for (var i = 0; i < links.length; i++) {
+      var h = links[i].getAttribute('href') || '';
+      if (h.indexOf('v=v16') === -1) {
+        links[i].setAttribute('href', h.split('?')[0] + '?v=v16');
+      }
+    }
+    var proseSel = '.fatwa-answer-text, .fatwa-question-text, .fatwa-body-content, .article-body-content, .article-content, .magazine-article-body, .book-reader-content, #readerTextContainer, #bookTextContent, .khutbah-body-content, .khutba-arabic-body, .press-release-body, .prose-content';
+    var straySpans = document.querySelectorAll('.arabic-sakkal-text, .quran-indopak-text');
+    for (var j = 0; j < straySpans.length; j++) {
+      var sp = straySpans[j];
+      if (!sp.closest || !sp.closest(proseSel)) {
+        var txt = document.createTextNode(sp.textContent || '');
+        if (sp.parentNode) sp.parentNode.replaceChild(txt, sp);
+      }
+    }
+  });
+
   window.__navigateViaLiveTunnel__ = navigateViaLiveTunnel;
 })();

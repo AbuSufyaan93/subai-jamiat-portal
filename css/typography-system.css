@@ -2,13 +2,16 @@
  * ============================================================================
  * SUBAI JAMIAT AHLE HADEES MUMBAI — UNIFIED TYPOGRAPHY SYSTEM
  * ============================================================================
- * 1. Default Urdu Font (A to Z across entire portal):
+ * 1. Default Urdu Font (Across all Urdu pages, UI, Cards, Titles, Tabs, Admin):
  *    - Manzar Lahori Nastaliq (/fonts/ManzarLahoriNastaliq.woff & .ttf)
- * 2. Non-Quranic Arabic Nusoos (Hadith, Athar, Dua, Arabic Portal /ar):
- *    - Sakkal Majalla Bold (/fonts/SakkalMajallaBold.ttf) + Scheherazade (/fonts/ScheherazadeRegOT.ttf)
+ *    - Rendered with font-synthesis: none so calligraphic strokes & dots stay
+ *      razor-sharp without browser faux-bold smearing, and with balanced sizes.
+ * 2. Non-Quranic Arabic Nusoos (ONLY inside Books, Articles & Fatwas for
+ *    Hadith, Athar, and Scholars' Arabic Quotes, plus the /ar Arabic Portal):
+ *    - Sakkal Majalla Bold (/fonts/SakkalMajallaBold.ttf) + Scheherazade
  * 3. Quranic Verses (Famous Indian / Indo-Pak Quranic Script):
- *    - Al Qalam Quran (/fonts/AlQalamQuran.ttf), Manzar IndoPak Naskh (/fonts/ManzarIndoPakNaskh.ttf),
- *      1 Muhammadi Quranic (/fonts/MuhammadiQuranic.ttf), Manzar Indian Naskh (/fonts/ManzarIndianNaskh.ttf)
+ *    - Al Qalam Quran (/fonts/AlQalamQuran.ttf), Manzar IndoPak Naskh,
+ *      Muhammadi Quranic, Manzar Indian Naskh
  * ============================================================================
  */
 
@@ -22,19 +25,7 @@
        url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
        url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype'),
        url('../fonts/mehr_nastalique.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Manzar Lahori Nastaliq';
-  src: local('Manzar Lahori Nastaliq'),
-       local('ManzarLahoriNastaliq'),
-       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
-       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype'),
-       url('../fonts/mehr_nastalique.ttf') format('truetype');
-  font-weight: bold;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -50,8 +41,7 @@
   font-display: swap;
 }
 
-/* Alias legacy Urdu font family names directly to Manzar Lahori Nastaliq
-   so every single component/inline style across the site uses Manzar Lahori Nastaliq */
+/* Alias legacy Urdu font family names to Manzar Lahori Nastaliq */
 @font-face {
   font-family: 'Noto Nastaliq Urdu';
   src: local('Manzar Lahori Nastaliq'),
@@ -88,6 +78,8 @@
 
 /* ----------------------------------------------------------------------------
    2. NON-QURANIC ARABIC FONT FACES — SAKKAL MAJALLA & SCHEHERAZADE
+   (Used strictly for Hadith/Athar/Scholars' Arabic quotes inside books/articles
+    and for the /ar Arabic portal)
    ---------------------------------------------------------------------------- */
 @font-face {
   font-family: 'Sakkal Majalla';
@@ -115,19 +107,6 @@
   font-family: 'Scheherazade';
   src: local('Scheherazade'),
        local('Scheherazade New'),
-       url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Alias Amiri to Sakkal Majalla so all existing Arabic blocks using Amiri
-   automatically render in Sakkal Majalla Bold */
-@font-face {
-  font-family: 'Amiri';
-  src: local('Sakkal Majalla Bold'),
-       local('Sakkal Majalla'),
-       url('../fonts/SakkalMajallaBold.ttf') format('truetype'),
        url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
@@ -181,17 +160,19 @@
 }
 
 /* ----------------------------------------------------------------------------
-   4. ROOT TYPOGRAPHY VARIABLES & GLOBAL APPLICATION
+   4. ROOT TYPOGRAPHY VARIABLES & CALLIGRAPHIC RENDERING OPTIMIZATION
    ---------------------------------------------------------------------------- */
 :root {
   --font-urdu: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
-  --font-arabic-nass: 'Sakkal Majalla', 'Sakkal Majalla Bold', 'Scheherazade', 'Amiri', serif;
+  --font-arabic-nass: 'Sakkal Majalla', 'Sakkal Majalla Bold', 'Scheherazade', serif;
   --font-quran-indopak: 'IndoPak Quran', 'Al Qalam Quran', 'Manzar IndoPak Naskh', 'Muhammadi Quranic', 'Manzar Indian Naskh', 'Scheherazade', serif;
   --adm-font-urdu: var(--font-urdu);
   --adm-font-sans: var(--font-urdu);
 }
 
-/* Default Urdu Nastaliq (Manzar Lahori Nastaliq) across the entire Urdu site & Admin */
+/* Default Urdu Nastaliq across the entire Urdu site & Admin —
+   Disable browser synthetic faux-bold/italic so Lahori Nastaliq strokes & dots
+   never smear or blob together! */
 html,
 body,
 button,
@@ -201,6 +182,29 @@ textarea,
 .urdu-text,
 [lang="ur"] {
   font-family: var(--font-urdu);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  letter-spacing: 0 !important;
+}
+
+/* Ensure all headings, paragraphs, buttons, chips, and badges in Urdu views
+   render with clean calligraphic strokes and comfortable reading sizes */
+html:not([lang="ar"]) body:not(.arabic-portal) h1,
+html:not([lang="ar"]) body:not(.arabic-portal) h2,
+html:not([lang="ar"]) body:not(.arabic-portal) h3,
+html:not([lang="ar"]) body:not(.arabic-portal) h4,
+html:not([lang="ar"]) body:not(.arabic-portal) p,
+html:not([lang="ar"]) body:not(.arabic-portal) a,
+html:not([lang="ar"]) body:not(.arabic-portal) button,
+html:not([lang="ar"]) body:not(.arabic-portal) span,
+html:not([lang="ar"]) body:not(.arabic-portal) label,
+html:not([lang="ar"]) body:not(.arabic-portal) li,
+html:not([lang="ar"]) body:not(.arabic-portal) td,
+html:not([lang="ar"]) body:not(.arabic-portal) th {
+  font-synthesis: none;
+  letter-spacing: 0 !important;
 }
 
 /* Preserve Font Awesome Icons & Material Icons everywhere */
@@ -225,32 +229,30 @@ textarea,
   font-family: "Font Awesome 6 Brands", "FontAwesome" !important;
 }
 
-/* Non-Quranic Arabic Nusoos (Hadith, Athar, Dua, Arabic Quotes, and /ar Portal) */
+/* Non-Quranic Arabic Nusoos (Strictly for Hadith, Athar, Scholars' Arabic Quotes
+   inside Books/Articles/Fatwas, and for the /ar Arabic Portal) */
 html[lang="ar"],
 html[lang="ar"] body,
 body.arabic-portal,
 body.arabic-portal *:not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.quran-indopak-text):not(.quran-verse):not(.quran-text),
-[lang="ar"]:not(.quran-indopak-text):not(.quran-verse):not(.quran-text),
 .arabic-sakkal-text,
 .arabic-nass,
-.arabic-text,
 .hadith-arabic,
 .hadith-text,
 .dua-arabic,
-.athar-text,
-.ar-text {
+.athar-text {
   font-family: var(--font-arabic-nass) !important;
   letter-spacing: 0 !important;
 }
 
 .arabic-sakkal-text {
   font-family: var(--font-arabic-nass) !important;
-  font-size: 1.18em;
+  font-size: 1.2em;
   font-weight: 700;
   line-height: 1.95;
   color: #064e3b;
   direction: rtl;
-   unicode-bidi: embed;
+  unicode-bidi: embed;
 }
 
 body.yt-dark-mode .arabic-sakkal-text {
