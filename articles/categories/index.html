@@ -378,23 +378,25 @@ body *::-webkit-scrollbar-thumb:hover {
     width: 42px;
     height: 42px;
     border-radius: 11px;
-    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-    color: #047857;
-    border: 1.5px solid #6ee7b7;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: #0369a1;
+    border: 1.5px solid #7dd3fc;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.22s ease;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
     flex-shrink: 0;
   }
 
   .articles-sidebar-trigger:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    border-color: #059669;
+    border-color: #0284c7;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22);
   }
 
   .articles-header-search-wrap {
@@ -419,8 +421,8 @@ body *::-webkit-scrollbar-thumb:hover {
 
   .articles-header-search-form:focus-within {
     background: #ffffff;
-    border-color: #059669;
-    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.14);
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
   }
 
   .articles-header-search-input {
@@ -440,7 +442,7 @@ body *::-webkit-scrollbar-thumb:hover {
     height: 32px;
     border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
     color: #ffffff;
     display: inline-flex;
     align-items: center;
@@ -661,366 +663,403 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
 <main class="articles-portal-wrap">
-  <div class="main-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
-    <!-- Breadcrumb & Header -->
-    <div style="margin-bottom: 30px; text-align: center;">
-      <h1 style="font-size: 34px; font-weight: 900; color: #0f172a; margin: 0 0 8px 0;">
-        <i class="fa-solid fa-folder-tree" style="color: #00875a;"></i> موضوعات و زمرہ جات
-      </h1>
-      <p style="font-size: 16px; color: #64748b; max-width: 650px; margin: 0 auto;">
-        کتاب و سنت، منہجِ سلف اور علمی و تحقیقی مضامین کی اصناف کے مطابق درجہ بندی۔
-      </p>
+  <div class="main-container" style="max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px;">
+    <!-- BREADCRUMB & PORTAL STATUS RIBBON -->
+    <div class="articles-breadcrumb-ribbon">
+      <div class="articles-bc-links">
+        <a href="../../index.html"><i class="fa-solid fa-house-chimney"></i> مرکزی صفحہ</a>
+        <span>/</span>
+        <a href="../../articles"><i class="fa-solid fa-feather-pointed"></i> مضامین و مقالات</a>
+        <span>/</span>
+        <span style="color: #0f172a; font-weight: 800;">موضوعات و زمرہ جات</span>
+      </div>
+      <div class="articles-bc-stats">
+        <span class="articles-stat-pill">
+          <i class="fa-solid fa-folder-tree" style="color: #0284c7;"></i> کل زمرہ جات: 14
+        </span>
+      </div>
     </div>
+
+    <!-- LUMINOUS HERO SHOWCASE CARD -->
+    <section class="articles-hero-section">
+      <div class="articles-hero-content">
+        <div class="articles-hero-top-row">
+          <div style="display: flex; align-items: center; gap: 14px; flex: 1 1 380px;">
+            <div class="articles-hero-orb">
+              <i class="fa-solid fa-folder-tree"></i>
+            </div>
+            <div>
+              <div class="articles-hero-badge">
+                <i class="fa-solid fa-layer-group"></i> علمی و موضوعاتی درجہ بندی
+              </div>
+              <h1 class="articles-hero-title">موضوعات و زمرہ جات</h1>
+              <p class="articles-hero-subtitle">
+                کتاب و سنت، منہجِ سلف اور علمی و تحقیقی مضامین کی اصناف کے مطابق منظم درجہ بندی۔
+              </p>
+            </div>
+          </div>
+          <div class="articles-search-box-wrap">
+            <form action="../../articles/search" method="GET" class="articles-search-form">
+              <i class="fa-solid fa-magnifying-glass" style="color: #0284c7; font-size: 14px; margin-left: 4px;"></i>
+              <input type="text" name="q" class="articles-search-input" placeholder="مضمون یا موضوع تلاش کریں..." autocomplete="off" />
+              <button type="submit" class="articles-search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i> تلاش کریں
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CATEGORIES GRID -->
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; margin-bottom: 50px;">
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-book-quran"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 1 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               عقیدہ و منہج
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               العقيدة والمنهج
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               کتاب و سنت اور فہم سلف کی روشنی میں عقائد اور منہج پر مستند مضامین
             </p>
           </div>
-          <a href="../../articles/category/aqeedah-o-manhaj" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/aqeedah-o-manhaj" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-book-open"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               قرآن و تفسیر
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               القرآن والتفسير
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               قرآن کریم کے دروس، تفسیری نکات اور معارفِ قرآنی
             </p>
           </div>
-          <a href="../../articles/category/quran-o-tafseer" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/quran-o-tafseer" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-scroll"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               حدیث و علومِ حدیث
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               الحديث وعلومه
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               احادیث نبویہ، مصطلح الحدیث، شروحات اور درایتی مباحث
             </p>
           </div>
-          <a href="../../articles/category/hadith-o-uloom-ul-hadith" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/hadith-o-uloom-ul-hadith" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-scale-balanced"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               فقہ و مسائل
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               الفقه والمسائل
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               عبادات و معاملات کے فقہی احکام اور جدید مسائل کا شرعی حل
             </p>
           </div>
-          <a href="../../articles/category/fiqh-o-masail" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/fiqh-o-masail" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-monument"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               سیرت و تاریخ
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               السيرة والتاريخ
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               سیرت النبی ﷺ، صحابہ کرام کے حالات اور تاریخ اسلام
             </p>
           </div>
-          <a href="../../articles/category/seerat-o-tareekh" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/seerat-o-tareekh" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-bullhorn"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               دعوت و اصلاح
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               الدعوة والإصلاح
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               دعوتی اصول و ضوابط، معاشرتی برائیوں کا سد باب اور اصلاحی تحریریں
             </p>
           </div>
-          <a href="../../articles/category/dawat-o-islah" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/dawat-o-islah" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               ردِّ باطل و نقدِ افکار
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               الرد على الباطل
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               باطل افکار، بدعات و خرافات اور گمراہ کن نظریات کا مدلل رد
             </p>
           </div>
-          <a href="../../articles/category/radd-e-batil" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/radd-e-batil" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-heart"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               تربیت و اخلاق
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               التربية والأخلاق
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               تزکیہ نفس، اخلاق حسنہ اور اسلامی آداب و فضائل
             </p>
           </div>
-          <a href="../../articles/category/tarbiyat-o-akhlaq" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/tarbiyat-o-akhlaq" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-people-group"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               معاشرتی و سماجی موضوعات
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               القضايا الاجتماعية
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               خاندانی نظام، نوجوانوں کے مسائل اور سماجی ذمے داریاں
             </p>
           </div>
-          <a href="../../articles/category/muashrati-o-samaji" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/muashrati-o-samaji" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               علمی و تحقیقی مضامین
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               البحوث العلمية
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               علمائے کرام اور محققین کے تفصیلی اور تحقیقی مقالات
             </p>
           </div>
-          <a href="../../articles/category/ilmi-o-tahqeeqi" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/ilmi-o-tahqeeqi" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-language"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               ترجمہ و تعریب
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               الترجمة والتعريب
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               عربی و غیر ملکی اسلامی کتابوں و مضامین کے وقیع تراجم
             </p>
           </div>
-          <a href="../../articles/category/tarjuma-o-tareeb" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/tarjuma-o-tareeb" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-book-bookmark"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               تبصرۂ کتب و تعارفِ کتب
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               عرض الكتب
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               جدید و قدیم اسلامی کتب کا تعارف، تجاویز اور علمی جائزے
             </p>
           </div>
-          <a href="../../articles/category/tabsara-e-kutub" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/tabsara-e-kutub" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-newspaper"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               حالاتِ حاضرہ پر شرعی و علمی تحریریں
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               فقه النوازل والعصر
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               عالمی و ملکی تازہ ترین واقعات پر کتاب و سنت کی روشنی میں علمی تجزیے
             </p>
           </div>
-          <a href="../../articles/category/halat-e-hazira" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/halat-e-hazira" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>
       
-        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03);" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'">
+        <div style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s ease; box-shadow: 0 4px 14px rgba(14,165,233,0.06);" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.12)'" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)'">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <div style="width: 46px; height: 46px; border-radius: 12px; background: #e6f4ea; color: #00875a; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+              <div style="width: 46px; height: 46px; border-radius: 13px; background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%); border: 1px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 20px;">
                 <i class="fa-solid fa-feather-pointed"></i>
               </div>
-              <span style="background: #f1f5f9; color: #334155; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
+              <span style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 12px; font-weight: 800; padding: 4px 12px; border-radius: 999px;">
                 0 مضامین
               </span>
             </div>
             <h2 style="font-size: 20px; font-weight: 900; color: #0f172a; margin: 0 0 4px 0;">
               دیگر
             </h2>
-            <div style="font-size: 12.5px; color: #64748b; font-weight: 700; margin-bottom: 10px;">
+            <div style="font-size: 12.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px;">
               أخرى
             </div>
-            <p style="font-size: 13.5px; color: #64748b; line-height: 1.7; margin: 0 0 18px 0;">
+            <p style="font-size: 13.5px; color: #475569; line-height: 1.75; margin: 0 0 18px 0;">
               دیگر متفرق مضامین و مقالات
             </p>
           </div>
-          <a href="../../articles/category/other" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #064e3b; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.15s;" onmouseover="this.style.background='#00875a'; this.style.color='#ffffff'" onmouseout="this.style.background='#f8fafc'; this.style.color='#064e3b'">
+          <a href="../../articles/category/other" style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border: 1.5px solid #7dd3fc; color: #0369a1; padding: 8px 16px; border-radius: 999px; text-decoration: none; font-size: 13.5px; font-weight: 800; text-align: center; display: block; transition: all 0.18s;" onmouseover="this.style.background='linear-gradient(135deg, #0284c7 0%, #0f766e 100%)'; this.style.color='#ffffff'; this.style.borderColor='#0284c7'" onmouseout="this.style.background='linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%)'; this.style.color='#0369a1'; this.style.borderColor='#7dd3fc'">
             مضامین ملاحظہ فرمائیں &larr;
           </a>
         </div>

@@ -26,19 +26,19 @@
         }
 
         .authors-hero {
-            background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
-            color: #ffffff;
-            padding: 48px 0 40px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
+            color: #0f172a;
+            padding: 32px 0 28px;
             position: relative;
             overflow: hidden;
-            border-bottom: 3px solid rgba(217, 119, 6, 0.4);
+            border-bottom: 2px solid #7dd3fc;
         }
 
         .authors-hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px);
             background-size: 24px 24px;
             opacity: 0.6;
             pointer-events: none;
@@ -46,23 +46,23 @@
 
         .authors-title {
             font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #064e3b;
         }
 
         .authors-lead {
-            font-size: 1.05rem;
-            color: #d1fae5;
+            font-size: 1rem;
+            color: #334155;
             max-width: 720px;
-            margin: 0 auto 24px;
-            line-height: 1.8;
+            margin: 0 auto 20px;
+            line-height: 1.85;
         }
 
         .author-card {
             background: #ffffff;
-            border: 1px solid var(--lib-border);
+            border: 1px solid #bae6fd;
             border-radius: 16px;
             padding: 24px 20px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -71,27 +71,27 @@
             flex-direction: column;
             justify-content: space-between;
             height: 100%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.05);
         }
 
         .author-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(5, 150, 105, 0.12);
-            border-color: #a7f3d0;
+            box-shadow: 0 16px 32px rgba(14, 165, 233, 0.14);
+            border-color: #0284c7;
         }
 
         .author-avatar {
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-            color: var(--lib-emerald);
+            background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%);
+            color: #0284c7;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             margin: 0 auto 16px;
-            border: 2px solid #a7f3d0;
+            border: 2px solid #7dd3fc;
         }
 
         .author-name {
@@ -112,25 +112,25 @@
         }
 
         .stat-pill {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
-            color: #475569;
+            color: #0369a1;
             font-weight: 600;
         }
 
         .stat-pill strong {
-            color: var(--lib-emerald);
+            color: #0f766e;
         }
 
         .author-btn {
-            background: linear-gradient(135deg, var(--lib-emerald) 0%, var(--lib-emerald-dark) 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
             color: #ffffff !important;
             border: none;
-            border-radius: 10px;
-            padding: 10px 16px;
+            border-radius: 999px;
+            padding: 9px 16px;
             font-weight: 700;
             font-size: 0.95rem;
             text-align: center;
@@ -144,52 +144,52 @@
         }
 
         .author-btn:hover {
-            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
             transform: scale(1.02);
         }
 
         .search-container {
-            max-width: 580px;
+            max-width: 460px;
             margin: 0 auto;
             position: relative;
         }
 
         .search-input {
             width: 100%;
-            border-radius: 30px;
-            padding: 14px 48px 14px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            font-size: 1rem;
-            backdrop-filter: blur(8px);
+            border-radius: 999px;
+            padding: 10px 44px 10px 18px;
+            border: 1.5px solid #7dd3fc;
+            background: #ffffff;
+            color: #0f172a;
+            font-size: 0.95rem;
             outline: none;
-            transition: all 0.3s;
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.12);
+            transition: all 0.25s;
         }
 
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: #64748b;
         }
 
         .search-input:focus {
             background: #ffffff;
             color: #0f172a;
-            border-color: #ffffff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
         }
 
         .search-icon-btn {
             position: absolute;
-            right: 18px;
+            right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1rem;
+            color: #0284c7;
+            font-size: 1rem;
             pointer-events: none;
         }
 
         .search-input:focus ~ .search-icon-btn {
-            color: var(--lib-emerald);
+            color: #0f766e;
         }
     </style>
   <link rel="canonical" href="http://127.0.0.1:5000/library/authors">
@@ -3470,7 +3470,7 @@ body *::-webkit-scrollbar-thumb:hover {
     <!-- HERO SECTION -->
     <section class="authors-hero text-center">
         <div class="container position-relative" style="z-index: 1;">
-            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white text-success fw-bold" style="font-size: 0.85rem; background: rgba(255, 255, 255, 0.15) !important; color: #a7f3d0 !important;">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2 rounded-pill fw-bold" style="font-size: 0.82rem; background: #ffffff; border: 1px solid #7dd3fc; color: #0369a1;">
                 <i class="fa-solid fa-feather-pointed"></i> مصنفین و محققین کتب خانہ
             </div>
             <h1 class="authors-title">فہرستِ مصنّفین و مؤلفینِ کرام</h1>

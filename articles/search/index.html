@@ -378,23 +378,25 @@ body *::-webkit-scrollbar-thumb:hover {
     width: 42px;
     height: 42px;
     border-radius: 11px;
-    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-    color: #047857;
-    border: 1.5px solid #6ee7b7;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: #0369a1;
+    border: 1.5px solid #7dd3fc;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.22s ease;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
     flex-shrink: 0;
   }
 
   .articles-sidebar-trigger:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    border-color: #059669;
+    border-color: #0284c7;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22);
   }
 
   .articles-header-search-wrap {
@@ -419,8 +421,8 @@ body *::-webkit-scrollbar-thumb:hover {
 
   .articles-header-search-form:focus-within {
     background: #ffffff;
-    border-color: #059669;
-    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.14);
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
   }
 
   .articles-header-search-input {
@@ -440,7 +442,7 @@ body *::-webkit-scrollbar-thumb:hover {
     height: 32px;
     border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
     color: #ffffff;
     display: inline-flex;
     align-items: center;
@@ -661,82 +663,115 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
 <main class="articles-portal-wrap">
-  <div class="main-container" style="max-width: 1100px; margin: 35px auto; padding: 0 20px;">
-    <!-- SEARCH HEADER -->
-    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 18px; padding: 28px; margin-bottom: 35px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
-      <h1 style="font-size: 26px; font-weight: 900; color: #0f172a; margin: 0 0 16px 0; display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid fa-magnifying-glass" style="color: #00875a;"></i> جدید تلاش و جستجو
-      </h1>
-
-      <form action="../../articles/search" method="GET">
-        <!-- Main Search Query Input -->
-        <div style="display: flex; gap: 8px; margin-bottom: 18px;">
-          <input type="text" name="q" value="" class="finder-input" placeholder="عنوان، مضمون نگار، اقتباس، یا موضوع تلاش کریں (اردو / عربی)..." style="flex: 1; padding: 12px 16px; border: 1.5px solid #cbd5e1; border-radius: 10px; font-family: inherit; font-size: 16px; outline: none;" />
-          <button type="submit" class="btn-articles-primary" style="padding: 12px 26px; font-size: 15px; border-radius: 10px;">
-            <i class="fa-solid fa-magnifying-glass"></i> تلاش کریں
-          </button>
-        </div>
-
-        <!-- Filter Row -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
-          <div>
-            <label style="font-size: 12px; font-weight: 800; color: #475569; display: block; margin-bottom: 4px;">زمرہ (Category):</label>
-            <select name="category" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px; background: #ffffff;">
-              <option value="">تمام زمرہ جات</option>
-              
-                <option value="aqeedah-o-manhaj" >عقیدہ و منہج</option>
-              
-                <option value="quran-o-tafseer" >قرآن و تفسیر</option>
-              
-                <option value="hadith-o-uloom-ul-hadith" >حدیث و علومِ حدیث</option>
-              
-                <option value="fiqh-o-masail" >فقہ و مسائل</option>
-              
-                <option value="seerat-o-tareekh" >سیرت و تاریخ</option>
-              
-                <option value="dawat-o-islah" >دعوت و اصلاح</option>
-              
-                <option value="radd-e-batil" >ردِّ باطل و نقدِ افکار</option>
-              
-                <option value="tarbiyat-o-akhlaq" >تربیت و اخلاق</option>
-              
-                <option value="muashrati-o-samaji" >معاشرتی و سماجی موضوعات</option>
-              
-                <option value="ilmi-o-tahqeeqi" >علمی و تحقیقی مضامین</option>
-              
-                <option value="tarjuma-o-tareeb" >ترجمہ و تعریب</option>
-              
-                <option value="tabsara-e-kutub" >تبصرۂ کتب و تعارفِ کتب</option>
-              
-                <option value="halat-e-hazira" >حالاتِ حاضرہ پر شرعی و علمی تحریریں</option>
-              
-                <option value="other" >دیگر</option>
-              
-            </select>
-          </div>
-
-          <div>
-            <label style="font-size: 12px; font-weight: 800; color: #475569; display: block; margin-bottom: 4px;">قلم کار (Author):</label>
-            <select name="author" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px; background: #ffffff;">
-              <option value="">تمام قلم کار</option>
-              
-                <option value="ابو-عمار-عبد-الرحیم" >ابو عمار عبد الرحیم</option>
-              
-            </select>
-          </div>
-
-          <div>
-            <label style="font-size: 12px; font-weight: 800; color: #475569; display: block; margin-bottom: 4px;">ترتیب (Sort):</label>
-            <select name="sort" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px; background: #ffffff;">
-              <option value="relevant" selected>مطابقت کے مطابق (Relevant)</option>
-              <option value="latest" >تازہ ترین (Latest)</option>
-              <option value="views" >زیادہ مشاہدات (Most Read)</option>
-              <option value="oldest" >قدیم ترین (Oldest)</option>
-            </select>
-          </div>
-        </div>
-      </form>
+  <div class="main-container" style="max-width: 1180px; margin: 0 auto 40px auto; padding: 0 20px;">
+    <!-- BREADCRUMB & PORTAL STATUS RIBBON -->
+    <div class="articles-breadcrumb-ribbon">
+      <div class="articles-bc-links">
+        <a href="../../index.html"><i class="fa-solid fa-house-chimney"></i> مرکزی صفحہ</a>
+        <span>/</span>
+        <a href="../../articles"><i class="fa-solid fa-feather-pointed"></i> مضامین و مقالات</a>
+        <span>/</span>
+        <span style="color: #0f172a; font-weight: 800;">جدید تلاش و جستجو</span>
+      </div>
+      <div class="articles-bc-stats">
+        <span class="articles-stat-pill">
+          <i class="fa-solid fa-magnifying-glass" style="color: #0284c7;"></i> نتائج: 1
+        </span>
+      </div>
     </div>
+
+    <!-- LUMINOUS SEARCH HERO CARD -->
+    <section class="articles-hero-section">
+      <div class="articles-hero-content">
+        <div class="articles-hero-top-row" style="margin-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 14px; flex: 1 1 360px;">
+            <div class="articles-hero-orb">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div>
+              <div class="articles-hero-badge">
+                <i class="fa-solid fa-bolt"></i> برق رفتار تلاشِ مضامین
+              </div>
+              <h1 class="articles-hero-title">جدید تلاش و جستجو</h1>
+              <p class="articles-hero-subtitle">
+                عنوان، مضمون نگار، اقتباس یا موضوع کے ذریعے مطلوبہ مضمون فوری تلاش کریں۔
+              </p>
+            </div>
+          </div>
+
+          <div class="articles-search-box-wrap">
+            <form action="../../articles/search" method="GET" class="articles-search-form">
+              <i class="fa-solid fa-magnifying-glass" style="color: #0284c7; font-size: 14px; margin-left: 4px;"></i>
+              <input type="text" name="q" value="" class="articles-search-input" placeholder="عنوان، مضمون نگار، اقتباس، یا موضوع تلاش کریں..." />
+              <button type="submit" class="articles-search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i> تلاش کریں
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <form action="../../articles/search" method="GET" style="border-top: 1px dashed rgba(125, 211, 252, 0.7); padding-top: 12px;">
+          <input type="hidden" name="q" value="" />
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;">
+            <div>
+              <label style="font-size: 12px; font-weight: 800; color: #0369a1; display: block; margin-bottom: 4px;">زمرہ (Category):</label>
+              <select name="category" onchange="this.form.submit()" style="width: 100%; padding: 7px 12px; border: 1.5px solid #7dd3fc; border-radius: 10px; font-family: inherit; font-size: 13px; background: #ffffff;">
+                <option value="">تمام زمرہ جات</option>
+                
+                  <option value="aqeedah-o-manhaj" >عقیدہ و منہج</option>
+                
+                  <option value="quran-o-tafseer" >قرآن و تفسیر</option>
+                
+                  <option value="hadith-o-uloom-ul-hadith" >حدیث و علومِ حدیث</option>
+                
+                  <option value="fiqh-o-masail" >فقہ و مسائل</option>
+                
+                  <option value="seerat-o-tareekh" >سیرت و تاریخ</option>
+                
+                  <option value="dawat-o-islah" >دعوت و اصلاح</option>
+                
+                  <option value="radd-e-batil" >ردِّ باطل و نقدِ افکار</option>
+                
+                  <option value="tarbiyat-o-akhlaq" >تربیت و اخلاق</option>
+                
+                  <option value="muashrati-o-samaji" >معاشرتی و سماجی موضوعات</option>
+                
+                  <option value="ilmi-o-tahqeeqi" >علمی و تحقیقی مضامین</option>
+                
+                  <option value="tarjuma-o-tareeb" >ترجمہ و تعریب</option>
+                
+                  <option value="tabsara-e-kutub" >تبصرۂ کتب و تعارفِ کتب</option>
+                
+                  <option value="halat-e-hazira" >حالاتِ حاضرہ پر شرعی و علمی تحریریں</option>
+                
+                  <option value="other" >دیگر</option>
+                
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 800; color: #0369a1; display: block; margin-bottom: 4px;">قلم کار (Author):</label>
+              <select name="author" onchange="this.form.submit()" style="width: 100%; padding: 7px 12px; border: 1.5px solid #7dd3fc; border-radius: 10px; font-family: inherit; font-size: 13px; background: #ffffff;">
+                <option value="">تمام قلم کار</option>
+                
+                  <option value="ابو-عمار-عبد-الرحیم" >ابو عمار عبد الرحیم</option>
+                
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 800; color: #0369a1; display: block; margin-bottom: 4px;">ترتیب (Sort):</label>
+              <select name="sort" onchange="this.form.submit()" style="width: 100%; padding: 7px 12px; border: 1.5px solid #7dd3fc; border-radius: 10px; font-family: inherit; font-size: 13px; background: #ffffff;">
+                <option value="relevant" selected>مطابقت کے مطابق (Relevant)</option>
+                <option value="latest" >تازہ ترین (Latest)</option>
+                <option value="views" >زیادہ مشاہدات (Most Read)</option>
+                <option value="oldest" >قدیم ترین (Oldest)</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
 
     <!-- SEARCH RESULTS SUMMARY -->
     <div style="margin-bottom: 20px; font-size: 15px; font-weight: 800; color: #334155;">

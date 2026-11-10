@@ -378,23 +378,25 @@ body *::-webkit-scrollbar-thumb:hover {
     width: 42px;
     height: 42px;
     border-radius: 11px;
-    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
-    color: #047857;
-    border: 1.5px solid #6ee7b7;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    color: #0369a1;
+    border: 1.5px solid #7dd3fc;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.22s ease;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
     flex-shrink: 0;
   }
 
   .articles-sidebar-trigger:hover {
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    border-color: #059669;
+    border-color: #0284c7;
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22);
   }
 
   .articles-header-search-wrap {
@@ -419,8 +421,8 @@ body *::-webkit-scrollbar-thumb:hover {
 
   .articles-header-search-form:focus-within {
     background: #ffffff;
-    border-color: #059669;
-    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.14);
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
   }
 
   .articles-header-search-input {
@@ -440,7 +442,7 @@ body *::-webkit-scrollbar-thumb:hover {
     height: 32px;
     border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
     color: #ffffff;
     display: inline-flex;
     align-items: center;
@@ -661,53 +663,79 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
 <main class="articles-portal-wrap">
-  <div class="main-container" style="max-width: 1200px; margin: 35px auto; padding: 0 20px;">
-    <!-- DIRECTORY HEADER (Inspired by uploaded screenshot media_1791364250283_f461ca6c.jpg) -->
-    <div style="background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #00875a 100%); color: #ffffff; border-radius: 20px; padding: 32px 28px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 4px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 12px;">
-        <i class="fa-solid fa-feather-pointed"></i> منبرِ قلم کاروان
+  <div class="main-container" style="max-width: 1200px; margin: 0 auto 40px auto; padding: 0 20px;">
+    <!-- BREADCRUMB & PORTAL STATUS RIBBON -->
+    <div class="articles-breadcrumb-ribbon">
+      <div class="articles-bc-links">
+        <a href="../../index.html"><i class="fa-solid fa-house-chimney"></i> مرکزی صفحہ</a>
+        <span>/</span>
+        <a href="../../articles"><i class="fa-solid fa-feather-pointed"></i> مضامین و مقالات</a>
+        <span>/</span>
+        <span style="color: #0f172a; font-weight: 800;">قلم کار ڈائریکٹری</span>
       </div>
-      <h1 style="font-size: 34px; font-weight: 900; margin: 0 0 8px 0;">
-        قلم کار ڈائریکٹری
-      </h1>
-      <p style="font-size: 15px; opacity: 0.95; margin: 0 0 16px 0; max-width: 600px; margin: 0 auto 16px auto;">
-        صوبائی جمعیت اہل حدیث ممبئی کے معزز و مستند قلم کاروں، علمائے کرام اور محققین کی فہرست۔
-      </p>
-      <div style="display: inline-flex; gap: 12px;">
-        <span style="background: rgba(0,0,0,0.3); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 800;">
-          کل قلم کار: 1
+      <div class="articles-bc-stats">
+        <span class="articles-stat-pill">
+          <i class="fa-solid fa-users-line" style="color: #0284c7;"></i> کل قلم کار: 1
         </span>
       </div>
     </div>
 
-    <!-- SEARCH & SORT CONTROLS -->
-    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
-      <!-- Search Author Name -->
-      <form action="../../articles/authors" method="GET" style="flex: 1 1 320px; display: flex; align-items: center; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 30px; padding: 4px 14px;">
-        <i class="fa-solid fa-magnifying-glass" style="color: #94a3b8; font-size: 14px; margin-left: 8px;"></i>
-        <input type="text" name="q" value="" placeholder="قلم کار کا نام تلاش کریں..." style="flex: 1; border: none; background: transparent; font-family: inherit; font-size: 14px; outline: none; padding: 6px;" />
-        <button type="submit" style="background: #00875a; color: #ffffff; border: none; border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 800; cursor: pointer;">تلاش</button>
-      </form>
+    <!-- LUMINOUS DIRECTORY HERO SHOWCASE CARD -->
+    <section class="articles-hero-section">
+      <div class="articles-hero-content">
+        <div class="articles-hero-top-row">
+          <div style="display: flex; align-items: center; gap: 14px; flex: 1 1 380px;">
+            <div class="articles-hero-orb">
+              <i class="fa-solid fa-users-line"></i>
+            </div>
+            <div>
+              <div class="articles-hero-badge">
+                <i class="fa-solid fa-feather-pointed"></i> منبرِ قلم کاروان
+              </div>
+              <h1 class="articles-hero-title">قلم کار ڈائریکٹری</h1>
+              <p class="articles-hero-subtitle">
+                صوبائی جمعیت اہل حدیث ممبئی کے معزز و مستند قلم کاروں، علمائے کرام اور محققین کی فہرست۔
+              </p>
+            </div>
+          </div>
 
-      <!-- Sort Tabs -->
-      <div style="display: flex; gap: 6px;">
-        <a href="../../articles/authors?q=&sort=articles" style="padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 800; text-decoration: none; background: #00875a; color: #ffffff;">
-          زیادہ تحریریں
-        </a>
-        <a href="../../articles/authors?q=&sort=alpha" style="padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 800; text-decoration: none; background: #f1f5f9; color: #475569;">
-          ابجدی ترتیب
-        </a>
+          <!-- Compact Author Search Box in Hero Left -->
+          <div class="articles-search-box-wrap">
+            <form action="../../articles/authors" method="GET" class="articles-search-form">
+              <i class="fa-solid fa-magnifying-glass" style="color: #0284c7; font-size: 14px; margin-left: 4px;"></i>
+              <input type="text" name="q" value="" class="articles-search-input" placeholder="قلم کار کا نام تلاش کریں..." />
+              <button type="submit" class="articles-search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i> تلاش
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sort Controls Row -->
+        <div class="hero-category-chips" style="justify-content: space-between;">
+          <span style="font-size: 12.5px; font-weight: 800; color: #0f766e;">
+            <i class="fa-solid fa-arrow-down-wide-short"></i> ترتیبِ فہرست:
+          </span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="../../articles/authors?q=&sort=articles" style="padding: 5px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 800; text-decoration: none; background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%); color: #ffffff;">
+              <i class="fa-solid fa-fire-flame-curved"></i> زیادہ تحریریں
+            </a>
+            <a href="../../articles/authors?q=&sort=alpha" style="padding: 5px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 800; text-decoration: none; background: #ffffff; border: 1px solid #bae6fd; color: #0369a1;">
+              <i class="fa-solid fa-arrow-down-a-z"></i> ابجدی ترتیب
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- CIRCULAR PROFILES GRID (Inspired by uploaded screenshot media_1791364252578_d3d19add.jpg) -->
+    <!-- CIRCULAR PROFILES GRID -->
     
-      <div class="authors-circular-grid" style="grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 28px 18px; margin-bottom: 50px;">
+      <div class="authors-circular-grid" style="grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)); gap: 24px 18px; margin-bottom: 50px;">
         
-          <a href="../../articles/author/ابو-عمار-عبد-الرحیم" class="author-circular-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: all 0.2s;" onmouseover="this.style.borderColor='#00875a'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 8px 18px rgba(0,0,0,0.08)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='none'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.03)';">
-            <div class="author-avatar-circle" style="width: 86px; height: 86px; margin-bottom: 12px; border: 3px solid #00875a; padding: 3px;">
+          <a href="../../articles/author/ابو-عمار-عبد-الرحیم" class="author-circular-card" style="background: #ffffff; border: 1.5px solid #bae6fd; border-radius: 18px; padding: 20px 14px; box-shadow: 0 4px 14px rgba(14,165,233,0.06); transition: all 0.2s;" onmouseover="this.style.borderColor='#0284c7'; this.style.transform='translateY(-4px)'; this.style.boxShadow='0 10px 24px rgba(14,165,233,0.14)';" onmouseout="this.style.borderColor='#bae6fd'; this.style.transform='none'; this.style.boxShadow='0 4px 14px rgba(14,165,233,0.06)';">
+            <div class="author-avatar-circle" style="width: 86px; height: 86px; margin-bottom: 12px; border: 3px solid #0284c7; padding: 3px;">
               
-                <div class="author-initials-fallback" style="background: linear-gradient(135deg, #059669 0%, #064e3b 100%);">
+                <div class="author-initials-fallback" style="background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);">
                   ا
                 </div>
               
@@ -715,10 +743,10 @@ body *::-webkit-scrollbar-thumb:hover {
             <h3 class="author-circle-name" style="font-size: 16px; font-weight: 900; margin: 0 0 4px 0; color: #0f172a;">
               ابو عمار عبد الرحیم
             </h3>
-            <div class="author-circle-spec" style="font-size: 12px; color: #64748b; margin-bottom: 8px;">
+            <div class="author-circle-spec" style="font-size: 12px; color: #475569; margin-bottom: 8px;">
               فضیلت و ایم اے اسلامیات
             </div>
-            <span class="author-count-badge" style="background: #e6f4ea; color: #064e3b; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px;">
+            <span class="author-count-badge" style="background: #f0f9ff; border: 1px solid #bae6fd; color: #0369a1; font-size: 11.5px; font-weight: 800; padding: 3px 10px; border-radius: 12px;">
               1 مضامین
             </span>
           </a>
