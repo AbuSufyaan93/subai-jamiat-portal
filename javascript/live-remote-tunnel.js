@@ -266,6 +266,93 @@
       return origFetch(BASE_ROOT + '/api/library/topics.json');
     }
 
+    // 5c. Handle /api/library/scholar-submissions (Scholar Book Upload + 2-Stage Admin Review & Super Admin Approval)
+    if (urlStr.indexOf('/api/library/scholar-submissions') !== -1) {
+      var SCHOLAR_STORAGE_KEY = 'sjahm_scholar_book_submissions_v1';
+      function getLocalScholarSubs() {
+        try { return JSON.parse(localStorage.getItem(SCHOLAR_STORAGE_KEY) || '[]'); } catch (_) { return []; }
+      }
+      function saveLocalScholarSubs(arr) {
+        try { localStorage.setItem(SCHOLAR_STORAGE_KEY, JSON.stringify(arr)); } catch (_) {}
+      }
+
+      if (method === 'GET') {
+        return Promise.resolve(jsonResponse({
+          success: true,
+          items: getLocalScholarSubs(),
+          total: getLocalScholarSubs().length
+        }, 200));
+      }
+
+      if (method === 'POST' && urlStr.indexOf('/admin-review') !== -1) {
+        var revIdMatch = urlStr.match(//scholar-submissions/([^/]+)/admin-review/);
+        var revId = revIdMatch ? decodeURIComponent(revIdMatch[1]) : '';
+        var listRev = getLocalScholarSubs();
+        var foundRev = listRev.find(function (x) { return String(x.id) === String(revId) || String(x.trackingCode) === String(revId); });
+        if (foundRev) {
+          foundRev.approvalStage = 'pending_superadmin_approval';
+          foundRev.status = 'pending_superadmin_approval';
+          foundRev.adminReview = { reviewed: true, reviewedBy: 'ایڈمن (مراجع)', reviewedAt: new Date().toISOString() };
+          saveLocalScholarSubs(listRev);
+        }
+        return Promise.resolve(jsonResponse({
+          success: true,
+          message: 'ایڈمن مراجعہ مکمل ہو گیا! اب یہ کتاب سپر ایڈمن کے حتمی موافقہ کے لیے ارسال کر دی گئی ہے۔',
+          submission: foundRev
+        }, 200));
+      }
+
+      if (method === 'POST' && urlStr.indexOf('/superadmin-approve') !== -1) {
+        var appIdMatch = urlStr.match(//scholar-submissions/([^/]+)/superadmin-approve/);
+        var appId = appIdMatch ? decodeURIComponent(appIdMatch[1]) : '';
+        var listApp = getLocalScholarSubs();
+        var foundApp = listApp.find(function (x) { return String(x.id) === String(appId) || String(x.trackingCode) === String(appId); });
+        if (foundApp) {
+          foundApp.approvalStage = 'superadmin_approved';
+          foundApp.status = 'published';
+          foundApp.isApproved = true;
+          foundApp.superAdminApproval = { approved: true, approvedBy: 'سپر ایڈمن', approvedAt: new Date().toISOString() };
+          saveLocalScholarSubs(listApp);
+        }
+        return Promise.resolve(jsonResponse({
+          success: true,
+          message: 'الحمد للہ! سپر ایڈمن کے موافقہ کے بعد کتاب باضابطہ طور پر لائبریری میں نشر کر دی گئی ہے۔',
+          submission: foundApp,
+          publishedBook: foundApp
+        }, 200));
+      }
+
+      if (method === 'DELETE') {
+        var delIdMatch = urlStr.match(//scholar-submissions/([^/?]+)/);
+        var delId = delIdMatch ? decodeURIComponent(delIdMatch[1]) : '';
+        var filtered = getLocalScholarSubs().filter(function (x) { return String(x.id) !== String(delId); });
+        saveLocalScholarSubs(filtered);
+        return Promise.resolve(jsonResponse({ success: true }, 200));
+      }
+
+      if (method === 'POST') {
+        var rawBody = (init && typeof init.body === 'string') ? init.body : '{}';
+        var parsed = {};
+        try { parsed = JSON.parse(rawBody); } catch (_) {}
+        var newSub = Object.assign({}, parsed, {
+          id: 'sbk_' + Date.now(),
+          trackingCode: 'SUB-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000),
+          approvalStage: 'pending_admin_review',
+          status: 'pending_admin_review',
+          isApproved: false,
+          createdAt: new Date().toISOString()
+        });
+        var curList = getLocalScholarSubs();
+        curList.unshift(newSub);
+        saveLocalScholarSubs(curList);
+        return Promise.resolve(jsonResponse({
+          success: true,
+          message: 'آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب یہ کتاب ایڈمن کے مراجعہ اور پھر سپر ایڈمن کے موافقہ کے بعد ہی نشر ہوگی۔',
+          submission: newSub
+        }, 200));
+      }
+    }
+
     // 6. Hybrid Live + Local Engine for Video Studio Upload & Admin Moderation
     if (urlStr.indexOf('/api/public/media/videos/studio-upload') !== -1 && method === 'POST') {
       var relUploadPath = '/api/public/media/videos/studio-upload';
