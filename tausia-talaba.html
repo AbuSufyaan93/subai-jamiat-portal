@@ -336,9 +336,37 @@
     margin: 0 auto !important;
   }
   section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
     padding-top: 4px !important;
     min-height: 82vh;
+  }
+
+  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
+  section#content .column-center > .card > .top {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
+    border: 1.5px solid #99f6e4 !important;
+    border-radius: 18px !important;
+    padding: 20px 26px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section#content .column-center > .card > .top::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4.5px !important;
+    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
+  }
+  section#content .column-center > .card > .top h1 {
+    color: #064e3b !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    text-shadow: none !important;
   }
 
   /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
@@ -822,7 +850,7 @@
       </a>
     </div>
 
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES (SINGLE LINE) -->
+    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
     <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ توصیہ و تصدیق پورٹل" style="flex-wrap: nowrap;">
       <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -844,13 +872,13 @@
         
         <a href="./check-tausia-status" class="sj-dept-link ">
           <i class="fa-solid fa-magnifying-glass-chart"></i>
-          <span>اسٹیٹس چیک (مساجد)</span>
+          <span>کیفیتِ درخواست (مساجد)</span>
         </a>
       
         
         <a href="./check-talaba-status" class="sj-dept-link ">
           <i class="fa-solid fa-id-card-clip"></i>
-          <span>اسٹیٹس چیک (طلبہ)</span>
+          <span>کیفیتِ درخواست (طلبہ)</span>
         </a>
       
     </nav>
@@ -904,12 +932,12 @@
       
         <a href="./check-tausia-status" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-magnifying-glass-chart" style="color: #0f766e;"></i>
-          <span>اسٹیٹس چیک (مساجد)</span>
+          <span>کیفیتِ درخواست (مساجد)</span>
         </a>
       
         <a href="./check-talaba-status" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-id-card-clip" style="color: #0f766e;"></i>
-          <span>اسٹیٹس چیک (طلبہ)</span>
+          <span>کیفیتِ درخواست (طلبہ)</span>
         </a>
       
         <a href="./tausia-authentication" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
@@ -1414,7 +1442,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         </span>
                                                     </label>
 
-                                                    <input type="text" id="name" name="StudentName" required>
+                                                    <input type="text" id="name" name="طالب علم کا نام" required>
 
                                                     <label dir="rtl" for="address">
 
@@ -1434,7 +1462,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                             :
                                                         </span>
                                                     </label>
-                                                    <input type="text" id="number" name="StudentNumber" required
+                                                    <input type="text" id="number" name="طالب علم کا نمبر" required
                                                         pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
 
                                                     <!-- <label dir="rtl" for="image">
@@ -1458,7 +1486,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
 
                                                     <input type="text" id="jamia_/_college_name_with_address"
-                                                        name="JamiaCollegeNameAddress" required>
+                                                        name="جامعہ / کالج کا نام و پتہ" required>
                                                     <!-- <textarea name="jamia_/_college_name_with_address"
                                                         id="jamia_/_college_name_with_address" required></textarea> -->
 
@@ -1471,7 +1499,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                                     <input type="text" id="degree" name="Degree" required>
 
-                                                    <label dir="rtl" for="MarufShakhsName">
+                                                    <label dir="rtl" for="معروف شخصیت کا نام">
 
                                                         اپنے علاقے کی کسی معروف شخصیت کا نام و رابطہ نمبر جن سے توصیہ
                                                         لیا ہے
@@ -1482,13 +1510,13 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                                     <div class="two-block-input">
 
-                                                        <input type="text" id="MarufShakhsName" name="MarufShakhsName"
+                                                        <input type="text" id="معروف شخصیت کا نام" name="معروف شخصیت کا نام"
                                                             required placeholder="معروف شخصیت کا نام">
-                                                        <input type="text" name="MarufShakhsNumber" required
+                                                        <input type="text" name="معروف شخصیت کا نمبر" required
                                                             placeholder="موبائل نمبر" pattern="[0-9]{10}">
                                                     </div>
 
-                                                    <!-- <textarea name="MarufShakhsNameNumber"
+                                                    <!-- <textarea name="معروف شخصیت کا نامNumber"
                                                         id="maruf_shakhs_ka_name_aur_number" required></textarea> -->
 
                                                     <label dir="rtl" for="tausia_hasil_karne_ki_wajah">
@@ -1498,7 +1526,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         </span>
                                                     </label>
 
-                                                    <textarea name="TausiaReason" id="tausia_hasil_karne_ki_wajah"
+                                                    <textarea name="توصیہ کا مقصد" id="tausia_hasil_karne_ki_wajah"
                                                         required></textarea>
 
                                                     <label for="image" dir="rtl">

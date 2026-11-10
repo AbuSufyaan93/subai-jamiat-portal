@@ -1815,7 +1815,7 @@ body *::-webkit-scrollbar-thumb:hover {
         <span>موضوعات</span>
       </a>
 
-      <a href="../../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعات">
+      <a href="../../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی مطبوعات">
         <i class="fa-solid fa-stamp"></i>
         <span>مطبوعات</span>
       </a>
@@ -2396,7 +2396,7 @@ body *::-webkit-scrollbar-thumb:hover {
       <i class="fa-solid fa-layer-group" style="font-size: 18px;"></i>
       <h3 class="topics-drawer-title">موضوعاتی فہرست</h3>
     </div>
-    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں (Esc)">
+    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -2878,7 +2878,7 @@ body *::-webkit-scrollbar-thumb:hover {
 <!-- SCHOLAR BOOK UPLOAD & 2-STAGE MODERATION STUDIO (عالمِ دین کتاب اپلوڈ اسٹوڈیو) -->
 <!-- مرحلہ ۱: عالمِ دین کی لازمی تفصیلات (نام، پتہ، واٹس ایپ، اہلیت و فراغت)          -->
 <!-- مرحلہ ۲: کتاب کی مکمل تفصیلات + PDF یا ٹیکسٹ اپلوڈ                            -->
-<!-- مرحلہ ۳: ایڈمن کا مراجعہ (Review) -> سپر ایڈمن کا موافقہ (Approval) -> نشر     -->
+<!-- مرحلہ ۳: ایڈمن کا مراجعہ -> سپر ایڈمن کا موافقہ -> نشر     -->
 <!-- ============================================================================ -->
 <style>
   .sbu-modal-backdrop {
@@ -3313,7 +3313,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
         </div>
 
-        <!-- SUBMISSION CONFIRMATION BANNER (HIDDEN UNTIL SUBMITTED) -->
+        <!-- SUBMISSION CONFIRMATION BANNER  -->
         <div id="sbuSuccessConfirmationCard" style="display: none; background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%); border: 2px solid #059669; border-radius: 18px; padding: 26px 24px; text-align: center; margin-bottom: 20px; box-shadow: 0 12px 30px rgba(5, 150, 105, 0.14);">
           <div style="width: 64px; height: 64px; border-radius: 50%; background: #059669; color: #ffffff; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);">
             <i class="fa-solid fa-check-double"></i>
@@ -3323,7 +3323,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </h3>
           <p style="font-size: 14.5px; font-weight: 700; color: #0f766e; max-width: 680px; margin: 0 auto 14px; line-height: 1.9; background: #ffffff; padding: 12px 18px; border-radius: 12px; border: 1px solid #99f6e4;">
             <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i>
-            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ (Admin Review)</strong> اور پھر <strong>سپر ایڈمن کے موافقہ (Super Admin Approval)</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
+            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ</strong> اور پھر <strong>سپر ایڈمن کے موافقہ</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
           </p>
           <div id="sbuConfirmationMeta" style="font-size: 13px; color: #334155; margin-bottom: 16px;"></div>
           <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -3364,7 +3364,7 @@ body *::-webkit-scrollbar-thumb:hover {
               <div class="sbu-field">
                 <label class="sbu-label">
                   <i class="fa-brands fa-whatsapp" style="color: #16a34a; font-size: 15px;"></i>
-                  <span>واٹس ایپ نمبر (WhatsApp Number) <span class="sbu-req">*</span></span>
+                  <span>واٹس ایپ نمبر <span class="sbu-req">*</span></span>
                 </label>
                 <input type="tel" id="sbuScholarWhatsapp" name="scholarWhatsapp" class="sbu-input" placeholder="مثلاً: +91 98XXXXXXXX" dir="ltr" style="text-align: right;" required oninput="checkScholarGateUnlock()" />
               </div>
@@ -3384,7 +3384,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   <i class="fa-solid fa-graduation-cap" style="color: #d97706;"></i>
                   <span>اہلیت و فراغت کہاں سے ہوئی ہے؟ (جامعہ / ادارۂ فراغت و سنِ فراغت) <span class="sbu-req">*</span></span>
                 </label>
-                <input type="text" id="sbuScholarQualification" name="scholarQualification" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
+                <input type="text" id="sbuScholarتعلیمی قابلیت" name="scholarتعلیمی قابلیت" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
               </div>
             </div>
 
@@ -3430,7 +3430,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
           <!-- ============================================================== -->
           <!-- STEP 2: FULL ADMIN-STYLE BOOK METADATA & PDF/TEXT UPLOAD       -->
-          <!-- (LOCKED UNTIL STEP 1 IS COMPLETED)                             -->
+          <!--                              -->
           <!-- ============================================================== -->
           <div class="sbu-locked-wrapper is-locked" id="sbuStep2Wrapper">
             <div class="sbu-lockable-content">
@@ -3476,7 +3476,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="sbu-grid-3">
                   <div class="sbu-field">
-                    <label class="sbu-label">علمی زمرہ / موضوع (Category) <span class="sbu-req">*</span></label>
+                    <label class="sbu-label">علمی زمرہ / موضوع <span class="sbu-req">*</span></label>
                     <select id="sbuBookCategory" name="category" class="sbu-select" disabled required>
                       <option value="عقیدہ و منہج">عقیدہ و منہج (توحید و سنت)</option>
                       <option value="قرآن و علوم القرآن">قرآن و علوم القرآن (تفسیر و تجوید)</option>
@@ -3493,7 +3493,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   </div>
 
                   <div class="sbu-field">
-                    <label class="sbu-label">ذیلی موضوع (Subcategory)</label>
+                    <label class="sbu-label">ذیلی موضوع</label>
                     <input type="text" id="sbuBookSubcategory" name="subcategory" class="sbu-input" placeholder="مثلاً: اسماء و صفات / نماز کے احکام" disabled />
                   </div>
 
@@ -3502,7 +3502,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <select id="sbuBookLanguage" name="language" class="sbu-select" disabled>
                       <option value="اردو">اردو</option>
                       <option value="عربی">عربی</option>
-                      <option value="English">انگریزی (English)</option>
+                      <option value="English">انگریزی</option>
                       <option value="ہندی">ہندی (हिंदी)</option>
                       <option value="فارسی">فارسی</option>
                     </select>
@@ -3532,7 +3532,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 </div>
               </div>
 
-              <!-- 2B: DIGITAL FILE UPLOADS (PDF OR TEXT/UNICODE OR BOTH + COVER) -->
+              <!-- 2B: DIGITAL FILE UPLOADS  -->
               <div class="sbu-section-card">
                 <div class="sbu-section-header">
                   <h3 class="sbu-section-title">
@@ -3546,11 +3546,11 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div class="sbu-format-pills">
                   <button type="button" class="sbu-format-pill active" id="sbuModeBtnPdf" onclick="setSbuUploadMode('pdf')">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-                    <span>پی ڈی ایف (PDF) کتاب اپلوڈ</span>
+                    <span>پی ڈی ایف کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnText" onclick="setSbuUploadMode('text')">
                     <i class="fa-solid fa-file-lines" style="color: #0284c7;"></i>
-                    <span>ٹیکسٹ / یونیکوڈ (Text) کتاب اپلوڈ</span>
+                    <span>ٹیکسٹ / یونیکوڈ کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnBoth" onclick="setSbuUploadMode('both')">
                     <i class="fa-solid fa-layer-group" style="color: #059669;"></i>
@@ -3563,12 +3563,12 @@ body *::-webkit-scrollbar-thumb:hover {
                   <div class="sbu-field">
                     <label class="sbu-label">
                       <i class="fa-solid fa-image" style="color: #059669;"></i>
-                      <span>کتاب کا سرورق (Cover Image) — فائل منتخب کریں</span>
+                      <span>کتاب کا سرورق — فائل منتخب کریں</span>
                     </label>
                     <input type="file" id="sbuCoverFile" name="coverFile" accept="image/*" class="sbu-input" style="padding-top: 6px;" disabled onchange="handleSbuCoverPreview(this)" />
                   </div>
                   <div class="sbu-field">
-                    <label class="sbu-label">یا سرورق کا براہِ راست لنک (URL)</label>
+                    <label class="sbu-label">یا سرورق کا براہِ راست لنک</label>
                     <input type="url" id="sbuCoverUrl" name="coverImageUrl" class="sbu-input" placeholder="https://.../cover.jpg" dir="ltr" style="text-align: right;" disabled />
                   </div>
                 </div>
@@ -3577,7 +3577,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div id="sbuPdfUploadBlock" style="background: #fef2f2; border: 1.5px dashed #fca5a5; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
                   <div style="font-size: 13px; font-weight: 800; color: #991b1b; margin-bottom: 10px; display: flex; align-items: center; gap: 7px;">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 16px;"></i>
-                    <span>پی ڈی ایف دستاویز (PDF File Upload / Cloud Link)</span>
+                    <span>پی ڈی ایف دستاویز</span>
                   </div>
                   <div class="sbu-grid-2" style="margin-bottom: 0;">
                     <div class="sbu-field">
@@ -3678,10 +3678,10 @@ body *::-webkit-scrollbar-thumb:hover {
             <div>
               <h3 class="sbu-section-title">
                 <i class="fa-solid fa-user-shield" style="color: #059669;"></i>
-                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل (Two-Tier Approval Queue)</span>
+                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل</span>
               </h3>
               <p style="margin: 4px 0 0; font-size: 12px; color: #475569;">
-                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ (Step 1: Admin Review)</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ (Step 2: Super Admin Approval)</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
+                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
               </p>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
@@ -4393,7 +4393,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                         </div>
                                     
 
-                                    <!-- PRIMARY ACTION TOOLBAR (READ, DOWNLOAD, ORDER) -->
+                                    <!-- PRIMARY ACTION TOOLBAR  -->
                                     <div class="library-action-toolbar" role="toolbar" aria-label="بنیادی اختیارات برائے کتاب">
                                         <!-- 1. READ ONLINE -->
                                         
@@ -4424,7 +4424,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                     <div class="book-top-bar">
                                         <div class="meta-badges">
                                             
-                                                <a href="../../../library/publications" class="tag-pill" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-decoration: none;" title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعہ دیکھیں">
+                                                <a href="../../../library/publications" class="tag-pill" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; text-decoration: none;" title="صوبائی جمعیت اہل حدیث ممبئی کی مطبوعہ دیکھیں">
                                                     <i class="fa-solid fa-stamp"></i> مطبوعہ صوبائی جمعیت اہل حدیث ممبئی
                                                 </a>
                                             
@@ -4448,7 +4448,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                         </div>
 
-                                        <!-- 4 UTILITY ACTIONS (BOOKMARK, COPY, SHARE, REPORT) -->
+                                        <!-- 4 UTILITY ACTIONS  -->
                                         <div class="top-utility-toolbar" role="toolbar" aria-label="اختیارات برائے اشتراک و محفوظات">
                                             <!-- 1. BOOKMARK -->
                                             <button type="button" class="library-action-btn library-btn-bookmark " id="btnBookmark" data-tooltip="محفوظ کریں (Bookmark)" aria-label="محفوظ کریں" onclick="toggleBookmark('lib-bok-pub-025')">
@@ -4462,7 +4462,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                             <!-- 3. SHARE WITH POPOVER -->
                                             <div class="library-share-wrapper">
-                                                <button type="button" class="library-action-btn library-btn-share" id="btnShareTrigger" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں" aria-expanded="false" onclick="toggleShareMenu(event)">
+                                                <button type="button" class="library-action-btn library-btn-share" id="btnShareTrigger" data-tooltip="شیئر کریں" aria-label="شیئر کریں" aria-expanded="false" onclick="toggleShareMenu(event)">
                                                     <i class="fa-solid fa-share-nodes"></i>
                                                 </button>
 
@@ -4474,10 +4474,10 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </div>
                                                     <div class="share-popover-items">
                                                         <a href="#" id="shareWaLink" target="_blank" rel="noopener noreferrer" class="share-popover-item wa" role="menuitem">
-                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ (WhatsApp)
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
                                                         </a>
                                                         <a href="#" id="shareFbLink" target="_blank" rel="noopener noreferrer" class="share-popover-item fb" role="menuitem">
-                                                            <i class="fa-brands fa-facebook-f"></i> فیس بک (Facebook)
+                                                            <i class="fa-brands fa-facebook-f"></i> فیس بک
                                                         </a>
                                                         <a href="#" id="shareTwLink" target="_blank" rel="noopener noreferrer" class="share-popover-item tw" role="menuitem">
                                                             <i class="fa-brands fa-x-twitter"></i> X / ٹوئٹر
@@ -4503,10 +4503,10 @@ body *::-webkit-scrollbar-thumb:hover {
                                     <!-- RESTRICTED ACCESS NOTIFICATION -->
                                     
 
-                                    <!-- PHYSICAL RACK LOCATION & COPIES (HIDDEN FROM PUBLIC BY DEFAULT) -->
+                                    <!-- PHYSICAL RACK LOCATION & COPIES  -->
                                     
 
-                                    <!-- METADATA GRID TABLE (CLEANED - HIGH LEVEL BIBLIOGRAPHIC DATA) -->
+                                    <!-- METADATA GRID TABLE  -->
                                     <div class="meta-grid">
                                         <div class="meta-item">
                                             <span class="meta-label">مصنف / مولف</span>
@@ -4526,7 +4526,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                             اللہ تعالی ٰ کے بابرکت نام او رصفات جن کی پہچان اصل توحید ہے ،کیونکہ ان صفات کی صحیح معرفت سے ذاتِ باری تعالیٰ کی معرفت حاصل ہوتی ہے ۔عقیدۂ توحید کی معرفت اور اس پر تاحیات قائم ودائم رہنا ہی اصلِ دین ہے ۔اور اسی پیغامِ توحیدکو پہنچانے اور سمجھانے کی خاطر انبیاء و رسل کومبعوث کیا گیا او رکتابیں اتاری گئیں۔ اللہ تعالیٰ کےناموں او رصفات کے حوالے سے توحید کی اس مستقل قسم کوتوحید الاسماء والصفات کہاجاتاہے۔ قرآن واحادیث میں اسماء الحسنٰی کوپڑھنے یاد کرنے کی فضیلت بیان کی گئی ہے ۔ارشاد باری تعالی ہے: ’ وَلِلَّهِ الْأَسْمَاءُ الْحُسْنَى فَادْعُوهُ بِهَا ‘‘اور اللہ تعالیٰ کے اچھے نام ہیں تو اس کوانہی ناموں سےپکارو۔اور اسی طرح ارشاد نبویﷺ ہے«إِنَّ لله تِسْعَةً وَتِسْعِينَ اسْمًا مِائَةً إِلَّا وَاحِدًا، مَنْ أَحْصَاهَا دَخَلَ الجَنَّةَ»یقیناً اللہ تعالیٰ کے نناوےنام ہیں یعنی ایک کم 100 جس نےان کااحصاء( یعنی پڑھنا سمجھنا،یادکرنا) کیا وہ جنت میں داخل ہوگا۔(صحیح بخاری )اسماء الحسنٰی کے سلسلے میں اہل علم نے مستقل کتب تصنیف کی ہیں اور بعض نے ان اسماء کی شرح بھی کی ہے۔ زیر تبصرہ کتاب ’’ شرح اسماء الحسنیٰ کتاب و سنت کی روشنی میں‘‘ڈاکٹر سعید بن علی بن وہف الحقانی رحمہ اللہ کی تالیف ہے، اس کا اردو ترجمہ مولانا عنایت اللہ سنابلی مدنی صاحب نے کیا ہے۔جس میں سب سے پہلے یہ واضح کیا ہے کہ اللہ تعالیٰ کے اسماء توقیفی ہیں۔ مزید اس کتاب میں اسماء حسنیٰ پر ایمان کے ارکان، اللہ کے ناموں الحاد کی اقسا اور اللہ تعالیٰ کے ننانوے ناموں کی بنظیر شرح کی گئی ہے۔ اللہ تعالیٰ سے دعا ہے کہ صاحب تصنیف و مترجم کی کاوشوں کو قبول فرمائے اور آخرت میں ان کی نجات کا ذریعہ بنائے ۔ (آمین)
                                         </p>
 
-                                        <!-- LOWER BIBLIOGRAPHICAL NOTE STRIP (SINGLE LINE: PUBLISHER, YEAR, EDITION) -->
+                                        <!-- LOWER BIBLIOGRAPHICAL NOTE STRIP  -->
                                         
                                         
                                             <div class="biblio-note-strip">
@@ -4697,7 +4697,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     </div>
                     <div>
                         <label style="display: block; font-size: 13px; font-weight: 700; color: #334155; margin-bottom: 4px;">تعلیمی لیاقت / شعبہ</label>
-                        <input type="text" id="reqQualification" placeholder="مثلاً عالمیت، ایم اے، ریسرچ اسکالر" style="width: 100%; height: 42px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px;" />
+                        <input type="text" id="reqتعلیمی قابلیت" placeholder="مثلاً عالمیت، ایم اے، ریسرچ اسکالر" style="width: 100%; height: 42px; padding: 0 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px;" />
                     </div>
                 </div>
 
@@ -4740,7 +4740,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 </p>
                 <img src="../../../uploads/donation/markaz_donation_qr_2026.png" alt="UPI QR" style="max-height: 140px; border-radius: 8px; border: 1px solid #e2e8f0; padding: 4px; background: #fff;" onerror="this.src='../../../uploads/library/donation_qr.jpg'" />
                 <div style="font-size: 12px; color: #065f46; font-weight: 700; margin-top: 6px;">
-                    UPI ID: <code>kokanislamiclibrary@upi</code>
+                    یو پی آئی شناخت: <code>kokanislamiclibrary@upi</code>
                 </div>
             </div>
 
@@ -4824,7 +4824,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <textarea id="repDescription" rows="3" required placeholder="غلطی اور اس کی صحیح صورت تحریر فرمائیں..." style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 13.5px;"></textarea>
                 </div>
 
-                <!-- QUICK LOGIN / AUTO-FILL SECTION (GMAIL / WHATSAPP) -->
+                <!-- QUICK LOGIN / AUTO-FILL SECTION  -->
                 <div class="report-auth-box">
                     <div class="report-auth-header">
                         <i class="fa-solid fa-user-check" style="color: var(--lib-emerald);"></i>
@@ -4835,11 +4835,11 @@ body *::-webkit-scrollbar-thumb:hover {
                     <div class="report-auth-tabs">
                         <button type="button" class="report-auth-tab-btn active" id="tabBtnGoogle" onclick="switchReportAuthTab('google')">
                             <svg width="15" height="15" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-                            <span>جی میل (Google)</span>
+                            <span>جی میل</span>
                         </button>
                         <button type="button" class="report-auth-tab-btn" id="tabBtnWhatsApp" onclick="switchReportAuthTab('whatsapp')">
                             <i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 15px;"></i>
-                            <span>واٹس ایپ نمبر (WhatsApp)</span>
+                            <span>واٹس ایپ نمبر</span>
                         </button>
                     </div>
 
@@ -4854,7 +4854,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <!-- WHATSAPP PANE -->
                     <div id="paneWhatsApp" class="report-auth-pane" style="display: none;">
                         <div class="report-whatsapp-form">
-                            <!-- COUNTRY CODE SELECTOR (DEFAULT INDIA) -->
+                            <!-- COUNTRY CODE SELECTOR  -->
                             <div class="rep-country-wrap">
                                 <label for="repCountryCode" class="rep-mini-label">ملک / کنٹری کوڈ:</label>
                                 <select id="repCountryCode" class="rep-country-select" aria-label="کنٹری کوڈ منتخب کریں">
@@ -4933,7 +4933,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
     </div>
 
-    <!-- GOOGLE ACCOUNT CHOOSER MODAL (FOR REPORT / FEEDBACK QUICK AUTH) -->
+    <!-- GOOGLE ACCOUNT CHOOSER MODAL  -->
     <div id="libGoogleAccountChooserModal" class="lib-google-modal-backdrop" style="display:none;" onclick="handleLibGoogleBackdropClick(event)">
         <div class="lib-google-chooser-dialog" onclick="event.stopPropagation()">
             <div class="lib-google-chooser-header">

@@ -905,7 +905,7 @@ body *::-webkit-scrollbar-thumb:hover {
         <span>موضوعات</span>
       </a>
 
-      <a href="../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعات">
+      <a href="../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی مطبوعات">
         <i class="fa-solid fa-stamp"></i>
         <span>مطبوعات</span>
       </a>
@@ -1486,7 +1486,7 @@ body *::-webkit-scrollbar-thumb:hover {
       <i class="fa-solid fa-layer-group" style="font-size: 18px;"></i>
       <h3 class="topics-drawer-title">موضوعاتی فہرست</h3>
     </div>
-    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں (Esc)">
+    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -1968,7 +1968,7 @@ body *::-webkit-scrollbar-thumb:hover {
 <!-- SCHOLAR BOOK UPLOAD & 2-STAGE MODERATION STUDIO (عالمِ دین کتاب اپلوڈ اسٹوڈیو) -->
 <!-- مرحلہ ۱: عالمِ دین کی لازمی تفصیلات (نام، پتہ، واٹس ایپ، اہلیت و فراغت)          -->
 <!-- مرحلہ ۲: کتاب کی مکمل تفصیلات + PDF یا ٹیکسٹ اپلوڈ                            -->
-<!-- مرحلہ ۳: ایڈمن کا مراجعہ (Review) -> سپر ایڈمن کا موافقہ (Approval) -> نشر     -->
+<!-- مرحلہ ۳: ایڈمن کا مراجعہ -> سپر ایڈمن کا موافقہ -> نشر     -->
 <!-- ============================================================================ -->
 <style>
   .sbu-modal-backdrop {
@@ -2403,7 +2403,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
         </div>
 
-        <!-- SUBMISSION CONFIRMATION BANNER (HIDDEN UNTIL SUBMITTED) -->
+        <!-- SUBMISSION CONFIRMATION BANNER  -->
         <div id="sbuSuccessConfirmationCard" style="display: none; background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%); border: 2px solid #059669; border-radius: 18px; padding: 26px 24px; text-align: center; margin-bottom: 20px; box-shadow: 0 12px 30px rgba(5, 150, 105, 0.14);">
           <div style="width: 64px; height: 64px; border-radius: 50%; background: #059669; color: #ffffff; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);">
             <i class="fa-solid fa-check-double"></i>
@@ -2413,7 +2413,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </h3>
           <p style="font-size: 14.5px; font-weight: 700; color: #0f766e; max-width: 680px; margin: 0 auto 14px; line-height: 1.9; background: #ffffff; padding: 12px 18px; border-radius: 12px; border: 1px solid #99f6e4;">
             <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i>
-            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ (Admin Review)</strong> اور پھر <strong>سپر ایڈمن کے موافقہ (Super Admin Approval)</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
+            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ</strong> اور پھر <strong>سپر ایڈمن کے موافقہ</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
           </p>
           <div id="sbuConfirmationMeta" style="font-size: 13px; color: #334155; margin-bottom: 16px;"></div>
           <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -2454,7 +2454,7 @@ body *::-webkit-scrollbar-thumb:hover {
               <div class="sbu-field">
                 <label class="sbu-label">
                   <i class="fa-brands fa-whatsapp" style="color: #16a34a; font-size: 15px;"></i>
-                  <span>واٹس ایپ نمبر (WhatsApp Number) <span class="sbu-req">*</span></span>
+                  <span>واٹس ایپ نمبر <span class="sbu-req">*</span></span>
                 </label>
                 <input type="tel" id="sbuScholarWhatsapp" name="scholarWhatsapp" class="sbu-input" placeholder="مثلاً: +91 98XXXXXXXX" dir="ltr" style="text-align: right;" required oninput="checkScholarGateUnlock()" />
               </div>
@@ -2474,7 +2474,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   <i class="fa-solid fa-graduation-cap" style="color: #d97706;"></i>
                   <span>اہلیت و فراغت کہاں سے ہوئی ہے؟ (جامعہ / ادارۂ فراغت و سنِ فراغت) <span class="sbu-req">*</span></span>
                 </label>
-                <input type="text" id="sbuScholarQualification" name="scholarQualification" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
+                <input type="text" id="sbuScholarتعلیمی قابلیت" name="scholarتعلیمی قابلیت" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
               </div>
             </div>
 
@@ -2520,7 +2520,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
           <!-- ============================================================== -->
           <!-- STEP 2: FULL ADMIN-STYLE BOOK METADATA & PDF/TEXT UPLOAD       -->
-          <!-- (LOCKED UNTIL STEP 1 IS COMPLETED)                             -->
+          <!--                              -->
           <!-- ============================================================== -->
           <div class="sbu-locked-wrapper is-locked" id="sbuStep2Wrapper">
             <div class="sbu-lockable-content">
@@ -2566,7 +2566,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="sbu-grid-3">
                   <div class="sbu-field">
-                    <label class="sbu-label">علمی زمرہ / موضوع (Category) <span class="sbu-req">*</span></label>
+                    <label class="sbu-label">علمی زمرہ / موضوع <span class="sbu-req">*</span></label>
                     <select id="sbuBookCategory" name="category" class="sbu-select" disabled required>
                       <option value="عقیدہ و منہج">عقیدہ و منہج (توحید و سنت)</option>
                       <option value="قرآن و علوم القرآن">قرآن و علوم القرآن (تفسیر و تجوید)</option>
@@ -2583,7 +2583,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   </div>
 
                   <div class="sbu-field">
-                    <label class="sbu-label">ذیلی موضوع (Subcategory)</label>
+                    <label class="sbu-label">ذیلی موضوع</label>
                     <input type="text" id="sbuBookSubcategory" name="subcategory" class="sbu-input" placeholder="مثلاً: اسماء و صفات / نماز کے احکام" disabled />
                   </div>
 
@@ -2592,7 +2592,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <select id="sbuBookLanguage" name="language" class="sbu-select" disabled>
                       <option value="اردو">اردو</option>
                       <option value="عربی">عربی</option>
-                      <option value="English">انگریزی (English)</option>
+                      <option value="English">انگریزی</option>
                       <option value="ہندی">ہندی (हिंदी)</option>
                       <option value="فارسی">فارسی</option>
                     </select>
@@ -2622,7 +2622,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 </div>
               </div>
 
-              <!-- 2B: DIGITAL FILE UPLOADS (PDF OR TEXT/UNICODE OR BOTH + COVER) -->
+              <!-- 2B: DIGITAL FILE UPLOADS  -->
               <div class="sbu-section-card">
                 <div class="sbu-section-header">
                   <h3 class="sbu-section-title">
@@ -2636,11 +2636,11 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div class="sbu-format-pills">
                   <button type="button" class="sbu-format-pill active" id="sbuModeBtnPdf" onclick="setSbuUploadMode('pdf')">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-                    <span>پی ڈی ایف (PDF) کتاب اپلوڈ</span>
+                    <span>پی ڈی ایف کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnText" onclick="setSbuUploadMode('text')">
                     <i class="fa-solid fa-file-lines" style="color: #0284c7;"></i>
-                    <span>ٹیکسٹ / یونیکوڈ (Text) کتاب اپلوڈ</span>
+                    <span>ٹیکسٹ / یونیکوڈ کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnBoth" onclick="setSbuUploadMode('both')">
                     <i class="fa-solid fa-layer-group" style="color: #059669;"></i>
@@ -2653,12 +2653,12 @@ body *::-webkit-scrollbar-thumb:hover {
                   <div class="sbu-field">
                     <label class="sbu-label">
                       <i class="fa-solid fa-image" style="color: #059669;"></i>
-                      <span>کتاب کا سرورق (Cover Image) — فائل منتخب کریں</span>
+                      <span>کتاب کا سرورق — فائل منتخب کریں</span>
                     </label>
                     <input type="file" id="sbuCoverFile" name="coverFile" accept="image/*" class="sbu-input" style="padding-top: 6px;" disabled onchange="handleSbuCoverPreview(this)" />
                   </div>
                   <div class="sbu-field">
-                    <label class="sbu-label">یا سرورق کا براہِ راست لنک (URL)</label>
+                    <label class="sbu-label">یا سرورق کا براہِ راست لنک</label>
                     <input type="url" id="sbuCoverUrl" name="coverImageUrl" class="sbu-input" placeholder="https://.../cover.jpg" dir="ltr" style="text-align: right;" disabled />
                   </div>
                 </div>
@@ -2667,7 +2667,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div id="sbuPdfUploadBlock" style="background: #fef2f2; border: 1.5px dashed #fca5a5; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
                   <div style="font-size: 13px; font-weight: 800; color: #991b1b; margin-bottom: 10px; display: flex; align-items: center; gap: 7px;">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 16px;"></i>
-                    <span>پی ڈی ایف دستاویز (PDF File Upload / Cloud Link)</span>
+                    <span>پی ڈی ایف دستاویز</span>
                   </div>
                   <div class="sbu-grid-2" style="margin-bottom: 0;">
                     <div class="sbu-field">
@@ -2768,10 +2768,10 @@ body *::-webkit-scrollbar-thumb:hover {
             <div>
               <h3 class="sbu-section-title">
                 <i class="fa-solid fa-user-shield" style="color: #059669;"></i>
-                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل (Two-Tier Approval Queue)</span>
+                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل</span>
               </h3>
               <p style="margin: 4px 0 0; font-size: 12px; color: #475569;">
-                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ (Step 1: Admin Review)</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ (Step 2: Super Admin Approval)</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
+                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
               </p>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
@@ -3477,7 +3477,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <!-- TABS NAVIGATION -->
             <div class="d-flex justify-content-center border-bottom mb-4">
                 <button class="tab-btn active" onclick="switchTab('qrTab', this)">
-                    <i class="fa-solid fa-qrcode text-success"></i> فوری یو پی آئی (UPI QR)
+                    <i class="fa-solid fa-qrcode text-success"></i> فوری یو پی آئی
                 </button>
                 <button class="tab-btn" onclick="switchTab('bankTab', this)">
                     <i class="fa-solid fa-building-columns text-success"></i> بینک اکاؤنٹ تفصیلات
@@ -3496,12 +3496,12 @@ body *::-webkit-scrollbar-thumb:hover {
                                 اسکین کر کے فوراً تعاون بھیجیں
                             </h3>
                             <p class="text-muted small mb-3">
-                                گوگل پے (Google Pay)، فون پے (PhonePe)، پے ٹی ایم (Paytm) یا کسی بھی BHIM UPI ایپ کے ذریعے براہ راست اسکین کریں۔
+                                گوگل پے، فون پے، پے ٹی ایم یا کسی بھی یو پی آئی ایپ کے ذریعے براہ راست اسکین کریں۔
                             </p>
                             <div class="qr-card-box">
                                 <img src="../../uploads/library/donation/markaz_donation_qr_2026.png" alt="Donation QR Code" class="qr-image" onerror="this.src='../../uploads/library/donation_qr.jpg'" />
                                 <div class="mt-3 text-success fw-bold small">
-                                    <i class="fa-solid fa-shield-halved me-1"></i> تصدیق شدہ سرکاری UPI اکاؤنٹ
+                                    <i class="fa-solid fa-shield-halved me-1"></i> تصدیق شدہ مرکزی یو پی آئی کھاتہ
                                 </div>
                             </div>
                         </div>
@@ -3516,7 +3516,7 @@ body *::-webkit-scrollbar-thumb:hover {
                             </p>
 
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-muted">UPI ID / وی پی اے:</label>
+                                <label class="form-label fw-bold small text-muted">یو پی آئی شناخت / وی پی اے:</label>
                                 <div class="copy-pill">
                                     <span id="upiText">ahlehadeesmumbai@indianbk</span>
                                     <button class="btn-copy" onclick="copyValue('upiText')">
@@ -3526,7 +3526,7 @@ body *::-webkit-scrollbar-thumb:hover {
                             </div>
 
                             <div class="mb-3">
-                                <label class="form-label fw-bold small text-muted">کھاتہ دار کا نام (Account Title):</label>
+                                <label class="form-label fw-bold small text-muted">کھاتہ دار کا نام:</label>
                                 <div class="copy-pill">
                                     <span id="holderText">MARKAZ-UD-DAAWATUL ISLAMIYAH WAL KHAIRIYAH</span>
                                     <button class="btn-copy" onclick="copyValue('holderText')">
@@ -3568,7 +3568,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                     <h3 class="fw-bold mb-1" style="font-size: 1.35rem; color: #0f172a;">
                                         بینک اکاؤنٹ برائے قومی و بین الاقوامی ترسیل
                                     </h3>
-                                    <p class="text-muted small mb-0">NEFT / RTGS / IMPS کے ذریعے رقم کی منتقلی کے لیے مستند معلومات</p>
+                                    <p class="text-muted small mb-0">بینک منتقلی کے ذریعے رقم کی منتقلی کے لیے مستند معلومات</p>
                                 </div>
                                 <i class="fa-solid fa-building-columns fs-1 text-success opacity-75"></i>
                             </div>
@@ -3596,7 +3596,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
-                                    <label class="form-label fw-bold small text-muted">اکاؤنٹ نمبر (Account Number):</label>
+                                    <label class="form-label fw-bold small text-muted">اکاؤنٹ نمبر:</label>
                                     <div class="copy-pill">
                                         <span id="accNumText" class="fw-bold text-dark">6844991203</span>
                                         <button class="btn-copy" onclick="copyValue('accNumText')"><i class="fa-regular fa-copy"></i> کاپی کریں</button>
@@ -3619,7 +3619,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                             
                                 <div class="mt-4 pt-3 border-top text-center">
-                                    <p class="small text-muted mb-2">بینک پاس بک یا سرکاری تصدیقی خط کی نقل:</p>
+                                    <p class="small text-muted mb-2">بینک پاس بک یا تصدیقی خط کی نقل:</p>
                                     <img src="../../uploads/library/donation/donation_bank.jpg" alt="Bank Certificate" class="img-fluid rounded border shadow-sm" style="max-height: 250px;" onerror="this.style.display='none'" />
                                 </div>
                             

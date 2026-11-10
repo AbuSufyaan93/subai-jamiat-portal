@@ -596,7 +596,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                         </div>
 
-                                        <!-- فائنل جمعہ لسٹ (Final Juma List - Displayed Thursday to Friday 1:00 PM) -->
+                                        <!-- فائنل جمعہ لسٹ -->
                                         <div class="final-juma-section" style="margin: 10px 0 30px 0; width: 100%; box-sizing: border-box;">
                                             
                                                 <!-- Top Control Bar -->
@@ -813,7 +813,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         <button type="button" id="clearSearchQueryBtn" title="تلاش صاف کریں" style="display: none; background: #f1f5f9; border: none; width: 28px; height: 28px; border-radius: 50%; color: #64748b; font-size: 12px; cursor: pointer; align-items: center; justify-content: center;">
                                                             <i class="fa-solid fa-xmark"></i>
                                                         </button>
-                                                        <button type="button" id="voiceSearchBtn" title="آواز سے تلاش کریں (Voice Search)" style="background: #f0fdfa; border: 1px solid #ccfbf1; width: 34px; height: 34px; border-radius: 10px; color: #0d9488; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
+                                                        <button type="button" id="voiceSearchBtn" title="آواز سے تلاش کریں" style="background: #f0fdfa; border: 1px solid #ccfbf1; width: 34px; height: 34px; border-radius: 10px; color: #0d9488; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s;">
                                                             <i class="fa-solid fa-microphone"></i>
                                                         </button>
                                                     </div>
@@ -824,10 +824,10 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </div>
                                                 </div>
 
-                                                <!-- Middle Row: Year Box & Month Box (Two Independent Elegant Boxes) -->
+                                                <!-- Middle Row: Year Box & Month Box  -->
                                                 <div class="filters-two-col" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                                                     
-                                                    <!-- Box 1: Year Selector (Single Elegant Box) -->
+                                                    <!-- Box 1: Year Selector  -->
                                                     <div class="custom-select-wrapper" id="yearSelectWrapper" style="position: relative;">
                                                         <button type="button" id="yearSelectBtn" class="filter-select-box" aria-haspopup="listbox" aria-expanded="false" title="سال منتخب کریں">
                                                             <span style="display: flex; align-items: center; gap: 8px;">
@@ -934,7 +934,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         </div>
                                                     </div>
 
-                                                    <!-- Box 2: Month Selector (Completely Separate Box) -->
+                                                    <!-- Box 2: Month Selector  -->
                                                     <div class="custom-select-wrapper" id="monthSelectWrapper" style="position: relative;">
                                                         <button type="button" id="monthSelectBtn" class="filter-select-box" aria-haspopup="listbox" aria-expanded="false" title="مہینہ منتخب کریں">
                                                             <span style="display: flex; align-items: center; gap: 8px;">
@@ -1064,7 +1064,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                 <div id="advancedFiltersDrawer" style="display: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px; margin-top: 14px; box-shadow: inset 0 2px 6px rgba(0,0,0,0.02);">
                                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                                                         <span style="font-size: 13px; font-weight: 700; color: #0f766e;">
-                                                            <i class="fa-solid fa-filter" style="margin-left: 4px;"></i> اعلی درجے کے فلٹرز (Advanced Filters)
+                                                            <i class="fa-solid fa-filter" style="margin-left: 4px;"></i> اعلی درجے کے فلٹرز
                                                         </span>
                                                         <button type="button" id="closeAdvancedFiltersBtn" style="background: none; border: none; font-size: 12px; color: #64748b; cursor: pointer;">✕ بند کریں</button>
                                                     </div>
@@ -1151,7 +1151,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         <!-- Date Range -->
                                                         <div>
                                                             <label style="display: block; font-size: 11px; font-weight: 700; color: #475569; margin-bottom: 4px;">
-                                                                <i class="fa-regular fa-calendar" style="color: #0d9488;"></i> تاریخ کا دائرہ (Date Range):
+                                                                <i class="fa-regular fa-calendar" style="color: #0d9488;"></i> تاریخ کا دائرہ:
                                                             </label>
                                                             <div style="display: flex; gap: 6px; align-items: center;">
                                                                 <input type="date" id="startDateInput" style="flex: 1; padding: 6px 8px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 11px; background: #ffffff;" title="شروعاتی تاریخ" />
@@ -1163,12 +1163,12 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         <!-- Sort Order -->
                                                         <div>
                                                             <label style="display: block; font-size: 11px; font-weight: 700; color: #475569; margin-bottom: 4px;">
-                                                                <i class="fa-solid fa-arrow-down-short-wide" style="color: #0d9488;"></i> ترتیب (Sort Order):
+                                                                <i class="fa-solid fa-arrow-down-short-wide" style="color: #0d9488;"></i> ترتیب:
                                                             </label>
                                                             <select id="archiveSortSelect" style="width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 12px; background: #ffffff;">
-                                                                <option value="newest">نئی تاریخ پہلے (Newest first)</option>
-                                                                <option value="oldest">پرانی تاریخ پہلے (Oldest first)</option>
-                                                                <option value="relevance">زیادہ متعلقہ (Most Relevant)</option>
+                                                                <option value="newest">نئی تاریخ پہلے</option>
+                                                                <option value="oldest">پرانی تاریخ پہلے</option>
+                                                                <option value="relevance">زیادہ متعلقہ</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -1176,12 +1176,12 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     <!-- Extra Action Tools inside drawer -->
                                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; flex-wrap: wrap; gap: 8px; border-top: 1px solid #e2e8f0; padding-top: 12px;">
                                                         <button type="button" id="openCalendarModalBtn" style="background: #ffffff; border: 1px solid #ccfbf1; border-radius: 10px; padding: 6px 14px; font-size: 12px; font-weight: 700; color: #0f766e; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-                                                            <i class="fa-regular fa-calendar-check" style="color: #0d9488;"></i> جمعہ کیلنڈر سے منتخب کریں (Friday Picker)
+                                                            <i class="fa-regular fa-calendar-check" style="color: #0d9488;"></i> جمعہ کیلنڈر سے منتخب کریں
                                                         </button>
 
                                                         <div style="display: flex; gap: 8px;">
                                                             <button type="button" id="resetAdvancedFiltersBtn" style="background: #e2e8f0; border: none; padding: 6px 14px; border-radius: 8px; font-size: 12px; font-weight: 700; color: #475569; cursor: pointer;">ری سیٹ کریں</button>
-                                                            <button type="button" id="applyAdvancedFiltersBtn" style="background: #0f766e; border: none; padding: 6px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; color: #ffffff; cursor: pointer;">نتائج دیکھیں (Apply)</button>
+                                                            <button type="button" id="applyAdvancedFiltersBtn" style="background: #0f766e; border: none; padding: 6px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; color: #ffffff; cursor: pointer;">نتائج دیکھیں</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -3491,7 +3491,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <div style="background: #ffffff; border-radius: 20px; max-width: 480px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3); padding: 20px; direction: rtl;">
                                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px;">
                                                     <h3 style="font-size: 16px; font-weight: bold; color: #0f766e; margin: 0;">
-                                                        <i class="fa-solid fa-calendar-check" style="color: #0d9488; margin-left: 6px;"></i> خطباتِ جمعہ کیلنڈر (Friday Picker)
+                                                        <i class="fa-solid fa-calendar-check" style="color: #0d9488; margin-left: 6px;"></i> خطباتِ جمعہ کیلنڈر
                                                     </h3>
                                                     <button type="button" onclick="closeCalendarModal()" style="background: #f1f5f9; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">✕</button>
                                                 </div>

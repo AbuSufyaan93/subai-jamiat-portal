@@ -216,33 +216,33 @@
 <body>
   <div class="login-container">
     <div class="header-logo">
-      <img src="../images/logo-square.png" alt="SJ Logo">
-      <h1 class="login-title">مرکزی ایڈمن پورٹل</h1>
-      <p class="login-subtitle">صوبائی جمعیت اہل حدیث ممبئی — Role-Based Admin CMS</p>
+      <img src="../images/logo-square.png" alt="صوبائی جمعیت اہل حدیث ممبئی">
+      <h1 class="login-title">مرکزی انتظامی پورٹل</h1>
+      <p class="login-subtitle">صوبائی جمعیت اہل حدیث ممبئی — مرکزی انتظامی نظام</p>
     </div>
 
     <!-- Quick Role Picker for Testing / Easy Login -->
     <div class="role-quick-pick">
       <div class="role-quick-pick-title">
         <i class="fa-solid fa-users-gear"></i>
-        <span>فوری اکاؤنٹ منتخب کریں:</span>
+        <span>فوری کھاتہ منتخب کریں:</span>
       </div>
       <div class="role-badges" style="grid-template-columns: 1.4fr 1fr 1fr 1fr;">
         <button type="button" class="role-btn" onclick="fillCredentials('ammar', 'ammar@123', '#087a62')" style="background: #ecfdf5; border-color: #059669; color: #065f46; font-weight: 800;">
           <i class="fa-solid fa-crown" style="color: #059669;"></i>
-          <span>مرکزی ایڈمن (ammar)</span>
+          <span>امارتِ عالیہ (امیرِ اعلیٰ)</span>
         </button>
         <button type="button" class="role-btn" onclick="fillCredentials('nazim', 'nazim123', '#0284c7')">
           <i class="fa-solid fa-sitemap" style="color: #0284c7;"></i>
-          <span>ناظم</span>
+          <span>ناظمِ عمومی</span>
         </button>
         <button type="button" class="role-btn" onclick="fillCredentials('mufti', 'mufti123', '#7c3aed')">
           <i class="fa-solid fa-book-quran" style="color: #7c3aed;"></i>
-          <span>مفتی</span>
+          <span>مفتی و دار الافتاء</span>
         </button>
         <button type="button" class="role-btn" onclick="fillCredentials('media', 'media123', '#d97706')">
           <i class="fa-solid fa-photo-film" style="color: #d97706;"></i>
-          <span>میڈیا</span>
+          <span>شعبۂ میڈیا</span>
         </button>
       </div>
     </div>
@@ -252,7 +252,7 @@
 
     <form id="adminLoginForm">
       <div class="form-group">
-        <label class="form-label" for="username">صارف کا نام یا ای میل (Username / Email):</label>
+        <label class="form-label" for="username">صارف کا نام یا برقی خط:</label>
         <div class="input-wrapper">
           <input type="text" id="username" name="name" class="form-control" value="ammar" placeholder="ammar" required autocomplete="username">
           <i class="fa-solid fa-user"></i>
@@ -260,7 +260,7 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="password">پاس ورڈ (Password):</label>
+        <label class="form-label" for="password">خفیہ کلمہ (پاس ورڈ):</label>
         <div class="input-wrapper">
           <input type="password" id="password" name="password" class="form-control" value="ammar@123" placeholder="••••••••" required autocomplete="current-password">
           <i class="fa-solid fa-lock"></i>
@@ -269,7 +269,7 @@
 
       <button type="submit" id="submitBtn" class="btn-submit">
         <i class="fa-solid fa-right-to-bracket"></i>
-        <span>لاگ ان کریں</span>
+        <span>داخل ہوں</span>
       </button>
     </form>
 

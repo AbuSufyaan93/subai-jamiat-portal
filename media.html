@@ -560,32 +560,49 @@
       margin-bottom: 22px;
       border-radius: 26px;
       background: var(--yt-surface);
-      border: 1.5px solid rgba(201, 168, 76, 0.42);
-      box-shadow: 0 18px 46px rgba(6, 55, 32, 0.14), 0 4px 14px rgba(15, 23, 42, 0.06);
+      border: 1.5px solid #99f6e4;
+      box-shadow: 0 14px 36px rgba(13, 148, 136, 0.09), 0 4px 14px rgba(15, 23, 42, 0.04);
       overflow: hidden;
       perspective: 1200px;
       position: relative;
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
     }
 
+    .yt-channel-hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4.5px;
+      background: linear-gradient(90deg, #0d9488 0%, #0284c7 35%, #10b981 70%, #f59e0b 100%);
+      z-index: 10;
+    }
+
     body.yt-dark-mode .yt-channel-hero-card {
+      border-color: rgba(201, 168, 76, 0.28);
       box-shadow: 0 22px 54px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(201, 168, 76, 0.28);
     }
 
     .yt-channel-banner {
-      min-height: 195px;
-      background:
-        linear-gradient(125deg, rgba(4, 34, 20, 0.94) 0%, rgba(10, 92, 54, 0.88) 48%, rgba(15, 58, 39, 0.92) 78%, rgba(62, 18, 32, 0.92) 100%),
-        url('./images/youtube-channel-banner.jpg') center/cover no-repeat;
+      min-height: 185px;
+      background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
       position: relative;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 26px 38px 34px;
-      color: #fff;
+      padding: 28px 38px 34px;
+      color: #0f172a;
       gap: 24px;
-      border-bottom: 2px solid rgba(201, 168, 76, 0.55);
+      border-bottom: 1.5px solid #bae6fd;
+    }
+
+    body.yt-dark-mode .yt-channel-banner {
+      background:
+        linear-gradient(125deg, rgba(4, 34, 20, 0.94) 0%, rgba(10, 92, 54, 0.88) 48%, rgba(15, 58, 39, 0.92) 78%, rgba(62, 18, 32, 0.92) 100%);
+      color: #ffffff;
+      border-bottom-color: rgba(201, 168, 76, 0.55);
     }
 
     .yt-channel-banner::before {
@@ -593,8 +610,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(rgba(243, 210, 122, 0.24) 1.5px, transparent 1.5px),
-        linear-gradient(90deg, rgba(201, 168, 76, 0.08) 1px, transparent 1px);
+        radial-gradient(rgba(13, 148, 136, 0.14) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
       background-size: 26px 26px, 52px 52px;
       pointer-events: none;
     }
@@ -606,7 +623,7 @@
       left: -20%;
       width: 55%;
       height: 220%;
-      background: radial-gradient(circle, rgba(243, 210, 122, 0.16) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.65) 0%, transparent 70%);
       transform: rotate(-18deg);
       animation: ytBannerGlow3D 7s ease-in-out infinite alternate;
       pointer-events: none;
@@ -627,31 +644,46 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(6, 55, 32, 0.68);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(243, 210, 122, 0.55);
-      color: #fde68a;
+      border: 1px solid #99f6e4;
+      color: #0f766e;
       padding: 4px 16px;
       border-radius: 50px;
       font-size: 0.86rem;
       font-weight: 700;
       margin-bottom: 10px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.08);
+    }
+
+    body.yt-dark-mode .yt-banner-tag {
+      background: rgba(6, 55, 32, 0.68);
+      border-color: rgba(243, 210, 122, 0.55);
+      color: #fde68a;
     }
 
     .yt-banner-title {
       font-size: 1.9rem;
       margin: 0 0 8px 0;
-      color: #fff;
-      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+      color: #0f172a;
       line-height: 1.45;
+      font-weight: 800;
+    }
+
+    body.yt-dark-mode .yt-banner-title {
+      color: #ffffff;
+      text-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
     }
 
     .yt-banner-sub {
       margin: 0;
       font-size: 0.98rem;
-      color: rgba(255, 255, 255, 0.92);
+      color: #334155;
       line-height: 1.75;
+    }
+
+    body.yt-dark-mode .yt-banner-sub {
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .yt-banner-badges {
@@ -664,36 +696,50 @@
     }
 
     .yt-banner-stat-box {
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.58), rgba(6, 55, 32, 0.62));
+      background: rgba(255, 255, 255, 0.94);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(243, 210, 122, 0.38);
+      border: 1.5px solid #99f6e4;
       border-radius: 18px;
       padding: 12px 18px;
       text-align: center;
-      min-width: 104px;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      min-width: 108px;
+      box-shadow: 0 8px 20px rgba(13, 148, 136, 0.09);
       transform-style: preserve-3d;
+      cursor: pointer;
       transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.28s ease;
     }
 
+    body.yt-dark-mode .yt-banner-stat-box {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.58), rgba(6, 55, 32, 0.62));
+      border-color: rgba(243, 210, 122, 0.38);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+    }
+
     .yt-banner-stat-box:hover {
-      transform: translateY(-6px) rotateX(8deg) scale(1.04);
-      border-color: #fde68a;
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), 0 0 18px rgba(243, 210, 122, 0.35);
+      transform: translateY(-5px) scale(1.03);
+      border-color: #0d9488;
+      box-shadow: 0 14px 28px rgba(13, 148, 136, 0.16);
     }
 
     .yt-banner-stat-num {
       font-size: 1.45rem;
       font-weight: 800;
-      color: #fde68a;
+      color: #0f766e;
       display: block;
       line-height: 1.25;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    body.yt-dark-mode .yt-banner-stat-num {
+      color: #fde68a;
     }
 
     .yt-banner-stat-lbl {
       font-size: 0.86rem;
       font-weight: 700;
+      color: #1e293b;
+    }
+
+    body.yt-dark-mode .yt-banner-stat-lbl {
       color: #ffffff;
     }
 
@@ -2522,7 +2568,7 @@
        ===================================================== -->
   <header class="yt-inst-topbar" aria-label="صوبائی جمعیت اہل حدیث ممبئی ہیڈر">
     <div class="yt-inst-topbar-inner">
-      <!-- Right: Official Emblem & Institutional Identity (Clicks return to /) -->
+      <!-- Right: Official Emblem & Institutional Identity  -->
       <a href="./index.html" class="yt-inst-identity" title="مرکزی سرورق — صوبائی جمعیت اہل حدیث ممبئی">
         <div class="yt-inst-logo-wrap">
           <img
@@ -2601,7 +2647,7 @@
           <span class="yt-play-icon"><i class="fas fa-play"></i></span>
           <span class="yt-logo-text">
             صوبائی جمعیت ٹیوب
-            <span class="yt-logo-sub">HD STUDIO</span>
+            <span class="yt-logo-sub">مرکزی میڈیا اسٹوڈیو</span>
           </span>
         </a>
       </div>
@@ -2623,7 +2669,7 @@
             <i class="fas fa-search"></i>
           </button>
         </div>
-        <button type="button" id="ytVoiceBtn" class="yt-voice-btn" onclick="startYtVoiceSearch()" title="آواز سے تلاش کریں (Voice Search)">
+        <button type="button" id="ytVoiceBtn" class="yt-voice-btn" onclick="startYtVoiceSearch()" title="آواز سے تلاش کریں">
           <i class="fas fa-microphone"></i>
         </button>
 
@@ -2633,18 +2679,18 @@
 
       <!-- Studio Actions: Library + Dark Mode -->
       <div class="yt-actions-group">
-        <button type="button" class="yt-icon-pill" onclick="switchYtTab('library')" title="محفوظ ویڈیوز اور واچ ہسٹری">
+        <button type="button" class="yt-icon-pill" onclick="switchYtTab('library')" title="محفوظ ویڈیوز اور سابقہ مشاہدات">
           <i class="fas fa-bookmark"></i> محفوظ <span id="ytSavedCountBadge" class="yt-badge-count">۰</span>
         </button>
-        <button type="button" id="ytThemeToggleBtn" class="yt-icon-pill" onclick="toggleYtTheme()" title="ڈارک / سنیما موڈ">
-          <i class="fas fa-moon"></i> <span id="ytThemeLabel">ڈارک موڈ</span>
+        <button type="button" id="ytThemeToggleBtn" class="yt-icon-pill" onclick="toggleYtTheme()" title="تاریک / روشن موڈ">
+          <i class="fas fa-moon"></i> <span id="ytThemeLabel">تاریک موڈ</span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- =====================================================
-       2. YOUTUBE CHANNEL BANNER, OFFICIAL PROFILE & TABS (UNIFIED 3D HERO ARCHITECTURE)
+       2. YOUTUBE CHANNEL BANNER, OFFICIAL PROFILE & TABS 
        ===================================================== -->
   <div class="yt-channel-wrap">
     <div class="yt-channel-hero-card">
@@ -2652,42 +2698,42 @@
         <div class="yt-banner-content">
           <span class="yt-banner-tag">
             <i class="fab fa-youtube" style="color:#ff0033; font-size:1rem;"></i>
-            <span dir="ltr">OFFICIAL YOUTUBE CHANNEL</span>
+            <span>مرکزی یوٹیوب چینل — صوبائی جمعیت اہل حدیث ممبئی</span>
           </span>
-          <h1 class="yt-banner-title">صوبائی جمعیت اہل حدیث ممبئی — آفیشل ویڈیو و ریلز پورٹل</h1>
+          <h1 class="yt-banner-title">صوبائی جمعیت اہل حدیث ممبئی — مرکزی ویڈیو و ریلز پورٹل</h1>
           <p class="yt-banner-sub">کتاب و سنت کی روشنی اور منہجِ سلف صالحین کے مطابق خطباتِ جمعہ، علمی دروس، مختصر ریلز اور دعوتی کانفرنسز کا مستند ذخیرہ</p>
         </div>
         <div class="yt-banner-badges">
           <div class="yt-banner-stat-box" onclick="switchYtTab('videos')" title="تمام ویڈیوز دیکھیں">
             <span class="yt-banner-stat-num" id="statStandardCount">۸۹</span>
-            <span class="yt-banner-stat-lbl"><i class="fas fa-play-circle" style="color:#fde68a; margin-left:4px;"></i> تمام ویڈیوز</span>
+            <span class="yt-banner-stat-lbl"><i class="fas fa-play-circle" style="color:#0284c7; margin-left:4px;"></i> تمام ویڈیوز</span>
           </div>
-          <div class="yt-banner-stat-box" onclick="switchYtTab('reels')" title="ریلز اور شارٹس دیکھیں">
+          <div class="yt-banner-stat-box" onclick="switchYtTab('reels')" title="ریلز اور مختصر کلپس دیکھیں">
             <span class="yt-banner-stat-num" id="statReelsCount">۵۴</span>
-            <span class="yt-banner-stat-lbl"><i class="fas fa-bolt" style="color:#ff4d6d; margin-left:4px;"></i> ریلز / شارٹس</span>
+            <span class="yt-banner-stat-lbl"><i class="fas fa-bolt" style="color:#e11d48; margin-left:4px;"></i> ریلز و کلپس</span>
           </div>
           <div class="yt-banner-stat-box" onclick="switchYtTab('playlists')" title="مکمل سیریز اور پلے لسٹس دیکھیں">
             <span class="yt-banner-stat-num" id="statPlaylistsCount">۳۲</span>
-            <span class="yt-banner-stat-lbl"><i class="fas fa-list-ul" style="color:#6ee7b7; margin-left:4px;"></i> پلے لسٹس</span>
+            <span class="yt-banner-stat-lbl"><i class="fas fa-list-ul" style="color:#059669; margin-left:4px;"></i> علمی سلسلے</span>
           </div>
         </div>
       </div>
 
-      <!-- Channel Profile Row (Official YouTube Channel Logo + Bespoke Placement + 3D Orbital Ring) -->
+      <!-- Channel Profile Row  -->
       <div class="yt-channel-profile">
         <div class="yt-profile-right">
-          <div class="yt-avatar-ring" onclick="switchYtTab('home')" style="cursor:pointer;" title="صوبائی جمعیت اہل حدیث ممبئی — آفیشل یوٹیوب چینل لوگو">
+          <div class="yt-avatar-ring" onclick="switchYtTab('home')" style="cursor:pointer;" title="صوبائی جمعیت اہل حدیث ممبئی — یوٹیوب چینل لوگو">
             <img
               src="./images/youtube-channel-logo.jpg"
               alt="صوبائی جمعیت اہل حدیث ممبئی"
               onerror="this.onerror=null; this.src='https://yt3.googleusercontent.com/ytc/AIdro_mdBiOmsL4mx_BA1lOz_cgkackfwhrjZjQ5INozbUbmEkI=s900-c-k-c0x00ffffff-no-rj';"
             />
-            <span class="yt-avatar-live-dot" title="آفیشل یوٹیوب چینل"><i class="fab fa-youtube"></i></span>
+            <span class="yt-avatar-live-dot" title="مرکزی یوٹیوب چینل"><i class="fab fa-youtube"></i></span>
           </div>
           <div class="yt-profile-meta">
             <h2>
               <span>صوبائی جمعیت اہل حدیث ممبئی</span>
-              <span class="yt-verified-tick" title="آفیشل تصدیق شدہ یوٹیوب چینل"><i class="fas fa-check"></i></span>
+              <span class="yt-verified-tick" title="مستند و تصدیق شدہ یوٹیوب چینل"><i class="fas fa-check"></i></span>
             </h2>
             <div class="yt-handle-row">
               <a href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai" target="_blank" rel="noopener" class="yt-handle-en" style="text-decoration:none;" title="یوٹیوب چینل کھولیں">
@@ -2695,7 +2741,7 @@
               </a>
               <span class="yt-meta-pill">
                 <i class="fas fa-film"></i>
-                <span id="channelTotalItemsText">۸۹ ویڈیوز • ۵۴ ریلز • ۳۲ پلے لسٹس</span>
+                <span id="channelTotalItemsText">۸۹ ویڈیوز • ۵۴ ریلز • ۳۲ علمی سلسلے</span>
               </span>
               <span class="yt-meta-pill">
                 <i class="fas fa-layer-group"></i>
@@ -2710,36 +2756,36 @@
         </div>
 
         <div class="yt-profile-left">
-          <button type="button" class="yt-upload-reel-btn" onclick="openStudioUploadModal('reel')" title="ویڈیو یا ریل ایڈمن کی منظوری کے لیے اپلوڈ کریں">
+          <button type="button" class="yt-upload-reel-btn" onclick="openStudioUploadModal('reel')" title="ویڈیو یا ریل منتظم کی منظوری کے لیے اپلوڈ کریں">
             <i class="fas fa-cloud-upload-alt" style="color:#fde68a;"></i> + اپلوڈ کریں (ریل / ویڈیو)
           </button>
-          <button type="button" id="ytAdminModerationBtn" class="yt-icon-pill" onclick="openAdminModerationModal()" title="ایڈمن ویڈیو جانچ اور منظوری پینل (صرف ایڈمن کے لیے)" style="display:none; border-color:rgba(10,92,54,0.35);">
-            <i class="fas fa-user-shield" style="color:var(--yt-emerald);"></i> ایڈمن جانچ پینل
+          <button type="button" id="ytAdminModerationBtn" class="yt-icon-pill" onclick="openAdminModerationModal()" title="انتظامی ویڈیو جانچ اور منظوری پینل" style="display:none; border-color:rgba(10,92,54,0.35);">
+            <i class="fas fa-user-shield" style="color:var(--yt-emerald);"></i> انتظامی جانچ پینل
             <span id="ytPendingAdminBadge" class="yt-badge-count" style="background:#0a5c36; color:#fff;">۰</span>
           </button>
           <a href="https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai?sub_confirmation=1" target="_blank" rel="noopener" class="yt-sub-btn">
-            <i class="fab fa-youtube" style="color:#ff0033; font-size:1.1rem;"></i> یوٹیوب چینل سبسکرائب کریں
+            <i class="fab fa-youtube" style="color:#ff0033; font-size:1.1rem;"></i> یوٹیوب چینل میں شامل ہوں
           </a>
         </div>
       </div>
 
       <!-- =====================================================
-           3. YOUTUBE CHANNEL TABS (DOCKED IN HERO CARD)
+           3. YOUTUBE CHANNEL TABS 
            ===================================================== -->
       <div class="yt-tabs-bar" role="tablist">
         <button type="button" class="yt-tab-btn active" data-tab="home" onclick="switchYtTab('home')">
-          <i class="fas fa-home"></i> ہوم
+          <i class="fas fa-home"></i> مرکزی صفحہ
         </button>
         <button type="button" class="yt-tab-btn" data-tab="videos" onclick="switchYtTab('videos')">
           <i class="fas fa-play-circle"></i> تمام ویڈیوز
           <span class="yt-tab-count" id="tabBadgeVideos">۸۹</span>
         </button>
         <button type="button" class="yt-tab-btn" data-tab="reels" onclick="switchYtTab('reels')">
-          <i class="fas fa-bolt" style="color:#ff0033;"></i> ریلز / شارٹس
+          <i class="fas fa-bolt" style="color:#ff0033;"></i> ریلز و مختصر کلپس
           <span class="yt-tab-count" id="tabBadgeReels">۵۴</span>
         </button>
         <button type="button" class="yt-tab-btn" data-tab="playlists" onclick="switchYtTab('playlists')">
-          <i class="fas fa-list-ul"></i> پلے لسٹس
+          <i class="fas fa-list-ul"></i> علمی سلسلے
           <span class="yt-tab-count" id="tabBadgePlaylists">۳۲</span>
         </button>
         <button type="button" class="yt-tab-btn" data-tab="speakers" onclick="switchYtTab('speakers')">
@@ -2749,13 +2795,13 @@
           <i class="fas fa-images"></i> دعوتی پوسٹرز گیلری
         </button>
         <button type="button" class="yt-tab-btn" data-tab="library" onclick="switchYtTab('library')">
-          <i class="fas fa-history"></i> محفوظ و ہسٹری
+          <i class="fas fa-history"></i> محفوظ و سابقہ مشاہدات
         </button>
       </div>
     </div>
 
     <!-- =====================================================
-         4. YOUTUBE THEATER WATCH VIEW + PLAYLIST QUEUE (EXPANDS ON PLAY)
+         4. YOUTUBE THEATER WATCH VIEW + PLAYLIST QUEUE 
          ===================================================== -->
     <section id="ytWatchTheater" class="yt-watch-theater" aria-label="YouTube Watch Theater">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:10px;">
@@ -2770,7 +2816,7 @@
           <button type="button" class="yt-action-pill" onclick="toggleCinemaWideMode()" title="تھیٹر / وائیڈ موڈ">
             <i class="fas fa-tv"></i> تھیٹر موڈ
           </button>
-          <button type="button" class="yt-action-pill" onclick="minimizeToMiniPlayer()" title="چھوٹا منی پلیئر (Mini-Player)">
+          <button type="button" class="yt-action-pill" onclick="minimizeToMiniPlayer()" title="چھوٹا منی پلیئر ">
             <i class="fas fa-external-link-square-alt"></i> منی پلیئر
           </button>
           <button type="button" class="yt-action-pill" onclick="closeWatchTheater()" style="color:#ef4444;">
@@ -2848,7 +2894,7 @@
     </section>
 
     <!-- =====================================================
-         TAB 1: 🏠 HOME (FEATURED + ALL VIDEOS + REELS SHELF + PLAYLISTS SHELF)
+         TAB 1: 🏠 HOME 
          ===================================================== -->
     <div id="ytPanel-home" class="yt-tab-panel active">
       <!-- Top Filter Chips on Home (9 Deeply Analyzed Scholarly Categories) -->
@@ -2878,7 +2924,7 @@
         </div>
       </div>
 
-      <!-- Shelf A: All Videos on Home -->
+      <!-- Shelf A: تمام ویڈیوز on Home -->
       <div class="yt-section-head">
         <h2 class="yt-section-title">
           <i class="fas fa-play-circle" style="color:var(--yt-red);"></i> تازہ ترین بیانات اور تمام ویڈیوز
@@ -2894,7 +2940,7 @@
       </div>
       <div id="homeVideosGrid" class="yt-video-grid"></div>
 
-      <!-- Shelf B: Vertical Reels / Shorts Shelf (YouTube Shorts Style) -->
+      <!-- Shelf B: Vertical Reels / Shorts Shelf  -->
       <div class="yt-section-head" style="margin-top:38px;">
         <h2 class="yt-section-title">
           <span style="background:var(--yt-red); color:#fff; width:32px; height:32px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; font-size:0.95rem;">
@@ -2977,16 +3023,16 @@
     </div>
 
     <!-- =====================================================
-         TAB 3: 📱 REELS & SHORTS (DEDICATED VERTICAL 9:16 SECTION + UPLOAD)
+         TAB 3: 📱 REELS & SHORTS 
          ===================================================== -->
     <div id="ytPanel-reels" class="yt-tab-panel">
-      <div style="background:linear-gradient(135deg, #062817 0%, #0a5c36 55%, #7f1d1d 100%); color:#fff; border-radius:20px; padding:22px 28px; margin-bottom:22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border:1px solid rgba(201,168,76,0.35); box-shadow:0 16px 36px rgba(6,40,23,0.18);">
+      <div style="background:linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%); color:#0f172a; border-radius:20px; padding:22px 28px; margin-bottom:22px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border:1.5px solid #99f6e4; box-shadow:0 10px 28px rgba(13,148,136,0.08);">
         <div>
           <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,0,51,0.9); padding:3px 14px; border-radius:50px; font-size:0.82rem; font-weight:700; margin-bottom:6px;">
             <i class="fas fa-bolt"></i> مختصر دعوتی کلپس — ریلز اور شارٹس
           </div>
           <h2 style="margin:0 0 4px 0; font-size:1.5rem;">ریلز اور مختصر دعوتی کلپس (۵۴ ریلز)</h2>
-          <p style="margin:0; font-size:0.94rem; color:rgba(255,255,255,0.88);">ایک منٹ کے ایمان افروز کلپس، مسنون دعائیں اور اصلاحی پیغامات — ہر ریل کے نیچے اردو عنوان، قسط نمبر، شیخ کا نام اور مشاہدات درج ہیں</p>
+          <p style="margin:0; font-size:0.94rem; color:#334155;">ایک منٹ کے ایمان افروز کلپس، مسنون دعائیں اور اصلاحی پیغامات — ہر ریل کے نیچے اردو عنوان، قسط نمبر، شیخ کا نام اور مشاہدات درج ہیں</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <button type="button" class="yt-create-btn" onclick="openReelViewerByIndex(0)" style="background:#fff; color:#0f172a;">
@@ -3062,7 +3108,7 @@
 
       <!-- Single Scholar Dedicated Videos View (Opens when clicking "تمام بیانات دیکھیں") -->
       <div id="speakerVideosFilteredView" style="display:none;">
-        <div style="background:linear-gradient(135deg, #063720 0%, #0a5c36 60%, #0f172a 100%); color:#fff; border-radius:20px; padding:22px 26px; margin:20px 0 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border:1.5px solid var(--yt-gold); box-shadow:0 12px 32px rgba(6,55,32,0.22);">
+        <div style="background:linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%); color:#0f172a; border-radius:20px; padding:22px 26px; margin:20px 0 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; border:1.5px solid #99f6e4; box-shadow:0 12px 32px rgba(13,148,136,0.09);">
           <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
             <div style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#c9a84c,#f3d27a); color:#063720; display:flex; align-items:center; justify-content:center; font-size:1.75rem; flex-shrink:0; box-shadow:0 6px 18px rgba(0,0,0,0.28);">
               <i class="fas fa-volume-up"></i>
@@ -3087,7 +3133,7 @@
     </div>
 
     <!-- =====================================================
-         TAB 6: 🔖 LIBRARY (WATCH LATER, LIKED VIDEOS & WATCH HISTORY)
+         TAB 6: 🔖 LIBRARY 
          ===================================================== -->
     <div id="ytPanel-library" class="yt-tab-panel">
       <div class="yt-section-head">
@@ -3132,19 +3178,19 @@
         </div>
       </div>
 
-      <!-- Vertical Action Buttons Bar (Like, Save, Share, Prev/Next Reel, Upload, Close) -->
+      <!-- Vertical Action Buttons Bar  -->
       <div class="yt-reel-side-controls">
         <button type="button" class="yt-reel-circle-btn" onclick="closeReelViewer()" title="بند کریں" style="background:rgba(239,68,68,0.85);">
           <i class="fas fa-times"></i>
         </button>
         <div class="yt-reel-circle-lbl">بند کریں</div>
 
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" title="پچھلی ریل (Up)">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" title="پچھلی ریل ">
           <i class="fas fa-chevron-up"></i>
         </button>
         <div class="yt-reel-circle-lbl">پچھلی ریل</div>
 
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" title="اگلی ریل (Down)">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" title="اگلی ریل ">
           <i class="fas fa-chevron-down"></i>
         </button>
         <div class="yt-reel-circle-lbl">اگلی ریل</div>
@@ -3168,21 +3214,21 @@
   </div>
 
   <!-- =====================================================
-       YOUTUBE STUDIO UPLOAD MODAL (STRICT ADMIN APPROVAL GATE)
+       YOUTUBE STUDIO UPLOAD MODAL 
        ===================================================== -->
   <div id="ytStudioModal" class="yt-studio-modal" role="dialog" aria-modal="true">
     <div class="yt-studio-dialog" style="max-width:760px;">
       <div class="yt-studio-head">
         <div>
           <h3 style="margin:0; font-size:1.3rem;"><i class="fas fa-cloud-upload-alt"></i> صوبائی جمعیت ٹیوب اسٹوڈیو — ریل یا ویڈیو اپلوڈ کریں</h3>
-          <div style="font-size:0.84rem; opacity:0.95;">ریلز (Shorts) یا مکمل ویڈیو جمع کریں — ایڈمن کی جانچ اور منظوری کے بعد یوٹیوب اور ویب سائٹ پر شائع ہو گی</div>
+          <div style="font-size:0.84rem; opacity:0.95;">ریلز  یا مکمل ویڈیو جمع کریں — ایڈمن کی جانچ اور منظوری کے بعد یوٹیوب اور ویب سائٹ پر شائع ہو گی</div>
         </div>
         <button type="button" onclick="closeStudioUploadModal()" style="background:rgba(255,255,255,0.18); border:none; color:#fff; width:36px; height:36px; border-radius:50%; cursor:pointer; font-size:1rem;">
           <i class="fas fa-times"></i>
         </button>
       </div>
 
-      <!-- 2 Upload Mode Selector Tabs (Reel / Video) -->
+      <!-- 2 Upload Mode Selector Tabs  -->
       <div class="yt-studio-mode-tabs" style="grid-template-columns: repeat(2, 1fr);">
         <button type="button" id="studioTabReel" class="yt-mode-tab active" onclick="setStudioUploadMode('reel')">
           <i class="fas fa-bolt" style="font-size:1.2rem;"></i>
@@ -3204,18 +3250,18 @@
         <!-- STRICT SECURITY & ADMIN APPROVAL LOCK BANNER -->
         <div style="background:linear-gradient(135deg,rgba(10,92,54,0.1),rgba(201,168,76,0.15)); border:1.5px solid rgba(10,92,54,0.35); border-right:5px solid #0a5c36; border-radius:14px; padding:12px 16px; margin-bottom:16px; font-size:0.88rem; line-height:1.75; color:var(--yt-text);">
           <div style="font-weight:700; color:var(--yt-emerald); font-size:0.95rem; margin-bottom:3px;">
-            <i class="fas fa-lock"></i> مکمل سیکیورٹی اور ایڈمن منظوری کا ضابطہ (Strict Admin Verification Lock)
+            <i class="fas fa-lock"></i> مکمل سیکیورٹی اور ایڈمن منظوری کا ضابطہ 
           </div>
           <div>
-            عام صارفین کی طرف سے اپلوڈ کردہ کوئی بھی ویڈیو یا ریل <strong>بغیر ایڈمن کی جانچ اور منظوری (Admin Approval)</strong> کے ہرگز اور قطعاً خودکار طور پر یوٹیوب یا ویب سائٹ پر شائع نہیں ہو گی۔ ایڈمن کے معائنہ اور منظوری کے بعد ہی اسے آفیشل یوٹیوب چینل، ویب سائٹ کی ویڈیو/ریل فہرست اور متعلقہ سیریز کی پلے لسٹ میں شامل کیا جائے گا۔
+            عام صارفین کی طرف سے اپلوڈ کردہ کوئی بھی ویڈیو یا ریل <strong>بغیر ایڈمن کی جانچ اور منظوری </strong> کے ہرگز اور قطعاً خودکار طور پر یوٹیوب یا ویب سائٹ پر شائع نہیں ہو گی۔ ایڈمن کے معائنہ اور منظوری کے بعد ہی اسے آفیشل یوٹیوب چینل، ویب سائٹ کی ویڈیو/ریل فہرست اور متعلقہ سیریز کی پلے لسٹ میں شامل کیا جائے گا۔
           </div>
         </div>
 
-        <!-- File Dropzone (for Reel or Standard Video MP4) -->
+        <!-- File Dropzone  -->
         <div id="studioFileDropzoneWrap">
           <div class="yt-dropzone" onclick="document.getElementById('studioVideoFileInput').click()">
             <i class="fas fa-file-video" style="font-size:2rem; color:var(--yt-emerald); margin-bottom:6px;"></i>
-            <div id="studioFileDropTitle" style="font-weight:700; font-size:1rem;">اپنے موبائل یا کمپیوٹر سے ریل / ویڈیو فائل (.MP4 / .WEBM / .MOV) منتخب کریں</div>
+            <div id="studioFileDropTitle" style="font-weight:700; font-size:1rem;">اپنے موبائل یا کمپیوٹر سے ریل / ویڈیو فائل  منتخب کریں</div>
             <div style="font-size:0.82rem; color:var(--yt-text-muted);">یا نیچے یوٹیوب شارٹس / ویڈیو کا لنک پیسٹ کریں</div>
             <input type="file" id="studioVideoFileInput" name="videoFile" accept="video/mp4,video/webm,video/quicktime,video/x-m4v" style="display:none;" onchange="handleStudioFileSelected(this)" />
           </div>
@@ -3224,18 +3270,18 @@
 
         <!-- URL Input -->
         <div class="yt-form-group">
-          <label id="studioUrlLabel">یوٹیوب ریل / شارٹس یا ویڈیو لنک (YouTube / Shorts / Video URL — اختیاری اگر فائل منتخب کی ہو)</label>
+          <label id="studioUrlLabel">یوٹیوب ریل / شارٹس یا ویڈیو لنک (اختیاری — اگر فائل منتخب نہ کی ہو)</label>
           <input type="text" id="studioVideoUrl" name="videoUrl" class="yt-input" placeholder="https://www.youtube.com/shorts/... یا https://youtu.be/..." dir="ltr" />
         </div>
 
         <!-- Title & Speaker -->
         <div class="yt-form-grid">
           <div class="yt-form-group">
-            <label id="studioTitleLabel">عنوان (Title) *</label>
+            <label id="studioTitleLabel">عنوان *</label>
             <input type="text" id="studioTitle" name="title" class="yt-input" required placeholder="مثلاً: درس ۴۶: شرح کتاب التوحید یا توحید کی فضیلت" />
           </div>
           <div class="yt-form-group">
-            <label>مقرر / خطیب کا نام (Speaker)</label>
+            <label>مقرر / خطیب کا نام</label>
             <input type="text" id="studioSpeaker" name="speaker" class="yt-input" list="studioOfficialScholarsList" value="فضیلۃ الشیخ عنایت اللہ مدنی حفظہ اللہ" placeholder="فضیلۃ الشیخ..." />
             <datalist id="studioOfficialScholarsList">
               <option value="فضیلۃ الشیخ عنایت اللہ مدنی حفظہ اللہ"></option>
@@ -3263,11 +3309,11 @@
           </div>
         </div>
 
-        <!-- Ongoing Series / Playlist Selection (Smart Auto-Detect + Manual Selection) -->
+        <!-- Ongoing Series / Playlist Selection  -->
         <div class="yt-form-group">
-          <label><i class="fas fa-layer-group" style="color:var(--yt-emerald);"></i> چلتی ہوئی سیریز / پلے لسٹ (Series Playlist — منظوری کے بعد خودکار شامل ہونے کے لیے)</label>
+          <label><i class="fas fa-layer-group" style="color:var(--yt-emerald);"></i> چلتی ہوئی سیریز / پلے لسٹ (منظوری کے بعد خودکار شامل ہونے کے لیے)</label>
           <select id="studioTargetPlaylistId" name="targetPlaylistId" class="yt-select">
-            <option value="">🤖 خودکار شناخت (Smart Auto-Detect — اگر کسی چلتی ہوئی سیریز کا حصہ ہے تو عنوان/مقرر سے خودکار پلے لسٹ منتخب کریں)</option>
+            <option value="">🤖 خودکار شناخت (اگر کسی چلتی ہوئی سیریز کا حصہ ہے تو عنوان/مقرر سے خودکار پلے لسٹ منتخب کریں)</option>
             
               <option value="pl-sj-kitab-ut-tawheed">📚 شرح کتاب التوحید للشیخ محمد بن عبد الوہاب رحمہ اللہ — مکمل دروس سیریز (فضیلۃ الشیخ عنایت اللہ مدنی حفظہ اللہ)</option>
             
@@ -3340,7 +3386,7 @@
         <!-- Category & Duration -->
         <div class="yt-form-grid">
           <div class="yt-form-group">
-            <label>شعبہ / کیٹیگری (Category)</label>
+            <label>علمی شعبہ و موضوع</label>
             <select id="studioCategory" name="category" class="yt-select">
               
                 <option value="عقیدہ و منہجِ سلف">عقیدہ و منہجِ سلف</option>
@@ -3364,7 +3410,7 @@
             </select>
           </div>
           <div class="yt-form-group">
-            <label>دورانیہ (Duration)</label>
+            <label>دورانیہ</label>
             <input type="text" id="studioDuration" name="duration" class="yt-input" value="0:55" placeholder="مثلاً 0:55 یا 42:15" dir="ltr" />
           </div>
         </div>
@@ -3372,7 +3418,7 @@
         <!-- Uploader Name & Contact + Thumbnail & Location -->
         <div class="yt-form-grid">
           <div class="yt-form-group">
-            <label>اپلوڈ کنندہ کا نام (Uploader Name) *</label>
+            <label>ارسال کنندہ کا نام *</label>
             <input type="text" id="studioUploaderName" name="uploaderName" class="yt-input" required placeholder="اپنا نام درج کریں" />
           </div>
           <div class="yt-form-group">
@@ -3393,8 +3439,8 @@
         </div>
 
         <div class="yt-form-group">
-          <label>مختصر تفصیل اور ٹیگز (Description & Hashtags)</label>
-          <textarea id="studioDescription" name="description" rows="2" class="yt-textarea" placeholder="اس ویڈیو یا ریل کے بارے میں مختصر وضاحت... #Shorts #SubaiJamiat"></textarea>
+          <label>مختصر تفصیل اور کلیدی الفاظ</label>
+          <textarea id="studioDescription" name="description" rows="2" class="yt-textarea" placeholder="اس ویڈیو یا ریل کے بارے میں مختصر وضاحت... "></textarea>
         </div>
 
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:16px;">
@@ -3442,7 +3488,7 @@
               id="adminModPasskeyInput"
               class="yt-input"
               style="width:240px; padding:6px 12px; font-size:0.88rem;"
-              placeholder="ایڈمن سیکیورٹی کوڈ (SJ-ADMIN-2026)"
+              placeholder="ایڈمن سیکیورٹی کوڈ "
               value="SJ-ADMIN-2026"
               dir="ltr"
             />
@@ -3460,7 +3506,7 @@
         <!-- Preview Stage inside Admin Modal -->
         <div id="adminModPreviewBox" style="display:none; margin-bottom:18px; background:#000; border-radius:14px; overflow:hidden; border:2px solid var(--yt-gold);">
           <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 14px; background:#111827; color:#fff;">
-            <span id="adminModPreviewTitle" style="font-weight:700; font-size:0.92rem;">ویڈیو کا معائنہ (Admin Inspection Preview)</span>
+            <span id="adminModPreviewTitle" style="font-weight:700; font-size:0.92rem;">ویڈیو کا معائنہ </span>
             <button type="button" onclick="closeAdminModPreview()" style="background:#dc2626; color:#fff; border:none; border-radius:50px; padding:3px 12px; cursor:pointer; font-size:0.8rem;">بند کریں</button>
           </div>
           <div id="adminModPreviewStage" style="width:100%; aspect-ratio:16/9; max-height:360px;"></div>
@@ -3473,7 +3519,7 @@
   </div>
 
   <!-- =====================================================
-       FLOATING MINI-PLAYER (PiP)
+       FLOATING MINI-PLAYER 
        ===================================================== -->
   <div id="ytMiniPlayer" class="yt-mini-player">
     <div id="ytMiniStage" class="yt-mini-stage"></div>
@@ -3683,7 +3729,7 @@
             </li>
             <li>
               <a href="./press-release">
-                <span><i class="fas fa-angle-left"></i> پریس ریلیز و سرکاری اعلامیے</span>
+                <span><i class="fas fa-angle-left"></i> پریس ریلیز و اعلامیے</span>
               </a>
             </li>
             <li>
@@ -4228,7 +4274,7 @@
                   <i class="fas fa-video"></i> تمام ویڈیوز
                 </button>
                 <button type="button" class="yt-mini-btn" onclick="switchYtTab('reels'); window.scrollTo({top:380,behavior:'smooth'});" style="background:rgba(255,0,51,0.08); color:var(--yt-red); border:1px solid rgba(255,0,51,0.22); padding:5px 12px; border-radius:50px; font-weight:700;">
-                  <i class="fas fa-bolt"></i> ریلز (Shorts)
+                  <i class="fas fa-bolt"></i> ریلز 
                 </button>
                 <button type="button" class="yt-mini-btn" onclick="switchYtTab('speakers'); window.scrollTo({top:380,behavior:'smooth'});" style="background:rgba(197,155,39,0.12); color:#92400e; border:1px solid rgba(197,155,39,0.3); padding:5px 12px; border-radius:50px; font-weight:700;">
                   <i class="fas fa-user-tie"></i> علمائے کرام

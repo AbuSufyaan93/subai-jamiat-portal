@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پریس ریلیز و سرکاری بیانات — صوبائی جمعیت اہل حدیث ممبئی</title>
-    <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی کے تمام باضابطہ پریس ریلیز، کانفرنسز، سیمینارز، تعلیمی مسابقات اور اہم اعلانات کا سرکاری آرکائیو۔">
+    <title>پریس ریلیز و اعلامیے — صوبائی جمعیت اہل حدیث ممبئی</title>
+    <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی کے تمام باضابطہ پریس ریلیز، کانفرنسز، سیمینارز، تعلیمی مسابقات اور اہم اعلانات کا مستند آرکائیو۔">
 
     <!-- Preconnect & DNS-Prefetch for fast CDN & Font resolution -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,101 +82,186 @@
             direction: rtl;
             text-align: right;
             font-family: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', system-ui, sans-serif;
+            padding-top: 8px;
         }
 
-        /* Hero Header */
+        /* Breadcrumb Ribbon */
+        .pr-breadcrumb-ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: #ffffff;
+            border: 1.5px solid #bae6fd;
+            border-radius: 14px;
+            padding: 9px 18px;
+            margin-bottom: 14px;
+            box-shadow: 0 3px 12px rgba(2, 132, 199, 0.05);
+            font-size: 13px;
+            color: #475569;
+        }
+        .pr-breadcrumb-ribbon a {
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .pr-breadcrumb-ribbon a:hover {
+            color: #0f766e;
+        }
+
+        /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Hero Card */
         .pr-hero-banner {
-            background: linear-gradient(135deg, #065f46 0%, #087a62 50%, #047857 100%);
-            border-radius: 20px;
-            padding: 26px 24px;
-            color: #ffffff;
-            margin-bottom: 22px;
-            box-shadow: 0 8px 24px -4px rgba(8, 122, 98, 0.25);
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
+            border: 1.5px solid #99f6e4;
+            border-radius: 22px;
+            padding: 24px 28px 20px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 32px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
             position: relative;
             overflow: hidden;
+        }
+        .pr-hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4.5px;
+            background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%);
         }
         .pr-hero-banner::after {
             content: '';
             position: absolute;
-            left: -30px;
-            bottom: -30px;
-            width: 140px;
-            height: 140px;
-            background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+            left: -40px;
+            bottom: -40px;
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(2, 132, 199, 0.09) 0%, transparent 70%);
             border-radius: 50%;
             pointer-events: none;
         }
-        .pr-hero-title {
-            font-size: 27px;
+
+        .pr-hero-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 18px;
+            margin-bottom: 16px;
+            border-bottom: 1px dashed rgba(14, 165, 233, 0.28);
+        }
+
+        .pr-hero-title-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            flex: 1 1 360px;
+        }
+
+        .pr-hero-orb {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+            border: 1.5px solid #7dd3fc;
+            color: #0284c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.14);
+        }
+
+        .pr-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid #7dd3fc;
+            color: #0369a1;
+            padding: 3px 12px;
+            border-radius: 999px;
+            font-size: 11.5px;
             font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .pr-hero-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #064e3b;
             margin: 0 0 6px;
             display: flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: -0.3px;
+            line-height: 1.45;
         }
         .pr-hero-subtitle {
-            font-size: 14px;
-            color: #d1fae5;
+            font-size: 13.5px;
+            color: #334155;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.75;
         }
 
-        /* Search & Filter Suite */
-        .pr-search-suite {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 22px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
-            position: sticky;
-            top: 15px;
-            z-index: 20;
-            backdrop-filter: blur(8px);
-        }
-
+        /* Compact Appropriately-Sized Pill Search Bar on Left of Hero Row */
         .pr-search-bar {
             position: relative;
-            margin-bottom: 14px;
+            flex: 0 1 420px;
+            width: 100%;
+            max-width: 420px;
+            background: #ffffff;
+            border: 1.5px solid #7dd3fc;
+            border-radius: 999px;
+            padding: 4px 6px 4px 12px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.1);
+            transition: all 0.2s ease;
+        }
+        .pr-search-bar:focus-within {
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.16);
         }
         .pr-search-input {
             width: 100%;
             box-sizing: border-box;
-            padding: 13px 44px 13px 44px;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 12px;
-            font-size: 15px;
+            padding: 7px 34px 7px 28px;
+            border: none;
+            border-radius: 999px;
+            font-size: 13.5px;
             color: #0f172a;
-            background: #f8fafc;
+            background: transparent;
             outline: none;
-            transition: all 0.2s ease;
             font-family: inherit;
-        }
-        .pr-search-input:focus {
-            background: #ffffff;
-            border-color: #087a62;
-            box-shadow: 0 0 0 3px rgba(8, 122, 98, 0.12);
         }
         .pr-search-icon {
             position: absolute;
-            right: 15px;
+            right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: #94a3b8;
-            font-size: 16px;
+            color: #0284c7;
+            font-size: 14px;
             pointer-events: none;
         }
         .pr-clear-btn {
             position: absolute;
-            left: 14px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
             background: none;
             border: none;
             color: #94a3b8;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 14px;
             display: none;
             padding: 4px;
         }
@@ -184,13 +269,15 @@
             color: #ef4444;
         }
 
-        /* Filter Controls Grid */
+        /* Filter Controls Grid Inside Hero Card */
         .pr-filters-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 12px;
+            position: relative;
+            z-index: 2;
         }
         .pr-pill-group {
             display: flex;
@@ -201,27 +288,27 @@
             max-width: 100%;
         }
         .pr-pill {
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 5px 14px;
+            border-radius: 999px;
             font-size: 12px;
             font-weight: 700;
-            border: 1px solid #e2e8f0;
-            background: #f8fafc;
-            color: #475569;
+            border: 1px solid #bae6fd;
+            background: rgba(255, 255, 255, 0.88);
+            color: #0369a1;
             cursor: pointer;
             white-space: nowrap;
             transition: all 0.15s ease;
         }
         .pr-pill:hover {
-            border-color: #087a62;
-            color: #087a62;
-            background: #e8f5f1;
+            border-color: #0284c7;
+            color: #064e3b;
+            background: #ffffff;
         }
         .pr-pill.active {
-            background: #087a62;
+            background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
             color: #ffffff;
-            border-color: #087a62;
-            box-shadow: 0 2px 8px rgba(8, 122, 98, 0.25);
+            border-color: transparent;
+            box-shadow: 0 3px 10px rgba(2, 132, 199, 0.24);
         }
 
         .pr-selectors {
@@ -231,19 +318,19 @@
             flex-wrap: wrap;
         }
         .pr-select {
-            padding: 7px 12px;
-            border-radius: 10px;
-            border: 1.2px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1.5px solid #7dd3fc;
             background: #ffffff;
             font-size: 12.5px;
             font-weight: 700;
-            color: #334155;
+            color: #0f172a;
             outline: none;
             cursor: pointer;
             font-family: inherit;
         }
         .pr-select:focus {
-            border-color: #087a62;
+            border-color: #0284c7;
         }
 
         /* Stats Strip */
@@ -258,28 +345,29 @@
             padding: 0 4px;
         }
         .pr-count-badge {
-            background: #e8f5f1;
-            color: #087a62;
-            padding: 4px 10px;
-            border-radius: 8px;
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            padding: 4px 12px;
+            border-radius: 999px;
             font-size: 12px;
         }
 
         /* Spotlight / Pinned Card */
         .pr-spotlight-card {
-            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-            border: 1.8px solid #a7f3d0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+            border: 1.8px solid #99f6e4;
             border-radius: 18px;
             padding: 22px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 16px rgba(8, 122, 98, 0.08);
+            box-shadow: 0 4px 16px rgba(2, 132, 199, 0.08);
             position: relative;
         }
         .pr-spotlight-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #087a62;
+            background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
             color: #ffffff;
             font-size: 11.5px;
             font-weight: 800;
@@ -297,10 +385,10 @@
 
         .pr-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1.5px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 20px 22px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
             transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             display: flex;
@@ -309,8 +397,8 @@
         }
         .pr-card:hover {
             transform: translateY(-2px);
-            border-color: #087a62;
-            box-shadow: 0 8px 22px -3px rgba(8, 122, 98, 0.12);
+            border-color: #7dd3fc;
+            box-shadow: 0 10px 26px rgba(2, 132, 199, 0.12);
         }
 
         .pr-card-header {
@@ -324,10 +412,11 @@
         .pr-card-category {
             font-size: 11.5px;
             font-weight: 800;
-            color: #087a62;
-            background: #e8f5f1;
+            color: #0369a1;
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
             padding: 3px 10px;
-            border-radius: 6px;
+            border-radius: 999px;
         }
         .pr-card-date {
             font-size: 12px;
@@ -340,7 +429,7 @@
         .pr-card-title {
             font-size: 19px;
             font-weight: 800;
-            color: #002147;
+            color: #064e3b;
             margin: 0 0 10px;
             line-height: 1.7;
         }
@@ -350,7 +439,7 @@
             transition: color 0.15s ease;
         }
         .pr-card-title a:hover {
-            color: #087a62;
+            color: #0284c7;
         }
 
         .pr-card-summary {
@@ -379,19 +468,20 @@
             align-items: center;
             gap: 7px;
             padding: 8px 18px;
-            background: #087a62;
+            background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
             color: #ffffff;
-            border-radius: 9px;
+            border-radius: 999px;
             font-size: 13px;
             font-weight: 700;
             text-decoration: none;
             transition: all 0.15s ease;
+            box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
         }
         .btn-read-more:hover {
-            background: #065f46;
+            background: linear-gradient(135deg, #0369a1 0%, #065f46 100%);
             color: #ffffff;
             transform: translateX(-3px);
-            box-shadow: 0 3px 10px rgba(8, 122, 98, 0.25);
+            box-shadow: 0 5px 14px rgba(2, 132, 199, 0.28);
         }
 
         /* Empty State */
@@ -400,13 +490,13 @@
             padding: 50px 20px;
             background: #ffffff;
             border-radius: 18px;
-            border: 1px dashed #cbd5e1;
+            border: 1.5px dashed #bae6fd;
             margin: 20px 0;
             display: none;
         }
         .pr-empty-icon {
             font-size: 42px;
-            color: #94a3b8;
+            color: #0284c7;
             margin-bottom: 12px;
         }
         .pr-empty-title {
@@ -430,10 +520,10 @@
         }
         .btn-load-more {
             padding: 10px 24px;
-            border-radius: 10px;
-            border: 1.5px solid #087a62;
+            border-radius: 999px;
+            border: 1.5px solid #0284c7;
             background: #ffffff;
-            color: #087a62;
+            color: #0284c7;
             font-size: 14px;
             font-weight: 800;
             cursor: pointer;
@@ -443,17 +533,24 @@
             gap: 8px;
         }
         .btn-load-more:hover {
-            background: #087a62;
+            background: #0284c7;
             color: #ffffff;
         }
 
         @media (max-width: 768px) {
-            .pr-search-suite {
-                top: 5px;
-                padding: 14px;
+            .pr-hero-banner {
+                padding: 18px 16px;
+            }
+            .pr-hero-top-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .pr-search-bar {
+                max-width: 100%;
+                flex: 1 1 100%;
             }
             .pr-hero-title {
-                font-size: 22px;
+                font-size: 21px;
             }
             .pr-card-title {
                 font-size: 17px;
@@ -727,9 +824,37 @@
     margin: 0 auto !important;
   }
   section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
     padding-top: 4px !important;
     min-height: 82vh;
+  }
+
+  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
+  section#content .column-center > .card > .top {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
+    border: 1.5px solid #99f6e4 !important;
+    border-radius: 18px !important;
+    padding: 20px 26px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section#content .column-center > .card > .top::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4.5px !important;
+    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
+  }
+  section#content .column-center > .card > .top h1 {
+    color: #064e3b !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    text-shadow: none !important;
   }
 
   /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
@@ -1213,7 +1338,7 @@
       </a>
     </div>
 
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES (SINGLE LINE) -->
+    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
     <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ میڈیا و نشریات پورٹل" style="flex-wrap: nowrap;">
       <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -1720,29 +1845,52 @@ body *::-webkit-scrollbar-thumb:hover {
 
                     <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6 pr-portal">
                         
-                        <!-- Hero Banner -->
-                        <div class="pr-hero-banner">
-                            <h1 class="pr-hero-title">
-                                <i class="fa-solid fa-bullhorn"></i>
-                                پریس ریلیز و سرکاری بیانات
-                            </h1>
-                            <p class="pr-hero-subtitle">
-                                صوبائی جمعیت اہل حدیث ممبئی کے سرکاری اعلانات، دعوتی و علمی کانفرنسز، تعلیمی مسابقات اور اہم سرگرمیوں کا مستند آرکائیو
-                            </p>
+                        <!-- Breadcrumb Ribbon -->
+                        <div class="pr-breadcrumb-ribbon">
+                            <div style="display: flex; align-items: center; gap: 7px; flex-wrap: wrap;">
+                                <a href="./index.html"><i class="fa-solid fa-house"></i> مرکزی سرورق</a>
+                                <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+                                <a href="./press-release">شعبۂ میڈیا و نشریات پورٹل</a>
+                                <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
+                                <span style="color: #064e3b; font-weight: 800;">پریس ریلیز و اعلامیے</span>
+                            </div>
+                            <span style="font-size: 12px; color: #0369a1; font-weight: 700;">
+                                <i class="fa-solid fa-file-signature"></i> مستند تنظیمی ریکارڈ
+                            </span>
                         </div>
 
-                        <!-- Sticky Search & Filter Suite -->
-                        <div class="pr-search-suite">
-                            <!-- Search Bar -->
-                            <div class="pr-search-bar">
-                                <i class="fa-solid fa-magnifying-glass pr-search-icon"></i>
-                                <input type="text" id="prSearchInput" class="pr-search-input" placeholder="عنوان، تاریخ، موضوع، کانفرنس، یا مقام تلاش کریں (اردو، English، Hindi)..." value="" autocomplete="off" />
-                                <button type="button" id="prClearBtn" class="pr-clear-btn" aria-label="سرچ صاف کریں">
-                                    <i class="fa-solid fa-xmark"></i>
-                                </button>
+                        <!-- Unified Luminous Showcase Hero & Compact Search Card -->
+                        <div class="pr-hero-banner">
+                            <div class="pr-hero-top-row">
+                                <div class="pr-hero-title-group">
+                                    <div class="pr-hero-orb">
+                                        <i class="fa-solid fa-bullhorn"></i>
+                                    </div>
+                                    <div>
+                                        <div class="pr-hero-badge">
+                                            <i class="fa-solid fa-newspaper"></i>
+                                            <span>شعبۂ نشر و اشاعت و میڈیا سیل</span>
+                                        </div>
+                                        <h1 class="pr-hero-title">
+                                            پریس ریلیز، بیانات و اعلامیے
+                                        </h1>
+                                        <p class="pr-hero-subtitle">
+                                            صوبائی جمعیت اہل حدیث ممبئی کے باضابطہ اعلانات، دعوتی و علمی کانفرنسز، تعلیمی مسابقات اور اہم سرگرمیوں کا مستند آرکائیو
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Compact Pill Search Bar on Left -->
+                                <div class="pr-search-bar">
+                                    <i class="fa-solid fa-magnifying-glass pr-search-icon"></i>
+                                    <input type="text" id="prSearchInput" class="pr-search-input" placeholder="عنوان، تاریخ، موضوع، کانفرنس یا مقام تلاش کریں..." value="" autocomplete="off" />
+                                    <button type="button" id="prClearBtn" class="pr-clear-btn" aria-label="تلاش صاف کریں">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
                             </div>
 
-                            <!-- Filter Controls -->
+                            <!-- Filter Controls Row Inside Hero Card -->
                             <div class="pr-filters-row">
                                 <!-- Category Pills -->
                                 <div class="pr-pill-group" id="categoryPills">
@@ -1889,15 +2037,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2023-001" data-sj-title="مکہ کانفرنس بعنوان ’’تواصل وتکامل‘‘ ۱۳؍ ۱۴ اگست ۲۰۲۳ء" data-sj-url="/press-release/makkah-conference-tawasul-takamul-2023-1">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -1943,15 +2091,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2026-5137" data-sj-title="تنظیمی کانفرنس برائے اتحاد امت 2026" data-sj-url="/press-release/admin-pr-2026-1">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -1997,15 +2145,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2026-100" data-sj-title="علمی و فقہی سیمینار برائے جدید مسائل کی کامیابی پر شکریہ" data-sj-url="/press-release/admin-pr-2026-3">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2051,15 +2199,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2023-005" data-sj-title="سالانہ تربیتی اجتماع کی رپوٹ (27نومبر2022)" data-sj-url="/press-release/annual-training-ijtima-report-2023-5">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2105,15 +2253,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2023-002" data-sj-title="مکہ کانفرنس کا اختتامی بیان و قرار داد (۱۷؍ اگست ۲۰۲۳ء)" data-sj-url="/press-release/makkah-conference-closing-statement-2023-2">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2159,15 +2307,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2023-004" data-sj-title="عظمت توحید کانفرنس(یکم جنوری 2023)" data-sj-url="/press-release/conference-azmat-tawheed-2023-4">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2213,15 +2361,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2023-003" data-sj-title="تعلیمی انعامی مسابقہ ۱۹، ۲۰ اگست ۲۰۲۳ء" data-sj-url="/press-release/educational-awards-competition-2023-3">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2267,15 +2415,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2022-006" data-sj-title="سالانہ تربیتی اجتماع کا اعلان (27نومبر2022)" data-sj-url="/press-release/annual-training-ijtima-announcement-2022-6">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2321,15 +2469,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2022-007" data-sj-title="ضلع رائے گڑھ اور رتناگیری میں راحت رسانی کاکام" data-sj-url="/press-release/district-raigad-ratnagiri-relief-2022-7">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2375,15 +2523,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-009" data-sj-title="کوکن سیلاب متاثرین کی امداد (اگست 2021 )" data-sj-url="/press-release/konkan-flood-victims-help-2021-9">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2429,15 +2577,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-010" data-sj-title="ڈاکٹر فضل الرحمن مدنی کی وفات (مارچ 2021)" data-sj-url="/press-release/dr-fazlur-rahman-madani-demise-2021-10">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2483,15 +2631,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-011" data-sj-title="(جنوری ۲۰۲۰)سماجی انصاف اور مذہبی رواداری کانفرنس کی تیاریاں" data-sj-url="/press-release/conference-social-justice-religious-2021-11">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2537,15 +2685,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-008" data-sj-title="کوکن سیلاب متاثرین کی امداد" data-sj-url="/press-release/konkan-flood-victims-help-2021-8">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2591,15 +2739,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-012" data-sj-title="ملک میں عدالتیں انصاف کا آخری سہارا ہیں" data-sj-url="/press-release/justice-country-judiciary-2021-12">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2645,15 +2793,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2021-013" data-sj-title="بابری مسجد کیس کے فیصلے پر بے چینی مناسب نہیں" data-sj-url="/press-release/babri-masjid-verdict-2021-13">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2699,15 +2847,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2020-014" data-sj-title="چرم قربانی کو ضائع کرنے کی اپیل صحیح نہیں" data-sj-url="/press-release/hides-qurbani-2020-14">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2753,15 +2901,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2019-015" data-sj-title="سری لنکا میں چرچ اور ہوٹلوں پر بہیمانہ حملے(21اپریل 2019)" data-sj-url="/press-release/sri-lanka-2019-15">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2807,15 +2955,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2019-016" data-sj-title="نیوزی لینڈ میں مصلیوں پر حملہ(15مارچ 2019)" data-sj-url="/press-release/new-zealand-2019-16">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2861,15 +3009,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2019-019" data-sj-title="پیغام حق کانفرنس (جنوری 2018)" data-sj-url="/press-release/conference-paigham-e-haq-2019-19">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2915,15 +3063,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2019-017" data-sj-title="ڈاکٹر ذاکر نائک کے ادارے پر لگائی گئی پابندی" data-sj-url="/press-release/dr-zakir-naik-2019-17">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -2969,15 +3117,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2019-018" data-sj-title="پلوامہ میں ہندستانی فضائیہ کی فوجی کاروائی" data-sj-url="/press-release/pulwama-2019-18">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3023,15 +3171,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2018-020" data-sj-title="آزادی وطن میں اتحادویکجہتی کا کردارکانفرنس(20اگست2017)" data-sj-url="/press-release/conference-2018-20">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3077,15 +3225,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2017-023" data-sj-title="تحفظ شریعت کانفرنس کا اعلان (دسمبر2016)" data-sj-url="/press-release/conference-announcement-tahaffuz-e-shariat-2017-23">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3131,15 +3279,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2017-021" data-sj-title="حج ٹریننگ کیمپ (اگست2017)" data-sj-url="/press-release/hajj-camp-2017-21">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3185,15 +3333,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2017-022" data-sj-title="تحفظِ شریعت کانفرنس (جنوری 2017)" data-sj-url="/press-release/conference-2017-22">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3239,15 +3387,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-030" data-sj-title="ممبئی جمیعت کے تعلیمی مظاہرے(نومبر2015)" data-sj-url="/press-release/educational-mumbai-2016-30">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3293,15 +3441,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-024" data-sj-title="حج تربیتی کیمپ ( 14 اگست 2016)" data-sj-url="/press-release/training-hajj-camp-2016-24">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3347,15 +3495,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-026" data-sj-title="پیام انسانیت کانفرنس(جنوری 2016)" data-sj-url="/press-release/conference-payam-e-insaniyat-2016-26">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3401,15 +3549,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-027" data-sj-title="سمپوزیم بعنوان اسلام اور رواداری(جنوری 2016)" data-sj-url="/press-release/tolerance-symposium-2016-27">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3455,15 +3603,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-028" data-sj-title="دوروزہ پیام انسانیت کانفرنس(جنوری 2016)" data-sj-url="/press-release/conference-payam-e-insaniyat-2016-28">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3509,15 +3657,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-025" data-sj-title="ذاکر نائک کی خدمات قابل قدر (10-07-2016)" data-sj-url="/press-release/zakir-naik-2016-25">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3563,15 +3711,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2016-029" data-sj-title="دوروزہ پیام انسانیت کانفرنس کا پہلا دن" data-sj-url="/press-release/conference-payam-e-insaniyat-2016-29">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3617,15 +3765,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-032" data-sj-title="ضلعی اکائیوں کے امراء ونظماء کا اجلاس(6 نومبر2015)" data-sj-url="/press-release/district-2015-32">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3671,15 +3819,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-033" data-sj-title="ائمہ ودعاۃکا تربیتی اجتماع (ستمبر2015)" data-sj-url="/press-release/training-ijtima-2015-33">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3725,15 +3873,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-035" data-sj-title="عظمت حرمین اور حج تربیتی کانفرنس (اگست2015)" data-sj-url="/press-release/conference-azmat-training-hajj-2015-35">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3779,15 +3927,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-031" data-sj-title="مسابقہ کے سلسلے میں چند گزارشات (۲۰۱۵ء)" data-sj-url="/press-release/competition-2015-31">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3833,15 +3981,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-034" data-sj-title="عظمت حرمین کانفرنس کا مقصد حرمت حرمین" data-sj-url="/press-release/conference-azmat-2015-34">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3887,15 +4035,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2015-036" data-sj-title="مدارس اسلامیہ کے طلباء کو غیر اسکولی شمار کرنے کا فیصلے" data-sj-url="/press-release/verdict-madaris-2015-36">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3941,15 +4089,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2014-037" data-sj-title="جمعیت اہل حدیث ہند کا چار روزہ دورہ کشمیر" data-sj-url="/press-release/kashmir-2014-37">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>
@@ -3995,15 +4143,15 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <i class="fa-solid fa-arrow-left"></i>
                                         </a>
 
-                                        <!-- 3 Action Icons: Copy Link, Report Error, Share (Visual Benchmark: media_1791189785767.png) -->
+                                        <!-- 3 Action Icons: Copy Link, Report Error, Share  -->
                                         <div class="sj-actions-group" data-sj-container data-sj-type="pr" data-sj-id="PR-2014-038" data-sj-title="مولانا عبداللہ مدنی اور اسحاق بھٹی کی وفات" data-sj-url="/press-release/madani-demise-abdullah-ishaq-bhatti-2014-38">
-                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں (Copy)" aria-label="کاپی کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-copy" data-sj-action="copy" data-tooltip="کاپی کریں" aria-label="کاپی کریں">
                                                 <i class="fa-regular fa-copy"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی (Report)" aria-label="غلطی کی نشاندہی">
+                                            <button type="button" class="sj-action-btn sj-btn-report" data-sj-action="report" data-tooltip="غلطی کی نشاندہی" aria-label="غلطی کی نشاندہی">
                                                 <i class="fa-solid fa-triangle-exclamation"></i>
                                             </button>
-                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں (Share)" aria-label="شیئر کریں">
+                                            <button type="button" class="sj-action-btn sj-btn-share" data-sj-action="share" data-tooltip="شیئر کریں" aria-label="شیئر کریں">
                                                 <i class="fa-solid fa-share-nodes"></i>
                                             </button>
                                         </div>

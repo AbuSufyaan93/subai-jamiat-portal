@@ -26,37 +26,51 @@
         }
 
         .pub-hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0369a1 100%);
-            color: #ffffff;
-            padding: 48px 0 40px;
+            background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 60%, #f8fafc 100%);
+            padding: 18px 0 22px;
             position: relative;
-            overflow: hidden;
-            border-bottom: 3px solid rgba(217, 119, 6, 0.4);
         }
 
-        .pub-hero::after {
+        .pub-hero-card {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
+            border: 1.5px solid #99f6e4;
+            border-radius: 22px;
+            padding: 24px 28px;
+            box-shadow: 0 12px 32px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: right;
+        }
+
+        .pub-hero-card::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 24px 24px;
-            opacity: 0.6;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4.5px;
+            background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%);
         }
 
         .pub-title {
             font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #ffffff;
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #064e3b;
+            line-height: 1.5;
         }
 
         .pub-lead {
-            font-size: 1.05rem;
-            color: #e0f2fe;
-            max-width: 720px;
-            margin: 0 auto 24px;
+            font-size: 0.96rem;
+            color: #334155;
+            max-width: 680px;
+            margin: 0;
             line-height: 1.8;
         }
 
@@ -76,22 +90,22 @@
 
         .pub-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(30, 64, 175, 0.12);
-            border-color: #bfdbfe;
+            box-shadow: 0 16px 32px rgba(2, 132, 199, 0.12);
+            border-color: #7dd3fc;
         }
 
         .pub-avatar {
             width: 64px;
             height: 64px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            color: #1d4ed8;
+            background: linear-gradient(135deg, #e0f2fe 0%, #ccfbf1 100%);
+            color: #0284c7;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             margin: 0 auto 16px;
-            border: 2px solid #bfdbfe;
+            border: 2px solid #7dd3fc;
         }
 
         .pub-name {
@@ -122,14 +136,14 @@
         }
 
         .stat-pill strong {
-            color: #1d4ed8;
+            color: #0284c7;
         }
 
         .pub-btn {
-            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
             color: #ffffff !important;
             border: none;
-            border-radius: 10px;
+            border-radius: 999px;
             padding: 10px 16px;
             font-weight: 700;
             font-size: 0.95rem;
@@ -144,47 +158,48 @@
         }
 
         .pub-btn:hover {
-            box-shadow: 0 4px 14px rgba(29, 78, 216, 0.35);
+            box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
             transform: scale(1.02);
         }
 
         .search-container {
-            max-width: 580px;
-            margin: 0 auto;
+            flex: 0 1 400px;
+            max-width: 400px;
+            width: 100%;
             position: relative;
         }
 
         .search-input {
             width: 100%;
-            border-radius: 30px;
-            padding: 14px 48px 14px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            font-size: 1rem;
-            backdrop-filter: blur(8px);
+            border-radius: 999px;
+            padding: 11px 44px 11px 18px;
+            border: 1.5px solid #7dd3fc;
+            background: #ffffff;
+            color: #0f172a;
+            font-size: 0.95rem;
             outline: none;
-            transition: all 0.3s;
+            transition: all 0.25s;
+            box-shadow: 0 6px 18px rgba(2, 132, 199, 0.1);
         }
 
         .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: #64748b;
         }
 
         .search-input:focus {
             background: #ffffff;
             color: #0f172a;
-            border-color: #ffffff;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            border-color: #0284c7;
+            box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.16);
         }
 
         .search-icon-btn {
             position: absolute;
-            right: 18px;
+            right: 16px;
             top: 50%;
             transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.1rem;
+            color: #0284c7;
+            font-size: 1rem;
             pointer-events: none;
         }
     </style>
@@ -919,7 +934,7 @@ body *::-webkit-scrollbar-thumb:hover {
         <span>موضوعات</span>
       </a>
 
-      <a href="../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعات">
+      <a href="../../library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی مطبوعات">
         <i class="fa-solid fa-stamp"></i>
         <span>مطبوعات</span>
       </a>
@@ -1500,7 +1515,7 @@ body *::-webkit-scrollbar-thumb:hover {
       <i class="fa-solid fa-layer-group" style="font-size: 18px;"></i>
       <h3 class="topics-drawer-title">موضوعاتی فہرست</h3>
     </div>
-    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں (Esc)">
+    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -1982,7 +1997,7 @@ body *::-webkit-scrollbar-thumb:hover {
 <!-- SCHOLAR BOOK UPLOAD & 2-STAGE MODERATION STUDIO (عالمِ دین کتاب اپلوڈ اسٹوڈیو) -->
 <!-- مرحلہ ۱: عالمِ دین کی لازمی تفصیلات (نام، پتہ، واٹس ایپ، اہلیت و فراغت)          -->
 <!-- مرحلہ ۲: کتاب کی مکمل تفصیلات + PDF یا ٹیکسٹ اپلوڈ                            -->
-<!-- مرحلہ ۳: ایڈمن کا مراجعہ (Review) -> سپر ایڈمن کا موافقہ (Approval) -> نشر     -->
+<!-- مرحلہ ۳: ایڈمن کا مراجعہ -> سپر ایڈمن کا موافقہ -> نشر     -->
 <!-- ============================================================================ -->
 <style>
   .sbu-modal-backdrop {
@@ -2417,7 +2432,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
         </div>
 
-        <!-- SUBMISSION CONFIRMATION BANNER (HIDDEN UNTIL SUBMITTED) -->
+        <!-- SUBMISSION CONFIRMATION BANNER  -->
         <div id="sbuSuccessConfirmationCard" style="display: none; background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%); border: 2px solid #059669; border-radius: 18px; padding: 26px 24px; text-align: center; margin-bottom: 20px; box-shadow: 0 12px 30px rgba(5, 150, 105, 0.14);">
           <div style="width: 64px; height: 64px; border-radius: 50%; background: #059669; color: #ffffff; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);">
             <i class="fa-solid fa-check-double"></i>
@@ -2427,7 +2442,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </h3>
           <p style="font-size: 14.5px; font-weight: 700; color: #0f766e; max-width: 680px; margin: 0 auto 14px; line-height: 1.9; background: #ffffff; padding: 12px 18px; border-radius: 12px; border: 1px solid #99f6e4;">
             <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i>
-            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ (Admin Review)</strong> اور پھر <strong>سپر ایڈمن کے موافقہ (Super Admin Approval)</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
+            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ</strong> اور پھر <strong>سپر ایڈمن کے موافقہ</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
           </p>
           <div id="sbuConfirmationMeta" style="font-size: 13px; color: #334155; margin-bottom: 16px;"></div>
           <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -2468,7 +2483,7 @@ body *::-webkit-scrollbar-thumb:hover {
               <div class="sbu-field">
                 <label class="sbu-label">
                   <i class="fa-brands fa-whatsapp" style="color: #16a34a; font-size: 15px;"></i>
-                  <span>واٹس ایپ نمبر (WhatsApp Number) <span class="sbu-req">*</span></span>
+                  <span>واٹس ایپ نمبر <span class="sbu-req">*</span></span>
                 </label>
                 <input type="tel" id="sbuScholarWhatsapp" name="scholarWhatsapp" class="sbu-input" placeholder="مثلاً: +91 98XXXXXXXX" dir="ltr" style="text-align: right;" required oninput="checkScholarGateUnlock()" />
               </div>
@@ -2488,7 +2503,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   <i class="fa-solid fa-graduation-cap" style="color: #d97706;"></i>
                   <span>اہلیت و فراغت کہاں سے ہوئی ہے؟ (جامعہ / ادارۂ فراغت و سنِ فراغت) <span class="sbu-req">*</span></span>
                 </label>
-                <input type="text" id="sbuScholarQualification" name="scholarQualification" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
+                <input type="text" id="sbuScholarتعلیمی قابلیت" name="scholarتعلیمی قابلیت" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
               </div>
             </div>
 
@@ -2534,7 +2549,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
           <!-- ============================================================== -->
           <!-- STEP 2: FULL ADMIN-STYLE BOOK METADATA & PDF/TEXT UPLOAD       -->
-          <!-- (LOCKED UNTIL STEP 1 IS COMPLETED)                             -->
+          <!--                              -->
           <!-- ============================================================== -->
           <div class="sbu-locked-wrapper is-locked" id="sbuStep2Wrapper">
             <div class="sbu-lockable-content">
@@ -2580,7 +2595,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="sbu-grid-3">
                   <div class="sbu-field">
-                    <label class="sbu-label">علمی زمرہ / موضوع (Category) <span class="sbu-req">*</span></label>
+                    <label class="sbu-label">علمی زمرہ / موضوع <span class="sbu-req">*</span></label>
                     <select id="sbuBookCategory" name="category" class="sbu-select" disabled required>
                       <option value="عقیدہ و منہج">عقیدہ و منہج (توحید و سنت)</option>
                       <option value="قرآن و علوم القرآن">قرآن و علوم القرآن (تفسیر و تجوید)</option>
@@ -2597,7 +2612,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   </div>
 
                   <div class="sbu-field">
-                    <label class="sbu-label">ذیلی موضوع (Subcategory)</label>
+                    <label class="sbu-label">ذیلی موضوع</label>
                     <input type="text" id="sbuBookSubcategory" name="subcategory" class="sbu-input" placeholder="مثلاً: اسماء و صفات / نماز کے احکام" disabled />
                   </div>
 
@@ -2606,7 +2621,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <select id="sbuBookLanguage" name="language" class="sbu-select" disabled>
                       <option value="اردو">اردو</option>
                       <option value="عربی">عربی</option>
-                      <option value="English">انگریزی (English)</option>
+                      <option value="English">انگریزی</option>
                       <option value="ہندی">ہندی (हिंदी)</option>
                       <option value="فارسی">فارسی</option>
                     </select>
@@ -2636,7 +2651,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 </div>
               </div>
 
-              <!-- 2B: DIGITAL FILE UPLOADS (PDF OR TEXT/UNICODE OR BOTH + COVER) -->
+              <!-- 2B: DIGITAL FILE UPLOADS  -->
               <div class="sbu-section-card">
                 <div class="sbu-section-header">
                   <h3 class="sbu-section-title">
@@ -2650,11 +2665,11 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div class="sbu-format-pills">
                   <button type="button" class="sbu-format-pill active" id="sbuModeBtnPdf" onclick="setSbuUploadMode('pdf')">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-                    <span>پی ڈی ایف (PDF) کتاب اپلوڈ</span>
+                    <span>پی ڈی ایف کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnText" onclick="setSbuUploadMode('text')">
                     <i class="fa-solid fa-file-lines" style="color: #0284c7;"></i>
-                    <span>ٹیکسٹ / یونیکوڈ (Text) کتاب اپلوڈ</span>
+                    <span>ٹیکسٹ / یونیکوڈ کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnBoth" onclick="setSbuUploadMode('both')">
                     <i class="fa-solid fa-layer-group" style="color: #059669;"></i>
@@ -2667,12 +2682,12 @@ body *::-webkit-scrollbar-thumb:hover {
                   <div class="sbu-field">
                     <label class="sbu-label">
                       <i class="fa-solid fa-image" style="color: #059669;"></i>
-                      <span>کتاب کا سرورق (Cover Image) — فائل منتخب کریں</span>
+                      <span>کتاب کا سرورق — فائل منتخب کریں</span>
                     </label>
                     <input type="file" id="sbuCoverFile" name="coverFile" accept="image/*" class="sbu-input" style="padding-top: 6px;" disabled onchange="handleSbuCoverPreview(this)" />
                   </div>
                   <div class="sbu-field">
-                    <label class="sbu-label">یا سرورق کا براہِ راست لنک (URL)</label>
+                    <label class="sbu-label">یا سرورق کا براہِ راست لنک</label>
                     <input type="url" id="sbuCoverUrl" name="coverImageUrl" class="sbu-input" placeholder="https://.../cover.jpg" dir="ltr" style="text-align: right;" disabled />
                   </div>
                 </div>
@@ -2681,7 +2696,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div id="sbuPdfUploadBlock" style="background: #fef2f2; border: 1.5px dashed #fca5a5; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
                   <div style="font-size: 13px; font-weight: 800; color: #991b1b; margin-bottom: 10px; display: flex; align-items: center; gap: 7px;">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 16px;"></i>
-                    <span>پی ڈی ایف دستاویز (PDF File Upload / Cloud Link)</span>
+                    <span>پی ڈی ایف دستاویز</span>
                   </div>
                   <div class="sbu-grid-2" style="margin-bottom: 0;">
                     <div class="sbu-field">
@@ -2782,10 +2797,10 @@ body *::-webkit-scrollbar-thumb:hover {
             <div>
               <h3 class="sbu-section-title">
                 <i class="fa-solid fa-user-shield" style="color: #059669;"></i>
-                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل (Two-Tier Approval Queue)</span>
+                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل</span>
               </h3>
               <p style="margin: 4px 0 0; font-size: 12px; color: #475569;">
-                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ (Step 1: Admin Review)</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ (Step 2: Super Admin Approval)</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
+                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
               </p>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
@@ -3464,20 +3479,29 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
     <!-- HERO SECTION -->
-    <section class="pub-hero text-center">
-        <div class="container position-relative" style="z-index: 1;">
-            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white text-primary fw-bold" style="font-size: 0.85rem; background: rgba(255, 255, 255, 0.15) !important; color: #bae6fd !important;">
-                <i class="fa-solid fa-building-columns"></i> ناشرین و مکتبات کتب خانہ
-            </div>
-            <h1 class="pub-title">فہرستِ ناشرین، دار الاشاعت و مکتبات</h1>
-            <p class="pub-lead">
-                مرکزی اسلامی لائبریری کے ذخیرہ کتب میں شامل معروف ہندوستانی و بین الاقوامی مسلم ناشرین، علمی مکتبات اور صوبائی جمعیت اہل حدیث کے شعبہ نشر و اشاعت کی مطبوعات۔
-            </p>
+    <section class="pub-hero">
+        <div class="container">
+            <div class="pub-hero-card">
+                <div style="display: flex; align-items: flex-start; gap: 16px; flex: 1 1 360px;">
+                    <div style="width: 58px; height: 58px; border-radius: 16px; background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%); border: 1.5px solid #7dd3fc; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; box-shadow: 0 6px 16px rgba(2, 132, 199, 0.14);">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-2 rounded-pill fw-bold" style="font-size: 0.8rem; background: rgba(255, 255, 255, 0.88); border: 1px solid #7dd3fc; color: #0369a1;">
+                            <i class="fa-solid fa-landmark"></i> ناشرین و مکتبات کتب خانہ
+                        </div>
+                        <h1 class="pub-title">فہرستِ ناشرین، دار الاشاعت و مکتبات</h1>
+                        <p class="pub-lead">
+                            مرکزی اسلامی لائبریری کے ذخیرہ کتب میں شامل معروف ہندوستانی و بین الاقوامی مسلم ناشرین، علمی مکتبات اور صوبائی جمعیت اہل حدیث کے شعبہ نشر و اشاعت کی مطبوعات۔
+                        </p>
+                    </div>
+                </div>
 
-            <form action="../../library/publishers" method="GET" class="search-container">
-                <input type="text" name="search" value="" class="search-input" placeholder="ناشر یا مکتبہ کے نام سے تلاش کریں..." />
-                <i class="fa-solid fa-magnifying-glass search-icon-btn"></i>
-            </form>
+                <form action="../../library/publishers" method="GET" class="search-container">
+                    <input type="text" name="search" value="" class="search-input" placeholder="ناشر یا مکتبہ کے نام سے تلاش کریں..." />
+                    <i class="fa-solid fa-magnifying-glass search-icon-btn"></i>
+                </form>
+            </div>
         </div>
     </section>
 

@@ -3823,9 +3823,37 @@
     margin: 0 auto !important;
   }
   section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
     padding-top: 4px !important;
     min-height: 82vh;
+  }
+
+  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
+  section#content .column-center > .card > .top {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
+    border: 1.5px solid #99f6e4 !important;
+    border-radius: 18px !important;
+    padding: 20px 26px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section#content .column-center > .card > .top::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4.5px !important;
+    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
+  }
+  section#content .column-center > .card > .top h1 {
+    color: #064e3b !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    text-shadow: none !important;
   }
 
   /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
@@ -4309,7 +4337,7 @@
       </a>
     </div>
 
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES (SINGLE LINE) -->
+    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
     <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ مساجد و ذیلی اکائیاں پورٹل" style="flex-wrap: nowrap;">
       <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -4662,7 +4690,7 @@ body *::-webkit-scrollbar-thumb:hover {
   <section id="content" style="padding-top: 14px; padding-bottom: 40px;">
     <div class="main-container" style="max-width: 1600px; margin: 0 auto; padding: 0 16px;">
       
-      <!-- 1. BREADCRUMB & PORTAL STATUS RIBBON (Matching Library, Mujallah & Fatawa) -->
+      <!-- 1. BREADCRUMB & PORTAL STATUS RIBBON  -->
       <div class="masajid-breadcrumb-ribbon">
         <div class="masajid-bc-links">
           <a href="./index.html"><i class="fa-solid fa-house-chimney"></i> مرکزی سرورق</a>
@@ -4687,7 +4715,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
       </div>
 
-      <!-- 2. LUMINOUS HERO & SMART SEARCH SHOWCASE CARD (Matching Library, Fatawa & Ask Question) -->
+      <!-- 2. LUMINOUS HERO & SMART SEARCH SHOWCASE CARD  -->
       <div class="finder-hero">
         <div class="finder-hero-top-row">
           <div style="display: flex; align-items: center; gap: 14px; flex: 1; min-width: 280px;">
@@ -4734,16 +4762,16 @@ body *::-webkit-scrollbar-thumb:hover {
               <i class="fa-solid fa-share-nodes"></i> لوکیشن شیئر کریں
             </button>
             <button type="button" class="quick-chip active" id="chipMumbai" onclick="zoomToHierarchy('mumbai')">
-              <i class="fa-solid fa-city"></i> ممبئی زون (Mumbai)
+              <i class="fa-solid fa-city"></i> ممبئی زون
             </button>
             <button type="button" class="quick-chip" id="chipMaharashtra" onclick="zoomToHierarchy('maharashtra')">
-              <i class="fa-solid fa-landmark"></i> مہاراشٹر (Maharashtra)
+              <i class="fa-solid fa-landmark"></i> مہاراشٹر
             </button>
             <button type="button" class="quick-chip" id="chipIndia" onclick="zoomToHierarchy('india')">
-              <i class="fa-solid fa-map"></i> ہندوستان (India)
+              <i class="fa-solid fa-map"></i> ہندوستان
             </button>
             <button type="button" class="quick-chip" id="chipWorld" onclick="zoomToHierarchy('world')">
-              <i class="fa-solid fa-globe"></i> عالمی نقشہ (World)
+              <i class="fa-solid fa-globe"></i> عالمی نقشہ
             </button>
             <button type="button" class="quick-chip" id="btnFavoritesFilter" onclick="toggleFavoritesFilter()">
               <i class="fa-solid fa-star"></i> پسندیدہ مساجد (<span id="favCount">0</span>)
@@ -4758,12 +4786,12 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
       </div>
 
-      <!-- CIRCULAR AREA MOSQUE DIRECTORY (HORIZONTALLY SCROLLABLE CAROUSEL) -->
+      <!-- CIRCULAR AREA MOSQUE DIRECTORY  -->
       <div class="area-circular-section">
         <div class="area-circular-header">
           <div class="area-circular-title">
             <i class="fa-solid fa-compass" style="color: #059669;"></i>
-            <span>علاقائی مساجد ڈائریکٹری (Area Directory)</span>
+            <span>علاقائی مساجد ڈائریکٹری</span>
             <span class="area-circular-badge">54 علاقے</span>
           </div>
           <div class="area-carousel-controls">
@@ -5365,7 +5393,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
 
           <div>
-            <label style="font-size: 11.5px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: block;">فاصلہ (Radius):</label>
+            <label style="font-size: 11.5px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: block;">فاصلہ:</label>
             <select id="radiusSelectFilter" class="filter-select" onchange="applyRadiusFilter(this.value)">
               <option value="all">تمام فاصلے</option>
               <option value="3">3 کلومیٹر کے اندر</option>
@@ -5376,17 +5404,17 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
 
           <div>
-            <label style="font-size: 11.5px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: block;">ترتیب (Sort):</label>
+            <label style="font-size: 11.5px; font-weight: 700; color: #64748b; margin-bottom: 4px; display: block;">ترتیب:</label>
             <select id="sortSelectFilter" class="filter-select" onchange="applySort(this.value)">
               <option value="default">معیاری ترتیب (نمبر شمار)</option>
-              <option value="distance">قریب ترین پہلے (Distance)</option>
+              <option value="distance">قریب ترین پہلے</option>
               <option value="name">نام کے مطابق (الف تا ے)</option>
             </select>
           </div>
         </div>
       </div>
 
-      <!-- MOBILE VIEW TABS (SWITCH BETWEEN MAP & LIST) -->
+      <!-- MOBILE VIEW TABS  -->
       <div class="mobile-view-tabs">
         <button type="button" id="tabMobileList" class="mobile-tab-btn active" onclick="switchMobileView('list')">
           <i class="fa-solid fa-list-ul"></i> فہرست مساجد (<span id="mobileCountBadge">219</span>)
@@ -5396,7 +5424,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </button>
       </div>
 
-      <!-- SPLIT VIEW CONTAINER (LEFT: LIST / RIGHT: MAP) -->
+      <!-- SPLIT VIEW CONTAINER  -->
       <div class="split-finder-container">
         
         <!-- LEFT: LIST PANE -->
@@ -5408,7 +5436,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div id="activeFilterDesc" style="font-size: 12px; color: #059669; font-weight: 700;"></div>
           </div>
 
-          <!-- MOSQUES CONTAINER (DYNAMICALLY POPULATED) -->
+          <!-- MOSQUES CONTAINER  -->
           <div id="mosquesListContainer" style="display: flex; flex-direction: column; gap: 12px;"></div>
         </div>
 
@@ -5430,7 +5458,7 @@ body *::-webkit-scrollbar-thumb:hover {
             </button>
           </div>
 
-          <!-- GOOGLE MAPS FLOATING SEARCH & DIRECTIONS CARD (Matching Reference Screenshots) -->
+          <!-- GOOGLE MAPS FLOATING SEARCH & DIRECTIONS CARD  -->
           <div class="map-search-card-container" id="mapSearchCardContainer">
             <!-- 1. SEARCH MODE -->
             <div id="mapSearchModeWrap">
@@ -5442,7 +5470,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 <button type="button" id="btnClearMapFloatingSearch" class="map-search-clear-btn" onclick="clearMapFloatingSearch()" title="حذف کریں">
                   <i class="fa-solid fa-xmark"></i>
                 </button>
-                <button type="button" class="map-search-directions-btn" onclick="openDirectionsMode()" title="راستہ معلوم کریں (Directions)">
+                <button type="button" class="map-search-directions-btn" onclick="openDirectionsMode()" title="راستہ معلوم کریں">
                   <i class="fa-solid fa-diamond-turn-right" style="font-size: 16px;"></i>
                 </button>
               </div>
@@ -5468,10 +5496,10 @@ body *::-webkit-scrollbar-thumb:hover {
                   </button>
                 </div>
 
-                <!-- Recent Searches Section (Saved in localStorage) -->
+                <!-- Recent Searches Section  -->
                 <div id="recentSearchesSection">
                   <div class="dropdown-section-title">
-                    <span><i class="fa-solid fa-clock-rotate-left"></i> سابقہ تلاشیں (Recent)</span>
+                    <span><i class="fa-solid fa-clock-rotate-left"></i> سابقہ تلاشیں</span>
                     <button type="button" onclick="clearAllRecentSearches()" style="background: none; border: none; font-size: 11px; color: #dc2626; cursor: pointer; font-weight: 700;">حذف تمام</button>
                   </div>
                   <div id="recentSearchesList"></div>
@@ -5480,30 +5508,30 @@ body *::-webkit-scrollbar-thumb:hover {
                 <!-- Live Search Suggestions Section -->
                 <div id="mapSuggestionsSection" style="display: none;">
                   <div class="dropdown-section-title">
-                    <span><i class="fa-solid fa-magnifying-glass"></i> تجاویز (Suggestions)</span>
+                    <span><i class="fa-solid fa-magnifying-glass"></i> تجاویز</span>
                   </div>
                   <div id="mapSuggestionsList"></div>
                 </div>
               </div>
             </div>
 
-            <!-- 2. DIRECTIONS MODE (Matching Screenshot media_1791038123159.png) -->
+            <!-- 2. DIRECTIONS MODE  -->
             <div class="map-directions-card" id="mapDirectionsModeWrap">
               <div class="dir-mode-tabs">
                 <div style="display: flex; gap: 4px; align-items: center;">
-                  <button type="button" class="dir-mode-btn active" data-mode="driving" onclick="setTravelMode('driving', this)" title="کار / گاڑی (Driving)">
+                  <button type="button" class="dir-mode-btn active" data-mode="driving" onclick="setTravelMode('driving', this)" title="کار / گاڑی">
                     <i class="fa-solid fa-car"></i>
                   </button>
-                  <button type="button" class="dir-mode-btn" data-mode="motorcycle" onclick="setTravelMode('motorcycle', this)" title="موٹر سائیکل (Motorcycle)">
+                  <button type="button" class="dir-mode-btn" data-mode="motorcycle" onclick="setTravelMode('motorcycle', this)" title="موٹر سائیکل">
                     <i class="fa-solid fa-motorcycle"></i>
                   </button>
-                  <button type="button" class="dir-mode-btn" data-mode="transit" onclick="setTravelMode('transit', this)" title="ٹرین / بس (Transit)">
+                  <button type="button" class="dir-mode-btn" data-mode="transit" onclick="setTravelMode('transit', this)" title="ٹرین / بس">
                     <i class="fa-solid fa-train-subway"></i>
                   </button>
-                  <button type="button" class="dir-mode-btn" data-mode="walking" onclick="setTravelMode('walking', this)" title="پیدل (Walking)">
+                  <button type="button" class="dir-mode-btn" data-mode="walking" onclick="setTravelMode('walking', this)" title="پیدل">
                     <i class="fa-solid fa-person-walking"></i>
                   </button>
-                  <button type="button" class="dir-mode-btn" data-mode="cycling" onclick="setTravelMode('cycling', this)" title="سائیکل (Bicycle)">
+                  <button type="button" class="dir-mode-btn" data-mode="cycling" onclick="setTravelMode('cycling', this)" title="سائیکل">
                     <i class="fa-solid fa-bicycle"></i>
                   </button>
                 </div>
@@ -5531,7 +5559,7 @@ body *::-webkit-scrollbar-thumb:hover {
                           <i class="fa-solid fa-location-crosshairs"></i>
                         </div>
                         <div class="dir-dropdown-text">
-                          <div class="dir-dropdown-title">میرا موجودہ لوکیشن (GPS)</div>
+                          <div class="dir-dropdown-title">میرا موجودہ لوکیشن</div>
                           <div class="dir-dropdown-sub" id="dirOriginLocalitySub">لائیو GPS لوکیشن حاصل کریں</div>
                         </div>
                       </div>
@@ -5545,7 +5573,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         </div>
                       </div>
                       <div style="border-top: 1px solid #f1f5f9; margin: 4px 0; padding: 4px 6px 2px 6px; font-size: 10.5px; font-weight: 800; color: #64748b;">
-                        مقبول علاقے (Quick Areas):
+                        مقبول علاقے:
                       </div>
                       <div id="dirOriginPopularAreasList"></div>
                     </div>
@@ -5576,24 +5604,24 @@ body *::-webkit-scrollbar-thumb:hover {
                     دوبارہ کوشش کریں
                   </button>
                 </div>
-                <!-- Quick Area Selection Chips (One-Click Routing) -->
+                <!-- Quick Area Selection Chips  -->
                 <div style="border-top: 1px dashed #fde68a; padding-top: 6px; margin-top: 4px;">
                   <div style="font-size: 11px; font-weight: 800; color: #78350f; margin-bottom: 4px;">
                     <i class="fa-solid fa-map-pin"></i> فوری نقطہ آغاز منتخب کریں (ایک کلک پر راستہ حاصل کریں):
                   </div>
                   <div class="dir-quick-areas-chips" id="dirQuickAreasChips">
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('ممبرا (Mumbra)', 19.1868, 73.0232)">📍 ممبرا</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('کرلا (Kurla)', 19.0728, 72.8797)">📍 کرلا</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('تھانے (Thane)', 19.2183, 72.9781)">📍 تھانے</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('بھیونڈی (Bhiwandi)', 19.2967, 73.0631)">📍 بھیونڈی</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('گوونڈی (Govandi)', 19.0558, 72.9157)">📍 گوونڈی</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('اندھیری (Andheri)', 19.1136, 72.8697)">📍 اندھیری</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('باندرہ (Bandra)', 19.0596, 72.8295)">📍 باندرہ</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('جوگیشوری (Jogeshwari)', 19.1350, 72.8530)">📍 جوگیشوری</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('ڈونگری (Dongri)', 18.9602, 72.8376)">📍 ڈونگری</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('کلیان (Kalyan)', 19.2403, 73.1305)">📍 کلیان</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('نوی ممبئی (Navi Mumbai)', 19.0771, 72.9986)">📍 نوی ممبئی</button>
-                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('میرا روڈ (Mira Road)', 19.2812, 72.8561)">📍 میرا روڈ</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('ممبرا', 19.1868, 73.0232)">📍 ممبرا</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('کرلا', 19.0728, 72.8797)">📍 کرلا</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('تھانے', 19.2183, 72.9781)">📍 تھانے</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('بھیونڈی', 19.2967, 73.0631)">📍 بھیونڈی</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('گوونڈی', 19.0558, 72.9157)">📍 گوونڈی</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('اندھیری', 19.1136, 72.8697)">📍 اندھیری</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('باندرہ', 19.0596, 72.8295)">📍 باندرہ</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('جوگیشوری', 19.1350, 72.8530)">📍 جوگیشوری</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('ڈونگری', 18.9602, 72.8376)">📍 ڈونگری</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('کلیان', 19.2403, 73.1305)">📍 کلیان</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('نوی ممبئی', 19.0771, 72.9986)">📍 نوی ممبئی</button>
+                    <button type="button" class="dir-area-chip" onclick="selectOriginArea('میرا روڈ', 19.2812, 72.8561)">📍 میرا روڈ</button>
                     <button type="button" class="dir-area-chip highlight" onclick="enableMapClickOriginMode()">🗺️ نقشے سے چنیں</button>
                   </div>
                 </div>
@@ -5621,7 +5649,7 @@ body *::-webkit-scrollbar-thumb:hover {
             </div>
           </div>
 
-          <!-- FLOATING "SEARCH THIS AREA" PILL (Matching Google Maps) -->
+          <!-- FLOATING "SEARCH THIS AREA" PILL  -->
           <button type="button" class="search-this-area-btn" id="btnSearchThisArea" onclick="executeSearchThisArea()">
             <i class="fa-solid fa-magnifying-glass"></i> اس علاقے میں مساجد تلاش کریں
           </button>
@@ -5651,9 +5679,9 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="panel-results-scroll" id="panelResultsList"></div>
           </div>
 
-          <!-- GOOGLE MAPS STYLE CIRCULAR FLOATING ACTION BUTTONS (Matching Reference Screenshots) -->
+          <!-- GOOGLE MAPS STYLE CIRCULAR FLOATING ACTION BUTTONS  -->
           <div class="map-floating-actions">
-            <!-- Layers Button (Matching Reference Screenshot) -->
+            <!-- Layers Button  -->
             <button type="button" class="map-circle-btn btn-layer" id="btnMapLayers" onclick="toggleLayerModal()" title="نوع الخريطة / نقشے کی قسم اور تہیں">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -5662,8 +5690,8 @@ body *::-webkit-scrollbar-thumb:hover {
               </svg>
             </button>
 
-            <!-- Compass Button (Matching Reference Screenshot 3D Needle) -->
-            <button type="button" class="map-circle-btn" id="btnMapCompass" onclick="handleCompassClick()" title="شمالی رخ / قطب نما (North / Compass)">
+            <!-- Compass Button  -->
+            <button type="button" class="map-circle-btn" id="btnMapCompass" onclick="handleCompassClick()" title="شمالی رخ / قطب نما">
               <div class="compass-needle-wrap" id="compassNeedle">
                 <svg viewBox="0 0 32 32" width="22" height="22">
                   <polygon points="16,4 12,16 16,14" fill="#dc2626"/>
@@ -5675,22 +5703,22 @@ body *::-webkit-scrollbar-thumb:hover {
             </button>
 
             <!-- Fullscreen Button -->
-            <button type="button" class="map-circle-btn" id="btnMapFullscreen" onclick="toggleMapFullscreen()" title="مکمل اسکرین (Fullscreen)">
+            <button type="button" class="map-circle-btn" id="btnMapFullscreen" onclick="toggleMapFullscreen()" title="مکمل اسکرین">
               <i class="fa-solid fa-expand" style="font-size: 15px; color: #475569;"></i>
             </button>
 
             <!-- Locate Me Button -->
-            <button type="button" class="map-circle-btn" id="btnMapLocate" onclick="triggerNearMeLocation()" title="میرا موجودہ لوکیشن (My Location)">
+            <button type="button" class="map-circle-btn" id="btnMapLocate" onclick="triggerNearMeLocation()" title="میرا موجودہ لوکیشن">
               <i class="fa-solid fa-crosshairs" style="font-size: 16px; color: #059669;"></i>
             </button>
 
             <!-- Share Location Button -->
-            <button type="button" class="map-circle-btn" id="btnMapShareLoc" onclick="handleShareMyLocation()" title="لوکیشن شیئر کریں (Share Location)">
+            <button type="button" class="map-circle-btn" id="btnMapShareLoc" onclick="handleShareMyLocation()" title="لوکیشن شیئر کریں">
               <i class="fa-solid fa-share-nodes" style="font-size: 15px; color: #0284c7;"></i>
             </button>
           </div>
 
-          <!-- MAP TYPE POPOVER (Matching Screenshot media_1790953354935.jpg) -->
+          <!-- MAP TYPE POPOVER  -->
           <div class="map-layer-popover" id="mapLayerModal">
             <div class="layer-popover-header">
               <button type="button" onclick="closeLayerModal()" style="background: none; border: none; font-size: 18px; color: #94a3b8; cursor: pointer; line-height: 1;">&times;</button>
@@ -5751,17 +5779,17 @@ body *::-webkit-scrollbar-thumb:hover {
             </div>
 
             <div style="font-size: 10px; color: #94a3b8; text-align: center; margin-top: 8px; border-top: 1px solid #f8fafc; padding-top: 6px;">
-              High-Definition Cartography &copy; Esri & CartoDB
+              تفصیلی جغرافیائی نقشہ &copy; Esri & CartoDB
             </div>
           </div>
 
-          <!-- FLOATING MOSQUE PREVIEW CARD (ON DESKTOP MAP) -->
+          <!-- FLOATING MOSQUE PREVIEW CARD  -->
           <div class="map-floating-preview" id="mapFloatingPreview">
             <button type="button" onclick="closeMapFloatingPreview()" style="position: absolute; top: 10px; left: 10px; background: none; border: none; font-size: 20px; color: #94a3b8; cursor: pointer;">&times;</button>
             <div id="previewCardContent"></div>
           </div>
 
-          <!-- FLOATING RECENTER BUTTON (ON MAP) -->
+          <!-- FLOATING RECENTER BUTTON  -->
           <button type="button" class="floating-recenter-btn" id="btnRecenterLocation" onclick="recenterToUserLocation()" style="display: none;">
             <i class="fa-solid fa-crosshairs"></i> ⦿ میری جگہ پر واپس آئیں
           </button>
@@ -5769,7 +5797,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <!-- MAP CONTAINER -->
           <div id="globalMapInstance"></div>
 
-          <!-- WALL-ATTACHED RIGHT RAIL (Matching Screenshot media_1791059315785.png) -->
+          <!-- WALL-ATTACHED RIGHT RAIL  -->
           <div class="map-right-rail" id="mapRightRail">
             <!-- Hamburger Menu Button -->
             <button type="button" class="rail-btn" id="railBtnMenu" onclick="toggleRightDrawer('menu')" title="مینو / اختیارات">
@@ -5863,7 +5891,7 @@ body *::-webkit-scrollbar-thumb:hover {
               </div>
             </div>
 
-            <!-- FLOATING NAVIGATION UTILITY BUTTONS (Left Side) -->
+            <!-- FLOATING NAVIGATION UTILITY BUTTONS  -->
             <div class="nav-hud-floating-tools">
               <button type="button" class="nav-hud-btn" id="btnNavVoiceToggle" onclick="toggleNavVoiceMode()" title="صوتی موڈ (مکمل آواز / صرف الرٹس / خاموش)">
                 <i class="fa-solid fa-volume-high" id="navVoiceIcon" style="color: #00875a;"></i>
@@ -5937,7 +5965,7 @@ body *::-webkit-scrollbar-thumb:hover {
               <!-- Stat Badges: ETA, Remaining Time, Remaining Distance -->
               <div class="nav-stats-row">
                 <div class="nav-stat-item">
-                  <span class="nav-stat-label">متوقع وقت (ETA)</span>
+                  <span class="nav-stat-label">متوقع وقت</span>
                   <span class="nav-stat-val" id="navStatEta">--:--</span>
                 </div>
                 <div class="nav-stat-divider"></div>
@@ -5986,7 +6014,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="nav-steps-sheet" id="navStepsSheet" style="display: none;">
               <div class="nav-steps-sheet-header">
                 <div style="font-weight: 800; font-size: 14px; color: #0f172a;">
-                  <i class="fa-solid fa-route" style="color: #00875a;"></i> مکمل موڑ در موڑ ہدایات (Turn-by-Turn)
+                  <i class="fa-solid fa-route" style="color: #00875a;"></i> مکمل موڑ در موڑ ہدایات
                 </div>
                 <button type="button" onclick="toggleNavStepsSheet()" style="background: none; border: none; font-size: 18px; color: #94a3b8; cursor: pointer;">&times;</button>
               </div>
@@ -6010,7 +6038,7 @@ body *::-webkit-scrollbar-thumb:hover {
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 16px;">
         <div>
           <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 0;">
-            <i class="fa-solid fa-share-nodes" style="color: #0284c7;"></i> لوکیشن شیئر کریں (Share Location)
+            <i class="fa-solid fa-share-nodes" style="color: #0284c7;"></i> لوکیشن شیئر کریں
           </h3>
           <p style="font-size: 12px; color: #64748b; margin: 2px 0 0 0;">
             اپنی لائیو لوکیشن اور نزدیکی مساجد کا لنک محفوظ طریقے سے شیئر کریں۔
@@ -6026,7 +6054,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <i class="fa-solid fa-location-dot"></i>
         </div>
         <div>
-          <div style="font-size: 12.5px; font-weight: 800; color: #166534;">رازداری و تحفظ (Privacy-First)</div>
+          <div style="font-size: 12.5px; font-weight: 800; color: #166534;">رازداری و تحفظ</div>
           <div style="font-size: 11.5px; color: #15803d;">صرف جغرافیائی کوآرڈینیٹس اور میپ کا لنک شیئر ہو گا، کوئی ذاتی ڈیٹا شیئر نہیں ہو گا۔</div>
         </div>
       </div>
@@ -6043,7 +6071,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <a id="shareModalWaBtn" href="#" target="_blank" style="background: #25d366; color: #ffffff; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 8px rgba(37,211,102,0.25);">
-          <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> واٹس ایپ پر شیئر کریں (WhatsApp)
+          <i class="fa-brands fa-whatsapp" style="font-size: 18px;"></i> واٹس ایپ پر شیئر کریں
         </a>
         <a id="shareModalGmapsBtn" href="#" target="_blank" style="background: #f1f5f9; color: #1e293b; padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 12.5px; display: flex; align-items: center; justify-content: center; gap: 8px; border: 1px solid #cbd5e1;">
           <i class="fa-solid fa-map-location-dot" style="color: #0284c7;"></i> گوگل میپس میں لوکیشن کھولیں
@@ -6057,7 +6085,7 @@ body *::-webkit-scrollbar-thumb:hover {
     <div class="nav-modal-box">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px;">
         <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin: 0;">
-          <i class="fa-solid fa-diamond-turn-right" style="color: #0284c7;"></i> راستہ معلوم کریں (Directions)
+          <i class="fa-solid fa-diamond-turn-right" style="color: #0284c7;"></i> راستہ معلوم کریں
         </h3>
         <button onclick="closeDirectionsModal()" style="background: none; border: none; font-size: 20px; color: #64748b; cursor: pointer;">
           <i class="fa-solid fa-xmark"></i>
@@ -6068,17 +6096,17 @@ body *::-webkit-scrollbar-thumb:hover {
 
       <div style="margin-bottom: 16px;">
         <a id="navDriveLink" href="#" target="_blank" class="nav-mode-btn">
-          <span><i class="fa-solid fa-car" style="color: #0284c7; margin-left: 8px;"></i> بذریعہ کار / ٹیکسی / بائیک (Driving)</span>
+          <span><i class="fa-solid fa-car" style="color: #0284c7; margin-left: 8px;"></i> بذریعہ کار / ٹیکسی / بائیک</span>
           <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
         </a>
 
         <a id="navTransitLink" href="#" target="_blank" class="nav-mode-btn">
-          <span><i class="fa-solid fa-train-subway" style="color: #059669; margin-left: 8px;"></i> پبلک ٹرانسپورٹ / لوکل ٹرین (Transit)</span>
+          <span><i class="fa-solid fa-train-subway" style="color: #059669; margin-left: 8px;"></i> پبلک ٹرانسپورٹ / لوکل ٹرین</span>
           <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
         </a>
 
         <a id="navWalkLink" href="#" target="_blank" class="nav-mode-btn">
-          <span><i class="fa-solid fa-person-walking" style="color: #d97706; margin-left: 8px;"></i> پیدل راستہ (Walking)</span>
+          <span><i class="fa-solid fa-person-walking" style="color: #d97706; margin-left: 8px;"></i> پیدل راستہ</span>
           <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
         </a>
       </div>
@@ -6091,7 +6119,7 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
   </div>
 
-  <!-- PUBLIC MOSQUE SUBMISSION MODAL (FULLY RESPONSIVE ARCHITECTURE) -->
+  <!-- PUBLIC MOSQUE SUBMISSION MODAL  -->
   <div class="public-modal-backdrop" id="publicMosqueModal" role="dialog" aria-modal="true" aria-labelledby="publicMosqueModalTitle">
     <div class="public-modal-card">
       <!-- STICKY MODAL HEADER -->
@@ -6138,7 +6166,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div id="contributorGuestWrap" style="flex: 1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
               <div>
                 <div style="font-size: 13px; font-weight: 800; color: #065f46;">
-                  <i class="fa-solid fa-shield-halved" style="color: #059669;"></i> مستند شمولیت (Verified Contribution)
+                  <i class="fa-solid fa-shield-halved" style="color: #059669;"></i> مستند شمولیت
                 </div>
                 <div style="font-size: 11.5px; color: #047857;">مساجد ڈائریکٹری میں مستند شراکت کے لیے Google سے سائن اِن فرمائیں:</div>
               </div>
@@ -6161,7 +6189,7 @@ body *::-webkit-scrollbar-thumb:hover {
           <div class="smart-search-box-wrap">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <label for="smartMosqueSearchInput" style="font-size: 12px; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-bolt" style="color: #d97706;"></i> اسمارٹ مسجد سرچ و خودکار لوکیشن (Smart Google Maps & Directory Auto-Fill):
+                <i class="fa-solid fa-bolt" style="color: #d97706;"></i> اسمارٹ مسجد سرچ و خودکار لوکیشن:
               </label>
               <span style="font-size: 11px; color: #059669; font-weight: 700;">
                 <i class="fa-solid fa-magic"></i> انتخاب پر تمام خانے خودکار بھر جائیں گے
@@ -6187,7 +6215,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div style="display: flex; align-items: flex-start; gap: 10px;">
               <i class="fa-solid fa-triangle-exclamation" style="color: #d97706; font-size: 18px; margin-top: 2px;"></i>
               <div style="flex: 1;">
-                <strong style="color: #92400e; font-size: 13px; display: block; margin-bottom: 4px;">ممکنہ مماثلت (Potential Duplicate) کا انتباہ!</strong>
+                <strong style="color: #92400e; font-size: 13px; display: block; margin-bottom: 4px;">ممکنہ مماثلت کا انتباہ!</strong>
                 <p id="duplicateDesc" style="font-size: 11.5px; color: #78350f; line-height: 1.5; margin-bottom: 8px;"></p>
                 <label style="font-size: 12px; color: #92400e; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; cursor: pointer;">
                   <input type="checkbox" id="subDuplicateOverride" style="cursor: pointer;" />
@@ -6197,10 +6225,10 @@ body *::-webkit-scrollbar-thumb:hover {
             </div>
           </div>
 
-          <!-- 3. BASIC MOSQUE DETAILS (ALL FULLY EDITABLE) -->
+          <!-- 3. BASIC MOSQUE DETAILS  -->
           <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; margin-bottom: 14px;">
             <div style="font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-file-lines" style="color: #059669;"></i> 1۔ مسجد کی بنیادی معلومات (Basic Details)
+              <i class="fa-solid fa-file-lines" style="color: #059669;"></i> 1۔ مسجد کی بنیادی معلومات
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
@@ -6212,7 +6240,7 @@ body *::-webkit-scrollbar-thumb:hover {
               </div>
               <div>
                 <label for="subNameEnglish" style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">
-                  مسجد کا نام (English)
+                  مسجد کا نام
                 </label>
                 <input type="text" id="subNameEnglish" class="filter-select" placeholder="e.g. Jama Masjid Ahle Hadees" style="width: 100%; font-size: 13px;" />
               </div>
@@ -6233,7 +6261,7 @@ body *::-webkit-scrollbar-thumb:hover {
               </div>
               <div>
                 <label for="subPincode" style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 4px;">
-                  پن کوڈ (Pincode)
+                  پن کوڈ
                 </label>
                 <input type="text" id="subPincode" class="filter-select" placeholder="مثلاً: 400070" style="width: 100%; font-size: 13px; direction: ltr;" />
               </div>
@@ -6241,7 +6269,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
             <div style="margin-bottom: 6px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-                <label for="subAddress" style="font-size: 12px; font-weight: 700; color: #334155; margin: 0;">مکمل پتہ (Full Address) <span style="color: #dc2626;">*</span></label>
+                <label for="subAddress" style="font-size: 12px; font-weight: 700; color: #334155; margin: 0;">مکمل پتہ <span style="color: #dc2626;">*</span></label>
                 <button type="button" onclick="geocodePublicAddress()" style="background: none; border: 1px solid #cbd5e1; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #0284c7; cursor: pointer; font-weight: 700;">
                   <i class="fa-solid fa-location-crosshairs"></i> پتہ سے لوکیشن معلوم کریں
                 </button>
@@ -6254,31 +6282,31 @@ body *::-webkit-scrollbar-thumb:hover {
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; margin-bottom: 14px;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
               <label style="font-size: 12px; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-map-location-dot" style="color: #059669;"></i> 2۔ نقشے پر مسجد کا مقام (Drag Pin & Live Reverse Geocoding):
+                <i class="fa-solid fa-map-location-dot" style="color: #059669;"></i> 2۔ نقشے پر مسجد کا مقام:
               </label>
               <button type="button" onclick="useCurrentLocationForSubmission()" style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 4px 10px; font-size: 11px; color: #065f46; cursor: pointer; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-crosshairs"></i> میرا موجودہ مقام (GPS)
+                <i class="fa-solid fa-crosshairs"></i> میرا موجودہ مقام
               </button>
             </div>
             <div id="publicMapPicker" class="public-map-picker"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
               <div>
-                <label for="subLat" style="font-size: 10.5px; color: #64748b; font-weight: 700; display: block;">عرضِ بلد (Latitude):</label>
+                <label for="subLat" style="font-size: 10.5px; color: #64748b; font-weight: 700; display: block;">عرضِ بلد:</label>
                 <input type="text" id="subLat" class="filter-select" placeholder="Latitude" value="19.0760" onchange="onManualCoordsChange()" style="direction: ltr; font-size: 11.5px; width: 100%;" />
               </div>
               <div>
-                <label for="subLng" style="font-size: 10.5px; color: #64748b; font-weight: 700; display: block;">طولِ بلد (Longitude):</label>
+                <label for="subLng" style="font-size: 10.5px; color: #64748b; font-weight: 700; display: block;">طولِ بلد:</label>
                 <input type="text" id="subLng" class="filter-select" placeholder="Longitude" value="72.8777" onchange="onManualCoordsChange()" style="direction: ltr; font-size: 11.5px; width: 100%;" />
               </div>
             </div>
           </div>
 
-          <!-- 5. PRAYER & JAMAAT TIMINGS (SALAFI ASTRONOMICAL + AUTO/MANUAL) -->
+          <!-- 5. PRAYER & JAMAAT TIMINGS  -->
           <div class="prayer-timing-card">
             <div class="prayer-timing-header">
               <div>
                 <div style="font-size: 13px; font-weight: 800; color: #065f46; display: flex; align-items: center; gap: 6px;">
-                  <i class="fa-solid fa-clock" style="color: #059669;"></i> 3۔ اوقاتِ اذان و باجماعت نماز (Prayer & Jamaat Timings)
+                  <i class="fa-solid fa-clock" style="color: #059669;"></i> 3۔ اوقاتِ اذان و باجماعت نماز
                 </div>
                 <div style="font-size: 11px; color: #047857; margin-top: 2px;" id="prayerMethodBadge">
                   سلفی / اہل حدیث فلکیاتی حساب (18° فجر و عشاء، 1:1 سایہ عصر)
@@ -6288,10 +6316,10 @@ body *::-webkit-scrollbar-thumb:hover {
               <!-- Mode Switch -->
               <div class="prayer-mode-switch">
                 <button type="button" class="prayer-mode-btn active" id="prayerModeAutoBtn" onclick="setPrayerCalcMode('auto')">
-                  <i class="fa-solid fa-wand-magic-sparkles"></i> خودکار حسابی (Auto)
+                  <i class="fa-solid fa-wand-magic-sparkles"></i> خودکار حسابی
                 </button>
                 <button type="button" class="prayer-mode-btn" id="prayerModeManualBtn" onclick="setPrayerCalcMode('manual')">
-                  <i class="fa-solid fa-pen-to-square"></i> دستی اندراج (Manual)
+                  <i class="fa-solid fa-pen-to-square"></i> دستی اندراج
                 </button>
               </div>
             </div>
@@ -6300,7 +6328,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="prayer-grid">
               <!-- Fajr -->
               <div class="prayer-col">
-                <div class="prayer-col-title">فجر (Fajr)</div>
+                <div class="prayer-col-title">فجر</div>
                 <span class="prayer-col-label">اذان کا وقت:</span>
                 <input type="text" id="subPrayerFajr" class="prayer-time-input" placeholder="05:15 AM" value="05:15 AM" />
                 <span class="prayer-col-label">جماعت کا وقت:</span>
@@ -6309,7 +6337,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
               <!-- Dhuhr -->
               <div class="prayer-col">
-                <div class="prayer-col-title">ظہر (Dhuhr)</div>
+                <div class="prayer-col-title">ظہر</div>
                 <span class="prayer-col-label">اذان کا وقت:</span>
                 <input type="text" id="subPrayerDhuhr" class="prayer-time-input" placeholder="12:30 PM" value="12:30 PM" />
                 <span class="prayer-col-label">جماعت کا وقت:</span>
@@ -6318,7 +6346,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
               <!-- Asr -->
               <div class="prayer-col">
-                <div class="prayer-col-title">عصر (Asr)</div>
+                <div class="prayer-col-title">عصر</div>
                 <span class="prayer-col-label">اذان کا وقت:</span>
                 <input type="text" id="subPrayerAsr" class="prayer-time-input" placeholder="03:50 PM" value="03:50 PM" />
                 <span class="prayer-col-label">جماعت کا وقت:</span>
@@ -6327,7 +6355,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
               <!-- Maghrib -->
               <div class="prayer-col">
-                <div class="prayer-col-title">مغرب (Maghrib)</div>
+                <div class="prayer-col-title">مغرب</div>
                 <span class="prayer-col-label">اذان کا وقت:</span>
                 <input type="text" id="subPrayerMaghrib" class="prayer-time-input" placeholder="06:25 PM" value="06:25 PM" />
                 <span class="prayer-col-label">جماعت کا وقت:</span>
@@ -6336,7 +6364,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
               <!-- Isha -->
               <div class="prayer-col">
-                <div class="prayer-col-title">عشاء (Isha)</div>
+                <div class="prayer-col-title">عشاء</div>
                 <span class="prayer-col-label">اذان کا وقت:</span>
                 <input type="text" id="subPrayerIsha" class="prayer-time-input" placeholder="07:45 PM" value="07:45 PM" />
                 <span class="prayer-col-label">جماعت کا وقت:</span>
@@ -6347,15 +6375,15 @@ body *::-webkit-scrollbar-thumb:hover {
             <!-- Juma & Sunrise Row -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #cbd5e1;">
               <div>
-                <label for="subPrayerSunrise" style="font-size: 11px; font-weight: 700; color: #475569; display: block; margin-bottom: 2px;">طلوعِ آفتاب (Sunrise):</label>
+                <label for="subPrayerSunrise" style="font-size: 11px; font-weight: 700; color: #475569; display: block; margin-bottom: 2px;">طلوعِ آفتاب:</label>
                 <input type="text" id="subPrayerSunrise" class="prayer-time-input" value="06:30 AM" readonly style="background: #f1f5f9; color: #64748b;" />
               </div>
               <div>
-                <label for="subJumaTime" style="font-size: 11px; font-weight: 800; color: #166534; display: block; margin-bottom: 2px;">خطبۂ جمعہ (Khutbah):</label>
+                <label for="subJumaTime" style="font-size: 11px; font-weight: 800; color: #166534; display: block; margin-bottom: 2px;">خطبۂ جمعہ:</label>
                 <input type="text" id="subJumaTime" class="prayer-time-input" value="01:15 PM" placeholder="01:15 PM" style="border-color: #86efac; font-weight: 800; color: #166534;" />
               </div>
               <div>
-                <label for="subJumaPrayerTime" style="font-size: 11px; font-weight: 800; color: #166534; display: block; margin-bottom: 2px;">نمازِ جمعہ (Juma Prayer):</label>
+                <label for="subJumaPrayerTime" style="font-size: 11px; font-weight: 800; color: #166534; display: block; margin-bottom: 2px;">نمازِ جمعہ:</label>
                 <input type="text" id="subJumaPrayerTime" class="prayer-time-input" value="01:45 PM" placeholder="01:45 PM" style="border-color: #86efac; font-weight: 800; color: #166534;" />
               </div>
             </div>
@@ -6365,9 +6393,9 @@ body *::-webkit-scrollbar-thumb:hover {
           <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; margin-bottom: 14px;">
             <div style="font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between;">
               <span style="display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-images" style="color: #d97706;"></i> 4۔ مسجد کی تصاویر (Photos & Gallery)
+                <i class="fa-solid fa-images" style="color: #d97706;"></i> 4۔ مسجد کی تصاویر
               </span>
-              <span style="font-size: 11px; color: #64748b;">زیادہ سے زیادہ 8 تصاویر (Max 15MB)</span>
+              <span style="font-size: 11px; color: #64748b;">زیادہ سے زیادہ 8 تصاویر</span>
             </div>
 
             <div class="mosque-photo-dropzone" onclick="document.getElementById('subPhotoFileInput').click()">
@@ -6379,7 +6407,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
             <!-- Direct URL Option -->
             <div style="display: flex; gap: 6px; margin-top: 10px;">
-              <input type="url" id="subPhotoUrlInput" class="filter-select" placeholder="یا تصویر کا آن لائن URL درج کریں (https://...)" style="font-size: 12px; flex: 1; direction: ltr;" />
+              <input type="url" id="subPhotoUrlInput" class="filter-select" placeholder="یا تصویر کا آن لائن URL درج کریں" style="font-size: 12px; flex: 1; direction: ltr;" />
               <button type="button" class="btn btn-sm btn-outline-primary" onclick="addPhotoFromUrl()" style="white-space: nowrap; font-size: 12px; font-weight: 700;">
                 <i class="fa-solid fa-plus"></i> تصویر جوڑیں
               </button>
@@ -6394,9 +6422,9 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="photo-preview-grid" id="publicPhotoPreviews"></div>
           </div>
 
-          <!-- 7. FACILITIES (CHECKBOXES) -->
+          <!-- 7. FACILITIES  -->
           <div style="margin-bottom: 14px;">
-            <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;">5۔ دستیاب سہولیات (Facilities):</label>
+            <label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;">5۔ دستیاب سہولیات:</label>
             <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px;">
               <label style="background: #f1f5f9; border: 1px solid #e2e8f0; padding: 5px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                 <input type="checkbox" name="subFacility" value="وضو خانہ" checked /> وضو خانہ
@@ -6425,13 +6453,13 @@ body *::-webkit-scrollbar-thumb:hover {
           <!-- 8. SUBMITTER / CONTRIBUTOR CONTACT INFO -->
           <div style="background: #f0fdf4; border: 1.5px solid #a7f3d0; border-radius: 14px; padding: 14px; margin-bottom: 14px;">
             <div style="font-size: 13px; font-weight: 800; color: #166534; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-user-check" style="color: #059669;"></i> 6۔ اندراج کنندہ کی معلومات (Contributor Information)
+              <i class="fa-solid fa-user-check" style="color: #059669;"></i> 6۔ اندراج کنندہ کی معلومات
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px;">
               <div>
                 <label for="subSubmitterName" style="display: block; font-size: 12px; font-weight: 700; color: #166534; margin-bottom: 4px;">
-                  آپ کا نام (Submitter Name) <span style="color: #dc2626;">*</span>
+                  آپ کا نام <span style="color: #dc2626;">*</span>
                 </label>
                 <input type="text" id="subSubmitterName" class="filter-select" required placeholder="اپنا مکمل نام درج کریں..." style="width: 100%; font-size: 13px; background: #ffffff;" />
               </div>
@@ -6445,18 +6473,18 @@ body *::-webkit-scrollbar-thumb:hover {
 
             <div>
               <label for="subNotes" style="display: block; font-size: 12px; font-weight: 700; color: #166534; margin-bottom: 4px;">
-                اضافی رہنمائی یا کوائف (Notes / Description):
+                اضافی رہنمائی یا کوائف:
               </label>
               <textarea id="subNotes" class="filter-select" rows="2" placeholder="مسجد کی تاریخ، امام صاحب کا نام، یا تصدیق کے لیے کوئی حوالہ..." style="width: 100%; font-size: 12.5px; background: #ffffff;"></textarea>
             </div>
           </div>
 
-          <!-- HIDDEN SUBMIT BUTTON (TRIGGERED BY FOOTER) -->
+          <!-- HIDDEN SUBMIT BUTTON  -->
           <button type="submit" id="hiddenFormSubmitBtn" style="display: none;"></button>
         </form>
       </div>
 
-      <!-- STICKY MODAL FOOTER (ALWAYS VISIBLE ON ALL SCREENS) -->
+      <!-- STICKY MODAL FOOTER  -->
       <div class="modal-sticky-footer">
         <button type="button" class="btn btn-outline-secondary" onclick="closePublicMosqueSubmissionModal()" style="border-radius: 10px; padding: 9px 18px; font-weight: 700; font-size: 13px;">
           منسوخ کریں

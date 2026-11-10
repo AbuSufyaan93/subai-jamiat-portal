@@ -2314,7 +2314,7 @@ body *::-webkit-scrollbar-thumb:hover {
         <span>موضوعات</span>
       </a>
 
-      <a href="./library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی سرکاری مطبوعات">
+      <a href="./library/publications" class="library-nav-link hide-on-laptop " title="صوبائی جمعیت اہل حدیث ممبئی کی مطبوعات">
         <i class="fa-solid fa-stamp"></i>
         <span>مطبوعات</span>
       </a>
@@ -2895,7 +2895,7 @@ body *::-webkit-scrollbar-thumb:hover {
       <i class="fa-solid fa-layer-group" style="font-size: 18px;"></i>
       <h3 class="topics-drawer-title">موضوعاتی فہرست</h3>
     </div>
-    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں (Esc)">
+    <button type="button" class="topics-drawer-close" onclick="closeTopicsDrawer()" aria-label="موضوعاتی فہرست بند کریں" title="بند کریں">
       <i class="fa-solid fa-xmark"></i>
     </button>
   </div>
@@ -3377,7 +3377,7 @@ body *::-webkit-scrollbar-thumb:hover {
 <!-- SCHOLAR BOOK UPLOAD & 2-STAGE MODERATION STUDIO (عالمِ دین کتاب اپلوڈ اسٹوڈیو) -->
 <!-- مرحلہ ۱: عالمِ دین کی لازمی تفصیلات (نام، پتہ، واٹس ایپ، اہلیت و فراغت)          -->
 <!-- مرحلہ ۲: کتاب کی مکمل تفصیلات + PDF یا ٹیکسٹ اپلوڈ                            -->
-<!-- مرحلہ ۳: ایڈمن کا مراجعہ (Review) -> سپر ایڈمن کا موافقہ (Approval) -> نشر     -->
+<!-- مرحلہ ۳: ایڈمن کا مراجعہ -> سپر ایڈمن کا موافقہ -> نشر     -->
 <!-- ============================================================================ -->
 <style>
   .sbu-modal-backdrop {
@@ -3812,7 +3812,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </div>
         </div>
 
-        <!-- SUBMISSION CONFIRMATION BANNER (HIDDEN UNTIL SUBMITTED) -->
+        <!-- SUBMISSION CONFIRMATION BANNER  -->
         <div id="sbuSuccessConfirmationCard" style="display: none; background: linear-gradient(135deg, #ecfdf5 0%, #f0f9ff 100%); border: 2px solid #059669; border-radius: 18px; padding: 26px 24px; text-align: center; margin-bottom: 20px; box-shadow: 0 12px 30px rgba(5, 150, 105, 0.14);">
           <div style="width: 64px; height: 64px; border-radius: 50%; background: #059669; color: #ffffff; font-size: 30px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; box-shadow: 0 6px 18px rgba(5, 150, 105, 0.3);">
             <i class="fa-solid fa-check-double"></i>
@@ -3822,7 +3822,7 @@ body *::-webkit-scrollbar-thumb:hover {
           </h3>
           <p style="font-size: 14.5px; font-weight: 700; color: #0f766e; max-width: 680px; margin: 0 auto 14px; line-height: 1.9; background: #ffffff; padding: 12px 18px; border-radius: 12px; border: 1px solid #99f6e4;">
             <i class="fa-solid fa-shield-halved" style="color: #0284c7;"></i>
-            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ (Admin Review)</strong> اور پھر <strong>سپر ایڈمن کے موافقہ (Super Admin Approval)</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
+            آپ کی اپلوڈ کردہ کتاب ایڈمن کو بھیج دی گئی ہے۔ اب وہ کتاب <strong>ایڈمن کے مراجعہ</strong> اور پھر <strong>سپر ایڈمن کے موافقہ</strong> کے بعد ہی لائبریری میں نشر ہوگی۔
           </p>
           <div id="sbuConfirmationMeta" style="font-size: 13px; color: #334155; margin-bottom: 16px;"></div>
           <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -3863,7 +3863,7 @@ body *::-webkit-scrollbar-thumb:hover {
               <div class="sbu-field">
                 <label class="sbu-label">
                   <i class="fa-brands fa-whatsapp" style="color: #16a34a; font-size: 15px;"></i>
-                  <span>واٹس ایپ نمبر (WhatsApp Number) <span class="sbu-req">*</span></span>
+                  <span>واٹس ایپ نمبر <span class="sbu-req">*</span></span>
                 </label>
                 <input type="tel" id="sbuScholarWhatsapp" name="scholarWhatsapp" class="sbu-input" placeholder="مثلاً: +91 98XXXXXXXX" dir="ltr" style="text-align: right;" required oninput="checkScholarGateUnlock()" />
               </div>
@@ -3883,7 +3883,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   <i class="fa-solid fa-graduation-cap" style="color: #d97706;"></i>
                   <span>اہلیت و فراغت کہاں سے ہوئی ہے؟ (جامعہ / ادارۂ فراغت و سنِ فراغت) <span class="sbu-req">*</span></span>
                 </label>
-                <input type="text" id="sbuScholarQualification" name="scholarQualification" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
+                <input type="text" id="sbuScholarتعلیمی قابلیت" name="scholarتعلیمی قابلیت" class="sbu-input" placeholder="مثلاً: عالمیت و فضیلت — جامعہ سلفیہ بنارس / جامعہ اسلامیہ مدینہ منورہ (سن فراغت)" required oninput="checkScholarGateUnlock()" />
               </div>
             </div>
 
@@ -3929,7 +3929,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
           <!-- ============================================================== -->
           <!-- STEP 2: FULL ADMIN-STYLE BOOK METADATA & PDF/TEXT UPLOAD       -->
-          <!-- (LOCKED UNTIL STEP 1 IS COMPLETED)                             -->
+          <!--                              -->
           <!-- ============================================================== -->
           <div class="sbu-locked-wrapper is-locked" id="sbuStep2Wrapper">
             <div class="sbu-lockable-content">
@@ -3975,7 +3975,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="sbu-grid-3">
                   <div class="sbu-field">
-                    <label class="sbu-label">علمی زمرہ / موضوع (Category) <span class="sbu-req">*</span></label>
+                    <label class="sbu-label">علمی زمرہ / موضوع <span class="sbu-req">*</span></label>
                     <select id="sbuBookCategory" name="category" class="sbu-select" disabled required>
                       <option value="عقیدہ و منہج">عقیدہ و منہج (توحید و سنت)</option>
                       <option value="قرآن و علوم القرآن">قرآن و علوم القرآن (تفسیر و تجوید)</option>
@@ -3992,7 +3992,7 @@ body *::-webkit-scrollbar-thumb:hover {
                   </div>
 
                   <div class="sbu-field">
-                    <label class="sbu-label">ذیلی موضوع (Subcategory)</label>
+                    <label class="sbu-label">ذیلی موضوع</label>
                     <input type="text" id="sbuBookSubcategory" name="subcategory" class="sbu-input" placeholder="مثلاً: اسماء و صفات / نماز کے احکام" disabled />
                   </div>
 
@@ -4001,7 +4001,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <select id="sbuBookLanguage" name="language" class="sbu-select" disabled>
                       <option value="اردو">اردو</option>
                       <option value="عربی">عربی</option>
-                      <option value="English">انگریزی (English)</option>
+                      <option value="English">انگریزی</option>
                       <option value="ہندی">ہندی (हिंदी)</option>
                       <option value="فارسی">فارسی</option>
                     </select>
@@ -4031,7 +4031,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 </div>
               </div>
 
-              <!-- 2B: DIGITAL FILE UPLOADS (PDF OR TEXT/UNICODE OR BOTH + COVER) -->
+              <!-- 2B: DIGITAL FILE UPLOADS  -->
               <div class="sbu-section-card">
                 <div class="sbu-section-header">
                   <h3 class="sbu-section-title">
@@ -4045,11 +4045,11 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div class="sbu-format-pills">
                   <button type="button" class="sbu-format-pill active" id="sbuModeBtnPdf" onclick="setSbuUploadMode('pdf')">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-                    <span>پی ڈی ایف (PDF) کتاب اپلوڈ</span>
+                    <span>پی ڈی ایف کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnText" onclick="setSbuUploadMode('text')">
                     <i class="fa-solid fa-file-lines" style="color: #0284c7;"></i>
-                    <span>ٹیکسٹ / یونیکوڈ (Text) کتاب اپلوڈ</span>
+                    <span>ٹیکسٹ / یونیکوڈ کتاب اپلوڈ</span>
                   </button>
                   <button type="button" class="sbu-format-pill" id="sbuModeBtnBoth" onclick="setSbuUploadMode('both')">
                     <i class="fa-solid fa-layer-group" style="color: #059669;"></i>
@@ -4062,12 +4062,12 @@ body *::-webkit-scrollbar-thumb:hover {
                   <div class="sbu-field">
                     <label class="sbu-label">
                       <i class="fa-solid fa-image" style="color: #059669;"></i>
-                      <span>کتاب کا سرورق (Cover Image) — فائل منتخب کریں</span>
+                      <span>کتاب کا سرورق — فائل منتخب کریں</span>
                     </label>
                     <input type="file" id="sbuCoverFile" name="coverFile" accept="image/*" class="sbu-input" style="padding-top: 6px;" disabled onchange="handleSbuCoverPreview(this)" />
                   </div>
                   <div class="sbu-field">
-                    <label class="sbu-label">یا سرورق کا براہِ راست لنک (URL)</label>
+                    <label class="sbu-label">یا سرورق کا براہِ راست لنک</label>
                     <input type="url" id="sbuCoverUrl" name="coverImageUrl" class="sbu-input" placeholder="https://.../cover.jpg" dir="ltr" style="text-align: right;" disabled />
                   </div>
                 </div>
@@ -4076,7 +4076,7 @@ body *::-webkit-scrollbar-thumb:hover {
                 <div id="sbuPdfUploadBlock" style="background: #fef2f2; border: 1.5px dashed #fca5a5; border-radius: 12px; padding: 14px; margin-bottom: 14px;">
                   <div style="font-size: 13px; font-weight: 800; color: #991b1b; margin-bottom: 10px; display: flex; align-items: center; gap: 7px;">
                     <i class="fa-solid fa-file-pdf" style="color: #dc2626; font-size: 16px;"></i>
-                    <span>پی ڈی ایف دستاویز (PDF File Upload / Cloud Link)</span>
+                    <span>پی ڈی ایف دستاویز</span>
                   </div>
                   <div class="sbu-grid-2" style="margin-bottom: 0;">
                     <div class="sbu-field">
@@ -4177,10 +4177,10 @@ body *::-webkit-scrollbar-thumb:hover {
             <div>
               <h3 class="sbu-section-title">
                 <i class="fa-solid fa-user-shield" style="color: #059669;"></i>
-                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل (Two-Tier Approval Queue)</span>
+                <span>ایڈمن مراجعہ اور سپر ایڈمن موافقہ پینل</span>
               </h3>
               <p style="margin: 4px 0 0; font-size: 12px; color: #475569;">
-                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ (Step 1: Admin Review)</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ (Step 2: Super Admin Approval)</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
+                ہر ارسال کردہ کتاب پہلے <strong>ایڈمن کے مراجعہ</strong> اور اس کے بعد <strong>سپر ایڈمن کے حتمی موافقہ</strong> کے بعد ہی لائبریری میں شائع ہوتی ہے۔
               </p>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
@@ -4863,7 +4863,7 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="container2">
                 <div class="row g-lg-4 g-md-3 g-sm-2 g-2 justify-content-center">
 
-                    <!-- MAIN CONTENT COLUMN (FULL WIDTH DEDICATED PORTAL) -->
+                    <!-- MAIN CONTENT COLUMN  -->
                     <div class="column-center column col-12">
 
                         <!-- BREADCRUMB & SCHOLAR BOOK UPLOAD QUICK BAR -->
@@ -4928,7 +4928,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                 <div class="lib-deep-search-bar">
                                     <label class="lib-deep-toggle-label" for="chkDeepSearch" title="کتاب کے اندرونی متن، تفاصیل اور فہرست میں گہری تلاش">
                                         <input type="checkbox" name="deep" value="1" id="chkDeepSearch"  onchange="document.getElementById('libFilterForm').submit()">
-                                        <span><i class="fa-solid fa-brain" style="color: #0284c7;"></i> <strong>گہری تلاش (Deep Search)</strong> — کتاب کی تفاصیل، فہرست اور متنی مواد میں تلاش</span>
+                                        <span><i class="fa-solid fa-brain" style="color: #0284c7;"></i> <strong>گہری تلاش</strong> — کتاب کی تفاصیل، فہرست اور متنی مواد میں تلاش</span>
                                     </label>
                                     <span class="lib-deep-hint">
                                         <i class="fa-solid fa-circle-info text-primary"></i> الفاظ کے اندرونی وقوع اور اقتباسات تلاش کریں
@@ -4946,23 +4946,23 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                     <div class="lib-adv-grid">
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">عنوان کتاب (Title):</label>
+                                            <label class="lib-adv-label">عنوان کتاب:</label>
                                             <input type="text" name="title" value="" placeholder="مثلاً: تفسیر، احکام..." class="lib-adv-input">
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">مصنف / مؤلف (Author):</label>
+                                            <label class="lib-adv-label">مصنف / مؤلف:</label>
                                             <input type="text" name="author" value="" placeholder="مثلاً: شیخ الاسلام ابن تیمیہ..." class="lib-adv-input">
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">مترجم / محقق (Translator):</label>
+                                            <label class="lib-adv-label">مترجم / محقق:</label>
                                             <input type="text" name="translator" value="" placeholder="مثلاً: مولانا..." class="lib-adv-input">
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">ناشر / مکتبہ (Publisher):</label>
+                                            <label class="lib-adv-label">ناشر / مکتبہ:</label>
                                             <input type="text" name="publisher" value="" placeholder="مثلاً: دار السلام، مکتبہ..." class="lib-adv-input">
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">شعبہ / موضوع (Category):</label>
+                                            <label class="lib-adv-label">شعبہ / موضوع:</label>
                                             <select name="category" class="lib-adv-select">
                                                 <option value="">تمام شعبہ جات</option>
                                                 
@@ -5025,7 +5025,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                             </select>
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">زبان (Language):</label>
+                                            <label class="lib-adv-label">زبان:</label>
                                             <select name="language" class="lib-adv-select">
                                                 <option value="">تمام زبانیں</option>
                                                 <option value="اردو" >اردو</option>
@@ -5039,7 +5039,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                             <input type="text" name="isbn" value="" placeholder="مثلاً: 978-..." class="lib-adv-input">
                                         </div>
                                         <div class="lib-adv-field">
-                                            <label class="lib-adv-label">سن اشاعت (Year):</label>
+                                            <label class="lib-adv-label">سن اشاعت:</label>
                                             <input type="number" name="year" value="" placeholder="مثلاً: 2021" class="lib-adv-input">
                                         </div>
                                     </div>
@@ -5466,8 +5466,8 @@ body *::-webkit-scrollbar-thumb:hover {
                                     <!-- FORMAT -->
                                     <select name="format" class="lib-select" onchange="document.getElementById('libFilterForm').submit()">
                                         <option value="all" >تمام اقسام (ڈیجیٹل و مطبوعہ)</option>
-                                        <option value="digital" >صرف ڈیجیٹل (Online Read / PDF)</option>
-                                        <option value="physical" >صرف مطبوعہ نسخے (Physical Copies)</option>
+                                        <option value="digital" >صرف ڈیجیٹل</option>
+                                        <option value="physical" >صرف مطبوعہ نسخے</option>
                                     </select>
 
                                     <!-- RESTRICTION / ACCESS -->
@@ -5776,17 +5776,17 @@ body *::-webkit-scrollbar-thumb:hover {
                             <div class="showroom-grid" id="catalogGridView">
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-001" class="showroom-cover-link" title="بدعت کی پہچان کی تفصیل دیکھیں">
                                                 <img src="./images/book-1.jpeg" alt="بدعت کی پہچان" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-001" class="showroom-title-link" title="بدعت کی پہچان">
                                             بدعت کی پہچان
                                         </a>
@@ -5819,17 +5819,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-002" class="showroom-cover-link" title="منہج حق کی وضاحت کی تفصیل دیکھیں">
                                                 <img src="./images/book-2.jpeg" alt="منہج حق کی وضاحت" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-002" class="showroom-title-link" title="منہج حق کی وضاحت">
                                             منہج حق کی وضاحت
                                         </a>
@@ -5862,17 +5862,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-003" class="showroom-cover-link" title="پیر زادہ محدثین کی عدالت کی تفصیل دیکھیں">
                                                 <img src="./images/book-3.jpeg" alt="پیر زادہ محدثین کی عدالت" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-003" class="showroom-title-link" title="پیر زادہ محدثین کی عدالت">
                                             پیر زادہ محدثین کی عدالت
                                         </a>
@@ -5905,17 +5905,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-004" class="showroom-cover-link" title="رقیہ اور راقیوں سے متعلق اہم سوالات کی تفصیل دیکھیں">
                                                 <img src="./images/book-4.jpeg" alt="رقیہ اور راقیوں سے متعلق اہم سوالات" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-004" class="showroom-title-link" title="رقیہ اور راقیوں سے متعلق اہم سوالات">
                                             رقیہ اور راقیوں سے متعلق اہم سوالات
                                         </a>
@@ -5948,17 +5948,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-005" class="showroom-cover-link" title="شرک قرآنی تمثیلات کے آیؑنے میں کی تفصیل دیکھیں">
                                                 <img src="./images/book-5.jpeg" alt="شرک قرآنی تمثیلات کے آیؑنے میں" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-005" class="showroom-title-link" title="شرک قرآنی تمثیلات کے آیؑنے میں">
                                             شرک قرآنی تمثیلات کے آیؑنے میں
                                         </a>
@@ -5991,17 +5991,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-006" class="showroom-cover-link" title="قیام رمضان کی تفصیل دیکھیں">
                                                 <img src="./images/book-6.jpeg" alt="قیام رمضان" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-006" class="showroom-title-link" title="قیام رمضان">
                                             قیام رمضان
                                         </a>
@@ -6034,17 +6034,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-007" class="showroom-cover-link" title="اسلام اور اھنسا(اردو) کی تفصیل دیکھیں">
                                                 <img src="./images/book-7.jpeg" alt="اسلام اور اھنسا(اردو)" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-007" class="showroom-title-link" title="اسلام اور اھنسا(اردو)">
                                             اسلام اور اھنسا(اردو)
                                         </a>
@@ -6077,17 +6077,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-009" class="showroom-cover-link" title="صیام رمضان کی تفصیل دیکھیں">
                                                 <img src="./images/book-9.jpeg" alt="صیام رمضان" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-009" class="showroom-title-link" title="صیام رمضان">
                                             صیام رمضان
                                         </a>
@@ -6120,17 +6120,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-010" class="showroom-cover-link" title="اولاد کی تربیت میں کوتاہی کی تفصیل دیکھیں">
                                                 <img src="./images/book-10.jpeg" alt="اولاد کی تربیت میں کوتاہی" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-010" class="showroom-title-link" title="اولاد کی تربیت میں کوتاہی">
                                             اولاد کی تربیت میں کوتاہی
                                         </a>
@@ -6163,17 +6163,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-011" class="showroom-cover-link" title="حج و عمرہ کی تفصیل دیکھیں">
                                                 <img src="./images/book-11.jpeg" alt="حج و عمرہ" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-011" class="showroom-title-link" title="حج و عمرہ">
                                             حج و عمرہ
                                         </a>
@@ -6206,17 +6206,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-012" class="showroom-cover-link" title="محرم کی تفصیل دیکھیں">
                                                 <img src="./images/book-12.jpeg" alt="محرم" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-012" class="showroom-title-link" title="محرم">
                                             محرم
                                         </a>
@@ -6249,17 +6249,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-013" class="showroom-cover-link" title="نبی رحمت کے معجزات اور پیشنگویؑاں کی تفصیل دیکھیں">
                                                 <img src="./images/book-13.jpeg" alt="نبی رحمت کے معجزات اور پیشنگویؑاں" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-013" class="showroom-title-link" title="نبی رحمت کے معجزات اور پیشنگویؑاں">
                                             نبی رحمت کے معجزات اور پیشنگویؑاں
                                         </a>
@@ -6292,17 +6292,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-014" class="showroom-cover-link" title="فعتبروایااؑولی الابصار کی تفصیل دیکھیں">
                                                 <img src="./images/book-14.jpeg" alt="فعتبروایااؑولی الابصار" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-014" class="showroom-title-link" title="فعتبروایااؑولی الابصار">
                                             فعتبروایااؑولی الابصار
                                         </a>
@@ -6335,17 +6335,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-015" class="showroom-cover-link" title="علماء حق کی وفات اور ہم پر عائد ذمہ داریاں کی تفصیل دیکھیں">
                                                 <img src="./images/book-15.jpeg" alt="علماء حق کی وفات اور ہم پر عائد ذمہ داریاں" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-015" class="showroom-title-link" title="علماء حق کی وفات اور ہم پر عائد ذمہ داریاں">
                                             علماء حق کی وفات اور ہم پر عائد ذمہ داریاں
                                         </a>
@@ -6378,17 +6378,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-016" class="showroom-cover-link" title="مختصر مسائل زکاۃ کی تفصیل دیکھیں">
                                                 <img src="./images/book-16.jpeg" alt="مختصر مسائل زکاۃ" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-016" class="showroom-title-link" title="مختصر مسائل زکاۃ">
                                             مختصر مسائل زکاۃ
                                         </a>
@@ -6421,17 +6421,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-017" class="showroom-cover-link" title="ناموس مصطفیٰ کی تفصیل دیکھیں">
                                                 <img src="./images/book-17.jpeg" alt="ناموس مصطفیٰ" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-017" class="showroom-title-link" title="ناموس مصطفیٰ">
                                             ناموس مصطفیٰ
                                         </a>
@@ -6464,17 +6464,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-018" class="showroom-cover-link" title="عوراتوں کا حق وراثت  اور جدید جاہلیت کی تفصیل دیکھیں">
                                                 <img src="./images/book-18.jpeg" alt="عوراتوں کا حق وراثت  اور جدید جاہلیت" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-018" class="showroom-title-link" title="عوراتوں کا حق وراثت  اور جدید جاہلیت">
                                             عوراتوں کا حق وراثت  اور جدید جاہلیت
                                         </a>
@@ -6507,17 +6507,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-019" class="showroom-cover-link" title="عظمت صحابہ کے چند پہلو کی تفصیل دیکھیں">
                                                 <img src="./images/book-19.jpeg" alt="عظمت صحابہ کے چند پہلو" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-019" class="showroom-title-link" title="عظمت صحابہ کے چند پہلو">
                                             عظمت صحابہ کے چند پہلو
                                         </a>
@@ -6550,17 +6550,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-020" class="showroom-cover-link" title="مقصد حیات اور موؑمن کی بلند سوچ کی تفصیل دیکھیں">
                                                 <img src="./images/book-20.jpeg" alt="مقصد حیات اور موؑمن کی بلند سوچ" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-020" class="showroom-title-link" title="مقصد حیات اور موؑمن کی بلند سوچ">
                                             مقصد حیات اور موؑمن کی بلند سوچ
                                         </a>
@@ -6593,17 +6593,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-021" class="showroom-cover-link" title="عشرۂ ذی الحجہ کے اہم شرعی وظائف کی تفصیل دیکھیں">
                                                 <img src="./images/book-21.jpeg" alt="عشرۂ ذی الحجہ کے اہم شرعی وظائف" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-021" class="showroom-title-link" title="عشرۂ ذی الحجہ کے اہم شرعی وظائف">
                                             عشرۂ ذی الحجہ کے اہم شرعی وظائف
                                         </a>
@@ -6636,17 +6636,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-022" class="showroom-cover-link" title="ایمان کی کمزوری کی تفصیل دیکھیں">
                                                 <img src="./images/book-22.jpeg" alt="ایمان کی کمزوری" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-022" class="showroom-title-link" title="ایمان کی کمزوری">
                                             ایمان کی کمزوری
                                         </a>
@@ -6679,17 +6679,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-024" class="showroom-cover-link" title="زکاۃ مختصر احکام و مسائل کی تفصیل دیکھیں">
                                                 <img src="./images/book-24.jpeg" alt="زکاۃ مختصر احکام و مسائل" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-024" class="showroom-title-link" title="زکاۃ مختصر احکام و مسائل">
                                             زکاۃ مختصر احکام و مسائل
                                         </a>
@@ -6722,17 +6722,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-025" class="showroom-cover-link" title="کاموں کی ترجیحات کی تفصیل دیکھیں">
                                                 <img src="./images/book-25.jpeg" alt="کاموں کی ترجیحات" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-025" class="showroom-title-link" title="کاموں کی ترجیحات">
                                             کاموں کی ترجیحات
                                         </a>
@@ -6765,17 +6765,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-026" class="showroom-cover-link" title="قادیانیت کی حقیقت کی تفصیل دیکھیں">
                                                 <img src="./images/book-26.jpeg" alt="قادیانیت کی حقیقت" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-026" class="showroom-title-link" title="قادیانیت کی حقیقت">
                                             قادیانیت کی حقیقت
                                         </a>
@@ -6808,17 +6808,17 @@ body *::-webkit-scrollbar-thumb:hover {
                                     </div>
                                 
                                     <div class="showroom-book-card">
-                                        <!-- BOOK COVER (CLICKABLE) -->
+                                        <!-- BOOK COVER  -->
                                         <div class="showroom-cover-wrap">
                                             <a href="./library/book/lib-bok-pub-027" class="showroom-cover-link" title="امت محمدیہ کے فضائل کی تفصیل دیکھیں">
                                                 <img src="./images/book-27.jpeg" alt="امت محمدیہ کے فضائل" class="showroom-cover-img" onerror="this.src='./images/book-placeholder.png'" />
                                             </a>
                                         </div>
 
-                                        <!-- MATCH BADGE (SEARCH RELEVANCE) -->
+                                        <!-- MATCH BADGE  -->
                                         
 
-                                        <!-- BOOK TITLE (CLICKABLE) -->
+                                        <!-- BOOK TITLE  -->
                                         <a href="./library/book/lib-bok-pub-027" class="showroom-title-link" title="امت محمدیہ کے فضائل">
                                             امت محمدیہ کے فضائل
                                         </a>

@@ -92,38 +92,55 @@
 
         .contact-modern-card {
             background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--cnt-border);
+            border-radius: 22px;
+            box-shadow: 0 12px 34px rgba(13, 148, 136, 0.08), 0 3px 10px rgba(15, 23, 42, 0.03);
+            border: 1.5px solid #99f6e4;
             overflow: hidden;
             margin-bottom: 25px;
             font-family: inherit;
-        }
-
-        .contact-header-banner {
-            background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
-            color: #ffffff;
-            padding: 24px 20px;
-            text-align: center;
             position: relative;
         }
 
+        .contact-modern-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4.5px;
+            background: linear-gradient(90deg, #0d9488 0%, #0284c7 35%, #10b981 70%, #f59e0b 100%);
+            z-index: 5;
+        }
+
+        .contact-header-banner {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
+            color: #0f172a;
+            padding: 26px 22px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1.5px solid #bae6fd;
+        }
+
         .contact-header-banner h1 {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: 800;
-            margin: 0 0 6px;
-            color: #ffffff;
+            margin: 0 0 8px;
+            color: #0f172a;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
 
+        .contact-header-banner h1 i {
+            color: #0d9488;
+        }
+
         .contact-header-banner p {
-            font-size: 13.5px;
+            font-size: 14px;
             margin: 0;
-            color: #ccfbf1;
-            line-height: 1.5;
+            color: #334155;
+            line-height: 1.65;
         }
 
         /* Mode Switcher Tabs */
@@ -952,9 +969,37 @@
     margin: 0 auto !important;
   }
   section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
     padding-top: 4px !important;
     min-height: 82vh;
+  }
+
+  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
+  section#content .column-center > .card > .top {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
+    border: 1.5px solid #99f6e4 !important;
+    border-radius: 18px !important;
+    padding: 20px 26px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section#content .column-center > .card > .top::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4.5px !important;
+    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
+  }
+  section#content .column-center > .card > .top h1 {
+    color: #064e3b !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    text-shadow: none !important;
   }
 
   /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
@@ -1433,12 +1478,12 @@
         </div>
         <div class="sj-dept-brand-text">
           <h1>شعبۂ رابطہ، تعاون و خدمات پورٹل</h1>
-          <span>صوبائی جمعیت اہل حدیث ممبئی — براہِ راست رابطہ، مالی تعاون اور ڈیجیٹل ٹولز</span>
+          <span>صوبائی جمعیت اہل حدیث ممبئی — براہِ راست رابطہ، مالی تعاون اور علمی سہولیات</span>
         </div>
       </a>
     </div>
 
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES (SINGLE LINE) -->
+    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
     <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ رابطہ، تعاون و خدمات پورٹل" style="flex-wrap: nowrap;">
       <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -1454,13 +1499,13 @@
         
         <a href="./donate" class="sj-dept-link ">
           <i class="fa-solid fa-hand-holding-heart"></i>
-          <span>مالی تعاون / ڈونیشن</span>
+          <span>مالی تعاون و عطیات</span>
         </a>
       
         
         <a href="./unicode" class="sj-dept-link ">
           <i class="fa-solid fa-keyboard"></i>
-          <span>اردو یونیکوڈ کنورٹر</span>
+          <span>اردو یونیکوڈ تحریر کنورٹر</span>
         </a>
       
     </nav>
@@ -1495,7 +1540,7 @@
   <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
     <div>
       <h3 style="margin: 0; font-size: 18px; font-weight: 800;"><i class="fa-solid fa-headset" style="color: #fde68a;"></i> شعبۂ رابطہ، تعاون و خدمات پورٹل — مینو</h3>
-      <div style="font-size: 11px; color: #ccfbf1; margin-top: 2px;">صوبائی جمعیت اہل حدیث ممبئی — براہِ راست رابطہ، مالی تعاون اور ڈیجیٹل ٹولز</div>
+      <div style="font-size: 11px; color: #ccfbf1; margin-top: 2px;">صوبائی جمعیت اہل حدیث ممبئی — براہِ راست رابطہ، مالی تعاون اور علمی سہولیات</div>
     </div>
     <button type="button" onclick="closeSjDeptDrawer()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; cursor: pointer;">&times;</button>
   </div>
@@ -1509,12 +1554,12 @@
       
         <a href="./donate" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-hand-holding-heart" style="color: #0f766e;"></i>
-          <span>مالی تعاون / ڈونیشن</span>
+          <span>مالی تعاون و عطیات</span>
         </a>
       
         <a href="./unicode" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-keyboard" style="color: #0f766e;"></i>
-          <span>اردو یونیکوڈ کنورٹر</span>
+          <span>اردو یونیکوڈ تحریر کنورٹر</span>
         </a>
       
     </div>
@@ -1994,7 +2039,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                 </button>
                                 <button type="button" class="contact-mode-tab" id="tabTrackMode" onclick="switchContactMode('track')">
                                     <i class="fa-solid fa-magnifying-glass"></i>
-                                    پیغام کا اسٹیٹس دیکھیں
+                                    پیغام کی کیفیت دیکھیں
                                 </button>
                             </div>
 
@@ -2003,7 +2048,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                 <div id="authGuestModeWrap">
                                     <button type="button" class="btn-google-contact" id="btnGoogleSignIn" onclick="startGoogleAccountFlow()">
                                         <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
-                                        <span>گوگل سے جاری رکھیں (Google Sign-In)</span>
+                                        <span>گوگل کھاتے سے جاری رکھیں</span>
                                     </button>
                                 </div>
 
@@ -2149,7 +2194,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                     <div class="form-group-custom">
                                         <label class="form-label-custom">
                                             <span><i class="fa-solid fa-paperclip" style="color: var(--cnt-teal); margin-left: 6px;"></i> دستاویز یا تصویر منسلک کریں (اختیاری)</span>
-                                            <span style="font-size: 11px; color: var(--cnt-muted);">زیادہ سے زیادہ 20MB (PDF, JPG, PNG, DOCX)</span>
+                                            <span style="font-size: 11px; color: var(--cnt-muted);">زیادہ سے زیادہ ۲۰ ایم بی</span>
                                         </label>
                                         <div class="attachment-zone" onclick="document.getElementById('contactAttachmentInput').click()">
                                             <i class="fa-solid fa-cloud-arrow-up" style="font-size: 24px; color: var(--cnt-teal); margin-bottom: 4px;"></i>
@@ -2187,7 +2232,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                 </p>
 
                                 <div class="ref-code-box">
-                                    <div style="font-size: 12px; color: #0d9488; font-weight: 700; margin-bottom: 4px;">آپ کا حوالہ نمبر (Reference No)</div>
+                                    <div style="font-size: 12px; color: #0d9488; font-weight: 700; margin-bottom: 4px;">آپ کا حوالہ نمبر</div>
                                     <div class="ref-code-text" id="successRefCode">C-000000</div>
                                 </div>
 
@@ -2205,7 +2250,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                 <div style="margin-top: 24px; display: flex; gap: 10px; justify-content: center;">
                                     <button type="button" class="track-btn" onclick="switchContactMode('track', true)">
                                         <i class="fa-solid fa-magnifying-glass"></i>
-                                        <span>اسٹیٹس ٹریک کریں</span>
+                                        <span>کیفیت معلوم کریں</span>
                                     </button>
                                     <button type="button" class="btn-google-contact" onclick="resetAndNewMessage()">
                                         <i class="fa-solid fa-plus"></i>
@@ -2218,7 +2263,7 @@ body *::-webkit-scrollbar-thumb:hover {
                             <div class="contact-track-panel" id="contactTrackPanel">
                                 <h3 style="font-size: 18px; font-weight: 800; color: var(--cnt-navy); margin: 0 0 6px;">
                                     <i class="fa-solid fa-magnifying-glass" style="color: var(--cnt-teal); margin-left: 6px;"></i>
-                                    پیغام کا اسٹیٹس و جوابات چیک کریں
+                                    پیغام کی کیفیت و جوابات معلوم کریں
                                 </h3>
                                 <p style="font-size: 13px; color: var(--cnt-muted); margin: 0 0 18px;">
                                     اپنے پیغام کا حوالہ نمبر (مثال: C-000001) درج کرکے کارروائی اور دفتری جواب ملاحظہ فرمائیں۔

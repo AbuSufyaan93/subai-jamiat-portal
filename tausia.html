@@ -336,9 +336,37 @@
     margin: 0 auto !important;
   }
   section#content {
-    background: linear-gradient(180deg, #f0fdfa 0%, #f8fafc 280px, #f1f5f9 100%) !important;
+    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
     padding-top: 4px !important;
     min-height: 82vh;
+  }
+
+  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
+  section#content .column-center > .card > .top {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
+    border: 1.5px solid #99f6e4 !important;
+    border-radius: 18px !important;
+    padding: 20px 26px !important;
+    margin-bottom: 18px !important;
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  section#content .column-center > .card > .top::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 4.5px !important;
+    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
+  }
+  section#content .column-center > .card > .top h1 {
+    color: #064e3b !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    text-shadow: none !important;
   }
 
   /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
@@ -822,7 +850,7 @@
       </a>
     </div>
 
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES (SINGLE LINE) -->
+    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
     <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ توصیہ و تصدیق پورٹل" style="flex-wrap: nowrap;">
       <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
         <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
@@ -844,13 +872,13 @@
         
         <a href="./check-tausia-status" class="sj-dept-link ">
           <i class="fa-solid fa-magnifying-glass-chart"></i>
-          <span>اسٹیٹس چیک (مساجد)</span>
+          <span>کیفیتِ درخواست (مساجد)</span>
         </a>
       
         
         <a href="./check-talaba-status" class="sj-dept-link ">
           <i class="fa-solid fa-id-card-clip"></i>
-          <span>اسٹیٹس چیک (طلبہ)</span>
+          <span>کیفیتِ درخواست (طلبہ)</span>
         </a>
       
     </nav>
@@ -904,12 +932,12 @@
       
         <a href="./check-tausia-status" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-magnifying-glass-chart" style="color: #0f766e;"></i>
-          <span>اسٹیٹس چیک (مساجد)</span>
+          <span>کیفیتِ درخواست (مساجد)</span>
         </a>
       
         <a href="./check-talaba-status" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
           <i class="fa-solid fa-id-card-clip" style="color: #0f766e;"></i>
-          <span>اسٹیٹس چیک (طلبہ)</span>
+          <span>کیفیتِ درخواست (طلبہ)</span>
         </a>
       
         <a href="./tausia-authentication" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
@@ -1407,7 +1435,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                                                     <div class="two-input">
 
-                                                        <select name="Qism" required>
+                                                        <select name="قسم" required>
                                                             <option value="" selected disabled>قسم</option>
                                                             <option value="مسجد">مسجد</option>
                                                             <option value="اقامتی مدرسہ">اقامتی مدرسہ</option>
@@ -1415,7 +1443,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         </select>
 
 
-                                                        <select name="Braye" required>
+                                                        <select name="برائے" required>
                                                             <option value="" selected disabled>برائے</option>
                                                             <option value="طلبہ">طلبہ</option>
                                                             <option value="طالبات">طالبات</option>
@@ -1424,16 +1452,16 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         </select>
 
                                                     </div>
-                                                    <label for="MasjidMadarsaName">
+                                                    <label for="مسجد / مدرسہ کا نام">
                                                         : مسجد یا مدرسہ نام مع مکمل پتہ
                                                     </label>
                                                     <!-- name="Masjid_/_Madarsa_Name_Aur_Address -->
                                                     <div class="two-block-input">
-                                                        <input type="text" name="MasjidMadarsaName"
-                                                            id="MasjidMadarsaName" required minlength="3"
+                                                        <input type="text" name="مسجد / مدرسہ کا نام"
+                                                            id="مسجد / مدرسہ کا نام" required minlength="3"
                                                             placeholder="مسجد یا مدرسہ نام">
                                                         <input type="text" required minlength="3"
-                                                            name="MasjidMadarsaAddress" placeholder="مع مکمل پتہ">
+                                                            name="مسجد / مدرسہ کا پتہ" placeholder="مع مکمل پتہ">
                                                     </div>
 
                                                     <label for="Society_Trust_Name">
@@ -1441,7 +1469,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
                                                     <!-- name="Society_Trust_Name" -->
                                                     <input type="text" id="Society_Trust_Name" required
-                                                        name="SocietyTrustName">
+                                                        name="سوسائٹی / ٹرسٹ کا نام">
 
                                                     <label dir="rtl" for="Tota_Number_Of_Students">
                                                         <span>
@@ -1453,7 +1481,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
                                                     <!-- name="Tota_Number_Of_Students" -->
                                                     <input type="number" id="Tota_Number_Of_Students"
-                                                        name="TotalNumberOfStudents" required>
+                                                        name="طلبہ کی کل تعداد" required>
 
                                                     <label dir="rtl" for="Aqamti_Talba_Talbat_Ki_Tadad">
                                                         <span>
@@ -1465,7 +1493,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
                                                     <!-- name="Aqamti_Talba_Talbat_Ki_Tadad" -->
                                                     <input type="number" id="Aqamti_Talba_Talbat_Ki_Tadad"
-                                                        name="TotalNumberOfAqamtiStudents" required>
+                                                        name="اقامتی طلبہ کی تعداد" required>
 
                                                     <!-- <label for="city">
                                                         : شہر
@@ -1507,10 +1535,10 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
 
                                                     <div class="two-block-input">
-                                                        <textarea name="SocietyTrustPresidentNameNumber"
+                                                        <textarea name="صدر ٹرسٹ کا نام و نمبر"
                                                             placeholder="صدر کا نام اور موبائل نمبر"
                                                             required></textarea>
-                                                        <textarea name="SocietyTrustSecretarieNameNumber"
+                                                        <textarea name="سکریٹری ٹرسٹ کا نام و نمبر"
                                                             placeholder="سیکریٹری کا نام اور موبائل نمبر"
                                                             required></textarea>
                                                     </div>
@@ -1541,26 +1569,26 @@ body *::-webkit-scrollbar-thumb:hover {
                                                             :
                                                         </span>
                                                     </label>
-                                                    <input type="text" name="SafeerName" placeholder="سفیر کا نام"
+                                                    <input type="text" name="سفیر کا نام" placeholder="سفیر کا نام"
                                                         required>
                                                     <!-- pattern is added for validating user atleast enter country code which number of digit should be between 1 to 3 and the rest of the numbers length should be 10 -->
-                                                    <!-- <input type="text" name="SafeerNumber"
-                                                        placeholder="سفیر کا موبائل نمبر" required pattern="\+\d{1,3}\d{10}" title="Please enter a valid phone number (digits only) starting with country code"> -->
+                                                    <!-- <input type="text" name="سفیر کا موبائل نمبر"
+                                                        placeholder="سفیر کا موبائل نمبر" required pattern="\+\d{1,3}\d{10}" title="Please enter a valid phone number  starting with country code"> -->
                                                     <div class="two-input">
                                                         <select name="countryCode" id="countryCode" required>
                                                             <option value="+91" selected>+91</option>
                                                             <option value="+977">+977</option>
                                                         </select>
-                                                        <input type="text" id="SafeerNoWithoutCode" name="SafeerNumberWithoutCode"
+                                                        <input type="text" id="SafeerNoWithoutCode" name="سفیر کا موبائل نمبرWithoutCode"
                                                             placeholder="سفیر کا موبائل نمبر" required
                                                             pattern="[0-9]{10}">
-                                                        <input type="hidden" id="SafeerNumber" name="SafeerNumber" />
+                                                        <input type="hidden" id="سفیر کا موبائل نمبر" name="سفیر کا موبائل نمبر" />
                                                     </div>
 
                                                     <!-- <input type="text" name="Safeer_Ka_Name_Aur_Mobile_Number"
                                                         id="Safeer_Ka_Name_Aur_Mobile_Number" required> -->
                                                     <!-- name="Safeer_Ka_Name_Aur_Mobile_Number" -->
-                                                    <!--<textarea name="SafeerNameNumber"
+                                                    <!--<textarea name="سفیر کا نامNumber"
                                                                                                         id="Safeer_Ka_Name_Aur_Mobile_Number" required></textarea> -->
 
 
@@ -1587,7 +1615,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         id="Zilai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number"
                                                         required> -->
                                                     <!-- name="Zilai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number" -->
-                                                    <textarea name="DistrictJamiatAmirNazimNameNumber"
+                                                    <textarea name="امیر / ناظم ضلعی جمعیت کا نام و نمبر"
                                                         id="Zilai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number"
                                                         required></textarea>
                                                     <!--
@@ -1613,7 +1641,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         id="Subai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number"
                                                         required> -->
                                                     <!-- name="Subai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number" -->
-                                                    <textarea name="SubaiJamiatAmirNazimNameNumber"
+                                                    <textarea name="امیر / ناظم صوبائی جمعیت کا نام و نمبر"
                                                         id="Subai_Jamiat_Ke_Amir_W_Nazim_Ke_Nam_Aur_Mobile_Number"
                                                         required></textarea>
 
@@ -1629,7 +1657,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                         <span>
                                                             :</span>
                                                     </label>
-                                                    <textarea name="TausiaReason" class="small-textarea"
+                                                    <textarea name="توصیہ کا مقصد" class="small-textarea"
                                                         maxlength="200"></textarea>
 
                                                     <label dir="rtl" for="Safeer_Ka_Name">
@@ -1642,7 +1670,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                                     </label>
                                                     <!-- name="Safeer_Ka_Name" -->
                                                     <input id="Safeer_Ka_Name" class="file" type="file"
-                                                        name="SafeerImage" required>
+                                                        name="سفیر کی تصویر" required>
 
                                                     <label for="document" dir="rtl">
                                                         اپنا دستاویز اپلوڈ کریں
