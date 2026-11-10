@@ -1969,72 +1969,158 @@
       color: #fde68a;
     }
 
-    /* Refined, Courteous Frosted-Glass Side Action Dock ("تہذیب") */
+    /* Refined, Courteous Pure-Icon Side Action Dock with Hover-Only Hidden Text Tooltips */
     .yt-reel-side-controls {
       position: fixed;
-      left: calc(50% - 255px);
+      left: calc(50% - 252px);
       top: 50%;
       transform: translateY(-50%);
-      z-index: 3010;
-      background: rgba(6, 28, 17, 0.82);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(201, 168, 76, 0.38);
+      z-index: 3020;
+      background: linear-gradient(180deg, rgba(6, 30, 19, 0.88) 0%, rgba(4, 17, 11, 0.92) 100%);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(201, 168, 76, 0.42);
       border-radius: 999px;
-      padding: 12px 9px;
+      padding: 12px 8px;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
       align-items: center;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.68), inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
 
     .yt-reel-action-item {
+      position: relative;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 2px;
+      justify-content: center;
     }
 
     .yt-reel-circle-btn {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
+      background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05));
+      border: 1px solid rgba(243, 210, 122, 0.28);
+      color: #f8fafc;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      font-size: 0.92rem;
-      transition: all 0.2s ease;
+      font-size: 0.98rem;
+      transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.18);
+      position: relative;
+      z-index: 2;
     }
 
     .yt-reel-circle-btn:hover {
-      background: var(--yt-emerald);
+      background: linear-gradient(135deg, #0d7a49 0%, #064e2c 100%);
       border-color: #fde68a;
       color: #fde68a;
-      transform: scale(1.06);
+      transform: scale(1.12);
+      box-shadow: 0 8px 22px rgba(10, 92, 54, 0.65), 0 0 0 3px rgba(243, 210, 122, 0.2);
     }
 
+    .yt-reel-circle-btn.close-btn {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.9) 0%, rgba(159, 18, 57, 0.95) 100%);
+      border-color: rgba(254, 205, 211, 0.45);
+      color: #fff;
+    }
+
+    .yt-reel-circle-btn.close-btn:hover {
+      background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%);
+      border-color: #fff;
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(225, 29, 72, 0.65);
+    }
+
+    .yt-reel-circle-btn.whatsapp-btn {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.38) 0%, rgba(10, 92, 54, 0.65) 100%);
+      border-color: rgba(74, 222, 128, 0.45);
+      color: #86efac;
+    }
+
+    .yt-reel-circle-btn.whatsapp-btn:hover {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      border-color: #bbf7d0;
+      color: #fff;
+    }
+
+    .yt-reel-circle-btn.upload-btn {
+      background: linear-gradient(135deg, #0a5c36 0%, #c9a84c 100%);
+      border-color: rgba(253, 230, 138, 0.65);
+      color: #fff;
+    }
+
+    .yt-reel-circle-btn.active-state {
+      background: linear-gradient(135deg, #c9a84c 0%, #9a7b2c 100%);
+      border-color: #fef08a;
+      color: #04120b;
+      box-shadow: 0 0 18px rgba(201, 168, 76, 0.6);
+    }
+
+    /* Hidden Text Pill — Appears ONLY when hovering over the icon! */
     .yt-reel-circle-lbl {
-      font-size: 0.68rem;
-      color: #e2e8f0;
-      text-align: center;
-      line-height: 1.2;
+      position: absolute;
+      right: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%) translateX(8px) scale(0.92);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(6, 34, 21, 0.96) 0%, rgba(4, 19, 12, 0.98) 100%);
+      border: 1px solid rgba(201, 168, 76, 0.6);
+      color: #fde68a;
+      padding: 5px 13px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.3;
       white-space: nowrap;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 3030;
+    }
+
+    .yt-reel-circle-lbl::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent rgba(201, 168, 76, 0.6);
+    }
+
+    .yt-reel-action-item:hover .yt-reel-circle-lbl,
+    .yt-reel-circle-btn:focus-visible + .yt-reel-circle-lbl {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(0) scale(1);
     }
 
     @media (max-width: 640px) {
       .yt-reel-side-controls {
         left: 10px;
-        padding: 8px 6px;
-        gap: 6px;
+        padding: 9px 6px;
+        gap: 8px;
       }
       .yt-reel-circle-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.82rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.85rem;
+      }
+      .yt-reel-circle-lbl {
+        right: auto;
+        left: calc(100% + 10px);
+        transform: translateY(-50%) translateX(-8px) scale(0.92);
+      }
+      .yt-reel-circle-lbl::after {
+        left: auto;
+        right: 100%;
+        border-color: transparent rgba(201, 168, 76, 0.6) transparent transparent;
       }
     }
 
@@ -2746,12 +2832,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
-      .yt-reel-stage-wrap {
-        flex-direction: column;
-      }
-      .yt-reel-side-controls {
-        flex-direction: row;
-      }
       .yt-footer-grid {
         grid-template-columns: 1fr;
       }
@@ -3355,55 +3435,62 @@
     <!-- Continuous Vertical Scroll-Snap Shorts Feed -->
     <div id="ytReelsScrollFeed" class="yt-reels-scroll-feed"></div>
 
-    <!-- Refined, Courteous Frosted-Glass Pill Action Dock (Left Side in RTL) -->
+    <!-- Pure-Icon Frosted-Glass Pill Action Dock (Text Appears ONLY on Hover!) -->
     <div class="yt-reel-side-controls">
       <div class="yt-reel-action-item">
-        <button type="button" class="yt-reel-circle-btn close-btn" onclick="closeReelViewer()" title="ریلز پلیئر بند کریں (Esc)">
+        <button type="button" class="yt-reel-circle-btn close-btn" onclick="closeReelViewer()" aria-label="بند کریں">
           <i class="fas fa-times"></i>
         </button>
-        <div class="yt-reel-circle-lbl">بند کریں</div>
+        <div class="yt-reel-circle-lbl">بند کریں (Esc)</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" title="پچھلی ریل (اوپر اسکرول کریں)">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(-1)" aria-label="پچھلی ریل">
           <i class="fas fa-chevron-up"></i>
         </button>
-        <div class="yt-reel-circle-lbl">پچھلی</div>
+        <div class="yt-reel-circle-lbl">پچھلی ریل (اوپر اسکرول)</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" title="اگلی ریل (نیچے اسکرول کریں)">
+        <button type="button" class="yt-reel-circle-btn" onclick="stepReelViewer(1)" aria-label="اگلی ریل">
           <i class="fas fa-chevron-down"></i>
         </button>
-        <div class="yt-reel-circle-lbl">اگلی</div>
+        <div class="yt-reel-circle-lbl">اگلی ریل (نیچے اسکرول)</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" id="reelModalMuteBtn" class="yt-reel-circle-btn" onclick="toggleReelFeedMute()" title="آواز آن / آف کریں">
+        <button type="button" id="reelModalMuteBtn" class="yt-reel-circle-btn" onclick="toggleReelFeedMute()" aria-label="آواز آن یا خاموش">
           <i id="reelModalMuteIcon" class="fas fa-volume-up"></i>
         </button>
-        <div id="reelModalMuteLbl" class="yt-reel-circle-lbl">آواز آن</div>
+        <div id="reelModalMuteLbl" class="yt-reel-circle-lbl">آواز آن ہے (خاموش کریں)</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" id="reelModalLikeBtn" class="yt-reel-circle-btn" onclick="likeActiveReel()" title="ریل پسند کریں">
+        <button type="button" id="reelModalLikeBtn" class="yt-reel-circle-btn" onclick="likeActiveReel()" aria-label="پسند کریں">
           <i class="fas fa-thumbs-up"></i>
         </button>
-        <div id="reelModalLikeCount" class="yt-reel-circle-lbl">پسند</div>
+        <div id="reelModalLikeCount" class="yt-reel-circle-lbl">پسند کریں</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" id="reelModalSaveBtn" class="yt-reel-circle-btn" onclick="saveActiveReel()" title="بعد میں دیکھنے کے لیے محفوظ کریں">
+        <button type="button" id="reelModalSaveBtn" class="yt-reel-circle-btn" onclick="saveActiveReel()" aria-label="محفوظ کریں">
           <i class="fas fa-bookmark"></i>
         </button>
-        <div id="reelModalSaveLbl" class="yt-reel-circle-lbl">محفوظ</div>
+        <div id="reelModalSaveLbl" class="yt-reel-circle-lbl">بعد میں دیکھنے کے لیے محفوظ کریں</div>
       </div>
 
       <div class="yt-reel-action-item">
-        <button type="button" class="yt-reel-circle-btn whatsapp-btn" onclick="shareActiveReelWhatsApp()" title="واٹس ایپ پر شیئر کریں">
+        <button type="button" class="yt-reel-circle-btn whatsapp-btn" onclick="shareActiveReelWhatsApp()" aria-label="واٹس ایپ شیئر">
           <i class="fab fa-whatsapp"></i>
         </button>
-        <div class="yt-reel-circle-lbl">شیئر</div>
+        <div class="yt-reel-circle-lbl">واٹس ایپ پر شیئر کریں</div>
+      </div>
+
+      <div class="yt-reel-action-item">
+        <button type="button" class="yt-reel-circle-btn upload-btn" onclick="closeReelViewer(); openStudioUploadModal('reel');" aria-label="نئی ریل اپلوڈ کریں">
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="yt-reel-circle-lbl">+ نئی ریل اپلوڈ کریں</div>
       </div>
     </div>
   </div>
@@ -5933,7 +6020,7 @@
         const muteLbl = document.getElementById('reelModalMuteLbl');
         const muteBtn = document.getElementById('reelModalMuteBtn');
         if (muteIcon) muteIcon.className = _reelFeedMutedState ? 'fas fa-volume-mute' : 'fas fa-volume-up';
-        if (muteLbl) muteLbl.textContent = _reelFeedMutedState ? 'خاموش' : 'آواز آن';
+        if (muteLbl) muteLbl.textContent = _reelFeedMutedState ? 'آواز خاموش ہے (آن کریں)' : 'آواز آن ہے (خاموش کریں)';
         if (muteBtn) muteBtn.classList.toggle('active-state', _reelFeedMutedState);
       };
 
@@ -5949,9 +6036,9 @@
         const saveLbl = document.getElementById('reelModalSaveLbl');
 
         if (likeBtn) likeBtn.classList.toggle('active-state', isLiked);
-        if (likeCnt) likeCnt.textContent = toUrduDigits(likeCount);
+        if (likeCnt) likeCnt.textContent = isLiked ? `پسندیدہ ✓ (${toUrduDigits(likeCount)})` : `پسند کریں (${toUrduDigits(likeCount)})`;
         if (saveBtn) saveBtn.classList.toggle('active-state', isSaved);
-        if (saveLbl) saveLbl.textContent = isSaved ? 'محفوظ ✓' : 'محفوظ';
+        if (saveLbl) saveLbl.textContent = isSaved ? 'محفوظ شدہ ✓' : 'بعد میں دیکھنے کے لیے محفوظ کریں';
       }
 
       window.openReelViewerById = function (reelId) {
@@ -5960,6 +6047,65 @@
         openReelViewerByIndex(idx >= 0 ? idx : 0);
       };
 
+      let _reelWheelBound = false;
+      let _reelWheelCooldown = false;
+      let _reelTouchStartY = null;
+
+      function ensureReelScrollWheelAndSwipeBound() {
+        if (_reelWheelBound) return;
+        const modal = document.getElementById('ytReelsModal');
+        if (!modal) return;
+        _reelWheelBound = true;
+
+        // Smooth mouse-wheel step scrolling anywhere inside #ytReelsModal
+        modal.addEventListener(
+          'wheel',
+          function (e) {
+            if (!modal.classList.contains('open')) return;
+            if (Math.abs(e.deltaY) < 16) return;
+            e.preventDefault();
+            if (_reelWheelCooldown) return;
+            _reelWheelCooldown = true;
+            if (e.deltaY > 0) {
+              stepReelViewer(1);
+            } else {
+              stepReelViewer(-1);
+            }
+            setTimeout(function () {
+              _reelWheelCooldown = false;
+            }, 460);
+          },
+          { passive: false }
+        );
+
+        // Smooth touch swipe up/down support
+        modal.addEventListener(
+          'touchstart',
+          function (e) {
+            if (!modal.classList.contains('open') || !e.touches || !e.touches.length) return;
+            _reelTouchStartY = e.touches[0].clientY;
+          },
+          { passive: true }
+        );
+
+        modal.addEventListener(
+          'touchend',
+          function (e) {
+            if (!modal.classList.contains('open') || _reelTouchStartY === null || !e.changedTouches || !e.changedTouches.length) return;
+            const dy = _reelTouchStartY - e.changedTouches[0].clientY;
+            _reelTouchStartY = null;
+            if (Math.abs(dy) >= 42 && !_reelWheelCooldown) {
+              _reelWheelCooldown = true;
+              stepReelViewer(dy > 0 ? 1 : -1);
+              setTimeout(function () {
+                _reelWheelCooldown = false;
+              }, 420);
+            }
+          },
+          { passive: true }
+        );
+      }
+
       window.openReelViewerByIndex = function (idx) {
         const rls = getReels();
         if (!rls.length) return;
@@ -5967,6 +6113,7 @@
         // Pause 16:9 theater if open so two videos never play together
         closeWatchTheater();
         closeMiniPlayer();
+        ensureReelScrollWheelAndSwipeBound();
 
         const targetIdx = ((idx % rls.length) + rls.length) % rls.length;
         const modal = document.getElementById('ytReelsModal');
@@ -6019,11 +6166,10 @@
         const targetSlide = document.getElementById(`itubeReelSlide-${nextIdx}`);
         if (targetSlide) {
           targetSlide.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          // If IntersectionObserver doesn't trigger (e.g. same index), ensure mounted
           if (nextIdx !== _reelFeedMountedIdx) {
             setTimeout(function () {
               if (_reelFeedMountedIdx !== nextIdx) mountAndPlayReelSlide(nextIdx);
-            }, 320);
+            }, 260);
           }
         }
       };
