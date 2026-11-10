@@ -1,9 +1,10 @@
-/* Google Fonts loaded non-blocking via <link> in css&js.ejs */
+/* Unified Typography System: Manzar Lahori Nastaliq (Urdu), Sakkal Majalla (Arabic), IndoPak Quran */
+@import url("./typography-system.css");
 
 * {
   margin: 0;
   padding: 0;
-  font-family: "Noto Nastaliq Urdu", serif;
+  font-family: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
   box-sizing: border-box;
 }
 

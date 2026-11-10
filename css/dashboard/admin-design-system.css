@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Subai Jamiat Ahle Hadees Mumbai — Admin Panel Modern Design System
  * Unified visual language matching the "فتویٰ طلب کریں" design (media_1790700057836.png)
  * Top-tier SaaS / Product UI: Emerald Teal, Sky-Blue Glow, 22px Rounded Cards, Smooth Micro-animations
@@ -63,8 +63,8 @@
   --adm-radius-sm: 8px;
   --adm-radius-pill: 9999px;
 
-  --adm-font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, system-ui, sans-serif;
-  --adm-font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --adm-font-urdu: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
+  --adm-font-sans: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
 }
 
 /* ─── Global Dashboard Surface Polish ─── */

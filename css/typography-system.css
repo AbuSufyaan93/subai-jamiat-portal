@@ -1,0 +1,283 @@
+/**
+ * ============================================================================
+ * SUBAI JAMIAT AHLE HADEES MUMBAI — UNIFIED TYPOGRAPHY SYSTEM
+ * ============================================================================
+ * 1. Default Urdu Font (A to Z across entire portal):
+ *    - Manzar Lahori Nastaliq (/fonts/ManzarLahoriNastaliq.woff & .ttf)
+ * 2. Non-Quranic Arabic Nusoos (Hadith, Athar, Dua, Arabic Portal /ar):
+ *    - Sakkal Majalla Bold (/fonts/SakkalMajallaBold.ttf) + Scheherazade (/fonts/ScheherazadeRegOT.ttf)
+ * 3. Quranic Verses (Famous Indian / Indo-Pak Quranic Script):
+ *    - Al Qalam Quran (/fonts/AlQalamQuran.ttf), Manzar IndoPak Naskh (/fonts/ManzarIndoPakNaskh.ttf),
+ *      1 Muhammadi Quranic (/fonts/MuhammadiQuranic.ttf), Manzar Indian Naskh (/fonts/ManzarIndianNaskh.ttf)
+ * ============================================================================
+ */
+
+/* ----------------------------------------------------------------------------
+   1. URDU NASTALIQ FONT FACES — MANZAR LAHORI NASTALIQ (DEFAULT A-TO-Z)
+   ---------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Manzar Lahori Nastaliq';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype'),
+       url('../fonts/mehr_nastalique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manzar Lahori Nastaliq';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype'),
+       url('../fonts/mehr_nastalique.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ManzarLahoriNastaliq';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alias legacy Urdu font family names directly to Manzar Lahori Nastaliq
+   so every single component/inline style across the site uses Manzar Lahori Nastaliq */
+@font-face {
+  font-family: 'Noto Nastaliq Urdu';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype'),
+       url('../fonts/urdu.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jameel Noori Nastaleeq';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mehr';
+  src: local('Manzar Lahori Nastaliq'),
+       local('ManzarLahoriNastaliq'),
+       url('../fonts/ManzarLahoriNastaliq.woff') format('woff'),
+       url('../fonts/ManzarLahoriNastaliq.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------------------------------------------
+   2. NON-QURANIC ARABIC FONT FACES — SAKKAL MAJALLA & SCHEHERAZADE
+   ---------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Sakkal Majalla';
+  src: local('Sakkal Majalla Bold'),
+       local('Sakkal Majalla'),
+       local('SakkalMajallaBold'),
+       url('../fonts/SakkalMajallaBold.ttf') format('truetype'),
+       url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sakkal Majalla Bold';
+  src: local('Sakkal Majalla Bold'),
+       local('SakkalMajallaBold'),
+       url('../fonts/SakkalMajallaBold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Scheherazade';
+  src: local('Scheherazade'),
+       local('Scheherazade New'),
+       url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Alias Amiri to Sakkal Majalla so all existing Arabic blocks using Amiri
+   automatically render in Sakkal Majalla Bold */
+@font-face {
+  font-family: 'Amiri';
+  src: local('Sakkal Majalla Bold'),
+       local('Sakkal Majalla'),
+       url('../fonts/SakkalMajallaBold.ttf') format('truetype'),
+       url('../fonts/ScheherazadeRegOT.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------------------------------------------
+   3. FAMOUS INDIAN / INDO-PAK QURANIC SCRIPT FONT FACES
+   ---------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'IndoPak Quran';
+  src: url('../fonts/AlQalamQuran.ttf') format('truetype'),
+       url('../fonts/ManzarIndoPakNaskh.ttf') format('truetype'),
+       url('../fonts/MuhammadiQuranic.ttf') format('truetype'),
+       url('../fonts/ManzarIndianNaskh.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Al Qalam Quran';
+  src: url('../fonts/AlQalamQuran.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manzar IndoPak Naskh';
+  src: url('../fonts/ManzarIndoPakNaskh.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muhammadi Quranic';
+  src: url('../fonts/MuhammadiQuranic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manzar Indian Naskh';
+  src: url('../fonts/ManzarIndianNaskh.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ----------------------------------------------------------------------------
+   4. ROOT TYPOGRAPHY VARIABLES & GLOBAL APPLICATION
+   ---------------------------------------------------------------------------- */
+:root {
+  --font-urdu: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
+  --font-arabic-nass: 'Sakkal Majalla', 'Sakkal Majalla Bold', 'Scheherazade', 'Amiri', serif;
+  --font-quran-indopak: 'IndoPak Quran', 'Al Qalam Quran', 'Manzar IndoPak Naskh', 'Muhammadi Quranic', 'Manzar Indian Naskh', 'Scheherazade', serif;
+  --adm-font-urdu: var(--font-urdu);
+  --adm-font-sans: var(--font-urdu);
+}
+
+/* Default Urdu Nastaliq (Manzar Lahori Nastaliq) across the entire Urdu site & Admin */
+html,
+body,
+button,
+input,
+select,
+textarea,
+.urdu-text,
+[lang="ur"] {
+  font-family: var(--font-urdu);
+}
+
+/* Preserve Font Awesome Icons & Material Icons everywhere */
+.fa,
+.fas,
+.far,
+.fal,
+.fad,
+.fa-solid,
+.fa-regular,
+.fa-light,
+.fa-thin,
+.fa-duotone,
+.fa-sharp,
+[class^="fa-"],
+[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "FontAwesome" !important;
+}
+
+.fab,
+.fa-brands {
+  font-family: "Font Awesome 6 Brands", "FontAwesome" !important;
+}
+
+/* Non-Quranic Arabic Nusoos (Hadith, Athar, Dua, Arabic Quotes, and /ar Portal) */
+html[lang="ar"],
+html[lang="ar"] body,
+body.arabic-portal,
+body.arabic-portal *:not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands):not(.quran-indopak-text):not(.quran-verse):not(.quran-text),
+[lang="ar"]:not(.quran-indopak-text):not(.quran-verse):not(.quran-text),
+.arabic-sakkal-text,
+.arabic-nass,
+.arabic-text,
+.hadith-arabic,
+.hadith-text,
+.dua-arabic,
+.athar-text,
+.ar-text {
+  font-family: var(--font-arabic-nass) !important;
+  letter-spacing: 0 !important;
+}
+
+.arabic-sakkal-text {
+  font-family: var(--font-arabic-nass) !important;
+  font-size: 1.18em;
+  font-weight: 700;
+  line-height: 1.95;
+  color: #064e3b;
+  direction: rtl;
+   unicode-bidi: embed;
+}
+
+body.yt-dark-mode .arabic-sakkal-text {
+  color: #6ee7b7;
+}
+
+/* Quranic Verses — Famous Indian / Indo-Pak Quranic Script */
+.quran-indopak-text,
+.quran-verse,
+.quran-text,
+.quran-ayah,
+.ayah-text,
+.mushaf-text,
+[data-nass="quran"] {
+  font-family: var(--font-quran-indopak) !important;
+  font-size: 1.24em;
+  font-weight: 400;
+  line-height: 2.25 !important;
+  letter-spacing: 0 !important;
+  word-spacing: 2px;
+  color: #065f46;
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+body.yt-dark-mode .quran-indopak-text,
+body.yt-dark-mode .quran-verse,
+body.yt-dark-mode .quran-text {
+  color: #fde68a;
+}
