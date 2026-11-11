@@ -49,7 +49,3 @@
 .fatawa-download-btn:hover {
     background: var(--darkgreen);
 }
-
-span {
-    background: transparent !important;
-}

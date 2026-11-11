@@ -23,8 +23,8 @@
   --art-shadow-sm: 0 2px 8px rgba(14, 165, 233, 0.06);
   --art-shadow-md: 0 8px 22px rgba(14, 165, 233, 0.1);
   --art-shadow-lg: 0 14px 32px rgba(14, 165, 233, 0.15);
-  --art-font-nastaliq: 'Jameel Noori Nastaleeq', 'Noto Nastaliq Urdu', 'Gulzar', serif;
-  --art-font-naskh: 'Amiri', 'Noto Naskh Arabic', 'Scheherazade New', serif;
+  --art-font-nastaliq: var(--font-urdu, 'Manzar Lahori Nastaliq', 'Jameel Noori Nastaleeq', serif);
+  --art-font-naskh: var(--font-arabic-nass, 'Sakkal Majalla', 'Scheherazade', serif);
 }
 
 /* ==========================================================================
@@ -33,15 +33,14 @@
    forms, modals, and editor views without permanent locks or clipping.
    ========================================================================== */
 html {
-  min-height: 100% !important;
-  overflow-y: auto !important;
+  min-height: 100%;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100% !important;
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
+  min-height: 100%;
+  overflow-x: clip;
 }
 
 /* Base RTL Styles */
@@ -1002,8 +1001,9 @@ body {
 .article-content-body .quran-quote {
   background: #fefce8;
   border-right: 5px solid #ca8a04;
-  font-family: var(--art-font-naskh);
+  font-family: var(--font-quran-indopak, var(--art-font-naskh));
   font-size: 22px;
+  line-height: 2.25;
   padding: 20px 26px;
   margin: 28px 0;
   border-radius: 0 12px 12px 0;

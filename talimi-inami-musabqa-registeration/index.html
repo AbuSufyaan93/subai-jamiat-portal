@@ -3,19 +3,19 @@
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
-  <script src="../javascript/live-remote-tunnel.js?v=v11"></script>
+  <script src="../javascript/live-remote-tunnel.js?v=v13"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="../images/logo-square.png" />
-  <link rel="stylesheet" href="../css/donate.css?v=v15" />
-  <link rel="stylesheet" href="../css/typography-system.css?v=v15" />
+  <link rel="stylesheet" href="../css/donate.css?v=v18" />
+  <link rel="stylesheet" href="../css/typography-system.css?v=v18" />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css?v=v15"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css?v=v18"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    * {
+    *:not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
       font-family: var(--font-urdu, "Manzar Lahori Nastaliq", "ManzarLahoriNastaliq", serif);
       text-align: right;
       direction: rtl;
@@ -62,12 +62,17 @@
     }
 
     .container {
-      height: 100vh;
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: auto;
+      padding: 20px 12px;
     }
 
     .container form {
-      max-height: 95%;
-      overflow-y: auto;
+      max-height: none;
+      overflow: visible;
+      width: 100%;
+      max-width: 560px;
     }
 
     .container form::-webkit-scrollbar {
@@ -165,7 +170,8 @@
     }
 
     .submit {
-      padding-block: 0;
+      padding-block: 8px;
+      line-height: 1.75;
     }
 
     ul {
@@ -391,10 +397,11 @@
   <!-- favicon link here  -->
   <link rel="icon" type="image/x-icon" href="../images/logo-square.png" />
   <title>Subai Jamiat Ahle Hadees Mumbai</title>
+  <link rel="stylesheet" href="../css/responsive-all-devices.css?v=v18" />
   <link rel="canonical" href="http://127.0.0.1:5000/talimi-inami-musabqa-registeration">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
-  <script defer src="../javascript/perf-enhancer.js?v=v15"></script>
+  <script defer src="../javascript/perf-enhancer.js?v=v18"></script>
 </head>
 
 <body>
@@ -667,8 +674,8 @@
     </form>
   </div>
   <script src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
-  <script src="../javascript/webcam.js?v=v15"></script>
-  <script src="../javascript/talimiInamiMusabqaRegisteration/registeration.js?v=v15"></script>
+  <script src="../javascript/webcam.js?v=v18"></script>
+  <script src="../javascript/talimiInamiMusabqaRegisteration/registeration.js?v=v18"></script>
 </body>
 
 </html>

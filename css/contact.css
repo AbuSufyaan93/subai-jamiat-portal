@@ -81,6 +81,21 @@
 
 }
 
+@media screen and (max-width: 600px) {
+    .form-container form .two-input {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-container form .two-input > * {
+        width: 100% !important;
+    }
+    .form-container form input[type=submit],
+    .form-container form button[type=submit] {
+        width: 100%;
+        max-width: 240px;
+    }
+}
+
 
 .form-container form textarea {
 

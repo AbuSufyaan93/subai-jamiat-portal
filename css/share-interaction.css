@@ -92,7 +92,7 @@
   transition: all 0.15s ease-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  font-family: 'Jameel Noori Nastaleeq', system-ui, sans-serif;
+  font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', system-ui, sans-serif);
 }
 
 .sj-action-btn:hover::after {
@@ -120,6 +120,7 @@
   border: 1.2px solid #e2e8f0;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.05);
   font-size: 13.5px;
+  line-height: 1.75;
   font-weight: 700;
   color: #334155;
   cursor: pointer;
@@ -154,6 +155,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: rgba(15, 23, 42, 0.65);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -176,7 +178,7 @@
   position: relative;
   text-align: right;
   direction: rtl;
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-urdu, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif);
   animation: sjSlideUp 0.22s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -190,10 +192,11 @@
 
 .sj-modal-title {
   font-size: 19px;
+  line-height: 1.75;
   font-weight: 800;
   color: #1e293b;
   margin: 0;
-  font-family: 'Jameel Noori Nastaleeq', 'Urdu Nastaleeq', 'Noto Naskh Arabic', sans-serif;
+  font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', sans-serif);
 }
 
 .sj-modal-close {

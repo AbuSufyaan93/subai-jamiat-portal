@@ -3,7 +3,7 @@
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
-  <script src="../javascript/live-remote-tunnel.js?v=v11"></script>
+  <script src="../javascript/live-remote-tunnel.js?v=v13"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,45 +26,47 @@
 <link rel="apple-touch-icon" href="../images/logo-square.png">
 
 <!-- own css file link  -->
-<link rel="stylesheet" href="../css/typography-system.css?v=v15">
-<link rel="stylesheet" href="../css/style.css?v=v15">
+<link rel="stylesheet" href="../css/typography-system.css?v=v18">
+<link rel="stylesheet" href="../css/style.css?v=v18">
 <!-- fontawesome cdn link  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v15" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=v18" />
 <!-- swiper  css link  -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 <!-- customize swiper css link  -->
-<link rel="stylesheet" href="../css/swiper.css?v=v15">
+<link rel="stylesheet" href="../css/swiper.css?v=v18">
 <!-- bootstrap grid css file link  -->
-<link rel="stylesheet" href="../css/bootstrap-grid.css?v=v15">
+<link rel="stylesheet" href="../css/bootstrap-grid.css?v=v18">
 <!-- own content css file link  -->
-<link rel="stylesheet" href="../css/content.css?v=v15">
+<link rel="stylesheet" href="../css/content.css?v=v18">
 <!-- own footer css file link  -->
-<link rel="stylesheet" href="../css/footer.css?v=v15">
+<link rel="stylesheet" href="../css/footer.css?v=v18">
 <!-- view counter css -->
-<link rel="stylesheet" href="../css/view-counter.css?v=v15">
+<link rel="stylesheet" href="../css/view-counter.css?v=v18">
 <!-- animate.css cdn link  -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 <!-- own css animation link  -->
-<link rel="stylesheet" href="../css/animate.css?v=v15">
+<link rel="stylesheet" href="../css/animate.css?v=v18">
+<!-- all-devices responsive & Nastaliq badge design system -->
+<link rel="stylesheet" href="../css/responsive-all-devices.css?v=v18">
 
 <!-- all scripts are here  -->
 <!-- own  js file cdn link  -->
-<script defer src="../javascript/typography-enhancer.js?v=v15"></script>
-<script defer src="../javascript/script.js?v=v15"></script>
+<script defer src="../javascript/typography-enhancer.js?v=v18"></script>
+<script defer src="../javascript/script.js?v=v18"></script>
 <!-- view tracker script -->
-<script defer src="../javascript/view-tracker.js?v=v15"></script>
+<script defer src="../javascript/view-tracker.js?v=v18"></script>
 <!-- performance & instant prefetch enhancer -->
-<script defer src="../javascript/perf-enhancer.js?v=v15"></script>
+<script defer src="../javascript/perf-enhancer.js?v=v18"></script>
 <!-- swiper js cdn link  -->
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!-- swiper customize js link  -->
-<script defer src="../javascript/swiper.js?v=v15"></script>
+<script defer src="../javascript/swiper.js?v=v18"></script>
 <!-- jquery cdn link  -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <!-- waypoints cdn link for animation  -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 <!-- own animation js file  -->
-<script defer src="../javascript/animate.js?v=v15"></script>
+<script defer src="../javascript/animate.js?v=v18"></script>
 <!-- all page title is same -->
 <title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
 
@@ -312,7 +314,7 @@
 
                 <div class="menu language-container">
 
-                    <i class="fa-solid fa-globe"></i></span>
+                    <i class="fa-solid fa-globe"></i>
 
                     <div class="language">
 
@@ -872,7 +874,7 @@
 
   @media (max-width: 1024px) {
     .sj-dept-nav-container {
-      flex-wrap: wrap;
+      flex-wrap: wrap !important;
       padding: 8px 12px;
       gap: 8px;
     }
@@ -902,13 +904,31 @@
       display: none !important;
     }
   }
+
+  @media (max-width: 540px) {
+    .sj-dept-cta-primary span {
+      display: none;
+    }
+    .sj-dept-cta-primary {
+      padding: 7px 10px !important;
+      min-width: 36px;
+      min-height: 36px;
+      justify-content: center;
+    }
+    .sj-dept-sidebar-trigger,
+    .sj-dept-brand-icon {
+      width: 38px !important;
+      height: 38px !important;
+      font-size: 16px !important;
+    }
+  }
 </style>
 
 <!-- 1. STICKY STANDALONE DEPARTMENT PORTAL NAVIGATION BAR -->
 <header class="sj-dept-portal-nav" id="sjDeptPortalNav">
-  <div class="sj-dept-nav-container" style="flex-wrap: nowrap; gap: 10px;">
+  <div class="sj-dept-nav-container">
     <!-- RIGHT: SIDEBAR TRIGGER + DEPARTMENT BRAND & IDENTITY -->
-    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; min-width: 0;">
       <button type="button" class="sj-dept-sidebar-trigger" onclick="openSjDeptDrawer()" title="شعبہ کا مکمل سائڈ بار مینو کھولیں" aria-label="سائڈ بار مینو">
         <i class="fa-solid fa-bars-staggered"></i>
       </button>
@@ -1372,7 +1392,7 @@ body *::-webkit-scrollbar-thumb:hover {
     <div class="container2">
       <div class="row justify-content-center">
         <div
-          class="footer-1 order-lg-1 order-xl-1 order-md-3 order-sm-4 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          class="footer-1 order-lg-1 order-xl-1 order-md-3 order-sm-4 content col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
           <h1 class="heading">میڈیا اپڈیٹ</h1>
 
           <div class="card">
@@ -1414,7 +1434,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
 
         <div
-          class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
           <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
           <div class="card" dir="rtl" style="text-align:right;">
@@ -1442,7 +1462,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
 
         <div
-          class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
           <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
@@ -1469,7 +1489,7 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
 
         <div
-          class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
+          class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
           <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
@@ -1533,7 +1553,7 @@ body *::-webkit-scrollbar-thumb:hover {
      Visual Benchmark: Reference Images 3 & 4
      Subai Jamiat Ahle Hadees Mumbai
      ═══════════════════════════════════════════════════════════════════════════ -->
-<link rel="stylesheet" href="../css/share-interaction.css?v=v15" />
+<link rel="stylesheet" href="../css/share-interaction.css?v=v18" />
 
 <!-- 1. SHARE MODAL (Reference Image 4 Benchmark) -->
 <div id="sjShareModalBackdrop" class="sj-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="sjShareModalTitle">
@@ -1668,7 +1688,7 @@ body *::-webkit-scrollbar-thumb:hover {
   <span>✓ لنک کلپ بورڈ پر کاپی ہو گیا</span>
 </div>
 
-<script src="../js/share-interaction.js?v=v15"></script>
+<script src="../js/share-interaction.js?v=v18"></script>
 
 
 

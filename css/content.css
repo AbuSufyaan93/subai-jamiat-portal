@@ -195,7 +195,7 @@
 
 #content .container2 .column .content .mySwiper3 .swiper-slide .image .img-text {
 
-    position: absollute;
+    position: absolute;
     height: fit-content;
     top: 0;
     left: 0;
@@ -795,13 +795,17 @@
 }
 
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:991px) {
     .column-center {
         order: 1;
     }
 
     .column-left {
         order: 2;
+    }
+
+    .column-right {
+        order: 3;
     }
 }
 

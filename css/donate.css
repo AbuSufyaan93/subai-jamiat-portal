@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+}
+
+*:not(.fa):not(.fas):not(.far):not(.fab):not(.fa-solid):not(.fa-regular):not(.fa-brands) {
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'Montserrat', sans-serif);
 }
 
 :root {
@@ -10,8 +13,9 @@
 }
 
 .container {
-    padding: 20px 0;
+    padding: 20px 12px;
     min-height: 100vh;
+    min-height: 100dvh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -22,15 +26,12 @@
 }
 
 form {
-
-    /* background: rgba(255, 255, 255, 0.2); */
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.94);
     width: 500px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     max-width: 100%;
-    padding: 20px;
-
+    padding: 20px 18px;
 }
 
 form label {
@@ -45,7 +46,7 @@ select,
 textarea {
     height: 44px;
     padding-inline: 12px;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 2px solid var(--main);
     width: 100%;
     outline: none;
@@ -63,7 +64,8 @@ form div {
 
 .heading {
     font-weight: 600;
-    font-size: 35px;
+    font-size: clamp(24px, 6vw, 35px);
+    line-height: 1.75;
     text-align: center;
     text-decoration: underline;
 }
@@ -72,12 +74,12 @@ button {
     background: var(--main);
     border: none;
     padding: 10px 20px;
-    border-radius: 3px;
+    border-radius: 6px;
     color: white;
     font-size: 16px;
+    line-height: 1.7;
     cursor: pointer;
     transition: all 0.3s ease;
-
 }
 
 button:hover {
@@ -87,7 +89,6 @@ button:hover {
 .submit-container {
     text-align: center;
     margin-bottom: 0;
-
 }
 
 .error {
@@ -99,7 +100,10 @@ button:hover {
 
 @media screen and (max-width:600px) {
     .container {
-        background-size: 100vw;
+        background-size: cover;
+    }
+    form {
+        padding: 16px 14px;
     }
 }
 
@@ -108,15 +112,12 @@ select {
 }
 
 .image {
-    /* align-items: center; */
-    /* gap: 20px; */
-    /* display: flex; */
-    width: 320px;
-    max-width: 100%;
-    padding: 20px;
-    box-sizing: content-box;
+    width: 100%;
+    max-width: 360px;
+    padding: 18px;
+    box-sizing: border-box;
     background: #f0f0f0;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .image img {
@@ -128,9 +129,10 @@ select {
 
 .image h1 {
     font-size: 22px;
+    line-height: 1.75;
     text-transform: capitalize;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: var(--main);
     text-align: center;
 }
@@ -150,8 +152,9 @@ select {
 
 .btn-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 12px;
 }
 
 img.apealImg {
