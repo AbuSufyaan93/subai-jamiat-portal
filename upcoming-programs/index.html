@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آئندہ پروگرامز و مسابقات — صوبائی جمعیت اہل حدیث ممبئی</title>
+    <title>آئندہ جماعتی پروگرامز، سیمینارز و مسابقات — صوبائی جمعیت اہل حدیث ممبئی</title>
     <!-- Preconnect & DNS-Prefetch for fast CDN & Font resolution -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="../manifest.json">
@@ -67,7 +67,7 @@
 <!-- own animation js file  -->
 <script defer src="../javascript/animate.js?v=v15"></script>
 <!-- all page title is same -->
-<title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
+<title>آئندہ جماعتی پروگرامز، سیمینارز و مسابقات | صوبائی جمعیت اہل حدیث ممبئی</title>
 
 <meta name="keywords" content="Subai Jamiat Ahle Hadees , Ahle hadees , ahle hadees mumbai , masajid in mumbai , صوبائی جمعیت اہل حدیث ممبئی ، اہل حدیث ، اہل حدیث ممبئی , Ahle hadees masajid">
 <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی ایک دعوتی، تربیتی، اصلاحی اور رفاہی مشن ہے اور دنیا میں امن و سلامتی کی مناد ہے۔ اسلام خالص کی دعوت پیش کرنا اس کا امتیاز ہے۔ دین کا صحیح تعارف تعلیم وتربیت، دعوت واصلاح اور رفاہی سر گرمیوں کے ذریعہ انسانیت کی خدمت اس کا مطلوب ہے۔ ان عظیم مقاصد اور منصوبوں کی تکمیل کی جانب بحمد للہ جمعیت رواں دواں ہے اور اللہ تعالیٰ سے مدد اور توفیق کی طالب ہے۔">
@@ -76,73 +76,439 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
-    <link rel="stylesheet" href="../css/masajid.css?v=v15">
     <style>
-        .event-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: transform 0.2s, box-shadow 0.2s;
+        .sj-up-portal {
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
+            direction: rtl;
+            text-align: right;
         }
-        .event-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            border-color: #0284c7;
-        }
-        .event-badge {
-            display: inline-block;
-            padding: 4px 12px;
+
+        .sj-up-hero {
+            background: linear-gradient(135deg, #042f2e 0%, #065f46 52%, #0f766e 100%);
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
+            padding: 24px 22px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 14px 34px rgba(6, 78, 59, 0.2);
+            margin-bottom: 18px;
+            border: 1px solid rgba(167, 243, 208, 0.25);
         }
-        .badge-upcoming { background: #e0f2fe; color: #0284c7; }
-        .badge-ongoing { background: #dcfce7; color: #15803d; }
-        .badge-completed { background: #f1f5f9; color: #64748b; }
-        .event-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin: 12px 0;
+
+        .sj-up-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 15% 20%, rgba(251, 191, 36, 0.16), transparent 45%);
+            pointer-events: none;
+        }
+
+        .sj-up-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(253, 230, 138, 0.4);
+            color: #fef3c7;
+            padding: 4px 14px;
+            border-radius: 999px;
             font-size: 13px;
-            color: #475569;
+            margin-bottom: 10px;
         }
-        .event-meta-item {
+
+        .sj-up-hero h1 {
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0 0 8px;
+            line-height: 1.85;
+        }
+
+        .sj-up-hero p {
+            font-size: 14.5px;
+            color: #ecfdf5;
+            margin: 0;
+            line-height: 2.05;
+            opacity: 0.95;
+        }
+
+        /* Registration Quick Hub */
+        .sj-reg-hub {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .sj-reg-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f0fdfa 100%);
+            border: 1px solid #99f6e4;
+            border-radius: 14px;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: #0f172a;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.06);
         }
-        .event-poster-thumb {
+
+        .sj-reg-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(15, 118, 110, 0.14);
+            border-color: #0d9488;
+            color: #064e3b;
+        }
+
+        .sj-reg-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #0d9488, #047857);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .sj-reg-info strong {
+            display: block;
+            font-size: 14px;
+            color: #064e3b;
+            line-height: 1.75;
+        }
+
+        .sj-reg-info span {
+            display: block;
+            font-size: 11.5px;
+            color: #0f766e;
+            line-height: 1.6;
+        }
+
+        /* Search & Filter Toolbar */
+        .sj-up-toolbar {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+        }
+
+        .sj-up-search-wrap {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .sj-up-search-wrap input {
             width: 100%;
-            max-height: 260px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 14px;
-            cursor: pointer;
-            border: 1px solid #f1f5f9;
+            padding: 10px 40px 10px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14.5px;
+            color: #0f172a;
+            background: #f8fafc;
+            outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
         }
-        .event-btn {
+
+        .sj-up-search-wrap input:focus {
+            border-color: #0d9488;
+            background: #ffffff;
+        }
+
+        .sj-up-search-wrap i {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0d9488;
+            font-size: 15px;
+        }
+
+        .sj-up-pills {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sj-up-pill {
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #334155;
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sj-up-pill.active,
+        .sj-up-pill:hover {
+            background: #0f766e;
+            color: #ffffff;
+            border-color: #0f766e;
+        }
+
+        .sj-up-count {
+            margin-right: auto;
+            font-size: 12.5px;
+            color: #0f766e;
+            background: #ccfbf1;
+            padding: 2px 10px;
+            border-radius: 999px;
+        }
+
+        /* Event Cards */
+        .sj-event-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-right: 4px solid #0d9488;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .sj-event-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(15, 118, 110, 0.1);
+            border-color: #5eead4;
+            border-right-color: #0f766e;
+        }
+
+        .sj-ev-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sj-ev-title {
+            font-size: 19px;
+            color: #064e3b;
+            margin: 0;
+            line-height: 1.85;
+            flex: 1;
+        }
+
+        .sj-ev-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .sj-badge-upcoming { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+        .sj-badge-ongoing { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+        .sj-badge-completed { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+        .sj-ev-cat {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 16px;
+            background: #f0fdfa;
+            color: #0f766e;
+            border: 1px solid #ccfbf1;
+            padding: 2px 10px;
             border-radius: 8px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s;
+            font-size: 12px;
+            margin-bottom: 12px;
         }
-        .btn-reg { background: #0284c7; color: #fff; }
-        .btn-reg:hover { background: #0369a1; color: #fff; }
-        .btn-map { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
-        .btn-map:hover { background: #e2e8f0; color: #0f172a; }
+
+        .sj-ev-poster-box {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            margin-bottom: 14px;
+            cursor: zoom-in;
+        }
+
+        .sj-ev-poster-box img {
+            width: 100%;
+            max-height: 290px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .sj-ev-poster-box:hover img {
+            transform: scale(1.02);
+        }
+
+        .sj-ev-poster-zoom {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(15, 23, 42, 0.78);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(4px);
+        }
+
+        .sj-ev-desc {
+            font-size: 15px;
+            color: #334155;
+            line-height: 2.1;
+            margin-bottom: 14px;
+        }
+
+        .sj-ev-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 10px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+        }
+
+        .sj-ev-meta-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13.5px;
+            color: #334155;
+            line-height: 1.85;
+        }
+
+        .sj-ev-meta-item i {
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .sj-ev-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sj-ev-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 15px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .sj-btn-primary {
+            background: linear-gradient(135deg, #0d9488, #047857);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.25);
+        }
+
+        .sj-btn-primary:hover {
+            background: linear-gradient(135deg, #0f766e, #065f46);
+            color: #ffffff;
+        }
+
+        .sj-btn-outline {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 1px solid #cbd5e1;
+        }
+
+        .sj-btn-outline:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .sj-btn-wa {
+            background: #ecfdf5;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+
+        .sj-btn-wa:hover {
+            background: #22c55e;
+            color: #ffffff;
+        }
+
+        /* Lightbox */
+        .sj-up-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .sj-up-lightbox.open {
+            display: flex;
+        }
+
+        .sj-up-lb-inner {
+            max-width: 880px;
+            width: 100%;
+            background: #0f172a;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .sj-up-lb-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 18px;
+            background: #1e293b;
+            color: #ffffff;
+        }
+
+        .sj-up-lb-body {
+            padding: 16px;
+            text-align: center;
+            max-height: 78vh;
+            overflow: auto;
+        }
+
+        .sj-up-lb-body img {
+            max-width: 100%;
+            max-height: 72vh;
+            border-radius: 10px;
+            object-fit: contain;
+        }
     </style>
   <link rel="canonical" href="http://127.0.0.1:5000/upcoming-programs">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <meta property="og:title" content="آئندہ جماعتی پروگرامز، سیمینارز و مسابقات | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta property="og:description" content="صوبائی جمعیت اہل حدیث ممبئی کے زیر اہتمام آئندہ دعوتی کانفرنسز، دورۂ تدریبیہ، تعلیمی انعامی مسابقہ اور تربیتی اجتماعات کی تفصیلات۔">
+  <meta property="og:url" content="http://127.0.0.1:5000/upcoming-programs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="آئندہ جماعتی پروگرامز، سیمینارز و مسابقات | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta name="twitter:description" content="صوبائی جمعیت اہل حدیث ممبئی کے زیر اہتمام آئندہ دعوتی کانفرنسز، دورۂ تدریبیہ، تعلیمی انعامی مسابقہ اور تربیتی اجتماعات کی تفصیلات۔">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"سرورق","item":"http://127.0.0.1:5000"},{"@type":"ListItem","position":2,"name":"آئندہ پروگرامز","item":"http://127.0.0.1:5000/upcoming-programs"}]}]}</script>
 </head>
 
 <body data-active="upcoming-programs">
@@ -303,7 +669,7 @@
 
                         <a href="../index.html" class="lang active">اردو زبان</a>
                         <a href="../ar" class="lang">عربی زبان</a>
-                        <a href="../pending" class="lang">English</a>
+                        <a href="../pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -436,7 +802,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -577,7 +943,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -732,7 +1098,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -846,7 +1212,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -900,7 +1266,7 @@
 
       <a href="../jamati-activities" class="sj-dept-brand">
         <div class="sj-dept-brand-icon">
-          <i class="fa-solid fa-person-running"></i>
+          <i class="fa-solid fa-compass"></i>
         </div>
         <div class="sj-dept-brand-text">
           <h1>شعبۂ دعوت و سرگرمیاں پورٹل</h1>
@@ -940,6 +1306,12 @@
           <span>خطباتِ جمعہ لسٹ</span>
         </a>
       
+        
+        <a href="../moon" class="sj-dept-link ">
+          <i class="fa-solid fa-moon"></i>
+          <span>رویتِ ہلال پورٹل</span>
+        </a>
+      
     </nav>
 
     <!-- INLINE SEARCH BOX IN HEADLINE -->
@@ -971,7 +1343,7 @@
 <aside class="sj-dept-drawer" id="sjDeptDrawer" aria-label="شعبۂ دعوت و سرگرمیاں پورٹل سائڈ بار مینو">
   <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
     <div>
-      <h3 style="margin: 0; font-size: 18px; font-weight: 800;"><i class="fa-solid fa-person-running" style="color: #fde68a;"></i> شعبۂ دعوت و سرگرمیاں پورٹل — مینو</h3>
+      <h3 style="margin: 0; font-size: 18px; font-weight: 800;"><i class="fa-solid fa-compass" style="color: #fde68a;"></i> شعبۂ دعوت و سرگرمیاں پورٹل — مینو</h3>
       <div style="font-size: 11px; color: #ccfbf1; margin-top: 2px;">صوبائی جمعیت اہل حدیث ممبئی — دعوتی، تبلیغی، تعلیمی و اصلاحی سرگرمیاں</div>
     </div>
     <button type="button" onclick="closeSjDeptDrawer()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; cursor: pointer;">&times;</button>
@@ -1040,41 +1412,6 @@
 </script>
 
 
-
-<!-- 2. COMPACT BREADCRUMB & DEPARTMENT SEARCH BAR -->
-<div class="sj-dept-hub-wrap">
-  <div class="sj-dept-top-row" style="margin-bottom: 0;">
-    <!-- Right: Breadcrumb -->
-    <div class="sj-dept-breadcrumb">
-      <a href="../index.html"><i class="fa-solid fa-house" style="color: #0f766e;"></i> مرکزی سرورق</a>
-      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-      <a href="../jamati-activities" style="color: #0f766e;">شعبۂ دعوت و سرگرمیاں پورٹل</a>
-      
-        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-        <span style="color: #065f46; font-weight: 800;">آئندہ پروگرامز و سیمینارز</span>
-      
-    </div>
-
-    <!-- Left: Appropriately-Sized Department Search Bar -->
-    <div class="sj-dept-search-bar">
-      <div class="sj-dept-search-input-wrap">
-        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
-        <input
-          type="text"
-          id="sjDeptLiveSearchInput"
-          class="sj-dept-search-input"
-          placeholder="سرگرمی، پروگرام، خطبہ جمعہ، آئینۂ جمعیت یا تاریخ تلاش کریں..."
-          autocomplete="off"
-          oninput="filterDeptPageContent(this.value)"
-        />
-      </div>
-      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
-        <i class="fa-solid fa-microphone"></i>
-        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
-      </button>
-    </div>
-  </div>
-</div>
 
 
 <!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
@@ -1157,7 +1494,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1167,7 +1513,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1299,7 +1645,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
 
     <div class="card">
-        <div class="top">میگزین</div>
+        <div class="top"><i class="fa-solid fa-book-open-reader" style="margin-left:6px; font-size:15px;"></i> مجلہ الجماعۃ</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
@@ -1307,56 +1653,56 @@ body *::-webkit-scrollbar-thumb:hover {
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1D13eBnrxVNsWpnIPi0W5k_x2bOFizf2L" alt="الجماعۃ جولائی، اگست ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1K__47wCSxKnJdHfH5zZjYM-hU9frNyMY" alt="الجماعۃ مئی، جون ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ مارچ، اپریل ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1tMjYXXJdHZa6g-zuBYQh6uPkF_MwpMsQ" alt="الجماعہ، جنوری، فروری ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1-Mmrbnaih4zTKyMWQpoFNqskncw-JI0g" alt="الجماعہ، نومبر، دسمبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ، ستمبر، اکتوبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/10vp3es2fFpa7cIAcjC1EUFoJGIGrPEqx" alt="الجماعۃ ، جولائی، اگست ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1OCPAE27t8T7_GXn04FOZek2hX6d_4_3F" alt="مجلہ الجماعہ، مئی وجون ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
@@ -1369,7 +1715,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            پروگرام کے پوسٹرس
+            <i class="fa-solid fa-image" style="margin-left:6px; font-size:15px;"></i> دعوتی و اطلاعی پوسٹرز
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1377,49 +1723,49 @@ body *::-webkit-scrollbar-thumb:hover {
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
@@ -1432,11 +1778,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            تازہ ترین ویڈیو
+            <i class="fa-solid fa-circle-play" style="margin-left:6px; font-size:15px;"></i> تازہ ترین بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="تازہ ترین بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/yBAjA9DRNQs" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1444,166 +1791,322 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <div class="card view-container">
-        <div class="top" dir="rtl">
-            <span> زائرین کی تعداد &nbsp;&nbsp;: </span>
-            <span class="view">
-                0
-            </span>
+        <div class="top" dir="rtl" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="fa-solid fa-users" style="font-size:14px; color:#fde68a;"></i>
+            <span>زائرینِ پورٹل:</span>
+            <span class="view" data-fallback-views="18450">18,450+</span>
         </div>
     </div>
 </div>
 
 
-                    <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
-                        <div class="card district-jamiat">
-                            <div class="top">
-                                <h1>آئندہ جماعتی پروگرامز، سیمینارز و مسابقات</h1>
+                    <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6 sj-up-portal">
+                        <!-- Prestige Hero -->
+                        <div class="sj-up-hero">
+                            <div class="sj-up-hero-badge">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <span>دعوتی، تعلیمی و تربیتی تقویم</span>
                             </div>
+                            <h1>آئندہ جماعتی پروگرامز، سیمینارز و مسابقات</h1>
+                            <p>صوبائی جمعیت اہل حدیث ممبئی اور ذیلی ضلعی جمعیات کے زیرِ اہتمام منعقد ہونے والے دعوتی اجتماعات، تدریبی و تربیتی ورکشاپس اور تعلیمی مسابقات کی مستند تفصیلات اور آن لائن رجسٹریشن۔</p>
+                        </div>
 
-                            <div class="content" style="padding: 20px;">
-                                <p style="color: #64748b; font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
-                                    صوبائی جمعیت اہل حدیث ممبئی کے شعبہ جات اور ضلعی جمعیات کے زیر اہتمام منعقد ہونے والے آئندہ دعوتی اجتماعات، تعلیمی مسابقات اور تربیتی کیمپس کی تفصیلات ملاحظہ کریں۔
-                                </p>
+                        <!-- Online Registration Quick Hub -->
+                        <div class="sj-reg-hub">
+                            <a href="../tadribiya" class="sj-reg-card">
+                                <div class="sj-reg-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <div class="sj-reg-info">
+                                    <strong>دورۂ تدریبیہ رجسٹریشن</strong>
+                                    <span>برائے ائمہ، خطباء و دعاۃ</span>
+                                </div>
+                            </a>
+                            <a href="../talimi-inami-musabqa" class="sj-reg-card">
+                                <div class="sj-reg-icon" style="background: linear-gradient(135deg, #0284c7, #0369a1);"><i class="fa-solid fa-award"></i></div>
+                                <div class="sj-reg-info">
+                                    <strong>تعلیمی انعامی مسابقہ</strong>
+                                    <span>آن لائن فارم و داخلہ</span>
+                                </div>
+                            </a>
+                            <a href="../khutba-e-juma" class="sj-reg-card">
+                                <div class="sj-reg-icon" style="background: linear-gradient(135deg, #d97706, #b45309);"><i class="fa-solid fa-mosque"></i></div>
+                                <div class="sj-reg-info">
+                                    <strong>خطباتِ جمعہ شیڈول</strong>
+                                    <span>ہفتہ وار خطباء و مساجد</span>
+                                </div>
+                            </a>
+                        </div>
 
+                        <!-- Search & Filter Toolbar -->
+                        
+                        <div class="sj-up-toolbar">
+                            <div class="sj-up-search-wrap">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="sjUpcomingSearchInput" placeholder="پروگرام کا عنوان، مقام، خطیب یا موضوع تلاش کریں..." oninput="filterUpcomingEvents()">
+                            </div>
+                            <div class="sj-up-pills">
+                                <button type="button" class="sj-up-pill active" data-status="all" onclick="setUpcomingStatusFilter('all', this)">تمام پروگرامز</button>
+                                <button type="button" class="sj-up-pill" data-status="upcoming" onclick="setUpcomingStatusFilter('upcoming', this)">آئندہ</button>
+                                <button type="button" class="sj-up-pill" data-status="ongoing" onclick="setUpcomingStatusFilter('ongoing', this)">جاری</button>
+                                <button type="button" class="sj-up-pill" data-status="completed" onclick="setUpcomingStatusFilter('completed', this)">مکمل شدہ</button>
+                                <span class="sj-up-count" id="sjUpcomingCountBadge">3 پروگرامز</span>
+                            </div>
+                        </div>
+
+                        <!-- Events List -->
+                        <div id="sjUpcomingEventsList">
+                            
                                 
-                                    
-                                        <div class="event-card">
-                                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
-                                                <h3 style="font-size: 18px; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.5;">
-                                                    عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات
-                                                </h3>
-                                                <span class="event-badge badge-upcoming">
-                                                    آئندہ پروگرام
-                                                </span>
+                                    <article class="sj-event-card" data-status="upcoming" data-search="عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات کرلا ویسٹ، ممبئی صوبائی جمعیت اہل حدیث ممبئی کے شعبہ تعلیم کے زیر اہتمام حفظ قرآن، تجوید، احادیث نبویہ اور اسلامی معلومات عامہ کا سالانہ عظیم مسابقہ منعقد کیا جا رہا ہے۔ خواہش مند طلبہ و مدارس آن لائن رجسٹریشن کرائیں۔ تعلیمی مسابقہ اکابر علماء کرام و ائمہ عظام 2026-11-15">
+                                        <div class="sj-ev-top">
+                                            <h2 class="sj-ev-title">عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات</h2>
+                                            <span class="sj-ev-badge sj-badge-upcoming">
+                                                <i class="fa-solid fa-clock"></i>
+                                                آئندہ پروگرام
+                                            </span>
+                                        </div>
+
+                                        <div class="sj-ev-cat">
+                                            <i class="fa-solid fa-tag"></i>
+                                            <span>تعلیمی مسابقہ</span>
+                                        </div>
+
+                                        
+                                            <div class="sj-ev-poster-box" onclick="openUpPosterModal('/images/poster-1.jpg', 'عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات')">
+                                                <img src="../images/poster-1.jpg" alt="عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات" loading="lazy">
+                                                <span class="sj-ev-poster-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> پوسٹر بڑا کر کے دیکھیں</span>
                                             </div>
+                                        
 
-                                            <div style="margin-bottom: 10px;">
-                                                <span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700;">
-                                                    <i class="fa-solid fa-tag"></i> تعلیمی مسابقہ
-                                                </span>
+                                        
+                                            <p class="sj-ev-desc">صوبائی جمعیت اہل حدیث ممبئی کے شعبہ تعلیم کے زیر اہتمام حفظ قرآن، تجوید، احادیث نبویہ اور اسلامی معلومات عامہ کا سالانہ عظیم مسابقہ منعقد کیا جا رہا ہے۔ خواہش مند طلبہ و مدارس آن لائن رجسٹریشن کرائیں۔</p>
+                                        
+
+                                        <div class="sj-ev-meta-grid">
+                                            <div class="sj-ev-meta-item">
+                                                <i class="fa-solid fa-calendar-days" style="color: #0d9488;"></i>
+                                                <span><strong>تاریخ:</strong> <span dir="ltr">2026-11-15</span> تا 2026-11-16</span>
                                             </div>
-
                                             
-                                                <a href="../images/jamiat-qr.jpg" target="_blank" title="پوسٹر بڑا کر کے دیکھیں">
-                                                    <img src="../images/jamiat-qr.jpg" alt="عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات" class="event-poster-thumb">
-                                                </a>
-                                            
-
-                                            <p style="font-size: 14px; color: #334155; line-height: 1.8; margin-bottom: 12px;">
-                                                صوبائی جمعیت اہل حدیث ممبئی کے شعبہ تعلیم کے زیر اہتمام حفظ قرآن، تجوید، احادیث نبویہ اور اسلامی معلومات عامہ کا سالانہ عظیم مسابقہ منعقد کیا جا رہا ہے۔ خواہش مند طلبہ و مدارس آن لائن رجسٹریشن کرائیں۔
-                                            </p>
-
-                                            <div class="event-meta">
-                                                <div class="event-meta-item">
-                                                    <i class="fa-solid fa-calendar-day" style="color: #0284c7;"></i>
-                                                    <span><strong>تاریخ:</strong> 2026-11-15 تا 2026-11-16</span>
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-clock" style="color: #0284c7;"></i>
+                                                    <span><strong>وقت:</strong> صبح ۹:۰۰ تا شام ۶:۰۰ بجے</span>
                                                 </div>
-                                                
-                                                    <div class="event-meta-item">
-                                                        <i class="fa-solid fa-clock" style="color: #0284c7;"></i>
-                                                        <span><strong>وقت:</strong> صبح ۹:۰۰ تا شام ۶:۰۰ بجے</span>
-                                                    </div>
-                                                
-                                                <div class="event-meta-item">
-                                                    <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-location-dot" style="color: #e11d48;"></i>
                                                     <span><strong>مقام:</strong> کرلا ویسٹ، ممبئی</span>
                                                 </div>
-                                                
-                                                    <div class="event-meta-item" style="width: 100%;">
-                                                        <i class="fa-solid fa-microphone" style="color: #8b5cf6;"></i>
-                                                        <span><strong>خطباء و مہمانان:</strong> اکابر علماء کرام و ائمہ عظام</span>
-                                                    </div>
-                                                
-                                            </div>
-
-                                            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
-                                                
-                                                    <a href="../talimi-inami-musabqa" class="event-btn btn-reg">
-                                                        <i class="fa-solid fa-id-card"></i> آن لائن رجسٹریشن
-                                                    </a>
-                                                
-                                                
-                                                    <a href="https://goo.gl/maps/SubaiJamiatOffice" target="_blank" class="event-btn btn-map">
-                                                        <i class="fa-solid fa-map"></i> گوگل میپ لوکیشن
-                                                    </a>
-                                                
-                                                
-                                                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #64748b; margin-right: auto;">
-                                                        <i class="fa-solid fa-phone"></i> دفتر شعبہ تعلیم: 9892555244
-                                                    </span>
-                                                
-                                            </div>
-                                        </div>
-                                    
-                                        <div class="event-card">
-                                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
-                                                <h3 style="font-size: 18px; font-weight: 800; color: #0f172a; margin: 0; line-height: 1.5;">
-                                                    سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ
-                                                </h3>
-                                                <span class="event-badge badge-upcoming">
-                                                    آئندہ پروگرام
-                                                </span>
-                                            </div>
-
-                                            <div style="margin-bottom: 10px;">
-                                                <span style="background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 700;">
-                                                    <i class="fa-solid fa-tag"></i> تربیتی کیمپ
-                                                </span>
-                                            </div>
-
                                             
-                                                <a href="../images/apeal.jpg" target="_blank" title="پوسٹر بڑا کر کے دیکھیں">
-                                                    <img src="../images/apeal.jpg" alt="سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ" class="event-poster-thumb">
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-microphone-lines" style="color: #7c3aed;"></i>
+                                                    <span><strong>خطباء و مہمانانِ خصوصی:</strong> اکابر علماء کرام و ائمہ عظام</span>
+                                                </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-phone-volume" style="color: #059669;"></i>
+                                                    <span><strong>رابطہ و استفسار:</strong> دفتر شعبہ تعلیم: 9892555244</span>
+                                                </div>
+                                            
+                                        </div>
+
+                                        <div class="sj-ev-actions">
+                                            
+                                                <a href="../talimi-inami-musabqa-registeration" class="sj-ev-btn sj-btn-primary">
+                                                    <i class="fa-solid fa-id-card"></i>
+                                                    <span>آن لائن رجسٹریشن</span>
                                                 </a>
                                             
+                                            
+                                                <a href="https://www.google.com/maps/search/?api=1&amp;query=Subai+Jamiat+Ahle+Hadees+Mumbai+Kurla+West" target="_blank" rel="noopener" class="sj-ev-btn sj-btn-outline">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <span>گوگل میپ لوکیشن</span>
+                                                </a>
+                                            
+                                            
+                                                <button type="button" class="sj-ev-btn sj-btn-outline" onclick="openUpPosterModal('/images/poster-1.jpg', 'عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات')">
+                                                    <i class="fa-regular fa-image"></i>
+                                                    <span>پوسٹر دیکھیں</span>
+                                                </button>
+                                            
+                                            <button type="button" class="sj-ev-btn sj-btn-wa" onclick="shareUpcomingEvent('عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات', '2026-11-15', 'کرلا ویسٹ، ممبئی')">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                                <span>واٹس ایپ شیئر</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                
+                                    <article class="sj-event-card" data-status="ongoing" data-search="ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات مساجدِ اہل حدیث، شہرِ ممبئی، تھانہ و دیارِ کوکن صوبائی جمعیت اہل حدیث ممبئی کے شعبۂ دعوت کے زیر اہتمام ممبئی، تھانہ، بھیونڈی، ممبرا اور کوکن کی مساجد میں مستند علمائے کرام کے ماہانہ و ہفتہ وار دروسِ قرآن و حدیث کا سلسلہ جاری ہے۔ دعوتی اجتماعات مرکزی و ضلعی علمائے کرام و دعاۃِ جمعیت 2026-11-28">
+                                        <div class="sj-ev-top">
+                                            <h2 class="sj-ev-title">ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات</h2>
+                                            <span class="sj-ev-badge sj-badge-ongoing">
+                                                <i class="fa-solid fa-circle-play"></i>
+                                                جاری پروگرام
+                                            </span>
+                                        </div>
 
-                                            <p style="font-size: 14px; color: #334155; line-height: 1.8; margin-bottom: 12px;">
-                                                دعوتی میدان میں سرگرم علماء اور ائمہ مساجد کی فکری و منہجی تربیت اور مواصلاتی صلاحیتوں کو نکھارنے کے لیے یہ سہ روزہ رہائشی اجتماع منعقد کیا جا رہا ہے۔
-                                            </p>
+                                        <div class="sj-ev-cat">
+                                            <i class="fa-solid fa-tag"></i>
+                                            <span>دعوتی اجتماعات</span>
+                                        </div>
 
-                                            <div class="event-meta">
-                                                <div class="event-meta-item">
-                                                    <i class="fa-solid fa-calendar-day" style="color: #0284c7;"></i>
-                                                    <span><strong>تاریخ:</strong> 2026-12-05 تا 2026-12-07</span>
+                                        
+                                            <div class="sj-ev-poster-box" onclick="openUpPosterModal('/images/poster-2.jpg', 'ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات')">
+                                                <img src="../images/poster-2.jpg" alt="ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات" loading="lazy">
+                                                <span class="sj-ev-poster-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> پوسٹر بڑا کر کے دیکھیں</span>
+                                            </div>
+                                        
+
+                                        
+                                            <p class="sj-ev-desc">صوبائی جمعیت اہل حدیث ممبئی کے شعبۂ دعوت کے زیر اہتمام ممبئی، تھانہ، بھیونڈی، ممبرا اور کوکن کی مساجد میں مستند علمائے کرام کے ماہانہ و ہفتہ وار دروسِ قرآن و حدیث کا سلسلہ جاری ہے۔</p>
+                                        
+
+                                        <div class="sj-ev-meta-grid">
+                                            <div class="sj-ev-meta-item">
+                                                <i class="fa-solid fa-calendar-days" style="color: #0d9488;"></i>
+                                                <span><strong>تاریخ:</strong> <span dir="ltr">2026-11-28</span> </span>
+                                            </div>
+                                            
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-clock" style="color: #0284c7;"></i>
+                                                    <span><strong>وقت:</strong> بعد نمازِ مغرب تا عشاء</span>
                                                 </div>
-                                                
-                                                    <div class="event-meta-item">
-                                                        <i class="fa-solid fa-clock" style="color: #0284c7;"></i>
-                                                        <span><strong>وقت:</strong> مکمل دن (رہائشی)</span>
-                                                    </div>
-                                                
-                                                <div class="event-meta-item">
-                                                    <i class="fa-solid fa-location-dot" style="color: #ef4444;"></i>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-location-dot" style="color: #e11d48;"></i>
+                                                    <span><strong>مقام:</strong> مساجدِ اہل حدیث، شہرِ ممبئی، تھانہ و دیارِ کوکن</span>
+                                                </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-microphone-lines" style="color: #7c3aed;"></i>
+                                                    <span><strong>خطباء و مہمانانِ خصوصی:</strong> مرکزی و ضلعی علمائے کرام و دعاۃِ جمعیت</span>
+                                                </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-phone-volume" style="color: #059669;"></i>
+                                                    <span><strong>رابطہ و استفسار:</strong> شعبۂ دعوت و تبلیغ: 9892555244</span>
+                                                </div>
+                                            
+                                        </div>
+
+                                        <div class="sj-ev-actions">
+                                            
+                                                <a href="../juma-list" class="sj-ev-btn sj-btn-primary">
+                                                    <i class="fa-solid fa-id-card"></i>
+                                                    <span>آن لائن رجسٹریشن</span>
+                                                </a>
+                                            
+                                            
+                                                <a href="https://www.google.com/maps/search/?api=1&amp;query=Subai+Jamiat+Ahle+Hadees+Mumbai+Kurla+West" target="_blank" rel="noopener" class="sj-ev-btn sj-btn-outline">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <span>گوگل میپ لوکیشن</span>
+                                                </a>
+                                            
+                                            
+                                                <button type="button" class="sj-ev-btn sj-btn-outline" onclick="openUpPosterModal('/images/poster-2.jpg', 'ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات')">
+                                                    <i class="fa-regular fa-image"></i>
+                                                    <span>پوسٹر دیکھیں</span>
+                                                </button>
+                                            
+                                            <button type="button" class="sj-ev-btn sj-btn-wa" onclick="shareUpcomingEvent('ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات', '2026-11-28', 'مساجدِ اہل حدیث، شہرِ ممبئی، تھانہ و دیارِ کوکن')">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                                <span>واٹس ایپ شیئر</span>
+                                            </button>
+                                        </div>
+                                    </article>
+                                
+                                    <article class="sj-event-card" data-status="upcoming" data-search="سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ جامع مسجد اہل حدیث، ممبرا، ضلع تھانے دعوتی میدان میں سرگرم علماء اور ائمہ مساجد کی فکری و منہجی تربیت اور مواصلاتی صلاحیتوں کو نکھارنے کے لیے یہ سہ روزہ رہائشی اجتماع منعقد کیا جا رہا ہے۔ تربیتی کیمپ فضیلۃ الشیخ عبد السلام سلفی، مولانا عبد الرشید بستوی، مفتی عزیز الرحمن مدنی 2026-12-05">
+                                        <div class="sj-ev-top">
+                                            <h2 class="sj-ev-title">سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ</h2>
+                                            <span class="sj-ev-badge sj-badge-upcoming">
+                                                <i class="fa-solid fa-clock"></i>
+                                                آئندہ پروگرام
+                                            </span>
+                                        </div>
+
+                                        <div class="sj-ev-cat">
+                                            <i class="fa-solid fa-tag"></i>
+                                            <span>تربیتی کیمپ</span>
+                                        </div>
+
+                                        
+                                            <div class="sj-ev-poster-box" onclick="openUpPosterModal('/images/tadribiya-header.jpg', 'سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ')">
+                                                <img src="../images/tadribiya-header.jpg" alt="سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ" loading="lazy">
+                                                <span class="sj-ev-poster-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i> پوسٹر بڑا کر کے دیکھیں</span>
+                                            </div>
+                                        
+
+                                        
+                                            <p class="sj-ev-desc">دعوتی میدان میں سرگرم علماء اور ائمہ مساجد کی فکری و منہجی تربیت اور مواصلاتی صلاحیتوں کو نکھارنے کے لیے یہ سہ روزہ رہائشی اجتماع منعقد کیا جا رہا ہے۔</p>
+                                        
+
+                                        <div class="sj-ev-meta-grid">
+                                            <div class="sj-ev-meta-item">
+                                                <i class="fa-solid fa-calendar-days" style="color: #0d9488;"></i>
+                                                <span><strong>تاریخ:</strong> <span dir="ltr">2026-12-05</span> تا 2026-12-07</span>
+                                            </div>
+                                            
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-clock" style="color: #0284c7;"></i>
+                                                    <span><strong>وقت:</strong> مکمل دن (رہائشی)</span>
+                                                </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item">
+                                                    <i class="fa-solid fa-location-dot" style="color: #e11d48;"></i>
                                                     <span><strong>مقام:</strong> جامع مسجد اہل حدیث، ممبرا، ضلع تھانے</span>
                                                 </div>
-                                                
-                                                    <div class="event-meta-item" style="width: 100%;">
-                                                        <i class="fa-solid fa-microphone" style="color: #8b5cf6;"></i>
-                                                        <span><strong>خطباء و مہمانان:</strong> فضیلۃ الشیخ عبد السلام سلفی، مولانا عبد الرشید بستوی، مفتی عزیز الرحمن مدنی</span>
-                                                    </div>
-                                                
-                                            </div>
-
-                                            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
-                                                
-                                                    <a href="../contact" class="event-btn btn-reg">
-                                                        <i class="fa-solid fa-id-card"></i> آن لائن رجسٹریشن
-                                                    </a>
-                                                
-                                                
-                                                    <a href="https://goo.gl/maps/MumbraMasjid" target="_blank" class="event-btn btn-map">
-                                                        <i class="fa-solid fa-map"></i> گوگل میپ لوکیشن
-                                                    </a>
-                                                
-                                                
-                                                    <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #64748b; margin-right: auto;">
-                                                        <i class="fa-solid fa-phone"></i> ناظم تربیتی امور: 9892255244
-                                                    </span>
-                                                
-                                            </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-microphone-lines" style="color: #7c3aed;"></i>
+                                                    <span><strong>خطباء و مہمانانِ خصوصی:</strong> فضیلۃ الشیخ عبد السلام سلفی، مولانا عبد الرشید بستوی، مفتی عزیز الرحمن مدنی</span>
+                                                </div>
+                                            
+                                            
+                                                <div class="sj-ev-meta-item" style="grid-column: 1 / -1;">
+                                                    <i class="fa-solid fa-phone-volume" style="color: #059669;"></i>
+                                                    <span><strong>رابطہ و استفسار:</strong> ناظم تربیتی امور: 9892255244</span>
+                                                </div>
+                                            
                                         </div>
-                                    
+
+                                        <div class="sj-ev-actions">
+                                            
+                                                <a href="../tadribiya-registeration" class="sj-ev-btn sj-btn-primary">
+                                                    <i class="fa-solid fa-id-card"></i>
+                                                    <span>آن لائن رجسٹریشن</span>
+                                                </a>
+                                            
+                                            
+                                                <a href="https://www.google.com/maps/search/?api=1&amp;query=Jama+Masjid+Ahle+Hadees+Mumbra" target="_blank" rel="noopener" class="sj-ev-btn sj-btn-outline">
+                                                    <i class="fa-solid fa-map-location-dot"></i>
+                                                    <span>گوگل میپ لوکیشن</span>
+                                                </a>
+                                            
+                                            
+                                                <button type="button" class="sj-ev-btn sj-btn-outline" onclick="openUpPosterModal('/images/tadribiya-header.jpg', 'سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ')">
+                                                    <i class="fa-regular fa-image"></i>
+                                                    <span>پوسٹر دیکھیں</span>
+                                                </button>
+                                            
+                                            <button type="button" class="sj-ev-btn sj-btn-wa" onclick="shareUpcomingEvent('سہ روزہ تربیتی اجتماع برائے ائمہ و خطباء اور دعاۃ', '2026-12-05', 'جامع مسجد اہل حدیث، ممبرا، ضلع تھانے')">
+                                                <i class="fa-brands fa-whatsapp"></i>
+                                                <span>واٹس ایپ شیئر</span>
+                                            </button>
+                                        </div>
+                                    </article>
                                 
+                            
+
+                            <div id="sjUpcomingEmptyFilter" style="display: none; text-align: center; padding: 34px 20px; background: #ffffff; border: 1.5px dashed #cbd5e1; border-radius: 16px;">
+                                <i class="fa-solid fa-magnifying-glass" style="font-size: 32px; color: #94a3b8; margin-bottom: 10px;"></i>
+                                <div style="font-size: 16px; color: #334155;">آپ کی تلاش کے مطابق کوئی پروگرام نہیں ملا۔</div>
                             </div>
                         </div>
                     </div>
@@ -1611,56 +2114,56 @@ body *::-webkit-scrollbar-thumb:hover {
                     <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
 
     <div class="card">
-        <div class="top">جدید کتب</div>
+        <div class="top"><i class="fa-solid fa-book-bookmark" style="margin-left:6px; font-size:15px;"></i> مطبوعاتِ جمعیت</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
@@ -1673,7 +2176,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            رویت ہلال
+            <i class="fa-solid fa-moon" style="margin-left:6px; font-size:15px;"></i> اعلاناتِ رویتِ ہلال
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1682,7 +2185,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1690,7 +2193,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1698,7 +2201,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1706,7 +2209,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1720,11 +2223,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            اہم ویڈیو
+            <i class="fa-solid fa-video" style="margin-left:6px; font-size:15px;"></i> نمایاں علمی بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="نمایاں علمی بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/FO3oQ3lGQZI" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1737,6 +2241,24 @@ body *::-webkit-scrollbar-thumb:hover {
             </div>
         </div>
     </section>
+
+    <!-- Fullscreen Poster Lightbox -->
+    <div class="sj-up-lightbox" id="sjUpPosterModal" onclick="if(event.target === this) closeUpPosterModal()">
+        <div class="sj-up-lb-inner">
+            <div class="sj-up-lb-bar">
+                <span id="sjUpLbTitle" style="font-size: 15px;">پروگرام پوسٹر</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <a id="sjUpLbDownload" href="#" download class="sj-ev-btn sj-btn-primary" style="padding: 4px 12px; font-size: 12.5px;">
+                        <i class="fa-solid fa-download"></i> ڈاؤن لوڈ
+                    </a>
+                    <button type="button" onclick="closeUpPosterModal()" style="background: rgba(255,255,255,0.12); color: #fff; border: none; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 18px;">&times;</button>
+                </div>
+            </div>
+            <div class="sj-up-lb-body">
+                <img id="sjUpLbImg" src="" alt="پروگرام پوسٹر">
+            </div>
+        </div>
+    </div>
 
     <footer>
   <div class="up">
@@ -1789,21 +2311,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1818,51 +2339,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="../library/publications"> کتاب التوحید </a>
 
-            <a href="../library/publications">علمی و دعوتی خیانت</a>
+            <a href="../library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="../library/publications"> طالب علم کا زیور </a>
 
             <a href="../library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="../aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="../aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="../aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="../aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="../aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="../index.html"> سرورق </a>
+            <a href="../index.html"> مرکزی سرورق </a>
 
-            <a href="../introduction"> تعارف </a>
+            <a href="../introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="../aljama"> مجلہ الجماعہ </a>
+            <a href="../jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="../library"> لائبریری </a>
+            <a href="../upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="../library/publications"> مطبوعات </a>
+            <a href="../masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="../press-release"> پریس ریلیز </a>
+            <a href="../aljama"> مجلہ الجماعۃ </a>
 
-            <a href="../fatawa"> فتاویٰ </a>
+            <a href="../library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="../tausia"> توصیہ </a>
+            <a href="../video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="../fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="../tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="../donate"> مالی تعاون و عطیات </a>
 
             <a href="../contact"> رابطہ کریں </a>
           </div>
@@ -2040,5 +2567,64 @@ body *::-webkit-scrollbar-thumb:hover {
 <script src="../js/share-interaction.js?v=v15"></script>
 
 
+
+    <script>
+        var currentUpStatus = 'all';
+
+        function setUpcomingStatusFilter(status, btn) {
+            currentUpStatus = status;
+            document.querySelectorAll('.sj-up-pill').forEach(function (p) { p.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+            filterUpcomingEvents();
+        }
+
+        function filterUpcomingEvents() {
+            var q = (document.getElementById('sjUpcomingSearchInput').value || '').trim().toLowerCase();
+            var cards = document.querySelectorAll('.sj-event-card');
+            var visible = 0;
+            cards.forEach(function (card) {
+                var st = card.getAttribute('data-status') || 'upcoming';
+                var text = (card.getAttribute('data-search') || card.textContent || '').toLowerCase();
+                var matchStatus = (currentUpStatus === 'all') || (st === currentUpStatus);
+                var matchQuery = !q || text.indexOf(q) !== -1;
+                if (matchStatus && matchQuery) {
+                    card.style.display = '';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            var badge = document.getElementById('sjUpcomingCountBadge');
+            if (badge) badge.textContent = visible + ' پروگرامز';
+            var emptyBox = document.getElementById('sjUpcomingEmptyFilter');
+            if (emptyBox && cards.length > 0) {
+                emptyBox.style.display = visible === 0 ? 'block' : 'none';
+            }
+        }
+
+        function openUpPosterModal(url, title) {
+            document.getElementById('sjUpLbImg').src = url;
+            document.getElementById('sjUpLbTitle').textContent = title || 'پروگرام پوسٹر';
+            document.getElementById('sjUpLbDownload').href = url;
+            document.getElementById('sjUpPosterModal').classList.add('open');
+        }
+
+        function closeUpPosterModal() {
+            document.getElementById('sjUpPosterModal').classList.remove('open');
+        }
+
+        function shareUpcomingEvent(title, date, venue) {
+            var msg = ' دعوتِ شرکت — صوبائی جمعیت اہل حدیث ممبئی\n\n'
+                + '📌 ' + title + '\n'
+                + (date ? '📅 تاریخ: ' + date + '\n' : '')
+                + (venue ? '📍 مقام: ' + venue + '\n' : '')
+                + '🔗 تفصیلات و رجسٹریشن: ' + window.location.href;
+            window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeUpPosterModal();
+        });
+    </script>
 </body>
 </html>

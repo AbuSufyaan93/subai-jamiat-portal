@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="./manifest.json">
@@ -67,7 +67,7 @@
 <!-- own animation js file  -->
 <script defer src="./javascript/animate.js?v=v15"></script>
 <!-- all page title is same -->
-<title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
+<title>مالی تعاون و عطیات پورٹل | صوبائی جمعیت اہل حدیث ممبئی</title>
 
 <meta name="keywords" content="Subai Jamiat Ahle Hadees , Ahle hadees , ahle hadees mumbai , masajid in mumbai , صوبائی جمعیت اہل حدیث ممبئی ، اہل حدیث ، اہل حدیث ممبئی , Ahle hadees masajid">
 <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی ایک دعوتی، تربیتی، اصلاحی اور رفاہی مشن ہے اور دنیا میں امن و سلامتی کی مناد ہے۔ اسلام خالص کی دعوت پیش کرنا اس کا امتیاز ہے۔ دین کا صحیح تعارف تعلیم وتربیت، دعوت واصلاح اور رفاہی سر گرمیوں کے ذریعہ انسانیت کی خدمت اس کا مطلوب ہے۔ ان عظیم مقاصد اور منصوبوں کی تکمیل کی جانب بحمد للہ جمعیت رواں دواں ہے اور اللہ تعالیٰ سے مدد اور توفیق کی طالب ہے۔">
@@ -76,58 +76,49 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css?v=v15">
     <style>
         .donate-showcase-wrap {
-            max-width: 980px;
-            margin: 24px auto 40px;
+            max-width: 1020px;
+            margin: 24px auto 42px;
             padding: 0 16px;
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
+            direction: rtl;
         }
         .donate-hero-card {
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%);
-            border: 1.5px solid #99f6e4;
+            background: linear-gradient(135deg, #042f2e 0%, #065f46 54%, #0d9488 100%);
+            border: 1px solid rgba(167, 243, 208, 0.3);
             border-radius: 22px;
             padding: 26px 28px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 12px 32px rgba(13, 148, 136, 0.08), 0 3px 10px rgba(15, 23, 42, 0.03);
+            box-shadow: 0 14px 36px rgba(4, 47, 46, 0.2);
             margin-bottom: 24px;
             text-align: right;
-        }
-        .donate-hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4.5px;
-            background: linear-gradient(90deg, #0d9488 0%, #0284c7 35%, #10b981 70%, #f59e0b 100%);
+            color: #ffffff;
         }
         .donate-hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid #99f6e4;
-            color: #0f766e;
+            background: rgba(251, 191, 36, 0.16);
+            border: 1px solid rgba(253, 230, 138, 0.45);
+            color: #fde68a;
             padding: 4px 14px;
             border-radius: 999px;
             font-size: 13px;
-            font-weight: 800;
             margin-bottom: 10px;
         }
         .donate-hero-title {
-            font-size: 26px;
-            font-weight: 900;
-            color: #0f172a;
+            font-size: 25px;
+            color: #ffffff;
             margin: 0 0 8px;
-            line-height: 1.5;
+            line-height: 1.85;
         }
         .donate-hero-sub {
             font-size: 14.5px;
-            color: #334155;
+            color: #ecfdf5;
             margin: 0;
-            line-height: 1.75;
+            line-height: 2.05;
         }
         .donate-grid {
             display: grid;
@@ -141,17 +132,18 @@
             border-radius: 20px;
             padding: 24px;
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+            text-align: right;
         }
         .donate-panel-title {
-            font-size: 19px;
-            font-weight: 800;
-            color: #0f172a;
+            font-size: 19.5px;
+            color: #064e3b;
             margin: 0 0 16px;
             padding-bottom: 12px;
             border-bottom: 1.5px solid #f1f5f9;
             display: flex;
             align-items: center;
             gap: 10px;
+            line-height: 1.85;
         }
         .donate-panel-title i {
             color: #0d9488;
@@ -160,8 +152,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            padding: 12px 14px;
+            gap: 10px;
+            padding: 11px 14px;
             border-radius: 12px;
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -169,16 +161,39 @@
             flex-wrap: wrap;
         }
         .bank-info-label {
-            font-size: 14px;
-            font-weight: 800;
+            font-size: 14.5px;
             color: #475569;
+        }
+        .bank-val-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .bank-info-val {
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 700;
             color: #0f172a;
             direction: ltr;
-            font-family: 'Plus Jakarta Sans', monospace, sans-serif;
+            font-family: 'Poppins', monospace, sans-serif;
+        }
+        .bank-copy-btn {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #0f766e;
+            border-radius: 8px;
+            padding: 3px 9px;
+            font-family: var(--font-urdu, serif);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .bank-copy-btn:hover {
+            background: #0f766e;
+            color: #ffffff;
+            border-color: #0f766e;
         }
         .donate-tabs {
             display: flex;
@@ -187,19 +202,18 @@
         }
         .donate-tab-btn {
             flex: 1;
-            padding: 10px 14px;
+            padding: 9px 14px;
             border-radius: 12px;
             border: 1.5px solid #cbd5e1;
             background: #f8fafc;
             color: #334155;
-            font-weight: 800;
             font-size: 14px;
             cursor: pointer;
             transition: all 0.2s ease;
             font-family: inherit;
         }
         .donate-tab-btn.active {
-            background: linear-gradient(135deg, #0d9488 0%, #0284c7 100%);
+            background: linear-gradient(135deg, #0d9488 0%, #065f46 100%);
             color: #ffffff;
             border-color: transparent;
             box-shadow: 0 6px 16px rgba(13, 148, 136, 0.22);
@@ -217,6 +231,17 @@
             border-radius: 12px;
             object-fit: contain;
         }
+        .donate-copy-toast {
+            display: none;
+            margin-top: 10px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+            font-size: 13.5px;
+            text-align: center;
+        }
         @media (max-width: 768px) {
             .donate-grid {
                 grid-template-columns: 1fr;
@@ -225,7 +250,13 @@
     </style>
   <link rel="canonical" href="http://127.0.0.1:5000/donate">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <meta property="og:title" content="مالی تعاون و عطیات پورٹل | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta property="og:description" content="دعوتی، تعلیمی، مساجد، مطبوعات اور رفاہِ عامہ و ریلیف مدات میں صوبائی جمعیت اہل حدیث ممبئی کے ساتھ تعاون کریں۔">
+  <meta property="og:url" content="http://127.0.0.1:5000/donate">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="مالی تعاون و عطیات پورٹل | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta name="twitter:description" content="دعوتی، تعلیمی، مساجد، مطبوعات اور رفاہِ عامہ و ریلیف مدات میں صوبائی جمعیت اہل حدیث ممبئی کے ساتھ تعاون کریں۔">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"سرورق","item":"http://127.0.0.1:5000"},{"@type":"ListItem","position":2,"name":"مالی تعاون","item":"http://127.0.0.1:5000/donate"}]}]}</script>
 </head>
 
 <body data-active="donate">
@@ -386,7 +417,7 @@
 
                         <a href="./index.html" class="lang active">اردو زبان</a>
                         <a href="./ar" class="lang">عربی زبان</a>
-                        <a href="./pending" class="lang">English</a>
+                        <a href="./pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -396,13 +427,13 @@
                 <div class="calender">
 
                     <!-- <i class="fa-solid fa-calendar-days"></i> -->
-                    <i data-DateForMoon="14" class="MoonAccordingDate"></i>
+                    <i data-DateForMoon="15" class="MoonAccordingDate"></i>
 
                     <div class="date">
 
 
                         <span dir="rtl" class="arabic-date">
-                            
+                            15 شوال 1447ھ
                         </span>
                         <span class="english-date"></span>
 
@@ -519,7 +550,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -660,7 +691,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -815,7 +846,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -929,7 +960,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -1224,7 +1255,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1234,7 +1274,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1359,6 +1399,8 @@ body *::-webkit-scrollbar-thumb:hover {
   })();
 </script>
 
+    
+
     <div class="donate-showcase-wrap">
         <div class="donate-hero-card">
             <div class="donate-hero-badge">
@@ -1373,17 +1415,23 @@ body *::-webkit-scrollbar-thumb:hover {
             <div class="donate-panel">
                 <h2 class="donate-panel-title">
                     <i class="fa-solid fa-building-columns"></i>
-                    <span>مرکزی بینک کھاتہ کی تفصیلات</span>
+                    <span>مرکزی بینک کھاتہ کی مستند تفصیلات</span>
                 </h2>
 
                 <div class="bank-info-row">
                     <span class="bank-info-label">کھاتہ دار کا نام:</span>
-                    <span class="bank-info-val">Subai Jamiat Ahle Hadees Mumbai</span>
+                    <div class="bank-val-group">
+                        <span class="bank-info-val">Subai Jamiat Ahle Hadees Mumbai</span>
+                        <button type="button" class="bank-copy-btn" onclick="copyBankDetail('Subai Jamiat Ahle Hadees Mumbai', 'کھاتہ دار کا نام')"><i class="fa-regular fa-copy"></i> کاپی</button>
+                    </div>
                 </div>
 
                 <div class="bank-info-row">
                     <span class="bank-info-label">کھاتہ نمبر:</span>
-                    <span class="bank-info-val">50200067741431</span>
+                    <div class="bank-val-group">
+                        <span class="bank-info-val">50200067741431</span>
+                        <button type="button" class="bank-copy-btn" onclick="copyBankDetail('50200067741431', 'کھاتہ نمبر')"><i class="fa-regular fa-copy"></i> کاپی</button>
+                    </div>
                 </div>
 
                 <div class="bank-info-row">
@@ -1398,19 +1446,29 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="bank-info-row">
                     <span class="bank-info-label">آئی ایف ایس سی کوڈ:</span>
-                    <span class="bank-info-val">HDFC0007453</span>
+                    <div class="bank-val-group">
+                        <span class="bank-info-val">HDFC0007453</span>
+                        <button type="button" class="bank-copy-btn" onclick="copyBankDetail('HDFC0007453', 'آئی ایف ایس سی کوڈ')"><i class="fa-regular fa-copy"></i> کاپی</button>
+                    </div>
                 </div>
 
                 
                 <div class="bank-info-row">
                     <span class="bank-info-label">یو پی آئی شناخت:</span>
-                    <span class="bank-info-val">subaijamiat@hdfcbank</span>
+                    <div class="bank-val-group">
+                        <span class="bank-info-val">subaijamiat@hdfcbank</span>
+                        <button type="button" class="bank-copy-btn" onclick="copyBankDetail('subaijamiat@hdfcbank', 'یو پی آئی شناخت')"><i class="fa-regular fa-copy"></i> کاپی</button>
+                    </div>
                 </div>
                 
 
-                <div style="margin-top: 16px; padding: 12px 16px; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 12px; font-size: 13.5px; color: #0f766e; line-height: 1.7;">
+                <div class="donate-copy-toast" id="donateCopyToast"></div>
+
+                <div style="margin-top: 16px; padding: 13px 16px; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 12px; font-size: 14px; color: #0f766e; line-height: 2;">
                     <i class="fa-solid fa-circle-check" style="margin-left: 6px;"></i>
-                    رقم منتقل کرنے کے بعد رسید حاصل کرنے کے لیے مرکزی دفتر کے واٹس ایپ نمبر <strong dir="ltr">+91 98922 55244</strong> پر اطلاع دیں۔
+                    رقم منتقل کرنے کے بعد پکی رسید حاصل کرنے کے لیے مرکزی دفتر کے واٹس ایپ نمبر
+                    <a href="https://wa.me/919892255244" target="_blank" rel="noopener" style="color:#065f46; text-decoration:underline;"><strong dir="ltr" style="font-family:'Poppins',sans-serif;">+91 98922 55244</strong></a>
+                    پر ٹرانزیکشن اسکرین شاٹ ارسال فرمائیں۔
                 </div>
             </div>
 
@@ -1426,7 +1484,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
                 <div class="qr-img-box" id="qrViewBox">
                     <img src="../images/jamiat-qr.jpg" alt="صوبائی جمعیت اہل حدیث ممبئی کیو آر کوڈ">
-                    <div style="margin-top: 10px; font-size: 13px; font-weight: 700; color: #334155;">کسی بھی یو پی آئی ایپ سے اسکین کر کے فوری تعاون کریں</div>
+                    <div style="margin-top: 10px; font-size: 13.5px; color: #334155;">کسی بھی یو پی آئی ایپ سے اسکین کر کے فوری تعاون کریں</div>
                 </div>
 
                 <div class="qr-img-box" id="appealViewBox" style="display: none;">
@@ -1487,21 +1545,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1516,51 +1573,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="./library/publications"> کتاب التوحید </a>
 
-            <a href="./library/publications">علمی و دعوتی خیانت</a>
+            <a href="./library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="./library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="./library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="./library/publications"> طالب علم کا زیور </a>
 
             <a href="./library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="./aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="./aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="./aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="./aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="./aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="./aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="./aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="./index.html"> سرورق </a>
+            <a href="./index.html"> مرکزی سرورق </a>
 
-            <a href="./introduction"> تعارف </a>
+            <a href="./introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="./aljama"> مجلہ الجماعہ </a>
+            <a href="./jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="./library"> لائبریری </a>
+            <a href="./upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="./library/publications"> مطبوعات </a>
+            <a href="./masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="./press-release"> پریس ریلیز </a>
+            <a href="./aljama"> مجلہ الجماعۃ </a>
 
-            <a href="./fatawa"> فتاویٰ </a>
+            <a href="./library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="./tausia"> توصیہ </a>
+            <a href="./video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="./fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="./tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="./donate"> مالی تعاون و عطیات </a>
 
             <a href="./contact"> رابطہ کریں </a>
           </div>
@@ -1756,6 +1819,16 @@ body *::-webkit-scrollbar-thumb:hover {
                 btnQr.classList.add('active');
                 btnAppeal.classList.remove('active');
             }
+        }
+
+        function copyBankDetail(val, label) {
+            navigator.clipboard.writeText(val).then(function () {
+                var toast = document.getElementById('donateCopyToast');
+                toast.textContent = label + ' (' + val + ') کلپ بورڈ پر کاپی ہو گیا ہے!';
+                toast.style.display = 'block';
+                clearTimeout(window.__dnCopyTimer);
+                window.__dnCopyTimer = setTimeout(function () { toast.style.display = 'none'; }, 2800);
+            });
         }
     </script>
 </body>

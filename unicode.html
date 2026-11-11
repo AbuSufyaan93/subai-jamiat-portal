@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = ".";</script>
@@ -8,8 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Sobai Jamiat Ahle Hadees Mumbai</title> -->
-    <!-- all css and js  files are here included -->
+    <title>اردو یونیکوڈ تحریر و اصلاح کار ٹول کٹ — صوبائی جمعیت اہل حدیث ممبئی</title>
     <!-- Preconnect & DNS-Prefetch for fast CDN & Font resolution -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="./manifest.json">
@@ -68,7 +67,7 @@
 <!-- own animation js file  -->
 <script defer src="./javascript/animate.js?v=v15"></script>
 <!-- all page title is same -->
-<title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
+<title>اردو یونیکوڈ تحریر و تدوین ٹول کٹ | صوبائی جمعیت اہل حدیث ممبئی</title>
 
 <meta name="keywords" content="Subai Jamiat Ahle Hadees , Ahle hadees , ahle hadees mumbai , masajid in mumbai , صوبائی جمعیت اہل حدیث ممبئی ، اہل حدیث ، اہل حدیث ممبئی , Ahle hadees masajid">
 <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی ایک دعوتی، تربیتی، اصلاحی اور رفاہی مشن ہے اور دنیا میں امن و سلامتی کی مناد ہے۔ اسلام خالص کی دعوت پیش کرنا اس کا امتیاز ہے۔ دین کا صحیح تعارف تعلیم وتربیت، دعوت واصلاح اور رفاہی سر گرمیوں کے ذریعہ انسانیت کی خدمت اس کا مطلوب ہے۔ ان عظیم مقاصد اور منصوبوں کی تکمیل کی جانب بحمد للہ جمعیت رواں دواں ہے اور اللہ تعالیٰ سے مدد اور توفیق کی طالب ہے۔">
@@ -77,17 +76,218 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
+    <style>
+        .sj-uni-portal {
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
+            direction: rtl;
+            text-align: right;
+        }
+
+        .sj-uni-hero {
+            background: linear-gradient(135deg, #042f2e 0%, #065f46 52%, #0284c7 100%);
+            border-radius: 22px;
+            padding: 24px 22px;
+            color: #ffffff;
+            margin-bottom: 18px;
+            border: 1px solid rgba(167, 243, 208, 0.3);
+            box-shadow: 0 14px 34px rgba(4, 47, 46, 0.2);
+        }
+
+        .sj-uni-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(251, 191, 36, 0.18);
+            border: 1px solid rgba(253, 230, 138, 0.45);
+            color: #fde68a;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .sj-uni-hero h1 {
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0 0 6px;
+            line-height: 1.85;
+        }
+
+        .sj-uni-hero p {
+            font-size: 14.5px;
+            color: #ecfdf5;
+            margin: 0;
+            line-height: 2.05;
+        }
+
+        .sj-uni-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+            margin-bottom: 18px;
+        }
+
+        .sj-uni-honorifics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #cbd5e1;
+            align-items: center;
+        }
+
+        .sj-uni-chip {
+            border: 1px solid #99f6e4;
+            background: #f0fdfa;
+            color: #065f46;
+            border-radius: 999px;
+            padding: 3px 12px;
+            font-family: inherit;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .sj-uni-chip:hover {
+            background: #0d9488;
+            color: #ffffff;
+            border-color: #0d9488;
+        }
+
+        .sj-uni-tools {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .sj-uni-tool-btn {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 11px;
+            padding: 8px 10px;
+            font-family: inherit;
+            font-size: 13px;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            transition: all 0.2s ease;
+        }
+
+        .sj-uni-tool-btn:hover {
+            background: #065f46;
+            color: #ffffff;
+            border-color: #065f46;
+        }
+
+        .sj-uni-editor {
+            width: 100%;
+            min-height: 250px;
+            padding: 16px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 14px;
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+            font-size: 20px;
+            line-height: 2.35;
+            color: #0f172a;
+            background: #fcfdfd;
+            outline: none;
+            resize: vertical;
+            direction: rtl;
+            text-align: right;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sj-uni-editor:focus {
+            border-color: #0d9488;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.14);
+        }
+
+        .sj-uni-stats-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 12px 0;
+            padding: 10px 14px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #475569;
+        }
+
+        .sj-uni-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .sj-uni-act-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 11px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .sj-uni-primary {
+            background: linear-gradient(135deg, #0d9488, #065f46);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.24);
+        }
+
+        .sj-uni-wa {
+            background: #ecfdf5;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+
+        .sj-uni-outline {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .sj-uni-toast {
+            display: none;
+            margin-top: 10px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+            font-size: 13.5px;
+            text-align: center;
+        }
+    </style>
   <link rel="canonical" href="http://127.0.0.1:5000/unicode">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <meta property="og:title" content="اردو یونیکوڈ تحریر و تدوین ٹول کٹ | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta property="og:description" content="اردو تحریر کی اصلاح، عربی و اردو حروف کی معیاری تبدیلی، اعراب کی صفائی اور نستعلیق پریویو کا جدید آن لائن ٹول۔">
+  <meta property="og:url" content="http://127.0.0.1:5000/unicode">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="اردو یونیکوڈ تحریر و تدوین ٹول کٹ | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta name="twitter:description" content="اردو تحریر کی اصلاح، عربی و اردو حروف کی معیاری تبدیلی، اعراب کی صفائی اور نستعلیق پریویو کا جدید آن لائن ٹول۔">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"سرورق","item":"http://127.0.0.1:5000"},{"@type":"ListItem","position":2,"name":"اردو یونیکوڈ ٹول کٹ","item":"http://127.0.0.1:5000/unicode"}]}]}</script>
 </head>
 
-<body data-active="book">
-
-    <!-- header and chats and loading animation included here  -->
+<body data-active="unicode">
     <!-- Loading overlay removed as per user request -->
-
-        <!-- <div class="chat-container">
+    <!-- <div class="chat-container">
 
     <div class="head">
         <div class="logo">
@@ -243,7 +443,7 @@
 
                         <a href="./index.html" class="lang active">اردو زبان</a>
                         <a href="./ar" class="lang">عربی زبان</a>
-                        <a href="./pending" class="lang">English</a>
+                        <a href="./pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -376,7 +576,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -517,7 +717,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -672,7 +872,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -786,7 +986,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -965,41 +1165,6 @@
 
 
 
-<!-- 2. COMPACT BREADCRUMB & DEPARTMENT SEARCH BAR -->
-<div class="sj-dept-hub-wrap">
-  <div class="sj-dept-top-row" style="margin-bottom: 0;">
-    <!-- Right: Breadcrumb -->
-    <div class="sj-dept-breadcrumb">
-      <a href="./index.html"><i class="fa-solid fa-house" style="color: #0f766e;"></i> مرکزی سرورق</a>
-      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-      <a href="./contact" style="color: #0f766e;">شعبۂ رابطہ، تعاون و خدمات پورٹل</a>
-      
-        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-        <span style="color: #065f46; font-weight: 800;">اردو یونیکوڈ تحریر کنورٹر</span>
-      
-    </div>
-
-    <!-- Left: Appropriately-Sized Department Search Bar -->
-    <div class="sj-dept-search-bar">
-      <div class="sj-dept-search-input-wrap">
-        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
-        <input
-          type="text"
-          id="sjDeptLiveSearchInput"
-          class="sj-dept-search-input"
-          placeholder="رابطہ تفصیلات، خدمات یا معلومات تلاش کریں..."
-          autocomplete="off"
-          oninput="filterDeptPageContent(this.value)"
-        />
-      </div>
-      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
-        <i class="fa-solid fa-microphone"></i>
-        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
-      </button>
-    </div>
-  </div>
-</div>
-
 
 <!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
 <div class="sj-dept-share-modal" id="sjDeptShareModal" onclick="if(event.target===this) closeDeptShareModal()">
@@ -1081,7 +1246,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1091,7 +1265,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1216,23 +1390,14 @@ body *::-webkit-scrollbar-thumb:hover {
   })();
 </script>
 
-            <!-- content section starts here  -->
-
-            <section id="content">
-
-                <div class="main-container">
-
-                    <div class="container2">
-
-                        <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
-
-
-                            <!-- left column included here  -->
-
-                            <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
+    <section id="content">
+        <div class="main-container">
+            <div class="container2">
+                <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
+                    <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
 
     <div class="card">
-        <div class="top">میگزین</div>
+        <div class="top"><i class="fa-solid fa-book-open-reader" style="margin-left:6px; font-size:15px;"></i> مجلہ الجماعۃ</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
@@ -1240,56 +1405,56 @@ body *::-webkit-scrollbar-thumb:hover {
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1D13eBnrxVNsWpnIPi0W5k_x2bOFizf2L" alt="الجماعۃ جولائی، اگست ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1K__47wCSxKnJdHfH5zZjYM-hU9frNyMY" alt="الجماعۃ مئی، جون ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="./images/mujallah-1.jpg" alt="الجماعۃ مارچ، اپریل ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1tMjYXXJdHZa6g-zuBYQh6uPkF_MwpMsQ" alt="الجماعہ، جنوری، فروری ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1-Mmrbnaih4zTKyMWQpoFNqskncw-JI0g" alt="الجماعہ، نومبر، دسمبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="./images/mujallah-1.jpg" alt="الجماعۃ، ستمبر، اکتوبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/10vp3es2fFpa7cIAcjC1EUFoJGIGrPEqx" alt="الجماعۃ ، جولائی، اگست ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1OCPAE27t8T7_GXn04FOZek2hX6d_4_3F" alt="مجلہ الجماعہ، مئی وجون ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
@@ -1302,7 +1467,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            پروگرام کے پوسٹرس
+            <i class="fa-solid fa-image" style="margin-left:6px; font-size:15px;"></i> دعوتی و اطلاعی پوسٹرز
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1310,49 +1475,49 @@ body *::-webkit-scrollbar-thumb:hover {
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/poster-1.jpg';">
                             </a>
                         </div>
                     
@@ -1365,11 +1530,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            تازہ ترین ویڈیو
+            <i class="fa-solid fa-circle-play" style="margin-left:6px; font-size:15px;"></i> تازہ ترین بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="تازہ ترین بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/yBAjA9DRNQs" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1377,89 +1543,161 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <div class="card view-container">
-        <div class="top" dir="rtl">
-            <span> زائرین کی تعداد &nbsp;&nbsp;: </span>
-            <span class="view">
-                0
-            </span>
+        <div class="top" dir="rtl" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="fa-solid fa-users" style="font-size:14px; color:#fde68a;"></i>
+            <span>زائرینِ پورٹل:</span>
+            <span class="view" data-fallback-views="18450">18,450+</span>
         </div>
     </div>
 </div>
 
 
-                                <div class="column-center  column book col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+                    <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6 sj-uni-portal">
+                        <div class="sj-uni-hero">
+                            <div class="sj-uni-badge">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                <span>علمی و دعوتی تحریری معاون</span>
+                            </div>
+                            <h1>اردو یونیکوڈ تحریر، املا و رموزِ اوقاف اصلاح کار</h1>
+                            <p>مضامین، فتاویٰ، خطبات اور اخباری بیانات کے لیے عربی و غیر معیاری حروف کو خالص معیاری اردو یونیکوڈ اور منظر لاہوری نستعلیق میں سنوارنے کا فوری آن لائن ٹول کٹ۔</p>
+                        </div>
 
-                                    <div class="card">
+                        <div class="sj-uni-card">
+                            <!-- Quick Scholarly Honorifics -->
+                            <div class="sj-uni-honorifics">
+                                <span style="font-size: 12.5px; color: #64748b;"><i class="fa-solid fa-star-and-crescent" style="color:#d97706;"></i> فوری داخل کریں:</span>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol('بسم اللہ الرحمٰن الرحیم\n')">بسم اللہ</button>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol(' ﷺ ')">ﷺ</button>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol(' ﷻ ')">ﷻ</button>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol(' رضی اللہ عنہ ')">رضی اللہ عنہ</button>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol(' رحمہ اللہ ')">رحمہ اللہ</button>
+                                <button type="button" class="sj-uni-chip" onclick="insertUniSymbol(' حفظہ اللہ ')">حفظہ اللہ</button>
+                            </div>
 
-                                        <div class="top">
+                            <!-- One-Click Normalization Tools -->
+                            <div class="sj-uni-tools">
+                                <button type="button" class="sj-uni-tool-btn" onclick="normalizeArabicToUrdu()">
+                                    <i class="fa-solid fa-wand-magic-sparkles" style="color:#0d9488;"></i>
+                                    <span>معیاری اردو حروف (ک/ی/ہ)</span>
+                                </button>
+                                <button type="button" class="sj-uni-tool-btn" onclick="fixUrduPunctuation()">
+                                    <i class="fa-solid fa-spell-check" style="color:#0284c7;"></i>
+                                    <span>فاصلے اور رموزِ اوقاف</span>
+                                </button>
+                                <button type="button" class="sj-uni-tool-btn" onclick="convertDigitsToUrdu(true)">
+                                    <i class="fa-solid fa-hashtag" style="color:#7c3aed;"></i>
+                                    <span>اردو اعداد (۱۲۳)</span>
+                                </button>
+                                <button type="button" class="sj-uni-tool-btn" onclick="convertDigitsToUrdu(false)">
+                                    <i class="fa-solid fa-list-ol" style="color:#d97706;"></i>
+                                    <span>عالمی اعداد (123)</span>
+                                </button>
+                                <button type="button" class="sj-uni-tool-btn" onclick="stripDiacritics()">
+                                    <i class="fa-solid fa-eraser" style="color:#e11d48;"></i>
+                                    <span>اعراب و حرکات ہٹائیں</span>
+                                </button>
+                            </div>
 
-                                            یونیکوڈ
-
-                                        </div>
-
-                                        <div class="content">
-
-                                        </div>
-
-                                    </div>
-
+                            <!-- Font Size Control -->
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 10px; flex-wrap: wrap;">
+                                <label for="sjUniEditor" style="font-size: 14px; color: #064e3b;">یہاں اپنی اردو تحریر ٹائپ یا پیسٹ کریں:</label>
+                                <div style="display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #475569;">
+                                    <span>خط کا حجم:</span>
+                                    <input type="range" min="15" max="34" value="20" oninput="document.getElementById('sjUniEditor').style.fontSize = this.value + 'px'" style="accent-color: #0d9488; cursor: pointer;">
                                 </div>
+                            </div>
 
-                                <!-- right column included here  -->
+                            <textarea id="sjUniEditor" class="sj-uni-editor" placeholder="اپنی تحریر یہاں درج کریں یا کاپی کر کے پیسٹ کریں، پھر اوپر دیے گئے اصلاحی بٹنوں سے ایک کلک میں معیاری اردو یونیکوڈ بنائیں..." oninput="updateUniStats()"></textarea>
 
-                                <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
+                            <!-- Live Statistics -->
+                            <div class="sj-uni-stats-bar">
+                                <div>
+                                    <span>الفاظ: <strong id="uniWords">۰</strong></span>
+                                    &nbsp;|&nbsp;
+                                    <span>حروف: <strong id="uniChars">۰</strong></span>
+                                    &nbsp;|&nbsp;
+                                    <span>سطریں: <strong id="uniLines">۰</strong></span>
+                                </div>
+                                <span style="color: #0f766e;"><i class="fa-solid fa-font"></i> منظر لاہوری نستعلیق فعال</span>
+                            </div>
+
+                            <!-- Export & Copy Buttons -->
+                            <div class="sj-uni-actions">
+                                <button type="button" class="sj-uni-act-btn sj-uni-primary" onclick="copyUniText()">
+                                    <i class="fa-regular fa-copy"></i>
+                                    <span>مکمل تحریر کاپی کریں</span>
+                                </button>
+                                <button type="button" class="sj-uni-act-btn sj-uni-wa" onclick="shareUniWhatsApp()">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>واٹس ایپ پر بھیجیں</span>
+                                </button>
+                                <button type="button" class="sj-uni-act-btn sj-uni-outline" onclick="downloadUniTxt()">
+                                    <i class="fa-solid fa-download"></i>
+                                    <span>ٹیکسٹ فائل محفوظ کریں</span>
+                                </button>
+                                <button type="button" class="sj-uni-act-btn sj-uni-outline" style="margin-right: auto; color: #dc2626;" onclick="clearUniEditor()">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span>صاف کریں</span>
+                                </button>
+                            </div>
+
+                            <div class="sj-uni-toast" id="sjUniToast"></div>
+                        </div>
+                    </div>
+
+                    <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
 
     <div class="card">
-        <div class="top">جدید کتب</div>
+        <div class="top"><i class="fa-solid fa-book-bookmark" style="margin-left:6px; font-size:15px;"></i> مطبوعاتِ جمعیت</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="./library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/book-1.jpeg';">
                             </a>
                         </div>
                     
@@ -1472,7 +1710,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            رویت ہلال
+            <i class="fa-solid fa-moon" style="margin-left:6px; font-size:15px;"></i> اعلاناتِ رویتِ ہلال
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1481,7 +1719,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="./moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1489,7 +1727,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="./moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1497,7 +1735,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="./moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1505,7 +1743,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="./moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='./images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1519,11 +1757,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            اہم ویڈیو
+            <i class="fa-solid fa-video" style="margin-left:6px; font-size:15px;"></i> نمایاں علمی بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="نمایاں علمی بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/FO3oQ3lGQZI" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1532,17 +1771,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
 </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        </div>
-
-                    </div>
-
-            </section>
-
-
-            <!-- footer included here  -->
-
-            <footer>
+    <footer>
   <div class="up">
     <i class="fa-solid fa-angles-up"></i>
   </div>
@@ -1593,21 +1827,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1622,51 +1855,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="./library/publications"> کتاب التوحید </a>
 
-            <a href="./library/publications">علمی و دعوتی خیانت</a>
+            <a href="./library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="./library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="./library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="./library/publications"> طالب علم کا زیور </a>
 
             <a href="./library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="./aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="./aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="./aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="./aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="./aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="./aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="./aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="./index.html"> سرورق </a>
+            <a href="./index.html"> مرکزی سرورق </a>
 
-            <a href="./introduction"> تعارف </a>
+            <a href="./introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="./aljama"> مجلہ الجماعہ </a>
+            <a href="./jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="./library"> لائبریری </a>
+            <a href="./upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="./library/publications"> مطبوعات </a>
+            <a href="./masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="./press-release"> پریس ریلیز </a>
+            <a href="./aljama"> مجلہ الجماعۃ </a>
 
-            <a href="./fatawa"> فتاویٰ </a>
+            <a href="./library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="./tausia"> توصیہ </a>
+            <a href="./video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="./fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="./tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="./donate"> مالی تعاون و عطیات </a>
 
             <a href="./contact"> رابطہ کریں </a>
           </div>
@@ -1845,8 +2084,125 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
 
+    <script>
+        var urduDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
 
+        function toUrduNumStr(n) {
+            return String(n).replace(/\d/g, function (d) { return urduDigits[Number(d)]; });
+        }
 
+        function showUniNotice(msg) {
+            var t = document.getElementById('sjUniToast');
+            t.textContent = msg;
+            t.style.display = 'block';
+            clearTimeout(window.__uniToastTimer);
+            window.__uniToastTimer = setTimeout(function () { t.style.display = 'none'; }, 2800);
+        }
+
+        function updateUniStats() {
+            var val = document.getElementById('sjUniEditor').value;
+            var trimmed = val.trim();
+            var words = trimmed ? trimmed.split(/\s+/).length : 0;
+            var chars = val.length;
+            var lines = val ? val.split(/\r\n|\r|\n/).length : 0;
+            document.getElementById('uniWords').textContent = toUrduNumStr(words);
+            document.getElementById('uniChars').textContent = toUrduNumStr(chars);
+            document.getElementById('uniLines').textContent = toUrduNumStr(lines);
+        }
+
+        function insertUniSymbol(sym) {
+            var ed = document.getElementById('sjUniEditor');
+            var start = ed.selectionStart || 0;
+            var end = ed.selectionEnd || 0;
+            ed.value = ed.value.substring(0, start) + sym + ed.value.substring(end);
+            ed.focus();
+            ed.selectionStart = ed.selectionEnd = start + sym.length;
+            updateUniStats();
+        }
+
+        function normalizeArabicToUrdu() {
+            var ed = document.getElementById('sjUniEditor');
+            if (!ed.value) return;
+            ed.value = ed.value
+                .replace(/ك/g, 'ک')
+                .replace(/[يی]/g, 'ی')
+                .replace(/ة/g, 'ۃ')
+                .replace(/ه(?=\s|$|[۔،؟!])/g, 'ہ')
+                .replace(/ھ(?=\s|$|[۔،؟!])/g, function (m, off, str) {
+                    var prev = str.charAt(off - 1);
+                    return /[بپتٹجچدڈڑکگ]$/.test(prev) ? 'ھ' : m;
+                });
+            updateUniStats();
+            showUniNotice('عربی کاف، یا اور ہائے ہوز کو معیاری اردو حروف میں تبدیل کر دیا گیا ہے۔');
+        }
+
+        function fixUrduPunctuation() {
+            var ed = document.getElementById('sjUniEditor');
+            if (!ed.value) return;
+            ed.value = ed.value
+                .replace(/[ \t]{2,}/g, ' ')
+                .replace(/\s*,\s*/g, '، ')
+                .replace(/\s*\?\s*/g, '؟ ')
+                .replace(/\s*;\s*/g, '؛ ')
+                .replace(/\.(\s|$)/g, '۔$1')
+                .replace(/\n{3,}/g, '\n\n')
+                .trim();
+            updateUniStats();
+            showUniNotice('اضافی فاصلے اور اردو رموزِ اوقاف درست کر دیے گئے ہیں۔');
+        }
+
+        function convertDigitsToUrdu(toUrdu) {
+            var ed = document.getElementById('sjUniEditor');
+            if (!ed.value) return;
+            if (toUrdu) {
+                ed.value = ed.value.replace(/[0-9]/g, function (d) { return urduDigits[Number(d)]; });
+                showUniNotice('تمام اعداد کو اردو ہندسوں میں تبدیل کر دیا گیا ہے۔');
+            } else {
+                ed.value = ed.value
+                    .replace(/[۰-۹]/g, function (c) { return String(urduDigits.indexOf(c)); })
+                    .replace(/[٠-٩]/g, function (c) { return String(c.charCodeAt(0) - 1632); });
+                showUniNotice('تمام اعداد کو عالمی ہندسوں (123) میں تبدیل کر دیا گیا ہے۔');
+            }
+            updateUniStats();
+        }
+
+        function stripDiacritics() {
+            var ed = document.getElementById('sjUniEditor');
+            if (!ed.value) return;
+            ed.value = ed.value.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g, '');
+            updateUniStats();
+            showUniNotice('اعراب و حرکات صاف کر دی گئیں۔');
+        }
+
+        function copyUniText() {
+            var ed = document.getElementById('sjUniEditor');
+            if (!ed.value.trim()) return;
+            navigator.clipboard.writeText(ed.value).then(function () {
+                showUniNotice('مکمل تحریر کلپ بورڈ پر کاپی ہو گئی ہے!');
+            });
+        }
+
+        function shareUniWhatsApp() {
+            var val = document.getElementById('sjUniEditor').value.trim();
+            if (!val) return;
+            window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(val), '_blank');
+        }
+
+        function downloadUniTxt() {
+            var val = document.getElementById('sjUniEditor').value;
+            if (!val.trim()) return;
+            var blob = new Blob([val], { type: 'text/plain;charset=utf-8' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'subai-jamiat-urdu-text.txt';
+            a.click();
+        }
+
+        function clearUniEditor() {
+            document.getElementById('sjUniEditor').value = '';
+            updateUniStats();
+        }
+    </script>
 </body>
 
 </html>

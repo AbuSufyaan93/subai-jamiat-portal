@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = ".";</script>
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="/subai-jamiat-portal/manifest.json">
@@ -79,29 +79,82 @@
 
 
     <style>
-      /* 3D Interactive Portal Hub & Dynamic Home Enhancements */
+      /* Interactive Institutional Portals Hub & Dynamic Home Enhancements */
       .sj-portal-hub-sec {
-        max-width: 1220px;
-        margin: 18px auto 8px;
+        max-width: 1240px;
+        margin: 18px auto 12px;
         padding: 0 14px;
         direction: rtl;
+        font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
       }
+
+      .sj-hub-heading-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 12px;
+        padding: 0 4px;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .sj-hub-heading-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 18px;
+        color: #064e3b;
+        margin: 0;
+      }
+
+      .sj-hub-heading-title i {
+        color: #0d9488;
+      }
+
+      .sj-hub-heading-sub {
+        font-size: 13px;
+        color: #0f766e;
+        text-decoration: none;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        padding: 2px 12px;
+        border-radius: 999px;
+        transition: all 0.2s ease;
+      }
+
+      .sj-hub-heading-sub:hover {
+        background: #065f46;
+        color: #ffffff;
+      }
+
       .sj-portal-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 11px;
       }
+
+      @media (max-width: 1100px) {
+        .sj-portal-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      @media (max-width: 576px) {
+        .sj-portal-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
       .sj-3d-card {
-        background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+        background: linear-gradient(155deg, #ffffff 0%, #f0fdf4 100%);
         border: 1px solid rgba(15, 118, 110, 0.2);
         border-radius: 16px;
         padding: 14px 10px;
         text-align: center;
         text-decoration: none;
         color: #0f172a;
-        box-shadow: 0 8px 22px rgba(15, 81, 50, 0.07);
-        transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease, border-color 0.25s ease;
-        transform-style: preserve-3d;
+        box-shadow: 0 6px 18px rgba(15, 81, 50, 0.06);
+        transition: transform 0.25s cubic-bezier(.16,1,.3,1), box-shadow 0.25s ease, border-color 0.25s ease;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -109,82 +162,112 @@
         position: relative;
         overflow: hidden;
       }
+
       .sj-3d-card:hover {
-        box-shadow: 0 18px 36px rgba(15, 118, 110, 0.18);
+        transform: translateY(-4px);
+        box-shadow: 0 16px 32px rgba(15, 118, 110, 0.16);
         border-color: #0d9488;
       }
+
       .sj-3d-icon {
         width: 44px;
         height: 44px;
-        border-radius: 12px;
+        border-radius: 13px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 19px;
         color: #ffffff;
         margin-bottom: 8px;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-        transform: translateZ(18px);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
       }
+
       .sj-3d-title {
-        font-family: 'Noto Nastaliq Urdu', serif;
-        font-size: 13.5px;
-        font-weight: 700;
+        font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+        font-size: 14.5px;
         color: #064e3b;
-        line-height: 1.95;
-        transform: translateZ(12px);
+        line-height: 1.85;
       }
+
       .sj-3d-count {
-        font-size: 11px;
+        font-size: 11.5px;
         color: #0f766e;
         background: #ccfbf1;
-        padding: 1px 8px;
+        padding: 1px 9px;
         border-radius: 999px;
-        font-weight: 700;
         margin-top: 4px;
-        transform: translateZ(10px);
+        line-height: 1.65;
       }
+
+      /* Home Activity & Press Cards */
       .sj-home-pr-item {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
         border-right: 4px solid #0f766e;
-        border-radius: 12px;
+        border-radius: 13px;
         padding: 14px 16px;
-        margin-bottom: 14px;
+        margin-bottom: 13px;
         text-align: right;
         direction: rtl;
         transition: transform 0.22s ease, box-shadow 0.22s ease;
       }
+
       .sj-home-pr-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
       }
+
       .sj-home-pr-item h4 {
-        font-family: 'Noto Nastaliq Urdu', serif;
-        font-size: 16px;
-        line-height: 2.1;
+        font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+        font-size: 17px;
+        line-height: 1.95;
         color: #064e3b;
         margin: 0 0 6px;
       }
+
       .sj-home-pr-item p {
-        font-size: 13.5px;
-        line-height: 2;
+        font-size: 14px;
+        line-height: 2.05;
         color: #334155;
         margin: 0 0 8px;
       }
+
       .sj-home-pr-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 12.5px;
         color: #64748b;
       }
+
       .sj-home-pr-btn {
         color: #0f766e;
-        font-weight: 700;
         text-decoration: none;
-        font-size: 12.5px;
+        font-size: 13px;
       }
+
+      .sj-home-pr-btn:hover {
+        color: #064e3b;
+        text-decoration: underline;
+      }
+
+      .sj-home-ev-strip {
+        background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+        border: 1px solid #99f6e4;
+        border-radius: 13px;
+        padding: 12px 15px;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        direction: rtl;
+        text-align: right;
+      }
+
       .sj-home-mini-list {
         list-style: none;
         padding: 0;
@@ -192,18 +275,21 @@
         direction: rtl;
         text-align: right;
       }
+
       .sj-home-mini-list li {
         border-bottom: 1px dashed #cbd5e1;
         padding: 9px 4px;
       }
+
       .sj-home-mini-list li:last-child {
         border-bottom: none;
       }
+
       .sj-home-mini-list a {
         text-decoration: none;
         color: #0f172a;
-        font-family: 'Noto Nastaliq Urdu', serif;
-        font-size: 14px;
+        font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+        font-size: 14.5px;
         line-height: 2;
         display: flex;
         justify-content: space-between;
@@ -211,8 +297,19 @@
         gap: 8px;
         transition: color 0.18s ease;
       }
+
       .sj-home-mini-list a:hover {
         color: #0f766e;
+      }
+
+      .sj-archive-highlight {
+        background: #fffbeb;
+        border: 1px solid #fde68a;
+        border-radius: 14px;
+        padding: 16px;
+        margin-top: 14px;
+        direction: rtl;
+        text-align: right;
       }
     </style>
   <link rel="canonical" href="http://127.0.0.1:5000/">
@@ -386,7 +483,7 @@
 
                         <a href="/subai-jamiat-portal/index.html" class="lang active">اردو زبان</a>
                         <a href="/subai-jamiat-portal/ar" class="lang">عربی زبان</a>
-                        <a href="/subai-jamiat-portal/pending" class="lang">English</a>
+                        <a href="/subai-jamiat-portal/pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -483,19 +580,19 @@
             <div class="nav">
 
                 <a href="/subai-jamiat-portal/contact" data-active="contact" class="nav-link">
-                    رابطہ کریں<i class="fa-solid fa-envelope nav-icon"></i>
+                    رابطہ کریں <i class="fa-solid fa-envelope-open-text nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/tausia" data-active="tausia" class="nav-link">
-                    توصیہ <i class="fa-solid fa-clipboard nav-icon"></i>
+                    توصیہ <i class="fa-solid fa-stamp nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/fikh-w-fatawa" class="nav-link" data-active="fikh-w-fatawa">
-                    فتاویٰ <i class="fa-solid fa-pen nav-icon"></i>
+                    فتاویٰ <i class="fa-solid fa-scale-balanced nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/press-release" data-active="press-release" class="nav-link">
-                    میڈیا <i class="fa-solid fa-video nav-icon"></i>
+                    میڈیا <i class="fa-solid fa-circle-play nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/articles" class="nav-link" data-active="articles">
@@ -507,23 +604,23 @@
                 </a>
 
                 <a href="/subai-jamiat-portal/aljama" class="nav-link" data-active="mujallah">
-                    میگزین <i class="fa-solid fa-book nav-icon"></i>
+                    میگزین <i class="fa-solid fa-book-open-reader nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/masajid" data-active="masajid" class="nav-link">
-                    ذیلی اکائیاں <i class="fa-solid fa-list nav-icon"></i>
+                    ذیلی اکائیاں <i class="fa-solid fa-mosque nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/jamati-activities" data-active="jamati-activities" class="nav-link">
-                    سرگرمیاں <i class="fa-solid fa-person-running nav-icon"></i>
+                    سرگرمیاں <i class="fa-solid fa-compass nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/introduction" data-active="about" class="nav-link">
-                    تعارف <i class="fa-solid fa-circle-question nav-icon"></i>
+                    تعارف <i class="fa-solid fa-landmark nav-icon"></i>
                 </a>
 
                 <a href="/subai-jamiat-portal/index.html" data-active="home" class="nav-link">
-                    سرورق <i class="fa-solid fa-house nav-icon"></i>
+                    سرورق <i class="fa-solid fa-house-chimney nav-icon"></i>
                 </a>
 
             </div>
@@ -632,7 +729,7 @@ body *::-webkit-scrollbar-thumb:hover {
   })();
 </script>
 
-    <!-- home section starts here -->
+    <!-- home slider section -->
     <section id="home">
         <div class="main-container">
             <div class="container2">
@@ -718,6 +815,59 @@ body *::-webkit-scrollbar-thumb:hover {
         </div>
     </section>
 
+    <!-- 8-Card Institutional Portals Quick Hub -->
+    <section class="sj-portal-hub-sec" aria-label="شعبہ جات و پورٹلز کا جامع مرکز">
+        <div class="sj-hub-heading-bar">
+            <h2 class="sj-hub-heading-title">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>جمعیت کے مرکزی پورٹلز اور دعوتی و علمی شعبہ جات</span>
+            </h2>
+            <a href="/subai-jamiat-portal/jamati-activities" class="sj-hub-heading-sub">تمام ۲۸ شعبہ جات دیکھیں ←</a>
+        </div>
+        <div class="sj-portal-grid">
+            <a href="/subai-jamiat-portal/jamati-activities" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #0d9488, #065f46);"><i class="fa-solid fa-compass"></i></div>
+                <div class="sj-3d-title">سرگرمیاں پورٹل</div>
+                <span class="sj-3d-count">۲۸ شعبہ جات</span>
+            </a>
+            <a href="/subai-jamiat-portal/video-gallery" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #e11d48, #9f1239);"><i class="fa-solid fa-circle-play"></i></div>
+                <div class="sj-3d-title">اسلامک ٹیوب</div>
+                <span class="sj-3d-count">بیانات و شارٹس</span>
+            </a>
+            <a href="/subai-jamiat-portal/fatawa" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="sj-3d-title">دارالافتاء</div>
+                <span class="sj-3d-count">فتاویٰ و مسائل</span>
+            </a>
+            <a href="/subai-jamiat-portal/mujallah" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #0284c7, #075985);"><i class="fa-solid fa-book-open-reader"></i></div>
+                <div class="sj-3d-title">مجلہ الجماعۃ</div>
+                <span class="sj-3d-count">ماہانہ شمارے</span>
+            </a>
+            <a href="/subai-jamiat-portal/books" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #059669, #064e3b);"><i class="fa-solid fa-book-quran"></i></div>
+                <div class="sj-3d-title">برقی مکتبہ</div>
+                <span class="sj-3d-count">مطبوعاتِ جمعیت</span>
+            </a>
+            <a href="/subai-jamiat-portal/masajid" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #d97706, #92400e);"><i class="fa-solid fa-mosque"></i></div>
+                <div class="sj-3d-title">مساجد و مراکز</div>
+                <span class="sj-3d-count">ممبئی و کوکن</span>
+            </a>
+            <a href="/subai-jamiat-portal/moon" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #0f766e, #134e4a);"><i class="fa-solid fa-moon"></i></div>
+                <div class="sj-3d-title">رویتِ ہلال</div>
+                <span class="sj-3d-count">ہلالی اعلانات</span>
+            </a>
+            <a href="/subai-jamiat-portal/tausia" class="sj-3d-card">
+                <div class="sj-3d-icon" style="background: linear-gradient(135deg, #2563eb, #1e40af);"><i class="fa-solid fa-stamp"></i></div>
+                <div class="sj-3d-title">توصیہ و تصدیق</div>
+                <span class="sj-3d-count">آن لائن فارم</span>
+            </a>
+        </div>
+    </section>
+
     <!-- content section starts here -->
     <section id="content">
         <div class="main-container">
@@ -728,7 +878,7 @@ body *::-webkit-scrollbar-thumb:hover {
                     <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
 
     <div class="card">
-        <div class="top">میگزین</div>
+        <div class="top"><i class="fa-solid fa-book-open-reader" style="margin-left:6px; font-size:15px;"></i> مجلہ الجماعۃ</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
@@ -736,56 +886,56 @@ body *::-webkit-scrollbar-thumb:hover {
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1D13eBnrxVNsWpnIPi0W5k_x2bOFizf2L" alt="الجماعۃ جولائی، اگست ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1K__47wCSxKnJdHfH5zZjYM-hU9frNyMY" alt="الجماعۃ مئی، جون ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="/subai-jamiat-portal/images/mujallah-1.jpg" alt="الجماعۃ مارچ، اپریل ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1tMjYXXJdHZa6g-zuBYQh6uPkF_MwpMsQ" alt="الجماعہ، جنوری، فروری ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1-Mmrbnaih4zTKyMWQpoFNqskncw-JI0g" alt="الجماعہ، نومبر، دسمبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="/subai-jamiat-portal/images/mujallah-1.jpg" alt="الجماعۃ، ستمبر، اکتوبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/10vp3es2fFpa7cIAcjC1EUFoJGIGrPEqx" alt="الجماعۃ ، جولائی، اگست ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1OCPAE27t8T7_GXn04FOZek2hX6d_4_3F" alt="مجلہ الجماعہ، مئی وجون ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
@@ -798,7 +948,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            پروگرام کے پوسٹرس
+            <i class="fa-solid fa-image" style="margin-left:6px; font-size:15px;"></i> دعوتی و اطلاعی پوسٹرز
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -806,49 +956,49 @@ body *::-webkit-scrollbar-thumb:hover {
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/poster-1.jpg';">
                             </a>
                         </div>
                     
@@ -861,11 +1011,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            تازہ ترین ویڈیو
+            <i class="fa-solid fa-circle-play" style="margin-left:6px; font-size:15px;"></i> تازہ ترین بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="تازہ ترین بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/yBAjA9DRNQs" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -873,11 +1024,10 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <div class="card view-container">
-        <div class="top" dir="rtl">
-            <span> زائرین کی تعداد &nbsp;&nbsp;: </span>
-            <span class="view">
-                0
-            </span>
+        <div class="top" dir="rtl" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="fa-solid fa-users" style="font-size:14px; color:#fde68a;"></i>
+            <span>زائرینِ پورٹل:</span>
+            <span class="view" data-fallback-views="18450">18,450+</span>
         </div>
     </div>
 </div>
@@ -885,13 +1035,93 @@ body *::-webkit-scrollbar-thumb:hover {
 
                     <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
 
+                        <!-- 1. Activities & Upcoming Programs Spotlight Card -->
+                        
+                        <div class="card sj-3d-reveal" style="margin-bottom: 20px;">
+                            <div class="top" style="display:flex; justify-content:space-between; align-items:center; padding: 10px 18px;">
+                                <a href="/subai-jamiat-portal/jamati-activities" style="color:#fef3c7; font-size:13px; text-decoration:none;">سرگرمیاں پورٹل <i class="fa-solid fa-arrow-left"></i></a>
+                                <h1 style="margin:0; font-size:18.5px;"><i class="fa-solid fa-compass" style="margin-left:6px;"></i> جماعتی سرگرمیاں و آئندہ پروگرامز</h1>
+                            </div>
+                            <div class="content" style="padding: 16px 18px;">
+                                
+                                    
+                                        <div class="sj-home-ev-strip">
+                                            <div style="flex: 1; min-width: 200px;">
+                                                <span style="display:inline-block; background:#0d9488; color:#fff; font-size:11px; padding:1px 9px; border-radius:999px; margin-bottom:4px;">
+                                                    آئندہ پروگرام
+                                                </span>
+                                                <div style="font-size:15.5px; color:#064e3b; line-height:1.85;">عظیم الشان تعلیمی و انعامی مسابقہ ۲۰۲۶ء برائے طلبہ و طالبات</div>
+                                                <div style="font-size:12.5px; color:#475569;">
+                                                    <i class="fa-regular fa-calendar" style="color:#0d9488;"></i> <span dir="ltr">2026-11-15</span>
+                                                     &nbsp;•&nbsp; <i class="fa-solid fa-location-dot" style="color:#e11d48;"></i> کرلا ویسٹ، ممبئی
+                                                </div>
+                                            </div>
+                                            <a href="/subai-jamiat-portal/talimi-inami-musabqa-registeration" style="background:#065f46; color:#fff; text-decoration:none; padding:6px 13px; border-radius:10px; font-size:12.5px; white-space:nowrap;">
+                                                تفصیل و رجسٹریشن ←
+                                            </a>
+                                        </div>
+                                    
+                                        <div class="sj-home-ev-strip">
+                                            <div style="flex: 1; min-width: 200px;">
+                                                <span style="display:inline-block; background:#0d9488; color:#fff; font-size:11px; padding:1px 9px; border-radius:999px; margin-bottom:4px;">
+                                                    جاری پروگرام
+                                                </span>
+                                                <div style="font-size:15.5px; color:#064e3b; line-height:1.85;">ہفتہ وار و ماہانہ دروسِ کتاب و سنت اور اصلاحِ معاشرہ اجتماعات</div>
+                                                <div style="font-size:12.5px; color:#475569;">
+                                                    <i class="fa-regular fa-calendar" style="color:#0d9488;"></i> <span dir="ltr">2026-11-28</span>
+                                                     &nbsp;•&nbsp; <i class="fa-solid fa-location-dot" style="color:#e11d48;"></i> مساجدِ اہل حدیث، شہرِ ممبئی، تھانہ و دیارِ کوکن
+                                                </div>
+                                            </div>
+                                            <a href="/subai-jamiat-portal/juma-list" style="background:#065f46; color:#fff; text-decoration:none; padding:6px 13px; border-radius:10px; font-size:12.5px; white-space:nowrap;">
+                                                تفصیل و رجسٹریشن ←
+                                            </a>
+                                        </div>
+                                    
+                                
+
+                                
+                                    <ul class="sj-home-mini-list" style="margin-top: 6px;">
+                                        
+                                            <li>
+                                                <a href="/subai-jamiat-portal/jamati-activities#dynamic-activities">
+                                                    <span><i class="fa-solid fa-circle-check" style="color:#0d9488; margin-left:6px;"></i> ریاستی سطح کا تربیتی اجتماع برائے ائمہ و خطباء 2026</span>
+                                                    <span style="font-size:11.5px; background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; padding:1px 9px; border-radius:999px; white-space:nowrap;">تربیتی اجتماعات</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/subai-jamiat-portal/jamati-activities#dynamic-activities">
+                                                    <span><i class="fa-solid fa-circle-check" style="color:#0d9488; margin-left:6px;"></i> تعلیمی انعامی مقابلہ 2026</span>
+                                                    <span style="font-size:11.5px; background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; padding:1px 9px; border-radius:999px; white-space:nowrap;">تعلیمی سرگرمیاں</span>
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/subai-jamiat-portal/jamati-activities#dynamic-activities">
+                                                    <span><i class="fa-solid fa-circle-check" style="color:#0d9488; margin-left:6px;"></i> ہفت روزہ دروسِ قرآن و حدیث برائے اصلاحِ معاشرہ</span>
+                                                    <span style="font-size:11.5px; background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; padding:1px 9px; border-radius:999px; white-space:nowrap;">دعوتی سرگرمیاں</span>
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+
+                                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:12px; padding-top:10px; border-top:1px dashed #cbd5e1;">
+                                    <a href="/subai-jamiat-portal/upcoming-programs" style="font-size:13px; color:#0f766e; text-decoration:none;"><i class="fa-solid fa-calendar-check"></i> تمام آئندہ پروگرامز</a>
+                                    <a href="/subai-jamiat-portal/aina-e-jamiat" style="font-size:13px; color:#b45309; text-decoration:none;"><i class="fa-solid fa-newspaper"></i> آئینۂ جمعیت بلیٹن</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <!-- 2. Press Releases & Official Communiques Card -->
                         <div class="card sj-3d-reveal">
                             <div class="top" style="display:flex; justify-content:space-between; align-items:center; padding: 10px 18px;">
-                                <a href="/subai-jamiat-portal/press-release" style="color:#fef3c7; font-size:12.5px; text-decoration:none; font-weight:700;">تمام دیکھیں <i class="fa-solid fa-arrow-left"></i></a>
-                                <h1 style="margin:0;">پریس ریلیز و اعلامیے</h1>
+                                <a href="/subai-jamiat-portal/press-release" style="color:#fef3c7; font-size:13px; text-decoration:none;">تمام دیکھیں <i class="fa-solid fa-arrow-left"></i></a>
+                                <h1 style="margin:0; font-size:18.5px;"><i class="fa-solid fa-bullhorn" style="margin-left:6px;"></i> پریس ریلیز و اعلامیے</h1>
                             </div>
 
-                            <div class="content">
+                            <div class="content" style="padding: 16px 18px;">
                                 
                                     
                                         <div class="sj-home-pr-item">
@@ -923,44 +1153,31 @@ body *::-webkit-scrollbar-thumb:hover {
                                     
                                 
 
-                                <hr style="border:none; border-top:1px dashed #cbd5e1; margin: 16px 0;">
-
-                                <h3 class="text-center">
-                                    مکہ کانفرنس بعنوان ’’تواصل وتکامل‘‘ ۱۳؍ ۱۴ اگست ۲۰۲۳ء
-                                </h3>
-
-                                <p class="text-center">
-                                    اعتدال و وسطیت، باہمی تال میل و تعاون اور مذہبی رواداری پر
-                                    زور کے ساتھ
-                                    مکہ مکرمہ میں منعقدہ دو روزہ عالمی کانفرنس اہم قرار دادوں کی
-                                    منظوری کے ساتھ اختتام پذیر
-                                    عبدالسلام سلفی
-                                </p>
-                                <p>
-                                    اسلامی اداروں اور علماء و مشائخ کے درمیان رابطے، تال میل،
-                                    یکجہتی اور مذہبی رواداری کی شدید ضرورت اور اسے مزید فروغ
-                                    دینے کے احساس و تلقین کے ساتھ کانفرنس اختتام پذیر ہوئی۔
-                                </p>
-                                <p dir="rtl">
-                                    ۱۳-۱۴؍ اگست۲۰۲۳ء میں دو دنوں پر مشتمل یہ عالمی کانفرنس جو
-                                    ’’تواصل وتکامل‘‘ کے مرکزی عنوان سے منعقد ہوئی اسے خادم
-                                    الحرمین ملک سلمان بن عبدالعزیز ال سعوداور ان کے ولی عہد امیر
-                                    محمد بن سلمان بن عبدالعزیز ال سعود حفظہم اللہ کی سرپرستی و
-                                    تائید حاصل تھی جس کی عمومی صدارت ’’وزارۃ الشئون الاسلامیہ
-                                    والدعوۃ والارشاد‘‘ ریاض کے وزیر گرامی قدر جناب ڈاکٹر
-                                    عبداللطیف ابن عبدالعزیز ال شیخ حفظہ اللہ نے فرمائی۔
-                                </p>
-                                <p dir="rtl" class="text-start">
-                                    منجانب: دفتر صوبائی جمعیت اہل حدیث ممبئی
-                                </p>
+                                <div class="sj-archive-highlight">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
+                                        <span style="font-size:12px; background:#fef3c7; color:#92400e; border:1px solid #fcd34d; padding:1px 10px; border-radius:999px;"><i class="fa-solid fa-globe"></i> نمایاں عالمی دعوتی رپورٹ</span>
+                                        <span style="font-size:12px; color:#78350f;">۱۳–۱۴؍ اگست ۲۰۲۳ء</span>
+                                    </div>
+                                    <h3 style="font-size:17.5px; color:#78350f; margin:4px 0 8px; line-height:1.9;">
+                                        مکہ مکرمہ عالمی کانفرنس بعنوان ’’تواصل و تکامل‘‘ — اہم قراردادوں کی منظوری
+                                    </h3>
+                                    <p style="font-size:14px; color:#451a03; line-height:2.05; margin:0 0 8px;">
+                                        اعتدال و وسطیت، اسلامی اداروں اور علماء و مشائخ کے درمیان باہمی تال میل و تعاون اور یکجہتی کے فروغ کی تلقین کے ساتھ مکہ مکرمہ میں دو روزہ عالمی کانفرنس اختتام پذیر ہوئی، جسے خادم الحرمین الشریفین ملک سلمان بن عبدالعزیز آل سعود اور ولی عہد امیر محمد بن سلمان حفظہما اللہ کی سرپرستی حاصل تھی اور صدارت وزیر الشؤون الاسلامیہ شیخ ڈاکٹر عبداللطیف بن عبدالعزیز آل شیخ حفظہ اللہ نے فرمائی۔
+                                    </p>
+                                    <div style="font-size:12.5px; color:#92400e; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+                                        <span>رپورٹ: فضیلۃ الشیخ عبدالسلام سلفی حفظہ اللہ</span>
+                                        <span>منجانب: دفتر صوبائی جمعیت اہل حدیث ممبئی</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- 3. Featured Articles & Fatawa Card -->
                         
                         <div class="card sj-3d-reveal" style="margin-top: 20px;">
                             <div class="top" style="display:flex; justify-content:space-between; align-items:center; padding: 10px 18px;">
-                                <a href="/subai-jamiat-portal/articles" style="color:#fef3c7; font-size:12.5px; text-decoration:none; font-weight:700;">مضامین و فتاویٰ <i class="fa-solid fa-arrow-left"></i></a>
-                                <h1 style="margin:0; font-size:18px;">تازہ ترین علمی مضامین و فتاویٰ</h1>
+                                <a href="/subai-jamiat-portal/articles" style="color:#fef3c7; font-size:13px; text-decoration:none;">مضامین و فتاویٰ <i class="fa-solid fa-arrow-left"></i></a>
+                                <h1 style="margin:0; font-size:18.5px;"><i class="fa-solid fa-feather-pointed" style="margin-left:6px;"></i> تازہ ترین علمی مضامین و فتاویٰ</h1>
                             </div>
                             <div class="content" style="padding: 14px 18px;">
                                 <ul class="sj-home-mini-list">
@@ -968,7 +1185,7 @@ body *::-webkit-scrollbar-thumb:hover {
                                         <li>
                                             <a href="/subai-jamiat-portal/articles/عقیدہ-سلف-اور-اتباع-سنت-کی-اہمیت-مفصل">
                                                 <span><i class="fa-solid fa-feather-pointed" style="color:#0d9488; margin-left:6px;"></i> عقیدہ سلف اور اتباع سنت کی اہمیت — ادارتی تصحیح کے ساتھ</span>
-                                                <span style="font-size:11px; background:#ecfdf5; color:#047857; padding:2px 8px; border-radius:999px; white-space:nowrap;">مضمون</span>
+                                                <span style="font-size:11.5px; background:#ecfdf5; color:#047857; padding:2px 9px; border-radius:999px; white-space:nowrap;">مضمون</span>
                                             </a>
                                         </li>
                                     
@@ -976,21 +1193,21 @@ body *::-webkit-scrollbar-thumb:hover {
                                         <li>
                                             <a href="/subai-jamiat-portal/fatawa/hai-me-me-9">
                                                 <span><i class="fa-solid fa-scale-balanced" style="color:#7c3aed; margin-left:6px;"></i> میں سفر میں تھا اور جمعہ کا دن تھا کیا مجھ پر جمعہ فرض تھا یا نہیں تھا میں نے ظہر پڑھ لی ت...</span>
-                                                <span style="font-size:11px; background:#f3e8ff; color:#6d28d9; padding:2px 8px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
+                                                <span style="font-size:11.5px; background:#f3e8ff; color:#6d28d9; padding:2px 9px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
                                             </a>
                                         </li>
                                     
                                         <li>
                                             <a href="/subai-jamiat-portal/fatawa/ghair-muslimon-ka-madinah-munawwarah-me-dakhil-hona-3">
                                                 <span><i class="fa-solid fa-scale-balanced" style="color:#7c3aed; margin-left:6px;"></i> غیر مسلموں کا مدینہ منورہ میں داخل ہونا کیسا ہے؟</span>
-                                                <span style="font-size:11px; background:#f3e8ff; color:#6d28d9; padding:2px 8px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
+                                                <span style="font-size:11.5px; background:#f3e8ff; color:#6d28d9; padding:2px 9px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
                                             </a>
                                         </li>
                                     
                                         <li>
                                             <a href="/subai-jamiat-portal/fatawa/pension-bechne-ki-shari-hasiyat-kya-hai-2">
                                                 <span><i class="fa-solid fa-scale-balanced" style="color:#7c3aed; margin-left:6px;"></i> پینشن بیچنے کی شرعی حیثیت کیا ہے؟</span>
-                                                <span style="font-size:11px; background:#f3e8ff; color:#6d28d9; padding:2px 8px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
+                                                <span style="font-size:11.5px; background:#f3e8ff; color:#6d28d9; padding:2px 9px; border-radius:999px; white-space:nowrap;">فتویٰ</span>
                                             </a>
                                         </li>
                                     
@@ -1005,56 +1222,56 @@ body *::-webkit-scrollbar-thumb:hover {
                     <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
 
     <div class="card">
-        <div class="top">جدید کتب</div>
+        <div class="top"><i class="fa-solid fa-book-bookmark" style="margin-left:6px; font-size:15px;"></i> مطبوعاتِ جمعیت</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="/subai-jamiat-portal/library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/book-1.jpeg';">
                             </a>
                         </div>
                     
@@ -1067,7 +1284,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            رویت ہلال
+            <i class="fa-solid fa-moon" style="margin-left:6px; font-size:15px;"></i> اعلاناتِ رویتِ ہلال
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1076,7 +1293,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="/subai-jamiat-portal/moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1084,7 +1301,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="/subai-jamiat-portal/moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1092,7 +1309,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="/subai-jamiat-portal/moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1100,7 +1317,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="/subai-jamiat-portal/moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/subai-jamiat-portal/images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1114,11 +1331,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            اہم ویڈیو
+            <i class="fa-solid fa-video" style="margin-left:6px; font-size:15px;"></i> نمایاں علمی بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="نمایاں علمی بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/FO3oQ3lGQZI" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1185,21 +1403,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1214,51 +1431,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="/subai-jamiat-portal/library/publications"> کتاب التوحید </a>
 
-            <a href="/subai-jamiat-portal/library/publications">علمی و دعوتی خیانت</a>
+            <a href="/subai-jamiat-portal/library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="/subai-jamiat-portal/library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="/subai-jamiat-portal/library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="/subai-jamiat-portal/library/publications"> طالب علم کا زیور </a>
 
             <a href="/subai-jamiat-portal/library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="/subai-jamiat-portal/aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="/subai-jamiat-portal/aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="/subai-jamiat-portal/aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="/subai-jamiat-portal/aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="/subai-jamiat-portal/aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="/subai-jamiat-portal/aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="/subai-jamiat-portal/aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="/subai-jamiat-portal/index.html"> سرورق </a>
+            <a href="/subai-jamiat-portal/index.html"> مرکزی سرورق </a>
 
-            <a href="/subai-jamiat-portal/introduction"> تعارف </a>
+            <a href="/subai-jamiat-portal/introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="/subai-jamiat-portal/aljama"> مجلہ الجماعہ </a>
+            <a href="/subai-jamiat-portal/jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="/subai-jamiat-portal/library"> لائبریری </a>
+            <a href="/subai-jamiat-portal/upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="/subai-jamiat-portal/library/publications"> مطبوعات </a>
+            <a href="/subai-jamiat-portal/masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="/subai-jamiat-portal/press-release"> پریس ریلیز </a>
+            <a href="/subai-jamiat-portal/aljama"> مجلہ الجماعۃ </a>
 
-            <a href="/subai-jamiat-portal/fatawa"> فتاویٰ </a>
+            <a href="/subai-jamiat-portal/library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="/subai-jamiat-portal/tausia"> توصیہ </a>
+            <a href="/subai-jamiat-portal/video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="/subai-jamiat-portal/fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="/subai-jamiat-portal/tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="/subai-jamiat-portal/donate"> مالی تعاون و عطیات </a>
 
             <a href="/subai-jamiat-portal/contact"> رابطہ کریں </a>
           </div>

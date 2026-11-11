@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
@@ -8,8 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Subai Jamiat Ahle Hadees Mumbai</title> -->
-    <!-- all css and js  files are here included -->
+    <title>ضلعی جمعیات و ذیلی اکائیاں — صوبائی جمعیت اہل حدیث ممبئی</title>
     <!-- Preconnect & DNS-Prefetch for fast CDN & Font resolution -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="../manifest.json">
@@ -68,7 +67,7 @@
 <!-- own animation js file  -->
 <script defer src="../javascript/animate.js?v=v15"></script>
 <!-- all page title is same -->
-<title>Subai Jamiat Ahle Hadees Mumbai | صوبائی جمعیت اہل حدیث ممبئی</title>
+<title>ضلعی جمعیات و ذیلی حلقہ جات ڈائریکٹری | صوبائی جمعیت اہل حدیث ممبئی</title>
 
 <meta name="keywords" content="Subai Jamiat Ahle Hadees , Ahle hadees , ahle hadees mumbai , masajid in mumbai , صوبائی جمعیت اہل حدیث ممبئی ، اہل حدیث ، اہل حدیث ممبئی , Ahle hadees masajid">
 <meta name="description" content="صوبائی جمعیت اہل حدیث ممبئی ایک دعوتی، تربیتی، اصلاحی اور رفاہی مشن ہے اور دنیا میں امن و سلامتی کی مناد ہے۔ اسلام خالص کی دعوت پیش کرنا اس کا امتیاز ہے۔ دین کا صحیح تعارف تعلیم وتربیت، دعوت واصلاح اور رفاہی سر گرمیوں کے ذریعہ انسانیت کی خدمت اس کا مطلوب ہے۔ ان عظیم مقاصد اور منصوبوں کی تکمیل کی جانب بحمد للہ جمعیت رواں دواں ہے اور اللہ تعالیٰ سے مدد اور توفیق کی طالب ہے۔">
@@ -77,19 +76,324 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
-        <link rel="stylesheet" href="../css/masajid.css?v=v15">
+    <style>
+        .sj-dist-portal {
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
+            direction: rtl;
+            text-align: right;
+        }
 
+        .sj-dist-hero {
+            background: linear-gradient(135deg, #042f2e 0%, #065f46 55%, #0d9488 100%);
+            border-radius: 22px;
+            padding: 24px 22px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 18px;
+            border: 1px solid rgba(167, 243, 208, 0.28);
+            box-shadow: 0 14px 34px rgba(4, 47, 46, 0.2);
+        }
+
+        .sj-dist-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(251, 191, 36, 0.16);
+            border: 1px solid rgba(253, 230, 138, 0.45);
+            color: #fde68a;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .sj-dist-hero h1 {
+            font-size: 24px;
+            color: #ffffff;
+            margin: 0 0 8px;
+            line-height: 1.85;
+        }
+
+        .sj-dist-hero p {
+            font-size: 14.5px;
+            color: #ecfdf5;
+            margin: 0 0 14px;
+            line-height: 2.05;
+        }
+
+        .sj-dist-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .sj-dist-metric {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 4px 13px;
+            border-radius: 999px;
+            font-size: 12.5px;
+            color: #f0fdf4;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sj-dist-metric i {
+            color: #fbbf24;
+        }
+
+        /* Toolbar */
+        .sj-dist-toolbar {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+        }
+
+        .sj-dist-search {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .sj-dist-search input {
+            width: 100%;
+            padding: 10px 40px 10px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 14.5px;
+            color: #0f172a;
+            background: #f8fafc;
+            outline: none;
+        }
+
+        .sj-dist-search input:focus {
+            border-color: #0d9488;
+            background: #ffffff;
+        }
+
+        .sj-dist-search i {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0d9488;
+        }
+
+        .sj-dist-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .sj-dist-pill {
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #334155;
+            padding: 3px 13px;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sj-dist-pill.active,
+        .sj-dist-pill:hover {
+            background: #065f46;
+            color: #ffffff;
+            border-color: #065f46;
+        }
+
+        /* District Cards */
+        .sj-dist-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 18px;
+            margin-bottom: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+            transition: border-color 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .sj-dist-card:hover {
+            border-color: #5eead4;
+            box-shadow: 0 10px 26px rgba(15, 118, 110, 0.1);
+        }
+
+        .sj-dist-card-head {
+            width: 100%;
+            background: linear-gradient(90deg, #f0fdfa 0%, #ffffff 100%);
+            border: none;
+            padding: 13px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            text-align: right;
+        }
+
+        .sj-dist-card.open .sj-dist-card-head {
+            border-bottom: 1px solid #e2e8f0;
+            background: linear-gradient(90deg, #ccfbf1 0%, #f0fdfa 100%);
+        }
+
+        .sj-dist-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            background: #065f46;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .sj-dist-title {
+            font-size: 18px;
+            color: #064e3b;
+            flex: 1;
+            line-height: 1.85;
+        }
+
+        .sj-dist-card-body {
+            display: none;
+            padding: 16px 18px;
+        }
+
+        .sj-dist-card.open .sj-dist-card-body {
+            display: block;
+        }
+
+        .sj-dist-card.open .sj-dist-chev {
+            transform: rotate(180deg);
+        }
+
+        .sj-dist-officers {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 576px) {
+            .sj-dist-officers {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sj-officer-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 13px;
+            padding: 12px 14px;
+        }
+
+        .sj-officer-role {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            padding: 1px 10px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        .sj-role-amir {
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .sj-role-nazim {
+            background: #f0f9ff;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+
+        .sj-officer-name {
+            font-size: 15.5px;
+            color: #0f172a;
+            margin: 0 0 8px;
+            line-height: 1.85;
+        }
+
+        .sj-officer-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .sj-phone-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-size: 12px;
+            text-decoration: none;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #1e293b;
+            transition: all 0.18s ease;
+        }
+
+        .sj-phone-btn:hover {
+            background: #0f766e;
+            color: #ffffff;
+            border-color: #0f766e;
+        }
+
+        .sj-wa-mini {
+            background: #ecfdf5;
+            color: #15803d;
+            border-color: #86efac;
+        }
+
+        .sj-wa-mini:hover {
+            background: #16a34a;
+            color: #ffffff;
+            border-color: #16a34a;
+        }
+
+        .sj-dist-meta-foot {
+            margin-top: 12px;
+            padding: 9px 13px;
+            background: #f0fdfa;
+            border: 1px solid #ccfbf1;
+            border-radius: 10px;
+            font-size: 13px;
+            color: #0f766e;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+    </style>
   <link rel="canonical" href="http://127.0.0.1:5000/district-jamiat">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <meta property="og:title" content="ضلعی جمعیات و ذیلی حلقہ جات ڈائریکٹری | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta property="og:description" content="شہر ممبئی، تھانہ، پال گھر اور دیارِ کوکن کی منسلک ضلعی جمعیاتِ اہل حدیث، امراء و نظماء اور رابطہ تفصیلات۔">
+  <meta property="og:url" content="http://127.0.0.1:5000/district-jamiat">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ضلعی جمعیات و ذیلی حلقہ جات ڈائریکٹری | صوبائی جمعیت اہل حدیث ممبئی">
+  <meta name="twitter:description" content="شہر ممبئی، تھانہ، پال گھر اور دیارِ کوکن کی منسلک ضلعی جمعیاتِ اہل حدیث، امراء و نظماء اور رابطہ تفصیلات۔">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"سرورق","item":"http://127.0.0.1:5000"},{"@type":"ListItem","position":2,"name":"ضلعی جمعیات","item":"http://127.0.0.1:5000/district-jamiat"}]}]}</script>
 </head>
 
 <body data-active="district-jamiat">
-
-    <!-- header and chats and loading animation included here  -->
     <!-- Loading overlay removed as per user request -->
-
-        <!-- <div class="chat-container">
+    <!-- <div class="chat-container">
 
     <div class="head">
         <div class="logo">
@@ -245,7 +549,7 @@
 
                         <a href="../index.html" class="lang active">اردو زبان</a>
                         <a href="../ar" class="lang">عربی زبان</a>
-                        <a href="../pending" class="lang">English</a>
+                        <a href="../pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -378,7 +682,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -519,7 +823,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -674,7 +978,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -788,7 +1092,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -878,7 +1182,7 @@
       
         
         <a href="../tausia" class="sj-dept-link ">
-          <i class="fa-solid fa-clipboard-check"></i>
+          <i class="fa-solid fa-stamp"></i>
           <span>توصیہ برائے مساجد</span>
         </a>
       
@@ -944,7 +1248,7 @@
         </a>
       
         <a href="../tausia" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-clipboard-check" style="color: #0f766e;"></i>
+          <i class="fa-solid fa-stamp" style="color: #0f766e;"></i>
           <span>توصیہ برائے مساجد</span>
         </a>
       
@@ -984,41 +1288,6 @@
 </script>
 
 
-
-<!-- 2. COMPACT BREADCRUMB & DEPARTMENT SEARCH BAR -->
-<div class="sj-dept-hub-wrap">
-  <div class="sj-dept-top-row" style="margin-bottom: 0;">
-    <!-- Right: Breadcrumb -->
-    <div class="sj-dept-breadcrumb">
-      <a href="../index.html"><i class="fa-solid fa-house" style="color: #0f766e;"></i> مرکزی سرورق</a>
-      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-      <a href="../masajid" style="color: #0f766e;">شعبۂ مساجد و ذیلی اکائیاں پورٹل</a>
-      
-        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-        <span style="color: #065f46; font-weight: 800;">ضلعی جمعیات</span>
-      
-    </div>
-
-    <!-- Left: Appropriately-Sized Department Search Bar -->
-    <div class="sj-dept-search-bar">
-      <div class="sj-dept-search-input-wrap">
-        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
-        <input
-          type="text"
-          id="sjDeptLiveSearchInput"
-          class="sj-dept-search-input"
-          placeholder="مسجد کا نام، علاقہ، ضلعی جمعیت یا شہر تلاش کریں..."
-          autocomplete="off"
-          oninput="filterDeptPageContent(this.value)"
-        />
-      </div>
-      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
-        <i class="fa-solid fa-microphone"></i>
-        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
-      </button>
-    </div>
-  </div>
-</div>
 
 
 <!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
@@ -1101,7 +1370,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1111,7 +1389,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1236,24 +1514,16 @@ body *::-webkit-scrollbar-thumb:hover {
   })();
 </script>
 
+    
 
-            <!-- content section starts here  -->
-
-            <section id="content">
-
-                <div class="main-container">
-
-                    <div class="container2">
-
-                        <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
-
-
-                            <!-- left column included here  -->
-
-                            <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
+    <section id="content">
+        <div class="main-container">
+            <div class="container2">
+                <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
+                    <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
 
     <div class="card">
-        <div class="top">میگزین</div>
+        <div class="top"><i class="fa-solid fa-book-open-reader" style="margin-left:6px; font-size:15px;"></i> مجلہ الجماعۃ</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
@@ -1261,56 +1531,56 @@ body *::-webkit-scrollbar-thumb:hover {
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1D13eBnrxVNsWpnIPi0W5k_x2bOFizf2L" alt="الجماعۃ جولائی، اگست ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1K__47wCSxKnJdHfH5zZjYM-hU9frNyMY" alt="الجماعۃ مئی، جون ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ مارچ، اپریل ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1tMjYXXJdHZa6g-zuBYQh6uPkF_MwpMsQ" alt="الجماعہ، جنوری، فروری ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1-Mmrbnaih4zTKyMWQpoFNqskncw-JI0g" alt="الجماعہ، نومبر، دسمبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ، ستمبر، اکتوبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/10vp3es2fFpa7cIAcjC1EUFoJGIGrPEqx" alt="الجماعۃ ، جولائی، اگست ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1OCPAE27t8T7_GXn04FOZek2hX6d_4_3F" alt="مجلہ الجماعہ، مئی وجون ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
@@ -1323,7 +1593,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            پروگرام کے پوسٹرس
+            <i class="fa-solid fa-image" style="margin-left:6px; font-size:15px;"></i> دعوتی و اطلاعی پوسٹرز
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1331,49 +1601,49 @@ body *::-webkit-scrollbar-thumb:hover {
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
@@ -1386,11 +1656,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            تازہ ترین ویڈیو
+            <i class="fa-solid fa-circle-play" style="margin-left:6px; font-size:15px;"></i> تازہ ترین بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="تازہ ترین بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/yBAjA9DRNQs" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1398,600 +1669,694 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <div class="card view-container">
-        <div class="top" dir="rtl">
-            <span> زائرین کی تعداد &nbsp;&nbsp;: </span>
-            <span class="view">
-                0
-            </span>
+        <div class="top" dir="rtl" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="fa-solid fa-users" style="font-size:14px; color:#fde68a;"></i>
+            <span>زائرینِ پورٹل:</span>
+            <span class="view" data-fallback-views="18450">18,450+</span>
         </div>
     </div>
 </div>
 
 
-                                <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+                    <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6 sj-dist-portal">
+                        <!-- Prestige Hero -->
+                        <div class="sj-dist-hero">
+                            <div class="sj-dist-badge">
+                                <i class="fa-solid fa-sitemap"></i>
+                                <span>تنظیمی نیٹ ورک و ذیلی اکائیاں</span>
+                            </div>
+                            <h1>ضلعی جمعیاتِ اہل حدیث — ممبئی، تھانہ و کوکن</h1>
+                            <p>صوبائی جمعیت اہل حدیث ممبئی کے ماتحت سرگرمِ عمل ضلعی جمعیات، امرائے اضلاع اور ناظمینِ کرام کی مستند ڈائریکٹری اور براہِ راست رابطہ نمبرات۔</p>
+                            <div class="sj-dist-metrics">
+                                <span class="sj-dist-metric"><i class="fa-solid fa-building-flag"></i> کل ضلعی حلقے: 10</span>
+                                <span class="sj-dist-metric"><i class="fa-solid fa-mosque"></i> مقامی مساجد و مراکز: ۱۰۰+</span>
+                                <a href="../masajid" class="sj-dist-metric" style="text-decoration: none; background: rgba(251,191,36,0.2); border-color: rgba(253,230,138,0.45); color: #fef3c7;">
+                                    <i class="fa-solid fa-location-dot"></i> مساجد ڈائریکٹری دیکھیں ←
+                                </a>
+                            </div>
+                        </div>
 
-                                    <div class="card district-jamiat">
+                        <!-- Search & Region Filter Toolbar -->
+                        <div class="sj-dist-toolbar">
+                            <div class="sj-dist-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" id="sjDistSearchInput" placeholder="ضلع کا نام، امیر، ناظم یا فون نمبر تلاش کریں..." oninput="filterDistrictsPortal()">
+                            </div>
+                            <div class="sj-dist-pills">
+                                <button type="button" class="sj-dist-pill active" data-reg="all" onclick="setDistrictRegion('all', this)">تمام اضلاع (10)</button>
+                                <button type="button" class="sj-dist-pill" data-reg="mumbai" onclick="setDistrictRegion('mumbai', this)">شہرِ ممبئی و مضافات</button>
+                                <button type="button" class="sj-dist-pill" data-reg="thane" onclick="setDistrictRegion('thane', this)">تھانہ، ممبرا، بھیونڈی و پال گھر</button>
+                                <button type="button" class="sj-dist-pill" data-reg="konkan" onclick="setDistrictRegion('konkan', this)">دیارِ کوکن</button>
+                                <button type="button" class="sj-dist-pill" style="margin-right: auto; background: #f0fdfa; color: #0f766e; border-color: #99f6e4;" onclick="toggleAllDistCards()" id="btnToggleAllDist">
+                                    <i class="fa-solid fa-compress"></i> تمام سمیٹیں
+                                </button>
+                            </div>
+                        </div>
 
-                                        <div class="top">
-
-                                            <h1>
-
-                                                ضلعی جمعیات، ممبئی &nbsp;(۱۰)
-
-                                            </h1>
-
-                                        </div>
-
-                                        <div class="content">
-
-                                            <div class="head-container">
+                        <!-- District Cards List -->
+                        <div id="sjDistCardsList">
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="thane"
+                                     data-search="ضلعی جمعیت اہل حدیث، بھیونڈی گرامی قدر عبد الحمید خان صاحب حفظہ اللہ 9326338332 گرامی قدر مولانا مطیع الحق سلفی حفظہ اللہ 9822270238 بھیونڈی، ضلع تھانے، مہاراشٹر">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">1</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، بھیونڈی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر عبد الحمید خان صاحب حفظہ اللہ</h3>
                                                 
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، بھیونڈی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر عبد الحمید خان صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919326338332">9326338332</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا مطیع الحق سلفی حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919822270238">9822270238</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>15 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>بھیونڈی، ضلع تھانے، مہاراشٹر</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، ممبرا</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا عبد السلام سلفی حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919820722231">9820722231</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا ارشد سکراوی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919221718264">9221718264</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>12 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>ممبرا، ضلع تھانے، مہاراشٹر</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، تھانہ</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر جناب ابراہیم قاضی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919221337147">9221337147</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر جناب ایڈوکیٹ ندیم شیخ صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919867216015">9867216015</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>14 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>تھانہ سٹی و مضافات، مہاراشٹر</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، کاندیولی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا الطاف حسین فیضی حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919820098827">9820098827</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا عبد الحکیم مدنی حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919869395881">9869395881</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>18 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>کاندیولی ویسٹ، ممبئی</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، نارتھ ایسٹ ممبئی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا جلال الدین فیضی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919820693189">9820693189</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا بدر الزماں سلفی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919323867409">9323867409</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>16 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>نارتھ ایسٹ زون، ممبئی</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، ساؤتھ ممبئی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر ڈاکٹر محمد عارف صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+918898882453">8898882453</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا منظر احسن سلفی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919820060830">9820060830</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>11 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>جنوبی ممبئی</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، پال گھر</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا عبدالحکیم عبدالمعبود مدنی حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919869395881">9869395881</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مولانا فاروق عمری صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919833518102">9833518102</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>9 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>پال گھر و ملحقہ اضلاع</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، ساؤتھ سینٹرل ممبئی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر رفیق قادری صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919867402031">9867402031</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر محمد اسماعیل کھتری صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919819889864">9819889864</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>10 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>ساؤتھ سینٹرل زون، ممبئی</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، نارتھ ویسٹ ممبئی</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا سعید احمد بستوی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919869986606">9869986606</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر عبدالحمید شیخ صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919930004877">9930004877</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>20 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>نارتھ ویسٹ زون، ممبئی</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
-                                                        <div class="head-wrapper">
-                                                            <button class="head-btn">
-                                                                <i class="fa-solid fa-angles-down angle"></i>
-                                                                <span class="place-title">ضلعی جمعیت اہل حدیث، رتناگری</span>
-                                                                <i class="fa-solid fa-plus circle"></i>
-                                                            </button>
-                                                            <div class="head-content">
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>امیر :</b>
-                                                                            <span>گرامی قدر مولانا عبدالواحد انور یوسفی صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919970370345">9970370345</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                <div class="division">
-                                                                    <p>
-                                                                        <span><b>ناظم : </b>
-                                                                            <span>گرامی قدر مقصود احمد سین صاحب حفظہ اللہ</span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                    <p class="phone">
-                                                                        <span>
-                                                                            <b>رابطہ نمبر : </b>
-                                                                            <span>
-                                                                                <a href="tel:+919892980489">9892980489</a>
-                                                                            </span>
-                                                                        </span>
-                                                                    </p>
-                                                                    
-                                                                </div>
-                                                                
-                                                                <div class="division" style="font-size: 13px; color: #475569; padding: 6px 12px; background: #f8fafc; border-radius: 8px; margin-top: 6px;">
-                                                                    <span><i class="fa-solid fa-layer-group" style="margin-left: 4px; color: #0284c7;"></i><b>ذیلی یونٹس: </b>8 یونٹس &nbsp;|&nbsp; </span>
-                                                                    <span><i class="fa-solid fa-location-dot" style="margin-left: 4px; color: #0d9488;"></i><b>دفتر / پتہ: </b>ضلع رتناگری و کوکن ریجن</span>
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919326338332" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9326338332</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919326338332" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
                                                 
-
                                             </div>
 
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا مطیع الحق سلفی حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919822270238" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9822270238</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919822270238" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
                                         </div>
 
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 15</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> بھیونڈی، ضلع تھانے، مہاراشٹر</span>
+                                                
+                                            </div>
+                                        
                                     </div>
-
                                 </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="thane"
+                                     data-search="ضلعی جمعیت اہل حدیث، ممبرا گرامی قدر مولانا عبد السلام سلفی حفظہ اللہ 9820722231 گرامی قدر مولانا ارشد سکراوی صاحب حفظہ اللہ 9221718264 ممبرا، ضلع تھانے، مہاراشٹر">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">2</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، ممبرا</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا عبد السلام سلفی حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919820722231" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9820722231</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919820722231" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
 
-                                <!-- right column included here  -->
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا ارشد سکراوی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919221718264" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9221718264</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919221718264" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
 
-                                <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 12</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> ممبرا، ضلع تھانے، مہاراشٹر</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="thane"
+                                     data-search="ضلعی جمعیت اہل حدیث، تھانہ گرامی قدر جناب ابراہیم قاضی صاحب حفظہ اللہ 9221337147 گرامی قدر جناب ایڈوکیٹ ندیم شیخ صاحب حفظہ اللہ 9867216015 تھانہ سٹی و مضافات، مہاراشٹر">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">3</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، تھانہ</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر جناب ابراہیم قاضی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919221337147" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9221337147</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919221337147" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر جناب ایڈوکیٹ ندیم شیخ صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919867216015" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9867216015</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919867216015" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 14</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> تھانہ سٹی و مضافات، مہاراشٹر</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="mumbai"
+                                     data-search="ضلعی جمعیت اہل حدیث، کاندیولی گرامی قدر مولانا الطاف حسین فیضی حفظہ اللہ 9820098827 گرامی قدر مولانا عبد الحکیم مدنی حفظہ اللہ 9869395881 کاندیولی ویسٹ، ممبئی">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">4</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، کاندیولی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا الطاف حسین فیضی حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919820098827" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9820098827</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919820098827" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا عبد الحکیم مدنی حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919869395881" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9869395881</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919869395881" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 18</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> کاندیولی ویسٹ، ممبئی</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="mumbai"
+                                     data-search="ضلعی جمعیت اہل حدیث، نارتھ ایسٹ ممبئی گرامی قدر مولانا جلال الدین فیضی صاحب حفظہ اللہ 9820693189 گرامی قدر مولانا بدر الزماں سلفی صاحب حفظہ اللہ 9323867409 نارتھ ایسٹ زون، ممبئی">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">5</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، نارتھ ایسٹ ممبئی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا جلال الدین فیضی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919820693189" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9820693189</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919820693189" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا بدر الزماں سلفی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919323867409" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9323867409</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919323867409" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 16</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> نارتھ ایسٹ زون، ممبئی</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="mumbai"
+                                     data-search="ضلعی جمعیت اہل حدیث، ساؤتھ ممبئی گرامی قدر ڈاکٹر محمد عارف صاحب حفظہ اللہ 8898882453 گرامی قدر مولانا منظر احسن سلفی صاحب حفظہ اللہ 9820060830 جنوبی ممبئی">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">6</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، ساؤتھ ممبئی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر ڈاکٹر محمد عارف صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+918898882453" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">8898882453</span>
+                                                        </a>
+                                                        <a href="https://wa.me/918898882453" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا منظر احسن سلفی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919820060830" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9820060830</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919820060830" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 11</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> جنوبی ممبئی</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="thane"
+                                     data-search="ضلعی جمعیت اہل حدیث، پال گھر گرامی قدر مولانا عبدالحکیم عبدالمعبود مدنی حفظہ اللہ 9869395881 گرامی قدر مولانا فاروق عمری صاحب حفظہ اللہ 9833518102 پال گھر و ملحقہ اضلاع">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">7</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، پال گھر</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا عبدالحکیم عبدالمعبود مدنی حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919869395881" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9869395881</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919869395881" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا فاروق عمری صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919833518102" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9833518102</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919833518102" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 9</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> پال گھر و ملحقہ اضلاع</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="mumbai"
+                                     data-search="ضلعی جمعیت اہل حدیث، ساؤتھ سینٹرل ممبئی گرامی قدر رفیق قادری صاحب حفظہ اللہ 9867402031 گرامی قدر محمد اسماعیل کھتری صاحب حفظہ اللہ 9819889864 ساؤتھ سینٹرل زون، ممبئی">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">8</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، ساؤتھ سینٹرل ممبئی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر رفیق قادری صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919867402031" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9867402031</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919867402031" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر محمد اسماعیل کھتری صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919819889864" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9819889864</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919819889864" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 10</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> ساؤتھ سینٹرل زون، ممبئی</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="mumbai"
+                                     data-search="ضلعی جمعیت اہل حدیث، نارتھ ویسٹ ممبئی گرامی قدر مولانا سعید احمد بستوی صاحب حفظہ اللہ 9869986606 گرامی قدر عبدالحمید شیخ صاحب حفظہ اللہ 9930004877 نارتھ ویسٹ زون، ممبئی">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">9</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، نارتھ ویسٹ ممبئی</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا سعید احمد بستوی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919869986606" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9869986606</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919869986606" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر عبدالحمید شیخ صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919930004877" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9930004877</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919930004877" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 20</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> نارتھ ویسٹ زون، ممبئی</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                                <div class="sj-dist-card open"
+                                     data-region="konkan"
+                                     data-search="ضلعی جمعیت اہل حدیث، رتناگری گرامی قدر مولانا عبدالواحد انور یوسفی صاحب حفظہ اللہ 9970370345 گرامی قدر مقصود احمد سین صاحب حفظہ اللہ 9892980489 ضلع رتناگری و کوکن ریجن">
+                                    <button type="button" class="sj-dist-card-head" onclick="this.parentElement.classList.toggle('open')">
+                                        <span class="sj-dist-num">10</span>
+                                        <span class="sj-dist-title">ضلعی جمعیت اہل حدیث، رتناگری</span>
+                                        <i class="fa-solid fa-chevron-down sj-dist-chev" style="color: #0f766e; transition: transform 0.22s ease;"></i>
+                                    </button>
+                                    <div class="sj-dist-card-body">
+                                        <div class="sj-dist-officers">
+                                            <!-- Amir Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-amir"><i class="fa-solid fa-user-tie"></i> امیرِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مولانا عبدالواحد انور یوسفی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919970370345" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0d9488;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9970370345</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919970370345" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+
+                                            <!-- Nazim Box -->
+                                            <div class="sj-officer-box">
+                                                <span class="sj-officer-role sj-role-nazim"><i class="fa-solid fa-user-check"></i> ناظمِ ضلع</span>
+                                                <h3 class="sj-officer-name">گرامی قدر مقصود احمد سین صاحب حفظہ اللہ</h3>
+                                                
+                                                    <div class="sj-officer-actions">
+                                                        <a href="tel:+919892980489" class="sj-phone-btn">
+                                                            <i class="fa-solid fa-phone" style="color:#0284c7;"></i>
+                                                            <span dir="ltr" style="font-family: 'Poppins', monospace; font-weight: 600;">9892980489</span>
+                                                        </a>
+                                                        <a href="https://wa.me/919892980489" target="_blank" rel="noopener" class="sj-phone-btn sj-wa-mini" title="واٹس ایپ پیغام">
+                                                            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+                                                        </a>
+                                                    </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        
+                                            <div class="sj-dist-meta-foot">
+                                                
+                                                    <span><i class="fa-solid fa-layer-group"></i> <strong>ذیلی مقامی یونٹس:</strong> 8</span>
+                                                
+                                                
+                                                    <span><i class="fa-solid fa-location-dot"></i> <strong>مرکز / دفتر:</strong> ضلع رتناگری و کوکن ریجن</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+                        </div>
+
+                        <div id="sjDistEmptyState" style="display: none; text-align: center; padding: 36px 20px; background: #ffffff; border: 1.5px dashed #cbd5e1; border-radius: 16px;">
+                            <i class="fa-solid fa-magnifying-glass" style="font-size: 30px; color: #94a3b8; margin-bottom: 8px;"></i>
+                            <div style="font-size: 16px; color: #334155;">آپ کی تلاش کے مطابق کوئی ضلعی یونٹ نہیں ملا۔</div>
+                        </div>
+                    </div>
+
+                    <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
 
     <div class="card">
-        <div class="top">جدید کتب</div>
+        <div class="top"><i class="fa-solid fa-book-bookmark" style="margin-left:6px; font-size:15px;"></i> مطبوعاتِ جمعیت</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
@@ -2004,7 +2369,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            رویت ہلال
+            <i class="fa-solid fa-moon" style="margin-left:6px; font-size:15px;"></i> اعلاناتِ رویتِ ہلال
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -2013,7 +2378,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -2021,7 +2386,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -2029,7 +2394,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -2037,7 +2402,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -2051,11 +2416,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            اہم ویڈیو
+            <i class="fa-solid fa-video" style="margin-left:6px; font-size:15px;"></i> نمایاں علمی بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="نمایاں علمی بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/FO3oQ3lGQZI" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -2064,16 +2430,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
 </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        </div>
-
-                    </div>
-
-            </section>
-
-            <!-- footer included here  -->
-
-            <footer>
+    <footer>
   <div class="up">
     <i class="fa-solid fa-angles-up"></i>
   </div>
@@ -2124,21 +2486,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -2153,51 +2514,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="../library/publications"> کتاب التوحید </a>
 
-            <a href="../library/publications">علمی و دعوتی خیانت</a>
+            <a href="../library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="../library/publications"> طالب علم کا زیور </a>
 
             <a href="../library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="../aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="../aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="../aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="../aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="../aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="../index.html"> سرورق </a>
+            <a href="../index.html"> مرکزی سرورق </a>
 
-            <a href="../introduction"> تعارف </a>
+            <a href="../introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="../aljama"> مجلہ الجماعہ </a>
+            <a href="../jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="../library"> لائبریری </a>
+            <a href="../upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="../library/publications"> مطبوعات </a>
+            <a href="../masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="../press-release"> پریس ریلیز </a>
+            <a href="../aljama"> مجلہ الجماعۃ </a>
 
-            <a href="../fatawa"> فتاویٰ </a>
+            <a href="../library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="../tausia"> توصیہ </a>
+            <a href="../video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="../fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="../tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="../donate"> مالی تعاون و عطیات </a>
 
             <a href="../contact"> رابطہ کریں </a>
           </div>
@@ -2376,8 +2743,51 @@ body *::-webkit-scrollbar-thumb:hover {
 
 
 
-                <script src="../javascript/masajid.js?v=v15"></script>
+    <script>
+        var currentDistRegion = 'all';
+        var allDistOpen = true;
 
+        function setDistrictRegion(reg, btn) {
+            currentDistRegion = reg;
+            document.querySelectorAll('.sj-dist-pill[data-reg]').forEach(function (p) { p.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+            filterDistrictsPortal();
+        }
+
+        function toggleAllDistCards() {
+            allDistOpen = !allDistOpen;
+            document.querySelectorAll('.sj-dist-card').forEach(function (c) {
+                if (allDistOpen) c.classList.add('open');
+                else c.classList.remove('open');
+            });
+            var btn = document.getElementById('btnToggleAllDist');
+            if (btn) {
+                btn.innerHTML = allDistOpen
+                    ? '<i class="fa-solid fa-compress"></i> تمام سمیٹیں'
+                    : '<i class="fa-solid fa-expand"></i> تمام کھولیں';
+            }
+        }
+
+        function filterDistrictsPortal() {
+            var q = (document.getElementById('sjDistSearchInput').value || '').trim().toLowerCase();
+            var visible = 0;
+            document.querySelectorAll('.sj-dist-card').forEach(function (card) {
+                var reg = card.getAttribute('data-region') || 'mumbai';
+                var txt = (card.getAttribute('data-search') || card.textContent || '').toLowerCase();
+                var regMatch = (currentDistRegion === 'all') || (reg === currentDistRegion);
+                var qMatch = !q || txt.indexOf(q) !== -1;
+                if (regMatch && qMatch) {
+                    card.style.display = '';
+                    if (q) card.classList.add('open');
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            var empty = document.getElementById('sjDistEmptyState');
+            if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+        }
+    </script>
 </body>
 
 </html>

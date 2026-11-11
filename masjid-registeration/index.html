@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="../manifest.json">
@@ -475,7 +475,7 @@
 
                         <a href="../index.html" class="lang active">اردو زبان</a>
                         <a href="../ar" class="lang">عربی زبان</a>
-                        <a href="../pending" class="lang">English</a>
+                        <a href="../pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -608,7 +608,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -749,7 +749,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -904,7 +904,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -1018,7 +1018,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -1108,7 +1108,7 @@
       
         
         <a href="../tausia" class="sj-dept-link ">
-          <i class="fa-solid fa-clipboard-check"></i>
+          <i class="fa-solid fa-stamp"></i>
           <span>توصیہ برائے مساجد</span>
         </a>
       
@@ -1174,7 +1174,7 @@
         </a>
       
         <a href="../tausia" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-clipboard-check" style="color: #0f766e;"></i>
+          <i class="fa-solid fa-stamp" style="color: #0f766e;"></i>
           <span>توصیہ برائے مساجد</span>
         </a>
       
@@ -1331,7 +1331,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1341,7 +1350,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1717,21 +1726,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1746,51 +1754,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="../library/publications"> کتاب التوحید </a>
 
-            <a href="../library/publications">علمی و دعوتی خیانت</a>
+            <a href="../library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="../library/publications"> طالب علم کا زیور </a>
 
             <a href="../library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="../aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="../aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="../aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="../aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="../aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="../index.html"> سرورق </a>
+            <a href="../index.html"> مرکزی سرورق </a>
 
-            <a href="../introduction"> تعارف </a>
+            <a href="../introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="../aljama"> مجلہ الجماعہ </a>
+            <a href="../jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="../library"> لائبریری </a>
+            <a href="../upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="../library/publications"> مطبوعات </a>
+            <a href="../masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="../press-release"> پریس ریلیز </a>
+            <a href="../aljama"> مجلہ الجماعۃ </a>
 
-            <a href="../fatawa"> فتاویٰ </a>
+            <a href="../library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="../tausia"> توصیہ </a>
+            <a href="../video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="../fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="../tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="../donate"> مالی تعاون و عطیات </a>
 
             <a href="../contact"> رابطہ کریں </a>
           </div>

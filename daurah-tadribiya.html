@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+  <script>window.__SJAHM_REL_PREFIX__ = ".";</script>
+  <script src="./javascript/live-remote-tunnel.js?v=v11"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./images/logo-square.png" />
+  <link rel="stylesheet" href="./css/donate.css?v=v15" />
+  <link rel="stylesheet" href="./css/typography-system.css?v=v15" />
+  <style>
+    * {
+      font-family: var(--font-urdu, "Manzar Lahori Nastaliq", "ManzarLahoriNastaliq", serif);
+      text-align: right;
+      direction: rtl;
+    }
+
+    form {
+      background: #f0f0f0;
+    }
+
+    .heading {
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .container {
+      height: 100vh;
+    }
+
+    .container form {
+      max-height: 95%;
+      overflow-y: auto;
+    }
+
+    .container form::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* removing up and down arrow of input type number  field  */
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .submit {
+      padding-block: 0;
+    }
+
+    .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background: #f0f0f0; */
+      background: transparent;
+      display: none;
+      scale: 0;
+      transition: scale 0.3s ease;
+    }
+
+    .popup-container.active {
+      display: flex;
+      scale: 1;
+    }
+
+    .popup-container .popup {
+      width: 400px;
+      text-align: center;
+      max-width: 100%;
+      padding: 20px;
+      border-radius: 5px;
+      background: #f0f0f0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      animation: animate 0.3s linear;
+    }
+
+    @keyframes animate {
+      0% {
+        scale: 0;
+      }
+
+      100% {
+        scale: 1;
+      }
+    }
+
+    .popup-container p {
+      font-size: 18px;
+      text-align: center;
+      margin: 10px 0;
+      line-height: 3;
+    }
+
+    .popup-container p.success {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .popup-container .popup a {
+      color: var(--main);
+      text-decoration: none;
+    }
+
+    /* removing up and down arrow of input type number  field  */
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .submit {
+      padding-block: 0;
+    }
+
+    ul {
+      list-style-position: inside;
+    }
+
+    .note {
+      color: crimson;
+    }
+
+    form.hidden {
+      display: none;
+    }
+
+    .number-input-container {
+      position: relative;
+      height: fit-content;
+      width: 100%;
+    }
+
+    /* .number-input-container input {
+            padding-right:;
+        } */
+
+    /* .number-input-container .country-code {
+
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+
+        } */
+
+    .note a {
+      color: white;
+      background: rgba(220, 20, 60, 0.7);
+      /* border: 2px solid crimson; */
+      padding: 0 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .note a:hover {
+      background: #00d999;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #webcam,
+    #photo {
+      width: 320px;
+      height: 320px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      object-fit: cover;
+      /* ensures image fills the circle */
+      display: none;
+      margin-inline: auto;
+    }
+
+    #canvas {
+      display: none;
+    }
+
+    /* 
+        .note-img img {
+            width: 100%;
+        } */
+  </style>
+  <!-- favicon link here  -->
+  <link rel="icon" type="image/x-icon" href="./images/logo-square.png" />
+  <title>دورۂ تدریبیہ رجسٹریشن — صوبائی جمعیت اہل حدیث ممبئی</title>
+  <link rel="canonical" href="http://127.0.0.1:5000/tadribiya-registeration">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"http://127.0.0.1:5000/#organization","name":"صوبائی جمعیت اہل حدیث ممبئی — Subai Jamiat Ahle Hadees Mumbai","alternateName":"Subai Jamiat Ahle Hadees Mumbai","url":"http://127.0.0.1:5000","logo":"http://127.0.0.1:5000/images/logo-square.png","sameAs":["https://www.facebook.com/subaijamiatahlehadeesmumbai1/","https://twitter.com/JamiatSubai","https://www.youtube.com/@SubaiJamiatAhleHadeesMumbai","https://t.me/SubaiJamiatAhleHadeesMumbai1"]},{"@type":"WebSite","@id":"http://127.0.0.1:5000/#website","url":"http://127.0.0.1:5000","name":"صوبائی جمعیت اہل حدیث ممبئی","inLanguage":"ur","publisher":{"@id":"http://127.0.0.1:5000/#organization"},"potentialAction":{"@type":"SearchAction","target":"http://127.0.0.1:5000/search?q={search_term_string}","query-input":"required name=search_term_string"}}]}</script>
+  <script defer src="./javascript/perf-enhancer.js?v=v15"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="popup-container">
+      <div class="popup">
+        <p class="success">آپ کا فارم جمع ہو گیا ہے</p>
+        <p>
+          آگے کی کارروائی مکمل ہونے کے بعد ہم عنقریب آپ کے واٹس ایپ نمبر پر آپ
+          کا آئی کارڈ بھیجیں گے۔
+        </p>
+        <a href="./index.html"> ویب سائٹ پر جانے کے لئے </a>
+      </div>
+    </div>
+    <form>
+      <h1 class="heading">دورۂ تدریبیہ برائے ائمہ و دعاۃ — رجسٹریشن فارم</h1>
+
+      <div>
+        <label for="name">
+          نام (آدھار کارڈ کے مطابق - انگریزی میں)
+          <span> : </span>
+        </label>
+        <input type="text" id="name" name="name" required minlength="3" placeholder="نام (آدھار کارڈ کے مطابق - انگریزی میں)" />
+      </div>
+      <div>
+        <label for="certificateName" >
+          نام (سند کے لئے)
+          <span> : </span>
+        </label>
+        <input type="text" id="certificateName" name="certificateName" required minlength="3"
+          placeholder="نام (سند کے لئے)" />
+      </div>
+      <div>
+        <label for="qualification">
+          تعلیمی لیاقت
+          <span> : </span>
+        </label>
+        <input type="text" name="qualification" required minlength="3" placeholder="تعلیمی لیاقت" />
+      </div>
+      <div>
+        <label for="adharNo">
+          آدھار نمبر
+          <span> : </span>
+        </label>
+        <input type="text" id="adharNo" name="adharNo" required minlength="3" placeholder="آدھار نمبر" />
+      </div>
+      <div>
+        <label for="number">
+          واٹس ایپ نمبر
+          <span> : </span>
+        </label>
+        <div class="number-input-container">
+          <input type="number" id="number" name="number" required placeholder="واٹس ایپ نمبر" />
+        </div>
+      </div>
+
+      <div>
+        <label for="masjid_name_address">
+          مسجد / جامعہ کا نام اور پتہ
+          <span> : </span>
+        </label>
+        <textarea name="masjid_name_address" id="masjid_name_address" placeholder="مسجد کا نام اور پتہ"></textarea>
+      </div>
+      <div>
+        <label for="masjid_president">
+          مسجد / جامعہ کے صدر کا نام اور موبائل نمبر
+          <span> : </span>
+        </label>
+        <textarea name="masjid_president" id="masjid_president" required placeholder="صدر کا نام اور موبائل نمبر"></textarea>
+      </div>
+      <div>
+        <label for="masjid_seceratory">
+          مسجد / جامعہ کے سیکرٹری کا نام اور موبائل نمبر
+          <span> : </span>
+        </label>
+        <textarea name="masjid_seceratory" id="masjid_seceratory" required placeholder="سیکرٹری کا نام اور موبائل نمبر"></textarea>
+      </div>
+      <div>
+        <label for="coming_reason">
+          دورۂ تدریبیہ میں شرکت کا مقصد <span> ؟ </span>
+        </label>
+        <textarea name="coming_reason" id="coming_reason" required
+          placeholder="دورۂ تدریبیہ میں شرکت کا مقصد تحریر کریں"></textarea>
+      </div>
+      <div>
+        <label for="file">
+          <span> اپنے مطلوبہ دستاویزات PDF میں اپلوڈ کریں </span>
+          <span> (1MB) </span>
+          <span> : </span>
+        </label>
+        <input type="file" required name="file" />
+      </div>
+
+      <div>
+        <video id="webcam" autoplay playsinline></video>
+        <canvas id="canvas"></canvas>
+        <img id="photo" alt="Captured photo" />
+
+        <div>
+          <button id="start" type="button">کیمرا شروع کریں</button>
+          <button id="capture" type="button" style="display:none;">تصویر لیں</button>
+          <button id="retake" type="button" style="display:none;">دوبارہ لیں</button>
+        </div>
+      </div>
+
+      <span class="error"></span>
+      <span class="success"></span>
+      <div class="data-loading"></div>
+
+      <div class="submit-container">
+        <button class="submit" type="submit">ارسال کریں</button>
+      </div>
+
+      <div class="note">
+        <a href="./imp-notice" target="_blank">
+          <span> نوٹ </span>
+          <span> : </span>
+        </a>
+        <ul>
+          <li>
+            <span>
+              <span> مطلوبہ دستاویزات</span>
+              <span>:</span>
+            </span>
+            یعنی اپنی مسجد یا ادارے کے لیٹرہیڈ پر صدر یا سیکریٹری کی دستخط کے ساتھ منظوری نامہ، آدھار کارڈ اور تعلیمی
+            لیاقت کی سند ایک ہی PDF فائل میں (اسکین شدہ) اپلوڈ کریں۔ ورنہ رجسٹریشن نہیں ہوگا۔
+          </li>
+          <li>
+            یہ دورۂ تدریبیہ صوبائی جمعیت اہل حدیث ممبئی کے حلقے (ممبئی، تھانہ، پال گھر اور اضلاعِ کوکن)
+            میں موجود مساجد کے ائمہ، خطباء و دعاۃ کے لیے ہے۔
+          </li>
+          <li>
+            رجسٹریشن کی کارروائی مکمل ہونے کے بعد واٹس ایپ نمبر پر ایک کیو آر کوڈ بھیجا جائے گا، دورۂ تدریبیہ کے دن تمام کارروائیاں اسی کوڈ کی بنیاد پر ہوں گی۔
+          </li>
+        </ul>
+
+        <!-- <div class="note-img">
+                    <img src="./images/registeration-notice.jpg" alt
+                    ="">
+                </div> -->
+      </div>
+    </form>
+  </div>
+  <script src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+  <script src="./javascript/webcam.js?v=v15"></script>
+  <script src="./javascript/tadribiyaRegisteration/registeration.js?v=v15"></script>
+</body>
+
+</html>

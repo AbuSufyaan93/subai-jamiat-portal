@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 
 <head>
   <script>window.__SJAHM_REL_PREFIX__ = "..";</script>
@@ -8,8 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Sobai Jamiat Ahle Hadees Mumbai</title> -->
-    <!-- all css and js  files are here included -->
+    <title>تعارف، نصب العین اور تنظیمی ڈھانچہ — صوبائی جمعیت اہل حدیث ممبئی</title>
     <!-- Preconnect & DNS-Prefetch for fast CDN & Font resolution -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +16,7 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 
 <!-- PWA & Theme Meta -->
 <link rel="manifest" href="../manifest.json">
@@ -77,7 +76,275 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
+    <style>
+        .sj-intro-portal {
+            font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', serif);
+            direction: rtl;
+            text-align: right;
+        }
 
+        .sj-intro-hero {
+            background: linear-gradient(135deg, #042f2e 0%, #065f46 54%, #0f766e 100%);
+            border-radius: 22px;
+            padding: 26px 24px;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 18px;
+            border: 1px solid rgba(253, 230, 138, 0.28);
+            box-shadow: 0 14px 36px rgba(4, 47, 46, 0.2);
+        }
+
+        .sj-intro-hero::after {
+            content: '\f19c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 20px;
+            bottom: -8px;
+            font-size: 96px;
+            color: rgba(255, 255, 255, 0.06);
+            pointer-events: none;
+        }
+
+        .sj-intro-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(251, 191, 36, 0.16);
+            border: 1px solid rgba(253, 230, 138, 0.45);
+            color: #fde68a;
+            padding: 4px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .sj-intro-hero h1 {
+            font-size: 25px;
+            color: #ffffff;
+            margin: 0 0 8px;
+            line-height: 1.85;
+        }
+
+        .sj-intro-hero p {
+            font-size: 14.5px;
+            color: #ecfdf5;
+            margin: 0 0 14px;
+            line-height: 2.05;
+        }
+
+        .sj-intro-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .sj-intro-chip {
+            background: rgba(255, 255, 255, 0.13);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: #f0fdf4;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .sj-intro-chip i {
+            color: #fbbf24;
+        }
+
+        /* 4 Pillars */
+        .sj-pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        @media (max-width: 576px) {
+            .sj-pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sj-pillar-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-right: 4px solid #0d9488;
+            border-radius: 16px;
+            padding: 14px 16px;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sj-pillar-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(15, 118, 110, 0.1);
+        }
+
+        .sj-pillar-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .sj-pillar-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: #f0fdfa;
+            color: #0f766e;
+            border: 1px solid #99f6e4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .sj-pillar-head h3 {
+            font-size: 16px;
+            color: #064e3b;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        .sj-pillar-card p {
+            font-size: 13.5px;
+            color: #475569;
+            margin: 0;
+            line-height: 1.95;
+        }
+
+        /* Prose Panel */
+        .sj-intro-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 20px 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .sj-intro-sec-title {
+            font-size: 19.5px;
+            color: #064e3b;
+            margin: 0 0 14px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px dashed #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            line-height: 1.85;
+        }
+
+        .sj-intro-prose p {
+            font-size: 15.5px;
+            color: #1e293b;
+            line-height: 2.2;
+            margin: 0 0 14px;
+            text-align: justify;
+        }
+
+        .sj-intro-prose p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Leadership & Departments */
+        .sj-lead-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+            gap: 12px;
+        }
+
+        .sj-lead-card {
+            background: linear-gradient(145deg, #f8fafc 0%, #ffffff 100%);
+            border: 1px solid #cbd5e1;
+            border-radius: 14px;
+            padding: 14px 16px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .sj-lead-card:hover {
+            border-color: #0d9488;
+            transform: translateY(-2px);
+        }
+
+        .sj-lead-role {
+            display: inline-block;
+            background: #ecfdf5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+            font-size: 12px;
+            padding: 2px 10px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+
+        .sj-lead-name {
+            font-size: 16.5px;
+            color: #0f172a;
+            margin: 2px 0 6px;
+            line-height: 1.85;
+        }
+
+        .sj-lead-bio {
+            font-size: 13px;
+            color: #475569;
+            margin: 0;
+            line-height: 1.9;
+        }
+
+        /* CTA Footer Bar */
+        .sj-intro-cta-bar {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
+            border: 1.5px solid #99f6e4;
+            border-radius: 18px;
+            padding: 18px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .sj-intro-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 16px;
+            border-radius: 11px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .sj-intro-btn-primary {
+            background: linear-gradient(135deg, #0d9488, #065f46);
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.22);
+        }
+
+        .sj-intro-btn-primary:hover {
+            background: linear-gradient(135deg, #0f766e, #064e3b);
+            color: #ffffff;
+        }
+
+        .sj-intro-btn-light {
+            background: #ffffff;
+            color: #065f46;
+            border: 1px solid #99f6e4;
+        }
+
+        .sj-intro-btn-light:hover {
+            background: #ccfbf1;
+            color: #042f2e;
+        }
+    </style>
   <link rel="canonical" href="http://127.0.0.1:5000/introduction">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta property="og:title" content="تعارف، تاریخ، مقاصد اور منہج | صوبائی جمعیت اہل حدیث ممبئی">
@@ -90,12 +357,8 @@
 </head>
 
 <body data-active="about">
-
-    <!-- header and chats and loading animation included here  -->
     <!-- Loading overlay removed as per user request -->
-
-
-        <!-- <div class="chat-container">
+    <!-- <div class="chat-container">
 
     <div class="head">
         <div class="logo">
@@ -251,7 +514,7 @@
 
                         <a href="../index.html" class="lang active">اردو زبان</a>
                         <a href="../ar" class="lang">عربی زبان</a>
-                        <a href="../pending" class="lang">English</a>
+                        <a href="../pending" class="lang">انگریزی زبان</a>
 
                     </div>
 
@@ -384,7 +647,7 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -525,7 +788,7 @@
     max-width: 1260px;
     margin: 14px auto 10px;
     padding: 0 16px;
-    font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -680,7 +943,7 @@
     backdrop-filter: blur(4px);
     direction: rtl;
     text-align: right;
-    font-family: 'Noto Nastaliq Urdu', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
   }
   .sj-dept-share-modal.open {
     display: flex;
@@ -794,7 +1057,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', Tahoma, sans-serif;
+    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
     direction: rtl;
     text-align: right;
   }
@@ -872,7 +1135,7 @@
       
         
         <a href="../jamati-activities" class="sj-dept-link ">
-          <i class="fa-solid fa-person-running"></i>
+          <i class="fa-solid fa-compass"></i>
           <span>جماعتی سرگرمیاں</span>
         </a>
       
@@ -886,6 +1149,12 @@
         <a href="../masajid" class="sj-dept-link ">
           <i class="fa-solid fa-mosque"></i>
           <span>مساجد ڈائریکٹری</span>
+        </a>
+      
+        
+        <a href="../contact" class="sj-dept-link ">
+          <i class="fa-solid fa-envelope"></i>
+          <span>مرکزی دفتر سے رابطہ</span>
         </a>
       
     </nav>
@@ -933,7 +1202,7 @@
         </a>
       
         <a href="../jamati-activities" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-person-running" style="color: #0f766e;"></i>
+          <i class="fa-solid fa-compass" style="color: #0f766e;"></i>
           <span>جماعتی سرگرمیاں</span>
         </a>
       
@@ -1105,7 +1374,16 @@
       }
       return;
     }
-    // If page has its own dedicated search input (e.g., aina-e-jamiat), sync with it as well
+    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
+    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
+    for (var i = 0; i < customHookIds.length; i++) {
+      var customEl = document.getElementById(customHookIds[i]);
+      if (customEl) {
+        customEl.value = query;
+        customEl.dispatchEvent(new Event('input', { bubbles: true }));
+        return;
+      }
+    }
     var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
     pageInputs.forEach(function(inp) {
       if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
@@ -1115,7 +1393,7 @@
     });
 
     // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
+    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
     if (items.length > 0) {
       items.forEach(function(el) {
         var txt = (el.textContent || '').toLowerCase();
@@ -1240,24 +1518,14 @@ body *::-webkit-scrollbar-thumb:hover {
   })();
 </script>
 
-
-            <!-- content section starts here  -->
-
-            <section id="content">
-
-                <div class="main-container">
-
-                    <div class="container2">
-
-                        <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
-
-
-                            <!-- left column included here  -->
-
-                            <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
+    <section id="content">
+        <div class="main-container">
+            <div class="container2">
+                <div class="row g-lg-5 g-xl-5 g-md-3 g-sm-2 g-2 justify-content-center">
+                    <div class="column-left column col-12 col-sm-10 col-md-3 col-lg-3 col-xl-3">
 
     <div class="card">
-        <div class="top">میگزین</div>
+        <div class="top"><i class="fa-solid fa-book-open-reader" style="margin-left:6px; font-size:15px;"></i> مجلہ الجماعۃ</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
@@ -1265,56 +1533,56 @@ body *::-webkit-scrollbar-thumb:hover {
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1D13eBnrxVNsWpnIPi0W5k_x2bOFizf2L" alt="الجماعۃ جولائی، اگست ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1K__47wCSxKnJdHfH5zZjYM-hU9frNyMY" alt="الجماعۃ مئی، جون ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ مارچ، اپریل ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1tMjYXXJdHZa6g-zuBYQh6uPkF_MwpMsQ" alt="الجماعہ، جنوری، فروری ۲۰۲۶ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1-Mmrbnaih4zTKyMWQpoFNqskncw-JI0g" alt="الجماعہ، نومبر، دسمبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="../images/mujallah-1.jpg" alt="الجماعۃ، ستمبر، اکتوبر ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/10vp3es2fFpa7cIAcjC1EUFoJGIGrPEqx" alt="الجماعۃ ، جولائی، اگست ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../aljama" class="image">
                                 <img src="https://lh3.googleusercontent.com/u/0/d/1OCPAE27t8T7_GXn04FOZek2hX6d_4_3F" alt="مجلہ الجماعہ، مئی وجون ۲۰۲۵ء" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/mujallah-1.jpg';">
-                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">ٹیکسٹ + PDF</span></div>
+                                <div style="display:flex; justify-content:center; gap:6px; margin-top:6px;"><span style="background:#ecfdf5; color:#065f46; border:1px solid #86efac; padding:2px 8px; border-radius:6px; font-size:11px; font-weight:700;">مکمل مطالعہ و ڈاؤنلوڈ</span></div>
                             </a>
                         </div>
                     
@@ -1327,7 +1595,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            پروگرام کے پوسٹرس
+            <i class="fa-solid fa-image" style="margin-left:6px; font-size:15px;"></i> دعوتی و اطلاعی پوسٹرز
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1335,49 +1603,49 @@ body *::-webkit-scrollbar-thumb:hover {
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1haT9hswdP0EFwqEhY6Rc4OJqooeE2Q9k" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/13NeayRTkNqHzHviLjpYaF89l4eYVe3EN" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1UgPwBwzt2ftF4yzt8nZNIiw6MbK0QKUS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1h3hND6X1OVaVNevUZ9sNIGjMjq4bkg9j" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/14tnLAMjq30InHAoK1-7_mFRfaGGQas2b" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1p5pakmBoZ8X9Dfj1Ka0FyLiHTIDW0Zns" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1prN245yNkF-sUWm-3bBlWjMw8jsO93RS" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../posters" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1-qPuaTH4cINpfjXv5Wm_L_tk_47QY5VP" alt="دعوتی پوسٹر" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/poster-1.jpg';">
                             </a>
                         </div>
                     
@@ -1390,11 +1658,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            تازہ ترین ویڈیو
+            <i class="fa-solid fa-circle-play" style="margin-left:6px; font-size:15px;"></i> تازہ ترین بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="تازہ ترین بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/yBAjA9DRNQs" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1402,313 +1671,327 @@ body *::-webkit-scrollbar-thumb:hover {
     </div>
 
     <div class="card view-container">
-        <div class="top" dir="rtl">
-            <span> زائرین کی تعداد &nbsp;&nbsp;: </span>
-            <span class="view">
-                0
-            </span>
+        <div class="top" dir="rtl" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+            <i class="fa-solid fa-users" style="font-size:14px; color:#fde68a;"></i>
+            <span>زائرینِ پورٹل:</span>
+            <span class="view" data-fallback-views="18450">18,450+</span>
         </div>
     </div>
 </div>
 
 
-                                <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
+                    <div class="column-center column col-12 col-sm-10 col-md-6 col-lg-6 col-xl-6 sj-intro-portal">
+                        <!-- Prestige Hero -->
+                        <div class="sj-intro-hero">
+                            <div class="sj-intro-badge">
+                                <i class="fa-solid fa-landmark"></i>
+                                <span>تاسیس، نصب العین اور دائرۂ کار</span>
+                            </div>
+                            <h1>صوبائی جمعیت اہل حدیث ممبئی کا جامع تعارف</h1>
+                            <p>شہرِ ممبئی، تھانہ، پال گھر اور دیارِ کوکن میں جماعت اہل حدیث کی نمائندہ مرکزی تنظیم — کتاب و سنت کی دعوت، تعلیم و تحقیق، اصلاحِ معاشرہ اور خدمتِ خلق کا منظم کارواں۔</p>
+                            <div class="sj-intro-chips">
+                                <span class="sj-intro-chip"><i class="fa-solid fa-sitemap"></i> ۱۱ ضلعی جمعیات و ذیلی حلقے</span>
+                                <span class="sj-intro-chip"><i class="fa-solid fa-compass"></i> ۲۸ فعال دعوتی و رفاہی شعبہ جات</span>
+                                <span class="sj-intro-chip"><i class="fa-solid fa-book-quran"></i> ۶۳+ علمی و تحقیقی مطبوعات</span>
+                            </div>
+                        </div>
 
-                                    <div class="card">
-
-                                        <div class="top">
-
-                                            <h1>
-
-                                                جمعیت اہل حدیث ممبئی کا مختصر تعارف
-
-                                            </h1>
-
-                                        </div>
-
-                                        <div class="content">
-
-                                            <div class="division">
-                                                <p dir="rtl">
-                                                    الحمدللہ رب العالمین والصلاۃ والسلام علی نبینا محمد وعلی آلہ وصحبہ
-                                                    أجمعین
-                                                    أمابعد:
-
-                                                </p>
-                                                <p>
-                                                    وطن عزیز ہند میں جمعیت اہل حدیث کے قیام کے بنیادی مقاصد میں سے اہم
-                                                    ترین
-                                                    مقصد
-                                                    مختلف سرگرمیوں کے ذریعہ پورے ملک کے جماعتی احباب کو باہم مربوط رکھنا
-                                                    اور
-                                                    ان
-                                                    کی فلاح وبہبود کے کاموں میں سرگرم عمل رہنا ہے، پورے ملک میں جمعیت
-                                                    اہل
-                                                    حدیث
-                                                    کی ہزاروں شاخیں ہیں ان میں متعدد جمعیات حسن کارکردگی کی بنیاد پر
-                                                    معروف
-                                                    ومقبول ہیں، اور ان کے ذریعہ مختلف قسم کی دعوتی، تعلیمی، تربیتی،
-                                                    تنظیمی
-                                                    ورفاہی سرگرمیوں کا سلسلہ جاری رہتاہے جن کے اپنے اپنے حلقوں میں خوش
-                                                    آئند
-                                                    نتائج واثرات دیکھنے کوملتے ہیں۔
-
-                                                </p>
-                                                <p>
-                                                    الحمدللہ صوبائی جمعیت اہل حدیث ممبئی کی بھی اپنی گوناگوں سرگرمیوں او
-                                                    ر
-                                                    ملک
-                                                    وملت اور جماعت کے لئے مفید ونفع بخش کاوشوں کے حوالہ سے عمدہ شناخت
-                                                    قائم
-                                                    ہے
-                                                    اور وہ جماعتی وغیر جماعتی حلقوں میں محتاج تعارف نہیں ہے۔
-
-                                                </p>
-                                                <p>
-                                                    ذیل میں صوبائی جمعیت اہل حدیث ممبئی کے مختلف شعبوں اور ان کی
-                                                    کارکردگی کا
-                                                    ایک
-                                                    ہلکا سا خاکہ پیش کیا جارہا ہے، مقصد یہی ہے کہ احباب جماعت ان
-                                                    سرگرمیوں سے
-                                                    خود
-                                                    کو زیادہ سے زیادہ جوڑیں اور ان سے خود بھی مستفید ہوں اور دوسروں کے
-                                                    بھی
-                                                    افادے
-                                                    کا سبب بنیں واللہ الموفق وھو الہادی إلی سواء السبیل۔
-
-                                                </p>
-
-                                                <p>
-                                                    صوبائی جمعیت اہل حدیث ممبئی شہر ممبئی ، تھانہ اور دیار کوکن میں
-                                                    جماعت
-                                                    اہل
-                                                    حدیث کی نمائندہ تنظیم ہے ۔ تنظیمی سرگرمیوں اور دعوتی جدوجہد کے حوالہ
-                                                    سے
-                                                    صوبائی جمعیت ملک بھر میں معروف ہے ۔ وسیع لائحہ عمل ، فعّال تنظیمی
-                                                    اور
-                                                    دعوتی
-                                                    شعبہ جات اور مختلف دعوتی صلاحیتوں میں مہارت رکھنے والے علماء اور
-                                                    دعاۃ کی
-                                                    مضبوط ٹیم کے حوالہ سے صوبائی جمعیت ملک بھرکے اداروں میں اپنی خصوصی
-                                                    شناخت
-                                                    رکھتی ہے ۔ اللہ کے فضل واحسان اور جماعت کے قیمتی تعاون کے ساتھ ہم
-                                                    اپنی
-                                                    وسعت
-                                                    بھر کوشش کررہے ہیں تاکہ جماعت کی تنظیم اور تنسیق اور دعوت کی ذمہ
-                                                    داریاں
-                                                    جمعیت کما حقہ ادا کرسکے ۔ ادھر لاک ڈاؤن اور اس کی بندشوں کی وجہ سے
-                                                    بہت
-                                                    سی
-                                                    سرگرمیاں موقوف تھیں لیکن اب بحمدللہ جمعیت اپنے کاز میں رواں دواں ہے۔
-                                                    اللہ
-                                                    مزید توفیق بخشے۔ ذیل میں جمعیت کی سرگرمیوں کا مختصر سا خاکہ پیش کیا
-                                                    جارہا ہے
-                                                    ۔
-
-                                                </p>
-                                            </div>
-                                            
-                                                
-                                                <div style="margin-top: 30px; padding-top: 20px; border-top: 2px dashed #e2e8f0;">
-                                                    <h2 style="font-size: 19px; font-weight: 800; color: #0284c7; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                                                        <i class="fa-solid fa-crown" style="color: #f59e0b;"></i> مرکزی قیادت و عہدیدارانِ صوبائی جمعیت
-                                                    </h2>
-                                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 24px;">
-                                                        
-                                                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px;">
-                                                                <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px;">
-                                                                    امیرِ محترم
-                                                                </span>
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin: 4px 0 6px;">فضیلۃ الشیخ عبد السلام سلفی حفظہ اللہ</h4>
-                                                                <p style="font-size: 12px; color: #64748b; margin: 0; line-height: 1.6;">مرکزی امیر، دعوتی و علمی رہنما، رکن شوریٰ و مصلحِ ملت۔</p>
-                                                            </div>
-                                                        
-                                                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px;">
-                                                                <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px;">
-                                                                    ناظمِ عمومی
-                                                                </span>
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin: 4px 0 6px;">فضیلۃ الشیخ مولانا عبد الرشید بستوی حفظہ اللہ</h4>
-                                                                <p style="font-size: 12px; color: #64748b; margin: 0; line-height: 1.6;">ناظمِ عمومی، تنظیمی و انتظامی امور کے نگران، خطیب و مصنف۔</p>
-                                                            </div>
-                                                        
-                                                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px;">
-                                                                <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px;">
-                                                                    نائب امیر
-                                                                </span>
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin: 4px 0 6px;">فضیلۃ الشیخ مفتی عزیزالرحمن مدنی حفظہ اللہ</h4>
-                                                                <p style="font-size: 12px; color: #64748b; margin: 0; line-height: 1.6;">رئیس دارالافتاء و نائب امیر صوبائی جمعیت ممبئی۔</p>
-                                                            </div>
-                                                        
-                                                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 14px;">
-                                                                <span style="display: inline-block; background: #e0f2fe; color: #0284c7; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 20px; margin-bottom: 6px;">
-                                                                    خازن / مالیاتی نگران
-                                                                </span>
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #0f172a; margin: 4px 0 6px;">محترم الحاج عبد المنان چوناوالا صاحب</h4>
-                                                                <p style="font-size: 12px; color: #64748b; margin: 0; line-height: 1.6;">مالیات و بیت المال کے معتمد و نگران۔</p>
-                                                            </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-
-                                                
-                                                <div style="margin-top: 20px;">
-                                                    <h2 style="font-size: 19px; font-weight: 800; color: #0284c7; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
-                                                        <i class="fa-solid fa-sitemap" style="color: #0284c7;"></i> مرکزی تنظیمی شعبہ جات و خدمات
-                                                    </h2>
-                                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 24px;">
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ دعوت و تبلیغ
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">دروسِ قرآن و حدیث، اجتماعاتِ عامہ، دورہ جات اور غیر مسلموں میں دعوتِ دین کا اہتمام۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: فضیلۃ الشیخ عبد السلام سلفی</span>
-                                                                
-                                                            </div>
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ تعلیم و تربیت
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">مدارسِ دینیہ کی نگرانی، سالانہ تعلیمی انعامی مسابقہ اور طلبہ و اساتذہ کے تربیتی کیمپس۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: مولانا عبد الرشید بستوی</span>
-                                                                
-                                                            </div>
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ دارالافتاء و تحقیق
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">مسائلِ شرعیہ میں امت کی رہنمائی، کتب و رسائل کی تحقیق اور شرعی فتاویٰ کا بروقت صدور۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: مفتی عزیز الرحمن مدنی</span>
-                                                                
-                                                            </div>
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ اوقاف، مساجد و توصیہ
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">ممبئی و مہاراشٹر کی 219+ مساجد کی تنسیق، تعمیری تعاون، ائمہ و خطباء کی رہنمائی اور سفارتی توصیہ جات۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: کمیٹی برائے امورِ مساجد</span>
-                                                                
-                                                            </div>
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ نشر و اشاعت و میڈیا
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">مجلہ الجماعۃ، ماہانہ کتب، پوسٹرز، یوٹیوب چینل، خطبات جمعہ اور پریس ریلیز کا انتظام۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: مجلس ادارت مجلہ الجماعۃ</span>
-                                                                
-                                                            </div>
-                                                        
-                                                            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                                                                <h4 style="font-size: 15px; font-weight: 800; color: #1e293b; margin: 0 0 6px; display: flex; align-items: center; gap: 6px;">
-                                                                    <i class="fa-solid fa-circle-dot" style="font-size: 8px; color: #0284c7;"></i> شعبہ خدمتِ خلق و رفاہِ عامہ
-                                                                </h4>
-                                                                <p style="font-size: 12px; color: #475569; margin: 0 0 8px; line-height: 1.6;">بیواؤں، یتامیٰ اور مستحقین کی امداد، میڈیکل کیمپ، آفاتِ سماوی میں فوری ریلیف اور راشن تقسیم۔</p>
-                                                                
-                                                                    <span style="font-size: 11px; color: #0284c7; font-weight: 700;">نگران: ریلیف کمیٹی صوبائی جمعیت</span>
-                                                                
-                                                            </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-
-                                                
-                                                <div style="margin-top: 20px; background: #f0fdf4; border: 1px solid #86efac; border-radius: 12px; padding: 16px;">
-                                                    <h3 style="font-size: 16px; font-weight: 800; color: #166534; margin: 0 0 10px; display: flex; align-items: center; gap: 6px;">
-                                                        <i class="fa-solid fa-file-shield"></i> دستوری دستاویزات و ضوابط
-                                                    </h3>
-                                                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-                                                        
-                                                            <a href="../documents/dastoor-subai-jamiat.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #bbf7d0; padding: 6px 12px; border-radius: 8px; color: #15803d; text-decoration: none; font-size: 13px; font-weight: 700;">
-                                                                <i class="fa-solid fa-file-pdf"></i> دستورِ صوبائی جمعیت اہل حدیث ممبئی
-                                                            </a>
-                                                        
-                                                            <a href="../tausia-rules" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ffffff; border: 1px solid #bbf7d0; padding: 6px 12px; border-radius: 8px; color: #15803d; text-decoration: none; font-size: 13px; font-weight: 700;">
-                                                                <i class="fa-solid fa-file-pdf"></i> قواعد و ضوابط برائے توصیہ جات
-                                                            </a>
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            
-
-                                            <p class="text-start" style="direction:ltr !important; margin-top: 20px;">
-                                                <a href="../jamati-activities" class="btn">
-                                                    مزید تفصیلی سرگرمیاں۔۔۔
-                                                </a>
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
+                        <!-- 4 Pillars of Mission -->
+                        <div class="sj-pillars-grid">
+                            <div class="sj-pillar-card">
+                                <div class="sj-pillar-head">
+                                    <div class="sj-pillar-icon"><i class="fa-solid fa-book-open"></i></div>
+                                    <h3>دعوتِ کتاب و سنت</h3>
                                 </div>
+                                <p>فہمِ سلف صالحین کی روشنی میں خالص توحید و سنت کی اشاعت، دروسِ قرآن و حدیث اور خطباتِ جمعہ کا منظم اہتمام۔</p>
+                            </div>
+                            <div class="sj-pillar-card" style="border-right-color: #0284c7;">
+                                <div class="sj-pillar-head">
+                                    <div class="sj-pillar-icon" style="background:#f0f9ff; color:#0284c7; border-color:#bae6fd;"><i class="fa-solid fa-graduation-cap"></i></div>
+                                    <h3>تعلیم، افتاء و تصنیف</h3>
+                                </div>
+                                <p>دارالافتاء، مجلہ الجماعۃ، تعلیمی و انعامی مسابقات اور اکسٹھ سے زائد مستند دینی و تحقیقی کتب کی طباعت و اشاعت۔</p>
+                            </div>
+                            <div class="sj-pillar-card" style="border-right-color: #d97706;">
+                                <div class="sj-pillar-head">
+                                    <div class="sj-pillar-icon" style="background:#fffbeb; color:#d97706; border-color:#fde68a;"><i class="fa-solid fa-users-gear"></i></div>
+                                    <h3>تنظیمی ربط و تربیتِ ائمہ</h3>
+                                </div>
+                                <p>ممبئی، تھانہ اور کوکن کے ضلعی و مقامی یونٹوں کی شیرازہ بندی اور ائمہ و دعاۃ کے لیے تدریبی و تربیتی ورکشاپس۔</p>
+                            </div>
+                            <div class="sj-pillar-card" style="border-right-color: #059669;">
+                                <div class="sj-pillar-head">
+                                    <div class="sj-pillar-icon" style="background:#ecfdf5; color:#059669; border-color:#a7f3d0;"><i class="fa-solid fa-hand-holding-medical"></i></div>
+                                    <h3>رفاہِ عامہ و خدمتِ خلق</h3>
+                                </div>
+                                <p>بیواؤں اور طلبہ و علماء کی کفالت، میڈیکل ریلیف، تعلیمی وظائف اور قدرتی آفات میں بلا تفریق انسانی ہمدردی و امداد۔</p>
+                            </div>
+                        </div>
 
-                                <!-- right column included here  -->
+                        <!-- Scholarly Introduction Prose -->
+                        <div class="sj-intro-panel">
+                            <h2 class="sj-intro-sec-title">
+                                <i class="fa-solid fa-scroll" style="color: #0d9488;"></i>
+                                <span>پس منظر، اغراض و مقاصد اور دعوتی جدوجہد</span>
+                            </h2>
+                            <div class="sj-intro-prose">
+                                <p style="color: #065f46; text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 8px 14px;">
+                                    الحمد للہ رب العالمین والصلاۃ والسلام علی نبینا محمد وعلی آلہ وصحبہ أجمعین، أما بعد:
+                                </p>
+                                <p>
+                                    وطنِ عزیز ہند میں جمعیت اہل حدیث کے قیام کے بنیادی مقاصد میں سے اہم ترین مقصد مختلف سرگرمیوں کے ذریعہ پورے ملک کے جماعتی احباب کو باہم مربوط رکھنا اور ان کی فلاح و بہبود کے کاموں میں سرگرمِ عمل رہنا ہے۔ پورے ملک میں جمعیت اہل حدیث کی ہزاروں شاخیں ہیں، ان میں متعدد جمعیات حسنِ کارکردگی کی بنیاد پر معروف و مقبول ہیں، اور ان کے ذریعہ مختلف قسم کی دعوتی، تعلیمی، تربیتی، تنظیمی و رفاہی سرگرمیوں کا سلسلہ جاری رہتا ہے جن کے اپنے اپنے حلقوں میں خوش آئند نتائج و اثرات دیکھنے کو ملتے ہیں۔
+                                </p>
+                                <p>
+                                    الحمد للہ صوبائی جمعیت اہل حدیث ممبئی کی بھی اپنی گوناگوں سرگرمیوں اور ملک و ملت اور جماعت کے لیے مفید و نفع بخش کاوشوں کے حوالے سے عمدہ شناخت قائم ہے اور وہ جماعتی و غیر جماعتی حلقوں میں محتاجِ تعارف نہیں ہے۔
+                                </p>
+                                <p>
+                                    صوبائی جمعیت اہل حدیث ممبئی شہرِ ممبئی، تھانہ اور دیارِ کوکن میں جماعت اہل حدیث کی نمائندہ تنظیم ہے۔ تنظیمی سرگرمیوں اور دعوتی جدوجہد کے حوالے سے صوبائی جمعیت ملک بھر میں معروف ہے۔ وسیع لائحۂ عمل، فعّال تنظیمی اور دعوتی شعبہ جات اور مختلف دعوتی صلاحیتوں میں مہارت رکھنے والے علماء اور دعاۃ کی مضبوط ٹیم کے حوالے سے صوبائی جمعیت ملک بھر کے اداروں میں اپنی خصوصی شناخت رکھتی ہے۔ اللہ کے فضل و احسان اور جماعت کے قیمتی تعاون کے ساتھ ہم اپنی وسعت بھر کوشش کر رہے ہیں تاکہ جماعت کی تنظیم و تنسیق اور دعوت کی ذمہ داریاں جمعیت کما حقہ ادا کر سکے۔ بحمد للہ جمعیت اپنے کاز میں پوری توانائی کے ساتھ رواں دواں ہے، اللہ تعالیٰ مزید توفیق بخشے۔
+                                </p>
+                                <p>
+                                    ذیل میں صوبائی جمعیت اہل حدیث ممبئی کی مرکزی قیادت، کلیدی شعبہ جات اور دستوری نظم کا اجمالی خاکہ پیش کیا جا رہا ہے، مقصد یہی ہے کہ احبابِ جماعت ان سرگرمیوں سے خود کو زیادہ سے زیادہ جوڑیں اور ان سے خود بھی مستفید ہوں اور دوسروں کے بھی افادے کا سبب بنیں۔ واللہ الموفق وھو الہادی إلی سواء السبیل۔
+                                </p>
+                            </div>
+                        </div>
 
-                                <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
+                        <!-- Dynamic Executive Leadership & Departments -->
+                        
+                            
+                                <div class="sj-intro-panel">
+                                    <h2 class="sj-intro-sec-title">
+                                        <i class="fa-solid fa-user-shield" style="color: #d97706;"></i>
+                                        <span>مرکزی قیادت و عہدیدارانِ صوبائی جمعیت</span>
+                                    </h2>
+                                    <div class="sj-lead-grid">
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">امیرِ جمعیت</span>
+                                                <h3 class="sj-lead-name">فضیلۃ الشیخ مولانا عبدالسلام سلفی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">مرکزی امیر صوبائی جمعیت اہل حدیث ممبئی، ممتاز عالمِ دین، خطیب و داعی۔</p>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">نائب امیر</span>
+                                                <h3 class="sj-lead-name">فضیلۃ الشیخ مولانا الطاف حسین فیضی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">نائب امیر صوبائی جمعیت اہل حدیث ممبئی و امیر ضلعی جمعیت کاندیولی۔</p>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">نائب امیر</span>
+                                                <h3 class="sj-lead-name">گرامی قدر جناب عبدالحمید خان صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">نائب امیر صوبائی جمعیت اہل حدیث ممبئی و امیر ضلعی جمعیت بھیونڈی۔</p>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">نائب ناظم</span>
+                                                <h3 class="sj-lead-name">فضیلۃ الشیخ مولانا جمیل احمد سلفی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">نائب ناظم صوبائی جمعیت اہل حدیث ممبئی و نگرانِ دعوتی و تنظیمی امور۔</p>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">نائب ناظم</span>
+                                                <h3 class="sj-lead-name">فضیلۃ الشیخ مولانا عبدالجلیل مکی صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">نائب ناظم صوبائی جمعیت اہل حدیث ممبئی و سرگرم عالمِ دین۔</p>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card">
+                                                <span class="sj-lead-role">ناظمِ مالیات</span>
+                                                <h3 class="sj-lead-name">گرامی قدر جناب عثمان لکڑا والا صاحب حفظہ اللہ</h3>
+                                                
+                                                    <p class="sj-lead-bio">ناظمِ مالیات و نگرانِ بیت المال و حسابات صوبائی جمعیت اہل حدیث ممبئی۔</p>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+
+                            
+                                <div class="sj-intro-panel">
+                                    <h2 class="sj-intro-sec-title">
+                                        <i class="fa-solid fa-sitemap" style="color: #0284c7;"></i>
+                                        <span>کلیدی تنظیمی شعبہ جات و مراکزِ خدمت</span>
+                                    </h2>
+                                    <div class="sj-lead-grid">
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ دعوت و تبلیغ</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">دروسِ قرآن و حدیث، اجتماعاتِ عامہ، دورہ جات اور غیر مسلموں میں دعوتِ دین کا اہتمام۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: فضیلۃ الشیخ عبد السلام سلفی</span>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ تعلیم و تربیت</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">مدارسِ دینیہ کی نگرانی، سالانہ تعلیمی انعامی مسابقہ اور طلبہ و اساتذہ کے تربیتی کیمپس۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: مولانا عبد الرشید بستوی</span>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ دارالافتاء و تحقیق</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">مسائلِ شرعیہ میں امت کی رہنمائی، کتب و رسائل کی تحقیق اور شرعی فتاویٰ کا بروقت صدور۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: مفتی عزیز الرحمن مدنی</span>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ اوقاف، مساجد و توصیہ</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">ممبئی و مہاراشٹر کی 219+ مساجد کی تنسیق، تعمیری تعاون، ائمہ و خطباء کی رہنمائی اور سفارتی توصیہ جات۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: کمیٹی برائے امورِ مساجد</span>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ نشر و اشاعت و میڈیا</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">مجلہ الجماعۃ، ماہانہ کتب، پوسٹرز، یوٹیوب چینل، خطبات جمعہ اور پریس ریلیز کا انتظام۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: مجلس ادارت مجلہ الجماعۃ</span>
+                                                
+                                            </div>
+                                        
+                                            <div class="sj-lead-card" style="background: #ffffff;">
+                                                <h3 class="sj-lead-name" style="color: #064e3b; display: flex; align-items: center; gap: 7px;">
+                                                    <i class="fa-solid fa-circle-check" style="font-size: 13px; color: #0d9488;"></i>
+                                                    <span>شعبہ خدمتِ خلق و رفاہِ عامہ</span>
+                                                </h3>
+                                                <p class="sj-lead-bio" style="margin-bottom: 6px;">بیواؤں، یتامیٰ اور مستحقین کی امداد، میڈیکل کیمپ، آفاتِ سماوی میں فوری ریلیف اور راشن تقسیم۔</p>
+                                                
+                                                    <span style="font-size: 12px; color: #0284c7;">نگران: ریلیف کمیٹی صوبائی جمعیت</span>
+                                                
+                                            </div>
+                                        
+                                    </div>
+                                </div>
+                            
+
+                            
+                                <div class="sj-intro-panel" style="background: #f0fdf4; border-color: #86efac;">
+                                    <h2 class="sj-intro-sec-title" style="border-bottom-color: #bbf7d0; color: #14532d;">
+                                        <i class="fa-solid fa-file-shield" style="color: #16a34a;"></i>
+                                        <span>دستوری ضوابط و رہنما دستاویزات</span>
+                                    </h2>
+                                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                                        
+                                            <a href="../jamati-activities" class="sj-intro-btn sj-intro-btn-light" style="border-color: #86efac; color: #166534;">
+                                                <i class="fa-solid fa-scroll"></i>
+                                                <span>دستورِ صوبائی جمعیت اہل حدیث ممبئی</span>
+                                            </a>
+                                        
+                                            <a href="../tausia-rules" class="sj-intro-btn sj-intro-btn-light" style="border-color: #86efac; color: #166534;">
+                                                <i class="fa-solid fa-scroll"></i>
+                                                <span>قواعد و ضوابط برائے توصیہ جات</span>
+                                            </a>
+                                        
+                                    </div>
+                                </div>
+                            
+                        
+
+                        <!-- Proper RTL Quick Links Call-to-Action -->
+                        <div class="sj-intro-cta-bar">
+                            <div>
+                                <strong style="font-size: 17px; color: #064e3b; display: block; line-height: 1.85;">جمعیت کے ۲۸ شعبہ جات اور ۶۳ مطبوعات کی مکمل تفصیل</strong>
+                                <span style="font-size: 13.5px; color: #475569;">ہر شعبے کی کارکردگی، مطبوعہ کتب کے ڈاؤن لوڈ لنکس اور بینک تفصیلات ملاحظہ فرمائیں۔</span>
+                            </div>
+                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                <a href="../jamati-activities" class="sj-intro-btn sj-intro-btn-primary">
+                                    <i class="fa-solid fa-compass"></i>
+                                    <span>تفصیلی سرگرمیاں پورٹل</span>
+                                </a>
+                                <a href="../district-jamiat" class="sj-intro-btn sj-intro-btn-light">
+                                    <i class="fa-solid fa-mosque"></i>
+                                    <span>ضلعی جمعیات</span>
+                                </a>
+                                <a href="../contact" class="sj-intro-btn sj-intro-btn-light">
+                                    <i class="fa-solid fa-envelope-open-text"></i>
+                                    <span>مرکزی دفتر سے رابطہ</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column-right column col-12 col-sm-10 col-md-3 col-lg-3">
 
     <div class="card">
-        <div class="top">جدید کتب</div>
+        <div class="top"><i class="fa-solid fa-book-bookmark" style="margin-left:6px; font-size:15px;"></i> مطبوعاتِ جمعیت</div>
         <div class="content">
             <div class="swiper mySwiper3">
                 <div class="swiper-wrapper">
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1H1sQNKd6ZYLpt4MpqN6rSc_wKwcN-g6i" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/18msB6x3pXLEEdhuen5ZsfiSwD9HeLlTQ" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1NfWMxdnA0ZIb763MnjMTCE7QXRY4juLN" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1ALosMFGhmKixxI1sK8tahd-lH6WehVZY" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1aUi-L_T3Oi6cRDFHh3cL1w9JGH-IAQGU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1dIr_gBHz7gtUpwVNI2t6X1zpIV66N7pm" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1j2vfwY7alN1jKD4a5Ydb4RZxaQVccSnU" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
                         <div class="swiper-slide">
                             <a href="../library/publications" class="image">
-                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
+                                <img src="https://lh3.googleusercontent.com/u/0/d/1Vdt-aLKqYdT68d5Tx0VVt-0jTfz4_77O" alt="مطبوعاتِ جمعیت" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/book-1.jpeg';">
                             </a>
                         </div>
                     
@@ -1721,7 +2004,7 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            رویت ہلال
+            <i class="fa-solid fa-moon" style="margin-left:6px; font-size:15px;"></i> اعلاناتِ رویتِ ہلال
         </div>
         <div class="content">
             <div class="swiper mySwiper3">
@@ -1730,7 +2013,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1NnZeVfztGnsigTRDOqQ4LThfmzHZx8It" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1738,7 +2021,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1L3i9Cem3-2C425VKsHNgLcfRMU2m_hce" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1746,7 +2029,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1RTk-go0rhvDDlStvv9MSjzcvKZf8ohcs" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1754,7 +2037,7 @@ body *::-webkit-scrollbar-thumb:hover {
                         
                             <div class="swiper-slide">
                                 <a href="../moon" class="image">
-                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
+                                    <img src="https://lh3.googleusercontent.com/u/0/d/1POxsCF3_CF9on5-El6OWFo-i-f_mkPyx" alt="رویتِ ہلال" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='../images/logo-square.png';">
                                 </a>
                             </div>
                         
@@ -1768,11 +2051,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
     <div class="card">
         <div class="top">
-            اہم ویڈیو
+            <i class="fa-solid fa-video" style="margin-left:6px; font-size:15px;"></i> نمایاں علمی بیان
         </div>
         <div class="content d-flex justify-content-center">
             <iframe
                 loading="lazy"
+                title="نمایاں علمی بیان"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen src="https://www.youtube.com/embed/FO3oQ3lGQZI" referrerpolicy="strict-origin-when-cross-origin" frameborder="0">
             </iframe>
@@ -1781,16 +2065,12 @@ body *::-webkit-scrollbar-thumb:hover {
 
 </div>
 
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        </div>
-
-                    </div>
-
-            </section>
-
-            <!-- footer included here  -->
-
-            <footer>
+    <footer>
   <div class="up">
     <i class="fa-solid fa-angles-up"></i>
   </div>
@@ -1841,21 +2121,20 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-2 order-lg-2 order-xl-2 order-md-4 order-sm-3 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">برائے رابطہ</h1>
+          <h1 class="heading">مرکزی دفتر و رابطہ</h1>
 
-          <div class="card">
-            <p>صوبائی جمعیت اہل حدیث ممبئی</p>
+          <div class="card" dir="rtl" style="text-align:right;">
+            <p style="font-weight:700;">صوبائی جمعیت اہل حدیث ممبئی</p>
 
             <p>
-              صوبائی جمعیت اہل حدیث ممبئی ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
-              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی-
+              ١٤/١٥، چونا والا کمپاؤنڈ، مقابل بیسٹ
+              بس ڈپو، ایل بی ایس مارگ، کرلا (ویسٹ) ممبئی — ٤٠٠٠٧٠
             </p>
 
-            <p><a href="tel:+919892255244">+91 9892255244</a> : فون</p>
+            <p dir="rtl">فون: <a href="tel:+919892255244" dir="ltr" style="display:inline-block;">+91 98922 55244</a></p>
 
-            <p>
-              <a href="mailto:ahlehadeesmumbai@gmail.com">ahlehadeesmumbai@gmail.com</a>
-              : ای میل
+            <p dir="rtl">
+              برقی ڈاک: <a href="mailto:ahlehadeesmumbai@gmail.com" dir="ltr" style="display:inline-block;">ahlehadeesmumbai@gmail.com</a>
             </p>
 
             <div class="map">
@@ -1870,51 +2149,57 @@ body *::-webkit-scrollbar-thumb:hover {
 
         <div
           class="footer-3 order-lg-3 order-xl-3 order-md-1 order-sm-2 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">تازہ ترین</h1>
+          <h1 class="heading">نمایاں مطبوعات و مجلہ</h1>
 
           <div class="card">
             <a href="../library/publications"> کتاب التوحید </a>
 
-            <a href="../library/publications">علمی و دعوتی خیانت</a>
+            <a href="../library/publications"> علمی و دعوتی خیانت </a>
 
-            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے اخری ایام </a>
+            <a href="../library/publications"> خلیفہ راشد عثمان غنی کی زندگی کے آخری ایام </a>
 
             <a href="../library/publications"> طالب علم کا زیور </a>
 
             <a href="../library/publications"> جدید مناہج کی حقیقت </a>
 
-            <a href="../aljama"> الجماعہ: مارچ اپریل ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مارچ اپریل ۲۰۲۳ء </a>
 
-            <a href="../aljama"> الجماعہ: مئی جون ۲۰۲۳ء </a>
+            <a href="../aljama"> مجلہ الجماعۃ: مئی جون ۲۰۲۳ء </a>
 
-            <a href="../aljama">الجماعہ، جولائی، اگست ۲۰۲۳ء</a>
+            <a href="../aljama"> مجلہ الجماعۃ: جولائی اگست ۲۰۲۳ء </a>
 
             <a href="../aljama">
-              مجلہ الجماعہ، خصوصی شمارہ، ستمبر، اکتوبر ۲۰۲۳ء
+              مجلہ الجماعۃ: خصوصی شمارہ ستمبر اکتوبر ۲۰۲۳ء
             </a>
           </div>
         </div>
 
         <div
           class="footer-4 order-lg-4 order-xl-4 order-md-2 order-sm-1 content col-12 col-sm-8 col-md-6 col-lg-3 col-xl-3">
-          <h1 class="heading">اقسام</h1>
+          <h1 class="heading">مرکزی شعبہ جات</h1>
 
           <div class="card">
-            <a href="../index.html"> سرورق </a>
+            <a href="../index.html"> مرکزی سرورق </a>
 
-            <a href="../introduction"> تعارف </a>
+            <a href="../introduction"> تعارف و تاریخِ جمعیت </a>
 
-            <a href="../aljama"> مجلہ الجماعہ </a>
+            <a href="../jamati-activities"> جماعتی سرگرمیاں (۲۸ شعبہ جات) </a>
 
-            <a href="../library"> لائبریری </a>
+            <a href="../upcoming-programs"> آئندہ پروگرامز و مسابقات </a>
 
-            <a href="../library/publications"> مطبوعات </a>
+            <a href="../masajid"> مساجد و ضلعی جمعیات </a>
 
-            <a href="../press-release"> پریس ریلیز </a>
+            <a href="../aljama"> مجلہ الجماعۃ </a>
 
-            <a href="../fatawa"> فتاویٰ </a>
+            <a href="../library"> ڈیجیٹل لائبریری و مطبوعات </a>
 
-            <a href="../tausia"> توصیہ </a>
+            <a href="../video-gallery"> اسلامک ٹیوب (بیانات و ریلز) </a>
+
+            <a href="../fatawa"> دارالافتاء و فتاویٰ </a>
+
+            <a href="../tausia"> شعبۂ توصیہ و تصدیق </a>
+
+            <a href="../donate"> مالی تعاون و عطیات </a>
 
             <a href="../contact"> رابطہ کریں </a>
           </div>
@@ -2090,7 +2375,6 @@ body *::-webkit-scrollbar-thumb:hover {
 </div>
 
 <script src="../js/share-interaction.js?v=v15"></script>
-
 
 
 </body>
