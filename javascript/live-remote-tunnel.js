@@ -266,6 +266,11 @@
       return origFetch(BASE_ROOT + '/api/library/topics.json');
     }
 
+    // 5b2. Handle YouTube live delta catalog directly from static edge JSON (0ms, zero tunnel traffic)
+    if (urlStr.indexOf('/api/public/youtube/live-delta') !== -1 || urlStr.indexOf('youtube-live-catalog.json') !== -1) {
+      return origFetch(BASE_ROOT + '/api/youtube-live-catalog.json?t=' + Math.floor(Date.now() / 120000));
+    }
+
     // 5c. Handle /api/library/scholar-submissions (Scholar Book Upload + 2-Stage Admin Review & Super Admin Approval)
     if (urlStr.indexOf('/api/library/scholar-submissions') !== -1) {
       var SCHOLAR_STORAGE_KEY = 'sjahm_scholar_book_submissions_v1';

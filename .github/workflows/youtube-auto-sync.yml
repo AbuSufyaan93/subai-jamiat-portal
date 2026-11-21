@@ -1,0 +1,50 @@
+name: Autonomous YouTube Videos & Reels Sync
+
+on:
+  schedule:
+    # Runs automatically every 30 minutes, 24/7/365
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: youtube-auto-sync-main
+  cancel-in-progress: false
+
+jobs:
+  sync-youtube:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Portal Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch & Curate Latest YouTube Videos and Shorts into Pure Nastaliq Urdu
+        run: node scripts/github-youtube-sync.js
+
+      - name: Commit, Push & Trigger GitHub Pages Rebuild if Updated
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "Subai Jamiat Auto-Sync Bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(youtube-sync): auto-publish latest videos & reels from @SubaiJamiatAhleHadeesMumbai"
+            git push origin main
+            gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+            echo "Published new YouTube uploads and triggered GitHub Pages build."
+          else
+            echo "Portal is already 100% up-to-date with @SubaiJamiatAhleHadeesMumbai."
+          fi
