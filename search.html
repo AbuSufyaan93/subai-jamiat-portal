@@ -79,128 +79,335 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="/images/logo-square.png">
 
-  <title>عالمی برق رفتار تلاش — صوبائی جمعیت اہل حدیث ممبئی</title>
+  <title>عالمی برق رفتار تلاش و علمی معاون — صوبائی جمعیت اہل حدیث ممبئی</title>
   <style>
     .sj-search-hero {
       max-width: 1180px;
-      margin: 18px auto 0;
-      background: linear-gradient(135deg, rgba(224,242,254,0.88) 0%, rgba(255,255,255,0.99) 48%, rgba(204,251,241,0.88) 100%);
-      padding: 28px 22px 24px;
+      margin-block: 18px 0;
+      margin-inline: auto;
+      background: linear-gradient(135deg, rgba(224,242,254,0.92) 0%, rgba(255,255,255,0.99) 48%, rgba(204,251,241,0.92) 100%);
+      padding-block: 26px 22px;
+      padding-inline: 22px;
       color: #0f172a;
       text-align: center;
       position: relative;
-      overflow: hidden;
       border: 1.5px solid #7dd3fc;
-      border-top: 4px solid #0284c7;
+      border-block-start: 4px solid #0f766e;
       border-radius: 20px;
       box-shadow: 0 10px 28px rgba(14, 165, 233, 0.12);
     }
     .sj-search-hero h1 {
       font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-      font-size: clamp(21px, 3vw, 30px);
-      line-height: 1.8;
-      margin: 0 0 6px;
+      font-size: clamp(22px, 3vw, 31px);
+      line-height: 2.15;
+      padding-block: 4px;
+      margin-block: 0 6px;
       color: #064e3b;
     }
     .sj-search-hero p {
-      font-size: 14px;
-      color: #334155;
-      max-width: 680px;
-      margin: 0 auto 18px;
-      line-height: 1.9;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 15.5px;
+      color: #1e293b;
+      max-width: 760px;
+      margin-block: 0 16px;
+      margin-inline: auto;
+      line-height: 2.2;
+    }
+    .sj-mode-switcher {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      background: #f1f5f9;
+      padding: 6px;
+      border-radius: 16px;
+      border: 1px solid #cbd5e1;
+      margin-block-end: 16px;
+    }
+    .sj-mode-btn {
+      min-height: 48px;
+      padding-inline: 18px;
+      padding-block: 6px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: #1e293b;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 15px;
+      line-height: 2.0;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .sj-mode-btn.active {
+      background: #0f5132;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 81, 50, 0.24);
+    }
+    .sj-mode-btn:focus-visible,
+    .sj-cat-tab:focus-visible,
+    .sj-quick-tag:focus-visible,
+    .sj-ilmi-btn:focus-visible,
+    .sj-result-card:focus-visible {
+      outline: 2.5px solid #0284c7;
+      outline-offset: 2px;
     }
     .sj-search-box-wrap {
-      max-width: 560px;
-      margin: 0 auto;
+      max-width: 680px;
+      margin-inline: auto;
       position: relative;
       display: flex;
+      align-items: center;
       background: #ffffff;
       border-radius: 999px;
-      padding: 4px 5px 4px 12px;
-      height: 46px;
+      padding-block: 4px;
+      padding-inline: 14px 5px;
+      min-height: 52px;
       box-shadow: 0 6px 20px rgba(14, 165, 233, 0.14);
-      border: 1.5px solid #7dd3fc;
+      border: 1.5px solid #0284c7;
     }
     .sj-search-box-wrap input {
       flex: 1;
       min-width: 0;
       border: none;
       outline: none;
-      padding: 6px 12px;
-      font-size: 14.5px;
-      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', sans-serif);
+      padding-block: 6px;
+      padding-inline: 10px;
+      font-size: 16px;
+      line-height: 2.1;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
       color: #0f172a;
       background: transparent;
     }
     .sj-search-box-wrap button {
-      background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
-      color: #fff;
+      min-height: 48px;
+      background: linear-gradient(135deg, #0f5132 0%, #0f766e 100%);
+      color: #ffffff;
       border: none;
       border-radius: 999px;
-      padding: 0 20px;
-      font-weight: 800;
+      padding-inline: 22px;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-weight: 700;
       cursor: pointer;
-      font-size: 13.5px;
-      display: flex;
+      font-size: 15px;
+      line-height: 2.0;
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       flex-shrink: 0;
     }
     .sj-quick-tags {
-      margin-top: 14px;
+      margin-block-start: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       justify-content: center;
     }
     .sj-quick-tag {
+      min-height: 44px;
       background: #ffffff;
-      color: #0369a1;
-      border: 1px solid #bae6fd;
-      padding: 3px 13px;
+      color: #064e3b;
+      border: 1px solid #99f6e4;
+      padding-block: 4px;
+      padding-inline: 14px;
       border-radius: 999px;
-      font-size: 12.5px;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 14px;
+      line-height: 2.0;
       font-weight: 700;
       text-decoration: none;
+      display: inline-flex;
+      align-items: center;
       transition: all 0.2s ease;
     }
     .sj-quick-tag:hover {
-      background: linear-gradient(135deg, #0284c7 0%, #0f766e 100%);
+      background: #0f5132;
       color: #ffffff;
-      border-color: #0284c7;
+      border-color: #0f5132;
     }
     .sj-search-container {
       max-width: 1180px;
-      margin: 24px auto 60px;
-      padding: 0 14px;
+      margin-block: 22px 60px;
+      margin-inline: auto;
+      padding-inline: 14px;
     }
     .sj-cat-tabs {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #e2e8f0;
+      margin-block-end: 20px;
+      padding-block-end: 12px;
+      border-block-end: 1px solid #cbd5e1;
     }
     .sj-cat-tab {
+      min-height: 48px;
       background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      color: #334155;
-      padding: 6px 15px;
+      border: 1px solid #94a3b8;
+      color: #0f172a;
+      padding-block: 6px;
+      padding-inline: 16px;
       border-radius: 999px;
-      font-size: 13px;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 14.5px;
+      line-height: 2.0;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       transition: all 0.2s ease;
     }
     .sj-cat-tab.active, .sj-cat-tab:hover {
+      background: #0f5132;
+      color: #ffffff;
+      border-color: #0f5132;
+    }
+    /* Ilmi Muawin Citation-Grounded Answer & Drawers */
+    .sj-ilmi-panel {
+      background: #ffffff;
+      border: 1.5px solid #99f6e4;
+      border-inline-start: 5px solid #0f766e;
+      border-radius: 18px;
+      padding: 22px;
+      margin-block-end: 24px;
+      box-shadow: 0 8px 26px rgba(15, 118, 110, 0.08);
+    }
+    .sj-ilmi-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding-block-end: 12px;
+      margin-block-end: 14px;
+      border-block-end: 1px solid #e2e8f0;
+    }
+    .sj-ilmi-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+      padding-block: 3px;
+      padding-inline: 12px;
+      border-radius: 999px;
+      font-size: 13.5px;
+      line-height: 1.95;
+      font-weight: 700;
+    }
+    .sj-ilmi-claim {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-inline-start: 4px solid #0284c7;
+      border-radius: 12px;
+      padding-block: 12px;
+      padding-inline: 16px;
+      margin-block-end: 12px;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 16px;
+      line-height: 2.28;
+      color: #0f172a;
+    }
+    .sj-cit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+      gap: 14px;
+      margin-block-start: 16px;
+    }
+    .sj-cit-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .sj-cit-excerpt {
+      background: #f8fafc;
+      border-inline-start: 3px solid #0f766e;
+      padding-block: 8px;
+      padding-inline: 12px;
+      border-radius: 8px;
+      font-size: 14.5px;
+      line-height: 2.22;
+      color: #1e293b;
+      margin: 0;
+    }
+    .sj-abstain-box {
+      background: #fffbeb;
+      border: 1.5px solid #f59e0b;
+      border-inline-start: 5px solid #d97706;
+      border-radius: 14px;
+      padding: 18px 20px;
+      color: #78350f;
+      font-size: 16px;
+      line-height: 2.25;
+    }
+    .sj-drawer-box {
+      display: none;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 18px;
+      padding: 20px;
+      margin-block-end: 22px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+    }
+    .sj-drawer-box.open {
+      display: block;
+    }
+    .sj-ilmi-btn {
+      min-height: 48px;
+      padding-inline: 16px;
+      padding-block: 6px;
+      border-radius: 12px;
+      border: 1px solid #0f766e;
       background: #0f766e;
-      color: #fff;
-      border-color: #0f766e;
+      color: #ffffff;
+      font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
+      font-size: 14.5px;
+      line-height: 2.0;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+    }
+    .sj-ilmi-btn.secondary {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #94a3b8;
+    }
+    .sj-ilmi-btn.danger {
+      background: #fef2f2;
+      color: #991b1b;
+      border-color: #fca5a5;
+    }
+    .sj-proposal-card {
+      background: #fffbeb;
+      border: 1.5px solid #fcd34d;
+      border-inline-start: 5px solid #d97706;
+      border-radius: 14px;
+      padding: 16px;
+      margin-block-end: 14px;
+    }
+    .sj-diff-line-add {
+      background: #ecfdf5;
+      color: #064e3b;
+      border-inline-start: 4px solid #059669;
+      padding-block: 6px;
+      padding-inline: 12px;
+      border-radius: 8px;
+      margin-block: 6px;
+      line-height: 2.2;
+      font-size: 14.5px;
     }
     .sj-results-grid {
       display: grid;
@@ -209,7 +416,7 @@
     }
     .sj-result-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
+      border: 1px solid #cbd5e1;
       border-radius: 16px;
       padding: 18px 20px;
       text-decoration: none;
@@ -218,56 +425,61 @@
       flex-direction: column;
       justify-content: space-between;
       box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
-      transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease, border-color 0.25s ease;
-      transform-style: preserve-3d;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
     .sj-result-card:hover {
-      transform: perspective(900px) translateY(-5px) rotateX(2deg);
-      box-shadow: 0 16px 32px rgba(15, 118, 110, 0.14);
-      border-color: #14b8a6;
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(15, 118, 110, 0.14);
+      border-color: #0f766e;
     }
     .sj-result-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 11.5px;
+      font-size: 13px;
+      line-height: 1.9;
       font-weight: 700;
-      padding: 3px 11px;
+      padding-block: 3px;
+      padding-inline: 12px;
       border-radius: 999px;
-      color: #fff;
+      color: #ffffff;
     }
     .sj-result-title {
       font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-      font-size: 17px;
-      line-height: 2.15;
+      font-size: 18px;
+      line-height: 2.22;
+      padding-block: 2px;
       color: #0f172a;
-      margin: 10px 0 6px;
+      margin-block: 10px 6px;
       font-weight: 700;
     }
     .sj-result-sub {
-      font-size: 12.5px;
-      color: #0f766e;
-      font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 14px;
+      line-height: 2.05;
+      color: #065f46;
+      font-weight: 700;
+      margin-block-end: 6px;
     }
     .sj-result-snippet {
-      font-size: 13px;
-      color: #475569;
-      line-height: 1.9;
+      font-size: 14.5px;
+      color: #334155;
+      line-height: 2.2;
     }
     @media (max-width: 640px) {
       .sj-search-hero {
-        margin: 12px 10px 0;
-        padding: 20px 14px 18px;
+        margin-block: 12px 0;
+        margin-inline: 10px;
+        padding-block: 18px 16px;
+        padding-inline: 12px;
       }
       .sj-search-box-wrap button {
-        padding: 0 14px;
-        font-size: 12.5px;
+        padding-inline: 16px;
+        font-size: 14px;
       }
       .sj-cat-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 8px;
+        padding-block-end: 8px;
       }
     }
   </style>
@@ -518,847 +730,6 @@
 
 
 
-<style>
-  /* ─── STANDALONE DEPARTMENT PORTAL LAYOUT OVERRIDES ─── */
-  /* Hide old homepage left/right sidebars and make center column full-width portal */
-  section#content .column-left,
-  section#content .column-right {
-    display: none !important;
-  }
-  section#content .column-center {
-    flex: 0 0 100% !important;
-    max-width: 1260px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-  section#content {
-    background: linear-gradient(180deg, #f0f9ff 0%, #f0fdfa 260px, #f8fafc 100%) !important;
-    padding-top: 4px !important;
-    min-height: 82vh;
-  }
-
-  /* Unified Luminous Sky-Blue & Mint-Emerald Showcase Card for Department Top Headers */
-  section#content .column-center > .card > .top {
-    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 48%, #ccfbf1 100%) !important;
-    border: 1.5px solid #99f6e4 !important;
-    border-radius: 18px !important;
-    padding: 20px 26px !important;
-    margin-bottom: 18px !important;
-    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
-    position: relative !important;
-    overflow: hidden !important;
-  }
-  section#content .column-center > .card > .top::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    height: 4.5px !important;
-    background: linear-gradient(90deg, #0284c7 0%, #0f766e 50%, #f59e0b 100%) !important;
-  }
-  section#content .column-center > .card > .top h1 {
-    color: #064e3b !important;
-    font-size: 24px !important;
-    font-weight: 800 !important;
-    margin: 0 !important;
-    text-shadow: none !important;
-  }
-
-  /* ─── STICKY WHITE DEPARTMENT PORTAL NAVIGATION BAR ─── */
-  .sj-dept-portal-nav {
-    background: #ffffff;
-    border-bottom: 2px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.045);
-    position: sticky;
-    top: 0;
-    z-index: 1020;
-    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-    direction: rtl;
-    text-align: right;
-  }
-  .sj-dept-nav-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 64px;
-    gap: 12px;
-  }
-  .sj-dept-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: #065f46;
-    flex-shrink: 0;
-  }
-  .sj-dept-brand-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-    color: #0f766e;
-    border: 1px solid #5eead4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.14);
-  }
-  .sj-dept-brand-text h1 {
-    font-size: 18px;
-    font-weight: 800;
-    margin: 0;
-    line-height: 1.25;
-    color: #065f46;
-  }
-  .sj-dept-brand-text span {
-    font-size: 11px;
-    color: #64748b;
-    font-weight: 600;
-    display: block;
-    margin-top: 2px;
-  }
-  .sj-dept-links {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-  }
-  .sj-dept-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 13px;
-    border-radius: 8px;
-    color: #334155;
-    text-decoration: none;
-    font-size: 13.5px;
-    font-weight: 700;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
-  .sj-dept-link i {
-    color: #0f766e;
-    font-size: 13.5px;
-  }
-  .sj-dept-link:hover {
-    background: #f0fdfa;
-    color: #0f766e;
-  }
-  .sj-dept-link.active {
-    background: linear-gradient(135deg, #ccfbf1 0%, #e0f2fe 100%);
-    color: #065f46 !important;
-    border: 1px solid #5eead4;
-    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.1);
-  }
-  .sj-dept-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .btn-dept-share {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 13px;
-    background: #fffbeb;
-    color: #b45309 !important;
-    border: 1px solid #fde68a;
-    border-radius: 9px;
-    font-size: 12.5px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-  .btn-dept-share:hover {
-    background: #fef3c7;
-    border-color: #fcd34d;
-  }
-  .btn-dept-mainhome {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
-    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
-    color: #ffffff !important;
-    border-radius: 9px;
-    font-size: 12.5px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.2);
-    white-space: nowrap;
-  }
-  .sj-dept-mobile-btn {
-    display: none;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
-    color: #1e293b;
-    padding: 7px 12px;
-    border-radius: 8px;
-    font-size: 17px;
-    cursor: pointer;
-  }
-
-  /* ─── BREADCRUMB, COMPACT SEARCH ENGINE & SUB-PORTAL SWITCHER HUB ─── */
-  .sj-dept-hub-wrap {
-    max-width: 1260px;
-    margin: 14px auto 10px;
-    padding: 0 16px;
-    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-    direction: rtl;
-    text-align: right;
-  }
-  .sj-dept-top-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    background: #ffffff;
-    border: 1.5px solid #99f6e4;
-    border-top: 3.5px solid #0f766e;
-    border-radius: 14px;
-    padding: 10px 16px;
-    box-shadow: 0 4px 16px rgba(15, 118, 110, 0.05);
-    margin-bottom: 12px;
-  }
-  .sj-dept-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-  .sj-dept-breadcrumb a {
-    color: #475569;
-    text-decoration: none;
-    font-weight: 700;
-  }
-  .sj-dept-breadcrumb a:hover {
-    color: #0f766e;
-  }
-
-  /* Compact, Appropriately-Sized Search Engine inside Department Portal */
-  .sj-dept-search-bar {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex: 1 1 360px;
-    max-width: 540px;
-  }
-  .sj-dept-search-input-wrap {
-    position: relative;
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-  .sj-dept-search-input {
-    width: 100%;
-    height: 36px;
-    border: 1px solid #cbd5e1;
-    border-radius: 9px;
-    background: #f8fafc;
-    color: #0f172a;
-    font-family: inherit;
-    font-size: 13px;
-    padding: 5px 32px 5px 26px;
-    outline: none;
-    transition: all 0.2s;
-  }
-  .sj-dept-search-input:focus {
-    border-color: #0f766e;
-    background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
-  }
-  .sj-dept-search-icon {
-    position: absolute;
-    right: 10px;
-    color: #0f766e;
-    font-size: 13px;
-    pointer-events: none;
-  }
-  .sj-dept-voice-btn {
-    height: 36px;
-    padding: 0 11px;
-    background: #fffbeb;
-    color: #b45309;
-    border: 1px solid #fcd34d;
-    border-radius: 9px;
-    font-family: inherit;
-    font-size: 11.5px;
-    font-weight: 700;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-  }
-
-  /* Sub-Portal Quick Cards Strip */
-  .sj-dept-subcards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .sj-dept-subcard {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-right: 3.5px solid #cbd5e1;
-    border-radius: 12px;
-    padding: 10px 14px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-  }
-  .sj-dept-subcard:hover {
-    border-color: #99f6e4;
-    border-right-color: #0f766e;
-    background: #f0fdfa;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(15, 118, 110, 0.08);
-  }
-  .sj-dept-subcard.active {
-    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
-    border-color: #5eead4;
-    border-right: 4px solid #0f766e;
-    box-shadow: 0 4px 12px rgba(15, 118, 110, 0.1);
-  }
-  .sj-dept-subcard-title {
-    font-size: 14px;
-    font-weight: 800;
-    color: #0f172a;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .sj-dept-subcard.active .sj-dept-subcard-title {
-    color: #065f46;
-  }
-  .sj-dept-subcard-desc {
-    font-size: 11px;
-    color: #64748b;
-    margin-top: 2px;
-    line-height: 1.5;
-  }
-
-  /* Share Modal */
-  .sj-dept-share-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.72);
-    z-index: 99999;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    backdrop-filter: blur(4px);
-    direction: rtl;
-    text-align: right;
-    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-  }
-  .sj-dept-share-modal.open {
-    display: flex;
-  }
-  .sj-dept-share-box {
-    background: #ffffff;
-    border-radius: 18px;
-    max-width: 520px;
-    width: 100%;
-    border: 1.5px solid #99f6e4;
-    box-shadow: 0 24px 55px rgba(0,0,0,0.3);
-    overflow: hidden;
-  }
-
-  .sj-dept-sidebar-trigger {
-    width: 42px;
-    height: 42px;
-    border-radius: 11px;
-    background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
-    color: #0f766e;
-    border: 1.5px solid #5eead4;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.22s ease;
-    flex-shrink: 0;
-  }
-
-  .sj-dept-sidebar-trigger:hover {
-    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
-    color: #ffffff;
-    border-color: #0f766e;
-    transform: translateY(-1px);
-  }
-
-  .sj-dept-header-search {
-    flex: 1 1 200px;
-    max-width: 280px;
-    min-width: 155px;
-    display: flex;
-    align-items: center;
-    background: #f8fafc;
-    border: 1.5px solid #cbd5e1;
-    border-radius: 999px;
-    padding: 2px 4px 2px 10px;
-    height: 38px;
-  }
-
-  .sj-dept-header-search:focus-within {
-    background: #ffffff;
-    border-color: #0f766e;
-    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
-  }
-
-  .sj-dept-header-search input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    padding: 4px 8px;
-    font-size: 12.5px;
-    font-family: inherit;
-    color: #0f172a;
-    outline: none;
-    min-width: 0;
-  }
-
-  .sj-dept-header-search button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    background: linear-gradient(135deg, #0f766e 0%, #065f46 100%);
-    color: #ffffff;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-
-  .sj-dept-drawer-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(4px);
-    z-index: 10040;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .sj-dept-drawer-backdrop.open {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .sj-dept-drawer {
-    position: fixed;
-    top: 0;
-    right: -420px;
-    width: 390px;
-    max-width: 92vw;
-    height: 100vh;
-    background: #ffffff;
-    z-index: 10050;
-    box-shadow: -8px 0 35px rgba(0, 0, 0, 0.18);
-    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: var(--font-urdu, 'Manzar Lahori Nastaliq', serif);
-    direction: rtl;
-    text-align: right;
-  }
-
-  .sj-dept-drawer.open {
-    right: 0;
-  }
-
-  @media (max-width: 1024px) {
-    .sj-dept-nav-container {
-      flex-wrap: wrap !important;
-      padding: 8px 12px;
-      gap: 8px;
-    }
-    .sj-dept-links {
-      display: flex !important;
-      order: 3;
-      width: 100%;
-      flex-direction: row !important;
-      overflow-x: auto;
-      padding: 4px 0 !important;
-      border-top: none !important;
-      margin-top: 0 !important;
-      flex-wrap: nowrap !important;
-      gap: 6px;
-    }
-    .sj-dept-header-search {
-      order: 2;
-      flex: 1 1 100%;
-      max-width: 100%;
-    }
-    .sj-dept-actions {
-      order: 1;
-      width: auto !important;
-      padding-top: 0 !important;
-    }
-    .sj-dept-mobile-btn {
-      display: none !important;
-    }
-  }
-
-  @media (max-width: 540px) {
-    .sj-dept-cta-primary span {
-      display: none;
-    }
-    .sj-dept-cta-primary {
-      padding: 7px 10px !important;
-      min-width: 36px;
-      min-height: 36px;
-      justify-content: center;
-    }
-    .sj-dept-sidebar-trigger,
-    .sj-dept-brand-icon {
-      width: 38px !important;
-      height: 38px !important;
-      font-size: 16px !important;
-    }
-  }
-</style>
-
-<!-- 1. STICKY STANDALONE DEPARTMENT PORTAL NAVIGATION BAR -->
-<header class="sj-dept-portal-nav" id="sjDeptPortalNav">
-  <div class="sj-dept-nav-container">
-    <!-- RIGHT: SIDEBAR TRIGGER + DEPARTMENT BRAND & IDENTITY -->
-    <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; min-width: 0;">
-      <button type="button" class="sj-dept-sidebar-trigger" onclick="openSjDeptDrawer()" title="شعبہ کا مکمل سائڈ بار مینو کھولیں" aria-label="سائڈ بار مینو">
-        <i class="fa-solid fa-bars-staggered"></i>
-      </button>
-
-      <a href="./press-release" class="sj-dept-brand">
-        <div class="sj-dept-brand-icon">
-          <i class="fa-solid fa-photo-film"></i>
-        </div>
-        <div class="sj-dept-brand-text">
-          <h1>شعبۂ میڈیا و نشریات پورٹل</h1>
-          <span>صوبائی جمعیت اہل حدیث ممبئی — پریس ریلیز، ویڈیو گیلری، پوسٹرز اور اعلانات</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- CENTER: ESSENTIAL DEPARTMENT SUB-PAGES  -->
-    <nav class="sj-dept-links" id="sjDeptLinks" aria-label="شعبۂ میڈیا و نشریات پورٹل" style="flex-wrap: nowrap;">
-      <a href="./index.html" class="sj-dept-link" style="background: #fffbeb; color: #b45309 !important; border: 1px solid #fde68a;" title="صوبائی جمعیت اہل حدیث ممبئی کے مرکزی سرورق (ہوم پیج) پر جائیں">
-        <i class="fa-solid fa-house-chimney" style="color: #d97706 !important;"></i>
-        <span>مرکزی سرورق</span>
-      </a>
-      
-        
-        <a href="./press-release" class="sj-dept-link ">
-          <i class="fa-solid fa-file-signature"></i>
-          <span>پریس ریلیز و اعلامیے</span>
-        </a>
-      
-        
-        <a href="./video-gallery" class="sj-dept-link ">
-          <i class="fa-solid fa-circle-play"></i>
-          <span>ویڈیو گیلری و بیانات</span>
-        </a>
-      
-        
-        <a href="./posters" class="sj-dept-link ">
-          <i class="fa-solid fa-image"></i>
-          <span>پوسٹرز و دعوتی اشتہارات</span>
-        </a>
-      
-        
-        <a href="./imp-notice" class="sj-dept-link ">
-          <i class="fa-solid fa-bell"></i>
-          <span>اہم اعلانات</span>
-        </a>
-      
-    </nav>
-
-    <!-- INLINE SEARCH BOX IN HEADLINE -->
-    <div class="sj-dept-header-search">
-      <input
-        type="text"
-        placeholder="پریس ریلیز، بیان، ویڈیو، پوسٹر یا موضوع تلاش کریں..."
-        aria-label="تلاش کریں"
-        oninput="filterDeptPageContent(this.value)"
-      />
-      <button type="button" title="تلاش کریں">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
-    </div>
-
-    <!-- LEFT: PRIMARY PORTAL CTA + SHARE PORTAL LINK -->
-    <div class="sj-dept-actions">
-      
-      <button type="button" class="btn-dept-share" onclick="openDeptShareModal()" title="اس شعبہ یا صفحہ کا پروفیشنل لنک شیئر کریں">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>لنک شیئر کریں</span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<!-- SLIDING SIDEBAR DRAWER FOR DEPARTMENT PORTAL -->
-<div class="sj-dept-drawer-backdrop" id="sjDeptDrawerBackdrop" onclick="closeSjDeptDrawer()"></div>
-<aside class="sj-dept-drawer" id="sjDeptDrawer" aria-label="شعبۂ میڈیا و نشریات پورٹل سائڈ بار مینو">
-  <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
-    <div>
-      <h3 style="margin: 0; font-size: 18px; font-weight: 800;"><i class="fa-solid fa-photo-film" style="color: #fde68a;"></i> شعبۂ میڈیا و نشریات پورٹل — مینو</h3>
-      <div style="font-size: 11px; color: #ccfbf1; margin-top: 2px;">صوبائی جمعیت اہل حدیث ممبئی — پریس ریلیز، ویڈیو گیلری، پوسٹرز اور اعلانات</div>
-    </div>
-    <button type="button" onclick="closeSjDeptDrawer()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; cursor: pointer;">&times;</button>
-  </div>
-  <div style="flex: 1; overflow-y: auto; padding: 14px 16px;">
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 14px;">
-      
-        <a href="./press-release" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-file-signature" style="color: #0f766e;"></i>
-          <span>پریس ریلیز و اعلامیے</span>
-        </a>
-      
-        <a href="./video-gallery" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-circle-play" style="color: #0f766e;"></i>
-          <span>ویڈیو گیلری و بیانات</span>
-        </a>
-      
-        <a href="./posters" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-image" style="color: #0f766e;"></i>
-          <span>پوسٹرز و دعوتی اشتہارات</span>
-        </a>
-      
-        <a href="./imp-notice" style="display: flex; align-items: center; gap: 8px; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; color: #1e293b; text-decoration: none; font-size: 12.5px; font-weight: 700;">
-          <i class="fa-solid fa-bell" style="color: #0f766e;"></i>
-          <span>اہم اعلانات</span>
-        </a>
-      
-    </div>
-    <div style="font-size: 12px; font-weight: 800; color: #065f46; margin-bottom: 8px;">دیگر مرکزی پورٹلز:</div>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px;">
-      <a href="./aljama" style="display: flex; align-items: center; gap: 8px; padding: 9px 11px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; color: #0369a1; text-decoration: none; font-size: 12px; font-weight: 700;">
-        <i class="fa-solid fa-book-bookmark"></i> مجلہ الجماعۃ
-      </a>
-      <a href="./library" style="display: flex; align-items: center; gap: 8px; padding: 9px 11px; background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 10px; color: #0369a1; text-decoration: none; font-size: 12px; font-weight: 700;">
-        <i class="fa-solid fa-book"></i> جمعیت لائبریری
-      </a>
-      <a href="./fikh-w-fatawa" style="display: flex; align-items: center; gap: 8px; padding: 9px 11px; background: #f0fdfa; border: 1px solid #99f6e4; border-radius: 10px; color: #0f766e; text-decoration: none; font-size: 12px; font-weight: 700;">
-        <i class="fa-solid fa-scale-balanced"></i> فقہ و فتاویٰ
-      </a>
-      <a href="./video-gallery" style="display: flex; align-items: center; gap: 8px; padding: 9px 11px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; color: #dc2626; text-decoration: none; font-size: 12px; font-weight: 700;">
-        <i class="fa-solid fa-circle-play"></i> ویڈیو گیلری
-      </a>
-    </div>
-  </div>
-</aside>
-<script>
-  function openSjDeptDrawer() {
-    var d = document.getElementById('sjDeptDrawer');
-    var b = document.getElementById('sjDeptDrawerBackdrop');
-    if (d) d.classList.add('open');
-    if (b) b.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeSjDeptDrawer() {
-    var d = document.getElementById('sjDeptDrawer');
-    var b = document.getElementById('sjDeptDrawerBackdrop');
-    if (d) d.classList.remove('open');
-    if (b) b.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-</script>
-
-
-
-<!-- 2. COMPACT BREADCRUMB & DEPARTMENT SEARCH BAR -->
-<div class="sj-dept-hub-wrap">
-  <div class="sj-dept-top-row" style="margin-bottom: 0;">
-    <!-- Right: Breadcrumb -->
-    <div class="sj-dept-breadcrumb">
-      <a href="./index.html"><i class="fa-solid fa-house" style="color: #0f766e;"></i> مرکزی سرورق</a>
-      <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-      <a href="./press-release" style="color: #0f766e;">شعبۂ میڈیا و نشریات پورٹل</a>
-      
-        <i class="fa-solid fa-angle-left" style="font-size: 10px; color: #94a3b8;"></i>
-        <span style="color: #065f46; font-weight: 800;">پریس ریلیز و اعلامیے</span>
-      
-    </div>
-
-    <!-- Left: Appropriately-Sized Department Search Bar -->
-    <div class="sj-dept-search-bar">
-      <div class="sj-dept-search-input-wrap">
-        <i class="fa-solid fa-magnifying-glass sj-dept-search-icon"></i>
-        <input
-          type="text"
-          id="sjDeptLiveSearchInput"
-          class="sj-dept-search-input"
-          placeholder="پریس ریلیز، بیان، ویڈیو، پوسٹر یا موضوع تلاش کریں..."
-          autocomplete="off"
-          oninput="filterDeptPageContent(this.value)"
-        />
-      </div>
-      <button type="button" class="sj-dept-voice-btn" id="sjDeptVoiceBtn" onclick="startDeptVoiceSearch()" title="آواز سے بول کر تلاش کریں">
-        <i class="fa-solid fa-microphone"></i>
-        <span id="sjDeptVoiceTxt">آواز سے سرچ</span>
-      </button>
-    </div>
-  </div>
-</div>
-
-
-<!-- 3. PROFESSIONAL PORTAL SHARE MODAL -->
-<div class="sj-dept-share-modal" id="sjDeptShareModal" onclick="if(event.target===this) closeDeptShareModal()">
-  <div class="sj-dept-share-box">
-    <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f59e0b;">
-      <h3 style="margin: 0; font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-share-nodes"></i> شعبۂ میڈیا و نشریات پورٹل — لنک شیئر کریں
-      </h3>
-      <button type="button" onclick="closeDeptShareModal()" style="background: rgba(255,255,255,0.18); border: none; color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">&times;</button>
-    </div>
-    <div style="padding: 20px;">
-      <p style="margin: 0 0 10px 0; font-size: 13.5px; color: #475569;">
-        اس مستقل شعبہ / پورٹل کا براہِ راست لنک کاپی کریں یا واٹس ایپ اور سوشل میڈیا پر شیئر کریں:
-      </p>
-      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-        <input
-          type="text"
-          id="sjDeptShareUrlInput"
-          readonly
-          style="flex: 1; height: 40px; padding: 6px 12px; border: 1.5px solid #cbd5e1; border-radius: 9px; font-family: monospace; font-size: 13px; direction: ltr; text-align: left; background: #f8fafc; color: #0f172a;"
-        />
-        <button type="button" onclick="copyDeptPortalUrl()" id="sjDeptCopyBtn" style="background: #0f766e; color: #fff; border: none; border-radius: 9px; padding: 0 16px; font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer;">
-          <i class="fa-regular fa-copy"></i> کاپی کریں
-        </button>
-      </div>
-      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-        <a id="sjShareWaLink" href="#" target="_blank" style="flex: 1; background: #16a34a; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-          <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر شیئر کریں
-        </a>
-        <a id="sjShareTgLink" href="#" target="_blank" style="flex: 1; background: #0284c7; color: #fff; text-decoration: none; padding: 9px 14px; border-radius: 9px; text-align: center; font-weight: 700; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
-          <i class="fa-brands fa-telegram"></i> ٹیلیگرام پر شیئر کریں
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  function openDeptShareModal() {
-    var modal = document.getElementById('sjDeptShareModal');
-    var inp = document.getElementById('sjDeptShareUrlInput');
-    var wa = document.getElementById('sjShareWaLink');
-    var tg = document.getElementById('sjShareTgLink');
-    var url = window.location.href;
-    var title = document.title || 'شعبۂ میڈیا و نشریات پورٹل';
-    if (inp) inp.value = url;
-    if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(title + '\n' + url);
-    if (tg) tg.href = 'https://t.me/share/url?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(title);
-    if (modal) modal.classList.add('open');
-  }
-
-  function closeDeptShareModal() {
-    var modal = document.getElementById('sjDeptShareModal');
-    if (modal) modal.classList.remove('open');
-  }
-
-  function copyDeptPortalUrl() {
-    var inp = document.getElementById('sjDeptShareUrlInput');
-    var btn = document.getElementById('sjDeptCopyBtn');
-    if (!inp) return;
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(inp.value).then(function() {
-        if (btn) {
-          btn.innerHTML = '<i class="fa-solid fa-check"></i> کاپی ہو گیا!';
-          setTimeout(function() { btn.innerHTML = '<i class="fa-regular fa-copy"></i> کاپی کریں'; }, 2000);
-        }
-      });
-    }
-  }
-
-  function filterDeptPageContent(query) {
-    var q = (query || '').trim().toLowerCase();
-    // If on Masajid page with #mainSearchInput, sync directly with its live search engine
-    var mainMasjidInp = document.getElementById('mainSearchInput');
-    if (mainMasjidInp) {
-      mainMasjidInp.value = query;
-      if (typeof commitMosqueSearch === 'function') {
-        commitMosqueSearch();
-      }
-      return;
-    }
-    // Sync with dedicated portal search inputs on Activities, District, Upcoming, Moon, Aina, etc.
-    var customHookIds = ['sjActSearchInput', 'sjDistSearchInput', 'sjUpcomingSearchInput', 'sjMoonSearchInput'];
-    for (var i = 0; i < customHookIds.length; i++) {
-      var customEl = document.getElementById(customHookIds[i]);
-      if (customEl) {
-        customEl.value = query;
-        customEl.dispatchEvent(new Event('input', { bubbles: true }));
-        return;
-      }
-    }
-    var pageInputs = document.querySelectorAll('section#content input[type="text"], section#content input[type="search"]');
-    pageInputs.forEach(function(inp) {
-      if (inp.id !== 'sjDeptLiveSearchInput' && inp.placeholder && inp.placeholder.includes('تلاش')) {
-        inp.value = query;
-        inp.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-    });
-
-    // Also filter cards/blocks inside section#content
-    var items = document.querySelectorAll('section#content article, section#content .masjid-card, section#content .district-card, section#content .sj-dist-card, section#content .sj-act-dept-card, section#content .sj-event-card, section#content .sj-moon-card, section#content .head-wrapper, section#content .video-card, section#content .poster-card, section#content .press-card, section#content .recent-activities-box > div > div');
-    if (items.length > 0) {
-      items.forEach(function(el) {
-        var txt = (el.textContent || '').toLowerCase();
-        el.style.display = (!q || txt.includes(q)) ? '' : 'none';
-      });
-    }
-  }
-
-  var deptVoiceRec = null;
-  function startDeptVoiceSearch() {
-    var SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var inp = document.getElementById('sjDeptLiveSearchInput');
-    var txt = document.getElementById('sjDeptVoiceTxt');
-    if (!SpeechRec) {
-      if (inp) inp.focus();
-      return;
-    }
-    deptVoiceRec = new SpeechRec();
-    deptVoiceRec.lang = 'ur-PK';
-    deptVoiceRec.onstart = function() { if (txt) txt.textContent = 'بولیں...'; };
-    deptVoiceRec.onresult = function(e) {
-      var tr = e.results[0][0].transcript;
-      if (inp && tr) {
-        inp.value = tr.trim();
-        filterDeptPageContent(inp.value);
-      }
-    };
-    deptVoiceRec.onend = function() { if (txt) txt.textContent = 'آواز سے سرچ'; };
-    deptVoiceRec.start();
-  }
-</script>
-
 
 <style id="gdocs-scrollbar-override">
 /*-----------------------------------------------------
@@ -1450,172 +821,630 @@ body *::-webkit-scrollbar-thumb:hover {
     }
   })();
 </script>
+  
 
-  <section class="sj-search-hero">
-    <h1><i class="fa-solid fa-bolt" style="color:#fbbf24;"></i> عالمی برق رفتار تلاش</h1>
-    <p>مکتبہ کتب، مطبوعاتِ جمعیت، فتاویٰ، علمی مضامین، ماہنامہ الجماعۃ، مساجد، خطبات جمعہ اور پریس ریلیز میں بیک وقت تلاش کریں</p>
-    <form class="sj-search-box-wrap" action="./search" method="GET" id="sjPageSearchForm">
-      <input type="text" name="q" id="sjPageSearchInput" value="" placeholder="اردو، عربی یا رومن اردو میں تلاش کریں (مثلاً: توحید، نماز، زکوٰۃ، فتویٰ، مسجد، الجماعۃ)..." autocomplete="off">
-      <input type="hidden" name="category" id="sjPageCategoryInput" value="all">
-      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i><span>تلاش کریں</span></button>
-    </form>
-    <div class="sj-quick-tags">
-      <a href="./search?q=توحید" class="sj-quick-tag">عقیدۂ توحید</a>
-      <a href="./search?q=نماز" class="sj-quick-tag">احکامِ نماز</a>
-      <a href="./search?q=زکوٰۃ" class="sj-quick-tag">زکوٰۃ و صدقات</a>
-      <a href="./search?q=مجلہ الجماعۃ" class="sj-quick-tag">مجلہ الجماعۃ</a>
-      <a href="./search?q=مسجد" class="sj-quick-tag">مساجد ممبئی</a>
-      <a href="./search?q=فتویٰ" class="sj-quick-tag">دار الافتاء فتاویٰ</a>
-      <a href="./search?q=خطبات جمعہ" class="sj-quick-tag">خطباتِ جمعہ</a>
-    </div>
-  </section>
+  <main class="sj-search-main" role="main">
+    <section class="sj-search-hero" aria-labelledby="sjHeroHeading">
+      <div class="sj-mode-switcher" role="tablist" aria-label="تحقیق اور تلاش کا موڈ منتخب کریں">
+        <button type="button" class="sj-mode-btn active" id="btnModeSearch" role="tab" aria-selected="true">
+          <i class="fa-solid fa-bolt"></i>
+          <span>عالمی برق رفتار تلاش</span>
+        </button>
+        <button type="button" class="sj-mode-btn " id="btnModeIlmi" role="tab" aria-selected="false">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>علمی معاون (مستند حوالہ جاتی تحقیق)</span>
+        </button>
+        <button type="button" class="sj-mode-btn" id="btnToggleMemory" aria-expanded="false" aria-controls="sjMemoryDrawer">
+          <i class="fa-solid fa-brain"></i>
+          <span>علمی یادداشت</span>
+        </button>
+        <button type="button" class="sj-mode-btn" id="btnToggleProposals" aria-expanded="false" aria-controls="sjProposalsDrawer">
+          <i class="fa-solid fa-file-circle-check"></i>
+          <span>تحقیقی بیاض و تجاویز</span>
+          <span id="sjPendingBadge" style="background:#d97706;color:#fff;padding-inline:7px;border-radius:999px;font-size:12px;display:none;"><bdi>0</bdi></span>
+        </button>
+      </div>
 
-  <div class="sj-search-container">
-    
-    <div class="sj-cat-tabs" id="sjCatTabs">
-      
-      
-        <a href="./search?q=&category=all"
-           class="sj-cat-tab active"
-           data-cat="all">
-          <i class="fa-solid fa-layer-group"></i>
-          <span>تمام نتائج</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=books"
-           class="sj-cat-tab "
-           data-cat="books">
-          <i class="fa-solid fa-book-open"></i>
-          <span>مکتبہ کتب</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=publications"
-           class="sj-cat-tab "
-           data-cat="publications">
-          <i class="fa-solid fa-stamp"></i>
-          <span>مطبوعاتِ جمعیت</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=fatawa"
-           class="sj-cat-tab "
-           data-cat="fatawa">
-          <i class="fa-solid fa-scale-balanced"></i>
-          <span>فقہ و فتاویٰ</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=articles"
-           class="sj-cat-tab "
-           data-cat="articles">
-          <i class="fa-solid fa-feather-pointed"></i>
-          <span>علمی مضامین</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=magazine"
-           class="sj-cat-tab "
-           data-cat="magazine">
-          <i class="fa-solid fa-book-open-reader"></i>
-          <span>مجلہ الجماعۃ</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=masajid"
-           class="sj-cat-tab "
-           data-cat="masajid">
-          <i class="fa-solid fa-mosque"></i>
-          <span>مساجد ڈائریکٹری</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=juma"
-           class="sj-cat-tab "
-           data-cat="juma">
-          <i class="fa-solid fa-calendar-week"></i>
-          <span>خطباتِ جمعہ</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=press"
-           class="sj-cat-tab "
-           data-cat="press">
-          <i class="fa-solid fa-bullhorn"></i>
-          <span>پریس ریلیز</span>
-          
-        </a>
-      
-        <a href="./search?q=&category=media"
-           class="sj-cat-tab "
-           data-cat="media">
-          <i class="fa-solid fa-photo-film"></i>
-          <span>آئینہ و میڈیا</span>
-          
-        </a>
-      
-    </div>
+      <h1 id="sjHeroHeading">
+        <i class="fa-solid fa-bolt" style="color:#0f766e;"></i>
+        <span id="sjHeroTitleText">عالمی برق رفتار ہائبرڈ تلاش</span>
+      </h1>
+      <p id="sjHeroSubText">
+        مکتبہ کتب، مطبوعاتِ جمعیت، فتاویٰ، علمی مضامین، ماہنامہ الجماعۃ، مساجد، خطبات جمعہ اور پریس ریلیز میں ہائبرڈ انجن سے بیک وقت تلاش کریں
+      </p>
 
-    <div id="sjSearchMeta" style="margin-bottom: 16px; font-size: 13.5px; color: #475569; display: flex; justify-content: space-between; align-items: center;">
-      
-        <span>اوپر سرچ باکس میں کوئی بھی لفظ لکھیں — نتائج فورا بغیر صفحہ ریفریش کیے سامنے آئیں گے۔</span>
-      
-    </div>
+      <form class="sj-search-box-wrap" action="./search" method="GET" id="sjPageSearchForm" role="search">
+        <input type="text" name="q" id="sjPageSearchInput" dir="auto" value="" aria-label="علمی سوال یا تلاش کا لفظ درج کریں" placeholder="اردو، عربی یا رومن اردو میں سوال یا موضوع لکھیں (مثلاً: شرح عقیدہ واسطیہ، سفر میں جمعہ، زکوٰۃ)..." autocomplete="off">
+        <input type="hidden" name="category" id="sjPageCategoryInput" value="all">
+        <input type="hidden" name="mode" id="sjPageModeInput" value="search">
+        <button type="submit" id="sjSearchSubmitBtn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span id="sjSubmitLabel">تلاش کریں</span>
+        </button>
+      </form>
 
-    <div class="sj-results-grid" id="sjResultsGrid">
+      <div class="sj-quick-tags" aria-label="فوری علمی موضوعات">
+        <a href="./ilmi-muawin?q=شرح عقیدہ واسطیہ&mode=ilmi" class="sj-quick-tag" data-quick-q="شرح عقیدہ واسطیہ">شرح عقیدہ واسطیہ</a>
+        <a href="./ilmi-muawin?q=سفر میں جمعہ فرض ہے یا ظہر&mode=ilmi" class="sj-quick-tag" data-quick-q="سفر میں جمعہ فرض ہے یا ظہر">سفر میں جمعہ کا حکم</a>
+        <a href="./ilmi-muawin?q=پینشن بیچنے کی شرعی حیثیت&mode=ilmi" class="sj-quick-tag" data-quick-q="پینشن بیچنے کی شرعی حیثیت">پینشن اور زکوٰۃ</a>
+        <a href="./ilmi-muawin?q=عقیدہ سلف اور اتباع سنت&mode=ilmi" class="sj-quick-tag" data-quick-q="عقیدہ سلف اور اتباع سنت">عقیدۂ سلف و اتباعِ سنت</a>
+        <a href="./search?q=مجلہ الجماعۃ" class="sj-quick-tag" data-quick-q="مجلہ الجماعۃ">ماہنامہ الجماعۃ</a>
+        <a href="./search?q=مسجد اہل حدیث" class="sj-quick-tag" data-quick-q="مسجد اہل حدیث">مساجد ممبئی</a>
+      </div>
+    </section>
+
+    <div class="sj-search-container">
+      <!-- 3-Tier Living Memory Drawer (Tier 1 Permanent, Tier 2 TTL Study Topic, Tier 3 Rolling Session + Delete Control) -->
+      <section class="sj-drawer-box" id="sjMemoryDrawer" aria-label="تین سطحی علمی یادداشت">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-block-end:12px;">
+          <div>
+            <h2 style="margin:0;font-size:20px;line-height:2.1;color:#064e3b;"><i class="fa-solid fa-brain"></i> تین سطحی علمی یادداشت (<bdi>3-Tier Living Memory</bdi>)</h2>
+            <p style="margin:0;font-size:14px;color:#334155;line-height:2.1;">تلاش کا ذخیرہ (<bdi>RAG</bdi>) اور آپ کی ذاتی تحقیقی ترجیحات مکمل طور پر الگ اور محفوظ رکھی جاتی ہیں۔ ہر اندراج کو آپ کسی بھی وقت حذف کر سکتے ہیں۔</p>
+          </div>
+          <span class="sj-ilmi-pill" id="sjNetworkSyncBadge"><i class="fa-solid fa-wifi"></i> آن لائن سنک فعال</span>
+        </div>
+        <form id="sjMemoryAddForm" style="display:flex;flex-wrap:wrap;gap:10px;margin-block-end:14px;">
+          <select id="sjMemTier" aria-label="یادداشت کا درجہ" style="min-height:48px;padding-inline:12px;border-radius:12px;border:1px solid #94a3b8;font-family:inherit;font-size:14.5px;background:#fff;color:#0f172a;">
+            <option value="1">درجہ ۱: مستقل علمی ترجیح (شعبہ / حوالہ اسلوب)</option>
+            <option value="2">درجہ ۲: زیرِ تحقیق موضوع (مع مدتِ میعاد 7 دن)</option>
+          </select>
+          <input type="text" id="sjMemKey" dir="auto" placeholder="عنوان (مثلاً: تحقیقی موضوع یا فقہی شعبہ)" style="min-height:48px;padding-inline:12px;border-radius:12px;border:1px solid #94a3b8;font-family:inherit;font-size:14.5px;flex:1;min-width:180px;">
+          <input type="text" id="sjMemVal" dir="auto" placeholder="تفصیل لکھیں (مثلاً: کتاب الزکوٰۃ اور معاصر مالیاتی مسائل)" style="min-height:48px;padding-inline:12px;border-radius:12px;border:1px solid #94a3b8;font-family:inherit;font-size:14.5px;flex:2;min-width:220px;">
+          <button type="submit" class="sj-ilmi-btn"><i class="fa-solid fa-plus"></i> یادداشت محفوظ کریں</button>
+        </form>
+        <div id="sjMemoryListContainer" style="display:grid;gap:8px;"></div>
+      </section>
+
+      <!-- Staged Human-in-the-Loop Proposal & Offline Study Notes Drawer -->
+      <section class="sj-drawer-box" id="sjProposalsDrawer" aria-label="زیر التوا تحقیقی تجاویز اور منظور شدہ نوٹس">
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-block-end:12px;">
+          <div>
+            <h2 style="margin:0;font-size:20px;line-height:2.1;color:#064e3b;"><i class="fa-solid fa-code-compare"></i> انسانی منظوری کا مرحلہ وار نظام (<bdi>Staged Proposal &amp; Offline Sync</bdi>)</h2>
+            <p style="margin:0;font-size:14px;color:#334155;line-height:2.1;">علمی معاون کی تیار کردہ کوئی بھی خلاصہ جاتی تجویز آپ کی صریح منظوری کے بغیر تحقیقی بیاض میں محفوظ نہیں ہوتی۔ آف لائن موڈ میں کیے گئے فیصلے انٹرنیٹ بحال ہوتے ہی خودکار سنک ہو جاتے ہیں۔</p>
+          </div>
+        </div>
+        <div id="sjPendingProposalsList"></div>
+        <h3 style="margin-block:16px 8px;font-size:17.5px;line-height:2.1;color:#0f172a;">منظور شدہ تحقیقی نوٹس</h3>
+        <div id="sjApprovedNotesList"></div>
+      </section>
+
+      <!-- Category Filter Pills -->
       
+      <nav class="sj-cat-tabs" id="sjCatTabs" aria-label="ماخذ کی اقسام">
+        
+        
+          <a href="./search?q=&category=all&mode=search"
+             class="sj-cat-tab active"
+             data-cat="all">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>تمام مستند مآخذ</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=fatawa&mode=search"
+             class="sj-cat-tab "
+             data-cat="fatawa">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>دار الافتاء فتاویٰ</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=publications&mode=search"
+             class="sj-cat-tab "
+             data-cat="publications">
+            <i class="fa-solid fa-stamp"></i>
+            <span>مطبوعاتِ جمعیت</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=books&mode=search"
+             class="sj-cat-tab "
+             data-cat="books">
+            <i class="fa-solid fa-book-open"></i>
+            <span>مکتبہ کتب</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=articles&mode=search"
+             class="sj-cat-tab "
+             data-cat="articles">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <span>علمی مضامین</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=magazine&mode=search"
+             class="sj-cat-tab "
+             data-cat="magazine">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>مجلہ الجماعۃ</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=masajid&mode=search"
+             class="sj-cat-tab "
+             data-cat="masajid">
+            <i class="fa-solid fa-mosque"></i>
+            <span>مساجد ڈائریکٹری</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=juma&mode=search"
+             class="sj-cat-tab "
+             data-cat="juma">
+            <i class="fa-solid fa-calendar-week"></i>
+            <span>خطباتِ جمعہ</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=press&mode=search"
+             class="sj-cat-tab "
+             data-cat="press">
+            <i class="fa-solid fa-bullhorn"></i>
+            <span>پریس ریلیز</span>
+            
+          </a>
+        
+          <a href="./search?q=&category=media&mode=search"
+             class="sj-cat-tab "
+             data-cat="media">
+            <i class="fa-solid fa-photo-film"></i>
+            <span>آئینہ و دروس</span>
+            
+          </a>
+        
+      </nav>
+
+      <!-- Ilmi Muawin Citation-Grounded Answer Panel -->
+      <section id="sjIlmiAnswerContainer" style="display:none;" aria-live="polite">
+        
+      </section>
+
+      <div id="sjSearchMeta" style="margin-block-end: 16px; font-size: 14.5px; line-height: 2.1; color: #334155; display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; align-items: center;">
+        
+          <span>اوپر سرچ باکس میں کوئی بھی علمی سوال یا عنوان لکھیں — ہائبرڈ <bdi>BM25 + Vector + RRF</bdi> انجن فوراً باحوالہ نتائج پیش کرے گا۔</span>
+        
+      </div>
+
+      <div class="sj-results-grid" id="sjResultsGrid">
+        
+      </div>
     </div>
-  </div>
+  </main>
 
   <script>
     (function () {
       var input = document.getElementById('sjPageSearchInput');
       var grid = document.getElementById('sjResultsGrid');
       var meta = document.getElementById('sjSearchMeta');
+      var ilmiBox = document.getElementById('sjIlmiAnswerContainer');
       var catInput = document.getElementById('sjPageCategoryInput');
+      var modeInput = document.getElementById('sjPageModeInput');
+      var btnModeSearch = document.getElementById('btnModeSearch');
+      var btnModeIlmi = document.getElementById('btnModeIlmi');
+      var btnToggleMemory = document.getElementById('btnToggleMemory');
+      var btnToggleProposals = document.getElementById('btnToggleProposals');
+      var memDrawer = document.getElementById('sjMemoryDrawer');
+      var propDrawer = document.getElementById('sjProposalsDrawer');
+      var heroTitle = document.getElementById('sjHeroTitleText');
+      var submitLabel = document.getElementById('sjSubmitLabel');
+      var syncBadge = document.getElementById('sjNetworkSyncBadge');
       var timer = null;
+      var lastIlmiResult = null;
 
-      if (!input || !grid) return;
+      var MEM_LOCAL_KEY = 'sjahm_ilmi_memory_v1';
+      var PROP_LOCAL_KEY = 'sjahm_ilmi_proposals_v1';
+      var NOTES_LOCAL_KEY = 'sjahm_ilmi_approved_notes_v1';
+      var OFFLINE_QUEUE_KEY = 'sjahm_ilmi_offline_sync_queue_v1';
+
+      function escHtml(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      // Register PWA Service Worker for Offline Study & Notes Sync
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register((window.__SJAHM_BASE_ROOT__ ? window.__SJAHM_BASE_ROOT__ + '/sw.js' : '/sw.js')).catch(function () {});
+      }
+
+      function updateOnlineBadge() {
+        if (!syncBadge) return;
+        if (navigator.onLine) {
+          syncBadge.innerHTML = '<i class="fa-solid fa-wifi"></i> آن لائن سنک فعال';
+          syncBadge.style.background = '#ecfdf5';
+          syncBadge.style.color = '#065f46';
+          flushOfflineQueue();
+        } else {
+          syncBadge.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> آف لائن مطالعہ موڈ (قطار میں محفوظ)';
+          syncBadge.style.background = '#fffbeb';
+          syncBadge.style.color = '#92400e';
+        }
+      }
+      window.addEventListener('online', updateOnlineBadge);
+      window.addEventListener('offline', updateOnlineBadge);
+
+      function readStore(k, defVal) {
+        try { return JSON.parse(localStorage.getItem(k) || JSON.stringify(defVal)); } catch (_) { return defVal; }
+      }
+      function writeStore(k, val) {
+        try { localStorage.setItem(k, JSON.stringify(val)); } catch (_) {}
+      }
+
+      function enqueueOfflineAction(act) {
+        var q = readStore(OFFLINE_QUEUE_KEY, []);
+        q.push(act);
+        writeStore(OFFLINE_QUEUE_KEY, q);
+      }
+
+      function flushOfflineQueue() {
+        var q = readStore(OFFLINE_QUEUE_KEY, []);
+        if (!q.length || !navigator.onLine) return;
+        writeStore(OFFLINE_QUEUE_KEY, []);
+        q.forEach(function (item) {
+          fetch(item.url, {
+            method: item.method || 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(item.body || {})
+          }).catch(function () {});
+        });
+      }
+
+      function setMode(nextMode) {
+        modeInput.value = nextMode;
+        var isIlmi = nextMode === 'ilmi';
+        btnModeSearch.classList.toggle('active', !isIlmi);
+        btnModeIlmi.classList.toggle('active', isIlmi);
+        btnModeSearch.setAttribute('aria-selected', isIlmi ? 'false' : 'true');
+        btnModeIlmi.setAttribute('aria-selected', isIlmi ? 'true' : 'false');
+        if (heroTitle) heroTitle.textContent = isIlmi ? 'علمی معاون — مستند حوالہ جاتی تحقیقی انجن' : 'عالمی برق رفتار ہائبرڈ تلاش';
+        if (submitLabel) submitLabel.textContent = isIlmi ? 'باحوالہ تحقیق کریں' : 'تلاش کریں';
+        if (!isIlmi && ilmiBox) ilmiBox.style.display = 'none';
+        if (input && input.value.trim()) executeCurrentQuery(input.value.trim());
+      }
+
+      if (btnModeSearch) btnModeSearch.addEventListener('click', function () { setMode('search'); });
+      if (btnModeIlmi) btnModeIlmi.addEventListener('click', function () { setMode('ilmi'); });
+
+      if (btnToggleMemory) {
+        btnToggleMemory.addEventListener('click', function () {
+          var open = memDrawer.classList.toggle('open');
+          btnToggleMemory.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) renderMemoryList();
+        });
+      }
+      if (btnToggleProposals) {
+        btnToggleProposals.addEventListener('click', function () {
+          var open = propDrawer.classList.toggle('open');
+          btnToggleProposals.setAttribute('aria-expanded', open ? 'true' : 'false');
+          if (open) renderProposalsAndNotes();
+        });
+      }
+
+      // 3-Tier Living Memory UI (Dual Server + Local Persistence with Delete Control)
+      function renderMemoryList() {
+        var box = document.getElementById('sjMemoryListContainer');
+        if (!box) return;
+        var items = readStore(MEM_LOCAL_KEY, []);
+        var nowIso = new Date().toISOString();
+        var active = items.filter(function (m) { return !m.deletedAt && !m.superseded_by && (!m.expires_at || m.expires_at > nowIso); });
+        if (!active.length) {
+          box.innerHTML = '<div style="padding:12px;background:#f8fafc;border-radius:12px;color:#475569;font-size:14px;">ابھی کوئی ذاتی تحقیقی ترجیح محفوظ نہیں ہے۔ اوپر فارم سے اپنی علمی ترجیح یا زیرِ مطالعہ موضوع شامل کریں۔</div>';
+          return;
+        }
+        box.innerHTML = active.map(function (m) {
+          var tierBadge = m.tier === 2 ? 'درجہ ۲ (زیرِ تحقیق مع TTL)' : (m.tier === 3 ? 'درجہ ۳ (سیشن سیاق)' : 'درجہ ۱ (مستقل ترجیح)');
+          return '<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;">' +
+            '<div>' +
+              '<span class="sj-ilmi-pill" style="margin-inline-end:8px;">' + escHtml(tierBadge) + '</span>' +
+              '<strong>' + escHtml(m.key) + ':</strong> ' + escHtml(m.value) +
+              '<span style="font-size:12px;color:#475569;margin-inline-start:8px;">(آغاز: <bdi>' + escHtml((m.valid_from || '').slice(0, 10)) + '</bdi>)</span>' +
+            '</div>' +
+            '<button type="button" class="sj-ilmi-btn danger" data-del-mem="' + escHtml(m.id) + '" style="min-height:42px;padding-inline:12px;"><i class="fa-solid fa-trash-can"></i> حذف کریں</button>' +
+          '</div>';
+        }).join('');
+      }
+
+      var memForm = document.getElementById('sjMemoryAddForm');
+      if (memForm) {
+        memForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var tier = Number(document.getElementById('sjMemTier').value) || 1;
+          var key = document.getElementById('sjMemKey').value.trim() || 'علمی ترجیح';
+          var val = document.getElementById('sjMemVal').value.trim();
+          if (!val) return;
+          if (/ignore\s+previous|system\s+prompt|<\s*script/i.test(key + ' ' + val)) {
+            alert('حفاظتی نظام (ASI06): مشکوک ہدایاتی عبارت یادداشت میں محفوظ کرنے کی اجازت نہیں ہے۔');
+            return;
+          }
+          var now = new Date();
+          var newId = 'mem_' + now.getTime();
+          var list = readStore(MEM_LOCAL_KEY, []);
+          list.forEach(function (old) {
+            if (old.tier === tier && old.key === key && !old.superseded_by) old.superseded_by = newId;
+          });
+          var entry = {
+            id: newId,
+            tier: tier,
+            key: key,
+            value: val,
+            valid_from: now.toISOString(),
+            superseded_by: null,
+            expires_at: tier === 2 ? new Date(now.getTime() + 7 * 86400000).toISOString() : null
+          };
+          list.unshift(entry);
+          writeStore(MEM_LOCAL_KEY, list);
+          document.getElementById('sjMemVal').value = '';
+          renderMemoryList();
+          if (navigator.onLine) {
+            fetch('/api/ilmi-muawin/memory', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ tier: tier, key: key, value: val })
+            }).catch(function () {});
+          } else {
+            enqueueOfflineAction({ url: '/api/ilmi-muawin/memory', method: 'POST', body: { tier: tier, key: key, value: val } });
+          }
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        var delBtn = e.target.closest && e.target.closest('[data-del-mem]');
+        if (delBtn) {
+          var id = delBtn.getAttribute('data-del-mem');
+          var list = readStore(MEM_LOCAL_KEY, []);
+          list.forEach(function (m) { if (m.id === id) m.deletedAt = new Date().toISOString(); });
+          writeStore(MEM_LOCAL_KEY, list);
+          renderMemoryList();
+          fetch('/api/ilmi-muawin/memory/' + encodeURIComponent(id), { method: 'DELETE' }).catch(function () {});
+          return;
+        }
+
+        var stageBtn = e.target.closest && e.target.closest('#btnStageIlmiProposal');
+        if (stageBtn && lastIlmiResult && !lastIlmiResult.abstained) {
+          var props = readStore(PROP_LOCAL_KEY, []);
+          var newProp = {
+            proposalId: 'prop_' + Date.now(),
+            status: 'pending',
+            title: 'تحقیقی خلاصہ: ' + (lastIlmiResult.query || ''),
+            proposedText: lastIlmiResult.answerUrdu || '',
+            citations: lastIlmiResult.citations || [],
+            riskSummary: 'یہ تحقیقی نوٹ ابھی زیرِ التوا (Pending) ہے؛ آپ کی صریح منظوری کے بغیر تحقیقی بیاض میں محفوظ نہیں ہوگا۔',
+            createdAt: new Date().toISOString()
+          };
+          props.unshift(newProp);
+          writeStore(PROP_LOCAL_KEY, props);
+          propDrawer.classList.add('open');
+          renderProposalsAndNotes();
+          propDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          return;
+        }
+
+        var actBtn = e.target.closest && e.target.closest('[data-prop-action]');
+        if (actBtn) {
+          var pid = actBtn.getAttribute('data-prop-id');
+          var action = actBtn.getAttribute('data-prop-action');
+          var propsList = readStore(PROP_LOCAL_KEY, []);
+          var target = propsList.find(function (p) { return p.proposalId === pid; });
+          if (!target) return;
+
+          if (action === 'reject') {
+            target.status = 'rejected';
+            writeStore(PROP_LOCAL_KEY, propsList);
+            renderProposalsAndNotes();
+            return;
+          }
+
+          var finalBody = target.proposedText;
+          if (action === 'edit') {
+            var edited = window.prompt('تحقیقی نوٹ میں مطلوبہ ترمیم کریں اور محفوظ کرنے کے لیے تصدیق کریں:', target.proposedText);
+            if (!edited) return;
+            finalBody = edited;
+          }
+
+          target.status = 'approved';
+          target.proposedText = finalBody;
+          writeStore(PROP_LOCAL_KEY, propsList);
+
+          var notes = readStore(NOTES_LOCAL_KEY, []);
+          notes.unshift({
+            noteId: 'note_' + Date.now(),
+            title: target.title,
+            body: finalBody,
+            citations: target.citations || [],
+            approvedAt: new Date().toISOString()
+          });
+          writeStore(NOTES_LOCAL_KEY, notes);
+          renderProposalsAndNotes();
+
+          if (!navigator.onLine) {
+            enqueueOfflineAction({ url: '/api/ilmi-muawin/proposals', method: 'POST', body: { title: target.title, proposedText: finalBody } });
+          }
+        }
+      });
+
+      function renderProposalsAndNotes() {
+        var pBox = document.getElementById('sjPendingProposalsList');
+        var nBox = document.getElementById('sjApprovedNotesList');
+        var badge = document.getElementById('sjPendingBadge');
+        var pending = readStore(PROP_LOCAL_KEY, []).filter(function (p) { return p.status === 'pending'; });
+        var notes = readStore(NOTES_LOCAL_KEY, []);
+
+        if (badge) {
+          badge.style.display = pending.length ? 'inline-block' : 'none';
+          badge.innerHTML = '<bdi>' + pending.length + '</bdi>';
+        }
+
+        if (pBox) {
+          if (!pending.length) {
+            pBox.innerHTML = '<div style="padding:12px;background:#f8fafc;border-radius:12px;color:#475569;font-size:14px;">اس وقت کوئی زیرِ التوا (Pending) تجویز موجود نہیں ہے۔ «علمی معاون» کے کسی بھی جواب پر «تحقیقی نوٹ کی تجویز بنائیں» دبائیں۔</div>';
+          } else {
+            pBox.innerHTML = pending.map(function (p) {
+              var lines = String(p.proposedText || '').split('\n').filter(Boolean);
+              return '<article class="sj-proposal-card">' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">' +
+                  '<strong><i class="fa-solid fa-hourglass-half"></i> ' + escHtml(p.title) + '</strong>' +
+                  '<span class="sj-ilmi-pill" style="background:#fef3c7;color:#92400e;border-color:#f59e0b;">زیرِ التوا منظوری (<bdi>Pending Diff</bdi>)</span>' +
+                '</div>' +
+                '<p style="margin:6px 0;font-size:13.5px;color:#78350f;">⚠️ ' + escHtml(p.riskSummary) + '</p>' +
+                lines.map(function (ln) { return '<div class="sj-diff-line-add">+ ' + escHtml(ln) + '</div>'; }).join('') +
+                '<div style="display:flex;flex-wrap:wrap;gap:8px;margin-block-start:10px;">' +
+                  '<button type="button" class="sj-ilmi-btn" data-prop-action="approve" data-prop-id="' + escHtml(p.proposalId) + '"><i class="fa-solid fa-check"></i> تجویز قبول کریں</button>' +
+                  '<button type="button" class="sj-ilmi-btn secondary" data-prop-action="edit" data-prop-id="' + escHtml(p.proposalId) + '"><i class="fa-solid fa-pen-to-square"></i> ترمیم کر کے منظور کریں</button>' +
+                  '<button type="button" class="sj-ilmi-btn danger" data-prop-action="reject" data-prop-id="' + escHtml(p.proposalId) + '"><i class="fa-solid fa-xmark"></i> مسترد کریں</button>' +
+                '</div>' +
+              '</article>';
+            }).join('');
+          }
+        }
+
+        if (nBox) {
+          if (!notes.length) {
+            nBox.innerHTML = '<div style="padding:12px;background:#f8fafc;border-radius:12px;color:#475569;font-size:14px;">ابھی تک کوئی منظور شدہ نوٹ تحقیقی بیاض میں شامل نہیں کیا گیا۔</div>';
+          } else {
+            nBox.innerHTML = notes.map(function (n) {
+              return '<div style="background:#f8fafc;border:1px solid #cbd5e1;border-inline-start:4px solid #0f5132;border-radius:12px;padding:12px 16px;margin-block-end:10px;">' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;"><strong>' + escHtml(n.title) + '</strong><span style="font-size:12px;color:#475569;"><bdi>' + escHtml((n.approvedAt || '').slice(0, 10)) + '</bdi></span></div>' +
+                '<div style="font-size:14.5px;line-height:2.2;color:#1e293b;white-space:pre-line;margin-block-start:6px;">' + escHtml(n.body) + '</div>' +
+              '</div>';
+            }).join('');
+          }
+        }
+      }
+
+      function renderIlmiAnswer(data) {
+        if (!ilmiBox) return;
+        lastIlmiResult = data;
+        ilmiBox.style.display = 'block';
+
+        if (!data || data.blocked) {
+          ilmiBox.innerHTML = '<div class="sj-abstain-box" style="background:#fef2f2;border-color:#ef4444;color:#991b1b;">' +
+            '<strong><i class="fa-solid fa-shield-virus"></i> حفاظتی رکاوٹ (<bdi>OWASP ' + escHtml((data && data.owaspControl) || 'ASI01') + '</bdi>):</strong>' +
+            '<p style="margin:6px 0 0;">' + escHtml((data && data.answerUrdu) || 'غیر مجاز ہدایات کی وجہ سے درخواست روک دی گئی ہے۔') + '</p></div>';
+          return;
+        }
+
+        if (data.abstained || !data.citations || !data.citations.length) {
+          ilmiBox.innerHTML = '<div class="sj-abstain-box">' +
+            '<strong><i class="fa-solid fa-shield-halved"></i> علمی دیانت و احتیاطی حد (<bdi>Abstention Threshold</bdi>):</strong>' +
+            '<p style="margin:6px 0 0;">' + escHtml(data.answerUrdu || 'دستیاب مستند ذخیرے میں اس سوال کا واضح حوالہ موجود نہیں۔') + '</p></div>';
+          return;
+        }
+
+        var confPct = Math.round((data.topRerankScore || 0.75) * 100);
+        var supPct = Math.round(((data.citationAudit3D && data.citationAudit3D.supportRate) || 1) * 100);
+        var lat = (data.telemetry && data.telemetry.latencyMs) || 1.5;
+
+        ilmiBox.innerHTML = '<div class="sj-ilmi-panel">' +
+          '<div class="sj-ilmi-header">' +
+            '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">' +
+              '<span class="sj-ilmi-pill"><i class="fa-solid fa-circle-check"></i> مستند باحوالہ تحقیق (<bdi>RRF + Rerank: ' + confPct + '%</bdi>)</span>' +
+              '<span class="sj-ilmi-pill"><i class="fa-solid fa-scale-balanced"></i> حوالہ جاتی تائید: <bdi>' + supPct + '%</bdi></span>' +
+            '</div>' +
+            '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
+              '<span style="font-size:13px;color:#334155;">⚡ <bdi>' + lat + ' ms</bdi></span>' +
+              '<button type="button" class="sj-ilmi-btn" id="btnStageIlmiProposal"><i class="fa-solid fa-file-signature"></i> + تحقیقی نوٹ کی تجویز بنائیں</button>' +
+            '</div>' +
+          '</div>' +
+          (data.claims || []).map(function (cl) {
+            return '<div class="sj-ilmi-claim">' + escHtml(cl.text) +
+              ' <a href="' + escHtml(cl.sourceUrl) + '" style="color:#0284c7;font-weight:700;"><bdi>[' + escHtml((cl.citationIds || []).join(', ')) + ']</bdi></a></div>';
+          }).join('') +
+          '<div class="sj-cit-grid">' +
+            (data.citations || []).map(function (cit) {
+              return '<article class="sj-cit-card">' +
+                '<div>' +
+                  '<div style="display:flex;justify-content:space-between;align-items:center;gap:6px;">' +
+                    '<span class="sj-result-badge" style="background:' + escHtml(cit.badgeColor || '#0f766e') + ';"><bdi>[' + escHtml(cit.citationId) + ']</bdi> ' + escHtml(cit.sourceType) + '</span>' +
+                    (cit.referenceCode ? '<span style="font-size:12.5px;color:#475569;"><bdi>' + escHtml(cit.referenceCode) + '</bdi></span>' : '') +
+                  '</div>' +
+                  '<h3 style="margin-block:8px 4px;font-size:17px;line-height:2.15;color:#0f172a;">' + escHtml(cit.title) + '</h3>' +
+                  '<div style="font-size:13.5px;color:#065f46;margin-block-end:8px;">' + escHtml(cit.authorOrMufti || '') + (cit.publishedDate ? ' • <bdi>' + escHtml(cit.publishedDate) + '</bdi>' : '') + '</div>' +
+                  '<blockquote class="sj-cit-excerpt">' + escHtml(cit.canonicalExcerpt || '') + '</blockquote>' +
+                '</div>' +
+                '<a href="' + escHtml(cit.url) + '" class="sj-ilmi-btn secondary" style="justify-content:center;margin-block-start:8px;">اصل ماخذ کھولیں <i class="fa-solid fa-arrow-up-left-from-circle"></i></a>' +
+              '</article>';
+            }).join('') +
+          '</div>' +
+        '</div>';
+      }
 
       function renderLiveResults(data) {
         if (!data || !data.results) return;
         meta.innerHTML =
-          '<span><strong>"' + data.query.replace(/</g, '&lt;') + '"</strong> کے لیے کل <strong>' + data.count + '</strong> نتائج برآمد ہوئے</span>' +
-          '<span style="background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:700;">⚡ رفتار: ' + data.tookMs + ' ملی سیکنڈ</span>';
+          '<span><strong>"' + escHtml(data.query) + '"</strong> کے لیے کل <strong><bdi>' + data.count + '</bdi></strong> مستند نتائج برآمد ہوئے</span>' +
+          '<span style="background:#ecfdf5; color:#065f46; border:1px solid #6ee7b7; padding-block:2px; padding-inline:12px; border-radius:999px; font-size:13px; font-weight:700;">⚡ ہائبرڈ رفتار: <bdi>' + data.tookMs + ' ms</bdi></span>';
 
         if (data.results.length === 0) {
-          grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #f8fafc; border-radius: 16px; border: 1px dashed #cbd5e1;">اس لفظ سے کوئی نتیجہ نہیں ملا۔</div>';
+          grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; background: #f8fafc; border-radius: 16px; border: 1px dashed #94a3b8;">دستیاب مستند ذخیرے میں اس سوال کا واضح حوالہ موجود نہیں۔</div>';
           return;
         }
 
         grid.innerHTML = data.results.map(function (item) {
-          return '<a href="' + item.url + '" class="sj-result-card">' +
+          return '<a href="' + escHtml(item.url) + '" class="sj-result-card">' +
             '<div>' +
-              '<div style="display:flex; justify-content:space-between; align-items:center;">' +
-                '<span class="sj-result-badge" style="background:' + (item.badgeColor || '#0f766e') + ';">' +
-                  '<i class="fa-solid ' + (item.icon || 'fa-bookmark') + '"></i> <span>' + item.type + '</span>' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">' +
+                '<span class="sj-result-badge" style="background:' + escHtml(item.badgeColor || '#0f766e') + ';">' +
+                  '<i class="fa-solid ' + escHtml(item.icon || 'fa-bookmark') + '"></i> <span>' + escHtml(item.type) + '</span>' +
                 '</span>' +
+                (item.referenceCode ? '<span style="font-size:12px;color:#475569;font-weight:700;"><bdi>' + escHtml(item.referenceCode) + '</bdi></span>' : '') +
               '</div>' +
-              '<h3 class="sj-result-title">' + item.title + '</h3>' +
-              (item.subtitle ? '<div class="sj-result-sub">' + item.subtitle + '</div>' : '') +
-              (item.snippet ? '<div class="sj-result-snippet">' + item.snippet + '</div>' : '') +
+              '<h3 class="sj-result-title">' + escHtml(item.title) + '</h3>' +
+              (item.subtitle ? '<div class="sj-result-sub"><bdi>' + escHtml(item.subtitle) + '</bdi></div>' : '') +
+              (item.snippet ? '<div class="sj-result-snippet">' + escHtml(item.snippet) + '</div>' : '') +
             '</div>' +
           '</a>';
         }).join('');
       }
 
-      input.addEventListener('input', function () {
-        var q = input.value.trim();
-        clearTimeout(timer);
-        if (q.length < 1) return;
-        timer = setTimeout(function () {
-          fetch('/api/global-search?q=' + encodeURIComponent(q) + '&category=' + encodeURIComponent(catInput.value || 'all'))
+      function executeCurrentQuery(q) {
+        var cat = (catInput && catInput.value) || 'all';
+        var mode = (modeInput && modeInput.value) || 'search';
+        fetch('/api/global-search?q=' + encodeURIComponent(q) + '&category=' + encodeURIComponent(cat))
+          .then(function (r) { return r.json(); })
+          .then(renderLiveResults)
+          .catch(function () {});
+
+        if (mode === 'ilmi') {
+          fetch('/api/ilmi-muawin/ask?q=' + encodeURIComponent(q) + '&category=' + encodeURIComponent(cat))
             .then(function (r) { return r.json(); })
-            .then(renderLiveResults)
+            .then(renderIlmiAnswer)
             .catch(function () {});
-        }, 90);
-      });
+        }
+      }
+
+      if (input && grid) {
+        input.addEventListener('input', function () {
+          var q = input.value.trim();
+          clearTimeout(timer);
+          if (q.length < 2) return;
+          timer = setTimeout(function () { executeCurrentQuery(q); }, 110);
+        });
+      }
+
+      var formEl = document.getElementById('sjPageSearchForm');
+      if (formEl) {
+        formEl.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var q = input ? input.value.trim() : '';
+          if (q) executeCurrentQuery(q);
+        });
+      }
+
+      renderProposalsAndNotes();
+      updateOnlineBadge();
+
+      // Auto-run query on static GitHub Pages if ?q= or mode=ilmi is in URL
+      var urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('mode') === 'ilmi' || window.location.pathname.indexOf('ilmi-muawin') !== -1) {
+        setMode('ilmi');
+      }
+      if (urlParams.get('q') && input) {
+        input.value = urlParams.get('q');
+        executeCurrentQuery(urlParams.get('q'));
+      }
     })();
   </script>
 

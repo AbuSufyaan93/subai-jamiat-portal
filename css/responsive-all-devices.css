@@ -751,4 +751,34 @@ blockquote,
     visibility: hidden !important;
     pointer-events: none !important;
   }
+
+  /* WCAG 2.2 AA & Mobile Ergonomics: >= 48px touch targets on coarse pointers */
+  :is(
+    .sj-mode-btn,
+    .sj-cat-tab,
+    .sj-ilmi-btn,
+    .sj-dept-tab,
+    .navbar .nav .nav-link,
+    .sj-search-box-wrap button
+  ) {
+    min-height: 48px;
+  }
+}
+
+/* ----------------------------------------------------------------------------
+   10. W3C RTL/BiDi ISOLATION, NASTALIQ NON-CLIPPING & WCAG 2.2 AA ACCESSIBILITY
+   ---------------------------------------------------------------------------- */
+bdi {
+  unicode-bidi: isolate;
+}
+
+input[type="text"],
+input[type="search"],
+textarea {
+  unicode-bidi: plaintext;
+}
+
+:is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2.5px solid #0284c7 !important;
+  outline-offset: 2px !important;
 }
