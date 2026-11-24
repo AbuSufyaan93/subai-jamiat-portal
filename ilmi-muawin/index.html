@@ -207,7 +207,7 @@
       justify-content: center;
     }
     .sj-quick-tag {
-      min-height: 44px;
+      min-height: 48px;
       background: #ffffff;
       color: #064e3b;
       border: 1px solid #99f6e4;
@@ -1136,9 +1136,22 @@ body *::-webkit-scrollbar-thumb:hover {
               '<strong>' + escHtml(m.key) + ':</strong> ' + escHtml(m.value) +
               '<span style="font-size:12px;color:#475569;margin-inline-start:8px;">(آغاز: <bdi>' + escHtml((m.valid_from || '').slice(0, 10)) + '</bdi>)</span>' +
             '</div>' +
-            '<button type="button" class="sj-ilmi-btn danger" data-del-mem="' + escHtml(m.id) + '" style="min-height:42px;padding-inline:12px;"><i class="fa-solid fa-trash-can"></i> حذف کریں</button>' +
+            '<button type="button" class="sj-ilmi-btn danger" data-del-mem="' + escHtml(m.id) + '" style="min-height:48px;padding-inline:14px;"><i class="fa-solid fa-trash-can"></i> حذف کریں</button>' +
           '</div>';
         }).join('');
+      }
+
+      function getClientResearcherId() {
+        try {
+          var uid = localStorage.getItem('sjahm_ilmi_uid_v1');
+          if (!uid) {
+            uid = 'res_' + Math.random().toString(36).slice(2, 10) + '_' + Date.now().toString(36);
+            localStorage.setItem('sjahm_ilmi_uid_v1', uid);
+          }
+          return uid;
+        } catch (_) {
+          return 'default_researcher';
+        }
       }
 
       var memForm = document.getElementById('sjMemoryAddForm');
@@ -1153,6 +1166,7 @@ body *::-webkit-scrollbar-thumb:hover {
             alert('حفاظتی نظام (ASI06): مشکوک ہدایاتی عبارت یادداشت میں محفوظ کرنے کی اجازت نہیں ہے۔');
             return;
           }
+          var uid = getClientResearcherId();
           var now = new Date();
           var newId = 'mem_' + now.getTime();
           var list = readStore(MEM_LOCAL_KEY, []);
@@ -1161,6 +1175,7 @@ body *::-webkit-scrollbar-thumb:hover {
           });
           var entry = {
             id: newId,
+            userId: uid,
             tier: tier,
             key: key,
             value: val,
@@ -1172,14 +1187,15 @@ body *::-webkit-scrollbar-thumb:hover {
           writeStore(MEM_LOCAL_KEY, list);
           document.getElementById('sjMemVal').value = '';
           renderMemoryList();
+          var memPayload = { userId: uid, tier: tier, key: key, value: val };
           if (navigator.onLine) {
             fetch('/api/ilmi-muawin/memory', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ tier: tier, key: key, value: val })
+              body: JSON.stringify(memPayload)
             }).catch(function () {});
           } else {
-            enqueueOfflineAction({ url: '/api/ilmi-muawin/memory', method: 'POST', body: { tier: tier, key: key, value: val } });
+            enqueueOfflineAction({ url: '/api/ilmi-muawin/memory', method: 'POST', body: memPayload });
           }
         });
       }
@@ -1188,19 +1204,22 @@ body *::-webkit-scrollbar-thumb:hover {
         var delBtn = e.target.closest && e.target.closest('[data-del-mem]');
         if (delBtn) {
           var id = delBtn.getAttribute('data-del-mem');
+          var uidDel = getClientResearcherId();
           var list = readStore(MEM_LOCAL_KEY, []);
           list.forEach(function (m) { if (m.id === id) m.deletedAt = new Date().toISOString(); });
           writeStore(MEM_LOCAL_KEY, list);
           renderMemoryList();
-          fetch('/api/ilmi-muawin/memory/' + encodeURIComponent(id), { method: 'DELETE' }).catch(function () {});
+          fetch('/api/ilmi-muawin/memory/' + encodeURIComponent(id) + '?userId=' + encodeURIComponent(uidDel), { method: 'DELETE' }).catch(function () {});
           return;
         }
 
         var stageBtn = e.target.closest && e.target.closest('#btnStageIlmiProposal');
         if (stageBtn && lastIlmiResult && !lastIlmiResult.abstained) {
+          var uidStage = getClientResearcherId();
           var props = readStore(PROP_LOCAL_KEY, []);
           var newProp = {
             proposalId: 'prop_' + Date.now(),
+            userId: uidStage,
             status: 'pending',
             title: 'تحقیقی خلاصہ: ' + (lastIlmiResult.query || ''),
             proposedText: lastIlmiResult.answerUrdu || '',
@@ -1213,6 +1232,18 @@ body *::-webkit-scrollbar-thumb:hover {
           propDrawer.classList.add('open');
           renderProposalsAndNotes();
           propDrawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          if (navigator.onLine) {
+            fetch('/api/ilmi-muawin/proposals', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: uidStage, title: newProp.title, proposedText: newProp.proposedText, citations: newProp.citations })
+            }).then(function (r) { return r.json(); }).then(function (srv) {
+              if (srv && srv.proposal && srv.proposal.proposalId) {
+                newProp.serverProposalId = srv.proposal.proposalId;
+                writeStore(PROP_LOCAL_KEY, props);
+              }
+            }).catch(function () {});
+          }
           return;
         }
 
@@ -1220,6 +1251,7 @@ body *::-webkit-scrollbar-thumb:hover {
         if (actBtn) {
           var pid = actBtn.getAttribute('data-prop-id');
           var action = actBtn.getAttribute('data-prop-action');
+          var uidRev = getClientResearcherId();
           var propsList = readStore(PROP_LOCAL_KEY, []);
           var target = propsList.find(function (p) { return p.proposalId === pid; });
           if (!target) return;
@@ -1228,14 +1260,23 @@ body *::-webkit-scrollbar-thumb:hover {
             target.status = 'rejected';
             writeStore(PROP_LOCAL_KEY, propsList);
             renderProposalsAndNotes();
+            if (navigator.onLine && target.serverProposalId) {
+              fetch('/api/ilmi-muawin/proposals/' + encodeURIComponent(target.serverProposalId) + '/review', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId: uidRev, action: 'reject' })
+              }).catch(function () {});
+            }
             return;
           }
 
           var finalBody = target.proposedText;
+          var srvAction = 'approve';
           if (action === 'edit') {
             var edited = window.prompt('تحقیقی نوٹ میں مطلوبہ ترمیم کریں اور محفوظ کرنے کے لیے تصدیق کریں:', target.proposedText);
             if (!edited) return;
             finalBody = edited;
+            srvAction = 'edit_and_approve';
           }
 
           target.status = 'approved';
@@ -1253,8 +1294,14 @@ body *::-webkit-scrollbar-thumb:hover {
           writeStore(NOTES_LOCAL_KEY, notes);
           renderProposalsAndNotes();
 
-          if (!navigator.onLine) {
-            enqueueOfflineAction({ url: '/api/ilmi-muawin/proposals', method: 'POST', body: { title: target.title, proposedText: finalBody } });
+          if (navigator.onLine && target.serverProposalId) {
+            fetch('/api/ilmi-muawin/proposals/' + encodeURIComponent(target.serverProposalId) + '/review', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: uidRev, action: srvAction, editedText: finalBody })
+            }).catch(function () {});
+          } else if (!navigator.onLine) {
+            enqueueOfflineAction({ url: '/api/ilmi-muawin/proposals', method: 'POST', body: { userId: uidRev, title: target.title, proposedText: finalBody } });
           }
         }
       });
@@ -1402,7 +1449,7 @@ body *::-webkit-scrollbar-thumb:hover {
           .catch(function () {});
 
         if (mode === 'ilmi') {
-          fetch('/api/ilmi-muawin/ask?q=' + encodeURIComponent(q) + '&category=' + encodeURIComponent(cat))
+          fetch('/api/ilmi-muawin/ask?q=' + encodeURIComponent(q) + '&category=' + encodeURIComponent(cat) + '&userId=' + encodeURIComponent(getClientResearcherId()))
             .then(function (r) { return r.json(); })
             .then(renderIlmiAnswer)
             .catch(function () {});

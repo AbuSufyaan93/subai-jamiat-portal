@@ -160,7 +160,7 @@
     'aur':1,'ka':1,'ki':1,'ke':1,'hai':1,'kya':1,'masla':1,'mein':1,'se':1
   };
   var CLIENT_EXCLUDED_RE = /سرفرازs*فیضی|sarfarazs*faizi|کمالs*الدینs*سنابلی|kamaluddins*sanabili|کفایتs*اللہs*سنابلی|kifayatullahs*sanabili/i;
-  var CLIENT_INJECTION_RE = /ignores+(alls+)?(previous|prior|system)s+(instructions|prompt)|reveals+.*systems+prompt|پچھلیs+تمامs+ہدایات|<s*script|javascripts*:/i;
+  var CLIENT_INJECTION_RE = /ignores+(alls+)?(previous|prior|system)s+(instructions|prompt)|(disregard|override|bypass|reveal)s+.*(system|developer|safety)s+(prompt|instructions|rules)|پچھلیs+تمامs+ہدایات|سسٹمs*پرامپٹ|تجاهلs+جميعs+التعليمات|اكشفs+موجهs+النظام|</?s*untrusted_source|<s*script|javascripts*:/i;
 
   function normalizeText(str) {
     if (!str) return '';
@@ -176,6 +176,7 @@
       .replace(/[يىےئ]/g, 'ی')
       .replace(/ك/g, 'ک')
       .replace(/[ةهھۀ]/g, 'ہ')
+      .replace(/[،؛؟۔]/g, ' ')
       .replace(/s+/g, ' ')
       .trim();
   }
@@ -183,12 +184,12 @@
   function runLocalHybridRrf(q, cat) {
     return getClientSearchIndex().then(function (idx) {
       var t0 = performance.now();
-      if (CLIENT_INJECTION_RE.test(q)) {
+      if (String(q || '').length > 500 || CLIENT_INJECTION_RE.test(q)) {
         return {
           blocked: true,
           abstained: true,
-          owaspControl: 'ASI01',
-          answerUrdu: 'حفاظتی نظام (Model Armor): غیر مجاز سسٹم ہدایات کی وجہ سے درخواست روک دی گئی ہے۔',
+          owaspControl: String(q || '').length > 500 ? 'ASI08' : 'ASI01',
+          answerUrdu: 'حفاظتی نظام (Model Armor): غیر مجاز سسٹم ہدایات یا حد سے طویل متن کی وجہ سے درخواست روک دی گئی ہے۔',
           topRerankScore: 0,
           tookMs: 0.2,
           counts: {},
@@ -590,7 +591,8 @@
     }
 
     if (urlStr.indexOf('/api/admin/media/videos/submissions/pending') !== -1) {
-      return requestViaLiveTunnel('GET', '/api/admin/media/videos/submissions/pending?adminPasskey=SJ-ADMIN-2026', '', 'application/json', 3000)
+      var pendingRelUrl = urlStr.replace(/^https?://[^/]+/i, '');
+      return requestViaLiveTunnel('GET', pendingRelUrl, '', 'application/json', 3000)
         .then(function (tunRes) {
           var data = {};
           try { data = JSON.parse(tunRes.body || '{}'); } catch (_) {}
@@ -614,8 +616,8 @@
         .catch(function () {
           var modReq = {};
           try { modReq = JSON.parse(modBodyStr || '{}'); } catch (_) {}
-          if (modReq.adminPasskey !== 'SJ-ADMIN-2026') {
-            return jsonResponse({ status: 'error', message: 'ایڈمن سیکیورٹی کوڈ درست نہیں ہے' }, 403);
+          if (!modReq.adminPasskey || String(modReq.adminPasskey).trim().length < 8) {
+            return jsonResponse({ status: 'error', message: 'لائیو سرور سے تصدیق درکار ہے؛ براہِ کرم ایڈمن لاگ ان سے دوبارہ کوشش کریں۔' }, 403);
           }
           var pending = getLocalPendingSubs();
           var target = pending.find(function (s) { return s.id === modReq.id; });

@@ -163,9 +163,11 @@
    4. ROOT TYPOGRAPHY VARIABLES & CALLIGRAPHIC RENDERING OPTIMIZATION
    ---------------------------------------------------------------------------- */
 :root {
-  --font-urdu: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', 'Noto Nastaliq Urdu', serif;
+  --font-urdu: 'Manzar Lahori Nastaliq', 'ManzarLahoriNastaliq', 'Jameel Noori Nastaleeq', 'Mehr', serif;
   --font-arabic-nass: 'Sakkal Majalla', 'Sakkal Majalla Bold', 'Scheherazade', serif;
   --font-quran-indopak: 'IndoPak Quran', 'Al Qalam Quran', 'Manzar IndoPak Naskh', 'Muhammadi Quranic', 'Manzar Indian Naskh', 'Scheherazade', serif;
+  --font-arabic: var(--font-arabic-nass);
+  --font-quran: var(--font-quran-indopak);
   --adm-font-urdu: var(--font-urdu);
   --adm-font-sans: var(--font-urdu);
 }
